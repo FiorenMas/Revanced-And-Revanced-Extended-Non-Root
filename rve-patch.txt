@@ -1,0 +1,9 @@
+# EXCLUDE PATCHES FROM BELOW
+custom-branding-icon-afn-red
+custom-video-buffer
+custom-video-speed
+debugging
+hide-mix-playlists
+return-youtube-dislike
+# INCLUDE PATCHES FROM BELOW
+custom-branding-icon-revancify

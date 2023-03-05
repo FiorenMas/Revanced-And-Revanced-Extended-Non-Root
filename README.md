@@ -1,9 +1,9 @@
 # Download
-Youtube Revanced
+Revanced
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/Revanced/total?style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/Revanced/yt-revanced.apk)
 
-Youtube Revanced Extended
+Revanced Extended
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/Revanced-Extended/total?style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/Revanced-Extended/yt-revanced-extended.apk)
 

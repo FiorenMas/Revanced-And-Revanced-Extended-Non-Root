@@ -2,7 +2,7 @@
 # File containing all patches and YouTube version
 # source patch-rv.txt
 # source patch-rve.txt
-for var in patch-rv.txt patch-rve.txt
+for var in Revanced.txt Revanced-Extended.txt
 do
 source $var
 

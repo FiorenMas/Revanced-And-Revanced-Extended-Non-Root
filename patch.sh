@@ -58,18 +58,21 @@ populate_patches() {
 
 
 # Download resources necessary
-echo -e "⏭️ Prepairing $NAME resources..."
+echo -e "⏬ Prepairing $NAME resources..."
 
 IFS=$' \t\r\n'
 
-# Patches & jon
-latest_patches=$(curl -s https://api.github.com/repos/$USER/revanced-patches/releases/latest | jq -r '.assets[].browser_download_url') 
+# Patches & json
+latest_patches=$(curl -s https://api.github.com/repos/$USER/revanced-patches/releases/latest \
+| jq -r '.assets[].browser_download_url') 
 
 # Cli
-latest_cli=$(curl -s https://api.github.com/repos/$USER/revanced-cli/releases/latest | jq -r '.assets[].browser_download_url') 
+latest_cli=$(curl -s https://api.github.com/repos/$USER/revanced-cli/releases/latest \
+| jq -r '.assets[].browser_download_url') 
 
 # Integrations
-latest_integrations=$(curl -s https://api.github.com/repos/$USER/revanced-integrations/releases/latest | jq -r '.assets[].browser_download_url')
+latest_integrations=$(curl -s https://api.github.com/repos/$USER/revanced-integrations/releases/latest \
+| jq -r '.assets[].browser_download_url')
 
 # Download all resources
 for asset in $latest_patches $latest_cli $latest_integrations ; do
@@ -88,7 +91,7 @@ req() {
 
 dl_yt() {
     rm -rf $2
-    echo -e "🚘 Downloading YouTube v$1..."
+    echo -e "⏬ Downloading YouTube v$1..."
     url="https://www.apkmirror.com/apk/google-inc/youtube/youtube-${1//./-}-release/"
     url="$url$(req "$url" - \
     | grep Variant -A50 \
@@ -108,7 +111,7 @@ dl_yt() {
 dl_yt $YTVERSION youtube-v$YTVERSION.apk
 
 # Patch APK
-echo -e "⏭️ Patching YouTube..."
+echo -e "⚙️ Patching YouTube..."
 java -jar revanced-cli*.jar \
      -m revanced-integrations*.apk \
      -b revanced-patches*.jar \
@@ -118,7 +121,7 @@ java -jar revanced-cli*.jar \
      -o yt-$NAME.apk
 
 # Refresh patches cache
-echo -e "⏭️ Clean patches cache..."
+echo -e "🧹 Clean patches cache..."
 rm -f revanced-cli*.jar \
       revanced-integrations*.apk \
       revanced-patches*.jar \

@@ -4,4 +4,11 @@ debugging
 hide-my-mix
 hide-autoplay-button
 premium-heading
+hide-cast-button
+hide-watch-in-vr
+hide-captions-button
+disable-shorts-on-startup
+hide-shorts-button
+hide-timestamp
 # INCLUDE PATCHES FROM BELOW
+open-links-externally

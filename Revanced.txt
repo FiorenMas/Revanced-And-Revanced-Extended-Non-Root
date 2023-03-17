@@ -1,3 +1,0 @@
-NAME="revanced"
-USER="revanced"
-PATCH="rv-patch.txt"

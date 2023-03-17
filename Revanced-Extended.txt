@@ -1,3 +1,0 @@
-NAME="revanced-extended"
-USER="inotia00"
-PATCH="rve-patch.txt"

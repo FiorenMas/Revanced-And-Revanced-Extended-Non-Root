@@ -75,5 +75,5 @@ jobs:
           repository: ${{ github.repository }}
           retain_days: 5
           keep_minimum_runs: 5
-permissions: 
-   contents: write
+          
+permissions: write-all

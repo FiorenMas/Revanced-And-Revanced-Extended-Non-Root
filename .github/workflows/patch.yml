@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   patch:
-    name: Patch YouTube 
+    name: Patch Revanced & Revanced Extended 
     permissions: write-all
     runs-on: ubuntu-latest
     steps:

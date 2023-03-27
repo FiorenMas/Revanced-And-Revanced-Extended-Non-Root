@@ -1,5 +1,3 @@
-<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/patch.yml">
-
 # Download
 Revanced
 
@@ -14,3 +12,4 @@ Revanced Extended
 
 # About
 This repository forked from [@luxysiv](https://github.com/luxysiv/yt-revanced-extended)
+<img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/patch.yml">

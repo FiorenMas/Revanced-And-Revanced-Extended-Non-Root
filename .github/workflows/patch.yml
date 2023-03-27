@@ -16,19 +16,37 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-      
+          
+      - name: Generate Changelog 
+        run: |
+          curl -s https://api.github.com/repos/revanced/revanced-patches/releases/latest \
+          | grep "browser_download_url.*json" \
+          | cut -d : -f 2,3 \
+          | tr -d \" \
+          | wget -qi -
+          RVVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
+          rm -rf patches.json
+          
+          curl -s https://api.github.com/repos/inotia00/revanced-patches/releases/latest \
+          | grep "browser_download_url.*json" \
+          | cut -d : -f 2,3 \
+          | tr -d \" \
+          | wget -qi -
+          RVEVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
+          rm -rf patches.json
+          echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
+          echo "INFO=Revanced-v${RVVERSION} & Revanced Extended-v${RVEVERSION}" >> $GITHUB_ENV
+          
       - name: Patch apk
         run: bash patch.sh  
-        
-      - name: Generate date
-        run: echo "DATE=$(date +%F)" >> $GITHUB_ENV   
           
       - name: Release
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: yt-revanced*.apk 
-          name: Release ${{ env.DATE }}
-          tag_name: ${{ env.DATE }}
+          name: ${{ env.INFO }}
+          tag_name: Revanced
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
 
@@ -46,6 +64,6 @@ jobs:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 0
-          keep_minimum_runs: 1
+          keep_minimum_runs: 5
           
 permissions: write-all

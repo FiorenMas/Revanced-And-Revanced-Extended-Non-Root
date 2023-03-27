@@ -37,6 +37,9 @@ jobs:
           echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
           echo "INFO=Revanced-v${RVVERSION} & Revanced Extended-v${RVEVERSION}" >> $GITHUB_ENV
           
+      - name: Generate date
+        run: echo "DATE=$(date +%F)" >> $GITHUB_ENV
+        
       - name: Patch apk
         run: bash patch.sh  
           
@@ -45,6 +48,7 @@ jobs:
         with:
           files: yt-revanced*.apk 
           name: ${{ env.INFO }}
+          tag_name: ${{ env.DATE }}
           body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   

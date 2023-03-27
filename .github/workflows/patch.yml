@@ -66,14 +66,14 @@ jobs:
           tag_name: Revanced-Extended
           body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
-         
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                   
+          
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
-          retain_days: 5
+          retain_days: 0
           keep_minimum_runs: 5
           
 permissions: write-all

@@ -5,8 +5,6 @@ on:
   workflow_dispatch:
 jobs:
   patch:
-    name: Patch Revanced & Revanced Extended 
-    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,7 +14,10 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-          
+      
+      - name: Patch Revanced & Revanced Extended non-root
+        run: bash patch.sh   
+        
       - name: Generate Changelog 
         run: |
           curl -s https://api.github.com/repos/revanced/revanced-patches/releases/latest \
@@ -35,38 +36,44 @@ jobs:
           RVEVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
           rm -rf patches.json
           echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
-          echo "INFO=Revanced-v${RVVERSION} & Revanced Extended-v${RVEVERSION}" >> $GITHUB_ENV
+          echo "INFO-RV=Revanced-v${RVVERSION}" >> $GITHUB_ENV
+          echo "INFO-RVE=Revanced Extended-v${RVEVERSION}" >> $GITHUB_ENV
           
-      - name: Generate date
-        run: echo "DATE=$(date +%F)" >> $GITHUB_ENV
-        
-      - name: Patch apk
-        run: bash patch.sh  
-          
-      - name: Release
-        uses: softprops/action-gh-release@v0.1.15
+      - name: Delete Release
+        uses: dev-drprasad/delete-older-releases@v0.2.0
         with:
-          files: yt-revanced*.apk 
-          name: ${{ env.INFO }}
-          tag_name: ${{ env.DATE }}
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
+          repo: ${{ github.repository }}
+          keep_latest: 0
+          delete_tag_pattern: "*"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
-
-      - name: Delete older releases
-        uses: dev-drprasad/delete-older-releases@v0.2.1
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         
+      - name: Release Revanced
+        uses: softprops/action-gh-release@v1
         with:
-          keep_latest: 10
-          delete_tags: true
+          files: yt-revanced.apk 
+          name: ${{ env.INFO-RV }}
+          tag_name: Revanced
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
+      - name: Release Revanced Extended
+        uses: softprops/action-gh-release@v1
+        with:
+          files: yt-revanced-extended.apk
+          name: ${{ env.INFO-RVE }}
+          tag_name: Revanced-Extended
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}          
+         
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
-          retain_days: 0
+          retain_days: 5
           keep_minimum_runs: 5
           
 permissions: write-all

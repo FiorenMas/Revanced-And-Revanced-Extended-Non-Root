@@ -45,7 +45,6 @@ jobs:
         with:
           files: yt-revanced*.apk 
           name: ${{ env.INFO }}
-          tag_name: Revanced
           body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   

@@ -1,14 +1,23 @@
 # EXCLUDE PATCHES FROM BELOW
-custom-branding-icon-mmt
 custom-video-buffer
 debugging
-hide-mix-playlists
-disable-startup-shorts-player
-hide-captions-button
+hide-my-mix
+hide-autoplay-button
+premium-heading
 hide-cast-button
-hide-shorts-button
 hide-watch-in-vr
+hide-captions-button
+hide-shorts-button
+hide-timestamp
 # INCLUDE PATCHES FROM BELOW
 custom-branding-icon-mmt
 open-links-externally
 return-youtube-dislike
+sponsorblock
+swipe-controls
+disable-shorts-on-startup
+hide-watermark
+downloads
+remember-video-quality
+general-ads
+video-ads

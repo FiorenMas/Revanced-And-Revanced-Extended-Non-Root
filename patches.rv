@@ -7,9 +7,17 @@ premium-heading
 hide-cast-button
 hide-watch-in-vr
 hide-captions-button
-disable-shorts-on-startup
 hide-shorts-button
 hide-timestamp
 # INCLUDE PATCHES FROM BELOW
 open-links-externally
 custom-branding-icon-mmt
+return-youtube-dislike
+sponsorblock
+swipe-controls
+disable-shorts-on-startup
+hide-watermark
+downloads
+remember-video-quality
+general-ads
+video-ads

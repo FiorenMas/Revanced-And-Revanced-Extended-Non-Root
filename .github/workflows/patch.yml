@@ -44,7 +44,6 @@ jobs:
         with:
           repo: ${{ github.repository }}
           keep_latest: 0
-          delete_tag_pattern: "*"
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          

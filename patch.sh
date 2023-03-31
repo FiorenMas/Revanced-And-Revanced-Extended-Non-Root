@@ -1,25 +1,28 @@
 #!/bin/bash
 # Config to patch Revanced and Revanced Extended
+# Input YTVERSION number of version/blank to select specific/auto select YouTube version supported 
 
 # Revanced 
 cat > keywords.rv << EOF
 NAME="revanced"
-ORG="revanced"
+USER="revanced"
 PATCH="patches.rv"
+#YTVERSION="18.03.36"
 EOF
 
 # Revanced Extended 
 cat > keywords.rve << EOF
 NAME="revanced-extended"
-ORG="inotia00"
+USER="inotia00"
 PATCH="patches.rve"
+#YTVERSION="18.07.35"
 EOF
 
-# for var in keywords.rv # Revanced
-# for var in keywords.rve # Revanced Extended 
+#for var in keywords.rv # Revanced
+#for var in keywords.rve # Revanced Extended 
 for var in keywords.rv keywords.rve # Both
 do
-source  $var
+source $var
 
 # Prepair patches keywords
 patch_file=$PATCH
@@ -56,34 +59,20 @@ populate_patches() {
 [[ ! -z "$excluded_patches" ]] && populate_patches "-e" "$excluded_patches"
 [[ ! -z "$included_patches" ]] && populate_patches "-i" "$included_patches"
 
+# Download resources 
+echo -e "⏬ Downloading $NAME resources..."
+urls_res() {
+curl -s "https://api.github.com/repos/$USER/revanced-patches/releases/latest" \
+| jq -r '.assets[].browser_download_url'  
+curl -s "https://api.github.com/repos/$USER/revanced-cli/releases/latest" \
+| jq -r '.assets[].browser_download_url'  
+curl -s "https://api.github.com/repos/$USER/revanced-integrations/releases/latest" \
+| jq -r '.assets[].browser_download_url'  
+}
+urls_res | wget -qi -
 
-# Download resources necessary
-echo -e "⏬ Prepairing $NAME resources..."
-
-IFS=$' \t\r\n'
-
-# Patches & json
-latest_patches=$(curl -s https://api.github.com/repos/$ORG/revanced-patches/releases/latest \
-| jq -r '.assets[].browser_download_url') 
-
-# Cli
-latest_cli=$(curl -s https://api.github.com/repos/$ORG/revanced-cli/releases/latest \
-| jq -r '.assets[].browser_download_url') 
-
-# Integrations
-latest_integrations=$(curl -s https://api.github.com/repos/$ORG/revanced-integrations/releases/latest \
-| jq -r '.assets[].browser_download_url')
-
-# Download all resources
-for asset in $latest_patches $latest_cli $latest_integrations ; do
-      curl -s -OL $asset
-done
-
-# Fetch latest supported YT versions
-YTVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
-
-# Download latest APK supported
-WGET_HEADER="User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:102.0) Gecko/20100101 Firefox/102.0"
+# Download YouTube APK supported
+WGET_HEADER="User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:111.0) Gecko/20100101 Firefox/111.0"
 
 req() {
     wget -q -O "$2" --header="$WGET_HEADER" "$1"
@@ -91,7 +80,7 @@ req() {
 
 dl_yt() {
     rm -rf $2
-    echo -e "⏬ Downloading YouTube v$1..."
+    echo "⏬ Downloading YouTube v$1..."
     url="https://www.apkmirror.com/apk/google-inc/youtube/youtube-${1//./-}-release/"
     url="$url$(req "$url" - \
     | grep Variant -A50 \
@@ -107,11 +96,15 @@ dl_yt() {
     req "$url" "$2"
 }
 
-# Download Youtube
-dl_yt $YTVERSION youtube-v$YTVERSION.apk
+# Download specific or auto choose Youtube version
+if [ $YTVERSION ] ;
+  then dl_yt $YTVERSION youtube-v$YTVERSION.apk 
+else YTVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json) 
+  dl_yt $YTVERSION youtube-v$YTVERSION.apk
+fi
 
 # Patch APK
-echo -e "⚙️ Patching YouTube..."
+echo "⚙️ Patching YouTube..."
 java -jar revanced-cli*.jar \
      -m revanced-integrations*.apk \
      -b revanced-patches*.jar \
@@ -120,16 +113,17 @@ java -jar revanced-cli*.jar \
      --keystore=ks.keystore \
      -o yt-$NAME.apk
 
-# Refresh patches cache
-echo -e "🧹 Clean patches cache..."
+# Refresh caches
+echo "🧹 Clean caches..."
 rm -f revanced-cli*.jar \
       revanced-integrations*.apk \
       revanced-patches*.jar \
       patches.json \
       options.toml \
-      youtube*.apk \
+      youtube*.apk \ 
       
-unset patches
+unset patches 
+unset YTVERSION
 
 # Finish
 done

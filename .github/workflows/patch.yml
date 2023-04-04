@@ -38,14 +38,6 @@ jobs:
           echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
           echo "INFO-RV=Revanced-v${RVVERSION}" >> $GITHUB_ENV
           echo "INFO-RVE=Revanced Extended-v${RVEVERSION}" >> $GITHUB_ENV
-          
-      - name: Delete Release
-        uses: dev-drprasad/delete-older-releases@v0.2.1
-        with:
-          repo: ${{ github.repository }}
-          keep_latest: 0
-        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          
       - name: Release Revanced
         uses: softprops/action-gh-release@v1
@@ -74,5 +66,13 @@ jobs:
           repository: ${{ github.repository }}
           retain_days: 0
           keep_minimum_runs: 5
+          
+      - name: Delete Release
+        uses: dev-drprasad/delete-older-releases@v0.2.1
+        with:
+          repo: ${{ github.repository }}
+          keep_latest: 2
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
 permissions: write-all

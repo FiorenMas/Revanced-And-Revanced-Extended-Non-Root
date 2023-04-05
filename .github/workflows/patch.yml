@@ -39,7 +39,6 @@ jobs:
           echo "INFO-RV=Revanced-v${RVVERSION}" >> $GITHUB_ENV
           echo "INFO-RVE=Revanced Extended-v${RVEVERSION}" >> $GITHUB_ENV
           
-      - run: exit 1
       - uses: vishnudxb/cancel-workflow@v1.2
         if: failure()
         with:

@@ -38,6 +38,22 @@ jobs:
           echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
           echo "INFO-RV=Revanced-v${RVVERSION}" >> $GITHUB_ENV
           echo "INFO-RVE=Revanced Extended-v${RVEVERSION}" >> $GITHUB_ENV
+          
+      - run: exit 1
+      - uses: vishnudxb/cancel-workflow@v1.2
+        if: failure()
+        with:
+          repo: octocat/hello-world
+          workflow_id: ${{ github.run_id }}
+          access_token: ${{ github.token }}      
+          
+      - name: Delete Release
+        uses: dev-drprasad/delete-older-releases@v0.2.1
+        with:
+          repo: ${{ github.repository }}
+          keep_latest: 0
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          
       - name: Release Revanced
         uses: softprops/action-gh-release@v1
@@ -66,13 +82,5 @@ jobs:
           repository: ${{ github.repository }}
           retain_days: 0
           keep_minimum_runs: 5
-          
-      - name: Delete Release
-        uses: dev-drprasad/delete-older-releases@v0.2.1
-        with:
-          repo: ${{ github.repository }}
-          keep_latest: 2
-        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+                    
 permissions: write-all

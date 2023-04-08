@@ -1,77 +1,53 @@
 #!/bin/bash
-# Config to patch Revanced and Revanced Extended
-# Input YTVERSION number of version/blank to select specific/auto select YouTube version supported 
+# Input *ytversion number/blank(or # before) to set specific/auto choose YouTube version
 
-# Revanced 
-cat > keywords.rv << EOF
-NAME="revanced"
-USER="revanced"
-PATCH="patches.rv"
-#YTVERSION="18.03.36"
-EOF
+# Set variables for Revanced
+revanced_name="revanced"
+revanced_user="revanced"
+revanced_patch="patches.rv"
+revanced_ytversion="" # Input version supported.Exp: 18.03.36
 
-# Revanced Extended 
-cat > keywords.rve << EOF
-NAME="revanced-extended"
-USER="inotia00"
-PATCH="patches.rve"
-#YTVERSION="18.07.35"
-EOF
+# Set variables for Revanced Extended
+revanced_extended_name="revanced-extended"
+revanced_extended_user="inotia00"
+revanced_extended_patch="patches.rve"
+revanced_extended_ytversion="" # Input version supported.Exp: 18.07.35
 
-#for var in keywords.rv # Revanced
-#for var in keywords.rve # Revanced Extended 
-for var in keywords.rv keywords.rve # Both
-do
-source $var
-
-# Prepair patches keywords
-patch_file=$PATCH
-
-# Get line numbers where included & excluded patches start from. 
-# We rely on the hardcoded messages to get the line numbers using grep
-excluded_start="$(grep -n -m1 'EXCLUDE PATCHES' "$patch_file" \
-| cut -d':' -f1)"
-included_start="$(grep -n -m1 'INCLUDE PATCHES' "$patch_file" \
-| cut -d':' -f1)"
-
-# Get everything but hashes from between the EXCLUDE PATCH & INCLUDE PATCH line
-# Note: '^[^#[:blank:]]' ignores starting hashes and/or blank characters i.e, whitespace & tab excluding newline
-excluded_patches="$(tail -n +$excluded_start $patch_file \
-| head -n "$(( included_start - excluded_start ))" \
-| grep '^[^#[:blank:]]')"
-
-# Get everything but hashes starting from INCLUDE PATCH line until EOF
-included_patches="$(tail -n +$included_start $patch_file \
-| grep '^[^#[:blank:]]')"
-
-# Array for storing patches
-declare -a patches
-
-# Function for populating patches array, using a function here reduces redundancy & satisfies DRY principals
-populate_patches() {
-    # Note: <<< defines a 'here-string'. Meaning, it allows reading from variables just like from a file
-    while read -r patch; do
-        patches+=("$1 $patch")
-    done <<< "$2"
+# Function prepare patches keywords
+get_patch() {
+    excluded_start=$(grep -n -m1 'EXCLUDE PATCHES' "$patch_file" \
+    | cut -d':' -f1)
+    included_start=$(grep -n -m1 'INCLUDE PATCHES' "$patch_file" \
+    | cut -d':' -f1)
+    excluded_patches=$(tail -n +$excluded_start $patch_file \
+    | head -n "$(( included_start - excluded_start ))" \
+    | grep '^[^#[:blank:]]')
+    included_patches=$(tail -n +$included_start $patch_file \
+    | grep '^[^#[:blank:]]')
+    patches=()
+    if [ -n "$excluded_patches" ]; then
+        while read -r patch; do
+            patches+=("-e $patch")
+        done <<< "$excluded_patches"
+    fi
+    if [ -n "$included_patches" ]; then
+        while read -r patch; do
+            patches+=("-i $patch")
+        done <<< "$included_patches"
+    fi
+declare -a patches 
 }
-
-# If the variables are NOT empty, call populate_patches with proper arguments
-[[ ! -z "$excluded_patches" ]] && populate_patches "-e" "$excluded_patches"
-[[ ! -z "$included_patches" ]] && populate_patches "-i" "$included_patches"
-
-# Download resources 
-echo -e "⏬ Downloading $NAME resources..."
+# Function download latest github releases 
 urls_res() {
-curl -s "https://api.github.com/repos/$USER/revanced-patches/releases/latest" \
+wget -q -O - "https://api.github.com/repos/$user/revanced-patches/releases/latest" \
 | jq -r '.assets[].browser_download_url'  
-curl -s "https://api.github.com/repos/$USER/revanced-cli/releases/latest" \
+wget -q -O - "https://api.github.com/repos/$user/revanced-cli/releases/latest" \
 | jq -r '.assets[].browser_download_url'  
-curl -s "https://api.github.com/repos/$USER/revanced-integrations/releases/latest" \
+wget -q -O - "https://api.github.com/repos/$user/revanced-integrations/releases/latest" \
 | jq -r '.assets[].browser_download_url'  
 }
-urls_res | wget -qi -
 
-# Download YouTube APK supported
+# Function download YouTube apk from APKmirror
 WGET_HEADER="User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:111.0) Gecko/20100101 Firefox/111.0"
 
 req() {
@@ -80,7 +56,6 @@ req() {
 
 dl_yt() {
     rm -rf $2
-    echo "⏬ Downloading YouTube v$1..."
     url="https://www.apkmirror.com/apk/google-inc/youtube/youtube-${1//./-}-release/"
     url="$url$(req "$url" - \
     | grep Variant -A50 \
@@ -95,35 +70,49 @@ dl_yt() {
     | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')"
     req "$url" "$2"
 }
-
-# Download specific or auto choose Youtube version
-if [ $YTVERSION ] ;
-  then dl_yt $YTVERSION youtube-v$YTVERSION.apk 
-else YTVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json) 
-  dl_yt $YTVERSION youtube-v$YTVERSION.apk
-fi
-
-# Patch APK
-echo "⚙️ Patching YouTube..."
+# Function Patch APK
+patch_apk() {
 java -jar revanced-cli*.jar \
      -m revanced-integrations*.apk \
      -b revanced-patches*.jar \
-     -a youtube-v$YTVERSION.apk \
+     -a youtube-v$ytversion.apk \
      ${patches[@]} \
      --keystore=ks.keystore \
-     -o yt-$NAME.apk
-
-# Refresh caches
-echo "🧹 Clean caches..."
+     -o yt-$name.apk
+}
+# Function clean caches to new build
+clean_cache() {
 rm -f revanced-cli*.jar \
       revanced-integrations*.apk \
       revanced-patches*.jar \
       patches.json \
       options.toml \
       youtube*.apk \ 
-      
-unset patches 
-unset YTVERSION
-
-# Finish
+}
+# Function patch Revanced, Revanced Extended 
+for name in $revanced_name $revanced_extended_name ; do
+    # Select variables based on name
+    if [ "$name" = "$revanced_name" ]; then
+        user="$revanced_user"
+        patch_file="$revanced_patch"
+        ytversion="$revanced_ytversion"
+    else
+        user="$revanced_extended_user"
+        patch_file="$revanced_extended_patch"
+        ytversion="$revanced_extended_ytversion"
+    fi
+get_patch
+echo "⏬ Downloading $name resources..."
+urls_res | xargs wget -q -i
+if [ $ytversion ] ;
+  then dl_yt $ytversion youtube-v$ytversion.apk 
+  echo "⏬ Downloading YouTube v$ytversion.."
+else ytversion=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json) 
+  dl_yt $ytversion youtube-v$ytversion.apk
+  echo "⏬ Downloading YouTube v$ytversion..."
+fi
+echo "⚙️ Patching YouTube..."
+patch_apk
+echo "🧹 Clean caches..."
+clean_cache
 done

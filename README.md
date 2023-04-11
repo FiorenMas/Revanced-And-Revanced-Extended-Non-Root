@@ -1,6 +1,6 @@
-[Banner](https://raw.githubusercontent.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/main/Banner.png)
+![Banner](https://raw.githubusercontent.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/main/Banner.png)
 
-Youtube:
+# Youtube:
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/Revanced-Extended/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/Revanced-Extended/yt-revanced-extended.apk) 
 

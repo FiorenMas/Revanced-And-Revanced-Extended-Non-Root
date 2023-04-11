@@ -26,19 +26,36 @@ jobs:
           | cut -d : -f 2,3 \
           | tr -d \" \
           | wget -qi -
-          RVVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
+          YT-RVVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
           rm -rf patches.json
-          
           curl -s https://api.github.com/repos/inotia00/revanced-patches/releases/latest \
           | grep "browser_download_url.*json" \
           | cut -d : -f 2,3 \
           | tr -d \" \
           | wget -qi -
-          RVEVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
+          YT-RVEVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
           rm -rf patches.json
+          
+          curl -s https://api.github.com/repos/revanced/revanced-patches/releases/latest \
+          | grep "browser_download_url.*json" \
+          | cut -d : -f 2,3 \
+          | tr -d \" \
+          | wget -qi -
+          YTM-RVVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
+          rm -rf patches.json
+          curl -s https://api.github.com/repos/inotia00/revanced-patches/releases/latest \
+          | grep "browser_download_url.*json" \
+          | cut -d : -f 2,3 \
+          | tr -d \" \
+          | wget -qi -
+          YTM-RVEVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
+          rm -rf patches.json
+          
           echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
-          echo "INFO-RV=Revanced-v${RVVERSION}" >> $GITHUB_ENV
-          echo "INFO-RVE=Revanced Extended-v${RVEVERSION}" >> $GITHUB_ENV
+          echo "INFO-YT-RV=Youtube-Revanced-v${YT-RVVERSION}" >> $GITHUB_ENV
+          echo "INFO-YT-RVE=Youtube-Revanced Extended-v${YT-RVEVERSION}" >> $GITHUB_ENV
+          echo "INFO-YTM-RV=Youtube-Revanced-v${YTM-RVVERSION}" >> $GITHUB_ENV
+          echo "INFO-YTM-RVE=Youtube-Revanced Extended-v${YTM-RVEVERSION}" >> $GITHUB_ENV
           
       - uses: vishnudxb/cancel-workflow@v1.2
         if: failure()
@@ -59,8 +76,8 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: yt-revanced.apk 
-          name: ${{ env.INFO-RV }}
-          tag_name: Revanced
+          name: ${{ env.INFO-YT-RV }}
+          tag_name: YT-Revanced
           body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -69,11 +86,31 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: yt-revanced-extended.apk
-          name: ${{ env.INFO-RVE }}
-          tag_name: Revanced-Extended
+          name: ${{ env.INFO-YT-RVE }}
+          tag_name: YT-Revanced-Extended
           body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}                   
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+          
+      - name: Release Youtube Music Revanced
+        uses: softprops/action-gh-release@v1
+        with:
+          files: yt-revanced.apk 
+          name: ${{ env.INFO-YTM-RV }}
+          tag_name: YT-Revanced
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Release Youtube Music Revanced Extended
+        uses: softprops/action-gh-release@v1
+        with:
+          files: yt-revanced-extended.apk
+          name: ${{ env.INFO-YTM-RVE }}
+          tag_name: YT-Revanced-Extended
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
           
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2

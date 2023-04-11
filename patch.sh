@@ -16,7 +16,7 @@ get_patch() {
     local included_start=$(grep -n -m1 'INCLUDE PATCHES' "$patch_file" | cut -d':' -f1)
     local excluded_patches=$(tail -n +$excluded_start $patch_file | head -n "$(( included_start - excluded_start ))"  | grep '^[^#[:blank:]]')
     local included_patches=$(tail -n +$included_start $patch_file | grep '^[^#[:blank:]]')
-    local patches=()
+    patches=()
     if [[ -n "$excluded_patches" ]]; then
         while read -r patch; do
             patches+=("-e $patch")

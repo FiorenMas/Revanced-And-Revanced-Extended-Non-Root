@@ -45,13 +45,6 @@ jobs:
           | tr -d \" \
           | wget -qi -
           YTMRVVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
-          rm -rf patches.json
-          
-          curl -s https://api.github.com/repos/inotia00/revanced-patches/releases/latest \
-          | grep "browser_download_url.*json" \
-          | cut -d : -f 2,3 \
-          | tr -d \" \
-          | wget -qi -
           YTMRVEVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           rm -rf patches.json    
           echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
@@ -74,27 +67,7 @@ jobs:
           keep_latest: 0
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         
-      - name: Release Youtube Revanced
-        uses: softprops/action-gh-release@v1
-        with:
-          files: yt-revanced.apk 
-          name: ${{ env.INFO-YT-RV }}
-          tag_name: YT-Revanced
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Release Youtube Revanced Extended
-        uses: softprops/action-gh-release@v1
-        with:
-          files: yt-revanced-extended.apk
-          name: ${{ env.INFO-YT-RVE }}
-          tag_name: YT-Revanced-Extended
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-          
+                   
       - name: Release Youtube Music Revanced
         uses: softprops/action-gh-release@v1
         with:
@@ -114,6 +87,26 @@ jobs:
           body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+          
+      - name: Release Youtube Revanced
+        uses: softprops/action-gh-release@v1
+        with:
+          files: yt-revanced.apk 
+          name: ${{ env.INFO-YT-RV }}
+          tag_name: YT-Revanced
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Release Youtube Revanced Extended
+        uses: softprops/action-gh-release@v1
+        with:
+          files: yt-revanced-extended.apk
+          name: ${{ env.INFO-YT-RVE }}
+          tag_name: YT-Revanced-Extended
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
           
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2

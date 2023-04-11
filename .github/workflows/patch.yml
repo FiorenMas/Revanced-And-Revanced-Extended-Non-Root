@@ -15,7 +15,8 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
           
-       
+      - name: Patch Youtube Revanced & Revanced Extended non-root
+        run: bash ytm/patch-ytm.sh        
 
       - name: Patch Youtube Music Revanced & Revanced Extended non-root
         run: bash ytm/patch-ytm.sh    
@@ -54,10 +55,10 @@ jobs:
           YTMRVEVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           rm -rf patches.json    
           echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
-          echo "INFO-YT-RV=Youtube-Revanced-v${YTRVVERSION}" >> $GITHUB_ENV
-          echo "INFO-YT-RVE=Youtube-Revanced Extended-v${YTRVEVERSION}" >> $GITHUB_ENV
-          echo "INFO-YTM-RV=Youtube-Music-Revanced-v${YTMRVVERSION}" >> $GITHUB_ENV
-          echo "INFO-YTM-RVE=Youtube-Music-Revanced Extended-v${YTMRVEVERSION}" >> $GITHUB_ENV
+          echo "INFO-YT-RV=Youtube Revanced v${YTRVVERSION}" >> $GITHUB_ENV
+          echo "INFO-YT-RVE=Youtube Revanced Extended v${YTRVEVERSION}" >> $GITHUB_ENV
+          echo "INFO-YTM-RV=Youtube Music Revanced v${YTMRVVERSION}" >> $GITHUB_ENV
+          echo "INFO-YTM-RVE=Youtube Music Revanced Extended v${YTMRVEVERSION}" >> $GITHUB_ENV
           
       - uses: vishnudxb/cancel-workflow@v1.2
         if: failure()

@@ -29,6 +29,7 @@ jobs:
           | wget -qi -
           YT-RVVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
           rm -rf patches.json
+          
           curl -s https://api.github.com/repos/inotia00/revanced-patches/releases/latest \
           | grep "browser_download_url.*json" \
           | cut -d : -f 2,3 \
@@ -44,6 +45,7 @@ jobs:
           | wget -qi -
           YTM-RVVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           rm -rf patches.json
+          
           curl -s https://api.github.com/repos/inotia00/revanced-patches/releases/latest \
           | grep "browser_download_url.*json" \
           | cut -d : -f 2,3 \

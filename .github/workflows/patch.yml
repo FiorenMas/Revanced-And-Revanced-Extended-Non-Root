@@ -16,7 +16,7 @@ jobs:
           java-version: '17'
           
       - name: Patch Youtube Revanced & Revanced Extended non-root
-        run: bash ytm/patch-ytm.sh        
+        run: bash yt/patch-yt.sh        
 
       - name: Patch Youtube Music Revanced & Revanced Extended non-root
         run: bash ytm/patch-ytm.sh    

@@ -15,8 +15,7 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
           
-      - name: Patch Youtube Revanced & Revanced Extended non-root
-        run: bash yt/patch-yt.sh          
+       
 
       - name: Patch Youtube Music Revanced & Revanced Extended non-root
         run: bash ytm/patch-ytm.sh    
@@ -98,7 +97,7 @@ jobs:
       - name: Release Youtube Music Revanced
         uses: softprops/action-gh-release@v1
         with:
-          files: yt-revanced.apk 
+          files: ytm-revanced.apk 
           name: ${{ env.INFO-YTM-RV }}
           tag_name: YT-Revanced
           body_path: ${{ github.workspace }}-CHANGELOG.txt
@@ -108,7 +107,7 @@ jobs:
       - name: Release Youtube Music Revanced Extended
         uses: softprops/action-gh-release@v1
         with:
-          files: yt-revanced-extended.apk
+          files: ytm-revanced-extended.apk
           name: ${{ env.INFO-YTM-RVE }}
           tag_name: YT-Revanced-Extended
           body_path: ${{ github.workspace }}-CHANGELOG.txt

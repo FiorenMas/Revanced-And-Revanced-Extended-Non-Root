@@ -16,9 +16,7 @@ jobs:
           java-version: '17'
       
 
-        
-      - name: Patch Youtube Music Revanced & Revanced Extended non-root
-        run: bash ytm/patch-ytm.sh    
+
         
       - name: Generate Changelog 
         run: |
@@ -43,7 +41,7 @@ jobs:
           | cut -d : -f 2,3 \
           | tr -d \" \
           | wget -qi -
-          YTM-RVVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
+          YTM-RVVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           rm -rf patches.json
           
           curl -s https://api.github.com/repos/inotia00/revanced-patches/releases/latest \
@@ -51,7 +49,7 @@ jobs:
           | cut -d : -f 2,3 \
           | tr -d \" \
           | wget -qi -
-          YTM-RVEVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
+          YTM-RVEVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           rm -rf patches.json
           
           echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt

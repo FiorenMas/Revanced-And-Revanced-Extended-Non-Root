@@ -13,9 +13,9 @@
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YTM-Revanced-Extended/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YTM-Revanced/ytm-revanced.apk)
 
 
-# Download MicroG from inotia00 source !
+# MicroG from inotia00 source:
 
 [![Release](https://img.shields.io/github/v/release/inotia00/VancedMicroG.svg)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
 
 # About
-This repository forked from [@luxysiv](https://github.com/luxysiv/yt-revanced-extended)
+This repository forked from [@luxysiv](https://github.com/luxysiv/yt-revanced-nonroot)

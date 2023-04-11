@@ -4,12 +4,12 @@ set -e
 readonly revanced_name="revanced"
 readonly revanced_user="revanced"
 readonly revanced_patch="ytm/patches-ytm.rv"
-readonly revanced_ytmsversion="" # Input version supported if you need patch specific YT version.Example: "18.03.36"
+readonly revanced_ytmversion="" # Input version supported if you need patch specific YT version.Example: "18.03.36"
 # Set variables for Revanced Extended
 readonly revanced_extended_name="revanced-extended"
 readonly revanced_extended_user="inotia00"
 readonly revanced_extended_patch="ytm/patches-ytm.rve"
-readonly revanced_extended_ytmsversion="" # Input version supported if you need patch specific YT version.Example: "18.07.35"
+readonly revanced_extended_ytmversion="" # Input version supported if you need patch specific YT version.Example: "18.07.35"
 # Function prepare patches keywords
 get_patch() {
     local excluded_start=$(grep -n -m1 'EXCLUDE PATCHES' "$patch_file" | cut -d':' -f1)
@@ -51,11 +51,11 @@ dl_ytm() {
 }
 get_latestytmversion() {
     url="https://www.apkmirror.com/apk/google-inc/youtube-music/"
-    ytmsversion=$(req "$url" - | grep "All version" -A200 | grep app_release | sed 's:.*/youtube-music-::g;s:-release/.*::g;s:-:.:g' | sort -r | head -1)
-    echo "Latest Youtube Music Version: $ytmsversion"
+    ytmversion=$(req "$url" - | grep "All version" -A200 | grep app_release | sed 's:.*/youtube-music-::g;s:-release/.*::g;s:-:.:g' | sort -r | head -1)
+    echo "Latest Youtube Music Version: $ytmversion"
 }
 get_support_version() {
-ytmsversion=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
+ytmversion=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
 }
 # Function Patch APK
 patch_ms() {
@@ -63,10 +63,10 @@ echo "⚙️ Patching YouTube Music..."
 java -jar revanced-cli*.jar \
      -m revanced-integrations*.apk \
      -b revanced-patches*.jar \
-     -a youtube-music-v$ytmsversion.apk \
+     -a youtube-music-v$ytmversion.apk \
      ${patches[@]} \
      --keystore=ks.keystore \
-     -o ytms-$name.apk
+     -o ytm-$name.apk
 }
 # Function clean caches to new build
 clean_cache() {
@@ -84,19 +84,19 @@ for name in $revanced_name $revanced_extended_name ; do
     if [[ "$name" = "$revanced_name" ]]; then
         user="$revanced_user"
         patch_file="$revanced_patch"
-        ytmsversion="$revanced_ytmsversion"
+        ytmversion="$revanced_ytmversion"
     else
         user="$revanced_extended_user"
         patch_file="$revanced_extended_patch"
-        ytmsversion="$revanced_extended_ytmsversion"
+        ytmversion="$revanced_extended_ytmversion"
     fi  
 get_patch
 download_latest_release
  if [[ "$name" = "$revanced_name" ]] ; then
    get_support_version
-   dl_ytm $ytmsversion youtube-music-v$ytmsversion.apk 
+   dl_ytm $ytmversion youtube-music-v$ytmversion.apk 
  else get_latestytmversion 
-  dl_ytm $ytmsversion youtube-music-v$ytmsversion.apk 
+  dl_ytm $ytmversion youtube-music-v$ytmversion.apk 
 fi
 patch_ms
 clean_cache

@@ -3,12 +3,12 @@ set -e
 # Set variables for Revanced
 readonly revanced_name="revanced"
 readonly revanced_user="revanced"
-readonly revanced_patch="patches-ytm.rv"
+readonly revanced_patch="/ytm/patches-ytm.rv"
 readonly revanced_ytmsversion="" # Input version supported if you need patch specific YT version.Example: "18.03.36"
 # Set variables for Revanced Extended
 readonly revanced_extended_name="revanced-extended"
 readonly revanced_extended_user="inotia00"
-readonly revanced_extended_patch="patches-ytm.rve"
+readonly revanced_extended_patch="/ytm/patches-ytm.rve"
 readonly revanced_extended_ytmsversion="" # Input version supported if you need patch specific YT version.Example: "18.07.35"
 # Function prepare patches keywords
 get_patch() {

@@ -100,4 +100,4 @@ if [[ "$name" = "$revanced_name" ]] ; then
 fi
 patch_apk
 clean_cache
-done`
+done

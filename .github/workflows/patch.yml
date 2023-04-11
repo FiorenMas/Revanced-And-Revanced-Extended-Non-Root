@@ -100,7 +100,7 @@ jobs:
         with:
           files: ytm-revanced.apk 
           name: ${{ env.INFO-YTM-RV }}
-          tag_name: YT-Revanced
+          tag_name: YTM-Revanced
           body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -110,7 +110,7 @@ jobs:
         with:
           files: ytm-revanced-extended.apk
           name: ${{ env.INFO-YTM-RVE }}
-          tag_name: YT-Revanced-Extended
+          tag_name: YTM-Revanced-Extended
           body_path: ${{ github.workspace }}-CHANGELOG.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    

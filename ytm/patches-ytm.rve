@@ -1,5 +1,6 @@
 # EXCLUDE PATCHES FROM BELOW
 compact-header
+custom-branding-icon-afn-red
 # INCLUDE PATCHES FROM BELOW
 background-play
 codecs-unlock

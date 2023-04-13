@@ -1,6 +1,5 @@
 # EXCLUDE PATCHES FROM BELOW
 compact-header
-custom-branding-icon-afn-red
 # INCLUDE PATCHES FROM BELOW
 background-play
 codecs-unlock
@@ -10,3 +9,4 @@ minimized-playback-music
 music-video-ads
 tasteBuilder-remover
 upgrade-button-remover
+custom-branding-icon-afn-red

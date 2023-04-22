@@ -46,10 +46,10 @@ jobs:
           YTMRVVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           YTMRVEVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           rm -rf patches.json    
-          echo "[**Change Logs**] (https://github.com/revanced/revanced-patches/releases/latest)
+          echo "[Change Logs] (https://github.com/revanced/revanced-patches/releases/latest)
           Download Below :point_down:
           " > ${{ github.workspace }}-CHANGELOG-rv.txt
-          echo "[**Change Logs**] (https://github.com/revanced/revanced-patches/releases/latest)
+          echo "[Change Logs] (https://github.com/revanced/revanced-patches/releases/latest)
           Download Below :point_down:
           " > ${{ github.workspace }}-CHANGELOG-rve.txt
           echo "INFO-YT-RV=Youtube Revanced v${YTRVVERSION}" >> $GITHUB_ENV

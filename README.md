@@ -15,7 +15,7 @@
 
 # MicroG from inotia00 source:
 
-[![Release](https://img.shields.io/github/v/release/inotia00/VancedMicroG.svg)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
+[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=MicroG&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
 
 # About
 This repository forked from [@luxysiv](https://github.com/luxysiv/yt-revanced-nonroot)

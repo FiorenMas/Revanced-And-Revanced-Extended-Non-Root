@@ -5,6 +5,8 @@ on:
   workflow_dispatch:
 jobs:
   patch:
+    name: Patch Revanced & Revanced Extended
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,11 +17,8 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
           
-      - name: Patch Youtube Revanced & Revanced Extended non-root
-        run: bash yt/patch-yt.sh        
-
-      - name: Patch Youtube Music Revanced & Revanced Extended non-root
-        run: bash ytm/patch-ytm.sh    
+      - name: Patch apk
+        run: bash ./src/patch.sh    
         
       - name: Generate Changelog 
         run: |
@@ -28,7 +27,7 @@ jobs:
           | cut -d : -f 2,3 \
           | tr -d \" \
           | wget -qi -
-          YTRVVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
+          YTRVVERSION=$(jq -r '.[] | select(.name == "video-ads") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
           rm -rf patches.json
           
           curl -s https://api.github.com/repos/inotia00/revanced-patches/releases/latest \
@@ -36,7 +35,7 @@ jobs:
           | cut -d : -f 2,3 \
           | tr -d \" \
           | wget -qi -
-          YTRVEVERSION=$(jq -r '.[] | select(.name == "microg-support") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
+          YTRVEVERSION=$(jq -r '.[] | select(.name == "hide-general-ads") | .compatiblePackages[] | select(.name == "com.google.android.youtube") | .versions[-1]' patches.json)
           rm -rf patches.json
           
           curl -s https://api.github.com/repos/revanced/revanced-patches/releases/latest \
@@ -47,7 +46,12 @@ jobs:
           YTMRVVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           YTMRVEVERSION=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
           rm -rf patches.json    
-          echo "Download Below :point_down:" > ${{ github.workspace }}-CHANGELOG.txt
+          echo "[**Change Logs**] (https://github.com/revanced/revanced-patches/releases/latest)
+          Download Below :point_down:
+          " > ${{ github.workspace }}-CHANGELOG-rv.txt
+          echo "[**Change Logs**] (https://github.com/revanced/revanced-patches/releases/latest)
+          Download Below :point_down:
+          " > ${{ github.workspace }}-CHANGELOG-rve.txt
           echo "INFO-YT-RV=Youtube Revanced v${YTRVVERSION}" >> $GITHUB_ENV
           echo "INFO-YT-RVE=Youtube Revanced Extended v${YTRVEVERSION}" >> $GITHUB_ENV
           echo "INFO-YTM-RV=Youtube Music Revanced v${YTMRVVERSION}" >> $GITHUB_ENV
@@ -71,20 +75,20 @@ jobs:
       - name: Release Youtube Music Revanced
         uses: softprops/action-gh-release@v1
         with:
-          files: ytm-revanced.apk 
+          files: ytms-revanced.apk 
           name: ${{ env.INFO-YTM-RV }}
           tag_name: YTM-Revanced
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
+          body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
       - name: Release Youtube Music Revanced Extended
         uses: softprops/action-gh-release@v1
         with:
-          files: ytm-revanced-extended.apk
+          files: ytms-revanced-extended.apk
           name: ${{ env.INFO-YTM-RVE }}
           tag_name: YTM-Revanced-Extended
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
+          body_path: ${{ github.workspace }}-CHANGELOG-rve.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
           
@@ -94,7 +98,7 @@ jobs:
           files: yt-revanced.apk 
           name: ${{ env.INFO-YT-RV }}
           tag_name: YT-Revanced
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
+          body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
@@ -104,7 +108,7 @@ jobs:
           files: yt-revanced-extended.apk
           name: ${{ env.INFO-YT-RVE }}
           tag_name: YT-Revanced-Extended
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
+          body_path: ${{ github.workspace }}-CHANGELOG-rve.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
           
@@ -114,6 +118,4 @@ jobs:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 0
-          keep_minimum_runs: 5
-                    
-permissions: write-all
+          keep_minimum_runs: 5                    

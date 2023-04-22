@@ -49,7 +49,7 @@ jobs:
           echo "[Change Log](https://github.com/revanced/revanced-patches/releases/latest)
           **Download Below** :point_down:
           " > ${{ github.workspace }}-CHANGELOG-rv.txt
-          echo "[Change Log](https://github.com/revanced/revanced-patches/releases/latest)
+          echo "[Change Log](https://github.com/inotia00/revanced-patches/releases/latest)
           **Download Below** :point_down:
           " > ${{ github.workspace }}-CHANGELOG-rve.txt
           echo "INFO-YT-RV=Youtube Revanced v${YTRVVERSION}" >> $GITHUB_ENV

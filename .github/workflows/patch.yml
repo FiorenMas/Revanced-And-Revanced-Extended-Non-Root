@@ -69,6 +69,7 @@ jobs:
         with:
           repo: ${{ github.repository }}
           keep_latest: 0
+          delete_tags: false
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                    

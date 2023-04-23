@@ -8,9 +8,9 @@
 
 # Youtube Music:
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YTM-Revanced-Extended/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YTM-Revanced-Extended/ytm-revanced-extended.apk) 
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YTM-Revanced-Extended/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YTM-Revanced-Extended/ytms-revanced-extended.apk) 
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YTM-Revanced-Extended/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YTM-Revanced/ytm-revanced.apk)
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YTM-Revanced-Extended/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YTM-Revanced/ytms-revanced.apk)
 
 
 # MicroG from inotia00 source:

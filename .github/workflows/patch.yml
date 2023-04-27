@@ -16,10 +16,22 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-          
-      - name: Patch apk
-        run: bash ./src/patch.sh    
-        
+
+      - name: Patch Youtube Revanced & Revanced Extended non-root
+        run: bash src/yt/patch.sh
+
+      - name: Patch Youtube Music Revanced & Revanced Extended non-root
+        run: bash src/ytm/patch.sh
+
+      - name: Patch Tiktok Revanced
+        run: bash src/tiktok/patch.sh
+
+      - name: Patch Twitch Revanced
+        run: bash src/twitch/patch.sh
+
+      - name: Patch Facebook Messenger Revanced
+        run: bash src/messenger/patch.sh
+
       - name: Generate Changelog 
         run: |
           curl -s https://api.github.com/repos/revanced/revanced-patches/releases/latest \
@@ -56,14 +68,14 @@ jobs:
           echo "INFO-YT-RVE=Youtube Revanced Extended v${YTRVEVERSION}" >> $GITHUB_ENV
           echo "INFO-YTM-RV=Youtube Music Revanced v${YTMRVVERSION}" >> $GITHUB_ENV
           echo "INFO-YTM-RVE=Youtube Music Revanced Extended v${YTMRVEVERSION}" >> $GITHUB_ENV
-          
+
       - uses: vishnudxb/cancel-workflow@v1.2
         if: failure()
         with:
           repo: octocat/hello-world
           workflow_id: ${{ github.run_id }}
           access_token: ${{ github.token }}      
-          
+
       - name: Delete Release
         uses: dev-drprasad/delete-older-releases@v0.2.1
         with:
@@ -72,27 +84,27 @@ jobs:
           delete_tags: false
         env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                   
+
       - name: Release Youtube Music Revanced
         uses: softprops/action-gh-release@v1
         with:
-          files: ytms-revanced.apk 
+          files: ytm-revanced.apk 
           name: ${{ env.INFO-YTM-RV }}
           tag_name: YTM-Revanced
           body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Release Youtube Music Revanced Extended
         uses: softprops/action-gh-release@v1
         with:
-          files: ytms-revanced-extended.apk
+          files: ytm-revanced-extended.apk
           name: ${{ env.INFO-YTM-RVE }}
           tag_name: YTM-Revanced-Extended
           body_path: ${{ github.workspace }}-CHANGELOG-rve.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
-          
+
       - name: Release Youtube Revanced
         uses: softprops/action-gh-release@v1
         with:
@@ -102,7 +114,7 @@ jobs:
           body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Release Youtube Revanced Extended
         uses: softprops/action-gh-release@v1
         with:
@@ -111,8 +123,38 @@ jobs:
           tag_name: YT-Revanced-Extended
           body_path: ${{ github.workspace }}-CHANGELOG-rve.txt
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-          
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}            
+
+      - name: Release Tiktok Revanced
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Tiktok.apk
+          name: "Tiktok"
+          tag_name: Tiktok-Revanced
+          body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+
+      - name: Release Twitch Revanced
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Twitch.apk
+          name: "Twitch"
+          tag_name: Twitch-Revanced
+          body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Release Facebook Messenger Revanced
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Messenger.apk
+          name: "Facebook Messenger"
+          tag_name: Facebook-Messenger-Revanced
+          body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:

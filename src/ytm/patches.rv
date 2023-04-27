@@ -1,0 +1,12 @@
+# EXCLUDE PATCHES FROM BELOW
+compact-header
+# INCLUDE PATCHES FROM BELOW
+background-play
+codecs-unlock
+exclusive-audio-playback
+hide-get-premium
+minimized-playback-music
+music-video-ads
+tasteBuilder-remover
+upgrade-button-remover
+custom-branding-icon-afn-red

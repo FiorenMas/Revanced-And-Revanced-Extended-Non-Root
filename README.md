@@ -28,7 +28,7 @@
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/Twitch-Revanced/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/Twitch-Revanced/Twitch.apk)
 
-# License
+# License:
 
 [@luxysiv](https://github.com/luxysiv/yt-revanced-nonroot) - [GPL-3.0](https://github.com/luxysiv/revanced-nonroot/blob/main/LICENSE)
 

@@ -1,7 +1,5 @@
 name: Patch Revanced & Revanced Extended 
 on:
-  schedule:
-    - cron: "0 0 */5 * *"
   workflow_dispatch:
 jobs:
   patch:

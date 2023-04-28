@@ -11,6 +11,10 @@ hide-timestamp
 hide-shorts-button
 force-vp9-codec
 optimize-resource
+hide-auto-captions
+hide-comment-component
+hide-mix-playlists
+hide-subscriptions-button
 # INCLUDE PATCHES FROM BELOW
 open-links-externally
 custom-branding-icon-mmt

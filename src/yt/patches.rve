@@ -9,6 +9,8 @@ hide-watch-in-vr
 hide-captions-button
 hide-timestamp
 hide-shorts-button
+force-vp9-codec
+optimize-resource
 # INCLUDE PATCHES FROM BELOW
 open-links-externally
 custom-branding-icon-mmt

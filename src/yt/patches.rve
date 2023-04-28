@@ -15,6 +15,10 @@ hide-auto-captions
 hide-comment-component
 hide-mix-playlists
 hide-subscriptions-button
+hide-autoplay-preview
+hide-search-terms
+hide-seekbar
+disable-quic-protocol
 # INCLUDE PATCHES FROM BELOW
 open-links-externally
 custom-branding-icon-mmt

@@ -9,7 +9,7 @@ readonly revanced_ytversion="" # Input version supported if you need patch speci
 readonly revanced_extended_name="revanced-extended"
 readonly revanced_extended_user="inotia00"
 readonly revanced_extended_patch="src/yt/patches.rve"
-readonly revanced_extended_ytversion="" # Input version supported if you need patch specific YT version.Example: "18.07.35"
+readonly revanced_extended_ytversion="18.16.37" # Input version supported if you need patch specific YT version.Example: "18.07.35"
 # Function prepare patches keywords
 get_patch() {
     local excluded_start=$(grep -n -m1 'EXCLUDE PATCHES' "$patch_file" | cut -d':' -f1)

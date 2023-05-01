@@ -55,7 +55,7 @@ get_latestytmversion() {
     echo "Latest Youtube Music Version: $ytmversion"
 }
 get_support_version() {
-ytmversion=$(jq -r '.[] | select(.name == "hide-get-premium") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
+ytmversion=$(jq -r '.[] | select(.name == "hide-general-ads") | .compatiblePackages[] | select(.name == "com.google.android.apps.youtube.music") | .versions[-1]' patches.json)
 }
 # Function Patch APK
 patch_ms() {

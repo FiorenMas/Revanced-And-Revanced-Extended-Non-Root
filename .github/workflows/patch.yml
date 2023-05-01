@@ -21,14 +21,28 @@ jobs:
       - name: Patch Youtube Music Revanced & Revanced Extended non-root
         run: bash src/ytm/patch.sh
 
+      - name: Patch Messenger Revanced
+        env:
+          GMAIL: ${{ secrets.GMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          echo "[google]
+          username = $GMAIL
+          password = $PASSWORD" >> ~/apkeep.ini
+          bash src/messenger/patch.sh  
+
       - name: Patch Tiktok Revanced
-        run: bash src/tiktok/patch.sh
+        env:
+          GMAIL: ${{ secrets.GMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          echo "[google]
+          username = $GMAIL
+          password = $PASSWORD" >> ~/apkeep.ini
+          bash src/tiktok/patch.sh         
 
       - name: Patch Twitch Revanced
         run: bash src/twitch/patch.sh
-
-      - name: Patch Facebook Messenger Revanced
-        run: bash src/messenger/patch.sh
 
       - name: Generate Changelog 
         run: |

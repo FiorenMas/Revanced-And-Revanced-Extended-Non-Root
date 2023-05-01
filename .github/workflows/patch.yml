@@ -15,9 +15,6 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Patch Instagram Revanced
-        run: bash src/instagram/patch.sh
-
       - name: Patch Youtube Revanced & Revanced Extended non-root
         run: bash src/yt/patch.sh
 
@@ -33,6 +30,9 @@ jobs:
           username = $GMAIL
           password = $PASSWORD" >> ~/apkeep.ini
           bash src/messenger/patch.sh  
+
+      - name: Patch Instagram Revanced
+        run: bash src/instagram/patch.sh
 
       - name: Patch Tiktok Revanced
         env:
@@ -186,4 +186,4 @@ jobs:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 0
-          keep_minimum_runs: 5                    
+          keep_minimum_runs: 5

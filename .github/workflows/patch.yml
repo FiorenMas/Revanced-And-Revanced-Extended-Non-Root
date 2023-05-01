@@ -15,6 +15,9 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Patch Instagram Revanced
+        run: bash src/instagram/patch.sh
+
       - name: Patch Youtube Revanced & Revanced Extended non-root
         run: bash src/yt/patch.sh
 
@@ -163,6 +166,16 @@ jobs:
           files: Messenger.apk
           name: "Facebook Messenger"
           tag_name: Facebook-Messenger-Revanced
+          body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Release Instagram Revanced
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Instagram.apk
+          name: "Instagram"
+          tag_name: Instagram-Revanced
           body_path: ${{ github.workspace }}-CHANGELOG-rv.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

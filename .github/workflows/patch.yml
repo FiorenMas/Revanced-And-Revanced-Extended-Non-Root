@@ -15,11 +15,11 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Patch Youtube Music Revanced & Revanced Extended non-root
-        run: bash src/ytm/patch.sh
-
       - name: Patch Youtube Revanced & Revanced Extended non-root
         run: bash src/yt/patch.sh
+
+      - name: Patch Youtube Music Revanced & Revanced Extended non-root
+        run: bash src/ytm/patch.sh
 
       - name: Patch Messenger Revanced
         env:

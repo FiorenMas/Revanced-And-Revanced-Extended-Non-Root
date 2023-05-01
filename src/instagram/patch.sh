@@ -17,7 +17,7 @@ curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.co
 
 echo "⏬ Downloading Instagram..."
 chmod +x ${DIR_TMP}/apkeep
-${DIR_TMP}/apkeep -a com.instagram.android -d google-play -o split_apk=false,locale=vi_VN -i ~/apkeep.ini .
+${DIR_TMP}/apkeep -a com.instagram.android@277.0.0.17.107 .
 
 echo "⚙️ Patching Instagram..."
-java -jar revanced-cli*.jar -m revanced-integrations*.apk -b revanced-patches*.jar ${EXCLUDE_PATCHES[@]} -a com.instagram.android.apk --keystore=ks.keystore -o Instagram.apk
+java -jar revanced-cli*.jar -m revanced-integrations*.apk -b revanced-patches*.jar ${EXCLUDE_PATCHES[@]} -a com.instagram.android@277.0.0.17.107.apk --keystore=ks.keystore -o Instagram.apk

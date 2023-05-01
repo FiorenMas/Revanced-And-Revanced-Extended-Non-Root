@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 # Set variables for Revanced
+readonly revanced_name="revanced"
 readonly revanced_user="revanced"
 readonly revanced_patch="src/ytm/patches.rv"
 readonly revanced_ytmversion="" # Input version supported if you need patch specific YT version.Example: "18.03.36"

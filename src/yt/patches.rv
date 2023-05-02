@@ -1,6 +1,6 @@
 # EXCLUDE PATCHES FROM BELOW
 custom-video-buffer
-debugging
+enable-debugging
 hide-my-mix
 hide-autoplay-button
 premium-heading

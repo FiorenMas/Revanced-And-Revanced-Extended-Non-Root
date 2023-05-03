@@ -2,15 +2,15 @@
 
 # Youtube:
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YT-Revanced-Extended/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YT-Revanced-Extended/yt-revanced-extended.apk) 
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended.apk) 
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YT-Revanced/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YT-Revanced/yt-revanced.apk)
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk)
 
 # Youtube Music:
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YTM-Revanced-Extended/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YTM-Revanced-Extended/ytm-revanced-extended.apk) 
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-revanced-extended) 
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/YTM-Revanced-Extended/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/YTM-Revanced/ytm-revanced.apk)
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-revanced.apk)
 
 # MicroG from inotia00 source:
 
@@ -18,20 +18,27 @@
 
 # Instagram:
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/Instagram-Revanced/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/Instagram-Revanced/Instagram.apk)
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/instagram-revanced.apk)
 
 # Facebook Messenger:
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/Facebook-Messenger-Revanced/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/Facebook-Messenger-Revanced/Messenger.apk)
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/messenger-revanced.apk)
 
 # TikTok:
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/Tiktok-Revanced/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/Tiktok-Revanced/Tiktok.apk)
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tiktok-revanced.apk)
 
 # Twitch:
 
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/Twitch-Revanced/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/Twitch-Revanced/Twitch.apk)
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitch-revanced.apk)
 
+# Reddit:
+
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced.apk)
+
+# Windy:
+
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/windy-revanced.apk)
 
 # License:
 

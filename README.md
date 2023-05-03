@@ -1,4 +1,4 @@
-<p align="center"> <img src="https://raw.githubusercontent.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/main/Banner.png" /> </p>
+<p align="center"> <img src="https://raw.githubusercontent.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/main/src/Banner.png" /> </p>
 
 # Youtube:
 

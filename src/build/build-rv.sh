@@ -12,7 +12,7 @@ asset=$(echo "$release" | jq -r '.assets[] | select(.name == "revanced-version.t
 curl -sL -O "$asset"
 if diff -q revanced-version.txt new.txt >/dev/null ; then
 echo "Old patch!!! Not build"
-exit 0
+exit 1
 else
 rm -f *.txt
 

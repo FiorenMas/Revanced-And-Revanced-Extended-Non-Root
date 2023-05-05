@@ -1,3 +1,5 @@
+[![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://visitcount.itsvg.in)
+
 <p align="center"> <img src="https://raw.githubusercontent.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/main/src/Banner.png" /> </p>
 
 # Youtube:

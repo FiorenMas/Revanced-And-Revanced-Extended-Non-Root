@@ -3,6 +3,7 @@ debugging
 custom-seekbar-color
 disable-startup-shorts-player
 disable-quic-protocol
+disable-hdr-video
 enable-old-quality-layout
 force-premium-heading
 force-vp9-codec

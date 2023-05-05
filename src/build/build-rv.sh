@@ -36,7 +36,8 @@ patch "reddit" "reddit-revanced"
 
 # Patch Instagram
 get_patches_key "instagram"
-get_apk_arch_with_ver "instagram" "271.1.0.21.84" "instagram/instagram-instagram/instagram-instagram"
+version="271.1.0.21.84"
+get_apk_arch "instagram" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram"
 patch "instagram" "instagram-revanced"
 
 # Patch Messenger

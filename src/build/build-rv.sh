@@ -19,9 +19,10 @@ rm -f *.txt
 dl_gh "revanced" 
 
 # Patch Twitter
-#get_patches_key "twitter"
-#get_apk_with_ver "twitter" "9.86.0-release.0" "twitter-inc/twitter/twitter"
-#patch "twitter" "twitter-revanced"
+get_patches_key "twitter"
+version="9.86.0-release.0"
+get_apk "twitter" "twitter" "twitter-inc/twitter/twitter"
+patch "twitter" "twitter-revanced"
 
 # Patch Windy
 get_patches_key "windy"

@@ -54,18 +54,6 @@ get_apk() {
   echo "$1 version: ${last_ver}"
   echo "downloaded from: [APKMirror - $1]($dl_url)"
 }
-get_apk_with_ver() {
-  echo "Downloading $1"
-  local version
-  version="$2"
-  echo "Choosing version '${version}'"
-  local base_apk="$1.apk"
-  dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
-			"APK</span>[^@]*@\([^#]*\)" \
-			"$base_apk")
-  echo "$1 version: ${version}"
-  echo "downloaded from: [APKMirror - $1]($dl_url)"
-}
 get_apk_arch() {
   echo "Downloading $1 (${arm64-v8a})"
   local last_ver
@@ -78,18 +66,6 @@ get_apk_arch() {
 			"$regexp_arch" \
 			"$base_apk")
   echo "$1 (${arm64-v8a}) version: ${last_ver}"
-  echo "downloaded from: [APKMirror - $1 ${arm64-v8a}]($dl_url)"
-}
-get_apk_arch_with_ver() {
-  echo "Downloading $1 (${arm64-v8a})"
-  local version
-  version="$2"
-  local base_apk="$1.apk"
-  local regexp_arch='arm64-v8a</div>[^@]*@\([^"]*\)'
-  dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
-			"$regexp_arch" \
-			"$base_apk")
-  echo "$1 (${arm64-v8a}) version: ${version}"
   echo "downloaded from: [APKMirror - $1 ${arm64-v8a}]($dl_url)"
 }
 get_ver() {

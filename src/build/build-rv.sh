@@ -19,21 +19,10 @@ rm -f *.txt
 dl_gh "revanced" 
 
 # Patch Twitter
-get_patches_key "twitter"
-version="9.86.0-release.0"
-get_apk "twitter" "twitter" "twitter-inc/twitter/twitter"
-patch "twitter" "twitter-revanced"
-
-# Patch Windy
-get_patches_key "windy"
-get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast"
-patch "windy" "windy-revanced"
-
-# Patch Reddit
-get_patches_key "reddit"
-get_ver "general-reddit-ads" "com.reddit.frontpage"
-get_apk "reddit" "reddit" "redditinc/reddit/reddit"
-patch "reddit" "reddit-revanced"
+#get_patches_key "twitter"
+#version="9.86.0-release.0"
+#get_apk "twitter" "twitter" "twitter-inc/twitter/twitter"
+#patch "twitter" "twitter-revanced"
 
 # Patch Instagram
 get_patches_key "instagram"
@@ -45,6 +34,17 @@ patch "instagram" "instagram-revanced"
 get_patches_key "messenger"
 get_apk_arch "messenger" "messenger" "facebook-2/messenger/messenger"
 patch "messenger" "messenger-revanced"
+
+# Patch Windy
+get_patches_key "windy"
+get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast"
+patch "windy" "windy-revanced"
+
+# Patch Reddit
+get_patches_key "reddit"
+get_ver "general-reddit-ads" "com.reddit.frontpage"
+get_apk "reddit" "reddit" "redditinc/reddit/reddit"
+patch "reddit" "reddit-revanced"
 
 # Patch Twitch 
 get_patches_key "twitch"

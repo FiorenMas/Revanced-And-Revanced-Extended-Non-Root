@@ -13,9 +13,6 @@
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-revanced.apk)
 
-# MicroG
-<details>
-  
 # [MicroG from inotia00 source:](https://github.com/inotia00/VancedMicroG)
 
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
@@ -26,7 +23,6 @@
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=arm64-v8a&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg_arm64-v8a.apk)
   
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=armeabi-v7a&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg_armeabi-v7a.apk)
-</details>
 
 # [Instagram:](https://play.google.com/store/apps/details?id=com.instagram.android)
 

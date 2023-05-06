@@ -17,19 +17,19 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-      
+
       - name: Patch apk
         run: bash src/build/build-rv.sh  
-        
+
       - name: Generate release info
         run: | 
           echo "
+          [![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://visitcount.itsvg.in)
           **Change log** :point_down:
           [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
           [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
           "> ${{ github.workspace }}-CHANGELOG.txt
-         
-          
+
       - name: Release
         uses: softprops/action-gh-release@v0.1.15
         with:
@@ -49,7 +49,7 @@ jobs:
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
@@ -70,19 +70,19 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-      
+
       - name: Patch apk
         run: bash src/build/build-rve.sh  
-        
+
       - name: Generate release info
         run: | 
           echo "
+          [![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://visitcount.itsvg.in)
           **Change log** :point_down:
           [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
           [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
           "> ${{ github.workspace }}-CHANGELOG.txt
-         
-          
+
       - name: Release
         uses: softprops/action-gh-release@v0.1.15
         with:
@@ -102,7 +102,7 @@ jobs:
           delete_tags: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:

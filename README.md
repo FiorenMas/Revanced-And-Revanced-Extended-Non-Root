@@ -17,6 +17,9 @@
 
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=MicroG&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
 
+# mMicroG from inotia00 source:
+[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=mMicroG&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg.apk)
+
 # Instagram:
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/instagram-revanced.apk)

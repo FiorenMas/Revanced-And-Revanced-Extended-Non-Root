@@ -1,56 +1,68 @@
-[![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://visitcount.itsvg.in)
-<p align="center"> <img src="https://raw.githubusercontent.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/main/src/Banner.png" /> </p>
+<div align="center">
 
-# [Youtube:](https://play.google.com/store/apps/details?id=com.google.android.youtube)
+[![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://visitcount.itsvg.in)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ea7a68dbfe8b4429ad8f84e49d3a4173)](https://app.codacy.com/gh/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+![GitHub](https://img.shields.io/github/license/fiorenmas/Revanced-And-Revanced-Extended-Non-Root?color=%23008000)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fiorenmas/Revanced-And-Revanced-Extended-Non-Root/patch.yml)
+![GitHub last commit](https://img.shields.io/github/last-commit/fiorenmas/Revanced-And-Revanced-Extended-Non-Root)
+[![](https://img.shields.io/badge/Telegram-2CA5E0)](https://t.me/fioren374)
+  
+</div>
+
+# [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended.apk) 
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk)
 
-# [Youtube Music:](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
+
+# [![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-revanced-extended.apk) 
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-revanced.apk)
 
-# [MicroG from inotia00 source:](https://github.com/inotia00/VancedMicroG)
+
+# [MicroG:](https://github.com/inotia00/VancedMicroG)
 
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
 
-# [mMicroG from inotia00 source:](https://github.com/inotia00/mMicroG/)
+# [mMicroG:](https://github.com/inotia00/mMicroG/)
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg.apk)
 
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=arm64-v8a&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg_arm64-v8a.apk)
   
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=armeabi-v7a&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg_armeabi-v7a.apk)
 
-# [Twitter:](https://play.google.com/store/apps/details?id=com.twitter.android)
+
+# [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://play.google.com/store/apps/details?id=com.twitter.android)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-revanced.apk)
 
-# [Instagram:](https://play.google.com/store/apps/details?id=com.instagram.android)
+
+# [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://play.google.com/store/apps/details?id=com.instagram.android)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/instagram-revanced.apk)
 
-# [Facebook Messenger:](https://play.google.com/store/apps/details?id=com.facebook.orca)
+
+# [![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.orca)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/messenger-revanced.apk)
 
-# [TikTok:](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
+
+# [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tiktok-revanced.apk)
 
-# [Twitch:](https://play.google.com/store/apps/details?id=tv.twitch.android.app)
+
+# [![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](https://play.google.com/store/apps/details?id=tv.twitch.android.app)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitch-revanced.apk)
 
-# [Reddit:](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
+
+# [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced.apk)
-
-# [Windy:](https://play.google.com/store/apps/details?id=co.windyapp.android)
-
-[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/windy-revanced.apk)
 
 # License:
 

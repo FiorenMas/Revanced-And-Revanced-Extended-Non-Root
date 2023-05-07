@@ -2,9 +2,7 @@
 
 [![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://visitcount.itsvg.in)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ea7a68dbfe8b4429ad8f84e49d3a4173)](https://app.codacy.com/gh/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
-![GitHub](https://img.shields.io/github/license/fiorenmas/Revanced-And-Revanced-Extended-Non-Root?color=%23008000)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fiorenmas/Revanced-And-Revanced-Extended-Non-Root/patch.yml)
-![GitHub last commit](https://img.shields.io/github/last-commit/fiorenmas/Revanced-And-Revanced-Extended-Non-Root)
 [![](https://img.shields.io/badge/Telegram-2CA5E0)](https://t.me/fioren374)
   
 </div>

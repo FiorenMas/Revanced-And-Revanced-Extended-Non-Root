@@ -10,6 +10,21 @@ dl_gh() {
     done
 echo "All assets downloaded"
 }
+dl_gh1() {
+    for repo in revanced-patches revanced-cli ; do
+    asset_urls=$(wget -qO- "https://api.github.com/repos/$1/$repo/releases/latest" \
+                 | jq -r '.assets[] | "\(.browser_download_url) \(.name)"')
+        while read -r url names
+        do
+            echo "Downloading $names from $url"
+            wget -q -O "$names" $url
+        done <<< "$asset_urls"
+    done
+echo "All assets downloaded"
+}
+dl_revanced_integrations() {
+	curl --retry 10 --retry-max-time 60 -H "Cache-Control: no-cache" -fsSL github.com/$1/revanced-integrations/releases/download/v$2/revanced-integrations-$2.apk -o revanced-integrations-$2.apk
+}
 get_patches_key() {
     EXCLUDE_PATCHES=()
         for word in $(cat src/patches/$1/exclude-patches) ; do

@@ -24,6 +24,10 @@
   
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=armeabi-v7a&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg_armeabi-v7a.apk)
 
+# [Twitter:](https://play.google.com/store/apps/details?id=com.twitter.android)
+
+[![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-revanced.apk)
+
 # [Instagram:](https://play.google.com/store/apps/details?id=com.instagram.android)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/instagram-revanced.apk)

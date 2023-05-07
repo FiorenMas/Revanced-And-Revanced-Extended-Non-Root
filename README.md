@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/dd2d761b285e422b9b7d7f9cece4ca89)](https://app.codacy.com/gh/FiorenMas/Revanced-And-Revanced-Extended-Non-Root?utm_source=github.com&utm_medium=referral&utm_content=FiorenMas/Revanced-And-Revanced-Extended-Non-Root&utm_campaign=Badge_Grade)
 [![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://visitcount.itsvg.in)
 <p align="center"> <img src="https://raw.githubusercontent.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/main/src/Banner.png" /> </p>
 

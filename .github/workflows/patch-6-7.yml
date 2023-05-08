@@ -1,9 +1,13 @@
-name: Patch Twitter
+name: Patch Revanced Extended for Android 6 & 7
 on:
+#  push:
+  schedule:
+    - cron: "0 10 */10 * *"
   workflow_dispatch:
 jobs:
-  Twitter:
-    name: Patch Revanced 
+
+  patch2:
+    name: Patch Revanced Extended for Android 6 & 7
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
@@ -15,8 +19,8 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Patch Twitter
-        run: bash src/build/twitter.sh
+      - name: Patch apk
+        run: bash src/build/build-rve-android-6-7.sh  
 
       - name: Generate release info
         run: | 
@@ -33,7 +37,7 @@ jobs:
         with:
           files: |
             ./build/*
-            revanced-version.txt
+            revanced-extended-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
           body_path: ${{ github.workspace }}-CHANGELOG.txt
@@ -54,4 +58,4 @@ jobs:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 0
-          keep_minimum_runs: 10
+          keep_minimum_runs: 15

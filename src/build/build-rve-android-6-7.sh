@@ -21,8 +21,8 @@ dl_gh3 "inotia00"
 
 # Patch YouTube Extended
 get_patches_key "youtube-revanced-extended-6-7"
-#version=""
-get_ver "hide-general-ads" "com.google.android.youtube"
+version="17.34.36"
+#get_ver "hide-general-ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "youtube-revanced-extended-android-6-7"
 

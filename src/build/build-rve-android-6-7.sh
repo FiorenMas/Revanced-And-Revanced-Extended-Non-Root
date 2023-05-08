@@ -8,7 +8,7 @@ curl -sL -O "$asset"
 ls revanced-patches*.jar >> new.txt
 rm -f revanced-patches*.jar
 release=$(curl -s "https://api.github.com/repos/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/latest")
-asset=$(echo "$release" | jq -r '.assets[] | select(.name == "revanced-extended-version.txt") | .browser_download_url')
+asset=$(echo "$release" | jq -r '.assets[] | select(.name == "revanced-extended-android-6-7-version.txt") | .browser_download_url')
 curl -sL -O "$asset"
 if diff -q revanced-extended-android-6-7-version.txt new.txt >/dev/null ; then
 echo "Old patch!!! Not build"

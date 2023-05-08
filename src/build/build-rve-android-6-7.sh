@@ -26,5 +26,5 @@ get_ver "hide-general-ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "youtube-revanced-extended-android-6-7"
 
-ls revanced-patches*.jar >> revanced-extended-version.txt
+ls revanced-patches*.jar >> revanced-extended-android-6-7-version.txt
 fi

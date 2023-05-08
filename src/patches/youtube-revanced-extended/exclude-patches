@@ -21,5 +21,7 @@ hide-filmstrip-overlay
 hide-mix-playlists
 hide-seekbar
 hide-search-terms
+hide-load-more-button
+theme
 optimize-resource
 spoof-app-version

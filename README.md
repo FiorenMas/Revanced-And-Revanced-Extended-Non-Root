@@ -69,6 +69,8 @@
 
 [Revanced Patches](https://github.com/revanced/revanced-patches) - [GPL-3.0](https://github.com/revanced/revanced-patches/blob/main/LICENSE)
 
+[Revanced Extended for Android 6 & 7 Patches](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended) - [GPL-3.0](https://github.com/kitadai31/revanced-patches-android6-7/blob/revanced-extended/LICENSE)
+
 [Revanced Extended Patches](https://github.com/inotia00/revanced-patches/tree/revanced-extended) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)
 
 [Revanced CLI](https://github.com/revanced/revanced-cli) - [GPL-3.0](https://github.com/revanced/revanced-cli/blob/main/LICENSE)

@@ -16,7 +16,7 @@ exit 0
 else
 rm -f *.txt
 
-dl_gh "inotia00"
+dl_gh "revanced-patches revanced-cli revanced-integrations" "inotia00" "latest"
 
 # Patch YouTube Extended
 get_patches_key "youtube-revanced-extended"

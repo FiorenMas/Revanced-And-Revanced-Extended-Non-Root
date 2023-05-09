@@ -16,13 +16,7 @@ exit 0
 else
 rm -f *.txt
 
-dl_gh "revanced" 
-
-# Patch Twitter
-#get_patches_key "twitter"
-#version="9.86.0-release.0"
-#get_apk "twitter" "twitter" "twitter-inc/twitter/twitter"
-#patch "twitter" "twitter-revanced"
+dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 # Patch Instagram
 get_patches_key "instagram"
@@ -69,6 +63,14 @@ get_patches_key "youtube-music-revanced"
 get_ver "hide-get-premium" "com.google.android.apps.youtube.music"
 get_apk_arch "youtube-music" "youtube-music" "google-inc/youtube-music/youtube-music"
 patch "youtube-music" "youtube-music-revanced"
+
+# Patch Twitter
+rm -f revanced-integrations*.apk
+dl_gh "revanced-integrations" "revanced" "tags/v0.103.0"
+get_patches_key "twitter"
+version="9.86.0-release.0"
+get_apk "twitter" "twitter" "twitter-inc/twitter/twitter"
+patch "twitter" "twitter-revanced"
 
 ls revanced-patches*.jar >> revanced-version.txt
 fi

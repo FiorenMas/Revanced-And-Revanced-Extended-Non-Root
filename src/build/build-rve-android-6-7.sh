@@ -16,8 +16,8 @@ exit 0
 else
 rm -f *.tx
 
-dl_gh2 "kitadai31"
-dl_gh3 "inotia00"
+dl_gh "revanced-patches-android6-7 revanced-integrations" "kitadai31" "latest"
+dl_gh "revanced-cli" "inotia00" "latest"
 
 # Patch YouTube Extended
 get_patches_key "youtube-revanced-extended-6-7"

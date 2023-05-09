@@ -18,8 +18,10 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 </div>
 
 ---
-### ⚙️ How this repository work?
+### ⚙️ How this repository work?<img src="https://i.imgur.com/cBlTGBt.png" align="right" />
 Simply, all you need to do is choose the app you want to use from the options below and click on the desired button, either 'Revanced' or 'Revanced Extended.' That's all there is to it.
+
+If you want to use the YouTube or YouTube Music app, you need to download and install MicroG or mMircoG. I recommend using MicroG because mMircoG is still in beta.
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 

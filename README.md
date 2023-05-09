@@ -1,3 +1,13 @@
+<h1 align="center">
+  <br>
+  Revanced And Revanced Extended
+  <br>
+</h1>
+
+<h4 align="center">
+They are open-source scripts for patching various apps like YouTube, YouTube Music... However, they are very difficult to use for most users. That's why I created this repository to provide an easier way.
+</h4>
+
 <div align="center">
 
 [![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root)
@@ -8,6 +18,8 @@
 </div>
 
 ---
+### ⚙️ How this repository work?
+Simply, all you need to do is choose the app you want to use from the options below and click on the desired button, either 'Revanced' or 'Revanced Extended.' That's all there is to it.
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 

@@ -23,6 +23,8 @@ Simply, all you need to do is choose the app you want to use from the options be
 
 If you want to use the YouTube or YouTube Music app, you need to download and install MicroG or mMircoG. I recommend using MicroG because mMircoG is still in beta.
 
+All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
+
 ---
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 

@@ -23,6 +23,7 @@ Simply, all you need to do is choose the app you want to use from the options be
 
 If you want to use the YouTube or YouTube Music app, you need to download and install MicroG or mMircoG. I recommend using MicroG because mMircoG is still in beta.
 
+---
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
 [![Release](https://img.shields.io/github/downloads/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/all/total?label=Revanced%20Extended&style=for-the-badge)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended.apk) 

@@ -27,9 +27,7 @@ All the code is open-source, clearly, and the APK files used for patching are do
 
 ---
 <h1 align="center">
-  <br>
-  Download
-  <br>
+Download
 </h1>
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)

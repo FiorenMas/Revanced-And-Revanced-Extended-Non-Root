@@ -94,3 +94,15 @@ patch() {
         exit 1
     fi
 }
+change_arch() {
+    if [ -f "./build/$1.apk" ]; then
+    java -jar revanced-cli*.jar \
+	-b revanced-patches*.jar \
+    -a ./build/$1.apk \
+    --keystore=ks.keystore \
+	$3 \
+    -o ./build/$2.apk
+    else 
+        exit 1
+    fi
+}

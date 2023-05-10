@@ -16,6 +16,20 @@ exit 0
 else
 rm -f *.txt
 
+dl_gh "revanced-patches revanced-integrations" "revanced" "latest"
+dl_gh "revanced-cli" "j-hc" "latest"
+
+# Patch YouTube 
+get_patches_key "youtube-revanced"
+get_ver "video-ads" "com.google.android.youtube"
+get_apk "youtube" "youtube" "google-inc/youtube/youtube"
+patch "youtube" "youtube-revanced"
+change_arch "youtube-revanced" "youtube-revanced-arm64-v8a" "--rip-lib x86_64 --rip-lib x86 --rip-lib armeabi-v7a"
+change_arch "youtube-revanced" "youtube-revanced-armeabi-v7a" "--rip-lib x86_64 --rip-lib x86 --rip-lib arm64-v8a"
+change_arch "youtube-revanced" "youtube-revanced-x86_64" "--rip-lib x86 --rip-lib armeabi-v7a --rip-lib arm64-v8a"
+change_arch "youtube-revanced" "youtube-revanced-x86" "--rip-lib x86_64 --rip-lib armeabi-v7a --rip-lib arm64-v8a"
+
+rm -f revanced-cli* revanced-patches* revanced-integrations*
 dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 # Patch Instagram
@@ -51,12 +65,6 @@ get_patches_key "tiktok"
 get_ver "sim-spoof" "com.ss.android.ugc.trill"
 get_apk "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 patch "tiktok" "tiktok-revanced"
-
-# Patch YouTube 
-get_patches_key "youtube-revanced"
-get_ver "video-ads" "com.google.android.youtube"
-get_apk "youtube" "youtube" "google-inc/youtube/youtube"
-patch "youtube" "youtube-revanced"
 
 # Patch YouTube Music 
 get_patches_key "youtube-music-revanced"

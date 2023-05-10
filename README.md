@@ -19,7 +19,7 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 
 ---
 ### ⚙️ How this repository work?<img src="https://i.imgur.com/cBlTGBt.png" align="right" />
-Simply, all you need to do is choose the app you want to use from the options below and click on the desired button, either 'Revanced' or 'Revanced Extended.' That's all there is to it.
+Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's architecture is, choose 'All Architectures'. That's all there is to it.
 
 If you want to use the YouTube or YouTube Music app, you need to download and install MicroG or mMircoG. I recommend using MicroG because mMircoG is still in beta.
 
@@ -56,7 +56,7 @@ Download
 
 [x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-x86_64.apk)
 
-## Revanced Extended For Android 6 & 7
+## Revanced Extended For Android 6 & 7:
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended-android-6-7.apk)
 

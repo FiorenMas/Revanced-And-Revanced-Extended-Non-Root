@@ -128,7 +128,6 @@ Download
 ---
 
 # ⚠️ License:
-<details>
 
 [@luxysiv](https://github.com/luxysiv/yt-revanced-nonroot) - [GPL-3.0](https://github.com/luxysiv/revanced-nonroot/blob/main/LICENSE)
 
@@ -151,5 +150,3 @@ Download
 [Revanced Extended for Android 6 & 7 Integrations](https://github.com/kitadai31/revanced-integrations) - [GPL-3.0](https://github.com/kitadai31/revanced-integrations/blob/revanced-extended/LICENSE)
 
 [Revanced CLI - j-hc](https://github.com/j-hc/revanced-cli) - [GPL-3.0](https://github.com/j-hc/revanced-cli/blob/main/LICENSE)
-
-</details>

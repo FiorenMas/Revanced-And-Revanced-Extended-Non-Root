@@ -131,6 +131,10 @@ Download
 
 [@luxysiv](https://github.com/luxysiv/yt-revanced-nonroot) - [GPL-3.0](https://github.com/luxysiv/revanced-nonroot/blob/main/LICENSE)
 
+[revanced-build-template](https://github.com/n0k0m3/revanced-build-template) [GPL-3.0](https://github.com/n0k0m3/revanced-build-template/blob/main/LICENSE)
+
+[revanced-magisk-module](https://github.com/j-hc/revanced-magisk-module) [GPL-3.0](https://github.com/j-hc/revanced-magisk-module/blob/main/LICENSE)
+
 [Revanced Patches](https://github.com/revanced/revanced-patches) - [GPL-3.0](https://github.com/revanced/revanced-patches/blob/main/LICENSE)
 
 [Revanced Extended Patches](https://github.com/inotia00/revanced-patches/tree/revanced-extended) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)

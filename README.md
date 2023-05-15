@@ -44,7 +44,7 @@ Download
 
 [x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-x86_64.apk)
 
-## Revanced Extended: [Support dropped on 16/05/2023](https://t.me/revanced_extended/225)
+## Revanced Extended: [Support dropped on 14/05/2023](https://t.me/revanced_extended/225)
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended.apk)
 

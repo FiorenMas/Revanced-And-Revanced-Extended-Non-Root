@@ -32,6 +32,7 @@ get_largest_ver() {
 	  done
       	if [[ $max = 0 ]]; then echo ""; else echo "$max"; fi
 }
+
 dl_apk() {
   local url=$1 regexp=$2 output=$3
   url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"

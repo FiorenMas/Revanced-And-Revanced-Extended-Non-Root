@@ -17,9 +17,15 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-
+      - name: Print username
+        run: |
+         echo "The username is ${{ github.actor }}"
+         echo "The repository name is ${{ github.repository }}"
+        
       - name: Patch apk
         run: bash src/build/build-rv.sh  
+        env:
+          repository: ${{ github.repository }}
 
       - name: Generate release info
         run: | 
@@ -73,6 +79,8 @@ jobs:
 
       - name: Patch apk
         run: bash src/build/build-rve.sh  
+        env:
+          repository: ${{ github.repository }}
 
       - name: Generate release info
         run: | 
@@ -126,6 +134,8 @@ jobs:
 
       - name: Patch apk
         run: bash src/build/build-rve-android-6-7.sh  
+        env:
+          repository: ${{ github.repository }}
 
       - name: Generate release info
         run: | 

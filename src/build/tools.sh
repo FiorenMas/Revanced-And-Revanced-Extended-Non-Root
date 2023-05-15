@@ -1,12 +1,11 @@
 dl_gh() {
     for repo in $1 ; do
-    asset_urls=$(wget -qO- "https://api.github.com/repos/$2/$repo/releases/$3" \
-                 | jq -r '.assets[] | "\(.browser_download_url) \(.name)"')
-        while read -r url names
-        do
-            echo "Downloading $names from $url"
-            wget -q -O "$names" $url
-        done <<< "$asset_urls"
+    wget -qO- "https://api.github.com/repos/$2/$repo/releases/$3" \
+    | jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
+    | while read -r url names; do
+        echo "Downloading $names from $url"
+        wget -q -O "$names" $url
+    done
     done
 echo "All assets downloaded"
 }

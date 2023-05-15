@@ -17,10 +17,6 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-      - name: Print username
-        run: |
-         echo "The username is ${{ github.actor }}"
-         echo "The repository name is ${{ github.repository }}"
         
       - name: Patch apk
         run: bash src/build/build-rv.sh  

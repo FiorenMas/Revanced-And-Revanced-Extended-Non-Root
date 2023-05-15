@@ -85,7 +85,7 @@ patch() {
     -a $1.apk \
     ${EXCLUDE_PATCHES[@]} \
     ${INCLUDE_PATCHES[@]} \
-    --keystore=ks.keystore \
+    --keystore=./src/ks.keystore \
     -o ./build/$2.apk
     unset version
     unset EXCLUDE_PATCHES
@@ -94,12 +94,20 @@ patch() {
         exit 1
     fi
 }
+
+archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
+libs=("x86_64 x86 armeabi-v7a" "x86_64 x86 arm64-v8a" "x86 armeabi-v7a arm64-v8a" "x86_64 armeabi-v7a arm64-v8a")
+gen_rip_libs() {
+    for lib in $@; do
+        echo -n "--rip-lib $lib "
+    done
+}
 change_arch() {
     if [ -f "./build/$1.apk" ]; then
     java -jar revanced-cli*.jar \
 	-b revanced-patches*.jar \
     -a ./build/$1.apk \
-    --keystore=ks.keystore \
+    --keystore=./src/ks.keystore \
 	$3 \
     -o ./build/$2.apk
     else 

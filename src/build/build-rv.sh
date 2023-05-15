@@ -16,21 +16,13 @@ exit 0
 else
 rm -f *.txt
 
-dl_gh "revanced-patches revanced-integrations" "revanced" "latest"
-dl_gh "revanced-cli" "j-hc" "latest"
+dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 # Patch YouTube 
 get_patches_key "youtube-revanced"
 get_ver "video-ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "youtube-revanced"
-change_arch "youtube-revanced" "youtube-revanced-arm64-v8a" "--rip-lib x86_64 --rip-lib x86 --rip-lib armeabi-v7a"
-change_arch "youtube-revanced" "youtube-revanced-armeabi-v7a" "--rip-lib x86_64 --rip-lib x86 --rip-lib arm64-v8a"
-change_arch "youtube-revanced" "youtube-revanced-x86_64" "--rip-lib x86 --rip-lib armeabi-v7a --rip-lib arm64-v8a"
-change_arch "youtube-revanced" "youtube-revanced-x86" "--rip-lib x86_64 --rip-lib armeabi-v7a --rip-lib arm64-v8a"
-
-rm -f revanced-cli* revanced-patches* revanced-integrations*
-dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 # Patch Instagram
 get_patches_key "instagram"
@@ -79,6 +71,13 @@ get_patches_key "twitter"
 version="9.86.0-release.0"
 get_apk "twitter" "twitter" "twitter-inc/twitter/twitter"
 patch "twitter" "twitter-revanced"
+
+# Change architecture
+rm -f revanced-cli*
+dl_gh "revanced-cli" "j-hc" "latest"
+for i in {0..3}; do
+    change_arch "youtube-revanced" "youtube-revanced-${archs[i]}" "$(gen_rip_libs ${libs[i]})"
+done
 
 ls revanced-patches*.jar >> revanced-version.txt
 fi

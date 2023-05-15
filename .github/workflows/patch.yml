@@ -1,4 +1,4 @@
-name: Patch Revanced 
+name: Patch
 on:
 #  push:
   schedule:
@@ -89,6 +89,59 @@ jobs:
           files: |
             ./build/*
             revanced-extended-version.txt
+          name: Revanced & Revanced Extended
+          tag_name: all
+          body_path: ${{ github.workspace }}-CHANGELOG.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+
+      - name: Delete older releases
+        uses: dev-drprasad/delete-older-releases@v0.2.1
+        with:
+          keep_latest: 1
+          delete_tags: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 0
+          keep_minimum_runs: 15
+          
+  patch3:
+    name: Patch Revanced Extended for Android 6 & 7
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up jdk
+        uses: actions/setup-java@v3.11.0
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Patch apk
+        run: bash src/build/build-rve-android-6-7.sh  
+
+      - name: Generate release info
+        run: | 
+          echo "
+          **Change log** :point_down:
+          [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
+          [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
+          [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases/latest)
+          "> ${{ github.workspace }}-CHANGELOG.txt
+
+      - name: Release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          files: |
+            ./build/*
+            revanced-extended-android-6-7-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
           body_path: ${{ github.workspace }}-CHANGELOG.txt

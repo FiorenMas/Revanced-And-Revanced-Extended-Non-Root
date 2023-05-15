@@ -20,13 +20,14 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "inotia00" "latest"
 
 # Patch YouTube Extended
 get_patches_key "youtube-revanced-extended"
-#version=""
-get_ver "hide-general-ads" "com.google.android.youtube"
+version="18.17.43"
+#get_ver "hide-general-ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "youtube-revanced-extended"
 
 # Patch YouTube Music Extended 
 get_patches_key "youtube-music-revanced-extended"
+version="6.01.55"
 get_apk_arch "youtube-music" "youtube-music" "google-inc/youtube-music/youtube-music"
 patch "youtube-music" "youtube-music-revanced-extended"
 

@@ -11,7 +11,7 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 <div align="center">
 
 [![](https://visitcount.itsvg.in/api?id=Fioren&label=Visitors&color=6&icon=5&pretty=true)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ea7a68dbfe8b4429ad8f84e49d3a4173)](https://app.codacy.com/gh/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ea7a68dbfe8b4429ad8f84e49d3a4173)](https://app.codacy.com/gh/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/files)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fiorenmas/Revanced-And-Revanced-Extended-Non-Root/patch.yml)
 [![](https://img.shields.io/badge/Telegram-2CA5E0)](https://t.me/fioren374)
   

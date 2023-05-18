@@ -30,7 +30,7 @@ patch "youtube-music" "youtube-music-revanced-extended"
 rm -f ./revanced-cli*
 dl_gh "revanced-cli" "j-hc" "latest"
 for i in {0..3}; do
-    change_arch "youtube-revanced-extended" "youtube-revanced-extended-${archs[i]}" "$(gen_rip_libs ${libs[i]})"
+	change_arch "$youtube-revanced-extended" "$youtube-revanced-extended-${archs[i]}" "$(gen_rip_libs "${libs[i]}")"
 done
 
 ls revanced-patches*.jar >> revanced-extended-version.txt

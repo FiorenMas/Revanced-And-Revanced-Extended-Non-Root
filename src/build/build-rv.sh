@@ -6,7 +6,7 @@ curl -sL -O $(curl -s "https://api.github.com/repos/revanced/revanced-patches/re
 ls revanced-patches*.jar >> new.txt
 curl -sL -O $(curl -s "https://api.github.com/repos/$repository/releases/latest" | jq -r '.assets[] | select(.name == "revanced-version.txt") | .browser_download_url')
 if diff -q revanced-version.txt new.txt >/dev/null ; then
-rm -f revanced-patches*.jar *.txt
+rm -f ./revanced-patches*.jar ./*.txt
 echo "Old patch!!! Not build"
 exit 0
 else
@@ -60,7 +60,7 @@ get_apk_arch "youtube-music" "youtube-music" "google-inc/youtube-music/youtube-m
 patch "youtube-music" "youtube-music-revanced"
 
 # Patch Twitter
-rm -f revanced-integrations*.apk
+rm -f ./revanced-integrations*.apk
 dl_gh "revanced-integrations" "revanced" "tags/v0.103.0"
 get_patches_key "twitter"
 version="9.86.0-release.0"
@@ -68,10 +68,10 @@ get_apk "twitter" "twitter" "twitter-inc/twitter/twitter"
 patch "twitter" "twitter-revanced"
 
 # Change architecture
-rm -f revanced-cli*
+rm -f ./revanced-cli*
 dl_gh "revanced-cli" "j-hc" "latest"
 for i in {0..3}; do
-    change_arch "youtube-revanced" "youtube-revanced-${archs[i]}" "$(gen_rip_libs ${libs[i]})"
+    change_arch "youtube-revanced" "youtube-revanced-"${archs[i]}"" "$(gen_rip_libs "${libs[i]}")"
 done
 
 ls revanced-patches*.jar >> revanced-version.txt

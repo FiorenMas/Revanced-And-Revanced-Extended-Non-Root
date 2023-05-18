@@ -98,8 +98,8 @@ patch() {
     fi
 }
 
-archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
-libs=("x86_64 x86 armeabi-v7a" "x86_64 x86 arm64-v8a" "x86 armeabi-v7a arm64-v8a" "x86_64 armeabi-v7a arm64-v8a")
+archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86") & export archs
+libs=("x86_64 x86 armeabi-v7a" "x86_64 x86 arm64-v8a" "x86 armeabi-v7a arm64-v8a" "x86_64 armeabi-v7a arm64-v8a") & export libs
 gen_rip_libs() {
     for lib in $@; do
         echo -n "--rip-lib $lib "

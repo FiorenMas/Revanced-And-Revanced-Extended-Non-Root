@@ -2,14 +2,19 @@
 # Revanced Extended build
 source src/build/tools.sh
 
-curl -sL -O $(curl -s "https://api.github.com/repos/inotia00/revanced-patches/releases/latest" | jq -r '.assets[] | select(.name | test("revanced-patches.*\\.jar$")) | .browser_download_url')
+release=$(curl -s "https://api.github.com/repos/inotia00/revanced-patches/releases/latest")
+asset=$(echo "$release" | jq -r '.assets[] | select(.name | test("revanced-patches.*\\.jar$")) | .browser_download_url')
+curl -sL -O "$asset"
 ls revanced-patches*.jar >> new.txt
-curl -sL -O $(curl -s "https://api.github.com/repos/$repository/releases/latest" | jq -r '.assets[] | select(.name == "revanced-version.txt") | .browser_download_url')
-if diff -q revanced-version.txt new.txt >/dev/null ; then
-rm -f revanced-patches*.jar *.txt
+rm -f revanced-patches*.jar
+release=$(curl -s "https://api.github.com/repos/$repository/releases/latest")
+asset=$(echo "$release" | jq -r '.assets[] | select(.name == "revanced-extended-version.txt") | .browser_download_url')
+curl -sL -O "$asset"
+if diff -q revanced-extended-version.txt new.txt >/dev/null ; then
 echo "Old patch!!! Not build"
 exit 0
 else
+rm -f *.txt
 
 dl_gh "revanced-patches revanced-cli revanced-integrations" "inotia00" "latest"
 

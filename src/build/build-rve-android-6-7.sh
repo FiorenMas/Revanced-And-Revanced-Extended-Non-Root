@@ -25,7 +25,7 @@ patch "youtube" "youtube-revanced-extended-android-6-7"
 rm -f ./revanced-cli*
 dl_gh "revanced-cli" "j-hc" "latest"
 for i in {0..3}; do
-	change_arch "youtube-revanced-extended-android-6-7" "youtube-revanced-extended-android-6-7-${archs[i]}" "$(gen_rip_libs "${libs[i]}")"
+	change_arch "youtube-revanced-extended-android-6-7" "youtube-revanced-extended-android-6-7-${archs[i]}" "$(gen_rip_libs ${libs[i]})"
 done
 
 ls revanced-patches*.jar >> revanced-extended-android-6-7-version.txt

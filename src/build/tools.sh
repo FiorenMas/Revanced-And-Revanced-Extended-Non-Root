@@ -1,22 +1,21 @@
-#!/bin/bash
 dl_gh() {
     for repo in $1 ; do
     wget -qO- "https://api.github.com/repos/$2/$repo/releases/$3" \
     | jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
     | while read -r url names; do
         echo "Downloading $names from $url"
-        wget -q -O "$names" "$url"
+        wget -q -O "$names" $url
     done
     done
 echo "All assets downloaded"
 }
 get_patches_key() {
     EXCLUDE_PATCHES=()
-        for word in $(cat src/patches/"$1"/exclude-patches) ; do
+        for word in $(cat src/patches/$1/exclude-patches) ; do
             EXCLUDE_PATCHES+=("-e $word")
         done
     INCLUDE_PATCHES=()
-        for word in $(cat src/patches/"$1"/include-patches) ; do
+        for word in $(cat src/patches/$1/include-patches) ; do
             INCLUDE_PATCHES+=("-i $word")
         done
 }
@@ -69,7 +68,6 @@ get_apk_arch() {
   echo "$1 (${arm64-v8a}) version: ${last_ver}"
   echo "downloaded from: [APKMirror - $1 ${arm64-v8a}]($dl_url)"
 }
-
 get_ver() {
     version=$(jq -r --arg patch_name "$1" --arg pkg_name "$2" '
     .[]
@@ -79,17 +77,16 @@ get_ver() {
     | .versions[-1]
     ' patches.json)
 }
-
 patch() {
     if [ -f "$1.apk" ]; then
     java -jar revanced-cli*.jar \
     -m revanced-integrations*.apk \
     -b revanced-patches*.jar \
-    -a "$1".apk \
+    -a $1.apk \
     ${EXCLUDE_PATCHES[@]} \
     ${INCLUDE_PATCHES[@]} \
     --keystore=./src/ks.keystore \
-    -o ./build/"$2".apk
+    -o ./build/$2.apk
     unset version
     unset EXCLUDE_PATCHES
     unset INCLUDE_PATCHES
@@ -108,11 +105,11 @@ gen_rip_libs() {
 change_arch() {
     if [ -f "./build/$1.apk" ]; then
     java -jar revanced-cli*.jar \
-    	-b revanced-patches*.jar \
-		-a ./build/"$1".apk \
-		--keystore=./src/ks.keystore \
-    	"$3" \
-		-o ./build/"$2".apk
+	-b revanced-patches*.jar \
+    -a ./build/$1.apk \
+    --keystore=./src/ks.keystore \
+	$3 \
+    -o ./build/$2.apk
     else 
         exit 1
     fi

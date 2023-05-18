@@ -11,11 +11,11 @@ echo "All assets downloaded"
 }
 get_patches_key() {
     EXCLUDE_PATCHES=()
-        for word in $(cat src/patches/$1/exclude-patches) ; do
+        for word in $(cat src/patches/"$1"/exclude-patches) ; do
             EXCLUDE_PATCHES+=("-e $word")
         done
     INCLUDE_PATCHES=()
-        for word in $(cat src/patches/$1/include-patches) ; do
+        for word in $(cat src/patches/"$1"/include-patches) ; do
             INCLUDE_PATCHES+=("-i $word")
         done
 }
@@ -84,11 +84,11 @@ patch() {
     java -jar revanced-cli*.jar \
     -m revanced-integrations*.apk \
     -b revanced-patches*.jar \
-    -a $1.apk \
+    -a "$1".apk \
     ${EXCLUDE_PATCHES[@]} \
     ${INCLUDE_PATCHES[@]} \
     --keystore=./src/ks.keystore \
-    -o ./build/$2.apk
+    -o ./build/"$2".apk
     unset version
     unset EXCLUDE_PATCHES
     unset INCLUDE_PATCHES
@@ -108,10 +108,10 @@ change_arch() {
     if [ -f "./build/$1.apk" ]; then
     java -jar revanced-cli*.jar \
     	-b revanced-patches*.jar \
-      -a ./build/$1.apk \
-      --keystore=./src/ks.keystore \
-    	$3 \
-      -o ./build/$2.apk
+		-a ./build/"$1".apk \
+		--keystore=./src/ks.keystore \
+    	"$3" \
+		-o ./build/"$2".apk
     else 
         exit 1
     fi

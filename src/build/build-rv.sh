@@ -27,12 +27,12 @@ patch "youtube" "youtube-revanced"
 # Patch Instagram
 get_patches_key "instagram"
 version="271.1.0.21.84"
-get_apk_arch "instagram" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram"
+get_apk "instagram" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a"
 patch "instagram" "instagram-revanced"
 
 # Patch Messenger
 get_patches_key "messenger"
-get_apk_arch "messenger" "messenger" "facebook-2/messenger/messenger"
+get_apk "messenger" "messenger" "facebook-2/messenger/messenger" "arm64-v8a"
 patch "messenger" "messenger-revanced"
 
 # Patch Windy
@@ -61,7 +61,7 @@ patch "tiktok" "tiktok-revanced"
 # Patch YouTube Music 
 get_patches_key "youtube-music-revanced"
 get_ver "hide-get-premium" "com.google.android.apps.youtube.music"
-get_apk_arch "youtube-music" "youtube-music" "google-inc/youtube-music/youtube-music"
+get_apk "youtube-music" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music" "youtube-music-revanced"
 
 # Patch Twitter

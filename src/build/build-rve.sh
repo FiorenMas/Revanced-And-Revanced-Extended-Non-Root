@@ -28,7 +28,7 @@ patch "youtube" "youtube-revanced-extended"
 # Patch YouTube Music Extended 
 get_patches_key "youtube-music-revanced-extended"
 version="6.01.55"
-get_apk_arch "youtube-music" "youtube-music" "google-inc/youtube-music/youtube-music"
+get_apk "youtube-music" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music" "youtube-music-revanced-extended"
 
 # Change architecture

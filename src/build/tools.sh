@@ -1,3 +1,5 @@
+#!/bin/bash
+
 dl_gh() {
     for repo in $1 ; do
     wget -qO- "https://api.github.com/repos/$2/$repo/releases/$3" \
@@ -9,6 +11,7 @@ dl_gh() {
     done
 echo "All assets downloaded"
 }
+
 get_patches_key() {
     EXCLUDE_PATCHES=()
         for word in $(cat src/patches/$1/exclude-patches) ; do
@@ -19,6 +22,7 @@ get_patches_key() {
             INCLUDE_PATCHES+=("-i $word")
         done
 }
+
 req() { 
     wget -nv -O "$2" -U "Mozilla/5.0 (X11; Linux x86_64; rv:111.0) Gecko/20100101 Firefox/111.0" "$1"
 }
@@ -41,33 +45,29 @@ dl_apk() {
   url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')"
   req "$url" "$output"
 }
+
 get_apk() {
-  echo "Downloading $1"
-  local last_ver
-  last_ver="$version"
-  last_ver="${last_ver:-$(get_apk_vers "https://www.apkmirror.com/uploads/?appcategory=$2" | get_largest_ver)}"
-  echo "Choosing version '${last_ver}'"
+  if [[ -z $4 ]]; then
+	url_regexp='APK</span>[^@]*@\([^#]*\)'
+  else
+    case $4 in
+      arm64-v8a) url_regexp='arm64-v8a</div>[^@]*@\([^"]*\)' ;;
+      armeabi-v7a) url_regexp='armeabi-v7a</div>[^@]*@\([^"]*\)' ;;
+      x86) url_regexp='x86</div>[^@]*@\([^"]*\)' ;;
+      x86_64) url_regexp='x86_64</div>[^@]*@\([^"]*\)' ;;
+      *) return 1 ;;
+    esac 
+  fi
+  export version="$version"
+  if [[ -z $version ]]; then
+    version=${version:-$(get_apk_vers "https://www.apkmirror.com/uploads/?appcategory=$2" | get_largest_ver)}
+  fi
   local base_apk="$1.apk"
-  dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${last_ver//./-}-release/" \
-			"APK</span>[^@]*@\([^#]*\)" \
+  local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
+			"$url_regexp" \
 			"$base_apk")
-  echo "$1 version: ${last_ver}"
-  echo "downloaded from: [APKMirror - $1]($dl_url)"
 }
-get_apk_arch() {
-  echo "Downloading $1 (${arm64-v8a})"
-  local last_ver
-  last_ver="$version"
-  last_ver="${last_ver:-$(get_apk_vers "https://www.apkmirror.com/uploads/?appcategory=$2" | get_largest_ver)}"
-  echo "Choosing version '${last_ver}'"
-  local base_apk="$1.apk"
-  local regexp_arch='arm64-v8a</div>[^@]*@\([^"]*\)'
-  dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${last_ver//./-}-release/" \
-			"$regexp_arch" \
-			"$base_apk")
-  echo "$1 (${arm64-v8a}) version: ${last_ver}"
-  echo "downloaded from: [APKMirror - $1 ${arm64-v8a}]($dl_url)"
-}
+
 get_ver() {
     version=$(jq -r --arg patch_name "$1" --arg pkg_name "$2" '
     .[]
@@ -77,6 +77,7 @@ get_ver() {
     | .versions[-1]
     ' patches.json)
 }
+
 patch() {
     if [ -f "$1.apk" ]; then
     java -jar revanced-cli*.jar \
@@ -114,3 +115,4 @@ change_arch() {
         exit 1
     fi
 }
+

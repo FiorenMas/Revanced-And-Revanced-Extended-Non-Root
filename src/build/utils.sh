@@ -88,12 +88,22 @@ patch() {
     ${INCLUDE_PATCHES[@]} \
     --keystore=./src/ks.keystore \
     -o ./build/$2.apk
+	if grep -q "/" <<< "$2"; then
+		local name=$(basename “$2”)
+		cp ./build/$2.apk ./build/$name.apk
+	fi
     unset version
     unset EXCLUDE_PATCHES
     unset INCLUDE_PATCHES
     else 
         exit 1
     fi
+}
+
+merge_arch() {
+    java -jar APKEditor*.jar m \
+    -i ./build/$1
+	mv -i ./build/"$1"_merged.apk ./build/"$1"-"$2".apk
 }
 
 archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
@@ -103,7 +113,7 @@ gen_rip_libs() {
         echo -n "--rip-lib $lib "
     done
 }
-change_arch() {
+split_arch() {
     if [ -f "./build/$1.apk" ]; then
     java -jar revanced-cli*.jar \
 	-b revanced-patches*.jar \
@@ -115,4 +125,3 @@ change_arch() {
         exit 1
     fi
 }
-

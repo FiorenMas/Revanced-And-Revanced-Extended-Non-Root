@@ -1,8 +1,8 @@
 name: Patch
 on:
 #  push:
-  schedule:
-    - cron: "0 9 * * *"
+#  schedule:
+#    - cron: "0 9 * * *"
   workflow_dispatch:
 jobs:
   patch1:
@@ -19,7 +19,7 @@ jobs:
           java-version: '17'
         
       - name: Patch apk
-        run: bash src/build/build-rv.sh  
+        run: bash src/build/Revanced.sh  
         env:
           repository: ${{ github.repository }}
 
@@ -74,7 +74,7 @@ jobs:
           java-version: '17'
 
       - name: Patch apk
-        run: bash src/build/build-rve.sh  
+        run: bash src/build/Revanced-Extended.sh  
         env:
           repository: ${{ github.repository }}
 
@@ -129,7 +129,7 @@ jobs:
           java-version: '17'
 
       - name: Patch apk
-        run: bash src/build/build-rve-android-6-7.sh  
+        run: bash src/build/Revanced-Extended-Android-6-7.sh  
         env:
           repository: ${{ github.repository }}
 

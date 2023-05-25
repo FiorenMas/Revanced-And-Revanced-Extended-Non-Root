@@ -1,6 +1,6 @@
 #!/bin/bash
 # Revanced Extended build
-source src/build/tools.sh
+source src/build/utils.sh
 
 release=$(curl -s "https://api.github.com/repos/inotia00/revanced-patches/releases/latest")
 asset=$(echo "$release" | jq -r '.assets[] | select(.name | test("revanced-patches.*\\.jar$")) | .browser_download_url')
@@ -18,25 +18,35 @@ rm -f *.txt
 
 dl_gh "revanced-patches revanced-cli revanced-integrations" "inotia00" "latest"
 
-# Patch YouTube Extended
+# Patch YouTube Music Extended:
+get_patches_key "youtube-music-revanced-extended"
+version="6.01.55"
+get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
+patch "youtube-music-arm64-v8a" "youtube-music/youtube-music-arm64-v8a-revanced-extended"
+get_patches_key "youtube-music-revanced-extended"
+version="6.01.55"
+get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
+patch "youtube-music-armeabi-v7a" "youtube-music/youtube-music-armeabi-v7a-revanced-extended"
+
+# Patch YouTube Extended:
 get_patches_key "youtube-revanced-extended"
 version="18.17.43"
 #get_ver "hide-general-ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "youtube-revanced-extended"
 
-# Patch YouTube Music Extended 
-get_patches_key "youtube-music-revanced-extended"
-version="6.01.55"
-get_apk "youtube-music" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
-patch "youtube-music" "youtube-music-revanced-extended"
-
-# Change architecture
+# Split architecture Youtube:
 rm -f revanced-cli*
 dl_gh "revanced-cli" "j-hc" "latest"
+# Split architecture Youtube:
 for i in {0..3}; do
-    change_arch "youtube-revanced-extended" "youtube-revanced-extended-${archs[i]}" "$(gen_rip_libs ${libs[i]})"
+    split_arch "youtube-revanced-extended" "youtube-${archs[i]}-revanced-extended" "$(gen_rip_libs ${libs[i]})"
 done
+
+# Merge architecture:
+dl_gh "APKEditor" "REAndroid" "latest"
+# Merge architecture YouTube Music:
+merge_arch "youtube-music" "revanced-extended"
 
 ls revanced-patches*.jar >> revanced-extended-version.txt
 fi

@@ -16,8 +16,12 @@ exit 0
 else
 rm -f *.txt
 
+#################################################
+
 dl_gh "revanced-patches-android6-7 revanced-integrations" "kitadai31" "latest"
 dl_gh "revanced-cli" "inotia00" "latest"
+
+#################################################
 
 # Patch YouTube Extended:
 get_patches_key "youtube-revanced-extended-6-7"
@@ -26,6 +30,8 @@ version="17.34.36"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "youtube-revanced-extended-android-6-7"
 
+#################################################
+
 # Split architecture:
 rm -f revanced-cli*
 dl_gh "revanced-cli" "j-hc" "latest"
@@ -33,6 +39,8 @@ dl_gh "revanced-cli" "j-hc" "latest"
 for i in {0..3}; do
     split_arch "youtube-revanced-extended-android-6-7" "youtube-${archs[i]}-revanced-extended-android-6-7" "$(gen_rip_libs ${libs[i]})"
 done
+
+#################################################
 
 ls revanced-patches*.jar >> revanced-extended-android-6-7-version.txt
 fi

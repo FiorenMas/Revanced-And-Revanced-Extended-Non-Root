@@ -2,6 +2,7 @@
 
 #################################################
 
+# Download Github assets requirement:
 dl_gh() {
 	for repo in $1 ; do
 	wget -qO- "https://api.github.com/repos/$2/$repo/releases/$3" \
@@ -16,6 +17,7 @@ echo "All assets downloaded"
 
 #################################################
 
+# Get patches list:
 get_patches_key() {
 	EXCLUDE_PATCHES=()
 		for word in $(cat src/patches/$1/exclude-patches) ; do
@@ -29,6 +31,7 @@ get_patches_key() {
 
 #################################################
 
+# Find version supported:
 get_ver() {
 	version=$(jq -r --arg patch_name "$1" --arg pkg_name "$2" '
 	.[]
@@ -41,6 +44,7 @@ get_ver() {
 
 #################################################
 
+# Download apks files from APKMirror:
 req() { 
 	wget -nv -O "$2" -U "Mozilla/5.0 (X11; Linux x86_64; rv:111.0) Gecko/20100101 Firefox/111.0" "$1"
 }
@@ -90,6 +94,7 @@ get_apk() {
 
 #################################################
 
+# Patching apps with Revanced CLI:
 patch() {
 	if [ -f "$1.apk" ]; then
 		java -jar revanced-cli*.jar \
@@ -110,6 +115,7 @@ patch() {
 
 #################################################
 
+# Split architectures using Revanced CLI, created by j-hc:
 archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
 libs=("x86_64 x86 armeabi-v7a" "x86_64 x86 arm64-v8a" "x86 armeabi-v7a arm64-v8a" "x86_64 armeabi-v7a arm64-v8a")
 gen_rip_libs() {

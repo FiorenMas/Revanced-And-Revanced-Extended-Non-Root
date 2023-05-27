@@ -14,7 +14,7 @@ if diff -q revanced-version.txt new.txt >/dev/null ; then
 echo "Old patch!!! Not build"
 exit 0
 else
-rm -f *.txt
+rm -f ./*.txt
 
 #################################################
 

@@ -26,6 +26,8 @@ If you want to use the YouTube or YouTube Music app, you need to download and in
 
 All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
 
+If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app)
+
 ---
 <h1 align="center">
 Download

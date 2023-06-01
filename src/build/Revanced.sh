@@ -101,12 +101,8 @@ patch "windy" "windy-revanced"
 #################################################
 
 # Patch Tiktok:
-rm -f patches*.json revanced-patches*.jar revanced-integrations*.apk revanced-cli*.jar
-dl_gh "revanced-patches" "revanced" "tags/v2.173.0"
-dl_gh "revanced-integrations" "revanced" "tags/v0.107.0"
-dl_gh "revanced-cli" "revanced" "tags/v2.21.0"
 get_patches_key "tiktok"
-version="27.8.3"
+#version="29.7.4"
 get_apk "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 patch "tiktok" "tiktok-revanced"
 

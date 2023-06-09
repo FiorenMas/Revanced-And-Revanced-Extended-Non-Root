@@ -25,12 +25,12 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 # Patch Instagram:
 # Arm64-v8a
 get_patches_key "instagram"
-version="271.1.0.21.84"
+version="275.0.0.27.98"
 get_apk "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a"
 patch "instagram-arm64-v8a" "instagram-arm64-v8a-revanced"
 # Armeabi-v7a
 get_patches_key "instagram"
-version="271.1.0.21.84"
+version="275.0.0.27.98"
 get_apk "instagram-armeabi-v7a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "armeabi-v7a"
 patch "instagram-armeabi-v7a" "instagram-armeabi-v7a-revanced"
 

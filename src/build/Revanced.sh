@@ -103,27 +103,26 @@ patch "tiktok" "tiktok-revanced"
 
 #################################################
 
+# Split architecture:
+rm -f revanced-cli*.jar
+dl_gh "revanced-cli" "j-hc" "latest"
+# Split architecture Youtube:
+for i in {0..3}; do
+    split_arch "youtube-revanced" "youtube-${archs[i]}-revanced" "$(gen_rip_libs ${libs[i]})"
+done
+
+#################################################
+
 # Patch Instagram:
 # Armeabi-v7a
 rm -f patches*.json revanced-patches*.jar revanced-integrations*.apk revanced-cli*.jar
 dl_gh "revanced-patches" "revanced" "tags/v2.175.0"
 dl_gh "revanced-integrations" "revanced" "tags/v0.109.0"
-dl_gh "revanced-cli" "revanced" "tags/v2.21.0"
+dl_gh "revanced-cli" "revanced" "tags/v2.21.2"
 get_patches_key "instagram"
 version="271.1.0.21.84"
 get_apk "instagram-armeabi-v7a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "armeabi-v7a"
 patch "instagram-armeabi-v7a" "instagram-armeabi-v7a-revanced"
-
-#################################################
-
-# Split architecture:
-rm -f patches*.json revanced-patches*.jar revanced-integrations*.apk revanced-cli*.jar
-dl_gh "revanced-cli" "j-hc" "latest"
-dl_gh "revanced-patches revanced-integrations" "revanced" "latest"
-# Split architecture Youtube:
-for i in {0..3}; do
-    split_arch "youtube-revanced" "youtube-${archs[i]}-revanced" "$(gen_rip_libs ${libs[i]})"
-done
 
 #################################################
 

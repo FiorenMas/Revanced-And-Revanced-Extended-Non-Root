@@ -25,7 +25,8 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 # Patch Instagram:
 # Arm64-v8a
 get_patches_key "instagram"
-version="275.0.0.27.98"
+get_ver "hide-timeline-ads" "instagram-instagram"
+#version="275.0.0.27.98"
 get_apk "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a"
 patch "instagram-arm64-v8a" "instagram-arm64-v8a-revanced"
 # Armeabi-v7a

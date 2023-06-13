@@ -105,6 +105,7 @@ patch "tiktok" "tiktok-revanced"
 
 # Patch Instagram:
 # Armeabi-v7a
+rm -f patches*.json revanced-patches*.jar
 dl_gh "revanced-patches" "revanced" "v2.175.0"
 get_patches_key "instagram"
 version="271.1.0.21.84"

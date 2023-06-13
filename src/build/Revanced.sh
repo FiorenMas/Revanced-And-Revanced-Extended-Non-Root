@@ -31,7 +31,7 @@ get_apk "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagr
 patch "instagram-arm64-v8a" "instagram-arm64-v8a-revanced"
 # Armeabi-v7a
 get_patches_key "instagram"
-version="271.1.0.21.84"
+get_ver "hide-timeline-ads" "com.instagram.android"
 get_apk "instagram-armeabi-v7a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "armeabi-v7a"
 patch "instagram-armeabi-v7a" "instagram-armeabi-v7a-revanced"
 

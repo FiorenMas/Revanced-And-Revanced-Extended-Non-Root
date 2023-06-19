@@ -2,19 +2,9 @@
 # Revanced Extended build
 source src/build/utils.sh
 
-release=$(curl -s "https://api.github.com/repos/inotia00/revanced-patches/releases/latest")
-asset=$(echo "$release" | jq -r '.assets[] | select(.name | test("revanced-patches.*\\.jar$")) | .browser_download_url')
-curl -sL -O "$asset"
-ls revanced-patches*.jar >> new.txt
-rm -f revanced-patches*.jar
-release=$(curl -s "https://api.github.com/repos/$repository/releases/latest")
-asset=$(echo "$release" | jq -r '.assets[] | select(.name == "revanced-extended-version.txt") | .browser_download_url')
-curl -sL -O "$asset"
-if diff -q revanced-extended-version.txt new.txt >/dev/null ; then
-echo "Old patch!!! Not build"
-exit 0
-else
-rm -f ./*.txt
+#################################################
+
+checker "inotia00/revanced-patches" "revanced-extended"
 
 #################################################
 
@@ -54,6 +44,3 @@ for i in {0..3}; do
 done
 
 #################################################
-
-ls revanced-patches*.jar >> revanced-extended-version.txt
-fi

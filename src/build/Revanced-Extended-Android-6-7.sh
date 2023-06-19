@@ -2,19 +2,9 @@
 # Revanced Extended for android 6 & 7 build
 source src/build/utils.sh
 
-release=$(curl -s "https://api.github.com/repos/kitadai31/revanced-patches-android6-7/releases/latest")
-asset=$(echo "$release" | jq -r '.assets[] | select(.name | test("revanced-patches.*\\.jar$")) | .browser_download_url')
-curl -sL -O "$asset"
-ls revanced-patches*.jar >> new.txt
-rm -f revanced-patches*.jar
-release=$(curl -s "https://api.github.com/repos/$repository/releases/latest")
-asset=$(echo "$release" | jq -r '.assets[] | select(.name == "revanced-extended-android-6-7-version.txt") | .browser_download_url')
-curl -sL -O "$asset"
-if diff -q revanced-extended-android-6-7-version.txt new.txt >/dev/null ; then
-echo "Old patch!!! Not build"
-exit 0
-else
-rm -f ./*.txt
+#################################################
+
+checker "kitadai31/revanced-patches-android6-7" "revanced-extended-android-6-7"
 
 #################################################
 
@@ -41,6 +31,3 @@ for i in {0..3}; do
 done
 
 #################################################
-
-ls revanced-patches*.jar >> revanced-extended-android-6-7-version.txt
-fi

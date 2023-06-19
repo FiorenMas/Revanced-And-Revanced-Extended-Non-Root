@@ -2,19 +2,9 @@
 # Revanced build
 source ./src/build/utils.sh
 
-release=$(curl -sL "https://api.github.com/repos/revanced/revanced-patches/releases/latest")
-asset=$(echo "$release" | jq -r '.assets[] | select(.name | test("revanced-patches.*\\.jar$")) | .browser_download_url')
-curl -sLO "$asset"
-ls revanced-patches*.jar >> new.txt
-rm -f revanced-patches*.jar
-release=$(curl -sL "https://api.github.com/repos/$repository/releases/latest")
-asset=$(echo "$release" | jq -r '.assets[] | select(.name == "revanced-version.txt") | .browser_download_url')
-curl -sLO "$asset"
-if diff -q revanced-version.txt new.txt >/dev/null ; then
-echo "Old patch!!! Not build"
-exit 0
-else
-rm -f ./*.txt
+#################################################
+
+checker "revanced/revanced-patches" "revanced"
 
 #################################################
 
@@ -125,6 +115,3 @@ get_apk "instagram-armeabi-v7a" "instagram-instagram" "instagram/instagram-insta
 patch "instagram-armeabi-v7a" "instagram-armeabi-v7a-revanced"
 
 #################################################
-
-ls revanced-patches*.jar >> revanced-version.txt
-fi

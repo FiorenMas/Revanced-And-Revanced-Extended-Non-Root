@@ -1,15 +1,15 @@
 #!/bin/bash
 # Revanced build
-source src/build/utils.sh
+source .src/build/utils.sh
 
-release=$(curl -s "https://api.github.com/repos/revanced/revanced-patches/releases/latest")
+release=$(curl -sL "https://api.github.com/repos/revanced/revanced-patches/releases/latest")
 asset=$(echo "$release" | jq -r '.assets[] | select(.name | test("revanced-patches.*\\.jar$")) | .browser_download_url')
-curl -sL -O "$asset"
+curl -sLO "$asset"
 ls revanced-patches*.jar >> new.txt
 rm -f revanced-patches*.jar
-release=$(curl -s "https://api.github.com/repos/$repository/releases/latest")
+release=$(curl -sL "https://api.github.com/repos/$repository/releases/latest")
 asset=$(echo "$release" | jq -r '.assets[] | select(.name == "revanced-version.txt") | .browser_download_url')
-curl -sL -O "$asset"
+curl -sLO "$asset"
 if diff -q revanced-version.txt new.txt >/dev/null ; then
 echo "Old patch!!! Not build"
 exit 0

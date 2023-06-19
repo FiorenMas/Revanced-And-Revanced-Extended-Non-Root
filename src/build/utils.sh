@@ -2,6 +2,7 @@
 
 #################################################
 
+# Checking new patch:
 checker() {
 curl -sL https://api.github.com/repos/$1/releases/latest > json.txt
 latest_version=$(jq -r '.name' json.txt)

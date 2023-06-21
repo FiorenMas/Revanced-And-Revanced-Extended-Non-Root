@@ -6,7 +6,6 @@
 checker() {
 curl -sL https://api.github.com/repos/$1/releases/latest > json.txt
 latest_version=$(jq -r '.name' json.txt)
-echo $latest_version > latest-version.txt
 curl -sL "https://api.github.com/repos/$repository/releases/latest" | jq -r '.assets[] | select(.name == "'$2'-version.txt") | .browser_download_url' | xargs curl -sLO
 cur_version=$(cat $2-version.txt)
 if [ "$latest_version" = "$cur_version" ]; then
@@ -14,8 +13,8 @@ if [ "$latest_version" = "$cur_version" ]; then
 	exit 0
 else
 	echo "New patch, building..."
-	rm -f ./$2-version.txt ./json.txt
-	mv latest-version.txt $2-version.txt
+	rm -f ./json.txt
+ 	echo $latest_version > $2-version.txt
 fi
 }
 

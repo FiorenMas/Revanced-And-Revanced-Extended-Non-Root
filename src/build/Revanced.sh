@@ -36,11 +36,9 @@ patch "messenger-armeabi-v7a" "messenger-armeabi-v7a-revanced"
 # Patch YouTube Music:
 # Arm64-v8a
 get_patches_key "youtube-music-revanced"
-get_ver "hide-get-premium" "com.google.android.apps.youtube.music"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music-arm64-v8a" "youtube-music-arm64-v8a-revanced"
 # Armeabi-v7a
-get_ver "hide-get-premium" "com.google.android.apps.youtube.music"
 get_patches_key "youtube-music-revanced"
 get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-revanced"
@@ -87,7 +85,7 @@ patch "windy" "windy-revanced"
 
 # Patch Tiktok:
 get_patches_key "tiktok"
-#version="29.7.4"
+version="29.9.4"
 get_apk "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 patch "tiktok" "tiktok-revanced"
 

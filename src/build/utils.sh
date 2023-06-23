@@ -13,7 +13,7 @@ if [ "$latest_version" = "$cur_version" ]; then
 	exit 0
 else
 	echo "New patch, building..."
-	rm -f ./json.txt
+	rm -f ./json.txt ./$2-version.txt
  	echo $latest_version > $2-version.txt
 fi
 }

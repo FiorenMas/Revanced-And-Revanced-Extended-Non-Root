@@ -2,6 +2,7 @@ custom-branding
 premium-heading
 enable-debugging
 disable-auto-captions
+disable-player-popup-panels
 hide-my-mix
 hide-autoplay-button
 hide-cast-button

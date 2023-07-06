@@ -7,6 +7,7 @@ disable-hdr-video
 enable-old-quality-layout
 force-premium-heading
 force-vp9-codec
+force-opus-codec
 header-switch
 hide-cast-button
 hide-account-menu
@@ -22,6 +23,7 @@ hide-mix-playlists
 hide-seekbar
 hide-search-terms
 hide-load-more-button
+hide-quick-actions
+hide-previous-next-button
 theme
-optimize-resource
 spoof-app-version

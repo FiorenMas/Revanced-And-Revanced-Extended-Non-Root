@@ -77,7 +77,7 @@ Download
 
 [Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-armeabi-v7a-revanced.apk)
 
-### Revanced Extended: [Support dropped on 14/05/2023](https://t.me/revanced_extended/225)
+### Revanced Extended:
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)
 

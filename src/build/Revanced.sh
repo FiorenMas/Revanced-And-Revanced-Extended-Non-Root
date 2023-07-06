@@ -4,10 +4,12 @@ source ./src/build/utils.sh
 
 #################################################
 
+# Checking new patch
 checker "revanced/revanced-patches" "revanced"
 
 #################################################
 
+# Download requirement patches
 dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 #################################################

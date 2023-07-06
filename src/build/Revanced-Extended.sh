@@ -4,11 +4,21 @@ source src/build/utils.sh
 
 #################################################
 
+# Checking new patch
 checker "inotia00/revanced-patches" "revanced-extended"
 
 #################################################
 
+# Download requirement patches
 dl_gh "revanced-patches revanced-cli revanced-integrations" "inotia00" "latest"
+
+#################################################
+
+# Patch YouTube Extended:
+get_patches_key "youtube-revanced-extended"
+get_ver "hide-general-ads" "com.google.android.youtube"
+get_apk "youtube" "youtube" "google-inc/youtube/youtube"
+patch "youtube" "youtube-revanced-extended"
 
 #################################################
 
@@ -24,11 +34,10 @@ patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-revanced-extended"
 
 #################################################
 
-# Patch YouTube Extended:
-get_patches_key "youtube-revanced-extended"
-get_ver "hide-general-ads" "com.google.android.youtube"
-get_apk "youtube" "youtube" "google-inc/youtube/youtube"
-patch "youtube" "youtube-revanced-extended"
+# Patch Reddit:
+get_patches_key "reddit"
+get_apk "reddit" "reddit" "redditinc/reddit/reddit"
+patch "reddit" "reddit-revanced-extended"
 
 #################################################
 

@@ -43,7 +43,7 @@ Download
 
 [x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86_64-revanced.apk)
 
-### Revanced Extended: [Support dropped on 14/05/2023](https://t.me/revanced_extended/225)
+### Revanced Extended:
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended.apk)
 
@@ -134,7 +134,13 @@ Download
 
 [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
 
+### Revanced:
+
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced.apk)
+
+### Revanced Extended:
+
+[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced-extended.apk)
 
 ---
 

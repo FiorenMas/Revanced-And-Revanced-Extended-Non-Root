@@ -78,18 +78,26 @@ patch "reddit" "reddit-revanced"
 
 #################################################
 
-# Patch Windy:
-get_patches_key "windy"
-get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast"
-patch "windy" "windy-revanced"
-
-#################################################
-
 # Patch Tiktok:
 get_patches_key "tiktok"
 version="29.9.4"
 get_apk "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 patch "tiktok" "tiktok-revanced"
+
+#################################################
+
+# Patch Pixiv:
+get_patches_key "pixiv"
+#get_ver "hide-ads" "jp.pxv.android"
+get_apk "pixiv" "pixiv" "pixiv-inc/pixiv"
+patch "pixiv" "pixiv-revanced"
+
+#################################################
+
+# Patch Windy:
+get_patches_key "windy"
+get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast"
+patch "windy" "windy-revanced"
 
 #################################################
 

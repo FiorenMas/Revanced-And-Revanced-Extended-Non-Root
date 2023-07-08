@@ -144,6 +144,12 @@ Download
 
 ---
 
+### [Pixiv:](https://play.google.com/store/apps/details?id=jp.pxv.android)
+
+[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/pixiv-revanced.apk)
+
+---
+
 ### [Windy:](https://play.google.com/store/apps/details?id=co.windyapp.android)
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/windy-revanced.apk)

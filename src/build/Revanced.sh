@@ -89,7 +89,7 @@ patch "tiktok" "tiktok-revanced"
 # Patch Pixiv:
 get_patches_key "pixiv"
 #get_ver "hide-ads" "jp.pxv.android"
-get_apk "pixiv" "pixiv" "pixiv-inc/pixiv"
+get_apk "pixiv" "pixiv" "pixiv-inc/pixiv/pixiv"
 patch "pixiv" "pixiv-revanced"
 
 #################################################

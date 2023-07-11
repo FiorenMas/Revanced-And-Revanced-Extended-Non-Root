@@ -14,6 +14,26 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 #################################################
 
+# Patch YouTube:
+get_patches_key "youtube-revanced"
+get_ver "hide-ads" "com.google.android.youtube"
+get_apk "youtube" "youtube" "google-inc/youtube/youtube"
+patch "youtube" "youtube-revanced"
+
+#################################################
+
+# Patch YouTube Music:
+# Arm64-v8a
+get_patches_key "youtube-music-revanced"
+get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
+patch "youtube-music-arm64-v8a" "youtube-music-arm64-v8a-revanced"
+# Armeabi-v7a
+get_patches_key "youtube-music-revanced"
+get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
+patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-revanced"
+
+#################################################
+
 # Patch Instagram:
 # Arm64-v8a
 get_patches_key "instagram"
@@ -32,26 +52,6 @@ patch "messenger-arm64-v8a" "messenger-arm64-v8a-revanced"
 get_patches_key "messenger"
 get_apk "messenger-armeabi-v7a" "messenger" "facebook-2/messenger/messenger" "armeabi-v7a"
 patch "messenger-armeabi-v7a" "messenger-armeabi-v7a-revanced"
-
-#################################################
-
-# Patch YouTube Music:
-# Arm64-v8a
-get_patches_key "youtube-music-revanced"
-get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
-patch "youtube-music-arm64-v8a" "youtube-music-arm64-v8a-revanced"
-# Armeabi-v7a
-get_patches_key "youtube-music-revanced"
-get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
-patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-revanced"
-
-#################################################
-
-# Patch YouTube:
-get_patches_key "youtube-revanced"
-get_ver "video-ads" "com.google.android.youtube"
-get_apk "youtube" "youtube" "google-inc/youtube/youtube"
-patch "youtube" "youtube-revanced"
 
 #################################################
 

@@ -16,7 +16,7 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 # Patch YouTube:
 get_patches_key "youtube-revanced"
-get_ver "hide-ads" "com.google.android.youtube"
+get_ver "Video ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "youtube-revanced"
 
@@ -65,7 +65,7 @@ patch "twitter" "twitter-revanced"
 
 # Patch Twitch:
 get_patches_key "twitch"
-get_ver "block-video-ads" "tv.twitch.android.app"
+get_ver "Block video ads" "tv.twitch.android.app"
 get_apk "twitch" "twitch" "twitch-interactive-inc/twitch/twitch"
 patch "twitch" "twitch-revanced"
 

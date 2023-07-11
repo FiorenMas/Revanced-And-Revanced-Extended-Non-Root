@@ -16,7 +16,7 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "inotia00" "latest"
 
 # Patch YouTube Extended:
 get_patches_key "youtube-revanced-extended"
-get_ver "Hide ads" "com.google.android.youtube"
+get_ver "Hide general ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "youtube-revanced-extended"
 

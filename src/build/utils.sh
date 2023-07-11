@@ -10,6 +10,7 @@ curl -sL "https://api.github.com/repos/$repository/releases/latest" | jq -r '.as
 cur_version=$(cat $2-version.txt)
 if [ "$latest_version" = "$cur_version" ]; then
 	echo "Old patch, not build!"
+ 	rm -f ./json.txt ./$2-version.txt
 	exit 0
 else
 	echo "New patch, building..."

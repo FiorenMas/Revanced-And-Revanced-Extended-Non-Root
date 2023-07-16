@@ -38,7 +38,7 @@ patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-revanced"
 # Patch Instagram:
 # Arm64-v8a
 get_patches_key "instagram"
-get_ver "hide-timeline-ads" "com.instagram.android"
+get_ver "Hide timeline ads" "com.instagram.android"
 get_apk "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a"
 patch "instagram-arm64-v8a" "instagram-arm64-v8a-revanced"
 
@@ -89,7 +89,7 @@ patch "tiktok" "tiktok-revanced"
 
 # Patch Pixiv:
 get_patches_key "pixiv"
-#get_ver "hide-ads" "jp.pxv.android"
+#get_ver "Hide ads" "jp.pxv.android"
 get_apk "pixiv" "pixiv" "pixiv-inc/pixiv/pixiv"
 patch "pixiv" "pixiv-revanced"
 

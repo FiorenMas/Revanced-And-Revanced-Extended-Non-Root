@@ -29,6 +29,7 @@ get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/yout
 patch "youtube-music-arm64-v8a" "youtube-music-arm64-v8a-revanced-extended"
 # Armeabi-v7a
 get_patches_key "youtube-music-revanced-extended"
+version="6.08.51"
 get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-revanced-extended"
 

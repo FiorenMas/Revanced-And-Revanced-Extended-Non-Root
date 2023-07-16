@@ -57,7 +57,7 @@ patch "messenger-armeabi-v7a" "messenger-armeabi-v7a-revanced"
 
 # Patch Twitter:
 get_patches_key "twitter"
-version="9.86.0-release.0"
+#version="9.86.0-release.0"
 get_apk "twitter" "twitter" "twitter-inc/twitter/twitter"
 patch "twitter" "twitter-revanced"
 

@@ -25,6 +25,7 @@ patch "youtube" "youtube-revanced"
 # Patch YouTube Music:
 # Arm64-v8a
 get_patches_key "youtube-music-revanced"
+version="6.10.51"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music-arm64-v8a" "youtube-music-arm64-v8a-revanced"
 # Armeabi-v7a
@@ -81,7 +82,7 @@ patch "reddit" "reddit-revanced"
 
 # Patch Tiktok:
 get_patches_key "tiktok"
-version="29.9.4"
+version="30.5.2"
 get_apk "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 patch "tiktok" "tiktok-revanced"
 

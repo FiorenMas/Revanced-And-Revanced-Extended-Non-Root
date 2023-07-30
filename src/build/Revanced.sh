@@ -9,7 +9,7 @@ checker "revanced/revanced-patches" "revanced"
 
 #################################################
 
-# Download requirement patches
+# Download requirements
 dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 dl_htmlq
 

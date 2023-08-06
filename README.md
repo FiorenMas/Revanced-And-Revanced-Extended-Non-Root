@@ -198,7 +198,7 @@ Download
 
 [Revanced Extended for Android 6 & 7 Integrations](https://github.com/kitadai31/revanced-integrations) - [GPL-3.0](https://github.com/kitadai31/revanced-integrations/blob/revanced-extended/LICENSE)
 
-[ReX-integrations] (https://github.com/YT-Advanced/ReX-integrations) - [GPL-3.0](https://github.com/YT-Advanced/ReX-integrations/blob/revanced-extended/LICENSE)
+[ReX-integrations](https://github.com/YT-Advanced/ReX-integrations) - [GPL-3.0](https://github.com/YT-Advanced/ReX-integrations/blob/revanced-extended/LICENSE)
 
 [Revanced CLI - j-hc](https://github.com/j-hc/revanced-cli) - [GPL-3.0](https://github.com/j-hc/revanced-cli/blob/main/LICENSE)
 

@@ -24,7 +24,9 @@ jobs:
         run: |
           echo "
           **Change log** :point_down:
+          [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
           [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
+          [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases/latest)
           "> ${{ github.workspace }}-CHANGELOG.txt
 
       - name: Release
@@ -32,7 +34,6 @@ jobs:
         with:
           files: |
             ./build/*
-            revanced-extended-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
           body_path: ${{ github.workspace }}-CHANGELOG.txt

@@ -89,6 +89,12 @@ Download
 
 [Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-armeabi-v7a-revanced.apk)
 
+### [ReX: (The contiuned Revanced Extended)](https://github.com/YT-Advanced/ReX-patches)
+
+[Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-arm64-v8a-ReX.apk)
+
+[Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-armeabi-v7a-ReX.apk)
+
 ### Revanced Extended: (Support Dropped 05/08/2023)
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)

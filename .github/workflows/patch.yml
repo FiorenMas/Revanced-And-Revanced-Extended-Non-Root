@@ -61,7 +61,7 @@ jobs:
           keep_minimum_runs: 10
 
   patch2:
-    name: Patch Revanced Extended
+    name: Patch ReX
     permissions: write-all
     runs-on: ubuntu-latest
     steps:
@@ -74,7 +74,7 @@ jobs:
           java-version: '17'
 
       - name: Patch apk
-        run: bash src/build/Revanced-Extended.sh
+        run: bash src/build/ReX.sh
         env:
           repository: ${{ github.repository }}
 
@@ -92,7 +92,7 @@ jobs:
         with:
           files: |
             ./build/*
-            revanced-extended-version.txt
+            ReX-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
           body_path: ${{ github.workspace }}-CHANGELOG.txt

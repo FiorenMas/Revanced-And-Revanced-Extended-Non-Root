@@ -97,6 +97,20 @@ patch "pixiv" "pixiv-revanced"
 
 #################################################
 
+# Patch Lightroom:
+get_patches_key "lightroom"
+get_apk "lightroom" "lightroom" "adobe/lightroom/lightroom"
+patch "lightroom" "lightroom-revanced"
+
+#################################################
+
+# Patch Nova Launcher:
+#get_patches_key "nova-launcher"
+#get_apk "nova-launcher" "nova-launcher" "teslacoil-software/nova-launcher/nova-launcher"
+#patch "nova-launcher" "nova-launcher-revanced"
+
+#################################################
+
 # Patch Windy:
 get_patches_key "windy"
 get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast"
@@ -105,8 +119,9 @@ patch "windy" "windy-revanced"
 #################################################
 
 # Split architecture:
-rm -f revanced-cli*.jar
+rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "j-hc" "latest"
+dl_gh "revanced-patches" "revanced" "tags/v2.187.0"
 # Split architecture Youtube:
 for i in {0..3}; do
     split_arch "youtube-revanced" "youtube-${archs[i]}-revanced" "$(gen_rip_libs ${libs[i]})"
@@ -123,6 +138,6 @@ dl_gh "revanced-cli" "revanced" "tags/v2.21.2"
 get_patches_key "instagram"
 version="271.1.0.21.84"
 get_apk "instagram-armeabi-v7a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "armeabi-v7a"
-patch "instagram-armeabi-v7a" "instagram-armeabi-v7a-revanced"
+_patch "instagram-armeabi-v7a" "instagram-armeabi-v7a-revanced"
 
 #################################################

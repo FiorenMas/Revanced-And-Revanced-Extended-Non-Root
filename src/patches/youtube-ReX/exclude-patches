@@ -1,29 +1,22 @@
-custom-branding-icon-afn-red
-debugging
-custom-seekbar-color
-disable-startup-shorts-player
-disable-quic-protocol
-disable-hdr-video
-enable-old-quality-layout
-force-premium-heading
-force-vp9-codec
-force-opus-codec
-header-switch
-hide-cast-button
-hide-account-menu
-hide-auto-captions
-hide-autoplay-button
-hide-autoplay-preview
-hide-captions-button
-hide-email-address
-hide-endscreen-cards
-hide-endscreen-overlay
-hide-filmstrip-overlay
-hide-mix-playlists
-hide-seekbar
-hide-search-terms
-hide-load-more-button
-hide-quick-actions
-hide-previous-next-button
-theme
-spoof-app-version
+Custom branding icon Revancify blue
+Enable compact controls overlay
+Hide cast button
+Disable QUIC protocol
+Disable auto captions
+Enable force shuffle
+Enable old quality layout
+Enable zen mode
+Hide account menu
+Hide autoplay button
+Hide autoplay preview
+Hide button container
+Hide captions button
+Hide cast button
+Hide description components
+Hide handle
+Hide latest videos button
+Hide load more button
+Hide mix playlists
+Hide previous next button
+Hide quick actions
+Custom seekbar color

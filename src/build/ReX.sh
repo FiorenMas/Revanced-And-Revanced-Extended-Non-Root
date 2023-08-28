@@ -10,7 +10,8 @@ checker "YT-Advanced/ReX-patches" "ReX"
 #################################################
 
 # Download requirements
-dl_gh "ReX-patches ReX-integrations" "YT-Advanced" "latest"
+dl_gh "ReX-patches" "YT-Advanced" "latest"
+dl_gh "ReX-integrations" "YT-Advanced" "tags/v0.117.2"
 dl_gh "revanced-cli" "inotia00" "latest"
 dl_htmlq
 
@@ -21,6 +22,7 @@ get_patches_key "youtube-ReX"
 get_ver "Hide general ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
 _patch "youtube" "youtube-ReX"
+
 
 #################################################
 
@@ -38,8 +40,9 @@ _patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-ReX"
 #################################################
 
 # Split architecture:
-rm -f revanced-cli*
+rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "j-hc" "latest"
+dl_gh "revanced-patches" "revanced" "tags/v2.187.0"
 # Split architecture Youtube:
 for i in {0..3}; do
     split_arch "youtube-ReX" "youtube-${archs[i]}-ReX" "$(gen_rip_libs ${libs[i]})"

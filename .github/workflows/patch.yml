@@ -2,7 +2,7 @@ name: Patch
 on:
 #  push:
   schedule:
-    - cron: "0 9 * * *"
+    - cron: "0 21 * * *"
   workflow_dispatch:
 jobs:
   patch1:

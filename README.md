@@ -156,13 +156,15 @@ Download
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced.apk)
 
-### [ReX: (The contiuned Revanced Extended)](https://github.com/YT-Advanced/ReX-patches)
-
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-ReX.apk)
-
 ### Revanced Extended: (Support Dropped 05/08/2023)
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced-extended-inotia-discontinued.apk)
+
+---
+
+[![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)
+
+[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/lightroom-revanced.apk)
 
 ---
 
@@ -175,6 +177,8 @@ Download
 ### [Windy:](https://play.google.com/store/apps/details?id=co.windyapp.android)
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/windy-revanced.apk)
+
+---
 
 # ⚠️ License:
 

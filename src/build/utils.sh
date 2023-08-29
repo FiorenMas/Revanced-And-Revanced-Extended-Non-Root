@@ -141,7 +141,7 @@ get_apk() {
 
 #################################################
 
-# Patching apps with Revanced CLI (old):
+# Patching apps with Revanced CLI (old version):
 _patch() {
 	if [ -f "$1.apk" ]; then
 		java -jar revanced-cli*.jar \
@@ -192,12 +192,12 @@ gen_rip_libs() {
 }
 split_arch() {
 	if [ -f "./build/$1.apk" ]; then
-		java -jar revanced-cli*.jar \
-		-b revanced-patches*.jar \
-		-a ./build/$1.apk \
-		--keystore=./src/ks.keystore \
+		java -jar revanced-cli*.jar patch \
+		--patch-bundle revanced-patches*.jar \
 		$3 \
-		-o ./build/$2.apk
+		--keystore=./src/ks.keystore \
+		--out=./build/$2.apk\
+		./build/$1.apk
 	else 
 		exit 1
 	fi

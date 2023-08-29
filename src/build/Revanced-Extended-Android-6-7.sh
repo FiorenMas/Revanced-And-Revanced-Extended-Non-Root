@@ -28,7 +28,7 @@ _patch "youtube" "youtube-revanced-extended-android-6-7"
 # Split architecture:
 rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "j-hc" "latest"
-dl_gh "revanced-patches" "revanced" "tags/v2.187.0"
+dl_gh "revanced-patches" "revanced" "latest"
 # Split architecture Youtube:
 for i in {0..3}; do
     split_arch "youtube-revanced-extended-android-6-7" "youtube-${archs[i]}-revanced-extended-android-6-7" "$(gen_rip_libs ${libs[i]})"

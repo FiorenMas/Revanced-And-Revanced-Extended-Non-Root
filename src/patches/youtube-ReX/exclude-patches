@@ -1,22 +1,22 @@
-Custom branding icon Revancify blue
-Enable compact controls overlay
-Hide cast button
-Disable QUIC protocol
-Disable auto captions
-Enable force shuffle
-Enable old quality layout
-Enable zen mode
-Hide account menu
-Hide autoplay button
-Hide autoplay preview
-Hide button container
-Hide captions button
-Hide cast button
-Hide description components
-Hide handle
-Hide latest videos button
-Hide load more button
-Hide mix playlists
-Hide previous next button
-Hide quick actions
-Custom seekbar color
+custom-branding-icon-revancify-blue
+enable-compact-controls-overlay
+hide-cast-button
+disable-QUIC-protocol
+disable-auto-captions
+enable-force-shuffle
+enable-old-quality-layout
+enable-zen-mode
+hide-account-menu
+hide-autoplay-button
+hide-autoplay-preview
+hide-button-container
+hide-captions-button
+hide-cast-button
+hide-description-components
+hide-handle
+hide-latest-videos-button
+hide-load-more-button
+hide-mix-playlists
+hide-previous-next-button
+hide-quick-actions
+Custom-seekbar-color

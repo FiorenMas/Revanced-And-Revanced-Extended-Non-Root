@@ -26,12 +26,12 @@ patch "youtube" "youtube-revanced"
 # Patch YouTube Music:
 # Arm64-v8a
 get_patches_key "youtube-music-revanced"
-version="6.10.51"
+#version="6.10.51"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music-arm64-v8a" "youtube-music-arm64-v8a-revanced"
 # Armeabi-v7a
 get_patches_key "youtube-music-revanced"
-version="6.08.51"
+#version="6.08.51"
 get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-revanced"
 
@@ -121,7 +121,7 @@ patch "windy" "windy-revanced"
 # Split architecture:
 rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "j-hc" "latest"
-dl_gh "revanced-patches" "revanced" "tags/v2.187.0"
+dl_gh "revanced-patches" "revanced" "latest"
 # Split architecture Youtube:
 for i in {0..3}; do
     split_arch "youtube-revanced" "youtube-${archs[i]}-revanced" "$(gen_rip_libs ${libs[i]})"

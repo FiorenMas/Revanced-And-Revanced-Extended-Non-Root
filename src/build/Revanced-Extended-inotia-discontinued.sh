@@ -46,7 +46,7 @@ _patch "reddit" "reddit-revanced-extended-inotia-discontinued"
 # Split architecture:
 rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "j-hc" "latest"
-dl_gh "revanced-patches" "revanced" "tags/v2.187.0"
+dl_gh "revanced-patches" "revanced" "latest"
 # Split architecture Youtube:
 for i in {0..3}; do
     split_arch "youtube-revanced-extended-inotia-discontinued" "youtube-${archs[i]}-revanced-extended-inotia-discontinued" "$(gen_rip_libs ${libs[i]})"

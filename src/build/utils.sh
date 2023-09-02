@@ -90,18 +90,6 @@ _req() {
 }
 req() { _req "$1" "$2" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0"; }
 
-get_apk_vers() { 
-	req "$1" - | sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p'
-}
-
-get_largest_ver() {
-	local max=0
-	while read -r v || [ -n "$v" ]; do   		
-		if [[ ${v//[!0-9]/} -gt ${max//[!0-9]/} ]]; then max=$v; fi
-	done
-	if [[ $max = 0 ]]; then echo ""; else echo "$max"; fi
-}
-
 dl_apk() {
 	local url=$1 regexp=$2 output=$3 resp
 	url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"
@@ -131,7 +119,9 @@ get_apk() {
 	fi
 	export version="$version"
 	if [[ -z $version ]]; then
-		version=${version:-$(get_apk_vers "https://www.apkmirror.com/uploads/?appcategory=$2" | get_largest_ver)}
+ 		local list_ver
+  		list_ver=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
+		version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_ver" | grep -v 'beta\|alpha' | head -n 1)
 	fi
 	local base_apk="$1.apk"
 	local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \

@@ -30,6 +30,12 @@ You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/
 
 ---
 
+### Q: I want to use custom file options.json. How can I do it?
+
+You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/options/`. It contains files renvanced.json, ReX.json... edit thoose file same as options.json
+
+---
+
 ### Q: I am facing errors using your apps?
 
 I’m so sorry about this, but my repository only patches apps from “scripts” by other devs. I can’t fix errors when apps face errors, so if you get errors, please make an issue in [Revanced](https://github.com/revanced/revanced-patches), [Revanced Extended](https://github.com/inotia00/revanced-patches/tree/revanced-extended) or [Revanced Extended Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended) repositories.

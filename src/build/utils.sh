@@ -141,25 +141,6 @@ get_apk() {
 
 #################################################
 
-# Patching apps with Revanced CLI (old version):
-_patch() {
-	if [ -f "$1.apk" ]; then
-		java -jar revanced-cli*.jar \
-		-m revanced-integrations*.apk \
-		-b revanced-patches*.jar \
-		-a $1.apk \
-		${EXCLUDE_PATCHES[@]} \
-		${INCLUDE_PATCHES[@]} \
-		--keystore=./src/ks.keystore \
-		-o ./build/$2.apk
-		unset version
-		unset EXCLUDE_PATCHES
-		unset INCLUDE_PATCHES
-	else 
-		exit 1
-	fi
-}
-
 # Patching apps with Revanced CLI:
 patch() {
 	if [ -f "$1.apk" ]; then
@@ -168,8 +149,9 @@ patch() {
 		--merge revanced-integrations*.apk \
 		${EXCLUDE_PATCHES[@]} \
 		${INCLUDE_PATCHES[@]} \
+		--options=./src/options/$2.json \
 		--keystore=./src/ks.keystore \
-		--out=./build/$2.apk \
+		--out=./build/$1-$2.apk \
 		$1.apk
 		unset version
 		unset EXCLUDE_PATCHES
@@ -179,6 +161,25 @@ patch() {
 	fi
 }
 
+# Patching apps with Revanced CLI (old version):
+_patch() {
+	if [ -f "$1.apk" ]; then
+		java -jar revanced-cli*.jar \
+		-m revanced-integrations*.apk \
+		-b revanced-patches*.jar \
+		-a $1.apk \
+		${EXCLUDE_PATCHES[@]} \
+		${INCLUDE_PATCHES[@]} \
+		--options=./src/options/$2.json \
+		--keystore=./src/ks.keystore \
+		-o ./build/$1-$2.apk
+		unset version
+		unset EXCLUDE_PATCHES
+		unset INCLUDE_PATCHES
+	else 
+		exit 1
+	fi
+}
 
 #################################################
 

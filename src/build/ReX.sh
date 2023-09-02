@@ -20,7 +20,7 @@ dl_htmlq
 get_patches_key "youtube-ReX"
 get_ver "Hide general ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
-patch "youtube" "youtube-ReX"
+patch "youtube" "ReX"
 
 #################################################
 
@@ -28,11 +28,11 @@ patch "youtube" "youtube-ReX"
 # Arm64-v8a
 get_patches_key "youtube-music-ReX"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
-patch "youtube-music-arm64-v8a" "youtube-music-arm64-v8a-ReX"
+patch "youtube-music-arm64-v8a" "ReX"
 # Armeabi-v7a
 get_patches_key "youtube-music-ReX"
 get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
-patch "youtube-music-armeabi-v7a" "youtube-music-armeabi-v7a-ReX"
+patch "youtube-music-armeabi-v7a" "ReX"
 
 #################################################
 

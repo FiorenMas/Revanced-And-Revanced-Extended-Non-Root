@@ -114,6 +114,10 @@ Download
   
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=armeabi-v7a&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg_armeabi-v7a.apk)
 
+## [VancedxMicroG:](https://github.com/cuynu/VancedxMicroG)
+
+[![Release](https://img.shields.io/github/v/release/cuynu/VancedxMicroG?label=All-arch&style=for-the-badge)](https://github.com/cuynu/VancedxMicroG/releases/latest/download/microg.apk)
+
 ---
 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://play.google.com/store/apps/details?id=com.twitter.android)

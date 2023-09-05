@@ -16,7 +16,7 @@ dl_htmlq
 
 #################################################
 
-# Patch YouTube Extended:
+# Patch YouTube ReX:
 get_patches_key "youtube-ReX"
 get_ver "Hide general ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
@@ -24,9 +24,10 @@ patch "youtube" "ReX"
 
 #################################################
 
-# Patch YouTube Music Extended:
+# Patch YouTube Music ReX:
 # Arm64-v8a
 get_patches_key "youtube-music-ReX"
+version="6.17.52"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music-arm64-v8a" "ReX"
 # Armeabi-v7a

@@ -92,6 +92,7 @@ jobs:
         with:
           files: |
             ./build/*
+            revanced-extended-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
           body_path: ${{ github.workspace }}-CHANGELOG.txt

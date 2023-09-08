@@ -27,7 +27,6 @@ patch "youtube" "ReX"
 # Patch YouTube Music ReX:
 # Arm64-v8a
 get_patches_key "youtube-music-ReX"
-version="6.17.52"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music-arm64-v8a" "ReX"
 # Armeabi-v7a

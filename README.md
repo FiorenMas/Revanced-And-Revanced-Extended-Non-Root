@@ -107,12 +107,12 @@ Download
 
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
 
-## [mMicroG:](https://github.com/inotia00/mMicroG/)
-[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg.apk)
+## [mMicroG:](https://github.com/kazimmt/mMicroG/)
+[![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=All-arch&style=for-the-badge)](https://github.com/kazimmt/mMicroG/releases/latest/download/MicroG-Universal.apk)
 
-[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=arm64-v8a&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg_arm64-v8a.apk)
+[![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=arm64-v8a&style=for-the-badge)](https://github.com/kazimmt/mMicroG/releases/latest/download/MicroG-arm64-v8a.apk)
   
-[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=armeabi-v7a&style=for-the-badge)](https://github.com/inotia00/mMicroG/releases/latest/download/microg_armeabi-v7a.apk)
+[![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=armeabi-v7a&style=for-the-badge)](https://github.com/ikazimmt/mMicroG/releases/latest/download/MicroG-armeabi-v7a.apk)
 
 ## [VancedxMicroG:](https://github.com/cuynu/VancedxMicroG)
 

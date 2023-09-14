@@ -11,7 +11,7 @@ checker "kitadai31/revanced-patches-android6-7" "revanced-extended-android-6-7"
 
 # Download requirements
 dl_gh "revanced-patches-android6-7 revanced-integrations" "kitadai31" "latest"
-dl_gh "revanced-cli" "revanced" "tags/v2.21.5"
+dl_gh "revanced-cli" "revanced" "latest"
 dl_htmlq
 
 #################################################
@@ -20,7 +20,7 @@ dl_htmlq
 get_patches_key "youtube-revanced-extended-6-7"
 version="17.34.36"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
-_patch "youtube" "revanced-extended-android-6-7"
+patch "youtube" "revanced-extended-android-6-7"
 
 #################################################
 

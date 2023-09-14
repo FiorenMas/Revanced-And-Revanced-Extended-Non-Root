@@ -11,7 +11,6 @@ checker "inotia00/revanced-patches" "revanced-extended"
 
 # Download requirements
 dl_gh "revanced-patches revanced-cli revanced-integrations" "inotia00" "latest"
-dl_htmlq
 
 #################################################
 

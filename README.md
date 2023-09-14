@@ -130,15 +130,11 @@ Download
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/instagram-arm64-v8a-revanced.apk)
 
-[Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/instagram-armeabi-v7a-revanced.apk)
-
 ---
 
 [![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.orca)
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/messenger-arm64-v8a-revanced.apk)
-
-[Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/messenger-armeabi-v7a-revanced.apk)
 
 ---
 
@@ -181,6 +177,18 @@ Download
 ### [Windy:](https://play.google.com/store/apps/details?id=co.windyapp.android)
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/windy-revanced.apk)
+
+---
+
+### [Nova Launcher:](https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher)
+
+[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/nova-launcher-revanced.apk)
+
+---
+
+### [Tasker:](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
+
+[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tasker-revanced.apk)
 
 ---
 

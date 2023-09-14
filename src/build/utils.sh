@@ -88,22 +88,23 @@ _req() {
 		wget -nv -O "$dlp" --header="$3" "$1" || return 1
 	fi
 }
-req() { _req "$1" "$2" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0"; }
+req() {
+	user_agents=("User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/114.0" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/112.0" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/116.0" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0")
+	random_user_agent=$(shuf -n 1 -e "${user_agents[@]}")
+	_req "$1" "$2" "$random_user_agent"
+}
+
 
 dl_apk() {
-	local url=$1 regexp=$2 output=$3 resp
+	local url=$1 regexp=$2 output=$3
 	url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"
+	sleep 5
 	echo "$url"
-	url=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href "a.accent_bg.btn")
- 	sleep 10
-	resp=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href "span > a[rel = nofollow]")
-	if [[ -z $resp ]]; then
-		url=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href "a.accent_bg.btn")
-  		sleep 10
-		url=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href "span > a[rel = nofollow]")
-	else
-		url=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href "span > a[rel = nofollow]")
-	fi
+	url="https://www.apkmirror.com$(req "$url" - | grep "downloadButton" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')"
+	sleep 5
+   	url="https://www.apkmirror.com$(req "$url" - | grep "please click" | sed -n 's#.*href="\(.*key=[^"]*\)">.*#\1#;s#amp;##p')&forcebaseapk=true"
+	sleep 5
+    echo "$url"
 	req "$url" "$output"
 }
 
@@ -123,7 +124,7 @@ get_apk() {
 	if [[ -z $version ]]; then
  		local list_ver
   		list_ver=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
-		version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_ver" | grep -v 'beta\|alpha' | head -n 1)
+    		version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_ver" | grep -v 'beta\|alpha' | head -n 1)
 	fi
 	local base_apk="$1.apk"
 	local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \

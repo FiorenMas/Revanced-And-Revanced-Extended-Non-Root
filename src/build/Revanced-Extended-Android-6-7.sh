@@ -12,7 +12,6 @@ checker "kitadai31/revanced-patches-android6-7" "revanced-extended-android-6-7"
 # Download requirements
 dl_gh "revanced-patches-android6-7 revanced-integrations" "kitadai31" "latest"
 dl_gh "revanced-cli" "revanced" "latest"
-dl_htmlq
 
 #################################################
 

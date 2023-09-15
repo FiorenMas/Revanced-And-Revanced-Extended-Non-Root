@@ -35,6 +35,13 @@ patch "windy" "revanced"
 
 #################################################
 
+# Patch VSCO: Photo & Video Editor:
+get_patches_key "vsco"
+get_apk "vsco" "vsco-cam" "vsco/vsco-cam/vsco-cam"
+patch "vsco" "revanced"
+
+#################################################
+
 rm -f patches*.json revanced-patches*.jar revanced-integrations*.apk revanced-cli*.jar
 dl_gh "revanced-patches" "revanced" "tags/v2.187.0"
 dl_gh "revanced-integrations" "revanced" "tags/v0.115.1"
@@ -44,7 +51,6 @@ dl_gh "revanced-cli" "revanced" "tags/v2.22.0"
 
 #Patch Tasker:
 get_patches_key "tasker"
-#version="6.2.12-rc"
 get_apk "tasker" "tasker" "joaomgcd/tasker/tasker"
 _patch "tasker" "revanced"
 
@@ -52,7 +58,6 @@ _patch "tasker" "revanced"
 
 #Patch Nova Launcher:
 get_patches_key "nova-launcher"
-#version="8.0.6"
 get_apk "nova-launcher" "nova-launcher" "teslacoil-software/nova-launcher/nova-launcher"
 _patch "nova-launcher" "revanced"
 

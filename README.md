@@ -192,6 +192,12 @@ Download
 
 ---
 
+### [VSCO: Photo & Video Editor:](https://play.google.com/store/apps/details?id=com.vsco.cam)
+
+[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/vsco-revanced.apk)
+
+---
+
 # ⚠️ License:
 
 [@luxysiv](https://github.com/luxysiv/yt-revanced-nonroot) - [GPL-3.0](https://github.com/luxysiv/revanced-nonroot/blob/main/LICENSE)
@@ -223,5 +229,3 @@ Download
 [ReX-integrations](https://github.com/YT-Advanced/ReX-integrations) - [GPL-3.0](https://github.com/YT-Advanced/ReX-integrations/blob/revanced-extended/LICENSE)
 
 [Revanced CLI - j-hc](https://github.com/j-hc/revanced-cli) - [GPL-3.0](https://github.com/j-hc/revanced-cli/blob/main/LICENSE)
-
-[HTMLQ](https://github.com/mgdm/htmlq) - [MIT](https://github.com/mgdm/htmlq/blob/master/LICENSE.md)

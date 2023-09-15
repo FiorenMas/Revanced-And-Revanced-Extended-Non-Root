@@ -40,7 +40,7 @@ patch "twitter" "revanced"
 
 # Patch Twitch:
 get_patches_key "twitch"
-get_ver "Block video ads" "tv.twitch.android.app"
+get_ver "Block audio ads" "tv.twitch.android.app"
 get_apk "twitch" "twitch" "twitch-interactive-inc/twitch/twitch"
 patch "twitch" "revanced"
 

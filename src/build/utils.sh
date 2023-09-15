@@ -21,16 +21,6 @@ fi
 
 #################################################
 
-# Download the htmlq for to get apk from APKMirror
-dl_htmlq() {
-	req "https://github.com/mgdm/htmlq/releases/latest/download/htmlq-x86_64-linux.tar.gz" "./htmlq.tar.gz"
-	tar -xf "./htmlq.tar.gz" -C "./"
-	rm "./htmlq.tar.gz"
-	HTMLQ="./htmlq"
-}
-
-#################################################
-
 # Download Github assets requirement:
 dl_gh() {
 	for repo in $1 ; do

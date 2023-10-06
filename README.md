@@ -179,6 +179,14 @@ Download
 
 ---
 
+[![Tumblr](https://img.shields.io/badge/Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white)](https://play.google.com/store/apps/details?id=com.tumblr)
+
+### Revanced:
+
+[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tumblr-revanced.apk)
+
+---
+
 ### [Pixiv:](https://play.google.com/store/apps/details?id=jp.pxv.android)
 
 ### Revanced:
@@ -208,14 +216,6 @@ Download
 ### Revanced:
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tasker-revanced.apk)
-
----
-
-### [VSCO: Photo & Video Editor:](https://play.google.com/store/apps/details?id=com.vsco.cam)
-
-### Revanced:
-
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/vsco-revanced.apk)
 
 ---
 

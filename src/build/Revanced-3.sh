@@ -35,10 +35,11 @@ patch "windy" "revanced"
 
 #################################################
 
-# Patch VSCO: Photo & Video Editor:
-get_patches_key "vsco"
-get_apk "vsco" "vsco-cam" "vsco/vsco-cam/vsco-cam"
-patch "vsco" "revanced"
+# Patch Tumblr:
+get_patches_key "tumblr"
+version=31.5.0.110
+get_apk "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr"
+patch "tumblr" "revanced"
 
 #################################################
 

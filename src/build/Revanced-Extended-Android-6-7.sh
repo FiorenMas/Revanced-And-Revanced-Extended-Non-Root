@@ -11,7 +11,7 @@ checker "kitadai31/revanced-patches-android6-7" "revanced-extended-android-6-7"
 
 # Download requirements
 dl_gh "revanced-patches-android6-7 revanced-integrations" "kitadai31" "latest"
-dl_gh "revanced-cli" "revanced" "latest"
+dl_gh "revanced-cli" "revanced" "tags/v3.1.1"
 
 #################################################
 
@@ -19,14 +19,14 @@ dl_gh "revanced-cli" "revanced" "latest"
 get_patches_key "youtube-revanced-extended-6-7"
 version="17.34.36"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
-patch "youtube" "revanced-extended-android-6-7"
+-patch "youtube" "revanced-extended-android-6-7"
 
 #################################################
 
 # Split architecture:
 rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "j-hc" "latest"
-dl_gh "revanced-patches" "revanced" "latest"
+dl_gh "revanced-patches" "revanced" "tags/v2.190.0"
 # Split architecture Youtube:
 for i in {0..3}; do
     split_arch "youtube-revanced-extended-android-6-7" "youtube-${archs[i]}-revanced-extended-android-6-7" "$(gen_rip_libs ${libs[i]})"

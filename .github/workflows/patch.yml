@@ -36,7 +36,7 @@ jobs:
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
-            ./build/*
+            ./release/*
             revanced-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
@@ -75,7 +75,7 @@ jobs:
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
-            ./build/*
+            ./release/*
             revanced-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
@@ -114,7 +114,7 @@ jobs:
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
-            ./build/*
+            ./release/*
             revanced-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
@@ -153,7 +153,7 @@ jobs:
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
-            ./build/*
+            ./release/*
             revanced-extended-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
@@ -192,7 +192,7 @@ jobs:
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
-            ./build/*
+            ./release/*
             ReX-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
@@ -231,7 +231,7 @@ jobs:
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
-            ./build/*
+            ./release/*
             revanced-extended-android-6-7-version.txt
           name: Revanced & Revanced Extended
           tag_name: all

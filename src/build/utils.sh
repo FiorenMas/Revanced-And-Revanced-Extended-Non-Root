@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir ./release
+
 #################################################
 
 # Checking new patch:
@@ -64,7 +66,6 @@ get_ver() {
 #################################################
 
 # Download apks files from APKMirror:
-
 _req() {
 	if [ "$2" = - ]; then
 		wget -nv -O "$2" --header="$3" "$1"
@@ -134,7 +135,9 @@ patch() {
 		${INCLUDE_PATCHES[@]} \
 		--options=./src/options/$2.json \
 		--keystore=./src/ks.keystore \
-		--out=./build/$1-$2.apk \
+		--out=./release/$1-$2.apk \
+		--alias alias \
+		--keystore-entry-password ReVanced \
 		$1.apk
 		unset version
 		unset EXCLUDE_PATCHES
@@ -145,6 +148,25 @@ patch() {
 }
 
 # Patching apps with Revanced CLI (old version):
+-patch() {
+	if [ -f "$1.apk" ]; then
+		java -jar revanced-cli*.jar patch \
+		--patch-bundle revanced-patches*.jar \
+		--merge revanced-integrations*.apk \
+		${EXCLUDE_PATCHES[@]} \
+		${INCLUDE_PATCHES[@]} \
+		--options=./src/options/$2.json \
+		--keystore=./src/ks.keystore \
+		--out=./release/$1-$2.apk \
+		$1.apk
+		unset version
+		unset EXCLUDE_PATCHES
+		unset INCLUDE_PATCHES
+	else 
+		exit 1
+	fi
+}
+
 _patch() {
 	if [ -f "$1.apk" ]; then
 		java -jar revanced-cli*.jar \
@@ -155,7 +177,7 @@ _patch() {
 		${INCLUDE_PATCHES[@]} \
 		--options=./src/options/$2.json \
 		--keystore=./src/ks.keystore \
-		-o ./build/$1-$2.apk
+		-o ./release/$1-$2.apk
 		unset version
 		unset EXCLUDE_PATCHES
 		unset INCLUDE_PATCHES
@@ -175,13 +197,13 @@ gen_rip_libs() {
 	done
 }
 split_arch() {
-	if [ -f "./build/$1.apk" ]; then
+	if [ -f "./release/$1.apk" ]; then
 		java -jar revanced-cli*.jar patch \
 		--patch-bundle revanced-patches*.jar \
 		$3 \
-		--keystore=./src/ks.keystore \
-		--out=./build/$2.apk\
-		./build/$1.apk
+		--keystore=./src/_ks.keystore \
+		--out=./release/$2.apk\
+		./release/$1.apk
 	else 
 		exit 1
 	fi

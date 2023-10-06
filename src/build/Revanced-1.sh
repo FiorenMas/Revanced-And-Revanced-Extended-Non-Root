@@ -37,7 +37,7 @@ patch "youtube-music-armeabi-v7a" "revanced"
 # Split architecture:
 rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "j-hc" "latest"
-dl_gh "revanced-patches" "revanced" "latest"
+dl_gh "revanced-patches" "revanced" "tags/v2.190.0"
 # Split architecture Youtube:
 for i in {0..3}; do
     split_arch "youtube-revanced" "youtube-${archs[i]}-revanced" "$(gen_rip_libs ${libs[i]})"

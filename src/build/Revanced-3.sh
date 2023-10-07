@@ -53,13 +53,13 @@ dl_gh "revanced-cli" "revanced" "tags/v2.22.0"
 #Patch Tasker:
 get_patches_key "tasker"
 get_apk "tasker" "tasker" "joaomgcd/tasker/tasker"
-_patch "tasker" "revanced"
+patch "tasker" "revanced"
 
 #################################################
 
 #Patch Nova Launcher:
 get_patches_key "nova-launcher"
 get_apk "nova-launcher" "nova-launcher" "teslacoil-software/nova-launcher/nova-launcher"
-_patch "nova-launcher" "revanced"
+patch "nova-launcher" "revanced"
 
 #################################################

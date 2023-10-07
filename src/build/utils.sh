@@ -128,34 +128,35 @@ get_apk() {
 # Patching apps with Revanced CLI:
 patch() {
 	if [ -f "$1.apk" ]; then
-		java -jar revanced-cli*.jar patch \
-		--patch-bundle revanced-patches*.jar \
-		--merge revanced-integrations*.apk \
+		local p b m ks a
+		if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
+			num=${BASH_REMATCH[1]}
+			if [ $num -ge 4 ]; then
+				p="patch " b="--patch-bundle" m="--merge" a="" ks="ks"
+				echo "Patching with Revanced-cli version 4+"
+			elif [ $num -eq 3 ]; then
+				p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
+				echo "Patching with Revanced-cli version 3"
+			elif [ $num -eq 2 ]; then
+				p="" b="-b" m="-m" a="-a " ks="_ks"
+				echo "Patching with Revanced-cli version 2"
+			else
+				echo "No revanced-cli supported"
+				exit 1
+			fi
+		else
+			echo "No revanced-cli supported"
+			exit 1
+		fi
+		java -jar revanced-cli*.jar $p\
+		$b revanced-patches*.jar \
+		$m revanced-integrations*.apk \
 		${EXCLUDE_PATCHES[@]} \
 		${INCLUDE_PATCHES[@]} \
 		--options=./src/options/$2.json \
-		--keystore=./src/ks.keystore \
 		--out=./release/$1-$2.apk \
-		$1.apk
-		unset version
-		unset EXCLUDE_PATCHES
-		unset INCLUDE_PATCHES
-	else 
-		exit 1
-	fi
-}
-
-_patch() {
-	if [ -f "$1.apk" ]; then
-		java -jar revanced-cli*.jar \
-		-m revanced-integrations*.apk \
-		-b revanced-patches*.jar \
-		-a $1.apk \
-		${EXCLUDE_PATCHES[@]} \
-		${INCLUDE_PATCHES[@]} \
-		--options=./src/options/$2.json \
-		--keystore=./src/_ks.keystore \
-		-o ./release/$1-$2.apk
+		--keystore=./src/$ks.keystore \
+		$a$1.apk
 		unset version
 		unset EXCLUDE_PATCHES
 		unset INCLUDE_PATCHES

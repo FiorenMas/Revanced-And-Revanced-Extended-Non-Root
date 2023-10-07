@@ -136,28 +136,6 @@ patch() {
 		--options=./src/options/$2.json \
 		--keystore=./src/ks.keystore \
 		--out=./release/$1-$2.apk \
-		--alias alias \
-		--keystore-entry-password ReVanced \
-		$1.apk
-		unset version
-		unset EXCLUDE_PATCHES
-		unset INCLUDE_PATCHES
-	else 
-		exit 1
-	fi
-}
-
-# Patching apps with Revanced CLI (old version):
--patch() {
-	if [ -f "$1.apk" ]; then
-		java -jar revanced-cli*.jar patch \
-		--patch-bundle revanced-patches*.jar \
-		--merge revanced-integrations*.apk \
-		${EXCLUDE_PATCHES[@]} \
-		${INCLUDE_PATCHES[@]} \
-		--options=./src/options/$2.json \
-		--keystore=./src/ks.keystore \
-		--out=./release/$1-$2.apk \
 		$1.apk
 		unset version
 		unset EXCLUDE_PATCHES
@@ -201,7 +179,7 @@ split_arch() {
 		java -jar revanced-cli*.jar patch \
 		--patch-bundle revanced-patches*.jar \
 		$3 \
-		--keystore=./src/_ks.keystore \
+		--keystore=./src/ks.keystore \
 		--out=./release/$2.apk\
 		./release/$1.apk
 	else 

@@ -211,8 +211,6 @@ Download
 
 [Revanced Patches](https://github.com/revanced/revanced-patches) - [GPL-3.0](https://github.com/revanced/revanced-patches/blob/main/LICENSE)
 
-[ReX-patches](https://github.com/YT-Advanced/ReX-patches) - [GPL-3.0](https://github.com/YT-Advanced/ReX-patches/blob/revanced-extended/LICENSE)
-
 [Revanced Extended Patches](https://github.com/inotia00/revanced-patches/tree/revanced-extended) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)
 
 [Revanced Extended for Android 6 & 7 Patches](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended) - [GPL-3.0](https://github.com/kitadai31/revanced-patches-android6-7/blob/revanced-extended/LICENSE)
@@ -228,7 +226,5 @@ Download
 [Revanced Extended Integrations](https://github.com/inotia00/revanced-integrations) - [GPL-3.0](https://github.com/inotia00/revanced-integrations/blob/main/LICENSE)
 
 [Revanced Extended for Android 6 & 7 Integrations](https://github.com/kitadai31/revanced-integrations) - [GPL-3.0](https://github.com/kitadai31/revanced-integrations/blob/revanced-extended/LICENSE)
-
-[ReX-integrations](https://github.com/YT-Advanced/ReX-integrations) - [GPL-3.0](https://github.com/YT-Advanced/ReX-integrations/blob/revanced-extended/LICENSE)
 
 [Revanced CLI - j-hc](https://github.com/j-hc/revanced-cli) - [GPL-3.0](https://github.com/j-hc/revanced-cli/blob/main/LICENSE)

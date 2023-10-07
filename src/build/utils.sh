@@ -154,7 +154,7 @@ _patch() {
 		${EXCLUDE_PATCHES[@]} \
 		${INCLUDE_PATCHES[@]} \
 		--options=./src/options/$2.json \
-		--keystore=./src/ks.keystore \
+		--keystore=./src/_ks.keystore \
 		-o ./release/$1-$2.apk
 		unset version
 		unset EXCLUDE_PATCHES

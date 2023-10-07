@@ -54,18 +54,6 @@ Download
 
 [x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86_64-revanced-extended.apk)
 
-### [ReX:](https://github.com/YT-Advanced/ReX-patches)
-
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-ReX.apk)
-
-[Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-arm64-v8a-ReX.apk)
-
-[Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-armeabi-v7a-ReX.apk)
-
-[x86](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86-ReX.apk)
-
-[x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86_64-ReX.apk)
-
 ### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended-android-6-7.apk)

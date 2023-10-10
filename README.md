@@ -46,6 +46,8 @@ Download
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended.apk)
 
+j-hc cli split architecture not working well with latest version, so should use all architecture, split architecture below is old version:
+
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-arm64-v8a-revanced-extended.apk)
 
 [Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-armeabi-v7a-revanced-extended.apk)

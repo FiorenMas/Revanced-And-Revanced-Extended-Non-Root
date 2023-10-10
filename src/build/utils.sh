@@ -127,8 +127,8 @@ get_apk() {
 
 # Patching apps with Revanced CLI:
 patch() {
-	local p b m ks a
-	if [[ -z $3 ]]; then
+	if [ -f "$1.apk" ]; then
+		local p b m ks a
 		if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 			num=${BASH_REMATCH[1]}
 			if [ $num -ge 4 ]; then
@@ -148,22 +148,21 @@ patch() {
 			echo "No revanced-cli supported"
 			exit 1
 		fi
-	else
-		echo "Patching with Revanced-cli inotia version 4+"
-		p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
+		java -jar revanced-cli*.jar $p\
+		$b revanced-patches*.jar \
+		$m revanced-integrations*.apk \
+		${EXCLUDE_PATCHES[@]} \
+		${INCLUDE_PATCHES[@]} \
+		--options=./src/options/$2.json \
+		--out=./release/$1-$2.apk \
+		--keystore=./src/$ks.keystore \
+		$a$1.apk
+		unset version
+		unset EXCLUDE_PATCHES
+		unset INCLUDE_PATCHES
+	else 
+		exit 1
 	fi
-	java -jar revanced-cli*.jar $p\
-	$b revanced-patches*.jar \
-	$m revanced-integrations*.apk \
-	${EXCLUDE_PATCHES[@]} \
-	${INCLUDE_PATCHES[@]} \
-	--options=./src/options/$2.json \
-	--out=./release/$1-$2.apk \
-	--keystore=./src/$ks.keystore \
-	$a$1.apk
-	unset version
-	unset EXCLUDE_PATCHES
-	unset INCLUDE_PATCHES
 }
 
 #################################################

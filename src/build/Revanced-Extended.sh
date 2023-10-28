@@ -10,8 +10,7 @@ checker "inotia00/revanced-patches" "revanced-extended"
 #################################################
 
 # Download requirements
-dl_gh "revanced-patches revanced-integrations" "inotia00" "latest"
-dl_gh "revanced-cli" "revanced" "latest"
+dl_gh "revanced-patches revanced-integrations revanced-cli" "inotia00" "latest"
 
 #################################################
 
@@ -19,28 +18,30 @@ dl_gh "revanced-cli" "revanced" "latest"
 get_patches_key "youtube-revanced-extended"
 get_ver "Hide general ads" "com.google.android.youtube"
 get_apk "youtube" "youtube" "google-inc/youtube/youtube"
-patch "youtube" "revanced-extended"
+patch "youtube" "revanced-extended" "inotia"
 
 #################################################
 
 # Patch YouTube Music Extended:
 # Arm64-v8a
 get_patches_key "youtube-music-revanced-extended"
-get_ver "Hide music ads" "com.google.android.apps.youtube.music"
+version=6.23.55
+#get_ver "Hide music ads" "com.google.android.apps.youtube.music"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
-patch "youtube-music-arm64-v8a" "revanced-extended"
+patch "youtube-music-arm64-v8a" "revanced-extended" "inotia"
 # Armeabi-v7a
 get_patches_key "youtube-music-revanced-extended"
-get_ver "Hide music ads" "com.google.android.apps.youtube.music"
+version=6.23.55
+#get_ver "Hide music ads" "com.google.android.apps.youtube.music"
 get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
-patch "youtube-music-armeabi-v7a" "revanced-extended"
+patch "youtube-music-armeabi-v7a" "revanced-extended" "inotia"
 
 #################################################
 
 # Patch Reddit:
 get_patches_key "reddit"
 get_apk "reddit" "reddit" "redditinc/reddit/reddit"
-patch "reddit" "revanced-extended"
+patch "reddit" "revanced-extended" "inotia"
 
 #################################################
 

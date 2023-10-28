@@ -129,24 +129,29 @@ get_apk() {
 patch() {
 	if [ -f "$1.apk" ]; then
 		local p b m ks a
-		if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
-			num=${BASH_REMATCH[1]}
-			if [ $num -ge 4 ]; then
-				p="patch " b="--patch-bundle" m="--merge" a="" ks="ks"
-				echo "Patching with Revanced-cli version 4+"
-			elif [ $num -eq 3 ]; then
-				p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
-				echo "Patching with Revanced-cli version 3"
-			elif [ $num -eq 2 ]; then
-				p="" b="-b" m="-m" a="-a " ks="_ks"
-				echo "Patching with Revanced-cli version 2"
+		if [ "$3" = inotia ]; then
+			p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
+			echo "Patching with Revanced-cli inotia"
+		else
+			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
+				num=${BASH_REMATCH[1]}
+				if [ $num -ge 4 ]; then
+					p="patch " b="--patch-bundle" m="--merge" a="" ks="ks"
+					echo "Patching with Revanced-cli version 4+"
+				elif [ $num -eq 3 ]; then
+					p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
+					echo "Patching with Revanced-cli version 3"
+				elif [ $num -eq 2 ]; then
+					p="" b="-b" m="-m" a="-a " ks="_ks"
+					echo "Patching with Revanced-cli version 2"
+				else
+					echo "No revanced-cli supported"
+					exit 1
+				fi
 			else
 				echo "No revanced-cli supported"
 				exit 1
 			fi
-		else
-			echo "No revanced-cli supported"
-			exit 1
 		fi
 		java -jar revanced-cli*.jar $p\
 		$b revanced-patches*.jar \

@@ -4,6 +4,7 @@ enable-compact-controls-overlay
 hide-cast-button
 disable-QUIC-protocol
 disable-auto-captions
+disable-hdr-video
 enable-force-shuffle
 enable-old-quality-layout
 enable-zen-mode
@@ -19,6 +20,6 @@ hide-latest-videos-button
 hide-load-more-button
 hide-mix-playlists
 hide-previous-next-button
-hide-quick-actions
+quick-actions-components
 higher-fullscreen-seekbar-height
 Custom-seekbar-color

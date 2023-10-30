@@ -25,14 +25,12 @@ patch "youtube" "revanced-extended" "inotia"
 # Patch YouTube Music Extended:
 # Arm64-v8a
 get_patches_key "youtube-music-revanced-extended"
-version=6.23.55
-#get_ver "Hide music ads" "com.google.android.apps.youtube.music"
+get_ver "Hide music ads" "com.google.android.apps.youtube.music"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music-arm64-v8a" "revanced-extended" "inotia"
 # Armeabi-v7a
 get_patches_key "youtube-music-revanced-extended"
-version=6.23.55
-#get_ver "Hide music ads" "com.google.android.apps.youtube.music"
+get_ver "Hide music ads" "com.google.android.apps.youtube.music"
 get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 patch "youtube-music-armeabi-v7a" "revanced-extended" "inotia"
 

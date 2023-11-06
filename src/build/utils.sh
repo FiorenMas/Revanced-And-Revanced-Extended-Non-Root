@@ -4,21 +4,30 @@ mkdir ./release
 
 #################################################
 
-# Checking new patch:
-checker() {
-curl -sL https://api.github.com/repos/$1/releases/latest > json.txt
-latest_version=$(jq -r '.name' json.txt)
-curl -sL "https://api.github.com/repos/$repository/releases/latest" | jq -r '.assets[] | select(.name == "'$2'-version.txt") | .browser_download_url' | xargs curl -sLO
-cur_version=$(cat $2-version.txt)
-if [ "$latest_version" = "$cur_version" ]; then
-	echo "Old patch, not build!"
- 	rm -f ./json.txt ./$2-version.txt
-	exit 0
-else
-	echo "New patch, building..."
-	rm -f ./json.txt ./$2-version.txt
- 	echo $latest_version > $2-version.txt
-fi
+# Check new patch:
+get_date() {
+	local assets asset name updated_at
+	assets=$(curl -s https://api.github.com/repos/"$1"/releases/latest | jq '.assets')
+	for asset in $(echo "$assets" | jq -r '.[] | @base64'); do
+        asset=$(echo "$asset" | base64 --decode)
+        name=$(echo "$asset" | jq -r '.name')
+        updated_at=$(echo "$asset" | jq -r '.updated_at')
+        [[ $name =~ "$2" ]] && echo "$updated_at"
+    done
+}
+checker(){
+	local date1 date2 date1_sec date1_sec repo=$1 ur_repo=$GITHUB_REPOSITORY check=$2
+	date1=$(get_date "$repo" "patches.json")
+	date2=$(get_date "$ur_repo" "$check")
+	date1_sec=$(date -d "$date1" +%s)
+	date2_sec=$(date -d "$date2" +%s)
+	if [ -z "$date2" ] || [ "$date1_sec" -gt "$date2_sec" ]; then
+		export new_patch=1
+		echo "New patch, building..."
+	elif [ "$date1_sec" -lt "$date2_sec" ]; then
+		export new_patch=0
+		echo "Old patch, not build."
+	fi
 }
 
 #################################################

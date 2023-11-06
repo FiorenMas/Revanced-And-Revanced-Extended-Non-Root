@@ -4,11 +4,6 @@ source src/build/utils.sh
 
 #################################################
 
-# Checking new patch
-checker "kitadai31/revanced-patches-android6-7" "revanced-extended-android-6-7"
-
-#################################################
-
 # Download requirements
 dl_gh "revanced-patches-android6-7 revanced-integrations" "kitadai31" "latest"
 dl_gh "revanced-cli" "revanced" "tags/v3.1.1"

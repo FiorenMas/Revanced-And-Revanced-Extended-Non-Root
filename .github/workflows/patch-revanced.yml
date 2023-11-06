@@ -1,9 +1,7 @@
-name: Patch
+name: Patch Revanced
 on:
-#  push:
-  schedule:
-    - cron: "0 21 * * *"
   workflow_dispatch:
+  workflow_call:
 jobs:
   patch1:
     name: Patch Revanced-1
@@ -37,12 +35,9 @@ jobs:
         with:
           files: |
             ./release/*
-            revanced-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
           body_path: ${{ github.workspace }}-CHANGELOG.txt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   patch2:
     name: Patch Revanced-2
@@ -76,12 +71,9 @@ jobs:
         with:
           files: |
             ./release/*
-            revanced-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
           body_path: ${{ github.workspace }}-CHANGELOG.txt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   patch3:
     name: Patch Revanced-3
@@ -115,87 +107,6 @@ jobs:
         with:
           files: |
             ./release/*
-            revanced-version.txt
           name: Revanced & Revanced Extended
           tag_name: all
           body_path: ${{ github.workspace }}-CHANGELOG.txt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  patch4:
-    name: Patch Revanced Extended
-    permissions: write-all
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up jdk
-        uses: actions/setup-java@v3.11.0
-        with:
-          distribution: 'zulu'
-          java-version: '17'
-
-      - name: Patch apk
-        run: bash src/build/Revanced-Extended.sh
-        env:
-          repository: ${{ github.repository }}
-
-      - name: Generate release info
-        run: |
-          echo "
-          **Change log** :point_down:
-          [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
-          [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
-          [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases/latest)
-          "> ${{ github.workspace }}-CHANGELOG.txt
-
-      - name: Release
-        uses: softprops/action-gh-release@v0.1.15
-        with:
-          files: |
-            ./release/*
-            revanced-extended-version.txt
-          name: Revanced & Revanced Extended
-          tag_name: all
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  patch5:
-    name: Patch Revanced Extended for Android 6 & 7
-    permissions: write-all
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up jdk
-        uses: actions/setup-java@v3.11.0
-        with:
-          distribution: 'zulu'
-          java-version: '17'
-
-      - name: Patch apk
-        run: bash src/build/Revanced-Extended-Android-6-7.sh
-        env:
-          repository: ${{ github.repository }}
-
-      - name: Generate release info
-        run: |
-          echo "
-          **Change log** :point_down:
-          [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
-          [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
-          [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases/latest)
-          "> ${{ github.workspace }}-CHANGELOG.txt
-
-      - name: Release
-        uses: softprops/action-gh-release@v0.1.15
-        with:
-          files: |
-            ./release/*
-            revanced-extended-android-6-7-version.txt
-          name: Revanced & Revanced Extended
-          tag_name: all
-          body_path: ${{ github.workspace }}-CHANGELOG.txt
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

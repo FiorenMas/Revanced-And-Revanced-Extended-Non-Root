@@ -4,11 +4,6 @@ source src/build/utils.sh
 
 #################################################
 
-# Checking new patch
-checker "inotia00/revanced-patches" "revanced-extended"
-
-#################################################
-
 # Download requirements
 dl_gh "revanced-patches revanced-integrations revanced-cli" "inotia00" "latest"
 

@@ -206,6 +206,8 @@ Download
 
 ---
 
+#### Special thanks to Aisrsa for nice idea :heartpulse:
+
 # ⚠️ License:
 
 [@luxysiv](https://github.com/luxysiv/yt-revanced-nonroot) - [GPL-3.0](https://github.com/luxysiv/revanced-nonroot/blob/main/LICENSE)

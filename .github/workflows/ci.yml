@@ -1,0 +1,77 @@
+name: Check new patch
+on:
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+jobs:
+  check-rv:
+    name: Check new patch Revanced
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check new patch ReVanced
+        id: check-rv
+        run: bash src/build/ci.sh ReVanced/revanced-patches youtube-revanced.apk
+        env:
+          repository: ${{ github.repository }}
+
+    outputs:
+      check_rv: ${{ steps.check-rv.outputs.new_patch }}
+
+  check-rve:
+    name: Check new patch Revanced Extended
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check new patch Revanced Extended
+        id: check-rve
+        run: bash src/build/ci.sh inotia00/revanced-patches youtube-revanced-extended.apk
+        env:
+          repository: ${{ github.repository }}
+
+    outputs:
+      check_rve: ${{ steps.check-rve.outputs.new_patch }}
+
+  check-rve67:
+    name: Check new patch Revanced For Android 6 & 7
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check new patch Revanced For Android 6 & 7
+        id: check-rve67
+        run: bash src/build/ci.sh kitadai31/revanced-patches-android6-7 youtube-revanced-extended-android-6-7.apk
+        env:
+          repository: ${{ github.repository }}
+
+    outputs:
+      check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
+
+  Patch-Revanced:
+    name: Patch Revanced
+    permissions: write-all
+    needs: check-rv
+    uses: ./.github/workflows/patch-revanced.yml
+    if: ${{ needs.check-rv.outputs.check_rv == 1 }}
+    secrets: inherit
+
+  Patch-Revanced-Extended:
+    name: Patch Revanced Extended
+    permissions: write-all
+    needs: check-rve
+    uses: ./.github/workflows/patch-revanced-extended.yml
+    if: ${{ needs.check-rve.outputs.check_rve == 1 }}
+    secrets: inherit
+
+  Patch-Revanced-For-Android-6-7:
+    name: Patch Revanced Extended For Android 6 & 7
+    permissions: write-all
+    needs: check-rve67
+    uses: ./.github/workflows/patch-revanced-extended-android-6-7.yml
+    if: ${{ needs.check-rve67.outputs.check_rve67 == 1 }}
+    secrets: inherit

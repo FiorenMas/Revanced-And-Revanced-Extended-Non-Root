@@ -21,14 +21,16 @@ echo "All assets downloaded"
 
 # Get patches list:
 get_patches_key() {
-	EXCLUDE_PATCHES=()
-		for word in $(cat src/patches/$1/exclude-patches) ; do
-			EXCLUDE_PATCHES+=("-e $word")
-		done
-	INCLUDE_PATCHES=()
-		for word in $(cat src/patches/$1/include-patches) ; do
-			INCLUDE_PATCHES+=("-i $word")
-		done
+	excludePatches=""
+	includePatches=""
+	while IFS= read -r line1; do
+		excludePatches+=" -e \"$line1\""
+	done < src/patches/$1/exclude-patches
+	export excludePatches
+	while IFS= read -r line2; do
+		includePatches+=" -i \"$line2\""
+	done < src/patches/$1/include-patches
+	export includePatches
 }
 
 #################################################
@@ -134,18 +136,18 @@ patch() {
 				exit 1
 			fi
 		fi
-		java -jar revanced-cli*.jar $p\
+		eval java -jar revanced-cli*.jar $p\
 		$b revanced-patches*.jar \
-		$m revanced-integrations*.apk \
-		${EXCLUDE_PATCHES[@]} \
-		${INCLUDE_PATCHES[@]} \
+		$m revanced-integrations*.apk\
+		$excludePatches\
+		$includePatches \
 		--options=./src/options/$2.json \
 		--out=./release/$1-$2.apk \
 		--keystore=./src/$ks.keystore \
 		$a$1.apk
 		unset version
-		unset EXCLUDE_PATCHES
-		unset INCLUDE_PATCHES
+		unset excludePatches
+		unset includePatches
 	else 
 		exit 1
 	fi

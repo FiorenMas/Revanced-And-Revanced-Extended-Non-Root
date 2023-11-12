@@ -1,0 +1,40 @@
+name: Patch Revanced Extended Android 5
+on:
+  workflow_dispatch:
+  workflow_call:
+jobs:
+  patch:
+    name: Patch Revanced Extended for Android 5
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up jdk
+        uses: actions/setup-java@v3.11.0
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Patch apk
+        run: bash src/build/Revanced-Extended-Android-5.sh
+        env:
+          repository: ${{ github.repository }}
+
+      - name: Generate release info
+        run: |
+          echo "
+          **Change log** :point_down:
+          [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
+          [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
+          [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases/latest)
+          "> ${{ github.workspace }}-CHANGELOG.txt
+
+      - name: Release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          files: |
+            ./release/*
+          name: Revanced & Revanced Extended
+          tag_name: all
+          body_path: ${{ github.workspace }}-CHANGELOG.txt

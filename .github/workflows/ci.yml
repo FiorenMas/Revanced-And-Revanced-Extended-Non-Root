@@ -52,13 +52,28 @@ jobs:
     outputs:
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
 
+  check-rve5:
+    name: Check new patch Revanced For Android 5
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check new patch Revanced For Android 5
+        id: check-rve5
+        run: bash src/build/ci.sh d4n3436/revanced-patches-android5 youtube-revanced-extended-android-5.apk
+        env:
+          repository: ${{ github.repository }}
+
+    outputs:
+      check_rve5: ${{ steps.check-rve5.outputs.new_patch }}
+
   Patch-Revanced:
     name: Patch Revanced
     permissions: write-all
     needs: check-rv
     uses: ./.github/workflows/patch-revanced.yml
     if: ${{ needs.check-rv.outputs.check_rv == 1 }}
-    secrets: inherit
 
   Patch-Revanced-Extended:
     name: Patch Revanced Extended
@@ -66,7 +81,6 @@ jobs:
     needs: check-rve
     uses: ./.github/workflows/patch-revanced-extended.yml
     if: ${{ needs.check-rve.outputs.check_rve == 1 }}
-    secrets: inherit
 
   Patch-Revanced-For-Android-6-7:
     name: Patch Revanced Extended For Android 6 & 7
@@ -74,4 +88,10 @@ jobs:
     needs: check-rve67
     uses: ./.github/workflows/patch-revanced-extended-android-6-7.yml
     if: ${{ needs.check-rve67.outputs.check_rve67 == 1 }}
-    secrets: inherit
+
+  Patch-Revanced-For-Android-5:
+    name: Patch Revanced Extended For Android 5
+    permissions: write-all
+    needs: check-rve5
+    uses: ./.github/workflows/patch-revanced-extended-android-5.yml
+    if: ${{ needs.check-rve5.outputs.check_rve5 == 1 }}

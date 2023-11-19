@@ -21,7 +21,7 @@ patch "instagram-arm64-v8a" "revanced"
 # Patch Messenger:
 # Arm64-v8a
 get_patches_key "messenger"
-get_apk "messenger-arm64-v8a" "messenger" "facebook-2/messenger/messenger" "arm64-v8a"
+get_apk "messenger-arm64-v8a" "messenger" "facebook-2/messenger/messenger" "arm64-v8a" "nodpi"
 patch "messenger-arm64-v8a" "revanced"
 
 #################################################

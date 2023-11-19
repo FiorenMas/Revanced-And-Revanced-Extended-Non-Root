@@ -68,7 +68,6 @@ req() {
 	_req "$1" "$2" "$random_user_agent"
 }
 
-
 dl_apk() {
 	local url=$1 regexp=$2 output=$3
 	url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"
@@ -86,24 +85,33 @@ get_apk() {
 	if [[ -z $4 ]]; then
 		url_regexp='APK</span>[^@]*@\([^#]*\)'
 	else
+		local os dpi
+		[[ -f $5 ]] && dpi="[^@]*$5"
+		[[ -f $6 ]] && os="[^@]*$6"
 		case $4 in
-			arm64-v8a) url_regexp='arm64-v8a</div>[^@]*@\([^"]*\)' ;;
-			armeabi-v7a) url_regexp='armeabi-v7a</div>[^@]*@\([^"]*\)' ;;
-			x86) url_regexp='x86</div>[^@]*@\([^"]*\)' ;;
-			x86_64) url_regexp='x86_64</div>[^@]*@\([^"]*\)' ;;
+			arm64-v8a) url_regexp='arm64-v8a'"$os"''"$dpi"'</div>[^@]*@\([^"]*\)' ;;
+			armeabi-v7a) url_regexp='armeabi-v7a'"$os"''"$dpi"'</div>[^@]*@\([^"]*\)' ;;
+			x86) url_regexp='x86'"$os"''"$dpi"'</div>[^@]*@\([^"]*\)' ;;
+			x86_64) url_regexp='x86_64'"$os"''"$dpi"'</div>[^@]*@\([^"]*\)' ;;
 			*) return 1 ;;
 		esac 
 	fi
 	export version="$version"
 	if [[ -z $version ]]; then
- 		local list_ver
-  		list_ver=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
-    		version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_ver" | grep -v 'beta\|alpha' | head -n 1)
+ 		local list_vers v versions=()
+  		list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
+		version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_vers")
+		version=$(grep -iv "\(beta\|alpha\)" <<<"$version")
+		for v in $version; do
+			grep -iq "${v} \(beta\|alpha\)" <<<"$list_vers" || versions+=("$v")
+		done
+		version=$(head -1 <<<"$versions")
 	fi
+	echo "Downloading $2 $4 version: $version $5 $6"
 	local base_apk="$1.apk"
 	local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
-					"$url_regexp" \
-					"$base_apk")
+						  "$url_regexp" \
+						  "$base_apk")
 }
 
 #################################################

@@ -119,6 +119,14 @@ Download
 
 ---
 
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.katana&hl)
+
+### Revanced:
+
+[Arm64-v8a & Android 11+](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/facebook-revanced.apk)
+
+---
+
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://play.google.com/store/apps/details?id=com.twitter.android)
 
 ### Revanced:

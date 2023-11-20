@@ -123,7 +123,7 @@ Download
 
 ### Revanced:
 
-[Arm64-v8a & Android 11+](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/facebook-revanced.apk)
+[Arm64-v8a & Android 11+](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/facebook-arm64-v8a-revanced.apk)
 
 ---
 

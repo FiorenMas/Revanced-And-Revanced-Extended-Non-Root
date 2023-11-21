@@ -82,16 +82,28 @@ jobs:
     uses: ./.github/workflows/patch-revanced-extended.yml
     if: ${{ needs.check-rve.outputs.check_rve == 1 }}
 
-  Patch-Revanced-For-Android-6-7:
+  Patch-Revanced-Extended-For-Android-6-7:
     name: Patch Revanced Extended For Android 6 & 7
     permissions: write-all
     needs: check-rve67
     uses: ./.github/workflows/patch-revanced-extended-android-6-7.yml
     if: ${{ needs.check-rve67.outputs.check_rve67 == 1 }}
 
-  Patch-Revanced-For-Android-5:
+  Patch-Revanced-Extended-For-Android-5:
     name: Patch Revanced Extended For Android 5
     permissions: write-all
     needs: check-rve5
     uses: ./.github/workflows/patch-revanced-extended-android-5.yml
     if: ${{ needs.check-rve5.outputs.check_rve5 == 1 }}
+
+  Remove-Unnecessary-Logs:
+    name: Remove Unnecessary Logs Revanced
+    permissions: write-all
+    needs: check-rv
+    uses: Mattraks./.github/workflows/delete-workflow-runs@v2
+    with:
+      token: ${{ github.token }}
+      repository: ${{ github.repository }}
+      retain_days: 30
+      keep_minimum_runs: 120
+    if: ${{ needs.check-rv.outputs.check_rv == 0 }}

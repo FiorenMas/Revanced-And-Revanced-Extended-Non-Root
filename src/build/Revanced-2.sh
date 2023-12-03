@@ -50,8 +50,8 @@ patch "reddit" "revanced"
 
 # Patch Tiktok:
 get_patches_key "tiktok"
-get_ver "Hide ads" "com.zhiliaoapp.musically"
-get_apk "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
+get_ver "Hide ads" "com.ss.android.ugc.trill"
+get_apk "tiktok" "tik-tok" "tiktok-pte-ltd/tik-tok/tik-tok"
 patch "tiktok" "revanced"
 
 #################################################

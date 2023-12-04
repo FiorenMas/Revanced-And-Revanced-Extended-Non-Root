@@ -100,7 +100,7 @@ get_apk() {
 	if [[ -z $version ]]; then
  		local list_ver
   		list_ver=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
-    		version=$(sed -n 's;.*<a class="fontBlack" href="/apk/'"$3"'-.*-release/">[^0-9]*\(.*\)</a> </h5>.*;\1;p' <<<"$list_ver" | grep -v 'beta\|alpha' | head -n 1)
+    		version=$(sed -n 's;.*<a class="fontBlack" href="/apk/'"$3"'-.*-release/">[^0-9]*\(.*\)</a> </h5>.*;\1;p' <<<"$list_ver" | grep -v 'beta\|alpha' | sed 's/\([0-9\.]*\).*/\1/' | head -n 1)
 	fi
 	echo "Downloading $2 $4 version: $version $5 $6"
 	local base_apk="$1.apk"

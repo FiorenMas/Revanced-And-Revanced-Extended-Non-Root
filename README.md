@@ -17,7 +17,7 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 ## ⚙️ How this repository work?<img src="https://i.imgur.com/s6xzVuA.png" align="right" />
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.
 
-If you want to use the YouTube or YouTube Music app, you need to download and install MicroG or mMircoG. I recommend using MicroG because mMircoG is still in beta.
+If you want to use the YouTube or YouTube Music app, you need to download and install MicroG, MicroG-RE or mMircoG.
 
 All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
 
@@ -101,21 +101,15 @@ Download
 
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
 
+## [MicroG-RE:](https://github.com/WSTxda/MicroG-RE)
+
+[![Release](https://img.shields.io/github/v/release/WSTxda/MicroG-RE?label=All-arch&style=for-the-badge)](https://github.com/WSTxda/MicroG-RE/releases)
+
 ## [mMicroG:](https://github.com/kazimmt/mMicroG/)
 
 [![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=arm64-v8a&style=for-the-badge)](https://github.com/kazimmt/mMicroG/releases/latest/download/MicroG-arm64-v8a.apk)
   
 [![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=armeabi-v7a&style=for-the-badge)](https://github.com/ikazimmt/mMicroG/releases/latest/download/MicroG-armeabi-v7a.apk)
-
-## [MicroG-RE:](https://github.com/WSTxda/MicroG-RE)
-
-[![Release](https://img.shields.io/github/v/release/WSTxda/MicroG-RE?label=arm64-v8a&style=for-the-badge)](https://github.com/WSTxda/MicroG-RE/releases/latest/download/MicroG-RE-arm64-v8a.apk)
-  
-[![Release](https://img.shields.io/github/v/release/WSTxda/MicroG-RE?label=armeabi-v7a&style=for-the-badge)](https://github.com/WSTxda/MicroG-RE/releases/latest/download/MicroG-RE-armeabi-v7a.apk)
-
-## [VancedxMicroG:](https://github.com/cuynu/VancedxMicroG)
-
-[![Release](https://img.shields.io/github/v/release/cuynu/VancedxMicroG?label=All-arch&style=for-the-badge)](https://github.com/cuynu/VancedxMicroG/releases/latest/download/microg.apk)
 
 ---
 

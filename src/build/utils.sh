@@ -184,7 +184,7 @@ gen_rip_libs() {
 	done
 }
 split_arch() {
-	green_log "[+] Splitting $1 to $archs:"
+	green_log "[+] Splitting $1 to ${archs[i]}:"
 	if [ -f "./release/$1.apk" ]; then
 		eval java -jar revanced-cli*.jar patch \
 		--patch-bundle revanced-patches*.jar \

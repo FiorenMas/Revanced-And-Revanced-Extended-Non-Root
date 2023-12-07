@@ -4,17 +4,26 @@ mkdir ./release
 
 #################################################
 
+# Colored output logs
+green_log() {
+    echo -e "\e[32m$1\e[0m"
+}
+red_log() {
+    echo -e "\e[31m$1\e[0m"
+}
+
+#################################################
+
 # Download Github assets requirement:
 dl_gh() {
 	for repo in $1 ; do
-	wget -qO- "https://api.github.com/repos/$2/$repo/releases/$3" \
-	| jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
-	| while read -r url names; do
-		echo "Downloading $names from $url"
-		wget -q -O "$names" $url
+		wget -qO- "https://api.github.com/repos/$2/$repo/releases/$3" \
+		| jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
+		| while read -r url names; do
+			green_log "[+] Downloading $names from $2"
+			wget -q -O "$names" $url
+		done
 	done
-	done
-echo "All assets downloaded"
 }
 
 #################################################
@@ -63,21 +72,17 @@ _req() {
 	fi
 }
 req() {
-	user_agents=("User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/114.0" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/112.0" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/116.0" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:108.0) Gecko/20100101 Firefox/108.0")
-	random_user_agent=$(shuf -n 1 -e "${user_agents[@]}")
-	_req "$1" "$2" "$random_user_agent"
+	_req "$1" "$2" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0"
 }
 
 dl_apk() {
 	local url=$1 regexp=$2 output=$3
 	url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"
 	sleep 5
-	echo "$url"
 	url="https://www.apkmirror.com$(req "$url" - | grep "downloadButton" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')"
 	sleep 5
    	url="https://www.apkmirror.com$(req "$url" - | grep "please click" | sed -n 's#.*href="\(.*key=[^"]*\)">.*#\1#;s#amp;##p')&forcebaseapk=true"
 	sleep 5
-    echo "$url"
 	req "$url" "$output"
 }
 
@@ -107,17 +112,22 @@ get_apk() {
 		done
 		version=$(head -1 <<<"$versions")
 	fi
-	echo "Downloading $2 $4 version: $version $5 $6"
+	green_log "[+] Downloading $2 version: $version $4 $5 $6"
 	local base_apk="$1.apk"
 	local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
 						  "$url_regexp" \
 						  "$base_apk")
+	if [ -z "$1.apk" ]; then
+		red_log "[-] Failed to download $1"
+		exit 1
+	fi
 }
 
 #################################################
 
 # Patching apps with Revanced CLI:
 patch() {
+	green_log "[+] Patching $1:"
 	if [ -f "$1.apk" ]; then
 		local p b m ks a
 		if [ "$3" = inotia ]; then
@@ -136,11 +146,11 @@ patch() {
 					p="" b="-b" m="-m" a="-a " ks="_ks"
 					echo "Patching with Revanced-cli version 2"
 				else
-					echo "No revanced-cli supported"
+					red_log "[-] Revanced-cli not supported"
 					exit 1
 				fi
 			else
-				echo "No revanced-cli supported"
+				red_log "[-] Revanced-cli not supported"
 				exit 1
 			fi
 		fi
@@ -152,18 +162,20 @@ patch() {
 		--options=./src/options/$2.json \
 		--out=./release/$1-$2.apk \
 		--keystore=./src/$ks.keystore \
+		--purge=true \
 		$a$1.apk
 		unset version
 		unset excludePatches
 		unset includePatches
 	else 
+		red_log "[-] Not found $1.apk"
 		exit 1
 	fi
 }
 
 #################################################
 
-# Split architectures using Revanced CLI, created by j-hc:
+# Split architectures using Revanced CLI, created by j-hc or inotia00
 archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
 libs=("x86_64 x86 armeabi-v7a" "x86_64 x86 arm64-v8a" "x86 armeabi-v7a arm64-v8a" "x86_64 armeabi-v7a arm64-v8a")
 gen_rip_libs() {
@@ -172,14 +184,16 @@ gen_rip_libs() {
 	done
 }
 split_arch() {
+	green_log "[+] Splitting $1 to $archs:"
 	if [ -f "./release/$1.apk" ]; then
-		java -jar revanced-cli*.jar patch \
+		eval java -jar revanced-cli*.jar patch \
 		--patch-bundle revanced-patches*.jar \
 		$3 \
 		--keystore=./src/ks.keystore \
 		--out=./release/$2.apk\
 		./release/$1.apk
-	else 
+	else
+		red_log "[-] Not found $1.apk"
 		exit 1
 	fi
 }

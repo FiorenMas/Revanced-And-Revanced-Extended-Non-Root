@@ -189,7 +189,7 @@ split_arch() {
 		eval java -jar revanced-cli*.jar patch \
 		--patch-bundle revanced-patches*.jar \
 		$3 \
-		--keystore=./src/ks.keystore \
+		--keystore=./src/_ks.keystore \
 		--out=./release/$2.apk\
 		./release/$1.apk
 	else

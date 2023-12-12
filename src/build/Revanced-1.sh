@@ -39,7 +39,7 @@ patch "facebook-arm64-v8a" "revanced"
 
 # Split architecture:
 rm -f revanced-cli* revanced-patches*.jar patches.json 
-dl_gh "revanced-cli" "j-hc" "latest"
+dl_gh "revanced-cli" "inotia00" "latest"
 dl_gh "revanced-patches" "revanced" "latest"
 # Split architecture Youtube:
 for i in {0..3}; do

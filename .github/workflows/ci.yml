@@ -13,7 +13,7 @@ jobs:
 
       - name: Check new patch ReVanced
         id: check-rv
-        run: bash src/build/ci.sh ReVanced/revanced-patches-template youtube-revanced.apk
+        run: bash src/build/ci.sh ReVanced/revanced-patches youtube-revanced.apk
         env:
           repository: ${{ github.repository }}
 

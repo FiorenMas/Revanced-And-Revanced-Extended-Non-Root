@@ -5,7 +5,7 @@ source ./src/build/utils.sh
 #################################################
 
 # Download requirements
-dl_gh "revanced-patches-template revanced-cli revanced-integrations" "revanced" "latest"
+dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 #################################################
 

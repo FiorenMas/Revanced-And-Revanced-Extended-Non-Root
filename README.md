@@ -30,7 +30,7 @@ Download
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
-### [Revanced:](https://github.com/revanced/revanced-patches-template)
+### [Revanced:](https://github.com/revanced/revanced-patches)
 
 [All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk)
 
@@ -231,7 +231,7 @@ Download
 
 [revanced-magisk-module](https://github.com/j-hc/revanced-magisk-module) - [GPL-3.0](https://github.com/j-hc/revanced-magisk-module/blob/main/LICENSE)
 
-[Revanced Patches](https://github.com/revanced/revanced-patches-template) - [GPL-3.0](https://github.com/revanced/revanced-patches-template/blob/main/LICENSE)
+[Revanced Patches](https://github.com/revanced/revanced-patches) - [GPL-3.0](https://github.com/revanced/revanced-patches/blob/main/LICENSE)
 
 [Revanced Extended Patches](https://github.com/inotia00/revanced-patches/tree/revanced-extended) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)
 

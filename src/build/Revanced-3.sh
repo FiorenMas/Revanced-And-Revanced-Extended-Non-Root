@@ -5,7 +5,7 @@ source ./src/build/utils.sh
 #################################################
 
 # Download requirements
-dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
+dl_gh "revanced-patches-template revanced-cli revanced-integrations" "revanced" "latest"
 
 #################################################
 
@@ -38,7 +38,7 @@ patch "tumblr" "revanced"
 #################################################
 
 rm -f patches*.json revanced-patches*.jar revanced-integrations*.apk revanced-cli*.jar
-dl_gh "revanced-patches" "revanced" "tags/v2.187.0"
+dl_gh "revanced-patches-template" "revanced" "tags/v2.187.0"
 dl_gh "revanced-integrations" "revanced" "tags/v0.115.1"
 dl_gh "revanced-cli" "revanced" "tags/v2.22.0"
 

@@ -100,6 +100,7 @@ Download
 ## [MicroG:](https://github.com/inotia00/VancedMicroG)
 
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root?ref=badge_shield)
 
 ## [MicroG-RE:](https://github.com/WSTxda/MicroG-RE)
 
@@ -254,3 +255,6 @@ Download
 [Revanced Extended for Android 5 Integrations](https://github.com/d4n3436/revanced-integrations) - [GPL-3.0](https://github.com/d4n3436/revanced-integrations/blob/revanced-extended/LICENSE)
 
 [Revanced CLI - j-hc](https://github.com/j-hc/revanced-cli) - [GPL-3.0](https://github.com/j-hc/revanced-cli/blob/main/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root?ref=badge_large)

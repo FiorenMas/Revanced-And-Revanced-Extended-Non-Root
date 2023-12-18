@@ -13,7 +13,7 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 # Arm64-v8a
 get_patches_key "instagram"
 get_ver "Hide timeline ads" "com.instagram.android"
-get_apk "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a"
+get_apk "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a" "nodpi"
 patch "instagram-arm64-v8a" "revanced"
 
 #################################################

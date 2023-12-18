@@ -13,7 +13,7 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 # Arm64-v8a
 get_patches_key "instagram"
 get_ver "Hide timeline ads" "com.instagram.android"
-get_apk "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a" "nodpi"
+get_apk "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "nodpi" "arm64-v8a"
 patch "instagram-arm64-v8a" "revanced"
 
 #################################################
@@ -21,7 +21,7 @@ patch "instagram-arm64-v8a" "revanced"
 # Patch Messenger:
 # Arm64-v8a
 get_patches_key "messenger"
-get_apk "messenger-arm64-v8a" "messenger" "facebook-2/messenger/messenger" "arm64-v8a" "nodpi"
+get_apk "messenger-arm64-v8a" "messenger" "facebook-2/messenger/messenger" "nodpi" "arm64-v8a"
 patch "messenger-arm64-v8a" "revanced"
 
 #################################################

@@ -90,14 +90,11 @@ get_apk() {
 	if [[ -z $4 ]]; then
 		url_regexp='APK</span>[^@]*@\([^#]*\)'
 	else
-		local os dpi
-		[[ -f $5 ]] && dpi="[^@]*$5"
-		[[ -f $6 ]] && os="[^@]*$6"
 		case $4 in
-			arm64-v8a) url_regexp='arm64-v8a'"$os"''"$dpi"'</div>[^@]*@\([^"]*\)' ;;
-			armeabi-v7a) url_regexp='armeabi-v7a'"$os"''"$dpi"'</div>[^@]*@\([^"]*\)' ;;
-			x86) url_regexp='x86'"$os"''"$dpi"'</div>[^@]*@\([^"]*\)' ;;
-			x86_64) url_regexp='x86_64'"$os"''"$dpi"'</div>[^@]*@\([^"]*\)' ;;
+			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
+			armeabi-v7a) url_regexp='armeabi-v7a'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
+			x86) url_regexp='x86'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
+			x86_64) url_regexp='x86_64'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
 			*) return 1 ;;
 		esac 
 	fi

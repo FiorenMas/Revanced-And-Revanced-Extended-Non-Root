@@ -14,14 +14,14 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 </div>
 
 ---
-## ⚙️ How this repository work?<img src="https://i.imgur.com/s6xzVuA.png" align="right" />
+## ⚙️ How does this repository work?<img src="https://i.imgur.com/s6xzVuA.png" align="right" />
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.
 
-If you want to use the YouTube or YouTube Music app, you need to download and install MicroG, MicroG-RE or mMircoG.
+If you want to use the YouTube or YouTube Music app, you need to download and install MicroG, MicroG-RE or mMicroG.
 
 All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
 
-If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app)
+If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app).
 
 ---
 <h1 align="center">
@@ -32,7 +32,7 @@ Download
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced.apk)
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-arm64-v8a-revanced.apk)
 
@@ -44,7 +44,7 @@ Download
 
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended.apk)
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-arm64-v8a-revanced-extended.apk)
 
@@ -56,7 +56,7 @@ Download
 
 ### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended-android-6-7.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended-android-6-7.apk)
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-arm64-v8a-revanced-extended-android-6-7.apk)
 
@@ -69,7 +69,7 @@ Download
 
 ### [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5)
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended-android-5.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-revanced-extended-android-5.apk)
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-arm64-v8a-revanced-extended-android-5.apk)
 
@@ -125,7 +125,7 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-revanced.apk)
 
 ---
 
@@ -149,7 +149,7 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tiktok-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tiktok-revanced.apk)
 
 ---
 
@@ -157,7 +157,7 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitch-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitch-revanced.apk)
 
 ---
 
@@ -165,11 +165,11 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced.apk)
 
 ### Revanced Extended:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced-extended.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/reddit-revanced-extended.apk)
 
 ---
 
@@ -177,7 +177,7 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/lightroom-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/lightroom-revanced.apk)
 
 ---
 
@@ -185,7 +185,7 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tumblr-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tumblr-revanced.apk)
 
 ---
 
@@ -193,7 +193,7 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/pixiv-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/pixiv-revanced.apk)
 
 ---
 
@@ -201,7 +201,7 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/windy-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/windy-revanced.apk)
 
 ---
 
@@ -209,7 +209,7 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/nova-launcher-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/nova-launcher-revanced.apk)
 
 ---
 
@@ -217,11 +217,11 @@ Download
 
 ### Revanced:
 
-[All Architecture](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tasker-revanced.apk)
+[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tasker-revanced.apk)
 
 ---
 
-#### Special thanks to Aisrsa for nice idea :heartpulse:
+#### Special thanks to Aisrsa for the nice idea :heartpulse:
 
 # ⚠️ License:
 

@@ -126,7 +126,7 @@ get_apk() {
 patch() {
 	green_log "[+] Patching $1:"
 	if [ -f "$1.apk" ]; then
-		local p b m ks a
+		local p b m ks a pu
 		if [ "$3" = inotia ]; then
 			p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
 			echo "Patching with Revanced-cli inotia"
@@ -134,13 +134,13 @@ patch() {
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 				num=${BASH_REMATCH[1]}
 				if [ $num -ge 4 ]; then
-					p="patch " b="--patch-bundle" m="--merge" a="" ks="ks"
+					p="patch " b="--patch-bundle" m="--merge" a="" ks="ks" pu="--purge=true"
 					echo "Patching with Revanced-cli version 4+"
 				elif [ $num -eq 3 ]; then
-					p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
+					p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks" pu="--purge=true"
 					echo "Patching with Revanced-cli version 3"
 				elif [ $num -eq 2 ]; then
-					p="" b="-b" m="-m" a="-a " ks="_ks"
+					p="" b="-b" m="-m" a="-a " ks="_ks" pu="--clean"
 					echo "Patching with Revanced-cli version 2"
 				else
 					red_log "[-] Revanced-cli not supported"
@@ -159,7 +159,7 @@ patch() {
 		--options=./src/options/$2.json \
 		--out=./release/$1-$2.apk \
 		--keystore=./src/$ks.keystore \
-		--purge=true \
+		$pu \
 		$a$1.apk
 		unset version
 		unset excludePatches

@@ -29,14 +29,6 @@ patch "youtube-music-armeabi-v7a" "revanced"
 
 #################################################
 
-# Patch Facebook:
-# Arm64-v8a
-get_patches_key "facebook"
-get_apk "facebook-arm64-v8a" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
-patch "facebook-arm64-v8a" "revanced"
-
-#################################################
-
 # Split architecture:
 rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "inotia00" "latest"

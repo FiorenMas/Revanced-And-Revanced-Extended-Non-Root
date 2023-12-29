@@ -18,7 +18,7 @@ patch "pixiv" "revanced"
 
 # Patch Lightroom:
 get_patches_key "lightroom"
-get_apk "lightroom" "lightroom" "adobe/lightroom/lightroom"
+get_apk "lightroom" "lightroom" "adobe/lightroom/lightroom" "arm64-v8a"
 patch "lightroom" "revanced"
 
 #################################################
@@ -34,26 +34,5 @@ patch "windy" "revanced"
 get_patches_key "tumblr"
 get_apk "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr"
 patch "tumblr" "revanced"
-
-#################################################
-
-rm -f patches*.json revanced-patches*.jar revanced-integrations*.apk revanced-cli*.jar
-dl_gh "revanced-patches-template" "revanced" "tags/v2.187.0"
-dl_gh "revanced-integrations" "revanced" "tags/v0.115.1"
-dl_gh "revanced-cli" "revanced" "tags/v2.22.0"
-
-#################################################
-
-#Patch Tasker:
-get_patches_key "tasker"
-get_apk "tasker" "tasker" "joaomgcd/tasker/tasker"
-patch "tasker" "revanced"
-
-#################################################
-
-#Patch Nova Launcher:
-get_patches_key "nova-launcher"
-get_apk "nova-launcher" "nova-launcher" "teslacoil-software/nova-launcher/nova-launcher"
-patch "nova-launcher" "revanced"
 
 #################################################

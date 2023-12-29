@@ -9,6 +9,14 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 #################################################
 
+# Patch Facebook:
+# Arm64-v8a
+get_patches_key "facebook"
+get_apk "facebook-arm64-v8a" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
+patch "facebook-arm64-v8a" "revanced"
+
+#################################################
+
 # Patch Pixiv:
 get_patches_key "pixiv"
 get_apk "pixiv" "pixiv" "pixiv-inc/pixiv/pixiv"

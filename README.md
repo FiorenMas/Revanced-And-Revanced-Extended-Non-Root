@@ -19,6 +19,8 @@ Simply, all you need to do is choose the app you want to use from the options be
 
 If you want to use the YouTube or YouTube Music app, you need to download and install MicroG, MicroG-RE or mMicroG.
 
+But I strongly recommend you should build your MicroG apk by yourself. [Read wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-building-microg)
+
 All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
 
 If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app).
@@ -99,11 +101,17 @@ Download
 
 ## [MicroG:](https://github.com/inotia00/VancedMicroG)
 
-[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk)
+[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) 
+
+### [Built by Github Action](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/MicroG/play-services-core-release.apk)
+
+---
 
 ## [MicroG-RE:](https://github.com/WSTxda/MicroG-RE)
 
 [![Release](https://img.shields.io/github/v/release/WSTxda/MicroG-RE?label=All-arch&style=for-the-badge)](https://github.com/WSTxda/MicroG-RE/releases)
+
+---
 
 ## [mMicroG:](https://github.com/kazimmt/mMicroG/)
 

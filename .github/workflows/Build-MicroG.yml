@@ -1,0 +1,65 @@
+name: Build MicroG
+
+on:
+  workflow_dispatch:
+permissions: write-all
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          repository: inotia00/VancedMicroG
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: JDK Setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Cache Gradle
+        uses: burrunan/gradle-cache-action@v1
+
+      - name: Setup Java
+        run: echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $GITHUB_ENV
+
+      - name: Setup keystore
+        run: |
+          keytool -genkey -v -keystore play-services-core/keystore.jks -storepass microg -alias microg -keypass microg -dname "CN=microg" -keyalg RSA -keysize 2048 -validity 10000
+          cat << EOF > play-services-core/user.gradle
+          android {
+              signingConfigs {
+                  release {
+                      storeFile file('keystore.jks')
+                      storePassword 'microg'
+                      keyAlias 'microg'
+                      keyPassword 'microg'
+                  }
+              }
+          
+              buildTypes {
+                  release {
+                      signingConfig signingConfigs.release
+                  }
+              }
+          }
+          EOF
+
+      - name: Build project
+        run: ./gradlew assemble
+
+      - name: Build APK
+        run: ./gradlew assembleRelease
+
+      - name: Release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          files: |
+            play-services-core/build/outputs/apk/release/play-services-core-release.apk
+          name: MicroG by inotia00
+          tag_name: MicroG
+          body: Change logs https://github.com/inotia00/VancedMicroG/releases

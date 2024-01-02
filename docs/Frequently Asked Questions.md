@@ -20,6 +20,21 @@ By default, the Readme.md file uses links to download my patched apps, but if yo
 
 ---
 
+### Q: How do I use this repository for building MicroG?
+
+Here are the steps to help you build MicroG using [inotia00](https://github.com/inotia00/VancedMicroG) source code with GitHub Actions. I'm not implying that downloading directly from inotia00's repository is dangerous, but it's always wise to exercise caution when working with online resources.
+
+You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then move to the `Action` tab
+![Click Action](https://i.imgur.com/GewSCbi.png)
+
+Click "I understand my workflows, go ahead and enable them"
+![Click "I understand my workflows, go ahead and enable them"](https://i.imgur.com/OjI1Pxa.png)
+
+Follow these steps to run the workflow for patching MicroG!
+![](https://i.imgur.com/VFECO6q.png)
+
+---
+
 ### Q: I want to use custom patches for patching my apps. How can I do it?
 
 You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/`. It contains a lot of folders that are named after the apps you’re patching. Each folder has two files: exclude-patches and include-patches. Edit these files with the patches you like, putting one patch per line, following the patches list here:

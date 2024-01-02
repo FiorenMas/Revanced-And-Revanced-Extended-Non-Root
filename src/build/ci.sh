@@ -1,19 +1,9 @@
 #!/bin/bash
 
 # Check new patch:
-get_date1() {
+get_date() {
 	local assets asset name updated_at
-	assets=$(curl -s https://api.github.com/repos/"$1"/releases/latest | jq '.assets')
-	for asset in $(echo "$assets" | jq -r '.[] | @base64'); do
-        	asset=$(echo "$asset" | base64 --decode)
-		name=$(echo "$asset" | jq -r '.name')
-		updated_at=$(echo "$asset" | jq -r '.updated_at')
-		[[ $name =~ "$2" ]] && echo "$updated_at"
-	done
-}
-get_date2() {
-	local assets asset name updated_at
-	assets=$(curl -s https://api.github.com/repos/"$1"/releases/tags/all | jq '.assets')
+	assets=$(curl -s https://api.github.com/repos/"$1"/releases/"$3" | jq '.assets')
 	for asset in $(echo "$assets" | jq -r '.[] | @base64'); do
         	asset=$(echo "$asset" | base64 --decode)
 		name=$(echo "$asset" | jq -r '.name')
@@ -23,8 +13,8 @@ get_date2() {
 }
 checker(){
 	local date1 date2 date1_sec date1_sec repo=$1 ur_repo=$repository check=$2
-	date1=$(get_date1 "$repo" "patches.json")
-	date2=$(get_date2 "$ur_repo" "$check")
+	date1=$(get_date "$repo" "patches.json" "latest")
+	date2=$(get_date "$ur_repo" "$check" "tags/all")
 	date1_sec=$(date -d "$date1" +%s)
 	date2_sec=$(date -d "$date2" +%s)
 	if [ -z "$date2" ] || [ "$date1_sec" -gt "$date2_sec" ]; then

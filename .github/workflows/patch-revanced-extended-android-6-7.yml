@@ -16,6 +16,9 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
+      - name: Setup Cloudflare Warp
+        run: bash src/etc/cf_warp.sh
+
       - name: Patch apk
         run: bash src/build/Revanced-Extended-Android-6-7.sh
         env:

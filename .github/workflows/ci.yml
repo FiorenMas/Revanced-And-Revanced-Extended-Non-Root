@@ -13,7 +13,7 @@ jobs:
 
       - name: Check new patch ReVanced
         id: check-rv
-        run: bash src/build/ci.sh ReVanced/revanced-patches youtube-revanced.apk
+        run: bash src/etc/ci.sh ReVanced/revanced-patches youtube-revanced.apk
         env:
           repository: ${{ github.repository }}
 
@@ -29,7 +29,7 @@ jobs:
 
       - name: Check new patch Revanced Extended
         id: check-rve
-        run: bash src/build/ci.sh inotia00/revanced-patches youtube-revanced-extended.apk
+        run: bash src/etc/ci.sh inotia00/revanced-patches youtube-revanced-extended.apk
         env:
           repository: ${{ github.repository }}
 
@@ -45,7 +45,7 @@ jobs:
 
       - name: Check new patch Revanced For Android 6 & 7
         id: check-rve67
-        run: bash src/build/ci.sh kitadai31/revanced-patches-android6-7 youtube-revanced-extended-android-6-7.apk
+        run: bash src/etc/ci.sh kitadai31/revanced-patches-android6-7 youtube-revanced-extended-android-6-7.apk
         env:
           repository: ${{ github.repository }}
 
@@ -61,7 +61,7 @@ jobs:
 
       - name: Check new patch Revanced For Android 5
         id: check-rve5
-        run: bash src/build/ci.sh d4n3436/revanced-patches-android5 youtube-revanced-extended-android-5.apk
+        run: bash src/etc/ci.sh d4n3436/revanced-patches-android5 youtube-revanced-extended-android-5.apk
         env:
           repository: ${{ github.repository }}
 

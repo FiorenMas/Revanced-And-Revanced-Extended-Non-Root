@@ -155,6 +155,9 @@ patch() {
 		--keystore=./src/$ks.keystore \
 		$pu \
 		$a$1.apk
+  		unset version
+		unset excludePatches
+		unset includePatches
 	else 
 		red_log "[-] Not found $1.apk"
 		exit 1

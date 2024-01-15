@@ -142,13 +142,7 @@ patch() {
 				elif [ $num -eq 2 ]; then
 					p="" b="-b" m="-m" a="-a " ks="_ks" pu="--clean"
 					echo "Patching with Revanced-cli version 2"
-				else
-					red_log "[-] Revanced-cli not supported"
-					exit 1
 				fi
-			else
-				red_log "[-] Revanced-cli not supported"
-				exit 1
 			fi
 		fi
 		eval java -jar revanced-cli*.jar $p\
@@ -161,9 +155,6 @@ patch() {
 		--keystore=./src/$ks.keystore \
 		$pu \
 		$a$1.apk
-		unset version
-		unset excludePatches
-		unset includePatches
 	else 
 		red_log "[-] Not found $1.apk"
 		exit 1
@@ -174,21 +165,27 @@ patch() {
 
 # Split architectures using Revanced CLI, created by j-hc or inotia00
 archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
-libs=("x86_64 x86 armeabi-v7a" "x86_64 x86 arm64-v8a" "x86 armeabi-v7a arm64-v8a" "x86_64 armeabi-v7a arm64-v8a")
+libs=("lib/armeabi-v7a lib/x86_64 lib/x86" "lib/arm64-v8a lib/x86_64 lib/x86" "lib/armeabi-v7a lib/arm64-v8a lib/x86" "lib/armeabi-v7a lib/arm64-v8a lib/x86_64")
 gen_rip_libs() {
 	for lib in $@; do
-		echo -n "--rip-lib $lib "
+		echo -n "--rip-lib "$lib" "
 	done
 }
 split_arch() {
 	green_log "[+] Splitting $1 to ${archs[i]}:"
-	if [ -f "./release/$1.apk" ]; then
+	if [ -f "$1.apk" ]; then
 		eval java -jar revanced-cli*.jar patch \
 		--patch-bundle revanced-patches*.jar \
-		$3 \
+		--merge revanced-integrations*.apk\
+		$excludePatches\
+		$includePatches \
+		--rip-lib res \
+		--rip-lib classes \
+		$3\
+		--options=./src/options/$2.json \
 		--keystore=./src/_ks.keystore \
 		--out=./release/$2.apk\
-		./release/$1.apk
+		$1.apk
 	else
 		red_log "[-] Not found $1.apk"
 		exit 1

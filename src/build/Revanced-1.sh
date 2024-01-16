@@ -32,7 +32,7 @@ patch "youtube-music-armeabi-v7a" "revanced"
 # Split architecture:
 rm -f revanced-cli* revanced-patches*.jar patches.json 
 dl_gh "revanced-cli" "FiorenMas" "latest"
-dl_gh "revanced-patches" "inotia00" "latest"
+dl_gh "revanced-patches" "revanced" "latest"
 # Split architecture Youtube:
 get_patches_key "youtube-revanced"
 for i in {0..3}; do

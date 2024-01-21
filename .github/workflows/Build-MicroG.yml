@@ -1,12 +1,11 @@
 name: Build MicroG
-
 on:
   workflow_dispatch:
-permissions: write-all
-
 jobs:
   Build:
+    name: Build MicroG
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -14,19 +13,17 @@ jobs:
           repository: inotia00/VancedMicroG
           persist-credentials: false
           fetch-depth: 0
-
       - name: JDK Setup
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: 17
-
       - name: Cache Gradle
         uses: burrunan/gradle-cache-action@v1
-
+        with:
+          job-id: Build
       - name: Setup Java
         run: echo "JAVA_HOME=$JAVA_HOME_17_X64" >> $GITHUB_ENV
-
       - name: Setup keystore
         run: |
           keytool -genkey -v -keystore play-services-core/keystore.jks -storepass microg -alias microg -keypass microg -dname "CN=microg" -keyalg RSA -keysize 2048 -validity 10000
@@ -48,18 +45,26 @@ jobs:
               }
           }
           EOF
-
       - name: Build project
-        run: ./gradlew assemble
-
-      - name: Build APK
-        run: ./gradlew assembleRelease
-
+        run: |
+          chmod +x ./gradlew
+          ./gradlew assemble
+      - name: Build MicroG
+        run: |
+          ./gradlew assembleRelease
+          mkdir ./release
+          cp play-services-core/build/outputs/apk/release/play-services-core-release.apk ./release/MicroG.apk
+      - name: Generate release info
+        run: |
+          echo "
+          **Change log** :point_down:
+          [MicroG](https://github.com/inotia00/VancedMicroG)
+          "> ${{ github.workspace }}-CHANGELOG.txt
       - name: Release
         uses: softprops/action-gh-release@v0.1.15
         with:
           files: |
-            play-services-core/build/outputs/apk/release/play-services-core-release.apk
-          name: MicroG by inotia00
+            ./release/*.apk
+          name: MicroG
           tag_name: MicroG
-          body: Change logs https://github.com/inotia00/VancedMicroG/releases
+          body_path: ${{ github.workspace }}-CHANGELOG.txt

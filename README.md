@@ -103,7 +103,7 @@ Download
 
 [![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) 
 
-### [Built by Github Action](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/MicroG/play-services-core-release.apk)
+### [Built by Github Action](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/MicroG/MicroG.apk)
 
 ---
 

@@ -15,7 +15,7 @@ runs:
       uses: softprops/action-gh-release@v0.1.15
       with:
         files: |
-          ./release/*
+          ./release/*.apk
         name: Revanced & Revanced Extended
         tag_name: all
         body_path: ${{ github.workspace }}-CHANGELOG.txt

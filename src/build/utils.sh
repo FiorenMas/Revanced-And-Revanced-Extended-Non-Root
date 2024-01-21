@@ -194,5 +194,18 @@ split_arch() {
 		exit 1
 	fi
 }
-
+_split_arch() {
+	green_log "[+] Splitting $1 to ${archs[i]}:"
+	if [ -f "./release/$1.apk" ]; then
+		eval java -jar revanced-cli*.jar patch \
+		--patch-bundle revanced-patches*.jar \
+		$3 \
+		--keystore=./src/_ks.keystore \
+		--out=./release/$2.apk\
+		./release/$1.apk
+	else
+		red_log "[-] Not found $1.apk"
+		exit 1
+	fi
+}
 #################################################

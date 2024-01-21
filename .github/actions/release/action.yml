@@ -1,0 +1,21 @@
+name: Releasing APK files
+runs:
+  using: "composite"
+  steps:
+    - name: Generate release info
+      shell: bash
+      run: |
+        echo "
+        **Change log** :point_down:
+        [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
+        [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
+        [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases/latest)
+        "> ${{ github.workspace }}-CHANGELOG.txt
+    - name: Release
+      uses: softprops/action-gh-release@v0.1.15
+      with:
+        files: |
+          ./release/*
+        name: Revanced & Revanced Extended
+        tag_name: all
+        body_path: ${{ github.workspace }}-CHANGELOG.txt

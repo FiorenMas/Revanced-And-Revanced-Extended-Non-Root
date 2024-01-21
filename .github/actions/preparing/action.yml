@@ -1,0 +1,12 @@
+name: Preparing to patch
+runs:
+  using: "composite"
+  steps:
+    - name: Set up jdk
+      uses: actions/setup-java@v4.0.0
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+    - name: Setup Cloudflare Warp
+      shell: bash
+      run: bash src/etc/cf_warp.sh

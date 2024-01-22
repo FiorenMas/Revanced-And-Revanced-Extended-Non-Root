@@ -12,8 +12,8 @@ You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-No
 Click "I understand my workflows, go ahead and enable them"
 ![Click "I understand my workflows, go ahead and enable them"](https://i.imgur.com/OjI1Pxa.png)
 
-Follow these steps to run the workflow for patching Revanced apps!
-![](https://i.imgur.com/rU5HeGG.png)
+Follow these steps to run the workflow for Manual Patch apps!
+![](https://i.imgur.com/qFoOyxl.png)
 
 By default, the Readme.md file uses links to download my patched apps, but if you want to change the Readme.md file to download your own patched apps, you should run the workflow named `Fix Readme`. The steps are similar to when you patch Revanced apps.
 ![](https://i.imgur.com/pMjwc3S.png)
@@ -22,7 +22,7 @@ By default, the Readme.md file uses links to download my patched apps, but if yo
 
 ### Q: How do I use this repository for building MicroG?
 
-Here are the steps to help you build MicroG using [inotia00](https://github.com/inotia00/VancedMicroG) source code with GitHub Actions. I'm not implying that downloading directly from inotia00's repository is dangerous, but it's always wise to exercise caution when working with online resources.
+Here are the steps to help you build MicroG using [inotia00](https://github.com/inotia00/VancedMicroG) source code with GitHub Actions. I'm not implying that downloading directly from inotia00's repository is dangerous, but using prebuilt file not safe at all.
 
 You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then move to the `Action` tab
 ![Click Action](https://i.imgur.com/GewSCbi.png)
@@ -31,7 +31,7 @@ Click "I understand my workflows, go ahead and enable them"
 ![Click "I understand my workflows, go ahead and enable them"](https://i.imgur.com/OjI1Pxa.png)
 
 Follow these steps to run the workflow for patching MicroG!
-![](https://i.imgur.com/VFECO6q.png)
+![](https://i.imgur.com/UR7JmeG.png)
 
 ---
 

@@ -1,0 +1,91 @@
+name: Manual Patch
+permissions: write-all
+on:
+  workflow_dispatch:
+    inputs:
+      org:
+        description: 'Which Revanced do you want to patch?'
+        required: true
+        default: 'Revanced'
+        type: choice
+        options:
+          - 'All'
+          - 'Revanced'
+          - 'Revanced Extended'
+          - 'Revanced Extended Android 6,7'
+          - 'Revanced Extended Android 5'
+  workflow_call:
+    inputs:
+      org:
+        required: true
+        type: string
+jobs:
+  patch_rv:
+    name: Patch Revanced
+    if: ${{ github.event.inputs.org == 'Revanced' || github.event.inputs.org == 'All' || inputs.org == 'Revanced' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        Include:
+          - org: "Revanced"
+            run: "1"
+          - org: "Revanced"
+            run: "2"
+          - org: "Revanced"
+            run: "3"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Patch apk
+        run: bash src/build/Revanced-${{ matrix.Include.run }}.sh
+        env:
+          repository: ${{ github.repository }}
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_rve:
+    name: Patch Revanced Extended
+    if: ${{ github.event.inputs.org == 'Revanced Extended' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Patch apk
+        run: bash src/build/Revanced-Extended.sh
+        env:
+          repository: ${{ github.repository }}
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_rve67:
+    name: Revanced Extended Android 6,7
+    if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 6,7' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Patch apk
+        run: bash src/build/Revanced-Extended-Android-6-7.sh
+        env:
+          repository: ${{ github.repository }}
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_rve5:
+    name: Revanced Extended Android 5
+    if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 5' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Patch apk
+        run: bash src/build/Revanced-Extended-Android-5.sh
+        env:
+          repository: ${{ github.repository }}
+      - name: Releasing APK files
+        uses: ./.github/actions/release

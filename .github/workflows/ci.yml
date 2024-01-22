@@ -1,4 +1,5 @@
 name: Check new patch
+permissions: write-all
 on:
   schedule:
     - cron: "0 */6 * * *"
@@ -6,7 +7,6 @@ on:
 jobs:
   check:
     name: Check new patch
-    permissions: write-all
     runs-on: ubuntu-latest
     env:
       repository: ${{ github.repository }}
@@ -33,28 +33,29 @@ jobs:
 
   Patch-Revanced:
     name: Patch Revanced
-    permissions: write-all
     needs: check
-    uses: ./.github/workflows/patch-revanced.yml
     if: ${{ needs.check.outputs.check_rv == 1 }}
-
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced"
   Patch-Revanced-Extended:
     name: Patch Revanced Extended
-    permissions: write-all
     needs: check
-    uses: ./.github/workflows/patch-revanced-extended.yml
     if: ${{ needs.check.outputs.check_rve == 1 }}
-
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+        org: "Revanced Extended"
   Patch-Revanced-Extended-For-Android-6-7:
     name: Patch Revanced Extended For Android 6 & 7
-    permissions: write-all
     needs: check
-    uses: ./.github/workflows/patch-revanced-extended-android-6-7.yml
     if: ${{ needs.check.outputs.check_rve67 == 1 }}
-
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Extended Android 6,7"
   Patch-Revanced-Extended-For-Android-5:
     name: Patch Revanced Extended For Android 5
-    permissions: write-all
     needs: check
-    uses: ./.github/workflows/patch-revanced-extended-android-5.yml
     if: ${{ needs.check.outputs.check_rve5 == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Extended Android 5"

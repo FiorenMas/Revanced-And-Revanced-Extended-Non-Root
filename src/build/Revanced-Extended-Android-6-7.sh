@@ -24,7 +24,7 @@ dl_gh "revanced-cli" "inotia00" "latest"
 dl_gh "revanced-patches" "inotia00" "latest"
 # Split architecture Youtube:
 for i in {0..3}; do
-    _split_arch "youtube-revanced-extended-android-6-7" "youtube-${archs[i]}-revanced-extended-android-6-7" "$(gen_rip_libs ${libs[i]})"
+    _split_arch "youtube-revanced-extended-android-6-7" "youtube-${archs[i]}-revanced-extended-android-6-7" "$(_gen_rip_libs ${_libs[i]})"
 done
 
 #################################################

@@ -194,6 +194,12 @@ split_arch() {
 		exit 1
 	fi
 }
+_libs=("armeabi-v7a x86_64 x86" "arm64-v8a x86_64 x86" "armeabi-v7a arm64-v8a x86" "armeabi-v7a arm64-v8a x86_64")
+_gen_rip_libs() {
+	for lib in $@; do
+		echo -n "--rip-lib "$lib" "
+	done
+}
 _split_arch() {
 	green_log "[+] Splitting $1 to ${archs[i]}:"
 	if [ -f "./release/$1.apk" ]; then

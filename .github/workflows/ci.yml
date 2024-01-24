@@ -25,6 +25,8 @@ jobs:
       - name: Check new patch Revanced For Android 5
         id: check-rve5
         run: bash src/etc/ci.sh d4n3436/revanced-patches-android5 youtube-revanced-extended-android-5.apk
+      - name: Keep workflow run
+        uses: gautamkrishnar/keepalive-workflow@v1.2.2
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
@@ -44,7 +46,7 @@ jobs:
     if: ${{ needs.check.outputs.check_rve == 1 }}
     uses: ./.github/workflows/manual-patch.yml
     with:
-        org: "Revanced Extended"
+      org: "Revanced Extended"
   Patch-Revanced-Extended-For-Android-6-7:
     name: Patch Revanced Extended For Android 6 & 7
     needs: check

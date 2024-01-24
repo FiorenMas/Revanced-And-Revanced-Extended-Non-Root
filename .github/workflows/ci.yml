@@ -26,7 +26,7 @@ jobs:
         id: check-rve5
         run: bash src/etc/ci.sh d4n3436/revanced-patches-android5 youtube-revanced-extended-android-5.apk
       - name: Keep workflow run
-        uses: gautamkrishnar/keepalive-workflow@v1.2.2
+        uses: gautamkrishnar/keepalive-workflow@v1
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}

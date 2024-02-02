@@ -18,7 +18,7 @@ jobs:
         run: bash src/etc/ci.sh ReVanced/revanced-patches youtube-revanced.apk
       - name: Check new patch ReX
         id: check-rex
-        run: bash src/etc/ci.sh YT-Advanced/ReX-patches youtube-revanced-extended.apk
+        run: bash src/etc/ci.sh YT-Advanced/ReX-patches youtube-ReX.apk
       - name: Check new patch Revanced Extended
         id: check-rve
         run: bash src/etc/ci.sh inotia00/revanced-patches youtube-revanced-extended.apk

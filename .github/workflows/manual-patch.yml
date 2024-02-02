@@ -11,6 +11,7 @@ on:
         options:
           - 'All'
           - 'Revanced'
+          - 'ReX'
           - 'Revanced Extended'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
@@ -40,6 +41,21 @@ jobs:
         uses: ./.github/actions/preparing
       - name: Patch apk
         run: bash src/build/Revanced-${{ matrix.Include.run }}.sh
+        env:
+          repository: ${{ github.repository }}
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+  patch_rex:
+    name: Patch ReX
+    if: ${{ github.event.inputs.org == 'ReX' || github.event.inputs.org == 'All' || inputs.org == 'ReX' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Patch apk
+        run: bash src/build/ReX.sh
         env:
           repository: ${{ github.repository }}
       - name: Releasing APK files

@@ -33,7 +33,7 @@ patch "lightroom" "revanced"
 
 # Patch Windy:
 get_patches_key "windy"
-get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast"
+get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast" "arm64-v8a + x86 + x86_64"
 patch "windy" "revanced"
 
 #################################################

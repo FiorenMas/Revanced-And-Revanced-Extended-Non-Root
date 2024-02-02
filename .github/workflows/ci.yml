@@ -16,6 +16,9 @@ jobs:
       - name: Check new patch ReVanced
         id: check-rv
         run: bash src/etc/ci.sh ReVanced/revanced-patches youtube-revanced.apk
+      - name: Check new patch ReX
+        id: check-rex
+        run: bash src/etc/ci.sh YT-Advanced/ReX-patches youtube-revanced-extended.apk
       - name: Check new patch Revanced Extended
         id: check-rve
         run: bash src/etc/ci.sh inotia00/revanced-patches youtube-revanced-extended.apk
@@ -29,6 +32,7 @@ jobs:
         uses: gautamkrishnar/keepalive-workflow@v1
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
+      check_rex: ${{ steps.check-rex.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
       check_rve5: ${{ steps.check-rve5.outputs.new_patch }}
@@ -40,6 +44,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced"
+  Patch-ReX:
+    name: Patch ReX
+    needs: check
+    if: ${{ needs.check.outputs.check_rex == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "ReX"
   Patch-Revanced-Extended:
     name: Patch Revanced Extended
     needs: check

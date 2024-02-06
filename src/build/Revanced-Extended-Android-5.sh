@@ -6,7 +6,7 @@ source src/build/utils.sh
 
 # Download requirements
 dl_gh "revanced-patches-android5 revanced-integrations" "d4n3436" "latest"
-dl_gh "revanced-cli" "revanced" "tags/v3.1.1"
+dl_gh "revanced-cli" "revanced" "v3.1.1"
 
 #################################################
 

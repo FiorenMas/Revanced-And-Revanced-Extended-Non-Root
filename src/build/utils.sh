@@ -75,21 +75,6 @@ get_patches_key() {
 	done < src/patches/$1/include-patches
 	export includePatches
 }
-#################################################
-
-# Get patches list:
-get_patches_key() {
-	excludePatches=""
-	includePatches=""
-	while IFS= read -r line1; do
-		excludePatches+=" -e \"$line1\""
-	done < src/patches/$1/exclude-patches
-	export excludePatches
-	while IFS= read -r line2; do
-		includePatches+=" -i \"$line2\""
-	done < src/patches/$1/include-patches
-	export includePatches
-}
 
 #################################################
 

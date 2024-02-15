@@ -15,23 +15,27 @@ jobs:
         uses: actions/checkout@v4.1.1
       - name: Check new patch ReVanced
         id: check-rv
-        run: bash src/etc/ci.sh ReVanced/revanced-patches youtube-revanced.apk
+        run: bash src/etc/ci.sh ReVanced/revanced-patches latest youtube-revanced.apk
+      - name: Check new patch ReVanced Beta
+        id: check-rv-beta
+        run: bash src/etc/ci.sh ReVanced/revanced-patches prerelease youtube-beta-revanced.apk
       - name: Check new patch ReX
         id: check-rex
-        run: bash src/etc/ci.sh YT-Advanced/ReX-patches youtube-ReX.apk
+        run: bash src/etc/ci.sh YT-Advanced/ReX-patches latest youtube-ReX.apk
       - name: Check new patch Revanced Extended
         id: check-rve
-        run: bash src/etc/ci.sh inotia00/revanced-patches youtube-revanced-extended.apk
+        run: bash src/etc/ci.sh inotia00/revanced-patches latest youtube-revanced-extended.apk
       - name: Check new patch Revanced For Android 6 & 7
         id: check-rve67
-        run: bash src/etc/ci.sh kitadai31/revanced-patches-android6-7 youtube-revanced-extended-android-6-7.apk
+        run: bash src/etc/ci.sh kitadai31/revanced-patches-android6-7 latest youtube-revanced-extended-android-6-7.apk
       - name: Check new patch Revanced For Android 5
         id: check-rve5
-        run: bash src/etc/ci.sh d4n3436/revanced-patches-android5 youtube-revanced-extended-android-5.apk
+        run: bash src/etc/ci.sh d4n3436/revanced-patches-android5 latest youtube-revanced-extended-android-5.apk
       - name: Keep workflow run
         uses: gautamkrishnar/keepalive-workflow@v1
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
+      check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
       check_rex: ${{ steps.check-rex.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
@@ -44,6 +48,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced"
+  Patch-Revanced-Beta:
+    name: Patch Revanced Beta
+    needs: check
+    if: ${{ needs.check.outputs.check_rv_beta == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Beta"
   Patch-ReX:
     name: Patch ReX
     needs: check

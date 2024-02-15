@@ -2,19 +2,25 @@
 
 # Check new patch:
 get_date() {
-	local assets asset name updated_at
-	assets=$(curl -s https://api.github.com/repos/"$1"/releases/"$3" | jq '.assets')
-	for asset in $(echo "$assets" | jq -r '.[] | @base64'); do
-        	asset=$(echo "$asset" | base64 --decode)
-		name=$(echo "$asset" | jq -r '.name')
-		updated_at=$(echo "$asset" | jq -r '.updated_at')
-		[[ $name =~ "$2" ]] && echo "$updated_at"
-	done
+	json=$(wget -qO- "https://api.github.com/repos/$1/releases")
+	case "$2" in
+		latest)
+			updated_at=$(echo "$json" | jq -r 'first(.[] | select(.prerelease == false) | .assets[] | select(.name == "'$3'") | .updated_at)')
+			;;
+		prerelease)
+			updated_at=$(echo "$json" | jq -r 'first(.[] | select(.prerelease == true) | .assets[] | select(.name == "'$3'") | .updated_at)')
+			;;
+		*)
+			updated_at=$(echo "$json" | jq -r 'first(.[] | select(.tag_name == "'$2'") | .assets[] | select(.name == "'$3'") | .updated_at)')
+			;;
+	esac
+	echo "$updated_at"
 }
+
 checker(){
-	local date1 date2 date1_sec date1_sec repo=$1 ur_repo=$repository check=$2
-	date1=$(get_date "$repo" "patches.json" "latest")
-	date2=$(get_date "$ur_repo" "$check" "tags/all")
+	local date1 date2 date1_sec date1_sec repo=$1 ur_repo=$repository check=$3
+	date1=$(get_date "$repo" "$2" "patches.json")
+	date2=$(get_date "$ur_repo" "all" "$check")
 	date1_sec=$(date -d "$date1" +%s)
 	date2_sec=$(date -d "$date2" +%s)
 	if [ -z "$date2" ] || [ "$date1_sec" -gt "$date2_sec" ]; then
@@ -25,4 +31,4 @@ checker(){
 		echo -e "\e[32mOld patch, not build.\e[0m"
 	fi
 }
-checker $1 $2
+checker $1 $2 $3

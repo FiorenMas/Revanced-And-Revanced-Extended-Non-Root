@@ -16,13 +16,47 @@ red_log() {
 
 # Download Github assets requirement:
 dl_gh() {
+	local repo=$1
 	for repo in $1 ; do
-		wget -qO- "https://api.github.com/repos/$2/$repo/releases/$3" \
-		| jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
-		| while read -r url names; do
-			green_log "[+] Downloading $names from $2"
-			wget -q -O "$names" $url
-		done
+		local owner=$2 tag=$3 found=0 assets=0
+		releases=$(wget -qO- "https://api.github.com/repos/$owner/$repo/releases")
+		while read -r line; do
+			if [[ $line == *"\"tag_name\":"* ]]; then
+				tag_name=$(echo $line | cut -d '"' -f 4)
+				if [ "$tag" == "$tag_name" ] || [ "$tag" == "latest" ] || [ "$tag" == "prerelease" ]; then
+					found=1
+				else
+					found=0
+				fi
+			fi
+			if [[ $line == *"\"prerelease\":"* ]]; then
+				prerelease=$(echo $line | cut -d ' ' -f 2 | tr -d ',')
+				if [ "$tag" == "prerelease" ] && [ "$prerelease" == "false" ]; then
+					found=0
+				elif [ "$tag" == "latest" ] && [ "$prerelease" == "true" ]; then
+					found=0
+				fi
+			fi
+			if [[ $line == *"\"assets\":"* ]]; then
+				if [ $found -eq 1 ]; then
+					assets=1
+				fi
+			fi
+			if [[ $line == *"\"browser_download_url\":"* ]]; then
+				if [ $assets -eq 1 ]; then
+					url=$(echo $line | cut -d '"' -f 4)
+					name=$(basename "$url")
+					wget -q -O "$name" "$url"
+					green_log "[+] Downloading $name from $owner"
+				fi
+			fi
+			if [[ $line == *"],"* ]]; then
+				if [ $assets -eq 1 ]; then
+					assets=0
+					break
+				fi
+			fi
+		done <<< "$releases"
 	done
 }
 

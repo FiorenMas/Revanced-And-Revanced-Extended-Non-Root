@@ -6,8 +6,6 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 <div align="center">
   
 [![Image of https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root](https://github.com/FiorenMas/View-Counter/blob/main/repos/Revanced-And-Revanced-Extended-Non-Root_609906498/svg/count.svg)](https://github.com/FiorenMas/View-Counter)
-[![CodeFactor](https://www.codefactor.io/repository/github/fiorenmas/revanced-and-revanced-extended-non-root/badge/main)](https://www.codefactor.io/repository/github/fiorenmas/revanced-and-revanced-extended-non-root/overview/main)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ea7a68dbfe8b4429ad8f84e49d3a4173)](https://app.codacy.com/gh/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/fiorenmas/Revanced-And-Revanced-Extended-Non-Root/ci.yml)
 [![](https://img.shields.io/badge/Telegram-2CA5E0)](https://t.me/fioren374)
   
@@ -29,6 +27,8 @@ If you are an advanced user and you want to use custom patches for patching apps
 <h1 align="center">
 Download
 </h1>
+
+If you want download beta version [Click Here](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/blob/main/docs/Beta.md)
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 

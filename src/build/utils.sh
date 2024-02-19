@@ -115,7 +115,7 @@ dl_apk() {
 	sleep 5
 	url="https://www.apkmirror.com$(req "$url" - | grep "downloadButton" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')"
 	sleep 5
-   	url="https://www.apkmirror.com$(req "$url" - | grep "please click" | sed -n 's#.*href="\(.*key=[^"]*\)">.*#\1#;s#amp;##p')&forcebaseapk=true"
+   	url="https://www.apkmirror.com$(req "$url" - | grep "here" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')&forcebaseapk=true"
 	sleep 5
 	req "$url" "$output"
 }

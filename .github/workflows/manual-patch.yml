@@ -38,13 +38,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh
+        run: bash src/etc/connection.sh
       - name: Preparing to patch
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-${{ matrix.Include.run }}.sh
         env:
           repository: ${{ github.repository }}
       - name: Releasing APK files
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rv_beta:
     name: Patch Revanced Beta
@@ -53,13 +59,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh
+        run: bash src/etc/connection.sh
       - name: Preparing to patch
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Beta.sh
         env:
           repository: ${{ github.repository }}
       - name: Releasing APK files
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rex:
     name: Patch ReX
@@ -68,13 +80,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh
+        run: bash src/etc/connection.sh
       - name: Preparing to patch
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/ReX.sh
         env:
           repository: ${{ github.repository }}
       - name: Releasing APK files
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve:
     name: Patch Revanced Extended
@@ -83,13 +101,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh
+        run: bash src/etc/connection.sh
       - name: Preparing to patch
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended.sh
         env:
           repository: ${{ github.repository }}
       - name: Releasing APK files
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve67:
     name: Revanced Extended Android 6,7
@@ -98,13 +122,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh
+        run: bash src/etc/connection.sh
       - name: Preparing to patch
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-6-7.sh
         env:
           repository: ${{ github.repository }}
       - name: Releasing APK files
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve5:
     name: Revanced Extended Android 5
@@ -113,11 +143,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh
+        run: bash src/etc/connection.sh
       - name: Preparing to patch
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-5.sh
         env:
           repository: ${{ github.repository }}
       - name: Releasing APK files
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release

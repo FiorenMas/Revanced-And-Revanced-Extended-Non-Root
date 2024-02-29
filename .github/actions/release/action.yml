@@ -19,10 +19,3 @@ runs:
         name: Revanced & Revanced Extended
         tag_name: all
         body_path: ${{ github.workspace }}-CHANGELOG.txt
-    - name: Delete workflow runs
-      uses: Mattraks/delete-workflow-runs@v2.0.6
-      with:
-        token: ${{ github.token }}
-        repository: ${{ github.repository }}
-        retain_days: 90
-        keep_minimum_runs: 999

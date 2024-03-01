@@ -166,10 +166,10 @@ jobs:
         id: check-gh
         run: bash src/etc/connection.sh
       - name: Preparing to patch
-        id: patch
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        id: patch
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-5.sh
       - name: Releasing APK files

@@ -1,5 +1,10 @@
 name: Manual Patch
 permissions: write-all
+env:
+  repository: ${{ github.repository }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  retry_count: ${{ github.event.inputs.retry_count }}
+  max_retries: 3
 on:
   workflow_dispatch:
     inputs:
@@ -16,6 +21,10 @@ on:
           - 'Revanced Extended'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
+      retry_count:
+        description: 'Do not change value below'
+        required: false
+        default: '1'
   workflow_call:
     inputs:
       org:
@@ -45,13 +54,15 @@ jobs:
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        id: patch
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-${{ matrix.Include.run }}.sh
-        env:
-          repository: ${{ github.repository }}
       - name: Releasing APK files
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
+        uses: ./.github/actions/re-run
   patch_rv_beta:
     name: Patch Revanced Beta
     if: ${{ github.event.inputs.org == 'Revanced Beta' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Beta' }}
@@ -66,13 +77,15 @@ jobs:
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        id: patch
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Beta.sh
-        env:
-          repository: ${{ github.repository }}
       - name: Releasing APK files
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
   patch_rex:
     name: Patch ReX
     if: ${{ github.event.inputs.org == 'ReX' || github.event.inputs.org == 'All' || inputs.org == 'ReX' }}
@@ -87,13 +100,15 @@ jobs:
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        id: patch
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/ReX.sh
-        env:
-          repository: ${{ github.repository }}
       - name: Releasing APK files
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
   patch_rve:
     name: Patch Revanced Extended
     if: ${{ github.event.inputs.org == 'Revanced Extended' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended' }}
@@ -108,13 +123,15 @@ jobs:
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        id: patch
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended.sh
-        env:
-          repository: ${{ github.repository }}
       - name: Releasing APK files
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
   patch_rve67:
     name: Revanced Extended Android 6,7
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 6,7' }}
@@ -129,13 +146,15 @@ jobs:
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
+        id: patch
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-6-7.sh
-        env:
-          repository: ${{ github.repository }}
       - name: Releasing APK files
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
   patch_rve5:
     name: Revanced Extended Android 5
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 5' }}
@@ -147,13 +166,15 @@ jobs:
         id: check-gh
         run: bash src/etc/connection.sh
       - name: Preparing to patch
+        id: patch
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-5.sh
-        env:
-          repository: ${{ github.repository }}
       - name: Releasing APK files
         if: steps.check-gh.outputs.internet_error == '0'
         uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run

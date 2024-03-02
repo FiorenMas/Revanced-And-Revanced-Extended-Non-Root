@@ -45,9 +45,11 @@ dl_gh() {
 			if [[ $line == *"\"browser_download_url\":"* ]]; then
 				if [ $assets -eq 1 ]; then
 					url=$(echo $line | cut -d '"' -f 4)
-					name=$(basename "$url")
-					wget -q -O "$name" "$url"
-					green_log "[+] Downloading $name from $owner"
+     					if [[ $url != *.asc ]]; then
+						name=$(basename "$url")
+						wget -q -O "$name" "$url"
+						green_log "[+] Downloading $name from $owner"
+					fi
 				fi
 			fi
 			if [[ $line == *"],"* ]]; then

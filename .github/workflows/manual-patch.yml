@@ -48,20 +48,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Check github connection
-        id: check-gh
+        id: check-gh-rv
         run: bash src/etc/connection.sh
       - name: Preparing to patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rv.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
-        id: patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        id: patch-rv
+        if: steps.check-gh-rv.outputs.internet_error == '0'
         run: bash src/build/Revanced-${{ matrix.Include.run }}.sh
       - name: Releasing APK files
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rv.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
+        if: always() && steps.patch-rv.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
         uses: ./.github/actions/re-run
   patch_rv_beta:
     name: Patch Revanced Beta
@@ -71,20 +71,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Check github connection
-        id: check-gh
+        id: check-gh-rvb
         run: bash src/etc/connection.sh
       - name: Preparing to patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rvb.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
-        id: patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        id: patch-rvb
+        if: steps.check-gh-rvb.outputs.internet_error == '0'
         run: bash src/build/Revanced-Beta.sh
       - name: Releasing APK files
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rvb.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rvb.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rex:
     name: Patch ReX
@@ -94,20 +94,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Check github connection
-        id: check-gh
+        id: check-gh-rex
         run: bash src/etc/connection.sh
       - name: Preparing to patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rex.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
-        id: patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        id: patch-rex
+        if: steps.check-gh-rex.outputs.internet_error == '0'
         run: bash src/build/ReX.sh
       - name: Releasing APK files
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rex.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve:
     name: Patch Revanced Extended
@@ -117,20 +117,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Check github connection
-        id: check-gh
+        id: check-gh-rve
         run: bash src/etc/connection.sh
       - name: Preparing to patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rve.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
-        id: patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        id: patch-rve
+        if: steps.check-gh-rve.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended.sh
       - name: Releasing APK files
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rve.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve67:
     name: Revanced Extended Android 6,7
@@ -140,20 +140,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Check github connection
-        id: check-gh
+        id: check-gh-rve67
         run: bash src/etc/connection.sh
       - name: Preparing to patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rve67.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
-        id: patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        id: patch-rve67
+        if: steps.check-gh-rve67.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-6-7.sh
       - name: Releasing APK files
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rve67.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve67.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve5:
     name: Revanced Extended Android 5
@@ -163,18 +163,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.1.1
       - name: Check github connection
-        id: check-gh
+        id: check-gh-rve5
         run: bash src/etc/connection.sh
       - name: Preparing to patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rve5.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
       - name: Patch apk
-        id: patch
-        if: steps.check-gh.outputs.internet_error == '0'
+        id: patch-rve5
+        if: steps.check-gh-rve5.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-5.sh
       - name: Releasing APK files
-        if: steps.check-gh.outputs.internet_error == '0'
+        if: steps.check-gh-rve5.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve5.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run

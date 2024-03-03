@@ -15,20 +15,22 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 ## ⚙️ How does this repository work?<img src="https://i.imgur.com/s6xzVuA.png" align="right" />
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.
 
-If you want to use the YouTube or YouTube Music app, you need to download and install MicroG, MicroG-RE or mMicroG.
-
-But I strongly recommend you should build your MicroG apk by yourself. [Read wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-building-microg)
-
-All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
-
-If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app).
+> [!NOTE]
+> If you want to use the YouTube or YouTube Music app, you need to download and install MicroG, MicroG-RE or mMicroG.
+> 
+> I strongly recommend you should build your MicroG apk by yourself. [Read wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-building-microg)
+> 
+> If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app).
+> 
+> All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
 
 ---
 <h1 align="center">
 Download
 </h1>
 
-⚠️ The APK files Beta version have the same package name as the Stable version, so installing them will overwrite the Stable version.
+> [!IMPORTANT] 
+> Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
@@ -97,13 +99,12 @@ Download
 
 ### Revanced:
 
-| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest)                                                                   | [Beta version](https://github.com/ReVanced/revanced-patches/releases)                                                                                 |
+| Stable version                                                                                                                                   | Beta version                                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-arm64-v8a-revanced.apk)     | [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-beta-arm64-v8a-revanced.apk)     |
 | [Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
 
-### ReX
-
+### ReX:
 
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-arm64-v8a-ReX.apk)
 
@@ -250,8 +251,6 @@ Download
 [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/tasker-revanced.apk)
 
 ---
-
-#### Special thanks to Aisrsa for the nice idea :heartpulse:
 
 # ⚠️ License:
 

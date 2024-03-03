@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 */6 * * *"
   workflow_dispatch:
+    inputs:
+      retry_count:
+        description: 'Do not change value below'
+        required: false
+        default: '1'
 jobs:
   check:
     name: Check new patch
@@ -13,26 +18,59 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh
+        run: bash src/etc/connection.sh
       - name: Check new patch ReVanced
         id: check-rv
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh ReVanced/revanced-patches latest youtube-revanced.apk
       - name: Check new patch ReVanced Beta
         id: check-rv-beta
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh ReVanced/revanced-patches prerelease youtube-beta-revanced.apk
       - name: Check new patch ReX
         id: check-rex
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh YT-Advanced/ReX-patches latest youtube-ReX.apk
       - name: Check new patch Revanced Extended
         id: check-rve
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh inotia00/revanced-patches latest youtube-revanced-extended.apk
       - name: Check new patch Revanced For Android 6 & 7
         id: check-rve67
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh kitadai31/revanced-patches-android6-7 latest youtube-revanced-extended-android-6-7.apk
       - name: Check new patch Revanced For Android 5
         id: check-rve5
+        if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh d4n3436/revanced-patches-android5 latest youtube-revanced-extended-android-5.apk
       - name: Keep workflow run
+        if: steps.check-gh.outputs.internet_error == '0'
         uses: gautamkrishnar/keepalive-workflow@v1
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.check-rv.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const maxRetries = ${{ env.max_retries }};
+            let retryCount = ${{ env.retry_count }};
+            if (retryCount < maxRetries) {
+              retryCount += 1;
+              await github.rest.actions.createWorkflowDispatch({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: "ci.yml",
+                ref: context.ref,
+                inputs: {
+                  'retry_count': String(retryCount)
+                }
+              });
+            }
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          retry_count: ${{ github.event.inputs.retry_count }}
+          max_retries: 3
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
       check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}

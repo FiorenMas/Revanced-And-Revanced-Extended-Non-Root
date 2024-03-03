@@ -45,9 +45,11 @@ dl_gh() {
 			if [[ $line == *"\"browser_download_url\":"* ]]; then
 				if [ $assets -eq 1 ]; then
 					url=$(echo $line | cut -d '"' -f 4)
-					name=$(basename "$url")
-					wget -q -O "$name" "$url"
-					green_log "[+] Downloading $name from $owner"
+     					if [[ $url != *.asc ]]; then
+						name=$(basename "$url")
+						wget -q -O "$name" "$url"
+						green_log "[+] Downloading $name from $owner"
+					fi
 				fi
 			fi
 			if [[ $line == *"],"* ]]; then
@@ -115,7 +117,7 @@ dl_apk() {
 	sleep 5
 	url="https://www.apkmirror.com$(req "$url" - | grep "downloadButton" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')"
 	sleep 5
-   	url="https://www.apkmirror.com$(req "$url" - | grep "please click" | sed -n 's#.*href="\(.*key=[^"]*\)">.*#\1#;s#amp;##p')&forcebaseapk=true"
+   	url="https://www.apkmirror.com$(req "$url" - | grep "here" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')&forcebaseapk=true"
 	sleep 5
 	req "$url" "$output"
 }

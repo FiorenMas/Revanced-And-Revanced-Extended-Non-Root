@@ -1,0 +1,24 @@
+name: Re-run workflow if github connection not stable
+runs:
+  using: "composite"
+  steps:
+    - name: Re-run workflow if github connection not stable
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const maxRetries = ${{ env.max_retries }};
+          let retryCount = Number('${{ env.retry_count }}');
+          const orgInput = '${{ github.event.inputs.org }}' || '${{ inputs.org }}';
+          if (retryCount < maxRetries) {
+            retryCount += 1;
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: "manual-patch.yml",
+              ref: context.ref,
+              inputs: {
+                'retry_count': String(retryCount),
+                'org': orgInput
+              }
+            });
+          }

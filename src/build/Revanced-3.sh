@@ -33,13 +33,15 @@ patch "lightroom" "revanced"
 
 # Patch Windy:
 get_patches_key "windy"
-get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast" "arm64-v8a + x86 + x86_64"
+version="34.0.2"
+get_apk "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast"
 patch "windy" "revanced"
 
 #################################################
 
 # Patch Tumblr:
 get_patches_key "tumblr"
+version="33.2.0.110"
 get_apk "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr"
 patch "tumblr" "revanced"
 

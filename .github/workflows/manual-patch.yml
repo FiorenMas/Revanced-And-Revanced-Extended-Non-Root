@@ -18,6 +18,7 @@ on:
           - 'Revanced'
           - 'Revanced Beta'
           - 'ReX'
+          - 'Rex-rufusin'
           - 'Revanced Extended'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
@@ -109,6 +110,29 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
+  patch_rex_rufusin:
+    name: Patch ReX forked by rufusin
+    if: ${{ github.event.inputs.org == 'ReX-rufusin' || github.event.inputs.org == 'All' || inputs.org == 'ReX-rufusin' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh-rex-rufusin
+        run: bash src/etc/connection.sh
+      - name: Preparing to patch
+        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        uses: ./.github/actions/preparing
+      - name: Patch apk
+        id: patch-rex
+        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        run: bash src/build/ReX-rufusin.sh
+      - name: Releasing APK files
+        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-rex-rufusin.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
   patch_rve:
     name: Patch Revanced Extended
     if: ${{ github.event.inputs.org == 'Revanced Extended' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended' }}
@@ -133,7 +157,7 @@ jobs:
         if: always() && steps.patch-rve.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve67:
-    name: Revanced Extended Android 6,7
+    name: Patch Revanced Extended Android 6,7
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 6,7' }}
     runs-on: ubuntu-latest
     steps:
@@ -156,7 +180,7 @@ jobs:
         if: always() && steps.patch-rve67.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve5:
-    name: Revanced Extended Android 5
+    name: Patch Revanced Extended Android 5
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 5' }}
     runs-on: ubuntu-latest
     steps:

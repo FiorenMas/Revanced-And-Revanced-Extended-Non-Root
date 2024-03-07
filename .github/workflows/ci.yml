@@ -37,6 +37,10 @@ jobs:
         id: check-rex-rufusin
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh rufusin/revanced-patches latest youtube-ReX-rufusin.apk
+      - name: Check new patch ReX forked by anddea
+        id: check-rex-anddea
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh anddea/revanced-patches latest youtube-ReX-anddea.apk
       - name: Check new patch Revanced Extended
         id: check-rve
         if: steps.check-gh.outputs.internet_error == '0'
@@ -80,6 +84,7 @@ jobs:
       check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
       check_rex: ${{ steps.check-rex.outputs.new_patch }}
       check_rex_rufusin: ${{ steps.check-rex-rufusin.outputs.new_patch }}
+      check_rex_anddea: ${{ steps.check-rex-anddea.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
       check_rve5: ${{ steps.check-rve5.outputs.new_patch }}
@@ -112,6 +117,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "ReX-rufusin"
+  Patch-ReX-anddea:
+    name: Patch ReX forked by anddea
+    needs: check
+    if: ${{ needs.check.outputs.check_rex_anddea == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "ReX-anddea"
   Patch-Revanced-Extended:
     name: Patch Revanced Extended
     needs: check

@@ -19,6 +19,7 @@ on:
           - 'Revanced Beta'
           - 'ReX'
           - 'Rex-rufusin'
+          - 'Rex-anddea'
           - 'Revanced Extended'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
@@ -132,6 +133,29 @@ jobs:
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rex-rufusin.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_rex_anddea:
+    name: Patch ReX forked by anddea
+    if: ${{ github.event.inputs.org == 'ReX-anddea' || github.event.inputs.org == 'All' || inputs.org == 'ReX-anddea' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Check github connection
+        id: check-gh-rex-anddea
+        run: bash src/etc/connection.sh
+      - name: Preparing to patch
+        if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
+        uses: ./.github/actions/preparing
+      - name: Patch apk
+        id: patch-rex
+        if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
+        run: bash src/build/ReX-anddea.sh
+      - name: Releasing APK files
+        if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-rex-anddea.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve:
     name: Patch Revanced Extended

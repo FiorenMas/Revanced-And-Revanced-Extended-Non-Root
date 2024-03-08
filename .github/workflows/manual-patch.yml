@@ -49,12 +49,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rv
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rv.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rv
         if: steps.check-gh-rv.outputs.internet_error == '0'
@@ -72,12 +71,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rvb
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rvb.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rvb
         if: steps.check-gh-rvb.outputs.internet_error == '0'
@@ -95,12 +93,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rex
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rex.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rex
         if: steps.check-gh-rex.outputs.internet_error == '0'
@@ -118,12 +115,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rex-rufusin
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rex
         if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
@@ -141,12 +137,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rex-anddea
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rex
         if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
@@ -164,12 +159,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rve
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rve.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rve
         if: steps.check-gh-rve.outputs.internet_error == '0'
@@ -187,12 +181,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rve67
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rve67.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rve67
         if: steps.check-gh-rve67.outputs.internet_error == '0'
@@ -210,12 +203,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rve5
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rve5.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rve5
         if: steps.check-gh-rve5.outputs.internet_error == '0'

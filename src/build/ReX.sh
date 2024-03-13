@@ -21,12 +21,12 @@ patch "youtube" "ReX" "inotia"
 # Patch YouTube Music ReX:
 # Arm64-v8a
 get_patches_key "youtube-music-ReX"
-#get_ver "Hide general ads" "com.google.android.apps.youtube.music"
+get_ver "Enable color match player" "com.google.android.apps.youtube.music"
 get_apk "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 patch "youtube-music-arm64-v8a" "ReX" "inotia"
 # Armeabi-v7a
 get_patches_key "youtube-music-ReX"
-#get_ver "Hide general ads" "com.google.android.apps.youtube.music"
+get_ver "Enable color match player" "com.google.android.apps.youtube.music"
 get_apk "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 patch "youtube-music-armeabi-v7a" "ReX" "inotia"
 

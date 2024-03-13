@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir ./release
+mkdir ./release ./download
 
 #################################################
 
@@ -106,20 +106,14 @@ get_ver() {
 
 # Download apks files from APKMirror:
 _req() {
-	if [ "$2" = - ]; then
-		wget -nv -O "$2" --header="$3" "$1"
-	else
-		local dlp
-		dlp="$(dirname "$2")/$(basename "$2")"
-		if [ -f "$dlp" ]; then
-			while [ -f "$dlp" ]; do sleep 1; done
-			return
-		fi
-		wget -nv -O "$dlp" --header="$3" "$1" || return 1
-	fi
+    if [ "$2" = "-" ]; then
+        wget -nv -O "$2" --header="$3" "$1" || rm -f "$2"
+    else
+        wget -nv -O "./download/$2" --header="$3" "$1" || rm -f "./download/$2"
+    fi
 }
 req() {
-	_req "$1" "$2" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0"
+    _req "$1" "$2" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0"
 }
 
 dl_apk() {
@@ -132,7 +126,6 @@ dl_apk() {
 	sleep 5
 	req "$url" "$output"
 }
-
 get_apk() {
 	if [[ -z $4 ]]; then
 		url_regexp='APK</span>[^@]*@\([^#]*\)'
@@ -146,24 +139,35 @@ get_apk() {
 		esac 
 	fi
 	export version="$version"
-	if [[ -z $version ]]; then
- 		local list_vers v versions=()
-  		list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
-		version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_vers")
-		version=$(grep -iv "\(beta\|alpha\)" <<<"$version")
-		for v in $version; do
-			grep -iq "${v} \(beta\|alpha\)" <<<"$list_vers" || versions+=("$v")
-		done
-		version=$(head -1 <<<"$versions")
-	fi
-	green_log "[+] Downloading $2 version: $version $4 $5 $6"
-	local base_apk="$1.apk"
-	local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
-						  "$url_regexp" \
-						  "$base_apk")
-	if [ -z "$1.apk" ]; then
-		red_log "[-] Failed to download $1"
-		exit 1
+	local attempt=0
+	while [ $attempt -lt 10 ]; do
+		if [[ -z $version ]] || [ $attempt -ne 0 ]; then
+			local list_vers v versions=()
+			list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
+			version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_vers")
+			version=$(grep -iv "\(beta\|alpha\)" <<<"$version")
+			for v in $version; do
+				grep -iq "${v} \(beta\|alpha\)" <<<"$list_vers" || versions+=("$v")
+			done
+			version=$(echo -e "$version" | sed -n "$((attempt + 1))p")
+		fi
+		green_log "[+] Downloading $2 version: $version $4 $5 $6"
+		local base_apk="$1.apk"
+		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
+							  "$url_regexp" \
+							  "$base_apk")
+		if [[ -f "./download/$1.apk" ]]; then
+			green_log "[+] Successfully downloaded $1"
+			break
+		else
+			((attempt++))
+			red_log "[-] Failed to download $1, trying another version"
+			unset version list_vers v versions
+		fi
+	done
+	if [ $attempt -eq 10 ]; then
+		red_log "[-] No more versions to try. Failed download"
+		return 1
 	fi
 }
 
@@ -172,7 +176,7 @@ get_apk() {
 # Patching apps with Revanced CLI:
 patch() {
 	green_log "[+] Patching $1:"
-	if [ -f "$1.apk" ]; then
+	if [ -f "./download/$1.apk" ]; then
 		local p b m ks a pu
 		if [ "$3" = inotia ]; then
 			p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
@@ -201,7 +205,7 @@ patch() {
 		--out=./release/$1-$2.apk \
 		--keystore=./src/$ks.keystore \
 		$pu \
-		$a$1.apk
+		./download/$a$1.apk
   		unset version
 		unset excludePatches
 		unset includePatches
@@ -223,7 +227,7 @@ gen_rip_libs() {
 }
 split_arch() {
 	green_log "[+] Splitting $1 to ${archs[i]}:"
-	if [ -f "$1.apk" ]; then
+	if [ -f "./download/$1.apk" ]; then
 		eval java -jar revanced-cli*.jar patch \
 		--patch-bundle revanced-patches*.jar \
 		--merge revanced-integrations*.apk\
@@ -235,7 +239,7 @@ split_arch() {
 		--options=./src/options/$2.json \
 		--keystore=./src/_ks.keystore \
 		--out=./release/$2.apk\
-		$1.apk
+		./download/$1.apk
 	else
 		red_log "[-] Not found $1.apk"
 		exit 1

@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       org:
-        description: 'Which Revanced do you want to patch?'
+        description: 'Which "Revanced" do you want to patch?'
         required: true
         default: 'Revanced'
         type: choice
@@ -18,9 +18,10 @@ on:
           - 'Revanced'
           - 'Revanced Beta'
           - 'ReX'
-          - 'Rex-rufusin'
           - 'Rex-anddea'
           - 'Revanced Extended'
+          - 'Twitter Piko Stable'
+          - 'Twitter Piko Beta'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
       retry_count:
@@ -117,28 +118,6 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
-  patch_rex_rufusin:
-    name: Patch ReX forked by rufusin
-    if: ${{ github.event.inputs.org == 'ReX-rufusin' || github.event.inputs.org == 'All' || inputs.org == 'ReX-rufusin' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: Preparing to patch
-        uses: ./.github/actions/preparing
-      - name: Check github connection
-        id: check-gh-rex-rufusin
-        run: bash src/etc/connection.sh
-      - name: Patch apk
-        id: patch-rex
-        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
-        run: bash src/build/ReX-rufusin.sh
-      - name: Releasing APK files
-        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
-        uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex-rufusin.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_rex_anddea:
     name: Patch ReX forked by anddea
     if: ${{ github.event.inputs.org == 'ReX-anddea' || github.event.inputs.org == 'All' || inputs.org == 'ReX-anddea' }}
@@ -182,6 +161,50 @@ jobs:
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_twitter_piko_stable:
+    name: Patch Twitter Piko Stable
+    if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || github.event.inputs.org == 'All' || inputs.org == 'Twitter Piko Stable' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-piko-stable
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-piko-stable
+        if: steps.check-gh-piko-stable.outputs.internet_error == '0'
+        run: bash src/build/Piko.sh latest
+      - name: Releasing APK files
+        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-piko-stable.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_twitter_piko_beta:
+    name: Patch Twitter Piko Beta
+    if: ${{ github.event.inputs.org == 'Twitter Piko Beta' || github.event.inputs.org == 'All' || inputs.org == 'Twitter Piko Beta' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-piko-beta
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-piko-beta
+        if: steps.check-gh-piko-beta.outputs.internet_error == '0'
+        run: bash src/build/Piko.sh prerelease
+      - name: Releasing APK files
+        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-piko-beta.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve67:
     name: Patch Revanced Extended Android 6,7

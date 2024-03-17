@@ -56,18 +56,6 @@ Download
 
 [x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86_64-ReX.apk)
 
-### [ReX forked by rufusin:](https://github.com/rufusin/revanced-patches)
-
-[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-ReX-rufusin.apk)
-
-[Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-arm64-v8a-ReX-rufusin.apk)
-
-[Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-armeabi-v7a-ReX-rufusin.apk)
-
-[x86](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86-ReX-rufusin.apk)
-
-[x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86_64-ReX-rufusin.apk)
-
 ### [ReX forked by anddea:](https://github.com/anddea/revanced-patches)
 
 [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-ReX-anddea.apk)
@@ -181,6 +169,12 @@ Download
 | Stable version                                                                                                                       | Beta version                                                                                                                              |
 | ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- | 
 | [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-revanced.apk) | [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-beta-revanced.apk) |
+
+### [Piko:](https://github.com/crimera/piko)
+
+| Stable version                                                                                                                          | Beta version                                                                                                                          |
+| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | 
+| [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-piko-stable.apk) | [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-piko-beta.apk) |
 
 ---
 

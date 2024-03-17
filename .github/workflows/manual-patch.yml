@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       org:
-        description: 'Which Revanced do you want to patch?'
+        description: 'Which "Revanced" do you want to patch?'
         required: true
         default: 'Revanced'
         type: choice
@@ -18,8 +18,10 @@ on:
           - 'Revanced'
           - 'Revanced Beta'
           - 'ReX'
-          - 'Rex-rufusin'
+          - 'Rex-anddea'
           - 'Revanced Extended'
+          - 'Twitter Piko Stable'
+          - 'Twitter Piko Beta'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
       retry_count:
@@ -48,12 +50,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rv
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rv.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rv
         if: steps.check-gh-rv.outputs.internet_error == '0'
@@ -68,19 +69,27 @@ jobs:
     name: Patch Revanced Beta
     if: ${{ github.event.inputs.org == 'Revanced Beta' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Beta' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        Include:
+          - org: "Revanced-Beta"
+            run: "1"
+          - org: "Revanced-Beta"
+            run: "2"
+          - org: "Revanced-Beta"
+            run: "3"
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rvb
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rvb.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rvb
         if: steps.check-gh-rvb.outputs.internet_error == '0'
-        run: bash src/build/Revanced-Beta.sh
+        run: bash src/build/Revanced-Beta-${{ matrix.Include.run }}.sh
       - name: Releasing APK files
         if: steps.check-gh-rvb.outputs.internet_error == '0'
         uses: ./.github/actions/release
@@ -94,12 +103,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rex
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rex.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rex
         if: steps.check-gh-rex.outputs.internet_error == '0'
@@ -110,28 +118,27 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
-  patch_rex_rufusin:
-    name: Patch ReX forked by rufusin
-    if: ${{ github.event.inputs.org == 'ReX-rufusin' || github.event.inputs.org == 'All' || inputs.org == 'ReX-rufusin' }}
+  patch_rex_anddea:
+    name: Patch ReX forked by anddea
+    if: ${{ github.event.inputs.org == 'ReX-anddea' || github.event.inputs.org == 'All' || inputs.org == 'ReX-anddea' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
-      - name: Check github connection
-        id: check-gh-rex-rufusin
-        run: bash src/etc/connection.sh
       - name: Preparing to patch
-        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
         uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rex-anddea
+        run: bash src/etc/connection.sh
       - name: Patch apk
         id: patch-rex
-        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
-        run: bash src/build/ReX-rufusin.sh
+        if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
+        run: bash src/build/ReX-anddea.sh
       - name: Releasing APK files
-        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex-rufusin.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rex-anddea.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve:
     name: Patch Revanced Extended
@@ -140,12 +147,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rve
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rve.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rve
         if: steps.check-gh-rve.outputs.internet_error == '0'
@@ -156,6 +162,50 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
+  patch_twitter_piko_stable:
+    name: Patch Twitter Piko Stable
+    if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || github.event.inputs.org == 'All' || inputs.org == 'Twitter Piko Stable' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-piko-stable
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-piko-stable
+        if: steps.check-gh-piko-stable.outputs.internet_error == '0'
+        run: bash src/build/Piko.sh latest
+      - name: Releasing APK files
+        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-piko-stable.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_twitter_piko_beta:
+    name: Patch Twitter Piko Beta
+    if: ${{ github.event.inputs.org == 'Twitter Piko Beta' || github.event.inputs.org == 'All' || inputs.org == 'Twitter Piko Beta' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-piko-beta
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-piko-beta
+        if: steps.check-gh-piko-beta.outputs.internet_error == '0'
+        run: bash src/build/Piko.sh prerelease
+      - name: Releasing APK files
+        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-piko-beta.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
   patch_rve67:
     name: Patch Revanced Extended Android 6,7
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 6,7' }}
@@ -163,12 +213,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rve67
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rve67.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rve67
         if: steps.check-gh-rve67.outputs.internet_error == '0'
@@ -186,12 +235,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
       - name: Check github connection
         id: check-gh-rve5
         run: bash src/etc/connection.sh
-      - name: Preparing to patch
-        if: steps.check-gh-rve5.outputs.internet_error == '0'
-        uses: ./.github/actions/preparing
       - name: Patch apk
         id: patch-rve5
         if: steps.check-gh-rve5.outputs.internet_error == '0'

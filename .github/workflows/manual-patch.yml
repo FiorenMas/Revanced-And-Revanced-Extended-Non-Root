@@ -5,6 +5,8 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   retry_count: ${{ github.event.inputs.retry_count }}
   max_retries: 3
+  org_input: ${{ inputs.org }}
+  org_event_input: ${{ github.event.inputs.org }}
 on:
   workflow_dispatch:
     inputs:
@@ -60,10 +62,11 @@ jobs:
         if: steps.check-gh-rv.outputs.internet_error == '0'
         run: bash src/build/Revanced-${{ matrix.Include.run }}.sh
       - name: Releasing APK files
+        id: release-rv
         if: steps.check-gh-rv.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rv.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
+        if: always() && steps.patch-rv.outcome == 'skipped' || steps.release-rv.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
         uses: ./.github/actions/re-run
   patch_rv_beta:
     name: Patch Revanced Beta
@@ -91,10 +94,11 @@ jobs:
         if: steps.check-gh-rvb.outputs.internet_error == '0'
         run: bash src/build/Revanced-Beta-${{ matrix.Include.run }}.sh
       - name: Releasing APK files
+        id: release-rvb
         if: steps.check-gh-rvb.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rvb.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rvb.outcome == 'skipped' || steps.release-rvb.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
         uses: ./.github/actions/re-run
   patch_rex:
     name: Patch ReX
@@ -113,10 +117,11 @@ jobs:
         if: steps.check-gh-rex.outputs.internet_error == '0'
         run: bash src/build/ReX.sh
       - name: Releasing APK files
+        id: release-rex
         if: steps.check-gh-rex.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rex.outcome == 'skipped' || steps.patch-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rex_anddea:
     name: Patch ReX forked by anddea
@@ -131,14 +136,15 @@ jobs:
         id: check-gh-rex-anddea
         run: bash src/etc/connection.sh
       - name: Patch apk
-        id: patch-rex
+        id: patch-rex-anddea
         if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
         run: bash src/build/ReX-anddea.sh
       - name: Releasing APK files
+        id: release-rex-anddea
         if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex-anddea.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rex-anddea.outcome == 'skipped' || steps.release-rex-anddea.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve:
     name: Patch Revanced Extended
@@ -157,10 +163,11 @@ jobs:
         if: steps.check-gh-rve.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended.sh
       - name: Releasing APK files
+        id: release-rve
         if: steps.check-gh-rve.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve.outcome == 'skipped' || steps.patch-rve.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
@@ -179,10 +186,11 @@ jobs:
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
         run: bash src/build/Piko.sh latest
       - name: Releasing APK files
-        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        id: release-piko-stable
+        if: steps.check-gh-piko-stable.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-piko-stable.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-piko-stable.outcome == 'skipped' || steps.release-piko-stable.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_twitter_piko_beta:
     name: Patch Twitter Piko Beta
@@ -201,10 +209,11 @@ jobs:
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
         run: bash src/build/Piko.sh prerelease
       - name: Releasing APK files
-        if: steps.check-gh-rex-rufusin.outputs.internet_error == '0'
+        id: release-piko-beta
+        if: steps.check-gh-piko-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-piko-beta.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-piko-beta.outcome == 'skipped' || steps.release-piko-beta.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve67:
     name: Patch Revanced Extended Android 6,7
@@ -223,10 +232,11 @@ jobs:
         if: steps.check-gh-rve67.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-6-7.sh
       - name: Releasing APK files
+        id: release-rve67
         if: steps.check-gh-rve67.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve67.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve67.outcome == 'skipped' || steps.release-rve67.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve5:
     name: Patch Revanced Extended Android 5
@@ -245,8 +255,9 @@ jobs:
         if: steps.check-gh-rve5.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Android-5.sh
       - name: Releasing APK files
+        id: release-rve5
         if: steps.check-gh-rve5.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve5.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve5.outcome == 'skipped' || steps.release-rve5.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run

@@ -8,7 +8,7 @@ runs:
         script: |
           const maxRetries = ${{ env.max_retries }};
           let retryCount = Number('${{ env.retry_count }}');
-          const orgInput = '${{ github.event.inputs.org }}' || '${{ inputs.org }}';
+          const orgInput = '${{ env.org_event_input }}' || '${{ env.org_input }}';
           if (retryCount < maxRetries) {
             retryCount += 1;
             await github.rest.actions.createWorkflowDispatch({

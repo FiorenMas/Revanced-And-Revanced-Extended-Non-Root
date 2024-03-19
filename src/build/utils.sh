@@ -2,6 +2,11 @@
 
 mkdir ./release ./download
 
+#Setup HTMLQ
+wget -q -O ./htmlq.tar.gz https://github.com/mgdm/htmlq/releases/latest/download/htmlq-x86_64-linux.tar.gz
+tar -xf "./htmlq.tar.gz" -C "./"
+HTMLQ="./htmlq"
+
 #################################################
 
 # Colored output logs
@@ -122,7 +127,7 @@ dl_apk() {
 	sleep 5
 	url="https://www.apkmirror.com$(req "$url" - | grep "downloadButton" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')"
 	sleep 5
-   	url="https://www.apkmirror.com$(req "$url" - | grep "here" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')&forcebaseapk=true"
+   	url=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href "span > a[rel = nofollow]")
 	sleep 5
 	req "$url" "$output"
 }

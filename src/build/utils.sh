@@ -105,6 +105,7 @@ get_ver() {
 	| select(.name == $pkg_name)
 	| .versions[-1]
 	' patches.json)
+ 	[ "$version" == "null" ] && version=""
 }
 
 #################################################

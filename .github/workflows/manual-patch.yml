@@ -20,7 +20,8 @@ on:
           - 'Revanced'
           - 'Revanced Beta'
           - 'ReX'
-          - 'Rex-anddea'
+          - 'Rex-anddea-stable'
+          - 'Rex-anddea-beta'
           - 'Revanced Extended'
           - 'Twitter Piko Stable'
           - 'Twitter Piko Beta'
@@ -123,9 +124,9 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rex.outcome == 'skipped' || steps.patch-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
-  patch_rex_anddea:
-    name: Patch ReX forked by anddea
-    if: ${{ github.event.inputs.org == 'ReX-anddea' || github.event.inputs.org == 'All' || inputs.org == 'ReX-anddea' }}
+  patch_rex_anddea_stable:
+    name: Patch ReX forked by anddea stable
+    if: ${{ github.event.inputs.org == 'ReX-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'ReX-anddea-stable' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -133,18 +134,41 @@ jobs:
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
-        id: check-gh-rex-anddea
+        id: check-gh-rex-anddea-stable
         run: bash src/etc/connection.sh
       - name: Patch apk
         id: patch-rex-anddea
-        if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
-        run: bash src/build/ReX-anddea.sh
+        if: steps.check-gh-rex-anddea-stable.outputs.internet_error == '0'
+        run: bash src/build/ReX-anddea.sh latest
       - name: Releasing APK files
-        id: release-rex-anddea
-        if: steps.check-gh-rex-anddea.outputs.internet_error == '0'
+        id: release-rex-anddea-stable
+        if: steps.check-gh-rex-anddea-stable.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex-anddea.outcome == 'skipped' || steps.release-rex-anddea.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rex-anddea-stable.outcome == 'skipped' || steps.release-rex-anddea-stable.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_rex_anddea_beta:
+    name: Patch ReX forked by anddea beta
+    if: ${{ github.event.inputs.org == 'ReX-anddea-beta' || github.event.inputs.org == 'All' || inputs.org == 'ReX-anddea-beta' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rex-anddea-beta
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rex-anddea-beta
+        if: steps.check-gh-rex-anddea-beta.outputs.internet_error == '0'
+        run: bash src/build/ReX-anddea.sh prerelease
+      - name: Releasing APK files
+        id: release-rex-anddea-beta
+        if: steps.check-gh-rex-anddea-beta.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-rex-anddea-beta.outcome == 'skipped' || steps.release-rex-anddea-beta.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve:
     name: Patch Revanced Extended

@@ -122,7 +122,7 @@ jobs:
         if: steps.check-gh-rex.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex.outcome == 'skipped' || steps.patch-rex.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rex.outcome == 'skipped' || steps.release-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rex_anddea_stable:
     name: Patch ReX forked by anddea stable
@@ -191,7 +191,7 @@ jobs:
         if: steps.check-gh-rve.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve.outcome == 'skipped' || steps.patch-rve.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve.outcome == 'skipped' || steps.release-rve.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable

@@ -40,7 +40,7 @@ jobs:
       - name: Check new patch ReX forked by anddea beta
         id: check-rex-anddea-beta
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh anddea/revanced-patches latest youtube-beta-ReX-anddea.apk
+        run: bash src/etc/ci.sh anddea/revanced-patches prerelease youtube-beta-ReX-anddea.apk
       - name: Check new patch Revanced Extended
         id: check-rve
         if: steps.check-gh.outputs.internet_error == '0'

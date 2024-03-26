@@ -16,7 +16,7 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.
 
 > [!NOTE]
-> If you want to use the YouTube or YouTube Music app, you need to download and install [MicroG](https://github.com/ReVanced/GmsCore/releases).
+> If you want to use the YouTube or YouTube Music app, you need to download and install [MicroG](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/tree/main?tab=readme-ov-file#microg-revanced).
 > 
 > If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app).
 > 
@@ -129,6 +129,10 @@ Download
 ## [MicroG ReVanced:](https://github.com/ReVanced/GmsCore)
 
 [![Release](https://img.shields.io/github/v/release/ReVanced/GmsCore?label=All-arch&style=for-the-badge)](https://github.com/ReVanced/GmsCore/releases) 
+
+## [MicroG ReX:](https://github.com/ReVanced/GmsCore)
+
+[![Release](https://img.shields.io/github/v/release/YT-Advanced/GmsCore?label=All-arch&style=for-the-badge)](https://github.com/YT-Advanced/GmsCore/releases) 
 
 ---
 

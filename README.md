@@ -16,9 +16,7 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.
 
 > [!NOTE]
-> If you want to use the YouTube or YouTube Music app, you need to download and install MicroG, MicroG-RE or mMicroG.
-> 
-> I strongly recommend you should build your MicroG apk by yourself. [Read wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-building-microg)
+> If you want to use the YouTube or YouTube Music app, you need to download and install [MicroG](https://github.com/ReVanced/GmsCore/releases).
 > 
 > If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app).
 > 
@@ -128,25 +126,9 @@ Download
 
 ---
 
-## [MicroG:](https://github.com/inotia00/VancedMicroG)
+## [MicroG ReVanced:](https://github.com/ReVanced/GmsCore)
 
-[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) 
-
-### [Built by Github Action](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/MicroG/MicroG.apk)
-
----
-
-## [MicroG-RE:](https://github.com/WSTxda/MicroG-RE)
-
-[![Release](https://img.shields.io/github/v/release/WSTxda/MicroG-RE?label=All-arch&style=for-the-badge)](https://github.com/WSTxda/MicroG-RE/releases)
-
----
-
-## [mMicroG:](https://github.com/kazimmt/mMicroG/)
-
-[![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=arm64-v8a&style=for-the-badge)](https://github.com/kazimmt/mMicroG/releases/latest/download/MicroG-arm64-v8a.apk)
-  
-[![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=armeabi-v7a&style=for-the-badge)](https://github.com/ikazimmt/mMicroG/releases/latest/download/MicroG-armeabi-v7a.apk)
+[![Release](https://img.shields.io/github/v/release/ReVanced/GmsCore?label=All-arch&style=for-the-badge)](https://github.com/ReVanced/GmsCore/releases) 
 
 ---
 

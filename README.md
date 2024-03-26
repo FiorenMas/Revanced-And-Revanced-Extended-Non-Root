@@ -130,10 +130,6 @@ Download
 
 [![Release](https://img.shields.io/github/v/release/ReVanced/GmsCore?label=All-arch&style=for-the-badge)](https://github.com/ReVanced/GmsCore/releases) 
 
-## [MicroG ReX:](https://github.com/ReVanced/GmsCore)
-
-[![Release](https://img.shields.io/github/v/release/YT-Advanced/GmsCore?label=All-arch&style=for-the-badge)](https://github.com/YT-Advanced/GmsCore/releases) 
-
 ---
 
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.katana&hl)

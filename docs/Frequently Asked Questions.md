@@ -4,6 +4,12 @@
   <br>
 </h1>
 
+### Q: I'm facing a playback issue (Video stop loading after start 10-30s). How can I fix it?
+
+The issue might be that your Android OS is preventing MicroG (GMS Core) from running in the background. Follow these instructions to resolve the problem.
+
+[https://dontkillmyapp.com/](https://dontkillmyapp.com/)
+
 ### Q: How do I use this repository for patching my own app?
 
 You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab

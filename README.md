@@ -18,7 +18,7 @@ Simply, all you need to do is choose the app you want to use from the options be
 > [!NOTE]
 > If you want to use the YouTube or YouTube Music app, you need to download and install [MicroG](https://github.com/ReVanced/GmsCore/releases).
 > 
-> If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/blob/main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
+> If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 > 
 > All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
 
@@ -30,7 +30,7 @@ Download
 > [!IMPORTANT] 
 > Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
 >
->  If you facing a playback issue (Video stop loading after start 10-30s). Please read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/blob/main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
+>  If you facing a playback issue (Video stop loading after start 10-30s). Please read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 

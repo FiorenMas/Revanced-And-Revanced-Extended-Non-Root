@@ -6,7 +6,7 @@
 
 ### Q: How do I use this repository for patching my own app?
 
-You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then move to the `Action` tab
+You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab
 ![Click Action](https://i.imgur.com/GewSCbi.png)
 
 Click "I understand my workflows, go ahead and enable them"
@@ -30,21 +30,21 @@ You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/
 
 ---
 
-### Q: I want to use custom file options.json. How can I do it?
+### Q: I want to use a custom file options.json. How can I do it?
 
-You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/options/`. It contains files renvanced.json, ReX.json... edit thoose file same as options.json
+You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/options/`. It contains files revanced.json, ReX.json... edit those file the same as you would options.json
 
 ---
 
-### Q: I am facing errors using your apps?
+### Q: I am facing errors using your apps, what do I do?
 
 I’m so sorry about this, but my repository only patches apps from “scripts” by other devs. I can’t fix errors when apps face errors, so if you get errors, please make an issue in [Revanced](https://github.com/revanced/revanced-patches), [Revanced Extended](https://github.com/inotia00/revanced-patches/tree/revanced-extended) or [Revanced Extended Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended) repositories.
 
 ---
 
-### Q: There apps is safe to daily use?
+### Q: How do I know these apps are safe to use?
 
-Yes, it’s safe because my code is 100% open-source and uses GitHub Actions to patch apps. The apk files used for patching are downloaded from the trusted site “APKMirror”.
+You can rest assured that it’s safe because my code is 100% open-source and uses GitHub Actions to patch the apps. The apk files used for patching are downloaded from the trusted site “APKMirror”.
 
 ----
 Images hosted by [Imgur](https://imgur.com/a/45Cc9hv)

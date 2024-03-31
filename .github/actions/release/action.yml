@@ -7,15 +7,19 @@ runs:
       run: |
         echo "
         **Change log** :point_down:
-        [Revanced](https://github.com/revanced/revanced-patches/releases/latest)
-        [Revanced Extended](https://github.com/inotia00/revanced-patches/releases/latest)
-        [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases/latest)
+        [Revanced](https://github.com/revanced/revanced-patches/releases)
+        [Revanced Extended](https://github.com/inotia00/revanced-patches/releases)
+        [ReX](https://github.com/YT-Advanced/ReX-patches/releases)
+        [ReX forked by anddea](https://github.com/anddea/revanced-patches/releases)
+        [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases)
+        [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5/releases)
         "> ${{ github.workspace }}-CHANGELOG.txt
     - name: Release
-      uses: softprops/action-gh-release@v0.1.15
+      uses: ncipollo/release-action@v1.14.0
       with:
-        files: |
+        artifacts: |
           ./release/*.apk
         name: Revanced & Revanced Extended
-        tag_name: all
-        body_path: ${{ github.workspace }}-CHANGELOG.txt
+        tag: all
+        bodyFile: ${{ github.workspace }}-CHANGELOG.txt
+        allowUpdates: true

@@ -16,11 +16,9 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.
 
 > [!NOTE]
-> If you want to use the YouTube or YouTube Music app, you need to download and install MicroG, MicroG-RE or mMicroG.
+> If you want to use the YouTube or YouTube Music app, you need to download and install [MicroG](https://github.com/ReVanced/GmsCore/releases).
 > 
-> I strongly recommend you should build your MicroG apk by yourself. [Read wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-building-microg)
-> 
-> If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/wiki/Frequently-Asked-Questions#q-how-do-i-use-this-repository-for-patching-my-own-app).
+> If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 > 
 > All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
 
@@ -31,6 +29,16 @@ Download
 
 > [!IMPORTANT] 
 > Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
+>
+>  If you facing a playback issue (Video stop loading after start 10-30s). Please read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
+
+---
+
+## [MicroG ReVanced:](https://github.com/ReVanced/GmsCore)
+
+[![Release](https://img.shields.io/github/v/release/ReVanced/GmsCore?label=All-arch&style=for-the-badge)](https://github.com/ReVanced/GmsCore/releases) 
+
+---
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
@@ -58,15 +66,13 @@ Download
 
 ### [ReX forked by anddea:](https://github.com/anddea/revanced-patches)
 
-[All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-ReX-anddea.apk)
-
-[Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-arm64-v8a-ReX-anddea.apk)
-
-[Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-armeabi-v7a-ReX-anddea.apk)
-
-[x86](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86-ReX-anddea.apk)
-
-[x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-x86_64-ReX-anddea.apk)
+| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)                                                                        | [Beta version](https://github.com/anddea/revanced-patches/releases)                                                                               |
+| --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-stable-ReX-anddea.apk)       | [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-beta-ReX-anddea.apk)       |
+| [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-stable-arm64-v8a-ReX-anddea.apk)     | [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-beta-arm64-v8a-ReX-anddea.apk)     |
+| [Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-stable-armeabi-v7a-ReX-anddea.apk) | [Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-beta-armeabi-v7a-ReX-anddea.apk) |
+| [x86](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-stable-x86-ReX-anddea.apk)                 | [x86](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-beta-x86-ReX-anddea.apk)                 |
+| [x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-stable-x86_64-ReX-anddea.apk)           | [x86_64](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-beta-x86_64-ReX-anddea.apk)           |
 
 ### [Revanced Extended: (Discontinued)](https://github.com/inotia00/revanced-patches/)
 
@@ -130,28 +136,6 @@ Download
 
 ---
 
-## [MicroG:](https://github.com/inotia00/VancedMicroG)
-
-[![Release](https://img.shields.io/github/v/release/inotia00/vancedmicrog?label=All-arch&style=for-the-badge)](https://github.com/inotia00/VancedMicroG/releases/latest/download/microg.apk) 
-
-### [Built by Github Action](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/MicroG/MicroG.apk)
-
----
-
-## [MicroG-RE:](https://github.com/WSTxda/MicroG-RE)
-
-[![Release](https://img.shields.io/github/v/release/WSTxda/MicroG-RE?label=All-arch&style=for-the-badge)](https://github.com/WSTxda/MicroG-RE/releases)
-
----
-
-## [mMicroG:](https://github.com/kazimmt/mMicroG/)
-
-[![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=arm64-v8a&style=for-the-badge)](https://github.com/kazimmt/mMicroG/releases/latest/download/MicroG-arm64-v8a.apk)
-  
-[![Release](https://img.shields.io/github/v/release/kazimmt/mMicroG?label=armeabi-v7a&style=for-the-badge)](https://github.com/ikazimmt/mMicroG/releases/latest/download/MicroG-armeabi-v7a.apk)
-
----
-
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.katana&hl)
 
 ### Revanced:
@@ -172,9 +156,9 @@ Download
 
 ### [Piko:](https://github.com/crimera/piko)
 
-| Stable version                                                                                                                          | Beta version                                                                                                                          |
+| [Stable version](https://github.com/crimera/piko/releases/latest)                                                                       | [Beta version](https://github.com/crimera/piko/releases/)                                                                             |
 | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | 
-| [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-piko-stable.apk) | [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-piko-beta.apk) |
+| [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-stable-piko.apk) | [All Architectures](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/twitter-beta-piko.apk) |
 
 ---
 

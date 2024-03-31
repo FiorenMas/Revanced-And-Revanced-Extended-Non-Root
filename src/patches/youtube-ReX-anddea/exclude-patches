@@ -3,7 +3,6 @@ Enable compact controls overlay
 Disable QUIC protocol
 Disable auto captions
 Disable HDR video
-Enable old quality layout
 Enable zen mode
 Hide account menu
 Hide autoplay button
@@ -16,3 +15,4 @@ Hide load more button
 Hide mix playlists
 Hide previous next button
 Custom seekbar color
+Translations

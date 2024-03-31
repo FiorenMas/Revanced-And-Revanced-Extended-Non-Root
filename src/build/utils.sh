@@ -2,6 +2,11 @@
 
 mkdir ./release ./download
 
+#Setup HTMLQ
+wget -q -O ./htmlq.tar.gz https://github.com/mgdm/htmlq/releases/latest/download/htmlq-x86_64-linux.tar.gz
+tar -xf "./htmlq.tar.gz" -C "./"
+HTMLQ="./htmlq"
+
 #################################################
 
 # Colored output logs
@@ -100,6 +105,7 @@ get_ver() {
 	| select(.name == $pkg_name)
 	| .versions[-1]
 	' patches.json)
+ 	[ "$version" == "null" ] && version=""
 }
 
 #################################################
@@ -113,7 +119,7 @@ _req() {
     fi
 }
 req() {
-    _req "$1" "$2" "User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/119.0"
+    _req "$1" "$2" "User-Agent: Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.231 Mobile Safari/537.36"
 }
 
 dl_apk() {
@@ -122,7 +128,7 @@ dl_apk() {
 	sleep 5
 	url="https://www.apkmirror.com$(req "$url" - | grep "downloadButton" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')"
 	sleep 5
-   	url="https://www.apkmirror.com$(req "$url" - | grep "here" | sed -n 's;.*href="\(.*key=[^"]*\)">.*;\1;p')&forcebaseapk=true"
+   	url=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href "span > a[rel = nofollow]")
 	sleep 5
 	req "$url" "$output"
 }
@@ -142,14 +148,14 @@ get_apk() {
 	local attempt=0
 	while [ $attempt -lt 10 ]; do
 		if [[ -z $version ]] || [ $attempt -ne 0 ]; then
-			local list_vers v versions=()
+			local list_vers v _versions=() IFS=$'\n'
 			list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
 			version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_vers")
 			version=$(grep -iv "\(beta\|alpha\)" <<<"$version")
 			for v in $version; do
-				grep -iq "${v} \(beta\|alpha\)" <<<"$list_vers" || versions+=("$v")
+				grep -iq "${v} \(beta\|alpha\)" <<<"$list_vers" || _versions+=("$v")
 			done
-			version=$(echo -e "$version" | sed -n "$((attempt + 1))p")
+			version=$(echo -e "${_versions[*]}" | sed -n "$((attempt + 1))p")
 		fi
 		green_log "[+] Downloading $2 version: $version $4 $5 $6"
 		local base_apk="$1.apk"

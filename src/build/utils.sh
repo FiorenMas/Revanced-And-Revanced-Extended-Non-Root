@@ -148,14 +148,14 @@ get_apk() {
 	local attempt=0
 	while [ $attempt -lt 10 ]; do
 		if [[ -z $version ]] || [ $attempt -ne 0 ]; then
-			local list_vers v versions=()
+			local list_vers v _versions=() IFS=$'\n'
 			list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
 			version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_vers")
 			version=$(grep -iv "\(beta\|alpha\)" <<<"$version")
 			for v in $version; do
-				grep -iq "${v} \(beta\|alpha\)" <<<"$list_vers" || versions+=("$v")
+				grep -iq "${v} \(beta\|alpha\)" <<<"$list_vers" || _versions+=("$v")
 			done
-			version=$(echo -e "$version" | sed -n "$((attempt + 1))p")
+			version=$(echo -e "${_versions[*]}" | sed -n "$((attempt + 1))p")
 		fi
 		green_log "[+] Downloading $2 version: $version $4 $5 $6"
 		local base_apk="$1.apk"

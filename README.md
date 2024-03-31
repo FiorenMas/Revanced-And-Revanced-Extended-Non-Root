@@ -32,6 +32,14 @@ Download
 >
 >  If you facing a playback issue (Video stop loading after start 10-30s). Please read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 
+---
+
+## [MicroG ReVanced:](https://github.com/ReVanced/GmsCore)
+
+[![Release](https://img.shields.io/github/v/release/ReVanced/GmsCore?label=All-arch&style=for-the-badge)](https://github.com/ReVanced/GmsCore/releases) 
+
+---
+
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
@@ -125,12 +133,6 @@ Download
 [Arm64-v8a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)
 
 [Armeabi-v7a](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/releases/download/all/youtube-music-armeabi-v7a-revanced-extended.apk)
-
----
-
-## [MicroG ReVanced:](https://github.com/ReVanced/GmsCore)
-
-[![Release](https://img.shields.io/github/v/release/ReVanced/GmsCore?label=All-arch&style=for-the-badge)](https://github.com/ReVanced/GmsCore/releases) 
 
 ---
 

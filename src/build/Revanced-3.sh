@@ -41,6 +41,7 @@ patch "windy" "revanced"
 
 # Patch Tumblr:
 get_patches_key "tumblr"
+version="33.2.0.110"
 get_apk "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr"
 patch "tumblr" "revanced"
 

@@ -13,13 +13,13 @@ The issue might be that your Android OS is preventing MicroG (GMS Core) from run
 ### Q: How do I use this repository for patching my own app?
 
 You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab
-![Click Action](../main/docs/image/FAQ/patching-app-1.png)
+![Click Action](../docs/image/FAQ/patching-app-1.png)
 
 Click "I understand my workflows, go ahead and enable them"
-![Click "I understand my workflows, go ahead and enable them"](../main/docs/image/FAQ/patching-app-2.png)
+![Click "I understand my workflows, go ahead and enable them"](../docs/image/FAQ/patching-app-2.png)
 
 Follow these steps to run the workflow for Manual Patch apps!
-![](../main/docs/image/FAQ/patching-app-3.png)
+![](../docs/image/FAQ/patching-app-3.png)
 
 And then go to Readme click download your patched apps!
 
@@ -37,7 +37,7 @@ You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/
 
 ### Q: I want to use a custom file options.json. How can I do it?
 
-You should open the folder [Revanced-And-Revanced-Extended-Non-Root/src/options/](../main/src/options). It contains files revanced.json, ReX.json... edit those file the same as you would options.json
+You should open the folder [Revanced-And-Revanced-Extended-Non-Root/src/options/](../src/options). It contains files revanced.json, ReX.json... edit those file the same as you would options.json
 
 ---
 

@@ -13,16 +13,15 @@ The issue might be that your Android OS is preventing MicroG (GMS Core) from run
 ### Q: How do I use this repository for patching my own app?
 
 You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab
-![Click Action](https://i.imgur.com/GewSCbi.png)
+![Click Action](../main/docs/image/FAQ/patching-app-1.png)
 
 Click "I understand my workflows, go ahead and enable them"
-![Click "I understand my workflows, go ahead and enable them"](https://i.imgur.com/OjI1Pxa.png)
+![Click "I understand my workflows, go ahead and enable them"](../main/docs/image/FAQ/patching-app-2.png)
 
 Follow these steps to run the workflow for Manual Patch apps!
-![](https://i.imgur.com/qFoOyxl.png)
+![](../main/docs/image/FAQ/patching-app-3.png)
 
-By default, the Readme.md file uses links to download my patched apps, but if you want to change the Readme.md file to download your own patched apps, you should run the workflow named `Fix Readme`. The steps are similar to when you patch Revanced apps.
-![](https://i.imgur.com/pMjwc3S.png)
+And then go to Readme click download your patched apps!
 
 ---
 
@@ -38,7 +37,7 @@ You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/
 
 ### Q: I want to use a custom file options.json. How can I do it?
 
-You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/options/`. It contains files revanced.json, ReX.json... edit those file the same as you would options.json
+You should open the folder [Revanced-And-Revanced-Extended-Non-Root/src/options/](../main/src/options). It contains files revanced.json, ReX.json... edit those file the same as you would options.json
 
 ---
 
@@ -53,4 +52,3 @@ I’m so sorry about this, but my repository only patches apps from “scripts�
 You can rest assured that it’s safe because my code is 100% open-source and uses GitHub Actions to patch the apps. The apk files used for patching are downloaded from the trusted site “APKMirror”.
 
 ----
-Images hosted by [Imgur](https://imgur.com/a/45Cc9hv)

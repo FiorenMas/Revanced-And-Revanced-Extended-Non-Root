@@ -104,7 +104,7 @@ get_ver() {
 	| .compatiblePackages[]
 	| select(.name == $pkg_name)
 	| .versions[-1]
-	' patches.json)
+	' *.json)
  	[ "$version" == "null" ] && version=""
 }
 
@@ -223,41 +223,15 @@ patch() {
 
 #################################################
 
-# Split architectures using Revanced CLI, created by j-hc or inotia00
+# Split architectures using Revanced CLI, created by inotia00
 archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
-libs=("lib/armeabi-v7a lib/x86_64 lib/x86" "lib/arm64-v8a lib/x86_64 lib/x86" "lib/armeabi-v7a lib/arm64-v8a lib/x86" "lib/armeabi-v7a lib/arm64-v8a lib/x86_64")
+libs=("armeabi-v7a x86_64 x86" "arm64-v8a x86_64 x86" "armeabi-v7a arm64-v8a x86" "armeabi-v7a arm64-v8a x86_64")
 gen_rip_libs() {
 	for lib in $@; do
 		echo -n "--rip-lib "$lib" "
 	done
 }
 split_arch() {
-	green_log "[+] Splitting $1 to ${archs[i]}:"
-	if [ -f "./download/$1.apk" ]; then
-		eval java -jar revanced-cli*.jar patch \
-		--patch-bundle revanced-patches*.jar \
-		--merge revanced-integrations*.apk\
-		$excludePatches\
-		$includePatches \
-		--rip-lib res \
-		--rip-lib classes \
-		$3\
-		--options=./src/options/$2.json \
-		--keystore=./src/_ks.keystore \
-		--out=./release/$2.apk\
-		./download/$1.apk
-	else
-		red_log "[-] Not found $1.apk"
-		exit 1
-	fi
-}
-_libs=("armeabi-v7a x86_64 x86" "arm64-v8a x86_64 x86" "armeabi-v7a arm64-v8a x86" "armeabi-v7a arm64-v8a x86_64")
-_gen_rip_libs() {
-	for lib in $@; do
-		echo -n "--rip-lib "$lib" "
-	done
-}
-_split_arch() {
 	green_log "[+] Splitting $1 to ${archs[i]}:"
 	if [ -f "./release/$1.apk" ]; then
 		eval java -jar revanced-cli*.jar patch \

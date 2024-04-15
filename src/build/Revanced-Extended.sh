@@ -38,12 +38,9 @@ patch "reddit" "revanced-extended" "inotia"
 
 #################################################
 
-rm -f revanced-cli*
-dl_gh "revanced-cli" "FiorenMas" "latest"
 # Split architecture Youtube:
-get_patches_key "youtube-revanced-extended"
 for i in {0..3}; do
-    split_arch "youtube" "youtube-${archs[i]}-revanced-extended" "$(gen_rip_libs ${libs[i]})"
+    split_arch "youtube-revanced-extended" "youtube-${archs[i]}-revanced-extended" "$(gen_rip_libs ${libs[i]})"
 done
 
 #################################################

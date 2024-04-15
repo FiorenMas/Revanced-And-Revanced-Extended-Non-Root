@@ -33,14 +33,18 @@ jobs:
         id: check-rex
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh YT-Advanced/ReX-patches latest youtube-ReX.apk
-      - name: Check new patch ReX forked by anddea stable
-        id: check-rex-anddea-stable
+      - name: Check new patch Revanced Extended forked by Anddea Stable Version
+        id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh anddea/revanced-patches latest youtube-stable-ReX-anddea.apk
-      - name: Check new patch ReX forked by anddea beta
-        id: check-rex-anddea-beta
+        run: bash src/etc/ci.sh anddea/revanced-patches latest youtube-stable-anddea.apk
+      - name: Check new patch Revanced Extended forked by Anddea Beta Version
+        id: check-rve-anddea-beta
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh anddea/revanced-patches prerelease youtube-beta-ReX-anddea.apk
+        run: bash src/etc/ci.sh anddea/revanced-patches prerelease youtube-beta-anddea.apk
+      - name: Check new patch Revanced Extended forked by Rufusin Stable Version
+        id: check-rve-rufusin
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh anddea/revanced-patches latest youtube-rufusin.apk
       - name: Check new patch Revanced Extended
         id: check-rve
         if: steps.check-gh.outputs.internet_error == '0'
@@ -91,8 +95,9 @@ jobs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
       check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
       check_rex: ${{ steps.check-rex.outputs.new_patch }}
-      check_rex_anddea_stable: ${{ steps.check-rex-anddea-stable.outputs.new_patch }}
-      check_rex_anddea_beta: ${{ steps.check-rex-anddea-beta.outputs.new_patch }}
+      check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
+      check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
+      check_rve_rufusin: ${{ steps.check-rve-rufusin.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
@@ -120,20 +125,27 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "ReX"
-  Patch-ReX-anddea-stable:
-    name: Patch ReX forked by anddea stable
+  Patch-RVE-anddea-stable:
+    name: Patch Revanced Extended forked by Anddea Stable Version
     needs: check
-    if: ${{ needs.check.outputs.check_rex_anddea_stable == 1 }}
+    if: ${{ needs.check.outputs.check_rve_anddea_stable == 1 }}
     uses: ./.github/workflows/manual-patch.yml
     with:
-      org: "ReX-anddea-stable"
-  Patch-ReX-anddea-beta:
-    name: Patch ReX forked by anddea beta
+      org: "RVE-anddea-stable"
+  Patch-RVE-anddea-beta:
+    name: Patch Revanced Extended forked by Anddea Beta Version
     needs: check
-    if: ${{ needs.check.outputs.check_rex_anddea_beta == 1 }}
+    if: ${{ needs.check.outputs.check_rve_anddea_beta == 1 }}
     uses: ./.github/workflows/manual-patch.yml
     with:
-      org: "ReX-anddea-beta"
+      org: "RVE-anddea-beta"
+  Patch-RVE-rufusin:
+    name: Patch Revanced Extended forked by Rufusin
+    needs: check
+    if: ${{ needs.check.outputs.check_rve_rufusin == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "RVE-rufusin"
   Patch-Revanced-Extended:
     name: Patch Revanced Extended
     needs: check

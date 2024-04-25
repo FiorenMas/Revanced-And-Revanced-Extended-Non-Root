@@ -44,7 +44,7 @@ jobs:
       - name: Check new patch Revanced Extended forked by Rufusin Stable Version
         id: check-rve-rufusin
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh anddea/revanced-patches latest youtube-rufusin.apk
+        run: bash src/etc/ci.sh rufusin/revanced-patches latest youtube-rufusin.apk
       - name: Check new patch Revanced Extended
         id: check-rve
         if: steps.check-gh.outputs.internet_error == '0'

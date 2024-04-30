@@ -43,6 +43,7 @@ patch "twitch" "revanced"
 
 # Patch Reddit:
 get_patches_key "reddit"
+version="2024.17.0"
 get_apk "reddit" "reddit" "redditinc/reddit/reddit"
 patch "reddit" "revanced"
 

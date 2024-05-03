@@ -29,6 +29,7 @@ patch_rve_anddea () {
 	patch "youtube-music-$apk_name-armeabi-v7a" "anddea"
 	# Patch Reddit:
 	get_patches_key "reddit"
+	version="2024.17.0"
 	get_apk "reddit-$apk_name" "reddit" "redditinc/reddit/reddit"
 	patch "reddit-$apk_name" "anddea"
 	# Split architecture:

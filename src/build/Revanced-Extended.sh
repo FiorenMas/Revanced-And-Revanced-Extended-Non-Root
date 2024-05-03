@@ -32,7 +32,7 @@ patch "youtube-music-armeabi-v7a" "revanced-extended" "inotia"
 #################################################
 
 # Patch Reddit:
-get_patches_key "reddit"
+get_patches_key "reddit-rve"
 get_apk "reddit" "reddit" "redditinc/reddit/reddit"
 patch "reddit" "revanced-extended" "inotia"
 

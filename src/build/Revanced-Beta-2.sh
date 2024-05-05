@@ -44,6 +44,7 @@ patch "twitch-beta" "revanced"
 
 # Patch Reddit:
 get_patches_key "reddit"
+version="2024.17.0"
 get_apk "reddit-beta" "reddit" "redditinc/reddit/reddit"
 patch "reddit-beta" "revanced"
 

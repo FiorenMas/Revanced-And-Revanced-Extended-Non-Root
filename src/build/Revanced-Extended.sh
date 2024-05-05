@@ -32,18 +32,15 @@ patch "youtube-music-armeabi-v7a" "revanced-extended" "inotia"
 #################################################
 
 # Patch Reddit:
-get_patches_key "reddit"
+get_patches_key "reddit-rve"
 get_apk "reddit" "reddit" "redditinc/reddit/reddit"
 patch "reddit" "revanced-extended" "inotia"
 
 #################################################
 
-rm -f revanced-cli*
-dl_gh "revanced-cli" "FiorenMas" "latest"
 # Split architecture Youtube:
-get_patches_key "youtube-revanced-extended"
 for i in {0..3}; do
-    split_arch "youtube" "youtube-${archs[i]}-revanced-extended" "$(gen_rip_libs ${libs[i]})"
+    split_arch "youtube-revanced-extended" "youtube-${archs[i]}-revanced-extended" "$(gen_rip_libs ${libs[i]})"
 done
 
 #################################################

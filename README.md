@@ -28,7 +28,7 @@ Download
 </h1>
 
 > [!IMPORTANT] 
-> Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
+> Beta versions mean using dev patches, not using beta apk files. Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
 >
 >  If you facing a playback issue (Video stop loading after start 10-30s). Please read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 
@@ -44,23 +44,35 @@ Download
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
-| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest)                                                             | [Beta version](https://github.com/ReVanced/revanced-patches/releases)                                                                           |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| [All Architectures](../../releases/download/all/youtube-revanced.apk)       | [All Architectures](../../releases/download/all/youtube-beta-revanced.apk)       |
-| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-revanced.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-revanced.apk) |
-| [x86](../../releases/download/all/youtube-x86-revanced.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-revanced.apk)                 |
-| [x86_64](../../releases/download/all/youtube-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced.apk)           |
+| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest) | [Beta version](https://github.com/ReVanced/revanced-patches/releases)            |
+| -----------------------------------------------------------------------------  | -------------------------------------------------------------------------------- |
+| [All Architectures](../../releases/download/all/youtube-revanced.apk)          | [All Architectures](../../releases/download/all/youtube-beta-revanced.apk)       |
+| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced.apk)        | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-revanced.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-revanced.apk) |
+| [x86](../../releases/download/all/youtube-x86-revanced.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-revanced.apk)                 |
+| [x86_64](../../releases/download/all/youtube-x86_64-revanced.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced.apk)           |
 
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
-| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)                                                                        | [Beta version](https://github.com/anddea/revanced-patches/releases)                                                                               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [All Architectures](../../releases/download/all/youtube-stable-ReX-anddea.apk)       | [All Architectures](../../releases/download/all/youtube-beta-ReX-anddea.apk)       |
-| [Arm64-v8a](../../releases/download/all/youtube-stable-arm64-v8a-ReX-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-ReX-anddea.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-stable-armeabi-v7a-ReX-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-ReX-anddea.apk) |
-| [x86](../../releases/download/all/youtube-stable-x86-ReX-anddea.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-ReX-anddea.apk)                 |
-| [x86_64](../../releases/download/all/youtube-stable-x86_64-ReX-anddea.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-ReX-anddea.apk)           |
+| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)     | [Beta version](https://github.com/anddea/revanced-patches/releases)            |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [All Architectures](../../releases/download/all/youtube-stable-anddea.apk)       | [All Architectures](../../releases/download/all/youtube-beta-anddea.apk)       |
+| [Arm64-v8a](../../releases/download/all/youtube-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-anddea.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-anddea.apk) |
+| [x86](../../releases/download/all/youtube-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-anddea.apk)                 |
+| [x86_64](../../releases/download/all/youtube-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-anddea.apk)           |
+
+### [Revanced Extended forked by rufusin:](https://github.com/rufusin/revanced-patches)
+
+[All Architectures](../../releases/download/all/youtube-rufusin.apk)
+
+[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-rufusin.apk)
+
+[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-rufusin.apk)
+
+[x86](../../releases/download/all/youtube-x86-rufusin.apk)
+
+[x86_64](../../releases/download/all/youtube-x86_64-rufusin.apk)
 
 ### [ReX: (forked from Revanced Extended)](https://github.com/YT-Advanced/ReX-patches)
 
@@ -117,10 +129,17 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                                   | Beta version                                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Stable version                                                                    | Beta version                                                                           |
+| --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
+
+### Revanced Extended forked by anddea:
+
+| Stable version                                                                         | Beta version                                                                         |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Arm64-v8a](../../releases/download/all/youtube-music-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-anddea.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk) |
 
 ### ReX:
 
@@ -140,8 +159,8 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                                       | Beta version                                                                                                                                               |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                                        | Beta version                                                                                |
+| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | 
 |[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-revanced.apk) | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-beta-revanced.apk) |
 
 ---
@@ -150,14 +169,14 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                       | Beta version                                                                                                                              |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                        | Beta version                                                               |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/twitter-revanced.apk) | [All Architectures](../../releases/download/all/twitter-beta-revanced.apk) |
 
 ### [Piko:](https://github.com/crimera/piko)
 
-| [Stable version](https://github.com/crimera/piko/releases/latest)                                                                       | [Beta version](https://github.com/crimera/piko/releases/)                                                                             |
-| --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | 
+| [Stable version](https://github.com/crimera/piko/releases/latest)        | [Beta version](https://github.com/crimera/piko/releases/)              |
+| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/twitter-stable-piko.apk) | [All Architectures](../../releases/download/all/twitter-beta-piko.apk) |
 
 ---
@@ -166,8 +185,8 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                           | Beta version                                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                            | Beta version                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
 | [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-beta-revanced.apk) |
 
 ---
@@ -176,8 +195,8 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                           | Beta version                                                                                                                                  |
-| ---------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                            | Beta version                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
 | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-beta-revanced.apk) |
 
 ---
@@ -186,8 +205,8 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                      | Beta version                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                       | Beta version                                                              |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/tiktok-revanced.apk) | [All Architectures](../../releases/download/all/tiktok-beta-revanced.apk) |
 
 ---
@@ -196,8 +215,8 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                      | Beta version                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                       | Beta version                                                              |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/twitch-revanced.apk) | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk) |
 
 ---
@@ -206,9 +225,15 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                      | Beta version                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                       | Beta version                                                              |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | [All Architectures](../../releases/download/all/reddit-revanced.apk) | [All Architectures](../../releases/download/all/reddit-beta-revanced.apk) |
+
+### Revanced Extended forked by anddea:
+
+| Stable version                                                            | Beta version                                                              |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [All Architectures](../../releases/download/all/reddit-stable-anddea.apk) | [All Architectures](../../releases/download/all/reddit-beta-anddea.apk)   |
 
 ### ReX:
 
@@ -224,8 +249,8 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                         | Beta version                                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                          | Beta version                                                                 |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/lightroom-revanced.apk) | [All Architectures](../../releases/download/all/lightroom-beta-revanced.apk) |
 
 ---
@@ -234,8 +259,8 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                      | Beta version                                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                       | Beta version                                                              |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/tumblr-revanced.apk) | [All Architectures](../../releases/download/all/tumblr-beta-revanced.apk) |
 
 ---
@@ -244,8 +269,8 @@ Download
 
 ### Revanced:
 
-| Stable version                                                                                                                     | Beta version                                                                                                                            |
-| ---------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- | 
+| Stable version                                                      | Beta version                                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------ | 
 | [All Architectures](../../releases/download/all/pixiv-revanced.apk) | [All Architectures](../../releases/download/all/pixiv-beta-revanced.apk) |
 
 ---
@@ -303,5 +328,3 @@ Download
 [Revanced Extended for Android 6 & 7 Integrations](https://github.com/kitadai31/revanced-integrations) - [GPL-3.0](https://github.com/kitadai31/revanced-integrations/blob/revanced-extended/LICENSE)
 
 [Revanced Extended for Android 5 Integrations](https://github.com/d4n3436/revanced-integrations) - [GPL-3.0](https://github.com/d4n3436/revanced-integrations/blob/revanced-extended/LICENSE)
-
-[Revanced CLI - j-hc](https://github.com/j-hc/revanced-cli) - [GPL-3.0](https://github.com/j-hc/revanced-cli/blob/main/LICENSE)

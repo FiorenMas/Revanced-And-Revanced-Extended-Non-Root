@@ -20,8 +20,9 @@ on:
           - 'Revanced'
           - 'Revanced Beta'
           - 'ReX'
-          - 'Rex-anddea-stable'
-          - 'Rex-anddea-beta'
+          - 'RVE-anddea-stable'
+          - 'RVE-anddea-beta'
+          - 'RVE-rufusin'
           - 'Revanced Extended'
           - 'Twitter Piko Stable'
           - 'Twitter Piko Beta'
@@ -38,7 +39,7 @@ on:
         type: string
 jobs:
   patch_rv:
-    name: Patch Revanced
+    name: Patch Revanced Stable version
     if: ${{ github.event.inputs.org == 'Revanced' || github.event.inputs.org == 'All' || inputs.org == 'Revanced' }}
     runs-on: ubuntu-latest
     strategy:
@@ -70,7 +71,7 @@ jobs:
         if: always() && steps.patch-rv.outcome == 'skipped' || steps.release-rv.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
         uses: ./.github/actions/re-run
   patch_rv_beta:
-    name: Patch Revanced Beta
+    name: Patch Revanced Beta version
     if: ${{ github.event.inputs.org == 'Revanced Beta' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Beta' }}
     runs-on: ubuntu-latest
     strategy:
@@ -124,9 +125,9 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rex.outcome == 'skipped' || steps.release-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
-  patch_rex_anddea_stable:
-    name: Patch ReX forked by anddea stable
-    if: ${{ github.event.inputs.org == 'ReX-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'ReX-anddea-stable' }}
+  patch_rve_anddea_stable:
+    name: Patch Revanced Extended forked by Anddea Stable version
+    if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'RVE-anddea-stable' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -134,22 +135,22 @@ jobs:
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
-        id: check-gh-rex-anddea-stable
+        id: check-gh-rve-anddea-stable
         run: bash src/etc/connection.sh
       - name: Patch apk
-        id: patch-rex-anddea
-        if: steps.check-gh-rex-anddea-stable.outputs.internet_error == '0'
-        run: bash src/build/ReX-anddea.sh latest
+        id: patch-rve-anddea
+        if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
+        run: bash src/build/Anddea-Revanced-Extended.sh latest
       - name: Releasing APK files
-        id: release-rex-anddea-stable
-        if: steps.check-gh-rex-anddea-stable.outputs.internet_error == '0'
+        id: release-rve-anddea-stable
+        if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex-anddea-stable.outcome == 'skipped' || steps.release-rex-anddea-stable.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve-anddea-stable.outcome == 'skipped' || steps.release-rve-anddea-stable.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
-  patch_rex_anddea_beta:
-    name: Patch ReX forked by anddea beta
-    if: ${{ github.event.inputs.org == 'ReX-anddea-beta' || github.event.inputs.org == 'All' || inputs.org == 'ReX-anddea-beta' }}
+  patch_rve_anddea_beta:
+    name: Patch Revanced Extended forked by Anddea Beta version
+    if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || github.event.inputs.org == 'All' || inputs.org == 'RVE-anddea-beta' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -157,19 +158,42 @@ jobs:
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
-        id: check-gh-rex-anddea-beta
+        id: check-gh-rve-anddea-beta
         run: bash src/etc/connection.sh
       - name: Patch apk
-        id: patch-rex-anddea-beta
-        if: steps.check-gh-rex-anddea-beta.outputs.internet_error == '0'
-        run: bash src/build/ReX-anddea.sh prerelease
+        id: patch-rve-anddea-beta
+        if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
+        run: bash src/build/Anddea-Revanced-Extended.sh prerelease
       - name: Releasing APK files
-        id: release-rex-anddea-beta
-        if: steps.check-gh-rex-anddea-beta.outputs.internet_error == '0'
+        id: release-rve-anddea-beta
+        if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex-anddea-beta.outcome == 'skipped' || steps.release-rex-anddea-beta.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rve-anddea-beta.outcome == 'skipped' || steps.release-rve-anddea-beta.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
+  patch_rve_rufusin_stable:
+    name: Patch Revanced Extended forked by Rufusin Stable version
+    if: ${{ github.event.inputs.org == 'RVE-rufusin' || github.event.inputs.org == 'All' || inputs.org == 'RVE-rufusin' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rve-rufusin-stable
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rve-rufusin
+        if: steps.check-gh-rve-rufusin-stable.outputs.internet_error == '0'
+        run: bash src/build/Rufusin-Revanced-Extended.sh
+      - name: Releasing APK files
+        id: release-rve-rufusin-stable
+        if: steps.check-gh-rve-rufusin-stable.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-rve-rufusin-stable.outcome == 'skipped' || steps.release-rve-rufusin-stable.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run       
   patch_rve:
     name: Patch Revanced Extended
     if: ${{ github.event.inputs.org == 'Revanced Extended' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended' }}

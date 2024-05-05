@@ -1,0 +1,44 @@
+#!/bin/bash
+# Revanced Extended forked by Anddea build
+source src/build/utils.sh
+
+patch_rve_anddea () {
+	# Patch YouTube Revanced Extended Anddea:
+	dl_gh "revanced-cli" "revanced" "latest"
+	local v apk_name
+	if [[ "$1" == "latest" ]]; then
+		v="latest" apk_name="stable"
+	else
+		v="prerelease" apk_name="beta"
+	fi
+	dl_gh " revanced-patches revanced-integrations" "anddea" "$v"
+	get_patches_key "youtube-rve-anddea"
+	get_ver "Hide general ads" "com.google.android.youtube"
+	get_apk "youtube-$apk_name" "youtube" "google-inc/youtube/youtube"
+	patch "youtube-$apk_name" "anddea"
+	# Patch Youtube Music:
+	# Arm64-v8a
+	get_patches_key "youtube-music-rve-anddea"
+	get_ver "Hide general ads" "com.google.android.apps.youtube.music"
+	get_apk "youtube-music-$apk_name-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
+	patch "youtube-music-$apk_name-arm64-v8a" "anddea"
+	# Armeabi-v7a
+	get_patches_key "youtube-music-rve-anddea"
+	get_ver "Hide general ads" "com.google.android.apps.youtube.music"
+	get_apk "youtube-music-$apk_name-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
+	patch "youtube-music-$apk_name-armeabi-v7a" "anddea"
+	# Patch Reddit:
+	get_patches_key "reddit"
+	version="2024.17.0"
+	get_apk "reddit-$apk_name" "reddit" "redditinc/reddit/reddit"
+	patch "reddit-$apk_name" "anddea"
+	# Split architecture:
+	rm -f revanced-cli* revanced-patches*.jar patches.json 
+	dl_gh "revanced-cli" "inotia00" "latest"
+	dl_gh "revanced-patches" "inotia00" "latest"
+	# Split architecture Youtube:
+	for i in {0..3}; do
+		split_arch "youtube-$apk_name-anddea" "youtube-$apk_name-${archs[i]}-anddea" "$(gen_rip_libs ${libs[i]})"
+	done
+}
+patch_rve_anddea $1

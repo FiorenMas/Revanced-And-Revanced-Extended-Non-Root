@@ -47,10 +47,6 @@ jobs:
         Include:
           - org: "Revanced"
             run: "1"
-          - org: "Revanced"
-            run: "2"
-          - org: "Revanced"
-            run: "3"
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1

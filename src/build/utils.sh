@@ -211,7 +211,7 @@ patch() {
 		--out=./release/$1-$2.apk \
 		--keystore=./src/$ks.keystore \
 		$pu \
-		./download/$a$1.apk
+		$a./download/$1.apk
   		unset version
 		unset excludePatches
 		unset includePatches

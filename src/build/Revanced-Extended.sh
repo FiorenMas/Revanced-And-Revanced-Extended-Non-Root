@@ -43,6 +43,6 @@ rm -f revanced-cli*
 dl_gh "revanced-cli" "inotia00" "v2.21.2-arsclib"
 get_patches_key "reddit-rve"
 get_apk "reddit" "reddit" "redditinc/reddit/reddit"
-patch "reddit" "revanced-extended" "inotia"
+patch "reddit" "revanced-extended"
 
 #################################################

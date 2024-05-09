@@ -5,8 +5,8 @@ source src/build/utils.sh
 #################################################
 
 # Download requirements
-dl_gh "revanced-patches" "inotia00" "prerelease"
-dl_gh "revanced-integrations revanced-cli" "inotia00" "latest"
+dl_gh "revanced-patches revanced-integrations" "inotia00" "prerelease"
+dl_gh "revanced-cli" "inotia00" "latest"
 
 #################################################
 

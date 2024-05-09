@@ -52,7 +52,7 @@ jobs:
       - name: Check new patch Revanced Extended Beta
         id: check-rve-beta
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-revanced-beta-extended.apk
+        run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-beta-revanced-extended.apk
       - name: Check new patch Twitter Piko Stable
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'

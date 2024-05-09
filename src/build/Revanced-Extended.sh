@@ -37,13 +37,13 @@ for i in {0..3}; do
 done
 
 #################################################
-
 # Patch Reddit:
-rm -f revanced-cli*
+rm -f revanced-cli* revanced-patches*
 dl_gh "revanced-cli" "inotia00" "v2.21.2-arsclib"
 dl_gh "revanced-patches" "inotia00" "v2.174.0-arsclib"
 get_patches_key "reddit-rve"
 get_apk "reddit" "reddit" "redditinc/reddit/reddit"
 patch "reddit" "revanced-extended"
-
-#################################################
+mv ./release/reddit-revanced-extended.apk/base.apk ./reddit-revanced-extended.apk
+rm -f -d ./release/reddit-revanced-extended.apk
+mv ./reddit-revanced-extended.apk ./release/reddit-revanced-extended.apk

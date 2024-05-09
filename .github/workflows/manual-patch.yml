@@ -19,11 +19,12 @@ on:
           - 'All'
           - 'Revanced'
           - 'Revanced Beta'
+          - 'Revanced Extended'
+          - 'Revanced Extended Beta'
           - 'ReX'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'RVE-rufusin'
-          - 'Revanced Extended'
           - 'Twitter Piko Stable'
           - 'Twitter Piko Beta'
           - 'Revanced Extended Android 6,7'
@@ -216,6 +217,29 @@ jobs:
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve.outcome == 'skipped' || steps.release-rve.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_rve_beta:
+    name: Patch Revanced Extended Beta
+    if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Beta' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rve-beta
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rve-beta
+        if: steps.check-gh-rve-beta.outputs.internet_error == '0'
+        run: bash src/build/Revanced-Extended-Beta.sh
+      - name: Releasing APK files
+        id: release-rve-beta
+        if: steps.check-gh-rve-beta.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-rve-beta.outcome == 'skipped' || steps.release-rve-beta.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable

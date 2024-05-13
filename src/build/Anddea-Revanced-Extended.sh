@@ -13,18 +13,18 @@ patch_rve_anddea () {
 	fi
 	dl_gh " revanced-patches revanced-integrations" "anddea" "$v"
 	get_patches_key "youtube-rve-anddea"
-	get_ver "Hide general ads" "com.google.android.youtube"
+	get_ver "Video playback" "com.google.android.youtube"
 	get_apk "youtube-$apk_name" "youtube" "google-inc/youtube/youtube"
 	patch "youtube-$apk_name" "anddea"
 	# Patch Youtube Music:
 	# Arm64-v8a
 	get_patches_key "youtube-music-rve-anddea"
-	get_ver "Hide general ads" "com.google.android.apps.youtube.music"
+	get_ver "Video playback" "com.google.android.apps.youtube.music"
 	get_apk "youtube-music-$apk_name-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 	patch "youtube-music-$apk_name-arm64-v8a" "anddea"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-rve-anddea"
-	get_ver "Hide general ads" "com.google.android.apps.youtube.music"
+	get_ver "Video playback" "com.google.android.apps.youtube.music"
 	get_apk "youtube-music-$apk_name-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-$apk_name-armeabi-v7a" "anddea"
 	# Patch Reddit:

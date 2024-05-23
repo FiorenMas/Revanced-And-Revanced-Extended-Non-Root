@@ -202,9 +202,9 @@ patch() {
 				fi
 			fi
 		fi
-		eval java -jar revanced-cli*.jar $p\
-		$b revanced-patches*.jar \
-		$m revanced-integrations*.apk\
+		eval java -jar *cli*.jar $p\
+		$b *patch*.jar \
+		$m *integration*.apk\
 		$excludePatches\
 		$includePatches \
 		--options=./src/options/$2.json \

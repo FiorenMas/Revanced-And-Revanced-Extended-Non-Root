@@ -234,16 +234,6 @@ Download
 | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
 | [All Architectures](../../releases/download/all/reddit-revanced-extended.apk)  | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk) |
 
-### Revanced Extended forked by anddea:
-
-| Stable version                                                            | Beta version                                                              |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [All Architectures](../../releases/download/all/reddit-stable-anddea.apk) | [All Architectures](../../releases/download/all/reddit-beta-anddea.apk)   |
-
-### ReX:
-
-[All Architectures](../../releases/download/all/reddit-ReX.apk)
-
 ---
 
 [![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)

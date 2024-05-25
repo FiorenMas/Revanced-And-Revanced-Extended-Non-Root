@@ -96,20 +96,6 @@ get_patches_key() {
 
 #################################################
 
-# Find version supported:
-get_ver() {
-	version=$(jq -r --arg patch_name "$1" --arg pkg_name "$2" '
-	.[]
-	| select(.name == $patch_name)
-	| .compatiblePackages[]
-	| select(.name == $pkg_name)
-	| .versions[-1]
-	' *.json)
- 	[ "$version" == "null" ] && version=""
-}
-
-#################################################
-
 # Download apks files from APKMirror:
 _req() {
     if [ "$2" = "-" ]; then
@@ -133,23 +119,26 @@ dl_apk() {
 	req "$url" "$output"
 }
 get_apk() {
-	if [[ -z $4 ]]; then
+	if [[ -z $5 ]]; then
 		url_regexp='APK</span>[^@]*@\([^#]*\)'
 	else
-		case $4 in
-			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
-			armeabi-v7a) url_regexp='armeabi-v7a'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
-			x86) url_regexp='x86'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
-			x86_64) url_regexp='x86_64'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
-			*) url_regexp='$4'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
+		case $5 in
+			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			armeabi-v7a) url_regexp='armeabi-v7a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			x86) url_regexp='x86'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			x86_64) url_regexp='x86_64'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			*) url_regexp='$5'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
 		esac 
+	fi
+	if [ -z "$version" ]; then
+		version=$(jq -r '[.. | objects | select(.name == "'$1'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json | uniq)
 	fi
 	export version="$version"
 	local attempt=0
 	while [ $attempt -lt 10 ]; do
 		if [[ -z $version ]] || [ $attempt -ne 0 ]; then
 			local list_vers v _versions=() IFS=$'\n'
-			list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
+			list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$3" -)
 			version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_vers")
 			version=$(grep -iv "\(beta\|alpha\)" <<<"$version")
 			for v in $version; do
@@ -157,17 +146,17 @@ get_apk() {
 			done
 			version=$(echo -e "${_versions[*]}" | sed -n "$((attempt + 1))p")
 		fi
-		green_log "[+] Downloading $2 version: $version $4 $5 $6"
-		local base_apk="$1.apk"
-		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
+		green_log "[+] Downloading $3 version: $version $5 $6 $7"
+		local base_apk="$2.apk"
+		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$4-${version//./-}-release/" \
 							  "$url_regexp" \
 							  "$base_apk")
-		if [[ -f "./download/$1.apk" ]]; then
-			green_log "[+] Successfully downloaded $1"
+		if [[ -f "./download/$2.apk" ]]; then
+			green_log "[+] Successfully downloaded $2"
 			break
 		else
 			((attempt++))
-			red_log "[-] Failed to download $1, trying another version"
+			red_log "[-] Failed to download $2, trying another version"
 			unset version list_vers v versions
 		fi
 	done

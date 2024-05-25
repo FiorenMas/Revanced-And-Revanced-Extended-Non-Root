@@ -13,13 +13,13 @@ dl_gh "revanced-cli" "revanced" "v3.1.1"
 # Patch YouTube Extended:
 get_patches_key "youtube-revanced-extended-6-7"
 version="17.34.36"
-get_apk "youtube" "youtube" "google-inc/youtube/youtube"
+get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "revanced-extended-android-6-7"
 
 #################################################
 
 # Split architecture:
-rm -f revanced-cli* revanced-patches*.jar patches.json 
+rm -f revanced-cli* revanced-patches*.jar *.json
 dl_gh "revanced-cli" "inotia00" "latest"
 dl_gh "revanced-patches" "inotia00" "latest"
 # Split architecture Youtube:

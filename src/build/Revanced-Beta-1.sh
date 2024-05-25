@@ -12,7 +12,6 @@ dl_gh "revanced-cli" "revanced" "latest"
 
 # Patch YouTube:
 get_patches_key "youtube-revanced"
-get_ver "com.google.android.youtube"
 get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube"
 patch "youtube-beta" "revanced"
 

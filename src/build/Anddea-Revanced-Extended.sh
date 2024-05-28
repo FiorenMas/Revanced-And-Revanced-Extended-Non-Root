@@ -11,7 +11,7 @@ patch_rve_anddea () {
 	else
 		v="prerelease" apk_name="beta"
 	fi
-	dl_gh " revanced-patches revanced-integrations" "anddea" "$v"
+	dl_gh "revanced-patches revanced-integrations" "anddea" "$v"
 	get_patches_key "youtube-rve-anddea"
 	get_apk "com.google.android.youtube" "youtube-$apk_name" "youtube" "google-inc/youtube/youtube"
 	patch "youtube-$apk_name" "anddea"

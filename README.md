@@ -52,6 +52,16 @@ Download
 | [x86](../../releases/download/all/youtube-x86-revanced.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-revanced.apk)                 |
 | [x86_64](../../releases/download/all/youtube-x86_64-revanced.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced.apk)           |
 
+### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
+
+| [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)       | [Beta version](https://github.com/inotia00/revanced-patches/releases)                     |
+| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
+| [All Architectures](../../releases/download/all/youtube-revanced-extended.apk)       | [All Architectures](../../releases/download/all/youtube-beta-revanced-extended.apk)       |
+| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-revanced-extended.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-revanced-extended.apk) |
+| [x86](../../releases/download/all/youtube-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-revanced-extended.apk)                 |
+| [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced-extended.apk)           |
+
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)     | [Beta version](https://github.com/anddea/revanced-patches/releases)            |
@@ -85,18 +95,6 @@ Download
 [x86](../../releases/download/all/youtube-x86-ReX.apk)
 
 [x86_64](../../releases/download/all/youtube-x86_64-ReX.apk)
-
-### [Revanced Extended: (Discontinued)](https://github.com/inotia00/revanced-patches/)
-
-[All Architectures](../../releases/download/all/youtube-revanced-extended.apk)
-
-[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended.apk)
-
-[x86](../../releases/download/all/youtube-x86-revanced-extended.apk)
-
-[x86_64](../../releases/download/all/youtube-x86_64-revanced-extended.apk)
 
 ### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
 
@@ -134,6 +132,13 @@ Download
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
 
+### Revanced Extended:
+
+| [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)             | [Beta version](https://github.com/inotia00/revanced-patches/releases)                           |
+| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced-extended.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced-extended.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced-extended.apk) |
+
 ### Revanced Extended forked by anddea:
 
 | Stable version                                                                         | Beta version                                                                         |
@@ -146,12 +151,6 @@ Download
 [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-ReX.apk)
 
 [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-ReX.apk)
-
-### Revanced Extended:
-
-[Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced-extended.apk)
 
 ---
 
@@ -229,19 +228,11 @@ Download
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | [All Architectures](../../releases/download/all/reddit-revanced.apk) | [All Architectures](../../releases/download/all/reddit-beta-revanced.apk) |
 
-### Revanced Extended forked by anddea:
-
-| Stable version                                                            | Beta version                                                              |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [All Architectures](../../releases/download/all/reddit-stable-anddea.apk) | [All Architectures](../../releases/download/all/reddit-beta-anddea.apk)   |
-
-### ReX:
-
-[All Architectures](../../releases/download/all/reddit-ReX.apk)
-
 ### Revanced Extended:
 
-[All Architectures](../../releases/download/all/reddit-revanced-extended.apk)
+| [Stable version](https://github.com/inotia00/revanced-patches/releases/latest) | [Beta version](https://github.com/inotia00/revanced-patches/releases)              |
+| ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
+| [All Architectures](../../releases/download/all/reddit-revanced-extended.apk)  | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk) |
 
 ---
 

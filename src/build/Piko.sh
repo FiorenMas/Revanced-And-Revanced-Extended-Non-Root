@@ -13,7 +13,7 @@ patch_piko () {
 		v="prerelease" apk_name="beta"
 	fi
 	dl_gh "piko revanced-integrations" "crimera" "$v"
-	get_apk "twitter-$apk_name" "twitter" "x-corp/twitter/twitter"
+	get_apk "com.twitter.android" "twitter-$apk_name" "twitter" "x-corp/twitter/twitter"
 	patch "twitter-$apk_name" "piko"
 }
 patch_piko $1

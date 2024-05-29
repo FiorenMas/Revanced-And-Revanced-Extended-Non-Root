@@ -11,29 +11,21 @@ patch_rve_anddea () {
 	else
 		v="prerelease" apk_name="beta"
 	fi
-	dl_gh " revanced-patches revanced-integrations" "anddea" "$v"
+	dl_gh "revanced-patches revanced-integrations" "anddea" "$v"
 	get_patches_key "youtube-rve-anddea"
-	get_ver "Hide general ads" "com.google.android.youtube"
-	get_apk "youtube-$apk_name" "youtube" "google-inc/youtube/youtube"
+	get_apk "com.google.android.youtube" "youtube-$apk_name" "youtube" "google-inc/youtube/youtube"
 	patch "youtube-$apk_name" "anddea"
 	# Patch Youtube Music:
 	# Arm64-v8a
 	get_patches_key "youtube-music-rve-anddea"
-	get_ver "Hide general ads" "com.google.android.apps.youtube.music"
-	get_apk "youtube-music-$apk_name-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-$apk_name-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 	patch "youtube-music-$apk_name-arm64-v8a" "anddea"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-rve-anddea"
-	get_ver "Hide general ads" "com.google.android.apps.youtube.music"
-	get_apk "youtube-music-$apk_name-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-$apk_name-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-$apk_name-armeabi-v7a" "anddea"
-	# Patch Reddit:
-	get_patches_key "reddit"
-	version="2024.17.0"
-	get_apk "reddit-$apk_name" "reddit" "redditinc/reddit/reddit"
-	patch "reddit-$apk_name" "anddea"
 	# Split architecture:
-	rm -f revanced-cli* revanced-patches*.jar patches.json 
+	rm -f revanced-cli* revanced-patches*.jar *.json
 	dl_gh "revanced-cli" "inotia00" "latest"
 	dl_gh "revanced-patches" "inotia00" "latest"
 	# Split architecture Youtube:

@@ -49,14 +49,14 @@ jobs:
         id: check-rve
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh inotia00/revanced-patches latest youtube-revanced-extended.apk
+      - name: Check new patch Revanced Extended Beta
+        id: check-rve-beta
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-beta-revanced-extended.apk
       - name: Check new patch Twitter Piko Stable
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh crimera/piko latest twitter-stable-piko.apk
-      - name: Check new patch Twitter Piko Beta
-        id: check-twitter-piko-beta
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh crimera/piko prerelease twitter-beta-piko.apk
       - name: Check new patch Revanced For Android 6 & 7
         id: check-rve67
         if: steps.check-gh.outputs.internet_error == '0'
@@ -99,6 +99,7 @@ jobs:
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_rve_rufusin: ${{ steps.check-rve-rufusin.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
+      check_rve_beta: ${{ steps.check-rve-beta.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
@@ -153,6 +154,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Extended"
+  Patch-Revanced-Extended-Beta:
+    name: Patch Revanced Extended Beta
+    needs: check
+    if: ${{ needs.check.outputs.check_rve_beta == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Extended Beta"
   Patch-Twitter-Piko-Stable:
     name: Patch Twitter Piko Stable
     needs: check

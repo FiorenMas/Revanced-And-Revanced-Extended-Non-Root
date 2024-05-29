@@ -21,7 +21,7 @@ red_log() {
 
 # Download Github assets requirement:
 dl_gh() {
-	if [ $3 == "latest" ] || [ $3 == "prerelease" ]; then
+	if [ $3 == "prerelease" ]; then
 		local repo=$1
 		for repo in $1 ; do
 			local owner=$2 tag=$3 found=0 assets=0
@@ -68,11 +68,14 @@ dl_gh() {
 		done
 	else
 		for repo in $1 ; do
-			wget -qO- "https://api.github.com/repos/$2/$repo/releases/tags/$3" \
+			tags=$( [ "$3" == "latest" ] && echo "latest" || echo "tags/$3" )
+			wget -qO- "https://api.github.com/repos/$2/$repo/releases/$tags" \
 			| jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
 			| while read -r url names; do
-				green_log "[+] Downloading $names from $2"
-				wget -q -O "$names" $url
+   				if [[ $url != *.asc ]]; then
+					green_log "[+] Downloading $names from $2"
+					wget -q -O "$names" $url
+     				fi
 			done
 		done
 	fi
@@ -92,20 +95,6 @@ get_patches_key() {
 		includePatches+=" -i \"$line2\""
 	done < src/patches/$1/include-patches
 	export includePatches
-}
-
-#################################################
-
-# Find version supported:
-get_ver() {
-	version=$(jq -r --arg patch_name "$1" --arg pkg_name "$2" '
-	.[]
-	| select(.name == $patch_name)
-	| .compatiblePackages[]
-	| select(.name == $pkg_name)
-	| .versions[-1]
-	' *.json)
- 	[ "$version" == "null" ] && version=""
 }
 
 #################################################
@@ -133,23 +122,26 @@ dl_apk() {
 	req "$url" "$output"
 }
 get_apk() {
-	if [[ -z $4 ]]; then
+	if [[ -z $5 ]]; then
 		url_regexp='APK</span>[^@]*@\([^#]*\)'
 	else
-		case $4 in
-			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
-			armeabi-v7a) url_regexp='armeabi-v7a'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
-			x86) url_regexp='x86'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
-			x86_64) url_regexp='x86_64'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
-			*) url_regexp='$4'"[^@]*$6"''"[^@]*$5"'</div>[^@]*@\([^"]*\)' ;;
+		case $5 in
+			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			armeabi-v7a) url_regexp='armeabi-v7a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			x86) url_regexp='x86'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			x86_64) url_regexp='x86_64'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			*) url_regexp='$5'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
 		esac 
+	fi
+	if [ -z "$version" ]; then
+		version=$(jq -r '[.. | objects | select(.name == "'$1'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json | uniq)
 	fi
 	export version="$version"
 	local attempt=0
 	while [ $attempt -lt 10 ]; do
 		if [[ -z $version ]] || [ $attempt -ne 0 ]; then
 			local list_vers v _versions=() IFS=$'\n'
-			list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$2" -)
+			list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$3" -)
 			version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_vers")
 			version=$(grep -iv "\(beta\|alpha\)" <<<"$version")
 			for v in $version; do
@@ -157,17 +149,17 @@ get_apk() {
 			done
 			version=$(echo -e "${_versions[*]}" | sed -n "$((attempt + 1))p")
 		fi
-		green_log "[+] Downloading $2 version: $version $4 $5 $6"
-		local base_apk="$1.apk"
-		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$3-${version//./-}-release/" \
+		green_log "[+] Downloading $3 version: $version $5 $6 $7"
+		local base_apk="$2.apk"
+		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$4-${version//./-}-release/" \
 							  "$url_regexp" \
 							  "$base_apk")
-		if [[ -f "./download/$1.apk" ]]; then
-			green_log "[+] Successfully downloaded $1"
+		if [[ -f "./download/$2.apk" ]]; then
+			green_log "[+] Successfully downloaded $2"
 			break
 		else
 			((attempt++))
-			red_log "[-] Failed to download $1, trying another version"
+			red_log "[-] Failed to download $2, trying another version"
 			unset version list_vers v versions
 		fi
 	done
@@ -185,7 +177,7 @@ patch() {
 	if [ -f "./download/$1.apk" ]; then
 		local p b m ks a pu
 		if [ "$3" = inotia ]; then
-			p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks"
+			p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks" pu="--purge=true"
 			echo "Patching with Revanced-cli inotia"
 		else
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
@@ -197,21 +189,21 @@ patch() {
 					p="patch " b="--patch-bundle" m="--merge" a="" ks="_ks" pu="--purge=true"
 					echo "Patching with Revanced-cli version 3"
 				elif [ $num -eq 2 ]; then
-					p="" b="-b" m="-m" a="-a " ks="_ks" pu="--clean"
+					p="" b="--bundle" m="--merge" a="--apk " ks="_ks" pu="--clean"
 					echo "Patching with Revanced-cli version 2"
 				fi
 			fi
 		fi
-		eval java -jar revanced-cli*.jar $p\
-		$b revanced-patches*.jar \
-		$m revanced-integrations*.apk\
+		eval java -jar *cli*.jar $p\
+		$b *patch*.jar \
+		$m *integration*.apk\
 		$excludePatches\
 		$includePatches \
 		--options=./src/options/$2.json \
 		--out=./release/$1-$2.apk \
 		--keystore=./src/$ks.keystore \
 		$pu \
-		./download/$a$1.apk
+		$a./download/$1.apk
   		unset version
 		unset excludePatches
 		unset includePatches

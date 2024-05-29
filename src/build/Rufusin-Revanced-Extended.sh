@@ -12,13 +12,12 @@ dl_gh "revanced-cli" "revanced" "latest"
 
 # Patch YouTube Rufusin:
 get_patches_key "youtube-rve-rufusin"
-get_ver "Hide general ads" "com.google.android.youtube"
-get_apk "youtube" "youtube" "google-inc/youtube/youtube"
+get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube"
 patch "youtube" "rufusin"
 
 #################################################
 
-rm -f revanced-cli* revanced-patches*.jar patches.json 
+rm -f revanced-cli* revanced-patches*.jar *.json
 dl_gh "revanced-cli" "inotia00" "latest"
 dl_gh "revanced-patches" "inotia00" "latest"
 # Split architecture Youtube:

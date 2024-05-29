@@ -21,7 +21,7 @@ red_log() {
 
 # Download Github assets requirement:
 dl_gh() {
-	if [ $3 == "latest" ] || [ $3 == "prerelease" ]; then
+	if [ $3 == "prerelease" ]; then
 		local repo=$1
 		for repo in $1 ; do
 			local owner=$2 tag=$3 found=0 assets=0
@@ -68,11 +68,14 @@ dl_gh() {
 		done
 	else
 		for repo in $1 ; do
-			wget -qO- "https://api.github.com/repos/$2/$repo/releases/tags/$3" \
+			tags=$( [ "$3" == "latest" ] && echo "latest" || echo "tags/$3" )
+			wget -qO- "https://api.github.com/repos/$2/$repo/releases/$tags" \
 			| jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
 			| while read -r url names; do
-				green_log "[+] Downloading $names from $2"
-				wget -q -O "$names" $url
+   				if [[ $url != *.asc ]]; then
+					green_log "[+] Downloading $names from $2"
+					wget -q -O "$names" $url
+     				fi
 			done
 		done
 	fi

@@ -66,16 +66,22 @@ dl_gh() {
 				fi
 			done <<< "$releases"
 		done
-	else
+	elif [ $3 == "latest" ]; then
 		for repo in $1 ; do
-			tags=$( [ "$3" == "latest" ] && echo "latest" || echo "tags/$3" )
-			wget -qO- "https://api.github.com/repos/$2/$repo/releases/$tags" \
+			wget -qO- "https://api.github.com/repos/$2/$repo/releases/latest" \
 			| jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
 			| while read -r url names; do
-   				if [[ $url != *.asc ]]; then
-					green_log "[+] Downloading $names from $2"
-					wget -q -O "$names" $url
-     				fi
+				green_log "[+] Downloading $names from $2"
+				wget -q -O "$names" $url
+			done
+		done
+ 	else
+		for repo in $1 ; do
+			wget -qO- "https://api.github.com/repos/$2/$repo/releases/tags/$3" \
+			| jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
+			| while read -r url names; do
+				green_log "[+] Downloading $names from $2"
+				wget -q -O "$names" $url
 			done
 		done
 	fi

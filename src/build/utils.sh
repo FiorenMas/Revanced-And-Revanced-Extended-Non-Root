@@ -29,7 +29,7 @@ dl_gh() {
 			while read -r line; do
 				if [[ $line == *"\"tag_name\":"* ]]; then
 					tag_name=$(echo $line | cut -d '"' -f 4)
-					if [ "$tag" == "$tag_name" ] || [ "$tag" == "latest" ] || [ "$tag" == "prerelease" ]; then
+					if [ "$tag" == "latest" ] || [ "$tag" == "prerelease" ]; then
 						found=1
 					else
 						found=0
@@ -37,10 +37,10 @@ dl_gh() {
 				fi
 				if [[ $line == *"\"prerelease\":"* ]]; then
 					prerelease=$(echo $line | cut -d ' ' -f 2 | tr -d ',')
-					if [ "$tag" == "prerelease" ] && [ "$prerelease" == "false" ]; then
-						found=0
-					elif [ "$tag" == "latest" ] && [ "$prerelease" == "true" ]; then
-						found=0
+					if [ "$tag" == "prerelease" ] && [ "$prerelease" == "true" ] ; then
+						found=1
+      					elif [ "$tag" == "prerelease" ] && [ "$prerelease" == "false" ]; then
+	   					found=1
 					fi
 				fi
 				if [[ $line == *"\"assets\":"* ]]; then

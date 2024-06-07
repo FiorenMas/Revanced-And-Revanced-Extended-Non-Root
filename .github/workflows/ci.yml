@@ -57,6 +57,10 @@ jobs:
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh crimera/piko latest twitter-stable-piko.apk
+      - name: Check new patch Twitter Piko Beta
+        id: check-twitter-piko-beta
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh crimera/piko prerelease twitter-beta-piko.apk
       - name: Check new patch Revanced For Android 6 & 7
         id: check-rve67
         if: steps.check-gh.outputs.internet_error == '0'

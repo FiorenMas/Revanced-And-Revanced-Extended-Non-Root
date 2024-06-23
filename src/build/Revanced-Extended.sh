@@ -37,7 +37,7 @@ done
 # Patch Reddit:
 rm -f revanced-cli* revanced-patches* *.json
 dl_gh "revanced-cli" "inotia00" "v2.21.2-arsclib"
-dl_gh "revanced-patches" "inotia00" "v2.174.0-arsclib"
+dl_gh "revanced-patches" "inotia00" "v2.175.0-arsclib"
 get_patches_key "reddit-rve"
 get_apk "com.reddit.frontpage" "reddit" "reddit" "redditinc/reddit/reddit"
 patch "reddit" "revanced-extended"

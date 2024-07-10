@@ -27,6 +27,7 @@ patch "pixiv" "revanced"
 
 # Patch Lightroom:
 get_patches_key "lightroom"
+version="9.2.2"
 get_apk "com.adobe.lrmobile" "lightroom" "lightroom" "adobe/lightroom/lightroom" "arm64-v8a"
 patch "lightroom" "revanced"
 

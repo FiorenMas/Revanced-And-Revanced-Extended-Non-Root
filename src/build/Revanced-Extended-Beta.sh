@@ -33,15 +33,3 @@ patch "youtube-music-beta-armeabi-v7a" "revanced-extended" "inotia"
 for i in {0..3}; do
     split_arch "youtube-beta-revanced-extended" "youtube-beta-${archs[i]}-revanced-extended" "$(gen_rip_libs ${libs[i]})"
 done
-
-#################################################
-# Patch Reddit:
-rm -f revanced-cli* revanced-patches* *.json
-dl_gh "revanced-cli" "inotia00" "v2.21.2-arsclib"
-dl_gh "revanced-patches" "inotia00" "v2.174.0-arsclib"
-get_patches_key "reddit-rve"
-get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit"
-patch "reddit-beta" "revanced-extended"
-mv ./release/reddit-beta-revanced-extended.apk/base.apk ./reddit-beta-revanced-extended.apk
-rm -f -d ./release/reddit-beta-revanced-extended.apk
-mv ./reddit-beta-revanced-extended.apk ./release/reddit-beta-revanced-extended.apk

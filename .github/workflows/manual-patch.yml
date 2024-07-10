@@ -21,14 +21,15 @@ on:
           - 'Revanced Beta'
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
-          - 'ReX'
+          - 'Revanced Extended Reddit'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
-          - 'RVE-rufusin'
           - 'Twitter Piko Stable'
           - 'Twitter Piko Beta'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
+          - 'ReX'
+          - 'RVE-rufusin'
       retry_count:
         description: 'Do not change value below'
         required: false
@@ -40,7 +41,7 @@ on:
         type: string
 jobs:
   patch_rv:
-    name: Patch Revanced Stable version
+    name: Patch Revanced Stable
     if: ${{ github.event.inputs.org == 'Revanced' || github.event.inputs.org == 'All' || inputs.org == 'Revanced' }}
     runs-on: ubuntu-latest
     strategy:
@@ -72,7 +73,7 @@ jobs:
         if: always() && steps.patch-rv.outcome == 'skipped' || steps.release-rv.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
         uses: ./.github/actions/re-run
   patch_rv_beta:
-    name: Patch Revanced Beta version
+    name: Patch Revanced Beta
     if: ${{ github.event.inputs.org == 'Revanced Beta' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Beta' }}
     runs-on: ubuntu-latest
     strategy:
@@ -127,7 +128,7 @@ jobs:
         if: always() && steps.patch-rex.outcome == 'skipped' || steps.release-rex.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve_anddea_stable:
-    name: Patch Revanced Extended forked by Anddea Stable version
+    name: Patch RVX Anddea Stable
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'RVE-anddea-stable' }}
     runs-on: ubuntu-latest
     steps:
@@ -150,7 +151,7 @@ jobs:
         if: always() && steps.patch-rve-anddea-stable.outcome == 'skipped' || steps.release-rve-anddea-stable.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve_anddea_beta:
-    name: Patch Revanced Extended forked by Anddea Beta version
+    name: Patch RVX Anddea Beta version
     if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || github.event.inputs.org == 'All' || inputs.org == 'RVE-anddea-beta' }}
     runs-on: ubuntu-latest
     steps:
@@ -173,7 +174,7 @@ jobs:
         if: always() && steps.patch-rve-anddea-beta.outcome == 'skipped' || steps.release-rve-anddea-beta.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve_rufusin_stable:
-    name: Patch Revanced Extended forked by Rufusin Stable version
+    name: Patch RVX Rufusin Stable
     if: ${{ github.event.inputs.org == 'RVE-rufusin' || github.event.inputs.org == 'All' || inputs.org == 'RVE-rufusin' }}
     runs-on: ubuntu-latest
     steps:
@@ -196,7 +197,7 @@ jobs:
         if: always() && steps.patch-rve-rufusin-stable.outcome == 'skipped' || steps.release-rve-rufusin-stable.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run       
   patch_rve:
-    name: Patch Revanced Extended
+    name: Patch Revanced Extended Stable
     if: ${{ github.event.inputs.org == 'Revanced Extended' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended' }}
     runs-on: ubuntu-latest
     steps:
@@ -240,6 +241,29 @@ jobs:
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve-beta.outcome == 'skipped' || steps.release-rve-beta.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_rve_reddit:
+    name: Patch Revanced Extended Reddit
+    if: ${{ github.event.inputs.org == 'Revanced Extended Reddit' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Reddit' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rve-reddit
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rve-reddit
+        if: steps.check-gh-rve-reddit.outputs.internet_error == '0'
+        run: bash src/build/Revanced-Extended-Reddit.sh
+      - name: Releasing APK files
+        id: release-rve-reddit
+        if: steps.check-gh-rve-reddit.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-rve-reddit.outcome == 'skipped' || steps.release-rve-reddit.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
@@ -288,7 +312,7 @@ jobs:
         if: always() && steps.patch-piko-beta.outcome == 'skipped' || steps.release-piko-beta.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve67:
-    name: Patch Revanced Extended Android 6,7
+    name: Patch RVX Android 6,7
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 6,7' }}
     runs-on: ubuntu-latest
     steps:
@@ -311,7 +335,7 @@ jobs:
         if: always() && steps.patch-rve67.outcome == 'skipped' || steps.release-rve67.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_rve5:
-    name: Patch Revanced Extended Android 5
+    name: Patch RVX Android 5
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 5' }}
     runs-on: ubuntu-latest
     steps:

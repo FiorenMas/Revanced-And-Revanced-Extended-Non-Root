@@ -29,10 +29,6 @@ jobs:
         id: check-rv-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh ReVanced/revanced-patches prerelease youtube-beta-revanced.apk
-      - name: Check new patch ReX
-        id: check-rex
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh YT-Advanced/ReX-patches latest youtube-ReX.apk
       - name: Check new patch Revanced Extended forked by Anddea Stable Version
         id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -41,10 +37,6 @@ jobs:
         id: check-rve-anddea-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh anddea/revanced-patches prerelease youtube-beta-anddea.apk
-      - name: Check new patch Revanced Extended forked by Rufusin Stable Version
-        id: check-rve-rufusin
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh rufusin/revanced-patches latest youtube-rufusin.apk
       - name: Check new patch Revanced Extended
         id: check-rve
         if: steps.check-gh.outputs.internet_error == '0'
@@ -53,6 +45,10 @@ jobs:
         id: check-rve-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-beta-revanced-extended.apk
+      - name: Check new patch Revanced Extended Reddit
+        id: check-rve-reddit
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh inotia00/revanced-patches-reddit latest reddit-revanced-extended.apk
       - name: Check new patch Twitter Piko Stable
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -98,19 +94,18 @@ jobs:
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
       check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
-      check_rex: ${{ steps.check-rex.outputs.new_patch }}
       check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
-      check_rve_rufusin: ${{ steps.check-rve-rufusin.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_rve_beta: ${{ steps.check-rve-beta.outputs.new_patch }}
+      check_rve_reddit: ${{ steps.check-rve-reddit.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
       check_rve5: ${{ steps.check-rve5.outputs.new_patch }}
 
   Patch-Revanced:
-    name: Patch Revanced
+    name: Patch Revanced Stable
     needs: check
     if: ${{ needs.check.outputs.check_rv == 1 }}
     uses: ./.github/workflows/manual-patch.yml
@@ -123,34 +118,20 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Beta"
-  Patch-ReX:
-    name: Patch ReX
-    needs: check
-    if: ${{ needs.check.outputs.check_rex == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "ReX"
   Patch-RVE-anddea-stable:
-    name: Patch Revanced Extended forked by Anddea Stable Version
+    name: Patch RVX Anddea Stable
     needs: check
     if: ${{ needs.check.outputs.check_rve_anddea_stable == 1 }}
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "RVE-anddea-stable"
   Patch-RVE-anddea-beta:
-    name: Patch Revanced Extended forked by Anddea Beta Version
+    name: Patch RVX Anddea Beta
     needs: check
     if: ${{ needs.check.outputs.check_rve_anddea_beta == 1 }}
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "RVE-anddea-beta"
-  Patch-RVE-rufusin:
-    name: Patch Revanced Extended forked by Rufusin
-    needs: check
-    if: ${{ needs.check.outputs.check_rve_rufusin == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "RVE-rufusin"
   Patch-Revanced-Extended:
     name: Patch Revanced Extended
     needs: check
@@ -165,6 +146,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Extended Beta"
+  Patch-Revanced-Extended-Reddit:
+    name: Patch Revanced Extended Reddit
+    needs: check
+    if: ${{ needs.check.outputs.check_rve_reddit == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Extended Reddit"
   Patch-Twitter-Piko-Stable:
     name: Patch Twitter Piko Stable
     needs: check
@@ -180,14 +168,14 @@ jobs:
     with:
       org: "Twitter Piko Beta"
   Patch-Revanced-Extended-For-Android-6-7:
-    name: Patch Revanced Extended For Android 6 & 7
+    name: Patch RVX Android 6 & 7
     needs: check
     if: ${{ needs.check.outputs.check_rve67 == 1 }}
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Extended Android 6,7"
   Patch-Revanced-Extended-For-Android-5:
-    name: Patch Revanced Extended For Android 5
+    name: Patch RVX Android 5
     needs: check
     if: ${{ needs.check.outputs.check_rve5 == 1 }}
     uses: ./.github/workflows/manual-patch.yml

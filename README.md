@@ -232,11 +232,11 @@ Download
 
 [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
 
-### Revanced Extended: (Version 2024.18.0+)
+### [Revanced Extended: (Version 2024.18.0+)](https://github.com/inotia00/revanced-patches-arsclib)
 
-| [Stable version](https://github.com/inotia00/revanced-patches/releases/latest) | [Beta version](https://github.com/inotia00/revanced-patches/releases)              |
-| ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- |
-| [All Architectures](../../releases/download/all/reddit-revanced-extended.apk)  | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk) |
+| [Stable version](https://github.com/inotia00/revanced-patches-arsclib/releases/latest) | [Beta version](https://github.com/inotia00/revanced-patches-arsclib/releases)              |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| [All Architectures](../../releases/download/all/reddit-revanced-extended.apk)          | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk)         |
 
 ### Revanced:
 <details>

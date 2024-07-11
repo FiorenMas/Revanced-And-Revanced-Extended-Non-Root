@@ -369,15 +369,6 @@ Download
 </details>
 
 <details>
-  <summary>YT-Advanced</summary>
-
-[Patches](https://github.com/YT-Advanced/ReX-patches) - [GPL-3.0](https://github.com/YT-Advanced/ReX-patches/blob/master/LICENSE)
-
-[Integrations](https://github.com/YT-Advanced/ReX-integrations) - [GPL-3.0](https://github.com/YT-Advanced/ReX-integrations/blob/main/LICENSE)
-
-</details>
-
-<details>
   <summary>rufusin</summary>
 
 [Patches](https://github.com/rufusin/revanced-patches) - [GPL-3.0](https://github.com/rufusin/revanced-patches/blob/main/LICENSE)

@@ -29,8 +29,6 @@ Download
 
 > [!IMPORTANT] 
 > Beta versions mean using dev patches, not using beta apk files. Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
->
->  If you facing a playback issue (Video stop loading after start 10-30s). Please read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 
 ---
 
@@ -176,17 +174,17 @@ Download
 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://play.google.com/store/apps/details?id=com.twitter.android)
 
+### [Piko: (More Features)](https://github.com/crimera/piko)
+
+| [Stable version](https://github.com/crimera/piko/releases/latest)        | [Beta version](https://github.com/crimera/piko/releases/)              |
+| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/twitter-stable-piko.apk) | [All Architectures](../../releases/download/all/twitter-beta-piko.apk) |
+
 ### Revanced:
 
 | Stable version                                                        | Beta version                                                               |
 | --------------------------------------------------------------------- | -------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/twitter-revanced.apk) | [All Architectures](../../releases/download/all/twitter-beta-revanced.apk) |
-
-### [Piko:](https://github.com/crimera/piko)
-
-| [Stable version](https://github.com/crimera/piko/releases/latest)        | [Beta version](https://github.com/crimera/piko/releases/)              |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/twitter-stable-piko.apk) | [All Architectures](../../releases/download/all/twitter-beta-piko.apk) |
 
 ---
 

@@ -232,9 +232,7 @@ Download
 
 ### [Revanced Extended: (Version 2024.18.0+)](https://github.com/inotia00/revanced-patches-arsclib)
 
-| [Stable version](https://github.com/inotia00/revanced-patches-arsclib/releases/latest) | [Beta version](https://github.com/inotia00/revanced-patches-arsclib/releases)              |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [All Architectures](../../releases/download/all/reddit-revanced-extended.apk)          | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk)         |
+[All Architectures](../../releases/download/all/reddit-revanced-extended.apk)
 
 ### Revanced:
 <details>
@@ -302,32 +300,100 @@ Download
 
 ---
 
-# ⚠️ License:
+### ⚠️ Library, resource using in this repository:
+
+<details>
+  <summary>Revanced</summary>
+
+[Patches](https://github.com/revanced/revanced-patches) - [GPL-3.0](https://github.com/revanced/revanced-patches/blob/main/LICENSE)
+
+[Integrations](https://github.com/revanced/revanced-integrations) - [GPL-3.0](https://github.com/revanced/revanced-integrations/blob/main/LICENSE)
+
+[CLI](https://github.com/revanced/revanced-cli) - [GPL-3.0](https://github.com/revanced/revanced-cli/blob/main/LICENSE)
+
+[GmsCore](https://github.com/ReVanced/GmsCore) - [GPL-3.0](https://github.com/revanced/revanced-cli/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>inotia00</summary>
+
+[Patches](https://github.com/inotia00/revanced-patches) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)
+
+[Integrations](https://github.com/inotia00/revanced-integrations) - [GPL-3.0](https://github.com/inotia00/revanced-integrations/blob/main/LICENSE)
+
+[CLI](https://github.com/inotia00/revanced-cli) - [GPL-3.0](https://github.com/inotia00/revanced-cli/blob/main/LICENSE)
+
+[Patches Arsclib](https://github.com/inotia00/revanced-patches-arsclib) - [GPL-3.0](https://github.com/inotia00/revanced-patches-arsclib/blob/arsclib-old/LICENSE)
+
+[CLI Arsclib](https://github.com/inotia00/revanced-cli-arsclib) - [GPL-3.0](https://github.com/inotia00/revanced-cli-arsclib/blob/arsclib-old/LICENSE)
+
+</details>
+
+<details>
+  <summary>anddea</summary>
+
+[Patches](https://github.com/anddea/revanced-patches) - [GPL-3.0](https://github.com/anddea/revanced-patches/blob/main/LICENSE)
+
+[Integrations](https://github.com/anddea/revanced-integrations) - [GPL-3.0](https://github.com/anddea/revanced-integrations/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>kitadai31</summary>
+
+[Patches](https://github.com/kitadai31/revanced-patches-android6-7) - [GPL-3.0](https://github.com/kitadai31/revanced-patches-android6-7/blob/revanced-extended/LICENSE)
+
+[Integrations](https://github.com/kitadai31/revanced-integrations) - [GPL-3.0](https://github.com/kitadai31/revanced-integrations/blob/revanced-extended/LICENSE)
+
+</details>
+
+<details>
+  <summary>d4n3436</summary>
+
+[Patches](https://github.com/d4n3436/revanced-patches-android5) - [GPL-3.0](https://github.com/d4n3436/revanced-patches-android5/blob/revanced-extended/LICENSE)
+
+[Integrations](https://github.com/d4n3436/revanced-integrations) - [GPL-3.0](https://github.com/d4n3436/revanced-integrations/blob/revanced-extended/LICENSE)
+
+</details>
+
+</details>
+
+<details>
+  <summary>YT-Advanced</summary>
+
+[Patches](https://github.com/YT-Advanced/ReX-patches) - [GPL-3.0](https://github.com/YT-Advanced/ReX-patches/blob/master/LICENSE)
+
+[Integrations](https://github.com/YT-Advanced/ReX-integrations) - [GPL-3.0](https://github.com/YT-Advanced/ReX-integrations/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>YT-Advanced</summary>
+
+[Patches](https://github.com/YT-Advanced/ReX-patches) - [GPL-3.0](https://github.com/YT-Advanced/ReX-patches/blob/master/LICENSE)
+
+[Integrations](https://github.com/YT-Advanced/ReX-integrations) - [GPL-3.0](https://github.com/YT-Advanced/ReX-integrations/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>rufusin</summary>
+
+[Patches](https://github.com/rufusin/revanced-patches) - [GPL-3.0](https://github.com/rufusin/revanced-patches/blob/main/LICENSE)
+
+[Integrations](https://github.com/rufusin/revanced-integrations) - [GPL-3.0](https://github.com/rufusin/revanced-integrations/blob/main/LICENSE)
+
+</details>
+
+[Markdown Badges](https://github.com/Ileriayo/markdown-badges) - [MIT](https://github.com/Ileriayo/markdown-badges/blob/master/LICENSE)
+
+---
+
+### ⚠️ Inspired by:
 
 [@luxysiv](https://github.com/luxysiv/yt-revanced-nonroot) - [GPL-3.0](https://github.com/luxysiv/revanced-nonroot/blob/main/LICENSE)
 
 [revanced-build-template](https://github.com/n0k0m3/revanced-build-template) - [GPL-3.0](https://github.com/n0k0m3/revanced-build-template/blob/main/LICENSE)
 
 [revanced-magisk-module](https://github.com/j-hc/revanced-magisk-module) - [GPL-3.0](https://github.com/j-hc/revanced-magisk-module/blob/main/LICENSE)
-
-[Revanced Patches](https://github.com/revanced/revanced-patches) - [GPL-3.0](https://github.com/revanced/revanced-patches/blob/main/LICENSE)
-
-[Revanced Extended Patches](https://github.com/inotia00/revanced-patches/tree/revanced-extended) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)
-
-[Revanced Extended for Android 6 & 7 Patches](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended) - [GPL-3.0](https://github.com/kitadai31/revanced-patches-android6-7/blob/revanced-extended/LICENSE)
-
-[Revanced Extended For Android 5 Patches](https://github.com/d4n3436/revanced-patches-android5) - [GPL-3.0](https://github.com/d4n3436/revanced-patches-android5/blob/revanced-extended/LICENSE)
-
-[Markdown Badges](https://github.com/Ileriayo/markdown-badges) - [MIT](https://github.com/Ileriayo/markdown-badges/blob/master/LICENSE)
-
-[Revanced CLI](https://github.com/revanced/revanced-cli) - [GPL-3.0](https://github.com/revanced/revanced-cli/blob/main/LICENSE)
-
-[Revanced Integrations](https://github.com/revanced/revanced-integrations) - [GPL-3.0](https://github.com/revanced/revanced-integrations/blob/main/LICENSE)
-
-[Revanced Extended CLI](https://github.com/inotia00/revanced-cli) - [GPL-3.0](https://github.com/inotia00/revanced-cli/blob/main/LICENSE)
-
-[Revanced Extended Integrations](https://github.com/inotia00/revanced-integrations) - [GPL-3.0](https://github.com/inotia00/revanced-integrations/blob/main/LICENSE)
-
-[Revanced Extended for Android 6 & 7 Integrations](https://github.com/kitadai31/revanced-integrations) - [GPL-3.0](https://github.com/kitadai31/revanced-integrations/blob/revanced-extended/LICENSE)
-
-[Revanced Extended for Android 5 Integrations](https://github.com/d4n3436/revanced-integrations) - [GPL-3.0](https://github.com/d4n3436/revanced-integrations/blob/revanced-extended/LICENSE)

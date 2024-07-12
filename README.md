@@ -349,6 +349,17 @@ Download
 
 </details>
 
+</details>
+
+<details>
+  <summary>crimera</summary>
+
+[Patches](https://github.com/crimera/piko) - [GPL-3.0](https://github.com/crimera/piko/blob/main/LICENSE)
+
+[Integrations](https://github.com/crimera/revanced-integrations) - [GPL-3.0](https://github.com/crimera/revanced-integrations/blob/main/LICENSE)
+
+</details>
+
 <details>
   <summary>kitadai31</summary>
 

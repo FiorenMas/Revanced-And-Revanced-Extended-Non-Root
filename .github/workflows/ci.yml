@@ -65,6 +65,10 @@ jobs:
         id: check-rve5
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh d4n3436/revanced-patches-android5 latest youtube-revanced-extended-android-5.apk
+      - name: Check new patch BiliRoamingX
+        id: check-BiliRoamingX
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh BiliRoamingX/BiliRoamingX latest bilibili-BiliRoamingX.apk 
       - name: Keep workflow run
         if: steps.check-gh.outputs.internet_error == '0'
         uses: gautamkrishnar/keepalive-workflow@v1
@@ -103,6 +107,7 @@ jobs:
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
       check_rve5: ${{ steps.check-rve5.outputs.new_patch }}
+      check_BiliRoamingX: ${{ steps.check-BiliRoamingX.outputs.new_patch }}
 
   Patch-Revanced:
     name: Patch Revanced Stable
@@ -181,3 +186,10 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Extended Android 5"
+  Patch-BiliRoamingX:
+    name: Patch BiliRoamingX
+    needs: check
+    if: ${{ needs.check.outputs.check_BiliRoamingX == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "BiliRoamingX"

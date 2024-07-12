@@ -12,7 +12,6 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 # Patch Facebook:
 # Arm64-v8a
 get_patches_key "facebook"
-version="449.0.0.44.115"
 get_apk "com.facebook.katana" "facebook-arm64-v8a" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
 patch "facebook-arm64-v8a" "revanced"
 
@@ -33,17 +32,16 @@ patch "lightroom" "revanced"
 
 #################################################
 
-# Patch Windy:
-get_patches_key "windy"
-version="34.0.2"
-get_apk "co.windyapp.android" "windy" "windy-wind-weather-forecast" "windy-weather-world-inc/windy-wind-weather-forecast/windy-wind-weather-forecast"
-patch "windy" "revanced"
-
-#################################################
-
 # Patch Tumblr:
 get_patches_key "tumblr"
 get_apk "com.tumblr" "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr"
 patch "tumblr" "revanced"
+
+#################################################
+
+# Patch RAR:
+get_patches_key "rar"
+get_apk "com.rarlab.rar" "rar" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "arm64-v8a"
+patch "rar" "revanced"
 
 #################################################

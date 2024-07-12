@@ -16,7 +16,6 @@ on:
         default: 'Revanced'
         type: choice
         options:
-          - 'All'
           - 'Revanced'
           - 'Revanced Beta'
           - 'Revanced Extended'
@@ -28,6 +27,8 @@ on:
           - 'Twitter Piko Beta'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
+          - 'BiliRoamingX'
+          - 'Dropped Patches - indrastorms'
           - 'ReX'
           - 'RVE-rufusin'
       retry_count:
@@ -42,7 +43,7 @@ on:
 jobs:
   patch_rv:
     name: Patch Revanced Stable
-    if: ${{ github.event.inputs.org == 'Revanced' || github.event.inputs.org == 'All' || inputs.org == 'Revanced' }}
+    if: ${{ github.event.inputs.org == 'Revanced' || inputs.org == 'Revanced' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -74,7 +75,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rv_beta:
     name: Patch Revanced Beta
-    if: ${{ github.event.inputs.org == 'Revanced Beta' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Beta' }}
+    if: ${{ github.event.inputs.org == 'Revanced Beta' || inputs.org == 'Revanced Beta' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -106,7 +107,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rex:
     name: Patch ReX
-    if: ${{ github.event.inputs.org == 'ReX' || github.event.inputs.org == 'All' || inputs.org == 'ReX' }}
+    if: ${{ github.event.inputs.org == 'ReX' || inputs.org == 'ReX' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -129,7 +130,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable
-    if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'RVE-anddea-stable' }}
+    if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -152,7 +153,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rve_anddea_beta:
     name: Patch RVX Anddea Beta version
-    if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || github.event.inputs.org == 'All' || inputs.org == 'RVE-anddea-beta' }}
+    if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || inputs.org == 'RVE-anddea-beta' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -175,7 +176,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rve_rufusin_stable:
     name: Patch RVX Rufusin Stable
-    if: ${{ github.event.inputs.org == 'RVE-rufusin' || github.event.inputs.org == 'All' || inputs.org == 'RVE-rufusin' }}
+    if: ${{ github.event.inputs.org == 'RVE-rufusin' || inputs.org == 'RVE-rufusin' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -198,7 +199,7 @@ jobs:
         uses: ./.github/actions/re-run       
   patch_rve:
     name: Patch Revanced Extended Stable
-    if: ${{ github.event.inputs.org == 'Revanced Extended' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended' || inputs.org == 'Revanced Extended' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -221,7 +222,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rve_beta:
     name: Patch Revanced Extended Beta
-    if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Beta' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || inputs.org == 'Revanced Extended Beta' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -244,7 +245,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rve_reddit:
     name: Patch Revanced Extended Reddit
-    if: ${{ github.event.inputs.org == 'Revanced Extended Reddit' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Reddit' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended Reddit' || inputs.org == 'Revanced Extended Reddit' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -267,7 +268,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
-    if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || github.event.inputs.org == 'All' || inputs.org == 'Twitter Piko Stable' }}
+    if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || inputs.org == 'Twitter Piko Stable' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -290,7 +291,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_twitter_piko_beta:
     name: Patch Twitter Piko Beta
-    if: ${{ github.event.inputs.org == 'Twitter Piko Beta' || github.event.inputs.org == 'All' || inputs.org == 'Twitter Piko Beta' }}
+    if: ${{ github.event.inputs.org == 'Twitter Piko Beta' || inputs.org == 'Twitter Piko Beta' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -313,7 +314,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rve67:
     name: Patch RVX Android 6,7
-    if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 6,7' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || inputs.org == 'Revanced Extended Android 6,7' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -336,7 +337,7 @@ jobs:
         uses: ./.github/actions/re-run
   patch_rve5:
     name: Patch RVX Android 5
-    if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || github.event.inputs.org == 'All' || inputs.org == 'Revanced Extended Android 5' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || inputs.org == 'Revanced Extended Android 5' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -357,3 +358,50 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve5.outcome == 'skipped' || steps.release-rve5.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
+  patch_BiliRoamingX:
+    name: Patch BiliRoamingX
+    if: ${{ github.event.inputs.org == 'BiliRoamingX' || inputs.org == 'BiliRoamingX' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-BiliRoamingX
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-BiliRoamingX
+        if: steps.check-gh-BiliRoamingX.outputs.internet_error == '0'
+        run: bash src/build/BiliRoamingX.sh
+      - name: Releasing APK files
+        id: release-BiliRoamingX
+        if: steps.check-gh-BiliRoamingX.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-BiliRoamingX.outcome == 'skipped' || steps.release-BiliRoamingX.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_Dropped_Patches:
+    name: Dropped Patches Revanced - indrastorms
+    if: ${{ github.event.inputs.org == 'Dropped Patches - indrastorms' || inputs.org == 'Dropped Patches - indrastorms' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-Dropped-Patches-indrastorms
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-Dropped-Patches-indrastorms
+        if: steps.check-gh-Dropped-Patches-indrastorms.outputs.internet_error == '0'
+        run: bash src/build/Dropped-Patches-Revanced.sh
+      - name: Releasing APK files
+        id: release-Dropped-Patches-indrastorms
+        if: steps.check-gh-Dropped-Patches-indrastorms.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-Dropped-Patches-indrastorms.outcome == 'skipped' || steps.release-Dropped-Patches-indrastorms.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+

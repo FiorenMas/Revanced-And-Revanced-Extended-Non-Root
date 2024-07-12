@@ -9,8 +9,7 @@ runs:
         **Change log** :point_down:
         [Revanced](https://github.com/revanced/revanced-patches/releases)
         [Revanced Extended](https://github.com/inotia00/revanced-patches/releases)
-        [ReX](https://github.com/YT-Advanced/ReX-patches/releases)
-        [ReX forked by anddea](https://github.com/anddea/revanced-patches/releases)
+        [Revanced Extended anddea](https://github.com/anddea/revanced-patches/releases)
         [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases)
         [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5/releases)
         "> ${{ github.workspace }}-CHANGELOG.txt

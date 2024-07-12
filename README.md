@@ -252,7 +252,7 @@ Download
 
 | Stable version                                                          | Beta version                                                                 |
 | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/lightroom-revanced.apk) | [All Architectures](../../releases/download/all/lightroom-beta-revanced.apk) |
+| [Arm64-v8a](../../releases/download/all/lightroom-revanced.apk)         | [Arm64-v8a](../../releases/download/all/lightroom-beta-revanced.apk)         |
 
 ---
 
@@ -266,6 +266,16 @@ Download
 
 ---
 
+### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
+
+### Revanced:
+
+| Stable version                                            | Beta version                                                   |
+| --------------------------------------------------------- | -------------------------------------------------------------- | 
+| [Arm64-v8a](../../releases/download/all/rar-revanced.apk) | [Arm64-v8a](../../releases/download/all/rar-beta-revanced.apk) |
+
+---
+
 ### [Pixiv:](https://play.google.com/store/apps/details?id=jp.pxv.android)
 
 ### Revanced:
@@ -276,31 +286,31 @@ Download
 
 ---
 
-### [Windy:](https://play.google.com/store/apps/details?id=co.windyapp.android)
+### [Bilbili: (Chinese only)](https://play.google.com/store/apps/details?id=com.bilibili.app.in)
 
-### Revanced:
+### [BiliRoamingX:](https://github.com/BiliRoamingX/BiliRoamingX)
 
-[All Architectures](../../releases/download/all/windy-revanced.apk)
+[All Architectures](../../releases/download/all/bilibili-BiliRoamingX.apk )
 
 ---
 
 ### [Nova Launcher:](https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher)
 
-### Revanced:
+### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
 
-[All Architectures](../../releases/download/all/nova-launcher-revanced.apk)
+[All Architectures](../../releases/download/all/nova-launcher-indrastorms.apk)
 
 ---
 
 ### [Tasker:](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
 
-### Revanced:
+### Dropped Patches by indrastorms:
 
-[All Architectures](../../releases/download/all/tasker-revanced.apk)
+[All Architectures](../../releases/download/all/tasker-indrastorms.apk)
 
 ---
 
-### ⚠️ Library, resource using in this repository:
+### ⚠️ Library, resources using in this repository:
 
 <details>
   <summary>Revanced</summary>
@@ -374,6 +384,22 @@ Download
 [Patches](https://github.com/rufusin/revanced-patches) - [GPL-3.0](https://github.com/rufusin/revanced-patches/blob/main/LICENSE)
 
 [Integrations](https://github.com/rufusin/revanced-integrations) - [GPL-3.0](https://github.com/rufusin/revanced-integrations/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>BiliRoamingX</summary>
+
+[Patches, Integrations](https://github.com/BiliRoamingX/BiliRoamingX) - [GPL-3.0](https://github.com/BiliRoamingX/BiliRoamingX/blob/main/LICENSE)
+
+</details>
+
+</details>
+
+<details>
+  <summary>indrastorms</summary>
+
+[Patches](https://github.com/indrastorms/Dropped-Patches) - [GPL-3.0](https://github.com/indrastorms/Dropped-Patches/blob/main/LICENSE)
 
 </details>
 

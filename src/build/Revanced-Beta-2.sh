@@ -10,22 +10,6 @@ dl_gh "revanced-cli" "revanced" "latest"
 
 #################################################
 
-# Patch Instagram:
-# Arm64-v8a
-get_patches_key "instagram"
-get_apk "com.instagram.android" "instagram-arm64-v8a-beta" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a" "nodpi"
-patch "instagram-arm64-v8a-beta" "revanced"
-
-#################################################
-
-# Patch Messenger:
-# Arm64-v8a
-get_patches_key "messenger"
-get_apk "com.facebook.orca" "messenger-arm64-v8a-beta" "messenger" "facebook-2/messenger/messenger" "arm64-v8a" "nodpi"
-patch "messenger-arm64-v8a-beta" "revanced"
-
-#################################################
-
 # Patch Twitter:
 get_patches_key "twitter"
 get_apk "com.twitter.android" "twitter-beta" "twitter" "x-corp/twitter/twitter"

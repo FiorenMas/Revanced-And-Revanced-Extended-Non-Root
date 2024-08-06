@@ -9,13 +9,6 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 
 #################################################
 
-# Patch Twitter:
-get_patches_key "twitter"
-get_apk "com.twitter.android" "twitter" "twitter" "x-corp/twitter/twitter" "Bundle"
-patch "twitter" "revanced"
-
-#################################################
-
 # Patch Twitch:
 get_patches_key "twitch"
 get_apk "tv.twitch.android.app" "twitch" "twitch" "twitch-interactive-inc/twitch/twitch"

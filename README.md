@@ -174,17 +174,11 @@ Download
 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://play.google.com/store/apps/details?id=com.twitter.android)
 
-### [Piko: (More Features)](https://github.com/crimera/piko)
+### [Piko:](https://github.com/crimera/piko)
 
 | [Stable version](https://github.com/crimera/piko/releases/latest)        | [Beta version](https://github.com/crimera/piko/releases/)              |
 | ------------------------------------------------------------------------ | ---------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/twitter-stable-piko.apk) | [All Architectures](../../releases/download/all/twitter-beta-piko.apk) |
-
-### Revanced:
-
-| Stable version                                                        | Beta version                                                               |
-| --------------------------------------------------------------------- | -------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/twitter-revanced.apk) | [All Architectures](../../releases/download/all/twitter-beta-revanced.apk) |
 
 ---
 

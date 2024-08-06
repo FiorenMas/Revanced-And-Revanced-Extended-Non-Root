@@ -10,13 +10,6 @@ dl_gh "revanced-cli" "revanced" "latest"
 
 #################################################
 
-# Patch Twitter:
-get_patches_key "twitter"
-get_apk "com.twitter.android" "twitter-beta" "twitter" "x-corp/twitter/twitter" "Bundle"
-patch "twitter-beta" "revanced"
-
-#################################################
-
 # Patch Twitch:
 get_patches_key "twitch"
 get_apk "tv.twitch.android.app" "twitch-beta" "twitch" "twitch-interactive-inc/twitch/twitch"

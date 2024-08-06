@@ -35,6 +35,7 @@ patch "lightroom-beta" "revanced"
 
 # Patch Tumblr:
 get_patches_key "tumblr"
+version="35.0.0.110"
 get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr"
 patch "tumblr-beta" "revanced"
 

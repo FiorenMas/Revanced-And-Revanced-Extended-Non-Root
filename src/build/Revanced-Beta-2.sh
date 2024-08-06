@@ -12,7 +12,7 @@ dl_gh "revanced-cli" "revanced" "latest"
 
 # Patch Twitter:
 get_patches_key "twitter"
-get_apk "com.twitter.android" "twitter-beta" "twitter" "x-corp/twitter/twitter"
+get_apk "com.twitter.android" "twitter-beta" "twitter" "x-corp/twitter/twitter" "Bundle"
 patch "twitter-beta" "revanced"
 
 #################################################

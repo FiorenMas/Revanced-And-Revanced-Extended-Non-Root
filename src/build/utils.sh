@@ -2,10 +2,13 @@
 
 mkdir ./release ./download
 
-#Setup HTMLQ
+#Setup HTMLQ for download apk files
 wget -q -O ./htmlq.tar.gz https://github.com/mgdm/htmlq/releases/latest/download/htmlq-x86_64-linux.tar.gz
 tar -xf "./htmlq.tar.gz" -C "./"
 HTMLQ="./htmlq"
+#Setup APKEditor for install combine split apks
+wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.3.9/APKEditor-1.3.9.jar
+APKEditor="./APKEditor.jar"
 
 #################################################
 
@@ -124,6 +127,8 @@ dl_apk() {
 get_apk() {
 	if [[ -z $5 ]]; then
 		url_regexp='APK</span>[^@]*@\([^#]*\)'
+	elif [[ $5 == "Bundle" ]]; then
+		url_regexp='BUNDLE</span>[^@]*@\([^#]*\)'
 	else
 		case $5 in
 			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
@@ -150,11 +155,15 @@ get_apk() {
 			version=$(echo -e "${_versions[*]}" | sed -n "$((attempt + 1))p")
 		fi
 		green_log "[+] Downloading $3 version: $version $5 $6 $7"
-		local base_apk="$2.apk"
+		if [[ $5 == "Bundle" ]]; then
+			local base_apk="$2.apkm"
+		else
+			local base_apk="$2.apk"
+		fi
 		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$4-${version//./-}-release/" \
 							  "$url_regexp" \
 							  "$base_apk")
-		if [[ -f "./download/$2.apk" ]]; then
+		if [[ -f "./download/$base_apk" ]]; then
 			green_log "[+] Successfully downloaded $2"
 			break
 		else
@@ -166,6 +175,10 @@ get_apk() {
 	if [ $attempt -eq 10 ]; then
 		red_log "[-] No more versions to try. Failed download"
 		return 1
+	fi
+	if [[ $5 == "Bundle" ]]; then
+		green_log "[+] Merge splits apk to standalone apk"
+		java -jar $APKEditor m -i ./download/$2.apkm -o ./download/$2.apk > /dev/null 2>&1
 	fi
 }
 

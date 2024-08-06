@@ -409,7 +409,9 @@ Download
 </details>
 
 [Markdown Badges](https://github.com/Ileriayo/markdown-badges) - [MIT](https://github.com/Ileriayo/markdown-badges/blob/master/LICENSE)
+
 [HTMLQ](https://github.com/mgdm/htmlq) - [MIT](https://github.com/mgdm/htmlq/blob/master/LICENSE.md)
+
 [APKEditor](https://github.com/REAndroid/APKEditor) - [Apache-2.0](https://github.com/REAndroid/APKEditor/blob/master/LICENSE)
 
 ---

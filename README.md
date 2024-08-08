@@ -29,7 +29,9 @@ Download
 
 > [!IMPORTANT] 
 > Beta versions mean using dev patches, not using beta apk files. Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
-
+>
+> This repository doesn't create new releases because it includes multiple projects, which would result in spamming releases every day. You should follow the dev repository for updates.
+> 
 ---
 
 ## [MicroG ReVanced:](https://github.com/ReVanced/GmsCore)

@@ -10,6 +10,14 @@ dl_gh "revanced-cli" "revanced" "latest"
 
 #################################################
 
+# Patch Google photos:
+# Arm64-v8a
+get_patches_key "gg-photos"
+get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a-beta" "photos" "google-inc/photos/photos" "arm64-v8a"
+patch "gg-photos-arm64-v8a-beta" "revanced"
+
+##################################################################################################
+
 # Patch Facebook:
 # Arm64-v8a
 get_patches_key "facebook"

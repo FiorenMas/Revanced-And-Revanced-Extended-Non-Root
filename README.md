@@ -194,6 +194,16 @@ Download
 
 ---
 
+### [Google Photos:](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)
+
+### Revanced:
+
+| Stable version                                                            | Beta version                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
+| [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-beta-revanced.apk) |
+
+---
+
 [![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.orca)
 
 ### Revanced:

@@ -12,6 +12,7 @@ dl_gh "revanced-patches revanced-cli revanced-integrations" "revanced" "latest"
 # Patch Google photos:
 # Arm64-v8a
 get_patches_key "gg-photos"
+version="6.94.0.662644291"
 get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "photos" "google-inc/photos/photos" "arm64-v8a"
 patch "gg-photos-arm64-v8a" "revanced"
 

@@ -29,6 +29,7 @@ patch "facebook-arm64-v8a-beta" "revanced"
 
 # Patch Pixiv:
 get_patches_key "pixiv"
+version="6.120.0"
 get_apk "jp.pxv.android" "pixiv-beta" "pixiv" "pixiv-inc/pixiv/pixiv"
 patch "pixiv-beta" "revanced"
 

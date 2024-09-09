@@ -16,6 +16,11 @@ get_patches_key "gg-photos"
 version="6.94.0.662644291"
 get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a-beta" "photos" "google-inc/photos/photos" "arm64-v8a"
 patch "gg-photos-arm64-v8a-beta" "revanced"
+# Armeabi-v7a
+get_patches_key "gg-photos"
+version="6.94.0.662644291"
+get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a-beta" "photos" "google-inc/photos/photos" "armeabi-v7a"
+patch "gg-photos-armeabi-v7a-beta" "revanced"
 
 ##################################################################################################
 
@@ -29,7 +34,6 @@ patch "facebook-arm64-v8a-beta" "revanced"
 
 # Patch Pixiv:
 get_patches_key "pixiv"
-version="6.120.0"
 get_apk "jp.pxv.android" "pixiv-beta" "pixiv" "pixiv-inc/pixiv/pixiv"
 patch "pixiv-beta" "revanced"
 

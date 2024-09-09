@@ -198,9 +198,10 @@ Download
 
 ### Revanced:
 
-| Stable version                                                            | Beta version                                                                   |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
-| [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-beta-revanced.apk) |
+| Stable version                                                                | Beta version                                                                       |
+| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | 
+| [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-beta-revanced.apk)     |
+| [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-revanced.apk) | [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-beta-revanced.apk) |
 
 ---
 

@@ -31,10 +31,3 @@ get_apk "com.reddit.frontpage" "reddit" "reddit" "redditinc/reddit/reddit"
 patch "reddit" "revanced"
 
 #################################################
-
-# Patch Tiktok:
-get_patches_key "tiktok"
-get_apk "com.ss.android.ugc.trill" "tiktok" "tik-tok" "tiktok-pte-ltd/tik-tok/tik-tok"
-patch "tiktok" "revanced"
-
-#################################################

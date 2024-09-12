@@ -29,14 +29,6 @@ patch "youtube-music-beta-armeabi-v7a" "revanced"
 
 #################################################
 
-# Patch Instagram:
-# Arm64-v8a
-get_patches_key "instagram"
-get_apk "com.instagram.android" "instagram-arm64-v8a-beta" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a" "nodpi"
-patch "instagram-arm64-v8a-beta" "revanced"
-
-#################################################
-
 # Patch Messenger:
 # Arm64-v8a
 get_patches_key "messenger"

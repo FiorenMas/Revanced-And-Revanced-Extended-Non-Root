@@ -54,10 +54,3 @@ get_apk "com.tumblr" "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr"
 patch "tumblr" "revanced"
 
 #################################################
-
-# Patch RAR:
-get_patches_key "rar"
-get_apk "com.rarlab.rar" "rar" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "arm64-v8a"
-patch "rar" "revanced"
-
-#################################################

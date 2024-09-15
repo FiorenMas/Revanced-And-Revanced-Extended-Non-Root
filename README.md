@@ -172,6 +172,10 @@ Download
 | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | 
 |[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-revanced.apk) | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-beta-revanced.apk) |
 
+### [Revanced fork by PantlessCoding:](https://github.com/PantlessCoding/revanced-patches)
+
+[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-PantlessCoding-revanced.apk)
+
 ---
 
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://play.google.com/store/apps/details?id=com.twitter.android)

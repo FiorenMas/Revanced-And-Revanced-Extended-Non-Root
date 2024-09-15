@@ -19,7 +19,7 @@ patch "facebook-arm64-v8a" "revanced"
 
 # Patch Twitch:
 get_patches_key "twitch"
-get_apk "tv.twitch.android.app" "twitch" "twitch" "twitch-interactive-inc/twitch/twitch"
+get_apk "tv.twitch.android.app" "twitch" "twitch" "twitch-interactive-inc/twitch/twitch" "Bundle"
 patch "twitch" "revanced"
 
 #################################################

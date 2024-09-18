@@ -138,7 +138,7 @@ get_apk() {
 			*) url_regexp='$5'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
 		esac 
 	fi
-	if [ -z "$version" ]; then
+	if [ -z "$version" ] && [ "$version" != "latest" ]; then
 		version=$(jq -r '[.. | objects | select(.name == "'$1'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json | uniq)
 	fi
 	export version="$version"

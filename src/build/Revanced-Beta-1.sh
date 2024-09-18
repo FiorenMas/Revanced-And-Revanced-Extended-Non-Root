@@ -32,6 +32,7 @@ patch "youtube-music-beta-armeabi-v7a" "revanced"
 # Patch Messenger:
 # Arm64-v8a
 get_patches_key "messenger"
+version="latest"
 get_apk "com.facebook.orca" "messenger-arm64-v8a-beta" "messenger" "facebook-2/messenger/messenger" "arm64-v8a" "nodpi"
 patch "messenger-arm64-v8a-beta" "revanced"
 

@@ -60,7 +60,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Tiktok:
 	get_patches_key "tiktok"
-	get_apk "com.ss.android.ugc.trill" "tiktok-beta" "tik-tok" "tiktok-pte-ltd/tik-tok/tik-tok"
+	get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 	patch "tiktok-beta" "revanced"
 	# Patch Instagram:
 	# Arm64-v8a

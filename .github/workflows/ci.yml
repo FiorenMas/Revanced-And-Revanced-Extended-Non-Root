@@ -48,7 +48,7 @@ jobs:
       - name: Check new patch Revanced Extended Reddit
         id: check-rve-reddit
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh inotia00/revanced-patches-reddit latest reddit-revanced-extended.apk
+        run: bash src/etc/ci.sh inotia00/revanced-patches-arsclib latest reddit-revanced-extended.apk
       - name: Check new patch Twitter Piko Stable
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'

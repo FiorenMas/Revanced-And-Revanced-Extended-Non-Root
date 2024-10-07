@@ -245,16 +245,6 @@ Download
 
 [All Architectures](../../releases/download/all/reddit-revanced-extended.apk)
 
-### Revanced:
-<details>
-  <summary>Old version maybe bugs</summary>
-  
-| Stable version                                                       | Beta version                                                              |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [All Architectures](../../releases/download/all/reddit-revanced.apk) | [All Architectures](../../releases/download/all/reddit-beta-revanced.apk) |
-
-</details>
-
 ---
 
 [![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)

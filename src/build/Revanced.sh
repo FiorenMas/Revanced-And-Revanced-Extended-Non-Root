@@ -88,11 +88,6 @@ revanced_dl(){
 }
 6() {
 	revanced_dl
-	# Patch Reddit:
-	get_patches_key "reddit"
-	version="2024.17.0"
-	get_apk "com.reddit.frontpage" "reddit" "reddit" "redditinc/reddit/reddit"
-	patch "reddit" "revanced"
 	# Patch Tumblr:
 	get_patches_key "tumblr"
 	version="35.0.0.110"

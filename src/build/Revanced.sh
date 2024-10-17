@@ -42,13 +42,6 @@ revanced_dl(){
 	get_patches_key "facebook"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
 	patch "facebook-arm64-v8a" "revanced"
-	# Patch Facebook by PantlessCoding:
-	# Arm64-v8a
-	rm -f revanced-patches*.jar patches.json 
-	dl_gh "revanced-patches" "PantlessCoding" "latest"
-	get_patches_key "facebook"
-	get_apk "com.facebook.katana" "facebook-arm64-v8a-PantlessCoding" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
-	patch "facebook-arm64-v8a-PantlessCoding" "revanced"
 }
 3() {
 	revanced_dl

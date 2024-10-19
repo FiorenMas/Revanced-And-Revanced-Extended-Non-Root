@@ -31,7 +31,9 @@ revanced_dl(){
 	done
 }
 2() {
-	revanced_dl
+	dl_gh "revanced-patches" "revanced" "v4.17.0-dev.9"
+ 	dl_gh "revanced-integrations" "revanced" "v1.16.0-dev.8"
+	dl_gh "revanced-cli" "revanced" "latest"
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"

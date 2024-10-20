@@ -142,16 +142,20 @@ req() {
 
 dl_apk() {
 	local url=$1 regexp=$2 output=$3
-	url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"
+	if [[ -z "$4" ]] || [[ $4 == "Bundle" ]]; then
+		url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/.*<a[^>]*href=\"\([^\"]*\)\".*${regexp}.*/\1/p")"
+	else
+		url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"
+	fi
 	url=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href ".downloadButton")
    	url=$(req "$url" - | $HTMLQ --base https://www.apkmirror.com --attribute href "span > a[rel = nofollow]")
 	req "$url" "$output"
 }
 get_apk() {
 	if [[ -z $5 ]]; then
-		url_regexp='APK</span>[^@]*@\([^#]*\)'
+		url_regexp='APK<\/span>'
 	elif [[ $5 == "Bundle" ]]; then
-		url_regexp='BUNDLE</span>[^@]*@\([^#]*\)'
+		url_regexp='BUNDLE<\/span>'
 	else
 		case $5 in
 			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
@@ -185,7 +189,8 @@ get_apk() {
 		fi
 		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$4-${version//./-}-release/" \
 							  "$url_regexp" \
-							  "$base_apk")
+							  "$base_apk" \
+							  "$5")
 		if [[ -f "./download/$base_apk" ]]; then
 			green_log "[+] Successfully downloaded $2"
 			break

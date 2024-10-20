@@ -307,6 +307,14 @@ Download
 
 ---
 
+### [FX File Explorer:](https://play.google.com/store/apps/details?id=nextapp.fx)
+
+### Dropped Patches by indrastorms:
+
+[All Architectures](../../releases/download/all/fx-file-explorer-indrastorms.apk)
+
+---
+
 ### ⚠️ Library, resources using in this repository:
 
 <details>

@@ -31,9 +31,7 @@ revanced_dl(){
 	done
 }
 2() {
-	dl_gh "revanced-patches" "revanced" "v4.17.0-dev.9"
- 	dl_gh "revanced-integrations" "revanced" "v1.16.0-dev.8"
-	dl_gh "revanced-cli" "revanced" "latest"
+	revanced_dl
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"
@@ -85,16 +83,18 @@ revanced_dl(){
 	revanced_dl
 	# Patch Tumblr:
 	get_patches_key "tumblr"
-	version="35.0.0.110"
-	get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr"
+	get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr" "Bundle"
 	patch "tumblr-beta" "revanced"
+	# Patch SoundCloud:
+	get_patches_key "soundcloud"
+	get_apk "com.soundcloud.android" "soundcloud-beta" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-soundcloud" "Bundle"
+	patch "soundcloud-beta" "revanced"
 }
 7() {
 	revanced_dl
 	# Patch Lightroom:
 	get_patches_key "lightroom"
-	version="9.2.2"
-	get_apk "com.adobe.lrmobile" "lightroom-beta" "lightroom" "adobe/lightroom/lightroom" "arm64-v8a"
+	get_apk "com.adobe.lrmobile" "lightroom-beta" "lightroom" "adobe/lightroom/lightroom" "Bundle"
 	patch "lightroom-beta" "revanced"
 	# Patch RAR:
 	get_patches_key "rar"

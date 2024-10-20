@@ -263,6 +263,16 @@ Download
 
 ---
 
+[![SoundCloud](https://img.shields.io/badge/soundcloud-FF5500?style=for-the-badge&logo=soundcloud&logoColor=white)](https://play.google.com/store/apps/details?id=com.soundcloud.android)
+
+### Revanced:
+
+| Stable version                                                           | Beta version                                                                  |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/soundcloud-revanced.apk) | [All Architectures](../../releases/download/all/soundcloud-beta-revanced.apk) |
+
+---
+
 ### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
 
 ### Revanced:

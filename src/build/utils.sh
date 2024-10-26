@@ -181,13 +181,14 @@ get_apk() {
 			done
 			version=$(echo -e "${_versions[*]}" | sed -n "$((attempt + 1))p")
 		fi
+  		version=$(echo "$version" | tr -d ' ' | sed 's/\./-/g')
 		green_log "[+] Downloading $3 version: $version $5 $6 $7"
 		if [[ $5 == "Bundle" ]]; then
 			local base_apk="$2.apkm"
 		else
 			local base_apk="$2.apk"
 		fi
-		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$4-${version//./-}-release/" \
+		local dl_url=$(dl_apk "https://www.apkmirror.com/apk/$4-$version-release/" \
 							  "$url_regexp" \
 							  "$base_apk" \
 							  "$5")

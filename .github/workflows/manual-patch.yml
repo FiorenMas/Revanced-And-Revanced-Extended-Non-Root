@@ -29,8 +29,6 @@ on:
           - 'Revanced Extended Android 5'
           - 'BiliRoamingX'
           - 'Dropped Patches - indrastorms'
-          - 'ReX'
-          - 'RVE-rufusin'
       retry_count:
         description: 'Do not change value below'
         required: false
@@ -47,21 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        Include:
-          - org: "Revanced"
-            run: "1"
-          - org: "Revanced"
-            run: "2"
-          - org: "Revanced"
-            run: "3"
-          - org: "Revanced"
-            run: "4"
-          - org: "Revanced"
-            run: "5"
-          - org: "Revanced"
-            run: "6"
-          - org: "Revanced"
-            run: "7"
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -73,13 +57,13 @@ jobs:
       - name: Patch apk
         id: patch-rv
         if: steps.check-gh-rv.outputs.internet_error == '0'
-        run: bash src/build/Revanced.sh ${{ matrix.Include.run }}
+        run: bash src/build/Revanced.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-rv
         if: steps.check-gh-rv.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rv.outcome == 'skipped' || steps.release-rv.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
+        if: always() && steps.patch-rv.outcome == 'skipped' || steps.release-rv.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.run == '1'
         uses: ./.github/actions/re-run
   patch_rv_beta:
     name: Patch Revanced Beta
@@ -87,21 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        Include:
-          - org: "Revanced-Beta"
-            run: "1"
-          - org: "Revanced-Beta"
-            run: "2"
-          - org: "Revanced-Beta"
-            run: "3"
-          - org: "Revanced-Beta"
-            run: "4"
-          - org: "Revanced-Beta"
-            run: "5"
-          - org: "Revanced-Beta"
-            run: "6"
-          - org: "Revanced-Beta"
-            run: "7"
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -113,41 +83,21 @@ jobs:
       - name: Patch apk
         id: patch-rvb
         if: steps.check-gh-rvb.outputs.internet_error == '0'
-        run: bash src/build/Revanced-Beta.sh ${{ matrix.Include.run }}
+        run: bash src/build/Revanced-Beta.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-rvb
         if: steps.check-gh-rvb.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rvb.outcome == 'skipped' || steps.release-rvb.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.Include.run == '1'
-        uses: ./.github/actions/re-run
-  patch_rex:
-    name: Patch ReX
-    if: ${{ github.event.inputs.org == 'ReX' || inputs.org == 'ReX' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: Preparing to patch
-        uses: ./.github/actions/preparing
-      - name: Check github connection
-        id: check-gh-rex
-        run: bash src/etc/connection.sh
-      - name: Patch apk
-        id: patch-rex
-        if: steps.check-gh-rex.outputs.internet_error == '0'
-        run: bash src/build/ReX.sh
-      - name: Releasing APK files
-        id: release-rex
-        if: steps.check-gh-rex.outputs.internet_error == '0'
-        uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rex.outcome == 'skipped' || steps.release-rex.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.patch-rvb.outcome == 'skipped' || steps.release-rvb.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.run == '1'
         uses: ./.github/actions/re-run
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        run: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -159,7 +109,7 @@ jobs:
       - name: Patch apk
         id: patch-rve-anddea
         if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
-        run: bash src/build/Anddea-Revanced-Extended.sh latest
+        run: bash src/build/Anddea-Revanced-Extended.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-rve-anddea-stable
         if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
@@ -171,6 +121,9 @@ jobs:
     name: Patch RVX Anddea Beta version
     if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || inputs.org == 'RVE-anddea-beta' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        run: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -182,41 +135,21 @@ jobs:
       - name: Patch apk
         id: patch-rve-anddea-beta
         if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
-        run: bash src/build/Anddea-Revanced-Extended.sh prerelease
+        run: bash src/build/Anddea-Revanced-Extended-Beta.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-rve-anddea-beta
         if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve-anddea-beta.outcome == 'skipped' || steps.release-rve-anddea-beta.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
-  patch_rve_rufusin_stable:
-    name: Patch RVX Rufusin Stable
-    if: ${{ github.event.inputs.org == 'RVE-rufusin' || inputs.org == 'RVE-rufusin' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: Preparing to patch
-        uses: ./.github/actions/preparing
-      - name: Check github connection
-        id: check-gh-rve-rufusin-stable
-        run: bash src/etc/connection.sh
-      - name: Patch apk
-        id: patch-rve-rufusin
-        if: steps.check-gh-rve-rufusin-stable.outputs.internet_error == '0'
-        run: bash src/build/Rufusin-Revanced-Extended.sh
-      - name: Releasing APK files
-        id: release-rve-rufusin-stable
-        if: steps.check-gh-rve-rufusin-stable.outputs.internet_error == '0'
-        uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve-rufusin-stable.outcome == 'skipped' || steps.release-rve-rufusin-stable.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run       
+        uses: ./.github/actions/re-run    
   patch_rve:
     name: Patch Revanced Extended Stable
     if: ${{ github.event.inputs.org == 'Revanced Extended' || inputs.org == 'Revanced Extended' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        run: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -228,7 +161,7 @@ jobs:
       - name: Patch apk
         id: patch-rve
         if: steps.check-gh-rve.outputs.internet_error == '0'
-        run: bash src/build/Revanced-Extended.sh
+        run: bash src/build/Revanced-Extended.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-rve
         if: steps.check-gh-rve.outputs.internet_error == '0'
@@ -240,6 +173,9 @@ jobs:
     name: Patch Revanced Extended Beta
     if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || inputs.org == 'Revanced Extended Beta' }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        run: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -251,7 +187,7 @@ jobs:
       - name: Patch apk
         id: patch-rve-beta
         if: steps.check-gh-rve-beta.outputs.internet_error == '0'
-        run: bash src/build/Revanced-Extended-Beta.sh
+        run: bash src/build/Revanced-Extended-Beta.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-rve-beta
         if: steps.check-gh-rve-beta.outputs.internet_error == '0'
@@ -420,4 +356,3 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-Dropped-Patches-indrastorms.outcome == 'skipped' || steps.release-Dropped-Patches-indrastorms.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
-

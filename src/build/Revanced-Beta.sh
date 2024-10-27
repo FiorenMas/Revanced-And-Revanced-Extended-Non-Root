@@ -10,25 +10,25 @@ revanced_dl(){
 	revanced_dl
 	# Patch YouTube:
 	get_patches_key "youtube-revanced"
-	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube"
+	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
+	split_editor "youtube-beta" "youtube-beta"
 	patch "youtube-beta" "revanced"
-	# Patch YouTube Music:
-	# Arm64-v8a
-	get_patches_key "youtube-music-revanced"
-	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
-	patch "youtube-music-beta-arm64-v8a" "revanced"
-	# Armeabi-v7a
-	get_patches_key "youtube-music-revanced"
-	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
-	patch "youtube-music-beta-armeabi-v7a" "revanced"
-	# Split architecture:
-	rm -f revanced-cli* revanced-patches*.jar *.json
-	dl_gh "revanced-cli" "inotia00" "latest"
-	dl_gh "revanced-patches" "inotia00" "latest"
-	# Split architecture Youtube:
-	for i in {0..3}; do
-		split_arch "youtube-beta-revanced" "youtube-beta-${archs[i]}-revanced" "$(gen_rip_libs ${libs[i]})"
-	done
+	# Patch Youtube Arm64-v8a
+	get_patches_key "youtube-revanced" 
+	split_editor "youtube-beta" "youtube-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "youtube-beta-arm64-v8a" "revanced"
+	# Patch Youtube Armeabi-v7a
+	get_patches_key "youtube-revanced" 
+	split_editor "youtube-beta" "youtube-beta-armeabi-v7a" "exclude" "split_config.arm64_v8a split_config.x86 split_config.x86_64"
+	patch "youtube-beta-armeabi-v7a" "revanced"
+	# Patch Youtube x86
+	get_patches_key "youtube-revanced" 
+	split_editor "youtube-beta" "youtube-beta-x86" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86_64"
+	patch "youtube-beta-x86" "revanced"
+	# Patch Youtube x86_64
+	get_patches_key "youtube-revanced" 
+	split_editor "youtube-beta" "youtube-beta-x86_64" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86"
+	patch "youtube-beta-x86_64" "revanced"
 }
 2() {
 	revanced_dl
@@ -41,7 +41,7 @@ revanced_dl(){
 	# Patch Facebook:
 	# Arm64-v8a
 	get_patches_key "facebook"
- 	version="485.0.0.70.77"
+	version="485.0.0.70.77"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a-beta" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
 	patch "facebook-arm64-v8a-beta" "revanced"
 }
@@ -102,6 +102,31 @@ revanced_dl(){
 	get_apk "com.rarlab.rar" "rar-beta" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "arm64-v8a"
 	patch "rar-beta" "revanced"
 }
+8() {
+	revanced_dl
+	# Patch YouTube Lite Arm64-v8a:
+	get_patches_key "youtube-revanced"
+	get_apk "com.google.android.youtube" "youtube-lite-beta-arm64-v8a" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
+	split_editor "youtube-lite-beta-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xxxhdpi"
+	patch "youtube-lite-beta-arm64-v8a" "revanced"
+	# Patch YouTube Lite Armeabi-v7a:
+	get_patches_key "youtube-revanced"
+	get_apk "com.google.android.youtube" "youtube-lite-beta-armeabi-v7a" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
+	split_editor "youtube-lite-beta-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xxxhdpi"
+	patch "youtube-lite-beta-armeabi-v7a" "revanced"
+}
+9() {
+	revanced_dl
+	# Patch YouTube Music:
+	# Arm64-v8a
+	get_patches_key "youtube-music-revanced"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
+	patch "youtube-music-beta-arm64-v8a" "revanced"
+	# Armeabi-v7a
+	get_patches_key "youtube-music-revanced"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
+	patch "youtube-music-beta-armeabi-v7a" "revanced"
+}
 case "$1" in
     1)
         1
@@ -123,5 +148,11 @@ case "$1" in
         ;;
     7)
         7
+        ;;
+    8)
+        8
+        ;;
+    9)
+        9
         ;;
 esac

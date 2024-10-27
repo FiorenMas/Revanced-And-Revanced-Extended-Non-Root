@@ -137,12 +137,12 @@ _req() {
     fi
 }
 req() {
-    _req "$1" "$2" "User-Agent: Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.6099.231 Mobile Safari/537.36"
+    _req "$1" "$2" "User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.58 Mobile Safari/537.36"
 }
 
 dl_apk() {
 	local url=$1 regexp=$2 output=$3
-	if [[ -z "$4" ]] || [[ $4 == "Bundle" ]]; then
+	if [[ -z "$4" ]] || [[ $4 == "Bundle" ]] || [[ $4 == "Bundle_extract" ]]; then
 		url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/.*<a[^>]*href=\"\([^\"]*\)\".*${regexp}.*/\1/p")"
 	else
 		url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"
@@ -154,7 +154,7 @@ dl_apk() {
 get_apk() {
 	if [[ -z $5 ]]; then
 		url_regexp='APK<\/span>'
-	elif [[ $5 == "Bundle" ]]; then
+	elif [[ $5 == "Bundle" ]] || [[ $5 == "Bundle_extract" ]]; then
 		url_regexp='BUNDLE<\/span>'
 	else
 		case $5 in
@@ -183,7 +183,7 @@ get_apk() {
 		fi
   		version=$(echo "$version" | tr -d ' ' | sed 's/\./-/g')
 		green_log "[+] Downloading $3 version: $version $5 $6 $7"
-		if [[ $5 == "Bundle" ]]; then
+		if [[ $5 == "Bundle" ]] || [[ $5 == "Bundle_extract" ]]; then
 			local base_apk="$2.apkm"
 		else
 			local base_apk="$2.apk"
@@ -208,6 +208,8 @@ get_apk() {
 	if [[ $5 == "Bundle" ]]; then
 		green_log "[+] Merge splits apk to standalone apk"
 		java -jar $APKEditor m -i ./download/$2.apkm -o ./download/$2.apk > /dev/null 2>&1
+	elif [[ $5 == "Bundle_extract" ]]; then
+		unzip "./download/$base_apk" -d "./download/$(basename "$base_apk" .apkm)" > /dev/null 2>&1
 	fi
 }
 
@@ -251,26 +253,32 @@ patch() {
 
 #################################################
 
-# Split architectures using Revanced CLI, created by inotia00
-archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
-libs=("armeabi-v7a x86_64 x86" "arm64-v8a x86_64 x86" "armeabi-v7a arm64-v8a x86" "armeabi-v7a arm64-v8a x86_64")
-gen_rip_libs() {
-	for lib in $@; do
-		echo -n "--rip-lib "$lib" "
-	done
+split_editor() {
+    if [[ -z "$3" || -z "$4" ]]; then
+        green_log "[+] Merge splits apk to standalone apk"
+        java -jar $APKEditor m -i "./download/$1" -o "./download/$1.apk" > /dev/null 2>&1
+        return 0
+    fi
+    IFS=' ' read -r -a include_files <<< "$4"
+    mkdir -p "./download/$2"
+    for file in "./download/$1"/*.apk; do
+        filename=$(basename "$file")
+        basename_no_ext="${filename%.apk}"
+        if [[ "$filename" == "base.apk" ]]; then
+            cp -f "$file" "./download/$2/" > /dev/null 2>&1
+            continue
+        fi
+        if [[ "$3" == "include" ]]; then
+            if [[ " ${include_files[*]} " =~ " ${basename_no_ext} " ]]; then
+                cp -f "$file" "./download/$2/" > /dev/null 2>&1
+            fi
+        elif [[ "$3" == "exclude" ]]; then
+            if [[ ! " ${include_files[*]} " =~ " ${basename_no_ext} " ]]; then
+                cp -f "$file" "./download/$2/" > /dev/null 2>&1
+            fi
+        fi
+    done
+
+    green_log "[+] Merge splits apk to standalone apk"
+    java -jar $APKEditor m -i ./download/$2 -o ./download/$2.apk > /dev/null 2>&1
 }
-split_arch() {
-	green_log "[+] Splitting $1 to ${archs[i]}:"
-	if [ -f "./release/$1.apk" ]; then
-		eval java -jar revanced-cli*.jar patch \
-		--patch-bundle revanced-patches*.jar \
-		$3 \
-		--keystore=./src/_ks.keystore \
-		--out=./release/$2.apk\
-		./release/$1.apk
-	else
-		red_log "[-] Not found $1.apk"
-		exit 1
-	fi
-}
-#################################################

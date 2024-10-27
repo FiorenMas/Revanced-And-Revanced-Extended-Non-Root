@@ -16,7 +16,7 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.
 
 > [!NOTE]
-> If you want to use the YouTube or YouTube Music app, you need to download and install [MicroG](https://github.com/ReVanced/GmsCore/releases).
+> If you want to use the YouTube, YouTube Music or Google Photos app, you need to download and install [MicroG](https://github.com/ReVanced/GmsCore/releases).
 > 
 > If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 > 
@@ -42,6 +42,10 @@ Download
 
 [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
+> [!IMPORTANT] 
+> A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs
+>
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest) | [Beta version](https://github.com/ReVanced/revanced-patches/releases)            |
@@ -51,6 +55,16 @@ Download
 | [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-revanced.apk) |
 | [x86](../../releases/download/all/youtube-x86-revanced.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-revanced.apk)                 |
 | [x86_64](../../releases/download/all/youtube-x86_64-revanced.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced.apk)           |
+
+<details>
+  <summary>Lite version</summary>
+  
+| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest)      | [Beta version](https://github.com/ReVanced/revanced-patches/releases)                 |
+| ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-revanced.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-revanced.apk) |
+
+</details>
 
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
@@ -62,6 +76,16 @@ Download
 | [x86](../../releases/download/all/youtube-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-revanced-extended.apk)                 |
 | [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced-extended.apk)           |
 
+<details>
+  <summary>Lite version</summary>
+  
+| [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)               | [Beta version](https://github.com/inotia00/revanced-patches/releases)                          |
+| -------------------------------------------------------------------------------------------  | ---------------------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced-extended.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-revanced-extended.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced-extended.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-revanced-extended.apk) |
+
+</details>
+
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)     | [Beta version](https://github.com/anddea/revanced-patches/releases)            |
@@ -71,6 +95,16 @@ Download
 | [Armeabi-v7a](../../releases/download/all/youtube-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-anddea.apk) |
 | [x86](../../releases/download/all/youtube-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-anddea.apk)                 |
 | [x86_64](../../releases/download/all/youtube-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-anddea.apk)           |
+
+<details>
+  <summary>Lite version</summary>
+  
+| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)      | [Beta version](https://github.com/anddea/revanced-patches/releases)                 |
+| ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-anddea.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-anddea.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-anddea.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-anddea.apk) |
+
+</details>
 
 ### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
 
@@ -97,35 +131,6 @@ Download
 
 [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-5.apk)
 
-<details>
-  <summary>Discontinued project</summary>
-
-### [Revanced Extended forked by rufusin:](https://github.com/rufusin/revanced-patches)
-
-[All Architectures](../../releases/download/all/youtube-rufusin.apk)
-
-[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-rufusin.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-rufusin.apk)
-
-[x86](../../releases/download/all/youtube-x86-rufusin.apk)
-
-[x86_64](../../releases/download/all/youtube-x86_64-rufusin.apk)
-
-### [ReX: (forked from Revanced Extended)](https://github.com/YT-Advanced/ReX-patches)
-
-[All Architectures](../../releases/download/all/youtube-ReX.apk)
-
-[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-ReX.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-ReX.apk)
-
-[x86](../../releases/download/all/youtube-x86-ReX.apk)
-
-[x86_64](../../releases/download/all/youtube-x86_64-ReX.apk)
-
-</details>
-
 ---
 
 [![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
@@ -150,17 +155,6 @@ Download
 | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | [Arm64-v8a](../../releases/download/all/youtube-music-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-anddea.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk) |
-
-<details>
-  <summary>Discontinued project</summary>
-
-### ReX:
-
-[Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-ReX.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-ReX.apk)
-
-</details>
 
 ---
 

@@ -103,7 +103,6 @@ jobs:
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
       check_rve5: ${{ steps.check-rve5.outputs.new_patch }}
-      check_BiliRoamingX: ${{ steps.check-BiliRoamingX.outputs.new_patch }}
 
   Patch-Revanced:
     name: Patch Revanced Stable

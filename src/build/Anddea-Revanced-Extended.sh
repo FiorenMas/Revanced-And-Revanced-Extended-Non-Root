@@ -11,37 +11,37 @@ revanced_dl(){
 	revanced_dl
 	# Patch YouTube:
 	get_patches_key "youtube-rve-anddea"
-	get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
-	split_editor "youtube" "youtube"
+	get_apk "com.google.android.youtube" "youtube-stable" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
+	split_editor "youtube-stable" "youtube-stable"
 	patch "youtube-stable" "anddea" "inotia"
 	# Patch Youtube Arm64-v8a
 	get_patches_key "youtube-rve-anddea"
-	split_editor "youtube" "youtube-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "youtube-arm64-v8a" "anddea" "inotia"
+	split_editor "youtube-stable" "youtube-stable-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "youtube-stable-arm64-v8a" "anddea" "inotia"
 	# Patch Youtube Armeabi-v7a
 	get_patches_key "youtube-rve-anddea"
-	split_editor "youtube" "youtube-armeabi-v7a" "exclude" "split_config.arm64_v8a split_config.x86 split_config.x86_64"
-	patch "youtube-armeabi-v7a" "anddea" "inotia"
+	split_editor "youtube-stable" "youtube-stable-armeabi-v7a" "exclude" "split_config.arm64_v8a split_config.x86 split_config.x86_64"
+	patch "youtube-stable-armeabi-v7a" "anddea" "inotia"
 	# Patch Youtube x86
 	get_patches_key "youtube-rve-anddea"
-	split_editor "youtube" "youtube-x86" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86_64"
-	patch "youtube-x86" "anddea" "inotia"
+	split_editor "youtube-stable" "youtube-stable-x86" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86_64"
+	patch "youtube-stable-x86" "anddea" "inotia"
 	# Patch Youtube x86_64
 	get_patches_key "youtube-rve-anddea"
-	split_editor "youtube" "youtube-x86_64" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86"
-	patch "youtube-x86_64" "anddea" "inotia"
+	split_editor "youtube-stable" "youtube-stable-x86_64" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86"
+	patch "youtube-stable-x86_64" "anddea" "inotia"
 }
 2() {
 	revanced_dl
 	# Patch YouTube Music Extended:
 	# Arm64-v8a
 	get_patches_key "youtube-music-rve-anddea"
-	get_apk "com.google.android.apps.youtube.music" "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
-	patch "youtube-music-arm64-v8a" "anddea" "inotia"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-stable-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
+	patch "youtube-music-stable-arm64-v8a" "anddea" "inotia"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-rve-anddea"
-	get_apk "com.google.android.apps.youtube.music" "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
-	patch "youtube-music-armeabi-v7a" "anddea" "inotia"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-stable-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
+	patch "youtube-music-stable-armeabi-v7a" "anddea" "inotia"
 }
 3() {
 	revanced_dl

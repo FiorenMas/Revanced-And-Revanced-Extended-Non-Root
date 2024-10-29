@@ -27,7 +27,6 @@ on:
           - 'Twitter Piko Beta'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
-          - 'BiliRoamingX'
           - 'Dropped Patches - indrastorms'
       retry_count:
         description: 'Do not change value below'
@@ -48,7 +47,7 @@ jobs:
         run: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -74,7 +73,7 @@ jobs:
         run: [1, 2, 3, 4, 5, 6, 7, 8, 9]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -100,7 +99,7 @@ jobs:
         run: [1, 2, 3]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -126,7 +125,7 @@ jobs:
         run: [1, 2, 3]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -152,7 +151,7 @@ jobs:
         run: [1, 2, 3]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -178,7 +177,7 @@ jobs:
         run: [1, 2, 3]
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -201,7 +200,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -224,7 +223,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -247,7 +246,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -270,7 +269,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -293,7 +292,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
@@ -310,36 +309,13 @@ jobs:
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve5.outcome == 'skipped' || steps.release-rve5.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
-  patch_BiliRoamingX:
-    name: Patch BiliRoamingX
-    if: ${{ github.event.inputs.org == 'BiliRoamingX' || inputs.org == 'BiliRoamingX' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: Preparing to patch
-        uses: ./.github/actions/preparing
-      - name: Check github connection
-        id: check-gh-BiliRoamingX
-        run: bash src/etc/connection.sh
-      - name: Patch apk
-        id: patch-BiliRoamingX
-        if: steps.check-gh-BiliRoamingX.outputs.internet_error == '0'
-        run: bash src/build/BiliRoamingX.sh
-      - name: Releasing APK files
-        id: release-BiliRoamingX
-        if: steps.check-gh-BiliRoamingX.outputs.internet_error == '0'
-        uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-BiliRoamingX.outcome == 'skipped' || steps.release-BiliRoamingX.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_Dropped_Patches:
     name: Dropped Patches Revanced - indrastorms
     if: ${{ github.event.inputs.org == 'Dropped Patches - indrastorms' || inputs.org == 'Dropped Patches - indrastorms' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection

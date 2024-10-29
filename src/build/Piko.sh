@@ -4,7 +4,7 @@ source src/build/utils.sh
 
 # Patch Twitter Piko:
 patch_piko () {
-	dl_gh "revanced-cli" "revanced" "latest"
+	dl_gh "revanced-cli" "revanced" "v4.6.0"
 	get_patches_key "twitter-piko"
 	local v apk_name
 	if [[ "$1" == "latest" ]]; then

@@ -287,14 +287,6 @@ Download
 
 ---
 
-### [Bilbili: (Chinese only)](https://play.google.com/store/apps/details?id=com.bilibili.app.in)
-
-### [BiliRoamingX:](https://github.com/BiliRoamingX/BiliRoamingX)
-
-[All Architectures](../../releases/download/all/bilibili-BiliRoamingX.apk )
-
----
-
 ### [Nova Launcher:](https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher)
 
 ### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
@@ -384,35 +376,6 @@ Download
 [Patches](https://github.com/d4n3436/revanced-patches-android5) - [GPL-3.0](https://github.com/d4n3436/revanced-patches-android5/blob/revanced-extended/LICENSE)
 
 [Integrations](https://github.com/d4n3436/revanced-integrations) - [GPL-3.0](https://github.com/d4n3436/revanced-integrations/blob/revanced-extended/LICENSE)
-
-</details>
-
-</details>
-
-<details>
-  <summary>YT-Advanced</summary>
-
-[Patches](https://github.com/YT-Advanced/ReX-patches) - [GPL-3.0](https://github.com/YT-Advanced/ReX-patches/blob/master/LICENSE)
-
-[Integrations](https://github.com/YT-Advanced/ReX-integrations) - [GPL-3.0](https://github.com/YT-Advanced/ReX-integrations/blob/main/LICENSE)
-
-</details>
-
-<details>
-  <summary>rufusin</summary>
-
-[Patches](https://github.com/rufusin/revanced-patches) - [GPL-3.0](https://github.com/rufusin/revanced-patches/blob/main/LICENSE)
-
-[Integrations](https://github.com/rufusin/revanced-integrations) - [GPL-3.0](https://github.com/rufusin/revanced-integrations/blob/main/LICENSE)
-
-</details>
-
-<details>
-  <summary>BiliRoamingX</summary>
-
-[Patches, Integrations](https://github.com/BiliRoamingX/BiliRoamingX) - [GPL-3.0](https://github.com/BiliRoamingX/BiliRoamingX/blob/main/LICENSE)
-
-</details>
 
 </details>
 

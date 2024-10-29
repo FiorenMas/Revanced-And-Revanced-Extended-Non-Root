@@ -3,7 +3,7 @@ runs:
   using: "composite"
   steps:
     - name: Set up jdk
-      uses: actions/setup-java@v4.0.0
+      uses: actions/setup-java@v4.5.0
       with:
         distribution: 'zulu'
         java-version: '17'

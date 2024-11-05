@@ -7,11 +7,16 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
   
 [![Image of https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root](https://github.com/FiorenMas/View-Counter/blob/main/repos/Revanced-And-Revanced-Extended-Non-Root_609906498/svg/count.svg)](https://github.com/FiorenMas/View-Counter)
 [![Image of https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/actions](https://img.shields.io/github/actions/workflow/status/fiorenmas/Revanced-And-Revanced-Extended-Non-Root/ci.yml)](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/actions)
-[![](https://img.shields.io/badge/Telegram-2CA5E0)](https://t.me/fioren374)
+[![](https://img.shields.io/badge/Telegram-2CA5E0)](https://t.me/fiorenmas)
   
 </div>
 
 ---
+
+> [!NOTE]
+> ## Backup Telegram channel: 
+> ### [https://t.me/fiorenmas](https://t.me/fiorenmas)
+
 ## ⚙️ How does this repository work?<img src="../main/docs/image/Readme.png" align="right" />
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.
 

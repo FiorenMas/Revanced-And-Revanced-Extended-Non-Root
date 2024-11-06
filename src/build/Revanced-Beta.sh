@@ -3,8 +3,7 @@
 source ./src/build/utils.sh
 # Download requirements
 revanced_dl(){
-	dl_gh "revanced-patches revanced-integrations" "revanced" "prerelease"
-	dl_gh "revanced-cli" "revanced" "latest"
+	dl_gh "revanced-patches revanced-cli" "revanced" "prerelease"
 }
 1() {
 	revanced_dl

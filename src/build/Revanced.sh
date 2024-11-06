@@ -114,6 +114,7 @@ revanced_dl(){
 	patch "youtube-lite-armeabi-v7a" "revanced"
 }
 9() {
+	revanced_dl
 	# Patch YouTube Music:
 	# Arm64-v8a
 	get_patches_key "youtube-music-revanced"

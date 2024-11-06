@@ -16,7 +16,7 @@ revanced_dl(){
 	patch "youtube-beta" "revanced-extended" "inotia"
 	# Patch Youtube Arm64-v8a
 	get_patches_key "youtube-revanced-extended"
-	split_editor "youtube" "youtube-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	split_editor "youtube-beta" "youtube-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
 	patch "youtube-beta-arm64-v8a" "revanced-extended" "inotia"
 	# Patch Youtube Armeabi-v7a
 	get_patches_key "youtube-revanced-extended"

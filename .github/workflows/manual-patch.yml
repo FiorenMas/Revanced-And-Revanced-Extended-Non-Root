@@ -27,6 +27,7 @@ on:
           - 'Twitter Piko Beta'
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
+          - 'BiliRoamingM'
           - 'Dropped Patches - indrastorms'
       retry_count:
         description: 'Do not change value below'
@@ -308,6 +309,29 @@ jobs:
         uses: ./.github/actions/release
       - name: Re-run workflow if github connection not stable
         if: always() && steps.patch-rve5.outcome == 'skipped' || steps.release-rve5.outcome == 'skipped' && env.retry_count < env.max_retries
+        uses: ./.github/actions/re-run
+  patch_BiliRoamingM:
+    name: Patch BiliRoamingM
+    if: ${{ github.event.inputs.org == 'BiliRoamingM' || inputs.org == 'BiliRoamingM' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-BiliRoamingM
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-BiliRoamingM
+        if: steps.check-gh-BiliRoamingM.outputs.internet_error == '0'
+        run: bash src/build/BiliRoamingM.sh
+      - name: Releasing APK files
+        id: release-BiliRoamingM
+        if: steps.check-gh-BiliRoamingM.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+      - name: Re-run workflow if github connection not stable
+        if: always() && steps.patch-BiliRoamingM.outcome == 'skipped' || steps.release-BiliRoamingM.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: ./.github/actions/re-run
   patch_Dropped_Patches:
     name: Dropped Patches Revanced - indrastorms

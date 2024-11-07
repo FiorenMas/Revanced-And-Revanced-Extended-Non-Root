@@ -292,6 +292,14 @@ Download
 
 ---
 
+### [Bilbili: (Chinese only)](https://play.google.com/store/apps/details?id=com.bilibili.app.in)
+
+### [BiliRoamingM:](https://github.com/sakarie9/BiliRoamingM/)
+
+[All Architectures](../../releases/download/all/bilibili-BiliRoamingM.apk )
+
+---
+
 ### [Nova Launcher:](https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher)
 
 ### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
@@ -381,6 +389,13 @@ Download
 [Patches](https://github.com/d4n3436/revanced-patches-android5) - [GPL-3.0](https://github.com/d4n3436/revanced-patches-android5/blob/revanced-extended/LICENSE)
 
 [Integrations](https://github.com/d4n3436/revanced-integrations) - [GPL-3.0](https://github.com/d4n3436/revanced-integrations/blob/revanced-extended/LICENSE)
+
+</details>
+
+<details>
+  <summary>BiliRoamingM</summary>
+
+[Patches & Integrations](https://github.com/sakarie9/BiliRoamingM) - [GPL-3.0](https://github.com/sakarie9/BiliRoamingM/blob/main/LICENSE)
 
 </details>
 

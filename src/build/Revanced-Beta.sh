@@ -119,12 +119,10 @@ revanced_dl(){
 	# Arm64-v8a
 	get_patches_key "youtube-music-revanced"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
-	split_editor "youtube-lite" "youtube-lite-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xxxhdpi"
 	patch "youtube-music-beta-arm64-v8a" "revanced"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-revanced"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
-	split_editor "youtube-lite" "youtube-lite-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xxxhdpi"
 	patch "youtube-music-beta-armeabi-v7a" "revanced"
 }
 case "$1" in

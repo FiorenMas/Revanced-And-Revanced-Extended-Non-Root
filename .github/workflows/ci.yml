@@ -25,10 +25,10 @@ jobs:
         id: check-rv
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh ReVanced/revanced-patches latest youtube-revanced.apk
-#      - name: Check new patch ReVanced Beta
-#        id: check-rv-beta
-#        if: steps.check-gh.outputs.internet_error == '0'
-#        run: bash src/etc/ci.sh ReVanced/revanced-patches prerelease youtube-beta-revanced.apk
+      - name: Check new patch ReVanced Beta
+        id: check-rv-beta
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh ReVanced/revanced-patches prerelease youtube-beta-revanced.apk
       - name: Check new patch Revanced Extended forked by Anddea Stable Version
         id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'

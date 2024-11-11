@@ -3,8 +3,6 @@ permissions: write-all
 env:
   repository: ${{ github.repository }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  retry_count: ${{ github.event.inputs.retry_count }}
-  max_retries: 3
   org_input: ${{ inputs.org }}
   org_event_input: ${{ github.event.inputs.org }}
 on:
@@ -29,10 +27,6 @@ on:
           - 'Revanced Extended Android 5'
           - 'BiliRoamingM'
           - 'Dropped Patches - indrastorms'
-      retry_count:
-        description: 'Do not change value below'
-        required: false
-        default: '1'
   workflow_call:
     inputs:
       org:
@@ -62,9 +56,6 @@ jobs:
         id: release-rv
         if: steps.check-gh-rv.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rv.outcome == 'skipped' || steps.release-rv.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.run == '1'
-        uses: ./.github/actions/re-run
   patch_rv_beta:
     name: Patch Revanced Beta
     if: ${{ github.event.inputs.org == 'Revanced Beta' || inputs.org == 'Revanced Beta' }}
@@ -88,9 +79,6 @@ jobs:
         id: release-rvb
         if: steps.check-gh-rvb.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rvb.outcome == 'skipped' || steps.release-rvb.outcome == 'skipped' && env.retry_count < env.max_retries && matrix.run == '1'
-        uses: ./.github/actions/re-run
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' }}
@@ -114,9 +102,6 @@ jobs:
         id: release-rve-anddea-stable
         if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve-anddea-stable.outcome == 'skipped' || steps.release-rve-anddea-stable.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_rve_anddea_beta:
     name: Patch RVX Anddea Beta version
     if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || inputs.org == 'RVE-anddea-beta' }}
@@ -140,9 +125,6 @@ jobs:
         id: release-rve-anddea-beta
         if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve-anddea-beta.outcome == 'skipped' || steps.release-rve-anddea-beta.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run    
   patch_rve:
     name: Patch Revanced Extended Stable
     if: ${{ github.event.inputs.org == 'Revanced Extended' || inputs.org == 'Revanced Extended' }}
@@ -166,9 +148,6 @@ jobs:
         id: release-rve
         if: steps.check-gh-rve.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve.outcome == 'skipped' || steps.release-rve.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_rve_beta:
     name: Patch Revanced Extended Beta
     if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || inputs.org == 'Revanced Extended Beta' }}
@@ -192,9 +171,6 @@ jobs:
         id: release-rve-beta
         if: steps.check-gh-rve-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve-beta.outcome == 'skipped' || steps.release-rve-beta.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_rve_reddit:
     name: Patch Revanced Extended Reddit
     if: ${{ github.event.inputs.org == 'Revanced Extended Reddit' || inputs.org == 'Revanced Extended Reddit' }}
@@ -215,9 +191,6 @@ jobs:
         id: release-rve-reddit
         if: steps.check-gh-rve-reddit.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve-reddit.outcome == 'skipped' || steps.release-rve-reddit.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
     if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || inputs.org == 'Twitter Piko Stable' }}
@@ -238,9 +211,6 @@ jobs:
         id: release-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-piko-stable.outcome == 'skipped' || steps.release-piko-stable.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_twitter_piko_beta:
     name: Patch Twitter Piko Beta
     if: ${{ github.event.inputs.org == 'Twitter Piko Beta' || inputs.org == 'Twitter Piko Beta' }}
@@ -261,9 +231,6 @@ jobs:
         id: release-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-piko-beta.outcome == 'skipped' || steps.release-piko-beta.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_rve67:
     name: Patch RVX Android 6,7
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || inputs.org == 'Revanced Extended Android 6,7' }}
@@ -284,9 +251,6 @@ jobs:
         id: release-rve67
         if: steps.check-gh-rve67.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve67.outcome == 'skipped' || steps.release-rve67.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_rve5:
     name: Patch RVX Android 5
     if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || inputs.org == 'Revanced Extended Android 5' }}
@@ -307,9 +271,6 @@ jobs:
         id: release-rve5
         if: steps.check-gh-rve5.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-rve5.outcome == 'skipped' || steps.release-rve5.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_BiliRoamingM:
     name: Patch BiliRoamingM
     if: ${{ github.event.inputs.org == 'BiliRoamingM' || inputs.org == 'BiliRoamingM' }}
@@ -330,9 +291,6 @@ jobs:
         id: release-BiliRoamingM
         if: steps.check-gh-BiliRoamingM.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-BiliRoamingM.outcome == 'skipped' || steps.release-BiliRoamingM.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run
   patch_Dropped_Patches:
     name: Dropped Patches Revanced - indrastorms
     if: ${{ github.event.inputs.org == 'Dropped Patches - indrastorms' || inputs.org == 'Dropped Patches - indrastorms' }}
@@ -353,6 +311,3 @@ jobs:
         id: release-Dropped-Patches-indrastorms
         if: steps.check-gh-Dropped-Patches-indrastorms.outputs.internet_error == '0'
         uses: ./.github/actions/release
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.patch-Dropped-Patches-indrastorms.outcome == 'skipped' || steps.release-Dropped-Patches-indrastorms.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: ./.github/actions/re-run

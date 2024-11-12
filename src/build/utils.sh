@@ -99,9 +99,14 @@ get_patches_key() {
 				excludePatches+=" -d \"$line1\""
 				excludeLinesFound=true
 			done < src/patches/$1/exclude-patches
-			
 			while IFS= read -r line2; do
-				includePatches+=" -e \"$line2\""
+				if [[ "$line2" == *"|"* ]]; then
+					patch_name="${line2%%|*}"
+					options="${line2#*|}"
+					includePatches+=" -e \"${patch_name}\" ${options}"
+				else
+					includePatches+=" -e \"$line2\""
+				fi
 				includeLinesFound=true
 			done < src/patches/$1/include-patches
 		else

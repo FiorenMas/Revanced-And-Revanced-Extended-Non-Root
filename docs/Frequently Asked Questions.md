@@ -39,6 +39,14 @@ You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/
 
 You should open the folder [Revanced-And-Revanced-Extended-Non-Root/src/options/](../src/options). It contains files revanced.json, ReX.json... edit those file the same as you would options.json
 
+Revanced CLI version 5 no longer use options.json anymore use directly `Revanced-And-Revanced-Extended-Non-Root/src/patches/` instead.
+
+The options separate with patches name with `|`
+
+Example Youtube apps include patches:
+
+`Custom branding|-OappName="YouTube ReVanced" -OiconPath=ReVanced*Logo`
+
 ---
 
 ### Q: I am facing errors using your apps, what do I do?

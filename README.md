@@ -71,6 +71,10 @@ Download
 
 </details>
 
+<details>
+
+<summary>Revanced Extended crashes on launch with the newest patch. Don't use it for now. I'll find a solution later.</summary>
+
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
 | [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)       | [Beta version](https://github.com/inotia00/revanced-patches/releases)                     |
@@ -88,6 +92,8 @@ Download
 | -------------------------------------------------------------------------------------------  | ---------------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced-extended.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-revanced-extended.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced-extended.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-revanced-extended.apk) |
+
+</details>
 
 </details>
 

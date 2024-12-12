@@ -95,8 +95,6 @@ Download
 
 </details>
 
-</details>
-
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)     | [Beta version](https://github.com/anddea/revanced-patches/releases)            |
@@ -114,6 +112,8 @@ Download
 | ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-anddea.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-anddea.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-anddea.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-anddea.apk) |
+
+</details>
 
 </details>
 

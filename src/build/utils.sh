@@ -255,7 +255,7 @@ patch() {
 			fi
 		fi
   		unset GITHUB_REPOSITORY
-		eval java -jar *cli*.jar $p$b $m$opt--out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu $a./download/$1.apk
+		eval java -jar *cli*.jar $p$b $m"$opt"--out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu $a./download/$1.apk
   		unset version
 		unset excludePatches
 		unset includePatches

@@ -27,6 +27,7 @@ on:
           - 'Revanced Extended Android 5'
           - 'BiliRoamingM'
           - 'Dropped Patches - indrastorms'
+          - 'Revanced Experiments'
   workflow_call:
     inputs:
       org:
@@ -310,4 +311,24 @@ jobs:
       - name: Releasing APK files
         id: release-Dropped-Patches-indrastorms
         if: steps.check-gh-Dropped-Patches-indrastorms.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_rv_experiments:
+    name: Patch Revanced Experiments
+    if: ${{ github.event.inputs.org == 'Revanced Experiments' || inputs.org == 'Revanced Experiments' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rv-experiments
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rv-experiments
+        if: steps.check-gh-rv-experiments.outputs.internet_error == '0'
+        run: bash src/build/Revanced-Experiment.sh
+      - name: Releasing APK files
+        id: release-rv-experiments
+        if: steps.check-gh-rv-experiments.outputs.internet_error == '0'
         uses: ./.github/actions/release

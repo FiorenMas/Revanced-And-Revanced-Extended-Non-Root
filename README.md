@@ -214,6 +214,14 @@ Download
 
 ---
 
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://play.google.com/store/apps/details?id=org.telegram.messenger)
+
+### [Revanced Experiments:](https://github.com/Aunali321/ReVancedExperiments)
+
+[Arm64-v8a](../../releases/download/all/telegram-revanced-experiments.apk)
+
+---
+
 [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
 
 ### Revanced:
@@ -406,9 +414,16 @@ Download
 
 </details>
 
+<details>
+  <summary>Aunali321</summary>
+
+[Patches](https://github.com/Aunali321/ReVancedExperiments) - [GPL-3.0](https://github.com/Aunali321/ReVancedExperiments/blob/main/LICENSE)
+
+</details>
+
 [Markdown Badges](https://github.com/Ileriayo/markdown-badges) - [MIT](https://github.com/Ileriayo/markdown-badges/blob/master/LICENSE)
 
-[HTMLQ](https://github.com/mgdm/htmlq) - [MIT](https://github.com/mgdm/htmlq/blob/master/LICENSE.md)
+[pup](https://github.com/ericchiang/pup) - [MIT](https://github.com/ericchiang/pup/blob/master/LICENSE)
 
 [APKEditor](https://github.com/REAndroid/APKEditor) - [Apache-2.0](https://github.com/REAndroid/APKEditor/blob/master/LICENSE)
 

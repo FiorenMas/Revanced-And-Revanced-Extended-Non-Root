@@ -5,8 +5,9 @@ source ./src/build/utils.sh
 #################################################
 
 # Download requirements
-dl_gh "Dropped-Patches" "indrastorms" "latest"
-dl_gh "revanced-cli" "revanced" "latest"
+dl_gh "Dropped-Patches" "indrastorms" "v1.4.2"
+dl_gh "revanced-integrations" "revanced" "v1.8.0"
+dl_gh "revanced-cli" "revanced" "v4.6.0"
 
 #################################################
 

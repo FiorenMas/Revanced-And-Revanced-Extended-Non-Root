@@ -171,7 +171,7 @@ get_apk() {
 			*) url_regexp='$5'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
 		esac 
 	fi
-	if [ -z "$version" ] && [ "$version" != "latest" ]; then
+	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
 		if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 			num=${BASH_REMATCH[1]}
 			if [ $num -ge 5 ]; then
@@ -257,6 +257,7 @@ patch() {
   		unset GITHUB_REPOSITORY
 		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu $a./download/$1.apk
   		unset version
+		unset lock_version
 		unset excludePatches
 		unset includePatches
 	else 

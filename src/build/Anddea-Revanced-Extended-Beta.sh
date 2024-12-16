@@ -3,7 +3,7 @@
 source src/build/utils.sh
 # Download requirements
 revanced_dl(){
-	dl_gh "revanced-patches revanced-integrations" "anddea" "prerelease"
+	dl_gh "revanced-patches" "anddea" "prerelease"
 	dl_gh "revanced-cli" "inotia00" "latest"
 }
 

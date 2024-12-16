@@ -240,7 +240,7 @@ patch() {
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 				num=${BASH_REMATCH[1]}
 				if [ $num -ge 5 ]; then
-					p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" opt=""
+					p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" opt="--legacy-options=./src/options/$2.json"
 					echo "Patching with Revanced-cli version 5+"
 				elif [ $num -eq 4 ]; then
 					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks="ks" pu="--purge=true" opt="--options=./src/options/$2.json "

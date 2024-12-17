@@ -34,7 +34,7 @@ revanced_dl(){
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"
-	version="latest"
+	lock_version="1"
 	get_apk "com.facebook.orca" "messenger-arm64-v8a" "messenger" "facebook-2/messenger/messenger" "arm64-v8a" "nodpi"
 	patch "messenger-arm64-v8a" "revanced"
 	# Patch Facebook:
@@ -65,6 +65,7 @@ revanced_dl(){
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"
+	version="360.0.0.52.192"
 	get_apk "com.instagram.android" "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a" "nodpi"
 	patch "instagram-arm64-v8a" "revanced"
 }

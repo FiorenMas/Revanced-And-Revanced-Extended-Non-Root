@@ -71,10 +71,6 @@ Download
 
 </details>
 
-<details>
-
-<summary>Revanced Extended crashes on launch with the newest patch. Don't use it for now. I'll find a solution later.</summary>
-
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
 | [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)       | [Beta version](https://github.com/inotia00/revanced-patches/releases)                     |
@@ -112,8 +108,6 @@ Download
 | ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-anddea.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-anddea.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-anddea.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-anddea.apk) |
-
-</details>
 
 </details>
 
@@ -217,6 +211,14 @@ Download
 | Stable version                                                            | Beta version                                                                   |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
 | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-beta-revanced.apk) |
+
+---
+
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://play.google.com/store/apps/details?id=org.telegram.messenger)
+
+### [Revanced Experiments:](https://github.com/Aunali321/ReVancedExperiments)
+
+[Arm64-v8a](../../releases/download/all/telegram-revanced-experiments.apk)
 
 ---
 
@@ -412,9 +414,16 @@ Download
 
 </details>
 
+<details>
+  <summary>Aunali321</summary>
+
+[Patches](https://github.com/Aunali321/ReVancedExperiments) - [GPL-3.0](https://github.com/Aunali321/ReVancedExperiments/blob/main/LICENSE)
+
+</details>
+
 [Markdown Badges](https://github.com/Ileriayo/markdown-badges) - [MIT](https://github.com/Ileriayo/markdown-badges/blob/master/LICENSE)
 
-[HTMLQ](https://github.com/mgdm/htmlq) - [MIT](https://github.com/mgdm/htmlq/blob/master/LICENSE.md)
+[pup](https://github.com/ericchiang/pup) - [MIT](https://github.com/ericchiang/pup/blob/master/LICENSE)
 
 [APKEditor](https://github.com/REAndroid/APKEditor) - [Apache-2.0](https://github.com/REAndroid/APKEditor/blob/master/LICENSE)
 

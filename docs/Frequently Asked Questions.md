@@ -37,9 +37,9 @@ You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/
 
 ### Q: I want to use a custom file options.json. How can I do it?
 
-You should open the folder [Revanced-And-Revanced-Extended-Non-Root/src/options/](../src/options). It contains files revanced.json, ReX.json... edit those file the same as you would options.json
+You should open the folder [Revanced-And-Revanced-Extended-Non-Root/src/options/](../src/options). It contains files revanced-extended.json, anddea.json... edit those file the same as you would options.json
 
-Revanced CLI version 5 no longer use options.json anymore use directly `Revanced-And-Revanced-Extended-Non-Root/src/patches/` instead.
+Revanced alias no longer use options.json anymore use directly `Revanced-And-Revanced-Extended-Non-Root/src/patches/` instead.
 
 The options separate with patches name with `|`
 

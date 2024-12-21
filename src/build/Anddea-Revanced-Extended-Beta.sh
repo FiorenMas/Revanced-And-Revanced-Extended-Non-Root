@@ -54,7 +54,7 @@ revanced_dl(){
 	patch "youtube-music-beta-armeabi-v7a" "anddea" "inotia"
 }
 3() {
-	#revanced_dl
+	revanced_dl
 	#Disabled because lastest RVE Anddea patch youtube not have splits apk on APKMirror
 	#get_apk "com.google.android.youtube" "youtube-lite-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	# Patch YouTube Lite Arm64-v8a:

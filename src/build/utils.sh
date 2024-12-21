@@ -326,3 +326,30 @@ split_editor() {
     green_log "[+] Merge splits apk to standalone apk"
     java -jar $APKEditor m -i ./download/$2 -o ./download/$2.apk > /dev/null 2>&1
 }
+
+#################################################
+
+# Split architectures using Revanced CLI, created by inotia00
+archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
+libs=("armeabi-v7a x86_64 x86" "arm64-v8a x86_64 x86" "armeabi-v7a arm64-v8a x86" "armeabi-v7a arm64-v8a x86_64")
+gen_rip_libs() {
+	for lib in $@; do
+		echo -n "--rip-lib "$lib" "
+	done
+}
+split_arch() {
+	green_log "[+] Splitting $1 to ${archs[i]}:"
+	if [ -f "./download/$1.apk" ]; then
+		unset GITHUB_REPOSITORY
+		eval java -jar revanced-cli*.jar patch \
+		-p *.rvp \
+		$3 \
+		--keystore=./src/_ks.keystore \
+		--legacy-options=./src/options/$2.json $excludePatches$includePatches \
+		--out=./release/$1-${archs[i]}-$2.apk\
+		./download/$1.apk
+	else
+		red_log "[-] Not found $1.apk"
+		exit 1
+	fi
+}

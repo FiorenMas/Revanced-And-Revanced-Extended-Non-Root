@@ -283,7 +283,9 @@ patch() {
 				fi
 			fi
 		fi
-  		unset GITHUB_REPOSITORY
+		if [ "$3" = inotia ]; then
+			unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
+		fi
 		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu $a./download/$1.apk
   		unset version
 		unset lock_version
@@ -340,7 +342,7 @@ gen_rip_libs() {
 split_arch() {
 	green_log "[+] Splitting $1 to ${archs[i]}:"
 	if [ -f "./download/$1.apk" ]; then
-		unset GITHUB_REPOSITORY
+		unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
 		eval java -jar revanced-cli*.jar patch \
 		-p *.rvp \
 		$3 \

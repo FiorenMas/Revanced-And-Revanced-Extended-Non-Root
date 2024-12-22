@@ -45,10 +45,6 @@ jobs:
         id: check-rve-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-beta-revanced-extended.apk
-      - name: Check new patch Revanced Extended Reddit
-        id: check-rve-reddit
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh inotia00/revanced-patches-arsclib latest reddit-revanced-extended.apk
       - name: Check new patch Twitter Piko Stable
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -106,7 +102,6 @@ jobs:
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_rve_beta: ${{ steps.check-rve-beta.outputs.new_patch }}
-      check_rve_reddit: ${{ steps.check-rve-reddit.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
@@ -156,13 +151,6 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Extended Beta"
-  Patch-Revanced-Extended-Reddit:
-    name: Patch Revanced Extended Reddit
-    needs: check
-    if: ${{ needs.check.outputs.check_rve_reddit == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Revanced Extended Reddit"
   Patch-Twitter-Piko-Stable:
     name: Patch Twitter Piko Stable
     needs: check

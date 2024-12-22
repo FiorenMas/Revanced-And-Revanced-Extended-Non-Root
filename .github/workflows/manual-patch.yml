@@ -18,7 +18,6 @@ on:
           - 'Revanced Beta'
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
-          - 'Revanced Extended Reddit'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
@@ -84,113 +83,173 @@ jobs:
     name: Patch RVX Anddea Stable
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        run: [1, 2, 3]
+    container:
+      image: ubuntu:20.04
+      options: --user root
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget
       - name: Check github connection
         id: check-gh-rve-anddea-stable
         run: bash src/etc/connection.sh
       - name: Patch apk
         id: patch-rve-anddea
         if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
-        run: bash src/build/Anddea-Revanced-Extended.sh ${{ matrix.run }}
+        run: bash src/build/Anddea-Revanced-Extended.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_anddea_stable
+          path: |
+            ./release/*.apk
+  release_rve_anddea_stable:
+    name: Release RVX Anddea Stable
+    needs: patch_rve_anddea_stable
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_anddea_stable
+          path: ./release
       - name: Releasing APK files
-        id: release-rve-anddea-stable
-        if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve_anddea_beta:
     name: Patch RVX Anddea Beta version
     if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || inputs.org == 'RVE-anddea-beta' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        run: [1, 2, 3]
+    container:
+      image: ubuntu:20.04
+      options: --user root
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget
       - name: Check github connection
         id: check-gh-rve-anddea-beta
         run: bash src/etc/connection.sh
       - name: Patch apk
         id: patch-rve-anddea-beta
         if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
-        run: bash src/build/Anddea-Revanced-Extended-Beta.sh ${{ matrix.run }}
+        run: bash src/build/Anddea-Revanced-Extended-Beta.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_anddea_beta
+          path: |
+            ./release/*.apk
+  release_rve_anddea_beta:
+    name: Release RVX Anddea Beta
+    needs: patch_rve_anddea_beta
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_anddea_beta
+          path: ./release
       - name: Releasing APK files
-        id: release-rve-anddea-beta
-        if: steps.check-gh-rve-anddea-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve:
     name: Patch Revanced Extended Stable
     if: ${{ github.event.inputs.org == 'Revanced Extended' || inputs.org == 'Revanced Extended' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        run: [1, 2, 3]
+    container:
+      image: ubuntu:20.04
+      options: --user root
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget
       - name: Check github connection
         id: check-gh-rve
         run: bash src/etc/connection.sh
       - name: Patch apk
         id: patch-rve
         if: steps.check-gh-rve.outputs.internet_error == '0'
-        run: bash src/build/Revanced-Extended.sh ${{ matrix.run }}
+        run: bash src/build/Revanced-Extended.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_rve
+          path: |
+            ./release/*.apk
+  release_rve:
+    name: Release Revanced Extended Stable
+    needs: patch_rve
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_rve
+          path: ./release
       - name: Releasing APK files
-        id: release-rve
-        if: steps.check-gh-rve.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve_beta:
     name: Patch Revanced Extended Beta
     if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || inputs.org == 'Revanced Extended Beta' }}
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        run: [1, 2, 3]
+    container:
+      image: ubuntu:20.04
+      options: --user root
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
       - name: Preparing to patch
         uses: ./.github/actions/preparing
+      - name: Install library
+        run: |
+          apt-get update
+          apt-get install -y curl jq wget
       - name: Check github connection
         id: check-gh-rve-beta
         run: bash src/etc/connection.sh
       - name: Patch apk
         id: patch-rve-beta
         if: steps.check-gh-rve-beta.outputs.internet_error == '0'
-        run: bash src/build/Revanced-Extended-Beta.sh ${{ matrix.run }}
-      - name: Releasing APK files
-        id: release-rve-beta
-        if: steps.check-gh-rve-beta.outputs.internet_error == '0'
-        uses: ./.github/actions/release
-  patch_rve_reddit:
-    name: Patch Revanced Extended Reddit
-    if: ${{ github.event.inputs.org == 'Revanced Extended Reddit' || inputs.org == 'Revanced Extended Reddit' }}
+        run: bash src/build/Revanced-Extended-Beta.sh
+      - name: Cache
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_rve_beta
+          path: |
+            ./release/*.apk
+  release_rve_beta:
+    name: Release Revanced Extended Beta
+    needs: patch_rve_beta
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
-      - name: Preparing to patch
-        uses: ./.github/actions/preparing
-      - name: Check github connection
-        id: check-gh-rve-reddit
-        run: bash src/etc/connection.sh
-      - name: Patch apk
-        id: patch-rve-reddit
-        if: steps.check-gh-rve-reddit.outputs.internet_error == '0'
-        run: bash src/build/Revanced-Extended-Reddit.sh
+        uses: actions/checkout@v2
+      - name: Cache
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_rve_beta
+          path: ./release
       - name: Releasing APK files
-        id: release-rve-reddit
-        if: steps.check-gh-rve-reddit.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable

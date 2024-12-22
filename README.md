@@ -83,6 +83,8 @@ Download
 
 <details>
   <summary>Lite version</summary>
+
+Old patches, because latest patch not support split apks
   
 | [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)               | [Beta version](https://github.com/inotia00/revanced-patches/releases)                          |
 | -------------------------------------------------------------------------------------------  | ---------------------------------------------------------------------------------------------- |
@@ -103,6 +105,8 @@ Download
 
 <details>
   <summary>Lite version</summary>
+
+Old patches, because latest patch not support split apks
   
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)      | [Beta version](https://github.com/anddea/revanced-patches/releases)                 |
 | ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
@@ -244,9 +248,11 @@ Download
 
 [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
 
-### [Revanced Extended: (Version 2024.18.0+)](https://github.com/inotia00/revanced-patches-arsclib)
+### Revanced Extended:
 
-[All Architectures](../../releases/download/all/reddit-revanced-extended.apk)
+| Stable version                                                                | Beta version                                                                       |
+| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/reddit-revanced-extended.apk) | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk) |
 
 ---
 

@@ -83,6 +83,8 @@ Download
 
 <details>
   <summary>Lite version</summary>
+
+Old patches, because latest patch not support split apks
   
 | [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)               | [Beta version](https://github.com/inotia00/revanced-patches/releases)                          |
 | -------------------------------------------------------------------------------------------  | ---------------------------------------------------------------------------------------------- |
@@ -103,6 +105,8 @@ Download
 
 <details>
   <summary>Lite version</summary>
+
+Old patches, because latest patch not support split apks
   
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)      | [Beta version](https://github.com/anddea/revanced-patches/releases)                 |
 | ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |

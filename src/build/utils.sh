@@ -3,9 +3,9 @@
 mkdir ./release ./download
 
 #Setup pup for download apk files
-#wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/pup_v0.4.0_linux_amd64.zip
-#unzip "./pup.zip" -d "./" > /dev/null 2>&1
-#pup="./pup"
+wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/pup_v0.4.0_linux_amd64.zip
+unzip "./pup.zip" -d "./" > /dev/null 2>&1
+pup="./pup"
 #Setup APKEditor for install combine split apks
 wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.1/APKEditor-1.4.1.jar
 APKEditor="./APKEditor.jar"
@@ -214,16 +214,13 @@ get_apk() {
 	local attempt=0
 	while [ $attempt -lt 10 ]; do
 		if [[ -z $version ]] || [ $attempt -ne 0 ]; then
-			local list_vers v _versions=() IFS=$'\n'
-			list_vers=$(req "https://www.apkmirror.com/uploads/?appcategory=$3" -)
-			version=$(sed -n 's;.*Version:</span><span class="infoSlide-value">\(.*\) </span>.*;\1;p' <<<"$list_vers")
-			version=$(grep -iv "\(beta\|alpha\)" <<<"$version")
-			for v in $version; do
-				grep -iq "${v} \(beta\|alpha\)" <<<"$list_vers" || _versions+=("$v")
-			done
-			version=$(echo -e "${_versions[*]}" | sed -n "$((attempt + 1))p")
+			version=$(req "https://www.apkmirror.com/uploads/?appcategory=$3" - | \
+				$pup 'div.widget_appmanager_recentpostswidget h5 a.fontBlack text{}' | \
+				grep -Evi 'alpha|beta' | \
+				grep -oPi '\b\d+(\.\d+)+(?:\-\w+)?(?:\.\d+)?(?:\.\w+)?\b' | \
+				sed -n "$((attempt + 1))p")
 		fi
-  		version=$(echo "$version" | tr -d ' ' | sed 's/\./-/g')
+		version=$(echo "$version" | tr -d ' ' | sed 's/\./-/g')
 		green_log "[+] Downloading $3 version: $version $5 $6 $7"
 		if [[ $5 == "Bundle" ]] || [[ $5 == "Bundle_extract" ]]; then
 			local base_apk="$2.apkm"
@@ -240,9 +237,10 @@ get_apk() {
 		else
 			((attempt++))
 			red_log "[-] Failed to download $2, trying another version"
-			unset version list_vers v versions
+			unset version
 		fi
 	done
+
 	if [ $attempt -eq 10 ]; then
 		red_log "[-] No more versions to try. Failed download"
 		return 1

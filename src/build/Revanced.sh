@@ -76,19 +76,34 @@ revanced_dl(){
 	patch "pixiv" "revanced"
 	# Patch Twitch:
 	get_patches_key "twitch"
-	get_apk "tv.twitch.android.app" "twitch" "twitch" "twitch-interactive-inc/twitch/twitch" "Bundle"
+	get_apk "tv.twitch.android.app" "twitch" "twitch" "twitch-interactive-inc/twitch/twitch" "Bundle_extract"
+	split_editor "twitch" "twitch"
 	patch "twitch" "revanced"
+	# Patch Twitch Arm64-v8a:
+	get_patches_key "twitch"
+	split_editor "twitch" "twitch-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "twitch-arm64-v8a" "revanced"
 }
 6() {
 	revanced_dl
 	# Patch Tumblr:
 	get_patches_key "tumblr"
-	get_apk "com.tumblr" "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr" "Bundle"
+	get_apk "com.tumblr" "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr" "Bundle_extract"
+	split_editor "tumblr" "tumblr"
 	patch "tumblr" "revanced"
+	# Patch Tumblr Arm64-v8a:
+	get_patches_key "tumblr"
+	split_editor "tumblr" "tumblr-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "tumblr-arm64-v8a" "revanced"
 	# Patch SoundCloud:
 	get_patches_key "soundcloud"
-	get_apk "com.soundcloud.android" "soundcloud" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-soundcloud" "Bundle"
+	get_apk "com.soundcloud.android" "soundcloud" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-soundcloud" "Bundle_extract"
+	split_editor "soundcloud" "soundcloud"
 	patch "soundcloud" "revanced"
+	# Patch SoundCloud Arm64-v8a:
+	get_patches_key "soundcloud"
+	split_editor "soundcloud" "soundcloud-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "soundcloud-arm64-v8a" "revanced"
 }
 7() {
 	revanced_dl

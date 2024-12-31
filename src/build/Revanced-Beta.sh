@@ -63,6 +63,10 @@ revanced_dl(){
 	get_patches_key "tiktok"
 	get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 	patch "tiktok-beta" "revanced"
+	# Patch Tiktok Arm64-v8a:
+	get_patches_key "tiktok"
+	split_editor "tiktok-beta" "tiktok-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a"
+	patch "tiktok-arm64-v8a-beta" "revanced"
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"
@@ -77,19 +81,34 @@ revanced_dl(){
 	patch "pixiv-beta" "revanced"
 	# Patch Twitch:
 	get_patches_key "twitch"
-	get_apk "tv.twitch.android.app" "twitch-beta" "twitch" "twitch-interactive-inc/twitch/twitch" "Bundle"
+	get_apk "tv.twitch.android.app" "twitch-beta" "twitch" "twitch-interactive-inc/twitch/twitch" "Bundle_extract"
+	split_editor "twitch-beta" "twitch-beta"
 	patch "twitch-beta" "revanced"
+	# Patch Twitch Arm64-v8a:
+	get_patches_key "twitch"
+	split_editor "twitch-beta" "twitch-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "twitch-arm64-v8a-beta" "revanced"
 }
 6() {
 	revanced_dl
 	# Patch Tumblr:
 	get_patches_key "tumblr"
-	get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr" "Bundle"
+	get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr" "Bundle_extract"
+	split_editor "tumblr-beta" "tumblr-beta"
 	patch "tumblr-beta" "revanced"
+	# Patch Tumblr Arm64-v8a:
+	get_patches_key "tumblr"
+	split_editor "tumblr-beta" "tumblr-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "tumblr-arm64-v8a-beta" "revanced"
 	# Patch SoundCloud:
 	get_patches_key "soundcloud"
-	get_apk "com.soundcloud.android" "soundcloud-beta" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-soundcloud" "Bundle"
+	get_apk "com.soundcloud.android" "soundcloud-beta" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-soundcloud" "Bundle_extract"
+	split_editor "soundcloud-beta" "soundcloud-beta"
 	patch "soundcloud-beta" "revanced"
+	# Patch SoundCloud Arm64-v8a:
+	get_patches_key "soundcloud"
+	split_editor "soundcloud-beta" "soundcloud-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "soundcloud-arm64-v8a-beta" "revanced"
 }
 7() {
 	revanced_dl

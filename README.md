@@ -181,9 +181,10 @@ Old patches, because latest patch not support split apks
 
 ### [Piko:](https://github.com/crimera/piko)
 
-| [Stable version](https://github.com/crimera/piko/releases/latest)        | [Beta version](https://github.com/crimera/piko/releases/)              |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/twitter-stable-piko.apk) | [All Architectures](../../releases/download/all/twitter-beta-piko.apk) |
+| [Stable version](https://github.com/crimera/piko/releases/latest)          | [Beta version](https://github.com/crimera/piko/releases/)                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------| 
+| [All Architectures](../../releases/download/all/twitter-stable-piko.apk)   | [All Architectures](../../releases/download/all/twitter-beta-piko.apk)   |
+| [Arm64-v8a](../../releases/download/all/twitter-arm64-v8a-stable-piko.apk) | [Arm64-v8a](../../releases/download/all/twitter-arm64-v8a-beta-piko.apk) |
 
 ---
 
@@ -230,9 +231,10 @@ Old patches, because latest patch not support split apks
 
 ### Revanced:
 
-| Stable version                                                       | Beta version                                                              |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/tiktok-revanced.apk) | [All Architectures](../../releases/download/all/tiktok-beta-revanced.apk) |
+| Stable version                                                         | Beta version                                                                |
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------------   | 
+| [All Architectures](../../releases/download/all/tiktok-revanced.apk)   | [All Architectures](../../releases/download/all/tiktok-beta-revanced.apk)   |
+| [Arm64-v8a](../../releases/download/all/tiktok-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/tiktok-arm64-v8a-beta-revanced.apk) |
 
 ---
 
@@ -240,9 +242,10 @@ Old patches, because latest patch not support split apks
 
 ### Revanced:
 
-| Stable version                                                       | Beta version                                                              |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/twitch-revanced.apk) | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk) |
+| Stable version                                                         | Beta version                                                                |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/twitch-revanced.apk)   | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk)   |
+| [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-beta-revanced.apk) |
 
 ---
 
@@ -250,9 +253,10 @@ Old patches, because latest patch not support split apks
 
 ### Revanced Extended:
 
-| Stable version                                                                | Beta version                                                                       |
-| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/reddit-revanced-extended.apk) | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk) |
+| Stable version                                                                  | Beta version                                                                         |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | 
+| [All Architectures](../../releases/download/all/reddit-revanced-extended.apk)   | [All Architectures](../../releases/download/all/reddit-beta-revanced-extended.apk)   |
+| [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-beta-revanced-extended.apk) |
 
 ---
 
@@ -270,9 +274,10 @@ Old patches, because latest patch not support split apks
 
 ### Revanced:
 
-| Stable version                                                       | Beta version                                                              |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/tumblr-revanced.apk) | [All Architectures](../../releases/download/all/tumblr-beta-revanced.apk) |
+| Stable version                                                         | Beta version                                                                |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/tumblr-revanced.apk)   | [All Architectures](../../releases/download/all/tumblr-beta-revanced.apk)   |
+| [Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-beta-revanced.apk) |
 
 ---
 
@@ -280,9 +285,10 @@ Old patches, because latest patch not support split apks
 
 ### Revanced:
 
-| Stable version                                                           | Beta version                                                                  |
-| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/soundcloud-revanced.apk) | [All Architectures](../../releases/download/all/soundcloud-beta-revanced.apk) |
+| Stable version                                                             | Beta version                                                                    |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/soundcloud-revanced.apk)   | [All Architectures](../../releases/download/all/soundcloud-beta-revanced.apk)   |
+| [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-beta-revanced.apk) |
 
 ---
 
@@ -311,6 +317,8 @@ Old patches, because latest patch not support split apks
 ### [BiliRoamingM:](https://github.com/sakarie9/BiliRoamingM/)
 
 [All Architectures](../../releases/download/all/bilibili-BiliRoamingM.apk )
+
+[Arm64-v8a](../../releases/download/all/bilibili-arm64-v8a-BiliRoamingM.apk )
 
 ---
 
@@ -361,10 +369,6 @@ Old patches, because latest patch not support split apks
 [Integrations](https://github.com/inotia00/revanced-integrations) - [GPL-3.0](https://github.com/inotia00/revanced-integrations/blob/main/LICENSE)
 
 [CLI](https://github.com/inotia00/revanced-cli) - [GPL-3.0](https://github.com/inotia00/revanced-cli/blob/main/LICENSE)
-
-[Patches Arsclib](https://github.com/inotia00/revanced-patches-arsclib) - [GPL-3.0](https://github.com/inotia00/revanced-patches-arsclib/blob/arsclib-old/LICENSE)
-
-[CLI Arsclib](https://github.com/inotia00/revanced-cli-arsclib) - [GPL-3.0](https://github.com/inotia00/revanced-cli-arsclib/blob/arsclib-old/LICENSE)
 
 </details>
 

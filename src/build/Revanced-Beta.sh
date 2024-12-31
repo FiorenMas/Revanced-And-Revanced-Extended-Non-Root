@@ -63,10 +63,6 @@ revanced_dl(){
 	get_patches_key "tiktok"
 	get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 	patch "tiktok-beta" "revanced"
-	# Patch Tiktok Arm64-v8a:
-	get_patches_key "tiktok"
-	split_editor "tiktok-beta" "tiktok-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a"
-	patch "tiktok-arm64-v8a-beta" "revanced"
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"

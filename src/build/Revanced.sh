@@ -60,6 +60,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Tiktok:
 	get_patches_key "tiktok"
+        version="37.0.4"
 	get_apk "com.zhiliaoapp.musically" "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
 	patch "tiktok" "revanced"
 	# Patch Instagram:

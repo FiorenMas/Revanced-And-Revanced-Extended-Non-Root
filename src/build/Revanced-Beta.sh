@@ -41,7 +41,7 @@ revanced_dl(){
 	# Patch Facebook:
 	# Arm64-v8a
 	get_patches_key "facebook"
-	version="490.0.0.63.82"
+	version="490.0.0.63.82" #Force this version because only patch in this version
 	get_apk "com.facebook.katana" "facebook-arm64-v8a-beta" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
 	patch "facebook-arm64-v8a-beta" "revanced"
 }
@@ -58,11 +58,19 @@ revanced_dl(){
 	patch "gg-photos-armeabi-v7a-beta" "revanced"
 }
 4() {
-	revanced_dl
+	dl_gh "revanced-patches" "revanced" "v5.7.2" #Force version this because crash on startup lastest rv patches
+	dl_gh "revanced-cli" "revanced" "latest"
 	# Patch Tiktok:
 	get_patches_key "tiktok"
-	get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly"
+	version="37.0.4" #Force this version beacause warning on old version but missing settings menu https://github.com/ReVanced/revanced-patches/issues/4221#issuecomment-2564776573
+	get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"
+	split_editor "tiktok-beta" "tiktok-beta"
 	patch "tiktok-beta" "revanced"
+ 	# Patch Tiktok Arm64-v8a:
+ 	split_editor "tiktok-beta" "tiktok-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a"
+  	patch "tiktok-beta-arm64-v8a" "revanced"
+	rm -f *.rvp *.jar
+	revanced_dl
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"

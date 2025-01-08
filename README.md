@@ -35,7 +35,7 @@ Download
 > [!IMPORTANT] 
 > Beta versions mean using dev patches, not using beta apk files. Beta version have the same package name as Stable version, so installing them will overwrite Stable version.
 >
-> This repository doesn't create new releases because it includes multiple projects, which would result in spamming releases every day. You should follow the dev repository for updates.
+> License owned by creator. If you like any modded app, please support the original author.
 > 
 ---
 
@@ -180,6 +180,8 @@ Old patches, because latest patch not support split apks
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](https://play.google.com/store/apps/details?id=com.twitter.android)
 
 ### [Piko:](https://github.com/crimera/piko)
+
+👉 [Offical author download link](https://github.com/crimera/twitter-apk/releases)
 
 | [Stable version](https://github.com/crimera/piko/releases/latest)          | [Beta version](https://github.com/crimera/piko/releases/)                |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------| 

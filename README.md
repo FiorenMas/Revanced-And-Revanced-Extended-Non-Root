@@ -251,7 +251,6 @@ Old patches, because latest patch not support split apks
 | Stable version                                                         | Beta version                                                                |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/twitch-revanced.apk)   | [All Architectures](../../releases/download/all/twitch-beta-revanced.apk)   |
-| [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-beta-revanced.apk) |
 
 ---
 

@@ -85,13 +85,15 @@ revanced_dl(){
 	patch "pixiv-beta" "revanced"
 	# Patch Twitch:
 	get_patches_key "twitch"
-	get_apk "tv.twitch.android.app" "twitch-beta" "twitch" "twitch-interactive-inc/twitch/twitch" "Bundle_extract"
-	split_editor "twitch-beta" "twitch-beta"
+	#get_apk "tv.twitch.android.app" "twitch-beta" "twitch" "twitch-interactive-inc/twitch/twitch" "Bundle_extract"
+	#split_editor "twitch-beta" "twitch-beta"
+	version="19.1.0" #https://github.com/orgs/ReVanced/discussions/1135#discussioncomment-11797007
+	get_apk "tv.twitch.android.app" "twitch-beta" "twitch" "twitch-interactive-inc/twitch/twitch"
 	patch "twitch-beta" "revanced"
 	# Patch Twitch Arm64-v8a:
-	get_patches_key "twitch"
-	split_editor "twitch-beta" "twitch-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "twitch-arm64-v8a-beta" "revanced"
+	#get_patches_key "twitch"
+	#split_editor "twitch-beta" "twitch-arm64-v8a-beta" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	#patch "twitch-arm64-v8a-beta" "revanced"
 }
 6() {
 	revanced_dl

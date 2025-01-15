@@ -14,3 +14,7 @@ dl_gh "revanced-cli" "revanced" "latest"
 get_patches_key "telegram-revanced-experiments"
 get_apk "org.telegram.messenger" "telegram" "telegram" "telegram-fz-llc/telegram/telegram" "arm64-v8a" "nodpi"
 patch "telegram" "revanced-experiments"
+# Patch Instagram:
+get_patches_key "instagram-revanced-experiments"
+get_apk "com.instagram.android" "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram-instagram" "arm64-v8a" "nodpi"
+patch "instagram-arm64-v8a" "revanced-experiments"

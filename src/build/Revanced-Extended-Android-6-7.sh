@@ -4,8 +4,7 @@ source src/build/utils.sh
 
 # Download requirements
 dl_gh "revanced-patches-android6-7" "kitadai31" "latest"
-dl_gh "revanced-cli" inotia00" "latest"
-revanced_dl
+dl_gh "revanced-cli" "inotia00" "latest"
 # Patch YouTube Extended for android 6 & 7:
 get_patches_key "youtube-revanced-extended-6-7"
 version="17.34.36"

@@ -29,6 +29,7 @@ dl_gh "revanced-patches revanced-cli" "inotia00" "prerelease"
 #patch "youtube-beta-x86_64" "revanced-extended" "inotia"
 # Patch YouTube:
 get_patches_key "youtube-revanced-extended"
+version="20.02.34"
 get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube"
 patch "youtube-beta" "revanced-extended" "inotia"
 # Split architecture Youtube:

@@ -344,7 +344,7 @@ split_arch() {
 		eval java -jar revanced-cli*.jar patch \
 		-p *.rvp \
 		$3 \
-		--keystore=./src/_ks.keystore \
+		--keystore=./src/_ks.keystore --force \
 		--legacy-options=./src/options/$2.json $excludePatches$includePatches \
 		--out=./release/$1-${archs[i]}-$2.apk\
 		./download/$1.apk

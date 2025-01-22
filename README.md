@@ -240,7 +240,6 @@ Old patches, because latest patch not support split apks
 | Stable version                                                         | Beta version                                                                |
 | ---------------------------------------------------------------------- | -------------------------------------------------------------------------   | 
 | [All Architectures](../../releases/download/all/tiktok-revanced.apk)   | [All Architectures](../../releases/download/all/tiktok-beta-revanced.apk)   |
-| [Arm64-v8a](../../releases/download/all/tiktok-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/tiktok-beta-arm64-v8a-revanced.apk) |
 
 ---
 

@@ -62,13 +62,15 @@ revanced_dl(){
 	dl_gh "revanced-cli" "revanced" "latest"
 	# Patch Tiktok:
 	get_patches_key "tiktok"
-	version="37.0.4" #Force this version beacause warning on old version but missing settings menu https://github.com/ReVanced/revanced-patches/issues/4221#issuecomment-2564776573
-	get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"
-	split_editor "tiktok-beta" "tiktok-beta"
+	#get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"
+	#split_editor "tiktok-beta" "tiktok-beta"
+    url="https://tiktok.en.uptodown.com/android/download/1032081983" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
+    url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+    req "$url" "tiktok-beta.apk"
 	patch "tiktok-beta" "revanced"
  	# Patch Tiktok Arm64-v8a:
- 	split_editor "tiktok-beta" "tiktok-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a"
-  	patch "tiktok-beta-arm64-v8a" "revanced"
+ 	#split_editor "tiktok-beta" "tiktok-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a"
+  	#patch "tiktok-beta-arm64-v8a" "revanced"
 	rm -f *.rvp *.jar
 	revanced_dl
 	# Patch Instagram:

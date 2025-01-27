@@ -238,7 +238,7 @@ Old patches, because latest patch not support split apks
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                         | Beta version                                                                |
-| ---------------------------------------------------------------------- | -------------------------------------------------------------------------   | 
+| ---------------------------------------------------------------------- | -------------------------------------------------------------------------   |
 | [All Architectures](../../releases/download/all/tiktok-revanced.apk)   | [All Architectures](../../releases/download/all/tiktok-beta-revanced.apk)   |
 
 ---
@@ -293,6 +293,16 @@ Old patches, because latest patch not support split apks
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/soundcloud-revanced.apk)   | [All Architectures](../../releases/download/all/soundcloud-beta-revanced.apk)   |
 | [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-beta-revanced.apk) |
+
+---
+
+[![Duolingo](https://img.shields.io/badge/Duolingo-%234DC730.svg?style=for-the-badge&logo=Duolingo&logoColor=white)](https://play.google.com/store/apps/details?id=com.duolingo)
+
+### [Revanced:](https://github.com/revanced/revanced-patches)
+
+| Stable version                                                           | Beta version                                                                  |
+| ------------------------------------------------------------------------ | ---------------------------------------------------------------------------   |
+| [All Architectures](../../releases/download/all/duolingo-revanced.apk)   | [All Architectures](../../releases/download/all/duolingo-beta-revanced.apk)   |
 
 ---
 

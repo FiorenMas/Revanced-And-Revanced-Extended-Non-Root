@@ -214,7 +214,8 @@ get_apk() {
 	local attempt=0
 	while [ $attempt -lt 10 ]; do
 		if [[ -z $version ]] || [ $attempt -ne 0 ]; then
-			version=$(req "https://www.apkmirror.com/uploads/?appcategory=$3" - | \
+			local upload_tail="?$([[ $3 = duolingo ]] && echo devcategory= || echo appcategory=)"
+			version=$(req "https://www.apkmirror.com/uploads/$upload_tail$3" - | \
 				$pup 'div.widget_appmanager_recentpostswidget h5 a.fontBlack text{}' | \
 				grep -Evi 'alpha|beta' | \
 				grep -oPi '\b\d+(\.\d+)+(?:\-\w+)?(?:\.\d+)?(?:\.\w+)?\b' | \

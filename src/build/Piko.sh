@@ -13,7 +13,7 @@ patch_piko () {
 		v="prerelease" apk_name="beta"
 	fi
 	dl_gh "piko revanced-integrations" "crimera" "$v"
-	get_apk "com.twitter.android" "twitter-$apk_name" "twitter" "x-corp/twitter/twitter" "Bundle_extract"
+	get_apk "com.twitter.android" "twitter-$apk_name" "twitter" "x-corp/twitter/x-previously-twitter" "Bundle_extract"
 	split_editor "twitter-$apk_name" "twitter-$apk_name"
 	patch "twitter-$apk_name" "piko"
 	# Patch Twitter Piko Arm64-v8a:

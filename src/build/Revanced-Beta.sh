@@ -110,7 +110,7 @@ revanced_dl(){
 	patch "tumblr-arm64-v8a-beta" "revanced"
 	# Patch SoundCloud:
 	get_patches_key "soundcloud"
-	get_apk "com.soundcloud.android" "soundcloud-beta" "soundcloud-soundcloud" "soundcloud-soundcloud/soundcloud-play-music-songs" "Bundle_extract"
+	get_apk "com.soundcloud.android" "soundcloud-beta" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-play-music-songs" "Bundle_extract"
 	split_editor "soundcloud-beta" "soundcloud-beta"
 	patch "soundcloud-beta" "revanced"
 	# Patch SoundCloud Arm64-v8a:

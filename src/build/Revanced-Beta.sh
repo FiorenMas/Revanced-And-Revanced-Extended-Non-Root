@@ -121,10 +121,10 @@ revanced_dl(){
 7() {
 	revanced_dl
 	# Patch Lightroom:
-	get_patches_key "lightroom"
- 	version="9.2.0"
-	get_apk "com.adobe.lrmobile" "lightroom-beta" "lightroom" "adobe/lightroom/lightroom"
-	patch "lightroom-beta" "revanced"
+	#get_patches_key "lightroom"
+ 	#version="9.2.0"
+	#get_apk "com.adobe.lrmobile" "lightroom-beta" "lightroom" "adobe/lightroom/lightroom"
+	#patch "lightroom-beta" "revanced"
 	# Patch RAR:
 	get_patches_key "rar"
 	get_apk "com.rarlab.rar" "rar-beta" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "arm64-v8a"

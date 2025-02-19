@@ -25,8 +25,9 @@ Simply, all you need to do is choose the app you want to use from the options be
 > 
 > If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
 > 
+> This repository is not like any other repository. It does not create new releases; it only releases new files.
+> 
 > All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
-
 ---
 <h1 align="center">
 Download

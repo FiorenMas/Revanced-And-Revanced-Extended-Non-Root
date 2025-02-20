@@ -230,7 +230,13 @@ Old patches, because latest patch not support split apks
 
 ### [Revanced Experiments:](https://github.com/Aunali321/ReVancedExperiments)
 
+CH play version:
+
 [Arm64-v8a](../../releases/download/all/telegram-revanced-experiments.apk)
+
+Web version:
+
+[All Architectures](../../releases/download/all/telegram-web-version-revanced-experiments.apk) 
 
 ---
 

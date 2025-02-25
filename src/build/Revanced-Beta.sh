@@ -58,8 +58,7 @@ revanced_dl(){
 	patch "gg-photos-armeabi-v7a-beta" "revanced"
 }
 4() {
-	dl_gh "revanced-patches" "revanced" "v5.7.2" #Force version this because crash on startup lastest rv patches
-	dl_gh "revanced-cli" "revanced" "latest"
+	revanced_dl
 	# Patch Tiktok:
 	get_patches_key "tiktok"
 	#get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"

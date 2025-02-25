@@ -82,6 +82,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Pixiv:
 	get_patches_key "pixiv"
+	version="6.134.1" #https://github.com/ReVanced/revanced-patches/issues/4477
 	get_apk "jp.pxv.android" "pixiv" "pixiv" "pixiv-inc/pixiv/pixiv"
 	patch "pixiv" "revanced"
 	# Patch Twitch:

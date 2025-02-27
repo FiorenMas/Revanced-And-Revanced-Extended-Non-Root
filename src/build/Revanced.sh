@@ -57,8 +57,7 @@ revanced_dl(){
 	patch "gg-photos-armeabi-v7a" "revanced"
 }
 4() {
-	dl_gh "revanced-patches" "revanced" "v5.7.2" #Force version this because crash on startup lastest rv patches
-	dl_gh "revanced-cli" "revanced" "latest"
+	revanced_dl
 	# Patch Tiktok:
 	get_patches_key "tiktok"
 	url="https://tiktok.en.uptodown.com/android/download/1032081983" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file

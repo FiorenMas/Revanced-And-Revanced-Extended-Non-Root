@@ -161,6 +161,11 @@ revanced_dl(){
 	lock_version="1"
 	get_apk "com.duolingo" "duolingo-beta" "duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
 	patch "duolingo-beta" "revanced"
+	# Patch Google News Arm64-v8a
+	get_patches_key "GoogleNews"
+	get_apk "com.google.android.apps.magazines" "googlenews-beta" "google-news" "google-inc/google-news/google-news" "Bundle_extract"
+	split_editor "googlenews-beta" "googlenews-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "googlenews-beta-arm64-v8a" "revanced"
 }
 case "$1" in
     1)

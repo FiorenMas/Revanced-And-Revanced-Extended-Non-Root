@@ -313,12 +313,22 @@ Web version:
 
 ---
 
+### [Google News:](play.google.com/store/apps/details?id=com.google.android.apps.magazines)
+
+### [Revanced:](https://github.com/revanced/revanced-patches)
+
+| Stable version                                                             | Beta version                                                                    |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/googlenews-beta-arm64-v8a-revanced.apk) |
+
+---
+
 ### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                            | Beta version                                                   |
-| --------------------------------------------------------- | -------------------------------------------------------------- | 
+| --------------------------------------------------------- | -------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/rar-revanced.apk) | [Arm64-v8a](../../releases/download/all/rar-beta-revanced.apk) |
 
 ---

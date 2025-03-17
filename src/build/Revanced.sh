@@ -74,6 +74,7 @@ revanced_dl(){
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"
+	version="370.1.0.43.96" #https://github.com/ReVanced/revanced-patches/issues/4584
 	get_apk "com.instagram.android" "instagram-arm64-v8a" "instagram-instagram" "instagram/instagram-instagram/instagram" "arm64-v8a" "nodpi"
 	patch "instagram-arm64-v8a" "revanced"
 }
@@ -160,6 +161,11 @@ revanced_dl(){
 	lock_version="1"
 	get_apk "com.duolingo" "duolingo" "duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
 	patch "duolingo" "revanced"
+	# Patch Google News Arm64-v8a
+	get_patches_key "GoogleNews"
+	get_apk "com.google.android.apps.magazines" "googlenews" "google-news" "google-inc/google-news/google-news" "Bundle_extract"
+	split_editor "googlenews" "googlenews-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "googlenews-arm64-v8a" "revanced"
 }
 case "$1" in
     1)

@@ -118,6 +118,8 @@ Old patches, because latest patch not support split apks
 
 ### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
 
+**If you have any problems opening apps, follow the instructions [HERE](../main/docs/Frequently%20Asked%20Questions.md#q-youtube-android-67-cant-load-anyvideo)**
+
 [All Architectures](../../releases/download/all/youtube-revanced-extended-android-6-7.apk)
 
 [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended-android-6-7.apk)

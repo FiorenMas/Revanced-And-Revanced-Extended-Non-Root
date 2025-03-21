@@ -29,6 +29,8 @@ This is because Google force old version Youtube need to update. So you need fak
 
 3. Choose `Edit spoof app version` input `19.01.33` then restart RVX
 
+Credit: [@gnadgnaoh](https://github.com/gnadgnaoh/)
+
 ### Q: How do I use this repository for patching my own app?
 
 You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab

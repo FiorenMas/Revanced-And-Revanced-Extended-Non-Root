@@ -172,6 +172,8 @@ Old patches, because latest patch not support split apks
 
 [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](https://play.google.com/store/apps/details?id=com.facebook.katana&hl)
 
+**You have to remove the Messenger app before you install the Facebook ReVanced**
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                                        | Beta version                                                                                |

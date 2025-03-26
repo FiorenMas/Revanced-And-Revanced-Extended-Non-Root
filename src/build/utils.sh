@@ -7,7 +7,7 @@ wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/
 unzip "./pup.zip" -d "./" > /dev/null 2>&1
 pup="./pup"
 #Setup APKEditor for install combine split apks
-wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.1/APKEditor-1.4.1.jar
+wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.2/APKEditor-1.4.2.jar
 APKEditor="./APKEditor.jar"
 
 #################################################

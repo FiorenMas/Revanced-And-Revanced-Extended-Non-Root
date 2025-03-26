@@ -27,7 +27,9 @@ This is because Google force old version Youtube need to update. So you need fak
 
 2. After that find `Spoof app version` toogle it on
 
-3. Choose `Edit spoof app version` input `19.01.33` then restart RVX
+3. Choose `Edit spoof app version` input `19.05.36` then restart RVX
+
+4. And then set Po-token in above this guide if still have issues.
 
 Credit: [@gnadgnaoh](https://github.com/gnadgnaoh/)
 

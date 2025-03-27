@@ -1,1 +1,7 @@
-[]
+[{
+  "patchName" : "Spoof streaming data",
+  "options" : [ {
+    "key" : "useIOSClient",
+    "value" : true
+  } ]
+}]

@@ -52,5 +52,5 @@ split_editor "youtube-beta" "youtube-lite-beta-arm64-v8a" "include" "split_confi
 patch "youtube-lite-beta-arm64-v8a" "anddea" "inotia"
 # Patch YouTube Lite Armeabi-v7a:
 get_patches_key "youtube-rve-anddea"
-split_editor "youtube-lite-beta" "youtube-lite-beta-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xhdpi split_config.xxxhdpi"
+split_editor "youtube-beta" "youtube-lite-beta-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xhdpi split_config.xxxhdpi"
 patch "youtube-lite-beta-armeabi-v7a" "anddea" "inotia"

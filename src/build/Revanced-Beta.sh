@@ -159,7 +159,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Duolingo
 	get_patches_key "Duolingo"
-	lock_version="1"
+	version="6.23.2" #https://github.com/ReVanced/revanced-patches/issues/4728#issuecomment-2779066581
 	get_apk "com.duolingo" "duolingo-beta" "duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
 	patch "duolingo-beta" "revanced"
 	# Patch Google News Arm64-v8a
@@ -167,6 +167,14 @@ revanced_dl(){
 	get_apk "com.google.android.apps.magazines" "googlenews-beta" "google-news" "google-inc/google-news/google-news" "Bundle_extract"
 	split_editor "googlenews-beta" "googlenews-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
 	patch "googlenews-beta-arm64-v8a" "revanced"
+}
+11() {
+	revanced_dl
+	# Patch Photomath
+	get_patches_key "Photomath"
+	get_apk "com.microblink.photomath" "photomath-beta" "photomath" "google-inc/photomath/photomath" "Bundle" "Bundle_extract"
+	split_editor "photomath-beta" "photomath-beta"
+	patch "photomath-beta" "revanced"
 }
 case "$1" in
     1)
@@ -198,5 +206,8 @@ case "$1" in
         ;;
     10)
         10
+        ;;
+    11)
+        11
         ;;
 esac

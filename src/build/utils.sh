@@ -253,6 +253,45 @@ get_apk() {
 		unzip "./download/$base_apk" -d "./download/$(basename "$base_apk" .apkm)" > /dev/null 2>&1
 	fi
 }
+get_apkpure() {
+	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
+		if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
+			num=${BASH_REMATCH[1]}
+			if [ $num -ge 5 ]; then
+				version=$(java -jar *cli*.jar list-patches --with-packages --with-versions *.rvp | awk -v pkg="$1" 'BEGIN { found = 0 } /^Index:/ { found = 0 } /Package name: / { if ($3 == pkg) { found = 1 } } /Compatible versions:/ { if (found) { getline; latest_version = $1; while (getline && $1 ~ /^[0-9]+\./) { latest_version = $1 } print latest_version; exit } }')
+			else
+				version=$(jq -r '[.. | objects | select(.name == "'$1'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json | uniq)
+			fi
+		fi
+	fi
+	export version="$version"
+	if [[ $4 == "Bundle" ]] || [[ $4 == "Bundle_extract" ]]; then
+		local base_apk="$2.xapk"
+	else
+		local base_apk="$2.apk"
+	fi
+	if [[ -n "$version" ]]; then
+		url="https://apkpure.com/$3/downloading/$version"
+	else
+		url="https://apkpure.com/$3/downloading/"
+		version="$(req "$url" - | awk -F'Download APK | \\(' '/<h2>/{print $2}')"
+	fi
+	green_log "[+] Downloading $2 version: $version $4"
+	url="$(req "$url" - | grep -oP '<a[^>]+id="download_link"[^>]+href="\Khttps://[^"]+')"
+	req "$url" "$base_apk"
+	if [[ -f "./download/$base_apk" ]]; then
+		green_log "[+] Successfully downloaded $2"
+	else
+		red_log "[-] Failed to download $2"
+		exit 1
+	fi
+	if [[ $4 == "Bundle" ]]; then
+		green_log "[+] Merge splits apk to standalone apk"
+		java -jar $APKEditor m -i ./download/$2.xapk -o ./download/$2.apk > /dev/null 2>&1
+	elif [[ $4 == "Bundle_extract" ]]; then
+		unzip "./download/$base_apk" -d "./download/$(basename "$base_apk" .xapk)" > /dev/null 2>&1
+	fi
+}
 
 #################################################
 

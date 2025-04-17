@@ -228,6 +228,16 @@ Old patches, because latest patch not support split apks
 
 ---
 
+### [Spotjfy:](https://www.google.com/search?q=Spotjfy)
+
+### [Revanced](https://github.com/revanced/revanced-patches)
+
+#### ⚠️ Please read [WIKI](../main/docs/Frequently%20Asked%20Questions.md#q-what-is-spotjfy-and-how-can-i-download-it) before click download
+
+[Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)
+
+---
+
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://play.google.com/store/apps/details?id=org.telegram.messenger)
 
 ### [Revanced Experiments:](https://github.com/Aunali321/ReVancedExperiments)

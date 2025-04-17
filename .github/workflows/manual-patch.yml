@@ -312,6 +312,26 @@ jobs:
         id: release-rve67
         if: steps.check-gh-rve67.outputs.internet_error == '0'
         uses: ./.github/actions/release
+  patch_rve5:
+    name: Patch RVX Android 5
+    if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || inputs.org == 'Revanced Extended Android 5' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rve5
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rve5
+        if: steps.check-gh-rve5.outputs.internet_error == '0'
+        run: bash src/build/Revanced-Extended-Android-5.sh
+      - name: Releasing APK files
+        id: release-rve5
+        if: steps.check-gh-rve5.outputs.internet_error == '0'
+        uses: ./.github/actions/release
   patch_Spotjfy:
     name: Patch Spotjfy
     if: ${{ github.event.inputs.org == 'Spotjfy' || inputs.org == 'Spotjfy' }}

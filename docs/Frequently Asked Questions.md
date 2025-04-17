@@ -43,7 +43,7 @@ And then go to Readme click download your patched apps!
 
 "Spotjfy" not misspell, this mean [this app](https://www.google.com/search?q=Spotjfy)
 
-This app high DMCA chance takdown so you should patch by yourself
+This app high DMCA chance takedown so you should patch by yourself
 
 You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab
 ![Click Action](../docs/image/FAQ/patching-app-1.png)

@@ -10,15 +10,6 @@ The issue might be that your Android OS is preventing MicroG (GMS Core) from run
 
 [https://dontkillmyapp.com/](https://dontkillmyapp.com/)
 
-#### Use Po-token:
-
-If it still can't solve the buffering issue, maybe using PoToken can solve it.
-
-1. Download and install Revanced Extended or Revanced Extended forked by anddea.
-2. [Go to this repository](https://github.com/FiorenMas/scrape-youtube)
-3. Scroll down, copy the PoToken and visitorData
-4. Open the Revanced Extended app and go to Settings > Revanced Extended > Miscellaneous > Spoof Streaming data > Default cilent (select iOS) > PoToken/VisitorData. Then, paste the two values you copied in the previous step.
-
 ### Q: Youtube Android 6,7 Can't load anyvideo:
 
 This is because Google force old version Youtube need to update. So you need fake your youtube version to higher version.
@@ -29,9 +20,9 @@ This is because Google force old version Youtube need to update. So you need fak
 
 3. Choose `Edit spoof app version` input `19.05.36` then restart RVX
 
-4. And then set Po-token in above this guide if still have issues.
-
 Credit: [@gnadgnaoh](https://github.com/gnadgnaoh/)
+
+---
 
 ### Q: How do I use this repository for patching my own app?
 
@@ -45,6 +36,25 @@ Follow these steps to run the workflow for Manual Patch apps!
 ![](../docs/image/FAQ/patching-app-3.png)
 
 And then go to Readme click download your patched apps!
+
+---
+
+### Q: What is Spotjfy? And how can I download it?
+
+"Spotjfy" not misspell, this mean [this app](https://www.google.com/search?q=Spotjfy)
+
+This app high DMCA chance takdown so you should patch by yourself
+
+You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab
+![Click Action](../docs/image/FAQ/patching-app-1.png)
+
+Click "I understand my workflows, go ahead and enable them"
+![Click "I understand my workflows, go ahead and enable them"](../docs/image/FAQ/patching-app-2.png)
+
+Follow these steps to run the workflow to patch Spotjfy
+![](../docs/image/FAQ/patching-app-4.png)
+
+After patch done, back to home [your repository](../README.md#spotjfy)
 
 ---
 

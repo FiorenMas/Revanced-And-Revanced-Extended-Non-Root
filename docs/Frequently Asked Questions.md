@@ -54,7 +54,7 @@ Click "I understand my workflows, go ahead and enable them"
 Follow these steps to run the workflow to patch Spotjfy
 ![](../docs/image/FAQ/patching-app-4.png)
 
-After patch done, back to home [your repository](../README.md#spotjfy)
+After the patch is done, go back to [your repository](../README.md#spotjfy) to download, or [Click here](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk) for a direct link download file.
 
 ---
 

@@ -105,10 +105,10 @@ Download
 <details>
   <summary>Lite version</summary>
 
-Old patches, because latest patch not support split apks
+**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs**
   
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)      | [Beta version](https://github.com/anddea/revanced-patches/releases)                 |
-| ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
+| --------------------------------------------------------------------------------  | ----------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-anddea.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-anddea.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-anddea.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-anddea.apk) |
 

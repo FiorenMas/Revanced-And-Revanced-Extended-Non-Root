@@ -61,17 +61,10 @@ revanced_dl(){
 	revanced_dl
 	# Patch Tiktok:
 	get_patches_key "tiktok"
-	#get_apk "com.zhiliaoapp.musically" "tiktok-beta" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"
-	#split_editor "tiktok-beta" "tiktok-beta"
 	url="https://tiktok.en.uptodown.com/android/download/1032081983" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
 	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
 	req "$url" "tiktok-beta.apk"
 	patch "tiktok-beta" "revanced"
- 	# Patch Tiktok Arm64-v8a:
- 	#split_editor "tiktok-beta" "tiktok-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a"
-  	#patch "tiktok-beta-arm64-v8a" "revanced"
-	rm -f *.rvp *.jar
-	revanced_dl
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"
@@ -154,6 +147,14 @@ revanced_dl(){
 	get_patches_key "youtube-music-revanced"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-beta-armeabi-v7a" "revanced"
+	# x86_64
+	get_patches_key "youtube-music-revanced"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
+	patch "youtube-music-beta-x86_64" "revanced"
+	# x86
+	get_patches_key "youtube-music-revanced"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
+	patch "youtube-music-beta-x86" "revanced"
 }
 10() {
 	revanced_dl
@@ -175,6 +176,10 @@ revanced_dl(){
 	get_apk "com.microblink.photomath" "photomath-beta" "photomath" "google-inc/photomath/photomath" "Bundle" "Bundle_extract"
 	split_editor "photomath-beta" "photomath-beta"
 	patch "photomath-beta" "revanced"
+	# Patch Strava:
+	get_patches_key "strava"
+	get_apkpure "com.strava" "strava-beta-arm64-v8a" "strava-run-hike-2025-health/com.strava" "Bundle"
+	patch "strava-beta-arm64-v8a" "revanced"
 }
 case "$1" in
     1)

@@ -147,10 +147,12 @@ Old patches, because latest patch not support split apks
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
-| Stable version                                                                    | Beta version                                                                           |
+| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest)    | [Beta version](https://github.com/ReVanced/revanced-patches/releases)                  |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
+| [x86](../../releases/download/all/youtube-music-x86-revanced.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-revanced.apk)                 |
+| [x86_64](../../releases/download/all/youtube-music-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced.apk)           |
 
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
@@ -158,13 +160,17 @@ Old patches, because latest patch not support split apks
 | ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced-extended.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced-extended.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced-extended.apk) |
+| [x86](../../releases/download/all/youtube-music-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-revanced-extended.apk)                 |
+| [x86_64](../../releases/download/all/youtube-music-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced-extended.apk)           |
 
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
-| Stable version                                                                         | Beta version                                                                         |
+| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)           | [Beta version](https://github.com/anddea/revanced-patches/releases)                  |
 | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | [Arm64-v8a](../../releases/download/all/youtube-music-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-anddea.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk) |
+| [x86](../../releases/download/all/youtube-music-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-anddea.apk)                 |
+| [x86_64](../../releases/download/all/youtube-music-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-anddea.apk)           |
 
 ---
 
@@ -352,6 +358,16 @@ Web version:
 | Stable version                                            | Beta version                                                   |
 | --------------------------------------------------------- | -------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/rar-revanced.apk) | [Arm64-v8a](../../releases/download/all/rar-beta-revanced.apk) |
+
+---
+
+### [Strava:](https://play.google.com/store/apps/details?id=com.strava)
+
+### [Revanced:](https://github.com/revanced/revanced-patches)
+
+| Stable version                                                         | Beta version                                                                |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/strava-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/strava-beta-arm64-v8a-revanced.apk) |
 
 ---
 

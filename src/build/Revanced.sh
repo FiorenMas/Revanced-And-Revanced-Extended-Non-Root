@@ -114,7 +114,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch RAR:
 	get_patches_key "rar"
-	get_apk "com.rarlab.rar" "rar" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "arm64-v8a"
+	get_apk "com.rarlab.rar" "rar" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "Bundle"
 	patch "rar" "revanced"
 	# Patch Lightroom:
 	#get_patches_key "lightroom"

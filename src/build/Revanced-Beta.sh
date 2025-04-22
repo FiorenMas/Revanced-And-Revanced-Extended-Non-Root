@@ -121,7 +121,7 @@ revanced_dl(){
 	#patch "lightroom-beta" "revanced"
 	# Patch RAR:
 	get_patches_key "rar"
-	get_apk "com.rarlab.rar" "rar-beta" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "arm64-v8a"
+	get_apk "com.rarlab.rar" "rar-beta" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "Bundle"
 	patch "rar-beta" "revanced"
 }
 8() {

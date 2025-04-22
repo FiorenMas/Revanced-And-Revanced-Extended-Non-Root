@@ -355,9 +355,9 @@ Web version:
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
-| Stable version                                            | Beta version                                                   |
-| --------------------------------------------------------- | -------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/rar-revanced.apk) | [Arm64-v8a](../../releases/download/all/rar-beta-revanced.apk) |
+| Stable version                                                    | Beta version                                                           |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| [All Architectures](../../releases/download/all/rar-revanced.apk) | [All Architectures](../../releases/download/all/rar-beta-revanced.apk) |
 
 ---
 

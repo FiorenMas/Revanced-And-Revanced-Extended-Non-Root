@@ -158,7 +158,6 @@ revanced_dl(){
 	revanced_dl
 	# Patch Duolingo
 	get_patches_key "Duolingo"
-	version="6.23.2" #https://github.com/ReVanced/revanced-patches/issues/4728#issuecomment-2779066581
 	get_apk "com.duolingo" "duolingo" "duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
 	patch "duolingo" "revanced"
 	# Patch Google News Arm64-v8a

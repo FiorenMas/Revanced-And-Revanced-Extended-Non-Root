@@ -158,7 +158,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Duolingo
 	get_patches_key "Duolingo"
-	get_apk "com.duolingo" "duolingo" "duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
+	get_apk "com.duolingo" "duolingo" "duolingo-duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
 	patch "duolingo" "revanced"
 	# Patch Google News Arm64-v8a
 	get_patches_key "GoogleNews"

@@ -69,9 +69,6 @@ jobs:
         id: check-Revanced-Experiments
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh Aunali321/ReVancedExperiments latest telegram-revanced-experiments.apk 
-      - name: Keep workflow run
-        if: steps.check-gh.outputs.internet_error == '0'
-        uses: gautamkrishnar/keepalive-workflow@v1
       - name: Re-run workflow if github connection not stable
         if: always() && steps.check-rv.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: actions/github-script@v7

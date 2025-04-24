@@ -40,7 +40,6 @@ revanced_dl(){
 	# Patch Facebook:
 	# Arm64-v8a
 	get_patches_key "facebook"
- 	version="490.0.0.63.82" #Force this version because only patch in this version
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
 	patch "facebook-arm64-v8a" "revanced"
 }
@@ -63,14 +62,7 @@ revanced_dl(){
 	url="https://tiktok.en.uptodown.com/android/download/1032081983" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
 	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
 	req "$url" "tiktok.apk"
-	#get_apk "com.zhiliaoapp.musically" "tiktok" "tik-tok-including-musical-ly" "tiktok-pte-ltd/tik-tok-including-musical-ly/tik-tok-including-musical-ly" "Bundle_extract"
-	#split_editor "tiktok" "tiktok"
 	patch "tiktok" "revanced"
- 	# Patch Tiktok Arm64-v8a:
- 	#split_editor "tiktok" "tiktok-arm64-v8a" "exclude" "split_config.armeabi_v7a"
-  	#patch "tiktok-arm64-v8a" "revanced"
-	rm -f *.rvp *.jar
-	revanced_dl
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"
@@ -122,7 +114,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch RAR:
 	get_patches_key "rar"
-	get_apk "com.rarlab.rar" "rar" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "arm64-v8a"
+	get_apk "com.rarlab.rar" "rar" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "Bundle"
 	patch "rar" "revanced"
 	# Patch Lightroom:
 	#get_patches_key "lightroom"
@@ -153,13 +145,21 @@ revanced_dl(){
 	get_patches_key "youtube-music-revanced"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-armeabi-v7a" "revanced"
+	# x86_64
+	get_patches_key "youtube-music-revanced"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
+	patch "youtube-music-x86_64" "revanced"
+	# x86
+	get_patches_key "youtube-music-revanced"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
+	patch "youtube-music-x86" "revanced"
 }
 10() {
 	revanced_dl
 	# Patch Duolingo
 	get_patches_key "Duolingo"
-	version="6.23.2" #https://github.com/ReVanced/revanced-patches/issues/4728#issuecomment-2779066581
-	get_apk "com.duolingo" "duolingo" "duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
+	lock_version="1"
+	get_apk "com.duolingo" "duolingo" "duolingo-duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
 	patch "duolingo" "revanced"
 	# Patch Google News Arm64-v8a
 	get_patches_key "GoogleNews"
@@ -174,6 +174,10 @@ revanced_dl(){
 	get_apk "com.microblink.photomath" "photomath" "photomath" "google-inc/photomath/photomath" "Bundle" "Bundle_extract"
 	split_editor "photomath" "photomath"
 	patch "photomath" "revanced"
+	# Patch Strava:
+	get_patches_key "strava"
+	get_apkpure "com.strava" "strava-arm64-v8a" "strava-run-hike-2025-health/com.strava" "Bundle"
+	patch "strava-arm64-v8a" "revanced"
 }
 case "$1" in
     1)

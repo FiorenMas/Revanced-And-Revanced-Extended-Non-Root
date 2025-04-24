@@ -45,6 +45,14 @@ patch "youtube-music-arm64-v8a" "revanced-extended" "inotia"
 get_patches_key "youtube-music-revanced-extended"
 get_apk "com.google.android.apps.youtube.music" "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 patch "youtube-music-armeabi-v7a" "revanced-extended" "inotia"
+# x86_64
+get_patches_key "youtube-music-revanced-extended"
+get_apk "com.google.android.apps.youtube.music" "youtube-music-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
+patch "youtube-music-x86_64" "revanced-extended" "inotia"
+# x86
+get_patches_key "youtube-music-revanced-extended"
+get_apk "com.google.android.apps.youtube.music" "youtube-music-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
+patch "youtube-music-x86" "revanced-extended" "inotia"
 
 # Patch Reddit:
 get_patches_key "reddit-rve"

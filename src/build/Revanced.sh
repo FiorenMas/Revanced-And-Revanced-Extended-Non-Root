@@ -59,7 +59,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Tiktok:
 	get_patches_key "tiktok"
-	url="https://tiktok.en.uptodown.com/android/download/1032081983" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
+	url="https://tiktok.en.uptodown.com/android/download/1026195874-x" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
 	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
 	req "$url" "tiktok.apk"
 	patch "tiktok" "revanced"

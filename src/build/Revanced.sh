@@ -118,7 +118,7 @@ revanced_dl(){
 	patch "rar" "revanced"
 	# Patch Lightroom:
 	#get_patches_key "lightroom"
-  	#version="9.2.0"
+  	#version="10.0.2"
 	#get_apk "com.adobe.lrmobile" "lightroom" "lightroom" "adobe/lightroom/lightroom"
 	#patch "lightroom" "revanced"
 }

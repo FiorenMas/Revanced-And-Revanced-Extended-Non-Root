@@ -116,7 +116,7 @@ Download
 
 ### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
 
-**If you have any problems opening apps, follow the instructions [HERE](../main/docs/Frequently%20Asked%20Questions.md#q-youtube-android-67-cant-load-anyvideo)**
+**Please read [Instruction](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended?tab=readme-ov-file#however-a-workaround-exists) before use**
 
 [All Architectures](../../releases/download/all/youtube-revanced-extended-android-6-7.apk)
 

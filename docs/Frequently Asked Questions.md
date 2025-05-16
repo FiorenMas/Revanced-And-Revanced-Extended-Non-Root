@@ -10,18 +10,6 @@ The issue might be that your Android OS is preventing MicroG (GMS Core) from run
 
 [https://dontkillmyapp.com/](https://dontkillmyapp.com/)
 
-### Q: Youtube Android 6,7 Can't load anyvideo:
-
-This is because Google force old version Youtube need to update. So you need fake your youtube version to higher version.
-
-1. Open RVX Setting and then search `Spoof`
-
-2. After that find `Spoof app version` toogle it on
-
-3. Choose `Edit spoof app version` input `19.05.36` then restart RVX
-
-Credit: [@gnadgnaoh](https://github.com/gnadgnaoh/)
-
 ---
 
 ### Q: How do I use this repository for patching my own app?

@@ -68,7 +68,6 @@ revanced_dl(){
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"
-	version="370.1.0.43.96" #https://github.com/ReVanced/revanced-patches/issues/4584
 	get_apk "com.instagram.android" "instagram-arm64-v8a-beta" "instagram-instagram" "instagram/instagram-instagram/instagram" "arm64-v8a" "nodpi"
 	patch "instagram-arm64-v8a-beta" "revanced"
 }

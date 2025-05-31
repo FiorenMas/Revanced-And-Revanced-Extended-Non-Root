@@ -27,28 +27,6 @@ And then go to Readme click download your patched apps!
 
 ---
 
-### Q: What is Spotjfy? And how can I download it?
-
-"Spotjfy" not misspell, this mean [this app](https://www.google.com/search?q=Spotjfy)
-
-This app high DMCA chance takedown so you should patch by yourself
-
-You should [fork](https://github.com/FiorenMas/Revanced-And-Revanced-Extended-Non-Root/fork) the repository, and then go to the `Action` tab
-
-![Click Action](../docs/image/FAQ/patching-app-1.png)
-
-Click "I understand my workflows, go ahead and enable them"
-
-![Click "I understand my workflows, go ahead and enable them"](../docs/image/FAQ/patching-app-2.png)
-
-Follow these steps to run the workflow to patch Spotjfy
-
-![](../docs/image/FAQ/patching-app-4.png)
-
-After the patch is done, go back to [your repository](../README.md#spotjfy) to download, or [Click here](../../../releases/download/all/spotjfy-arm64-v8a-revanced.apk) for a direct link download file.
-
----
-
 ### Q: I want to use custom patches for patching my apps. How can I do it?
 
 You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/`. It contains a lot of folders that are named after the apps you’re patching. Each folder has two files: exclude-patches and include-patches. Edit these files with the patches you like, putting one patch per line, following the patches list here:

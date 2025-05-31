@@ -29,6 +29,10 @@ jobs:
         id: check-rv-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh ReVanced/revanced-patches prerelease youtube-beta-revanced.apk
+      - name: Check new patch Spotjfy
+        id: check-spotjfy
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh ReVanced/revanced-patches latest spotjfy-arm64-v8a-revanced.apk
       - name: Check new patch Revanced Extended forked by Anddea Stable Version
         id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -95,6 +99,7 @@ jobs:
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
       check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
+      check_spotjfy: ${{ steps.check-spotjfy.outputs.new_patch }}
       check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
@@ -120,6 +125,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Beta"
+  Patch-Spotjfy:
+    name: Patch Spotjfy
+    needs: check
+    if: ${{ needs.check.outputs.check_spotjfy == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Spotjfy"
   Patch-RVE-anddea-stable:
     name: Patch RVX Anddea Stable
     needs: check

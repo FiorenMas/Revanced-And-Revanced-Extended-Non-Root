@@ -238,7 +238,14 @@ Download
 
 ### [Revanced](https://github.com/revanced/revanced-patches)
 
-[Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)
+| Stable version                                                            | Beta version                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
+| [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/spotjfy-beta-arm64-v8a-revanced.apk)   |
+
+### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
+| Stable version                                                            | Beta version                                                                   |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
+| [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/spotjfy-beta-arm64-v8a-anddea.apk)     |
 
 ---
 

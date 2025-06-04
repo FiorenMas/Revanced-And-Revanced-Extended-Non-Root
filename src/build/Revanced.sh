@@ -48,10 +48,12 @@ revanced_dl(){
 	# Patch Google photos:
 	# Arm64-v8a
 	get_patches_key "gg-photos"
+ 	version="7.29.0.757514586" #crash in some devices version above 7.30
 	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "photos" "google-inc/photos/google-photos" "arm64-v8a" "nodpi"
 	patch "gg-photos-arm64-v8a" "revanced"
 	# Armeabi-v7a
 	get_patches_key "gg-photos"
+ 	version="7.29.0.757514586" #crash in some devices version above 7.30
 	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
 	patch "gg-photos-armeabi-v7a" "revanced"
 }

@@ -221,6 +221,8 @@ Download
 | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | 
 | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-beta-revanced.apk)     |
 | [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-revanced.apk) | [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-beta-revanced.apk) |
+| [x86](../../releases/download/all/gg-photos-x86-revanced.apk)                 | [x86](../../releases/download/all/gg-photos-x86-beta-revanced.apk)                 |
+| [x86_64](../../releases/download/all/gg-photos-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/gg-photos-x86_64-beta-revanced.apk)           |
 
 ---
 

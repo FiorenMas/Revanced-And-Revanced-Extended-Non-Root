@@ -56,6 +56,16 @@ revanced_dl(){
  	version="7.29.0.757514586" #crash in some devices version above 7.30
 	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
 	patch "gg-photos-armeabi-v7a" "revanced"
+	# x86
+	get_patches_key "gg-photos"
+ 	version="7.29.0.757514586" #crash in some devices version above 7.30
+	get_apk "com.google.android.apps.photos" "gg-photos-x86" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
+	patch "gg-photos-x86" "revanced"
+	# x86_64
+	get_patches_key "gg-photos"
+ 	version="7.29.0.757514586" #crash in some devices version above 7.30
+	get_apk "com.google.android.apps.photos" "gg-photos-x86_64" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
+	patch "gg-photos-x86_64" "revanced"
 }
 4() {
 	revanced_dl

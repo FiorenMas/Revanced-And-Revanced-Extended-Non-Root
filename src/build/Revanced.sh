@@ -48,22 +48,21 @@ revanced_dl(){
 	# Patch Google photos:
 	# Arm64-v8a
 	get_patches_key "gg-photos"
- 	version="7.29.0.757514586" #crash in some devices version above 7.30
 	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "photos" "google-inc/photos/google-photos" "arm64-v8a" "nodpi"
 	patch "gg-photos-arm64-v8a" "revanced"
 	# Armeabi-v7a
 	get_patches_key "gg-photos"
- 	version="7.29.0.757514586" #crash in some devices version above 7.30
+ 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
 	patch "gg-photos-armeabi-v7a" "revanced"
 	# x86
 	get_patches_key "gg-photos"
- 	version="7.29.0.757514586" #crash in some devices version above 7.30
+ 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-x86" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
 	patch "gg-photos-x86" "revanced"
 	# x86_64
 	get_patches_key "gg-photos"
- 	version="7.29.0.757514586" #crash in some devices version above 7.30
+ 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-x86_64" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
 	patch "gg-photos-x86_64" "revanced"
 }
@@ -195,7 +194,6 @@ revanced_dl(){
 	# Patch Spotjfy Arm64-v8a
 	get_patches_key "Spotjfy-revanced"
 	j="i"
-	version="9.0.44.478" #https://github.com/ReVanced/revanced-patches/issues/4958#issuecomment-2883387940
 	get_apkpure "com.spot"$j"fy.music" "spotjfy-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
 	patch "spotjfy-arm64-v8a" "revanced"
 }

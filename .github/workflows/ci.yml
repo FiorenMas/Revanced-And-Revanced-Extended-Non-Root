@@ -69,6 +69,10 @@ jobs:
         id: check-BiliRoamingM
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh sakarie9/BiliRoamingM latest bilibili-BiliRoamingM.apk
+      - name: Check new patch Revanced Experiments
+        id: check-Revanced-Experiments
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh Aunali321/ReVancedExperiments latest telegram-revanced-experiments.apk 
       - name: Re-run workflow if github connection not stable
         if: always() && steps.check-rv.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: actions/github-script@v7
@@ -105,6 +109,7 @@ jobs:
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
       check_rve5: ${{ steps.check-rve5.outputs.new_patch }}
       check_BiliRoamingM: ${{ steps.check-BiliRoamingM.outputs.new_patch }}
+      check_Revanced_Experiments: ${{ steps.check-Revanced-Experiments.outputs.new_patch }}
 
   Patch-Revanced:
     name: Patch Revanced Stable
@@ -190,3 +195,10 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "BiliRoamingM"
+  Patch-Revanced-Experiments:
+    name: Patch Revanced Experiments
+    needs: check
+    if: ${{ needs.check.outputs.check_Revanced_Experiments == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Experiments"

@@ -13,7 +13,6 @@ patch_piko () {
 		v="prerelease" apk_name="beta"
 	fi
 	dl_gh "piko revanced-integrations" "crimera" "$v"
- 	version="10.86.0-release.0" #https://t.me/pikopatches/16/29916
 	get_apk "com.twitter.android" "twitter-$apk_name" "twitter" "x-corp/twitter/x-previously-twitter" "Bundle_extract"
 	split_editor "twitter-$apk_name" "twitter-$apk_name"
 	patch "twitter-$apk_name" "piko"

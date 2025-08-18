@@ -86,14 +86,12 @@ revanced_dl(){
 	revanced_dl
 	# Patch Pixiv:
 	get_patches_key "pixiv"
-	version="6.134.1" #https://github.com/ReVanced/revanced-patches/issues/4477
 	get_apk "jp.pxv.android" "pixiv-beta" "pixiv" "pixiv-inc/pixiv/pixiv"
 	patch "pixiv-beta" "revanced"
 	# Patch Twitch:
 	get_patches_key "twitch"
 	#get_apk "tv.twitch.android.app" "twitch-beta" "twitch" "twitch-interactive-inc/twitch/twitch" "Bundle_extract"
 	#split_editor "twitch-beta" "twitch-beta"
-	version="19.1.0" #https://github.com/orgs/ReVanced/discussions/1135#discussioncomment-11797007
 	get_apk "tv.twitch.android.app" "twitch-beta" "twitch" "twitch-interactive-inc/twitch/twitch"
 	patch "twitch-beta" "revanced"
 	# Patch Twitch Arm64-v8a:
@@ -197,6 +195,7 @@ revanced_dl(){
 	# Patch Spotjfy Arm64-v8a
 	get_patches_key "Spotjfy-revanced"
 	j="i"
+ 	version="9.0.64.107" #https://github.com/ReVanced/revanced-patches/issues/5537#issuecomment-3134402120
 	get_apkpure "com.spot"$j"fy.music" "spotjfy-beta-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
 	patch "spotjfy-beta-arm64-v8a" "revanced"
 }

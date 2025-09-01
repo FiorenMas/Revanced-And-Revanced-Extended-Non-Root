@@ -14,5 +14,11 @@
 		"key" : "AppNameLauncher",
 		"value" : "RVX Music Anddea"
 	  } ]
+	}, {
+	  "patchName" : "Spoof streaming data",
+	  "options" : [ {
+	    "key" : "useMobileWebClient",
+	    "value" : true
+	  } ]
 	}
 ]

@@ -1,7 +1,7 @@
 [{
   "patchName" : "Spoof streaming data",
   "options" : [ {
-    "key" : "useIOSClient",
+    "key" : "useMobileWebClient",
     "value" : true
   } ]
 }]

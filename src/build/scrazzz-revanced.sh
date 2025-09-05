@@ -3,7 +3,7 @@
 source ./src/build/utils.sh
 #################################################
 # Download requirements
-dl_gh "revanced-cli" "revanced" "v4.6.0"
+dl_gh "revanced-cli" "revanced" "latest"
 dl_gh "my-revanced-patches" "scrazzz" "prerelease"
 #################################################
 # Patch Soild Explorer arm64-v8a:

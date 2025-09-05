@@ -25,7 +25,7 @@ on:
           - 'Revanced Extended Android 6,7'
           - 'Revanced Extended Android 5'
           - 'BiliRoamingM'
-	  - 'Scrazzz Patches'
+          - 'Scrazzz Patches'
           - 'Dropped Patches - indrastorms'
           - 'Revanced Experiments'
   workflow_call:

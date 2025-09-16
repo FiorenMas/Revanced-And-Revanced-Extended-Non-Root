@@ -34,13 +34,12 @@ revanced_dl(){
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"
-	lock_version="1"
-	get_apk "com.facebook.orca" "messenger-arm64-v8a" "messenger" "facebook-2/messenger/facebook-messenger" "arm64-v8a" "nodpi"
+	get_apkpure "com.facebook.orca" "messenger-arm64-v8a" "facebook-messenger/com.facebook.orca"
 	patch "messenger-arm64-v8a" "revanced"
 	# Patch Facebook:
 	# Arm64-v8a
 	get_patches_key "facebook"
-	get_apk "com.facebook.katana" "facebook-arm64-v8a" "facebook" "facebook-2/facebook/facebook" "arm64-v8a" "nodpi" "Android 11+"
+ 	get_apkpure "com.facebook.katana" "facebook-arm64-v8a" "facebook/com.facebook.katana"
 	patch "facebook-arm64-v8a" "revanced"
 }
 3() {

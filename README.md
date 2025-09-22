@@ -359,6 +359,16 @@ Web version:
 
 ---
 
+### [Proton mail:](https://play.google.com/store/apps/details?id=ch.protonmail.android)
+
+### [Revanced:](https://github.com/revanced/revanced-patches)
+
+| Stable version                                                              | Beta version                                                                    |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [All Architectures](../../releases/download/all/protonmail-revanced.apk)    | [All Architectures](../../releases/download/all/protonmail-beta-revanced.apk)   |
+
+---
+
 ### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)

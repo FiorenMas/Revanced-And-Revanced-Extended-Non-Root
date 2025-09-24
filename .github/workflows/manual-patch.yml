@@ -267,7 +267,7 @@ jobs:
       - name: Patch apk
         id: patch-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
-        run: bash src/build/Piko.sh latest
+        run: bash src/build/Piko.sh
       - name: Releasing APK files
         id: release-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
@@ -287,7 +287,7 @@ jobs:
       - name: Patch apk
         id: patch-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
-        run: bash src/build/Piko.sh prerelease
+        run: bash src/build/Piko-Beta.sh
       - name: Releasing APK files
         id: release-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'

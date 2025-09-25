@@ -83,7 +83,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Pixiv:
 	get_patches_key "pixiv"
-	get_apk "jp.pxv.android" "pixiv" "pixiv" "pixiv-inc/pixiv/pixiv"
+	get_apkpure "jp.pxv.android" "pixiv" "pixiv/jp.pxv.android"
 	patch "pixiv" "revanced"
 	# Patch Twitch:
 	get_patches_key "twitch"
@@ -123,10 +123,11 @@ revanced_dl(){
 	get_apk "com.rarlab.rar" "rar" "rar" "rarlab-published-by-win-rar-gmbh/rar/rar" "Bundle"
 	patch "rar" "revanced"
 	# Patch Lightroom:
-	#get_patches_key "lightroom"
-  	#version="10.0.2"
-	#get_apk "com.adobe.lrmobile" "lightroom" "lightroom" "adobe/lightroom/lightroom"
-	#patch "lightroom" "revanced"
+	get_patches_key "lightroom"
+ 	url="https://adobe-lightroom-mobile.en.uptodown.com/android/download/1033600808" #Use uptodown because apkmirror always ask pass Cloudflare on this app
+	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+	req "$url" "lightroom.apk"
+	patch "lightroom" "revanced"
 }
 8() {
 	revanced_dl
@@ -197,6 +198,28 @@ revanced_dl(){
 	get_apk "ch.protonmail.android" "protonmail" "protonmail-encrypted-email" "proton-technologies-ag/protonmail-encrypted-email/proton-mail-encrypted-email"
 	patch "protonmail" "revanced"
 }
+13() {
+	revanced_dl
+	# Patch Threads
+	get_patches_key "Threads-revanced"
+	get_apkpure "com.instagram.barcelona" "threads-arm64-v8a" "threads/com.instagram.barcelona" "Bundle"
+	patch "threads-arm64-v8a" "revanced"
+	# Patch Prime Video
+	get_patches_key "Prime-Video-revanced"
+	version="3.0.412"
+	get_apk " com.amazon.avod.thirdpartyclient" "prime-video-arm64-v8a" "amazon-prime-video" "amazon-mobile-llc/amazon-prime-video/amazon-prime-video" "arm64-v8a"
+	patch "prime-video-arm64-v8a" "revanced"
+}
+14() {
+	revanced_dl
+	# Patch Crunchyroll
+	get_patches_key "Crunchyroll-revanced"
+	url="https://crunchyroll.en.uptodown.com/android/download/1109023537-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
+	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+	req "$url" "crunchyroll"
+	split_editor "crunchyroll" "crunchyroll"
+	patch "crunchyroll" "revanced"
+}
 case "$1" in
     1)
         1
@@ -233,5 +256,11 @@ case "$1" in
         ;;
     12)
         12
+        ;;
+    13)
+        13
+        ;;
+    14)
+        14
         ;;
 esac

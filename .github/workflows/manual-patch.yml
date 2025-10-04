@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -63,7 +63,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -267,7 +267,7 @@ jobs:
       - name: Patch apk
         id: patch-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
-        run: bash src/build/Piko.sh latest
+        run: bash src/build/Piko.sh
       - name: Releasing APK files
         id: release-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
@@ -287,7 +287,7 @@ jobs:
       - name: Patch apk
         id: patch-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
-        run: bash src/build/Piko.sh prerelease
+        run: bash src/build/Piko-Beta.sh
       - name: Releasing APK files
         id: release-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'

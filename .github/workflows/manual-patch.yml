@@ -1,4 +1,4 @@
-name: Manual Patch
+name: 1. Manual Patch
 permissions: write-all
 env:
   repository: ${{ github.repository }}

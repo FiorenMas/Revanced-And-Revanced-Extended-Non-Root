@@ -471,6 +471,22 @@ Web version:
 
 ---
 
+<h4 align="center">
+Apps below not based on Revanced, but project still open-source.
+</h4>
+
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://play.google.com/store/apps/details?id=com.instagram.android)
+
+### [Instafel:](https://github.com/mamiiblt/instafel)
+
+👉 [Offical author download link](https://github.com/mamiiblt/instafel/releases/latest)
+
+[Arm64-v8a](../../releases/download/all/instagram-instafel.apk )
+
+[Cloned-Arm64-v8a](../../releases/download/all/instagram-clone-instafel.apk )
+
+Cloned version has a different package name than the original app, so you can install both the original and the modified app at the same time.
+
 ### ⚠️ Library, resources using in this repository:
 
 <details>
@@ -560,6 +576,13 @@ Web version:
   <summary>scrazzz</summary>
 
 [Patches](https://github.com/scrazzz/my-revanced-patches) - [GPL-3.0](https://github.com/scrazzz/my-revanced-patches/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>mamiiblt</summary>
+
+[Patches](https://github.com/mamiiblt/instafel) - [MIT](https://github.com/mamiiblt/instafel/blob/main/LICENSE)
 
 </details>
 

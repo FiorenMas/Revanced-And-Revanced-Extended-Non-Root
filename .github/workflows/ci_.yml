@@ -15,14 +15,14 @@ jobs:
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
-        id: check-gh-rv
+        id: check-gh-ins
         run: bash src/etc/connection.sh
       - name: Patch apk
-        id: patch-rv
-        if: steps.check-gh-rv.outputs.internet_error == '0'
+        id: patch-ins
+        if: steps.check-gh-ins.outputs.internet_error == '0'
         run: bash src/build/Instafel.sh
       - name: Releasing APK files
-        id: release-rv
-        if: steps.check-gh-rv.outputs.internet_error == '0'
+        id: release-ins
+        if: steps.check-gh-ins.outputs.internet_error == '0'
         uses: ./.github/actions/release
 

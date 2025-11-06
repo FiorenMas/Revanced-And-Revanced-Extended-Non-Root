@@ -100,7 +100,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Tumblr:
 	get_patches_key "tumblr"
-	get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr-social-media-fandom" "Bundle_extract"
+	get_apk "com.tumblr" "tumblr-beta" "tumblr" "tumblr-inc/tumblr/tumblr-social-media-art" "Bundle_extract"
 	split_editor "tumblr-beta" "tumblr-beta"
 	patch "tumblr-beta" "revanced"
 	# Patch Tumblr Arm64-v8a:

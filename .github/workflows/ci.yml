@@ -29,10 +29,6 @@ jobs:
         id: check-rv-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh ReVanced/revanced-patches prerelease youtube-beta-revanced.apk
-      - name: Check new patch Spotjfy
-        id: check-spotjfy
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh ReVanced/revanced-patches latest spotjfy-arm64-v8a-revanced.apk
       - name: Check new patch Revanced Extended forked by Anddea Stable Version
         id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -49,6 +45,10 @@ jobs:
         id: check-rve-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-beta-revanced-extended.apk
+      - name: Check new patch Revanced Extended Arsclib
+        id: check-rve-arsclib
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh inotia00/revanced-patches-arsclib latest reddit-revanced-extended-arsclib.apk
       - name: Check new patch Twitter Piko Stable
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -99,11 +99,11 @@ jobs:
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
       check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
-      check_spotjfy: ${{ steps.check-spotjfy.outputs.new_patch }}
       check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_rve_beta: ${{ steps.check-rve-beta.outputs.new_patch }}
+      check_rve_arsclib: ${{ steps.check-rve-arsclib.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
@@ -125,13 +125,6 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Beta"
-  Patch-Spotjfy:
-    name: Patch Spotjfy
-    needs: check
-    if: ${{ needs.check.outputs.check_spotjfy == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Spotjfy"
   Patch-RVE-anddea-stable:
     name: Patch RVX Anddea Stable
     needs: check
@@ -160,6 +153,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Extended Beta"
+  Patch-Revanced-Extended-Arsclib:
+    name: Patch Revanced Extended Arsclib
+    needs: check
+    if: ${{ needs.check.outputs.check_rve_arsclib == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Extended Arsclib"
   Patch-Twitter-Piko-Stable:
     name: Patch Twitter Piko Stable
     needs: check

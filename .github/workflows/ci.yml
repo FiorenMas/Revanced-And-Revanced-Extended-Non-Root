@@ -103,7 +103,7 @@ jobs:
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
       check_rve_beta: ${{ steps.check-rve-beta.outputs.new_patch }}
-      check_rve_reddit: ${{ steps.check-rve-arsclib.outputs.new_patch }}
+      check_rve_arsclib: ${{ steps.check-rve-arsclib.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_rve67: ${{ steps.check-rve67.outputs.new_patch }}

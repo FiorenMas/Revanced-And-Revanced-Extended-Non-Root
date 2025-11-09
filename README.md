@@ -245,7 +245,7 @@ Download
 
 ---
 
-### [Spotify:](https://www.google.com/search?q=Spotjfy)
+### [Spotify:](https://www.google.com/search?q=Spotify)
 
 ### [Revanced](https://github.com/revanced/revanced-patches)
 

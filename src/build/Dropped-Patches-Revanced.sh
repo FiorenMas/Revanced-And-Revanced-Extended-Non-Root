@@ -20,7 +20,7 @@ patch "tasker" "indrastorms"
 
 #Patch Nova Launcher:
 get_patches_key "nova-launcher-indrastorms"
-get_apk "com.teslacoilsw.launcher" "nova-launcher" "nova-launcher" "teslacoil-software/nova-launcher/nova-launcher"
+get_apkpure "com.teslacoilsw.launcher" "nova-launcher" "nova-launcher/com.teslacoilsw.launcher"
 patch "nova-launcher" "indrastorms"
 
 #################################################

@@ -13,7 +13,7 @@ dl_gh "revanced-cli" "revanced" "v4.6.0"
 
 # Patch Tasker:
 get_patches_key "tasker-indrastorms"
-get_apk "net.dinglisch.android.taskerm" "tasker" "tasker" "joaomgcd/tasker/tasker"
+get_apk "net.dinglisch.android.taskerm" "tasker" "tasker" "joaomgcd/tasker/tasker-play-store-version"
 patch "tasker" "indrastorms"
 
 #################################################

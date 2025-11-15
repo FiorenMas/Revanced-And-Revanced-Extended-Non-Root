@@ -434,6 +434,16 @@ Web version:
 
 ---
 
+### [![Viber](https://img.shields.io/badge/Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white)](https://play.google.com/store/apps/details?id=com.viber.voip)
+
+### [Revanced:](https://github.com/revanced/revanced-patches)
+
+| Stable version                                                        | Beta version                                                               |
+| --------------------------------------------------------------------- | -------------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/viber-revanced.apk)   | [All Architectures](../../releases/download/all/viber-beta-revanced.apk)   |
+
+---
+
 [![Crunchyroll](https://img.shields.io/badge/Crunchyroll-F47521?style=for-the-badge&logo=crunchyroll&logoColor=white)](https://play.google.com/store/apps/details?id=com.crunchyroll.crunchyroid)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)

@@ -214,11 +214,15 @@ revanced_dl(){
 	revanced_dl
 	# Patch Crunchyroll
 	get_patches_key "Crunchyroll-revanced"
-	url="https://crunchyroll.en.uptodown.com/android/download/1109023537-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
+	url="https://crunchyroll.en.uptodown.com/android/download/1123284824-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
 	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
 	req "$url" "crunchyroll"
 	split_editor "crunchyroll" "crunchyroll"
 	patch "crunchyroll" "revanced"
+	# Patch Viber
+	get_patches_key "Viber-revanced"
+	get_apk "com.viber.voip" "viber" "viber" "viber-media-s-a-r-l/viber/rakuten-viber-messenger"
+	patch "viber" "revanced"
 }
 case "$1" in
     1)

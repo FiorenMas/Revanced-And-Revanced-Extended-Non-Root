@@ -7,7 +7,7 @@ dl_gh "piko" "crimera" "prerelease"
 
 # Patch Twitter Piko:
 get_patches_key "twitter-piko"
-get_apk "com.twitter.android" "twitter-beta" "twitter" "x-corp/twitter/x-formerly-twitter" "Bundle_extract"
+get_apk "com.twitter.android" "twitter-beta" "twitter" "x-corp/twitter/x" "Bundle_extract"
 split_editor "twitter-beta" "twitter-beta"
 patch "twitter-beta" "piko"
 # Patch Twitter Piko Arm64-v8a:

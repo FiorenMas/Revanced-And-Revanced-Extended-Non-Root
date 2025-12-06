@@ -52,17 +52,14 @@ revanced_dl(){
 	patch "gg-photos-arm64-v8a-beta" "revanced"
 	# Armeabi-v7a
 	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a-beta" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
 	patch "gg-photos-armeabi-v7a-beta" "revanced"
 	# x86
 	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-x86-beta" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
 	patch "gg-photos-x86-beta" "revanced"
 	# x86_64
 	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-x86_64-beta" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
 	patch "gg-photos-x86_64-beta" "revanced"
 }

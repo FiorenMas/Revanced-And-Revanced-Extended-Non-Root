@@ -305,6 +305,9 @@ patch() {
 		if [ "$3" = inotia ]; then
 			p="patch " b="-p *.rvp" m="" a="" ks="_ks" pu="--purge=true" opt="--legacy-options=./src/options/$2.json" force=" --force"
 			echo "Patching with Revanced-cli inotia"
+		elif [ "$3" = liso ]; then
+			p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" opt="" force=" --force"
+			echo "Patching with Revanced-cli LisoUseInAIKyrios"
 		else
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
 				num=${BASH_REMATCH[1]}

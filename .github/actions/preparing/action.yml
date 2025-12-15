@@ -3,10 +3,10 @@ runs:
   using: "composite"
   steps:
     - name: Set up jdk
-      uses: actions/setup-java@v4.5.0
+      uses: actions/setup-java@v5.1.0
       with:
         distribution: 'zulu'
-        java-version: '17'
+        java-version: '21'
 #    - name: Setup Cloudflare Warp
 #      shell: bash
 #      run: bash src/etc/cf_warp.sh

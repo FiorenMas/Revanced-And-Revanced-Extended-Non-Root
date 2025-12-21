@@ -41,8 +41,9 @@ jobs:
     if: ${{ github.event.inputs.org == 'Revanced' || inputs.org == 'Revanced' }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2
@@ -64,8 +65,9 @@ jobs:
     if: ${{ github.event.inputs.org == 'Revanced Beta' || inputs.org == 'Revanced Beta' }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
     steps:
       - name: Checkout
         uses: actions/checkout@v4.2.2

@@ -224,6 +224,30 @@ revanced_dl(){
 	get_apk "com.viber.voip" "viber" "viber" "viber-media-s-a-r-l/viber/rakuten-viber-messenger"
 	patch "viber" "revanced"
 }
+15() {
+	revanced_dl
+	# Patch Reddit
+	get_patches_key "reddit"
+	get_apk "com.reddit.frontpage" "reddit" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
+	split_editor "reddit" "reddit"
+	patch "reddit" "revanced"
+	# Patch Arm64-v8a:
+	split_editor "reddit" "reddit-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86_64 split_config.mdpi split_config.ldpi split_config.hdpi split_config.xhdpi split_config.xxhdpi split_config.tvdpi"
+	get_patches_key "reddit"
+	patch "reddit-arm64-v8a" "revanced"
+	# Patch Disney+
+	get_patches_key "Disney"
+	version="4.20.2+rc1-2025.12.09"
+	get_apk "com.disney.disneyplus" "disney" "disney" "disney/disney/disney" "Bundle"
+	patch "disney" "revanced"
+}
+16() {
+	revanced_dl
+	# Patch ProtonVPN
+	get_patches_key "ProtonVPN"
+	get_apk "ch.protonvpn.android" "protonvpn" "protonvpn-free-vpn-secure-unlimited-fdroid-version" "proton-technologies-ag/protonvpn-free-vpn-secure-unlimited-fdroid-version/protonvpn-fast-secure-vpn-f-droid-version"
+	patch "protonvpn" "revanced"
+}
 case "$1" in
     1)
         1
@@ -266,5 +290,11 @@ case "$1" in
         ;;
     14)
         14
+        ;;
+    15)
+        15
+        ;;
+    16)
+        16
         ;;
 esac

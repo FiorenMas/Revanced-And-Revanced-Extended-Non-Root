@@ -72,7 +72,7 @@ Download
 
 #### [![Prime Video](https://img.shields.io/badge/Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white)](?tab=readme-ov-file#prime-video)
 
-#### [![Disney](https://img.shields.io/badge/Disney-%23006E99.svg?style=for-the-badge&logo=disney&logoColor=white)](?tab=readme-ov-file#disney+)
+#### [![Disney](https://img.shields.io/badge/Disney-%23006E99.svg?style=for-the-badge&logo=disney&logoColor=white)](?tab=readme-ov-file#disney)
 
 #### [![Crunchyroll](https://img.shields.io/badge/Crunchyroll-F47521?style=for-the-badge&logo=crunchyroll&logoColor=white)](?tab=readme-ov-file#crunchyroll)
 
@@ -390,7 +390,7 @@ Download
 | Stable version                                                         | Beta version                                                                |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/reddit-revanced.apk)   | [All Architectures](../../releases/download/all/reddit-beta-revanced.apk)   |
-| [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/reddit-beta-arm64-v8a-beta-revanced.apk) |
+| [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/reddit-beta-arm64-v8a-revanced.apk) |
 
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 

@@ -13,7 +13,7 @@ This repository provides automated workflows to patch various apps like YouTube,
 Simply, all you need to do is choose the app you want to use from the options in the workflows.
 
 > [!NOTE]
-> If you want to use the YouTube, YouTube Music or Google Photos app, you need to download and install [MicroG](https://github.com/ReVanced/GmsCore/releases).
+> If you want to use the YouTube, YouTube Music or Google Photos app, you need to download and install [MicroG](https://github.com/WSTxda/MicroG-RE/releases/latest).
 > 
 > All the code is open-source, and the APK files used for patching are downloaded from trusted sites.
 
@@ -22,18 +22,11 @@ Simply, all you need to do is choose the app you want to use from the options in
 Download
 </h1>
 
-### [YouTube](https://play.google.com/store/apps/details?id=com.google.android.youtube)
+> [!IMPORTANT] 
+> **Credits to [FiorenMas](https://github.com/FiorenMas) for the original work and workflows.**
+---
 
-#### [Revanced:](https://github.com/revanced/revanced-patches)
-[All Architectures](../../releases/download/all/youtube-revanced.apk) | [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced.apk)
-
-<details>
-  <summary>Lite version</summary>
-  [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced.apk)
-</details>
-
-#### [LisoUseInAIKyrios Patch (Revanced fork):](https://github.com/LisoUseInAIKyrios/revanced-patches)
-[All Architectures](../../releases/download/all/youtube-revanced-LisoUseInAIKyrios.apk) | [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-LisoUseInAIKyrios.apk)
+### <img src="https://cdn.simpleicons.org/youtube/FF0000" height="20"> [YouTube](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
 #### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 [All Architectures](../../releases/download/all/youtube-revanced-extended.apk) | [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended.apk)
@@ -41,86 +34,98 @@ Download
 #### [Revanced Extended (Anddea):](https://github.com/anddea/revanced-patches)
 [All Architectures](../../releases/download/all/youtube-stable-anddea.apk) | [Arm64-v8a](../../releases/download/all/youtube-stable-arm64-v8a-anddea.apk)
 
+#### [Revanced:](https://github.com/revanced/revanced-patches)
+[All Architectures](../../releases/download/all/youtube-revanced.apk) | [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced.apk)
+
+<details>
+  <summary>Lite version (Revanced)</summary>
+  [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced.apk)
+</details>
+
+#### [LisoUseInAIKyrios Patch (Revanced fork):](https://github.com/LisoUseInAIKyrios/revanced-patches)
+[All Architectures](../../releases/download/all/youtube-revanced-LisoUseInAIKyrios.apk) | [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-LisoUseInAIKyrios.apk)
+
+
 ---
 
-### [YouTube Music](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
-
-#### [Revanced:](https://github.com/revanced/revanced-patches)
-[Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk)
+### <img src="https://cdn.simpleicons.org/youtubemusic/FF0000" height="20"> [YouTube Music](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
 
 #### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)
+
+#### [Revanced:](https://github.com/revanced/revanced-patches)
+[Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk)
 
 ---
 
 ### Social Media & Messengers
 
-#### [Facebook](https://play.google.com/store/apps/details?id=com.facebook.katana)
+#### <img src="https://cdn.simpleicons.org/facebook/1877F2" height="20"> [Facebook](https://play.google.com/store/apps/details?id=com.facebook.katana)
 [Arm64-v8a](../../releases/download/all/facebook-arm64-v8a-revanced.apk)
 
-#### [Messenger](https://play.google.com/store/apps/details?id=com.facebook.orca)
+#### <img src="https://cdn.simpleicons.org/messenger/00B2FF" height="20"> [Messenger](https://play.google.com/store/apps/details?id=com.facebook.orca)
 [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk)
 
-#### [Instagram](https://play.google.com/store/apps/details?id=com.instagram.android)
+#### <img src="https://cdn.simpleicons.org/instagram/E4405F" height="20"> [Instagram](https://play.google.com/store/apps/details?id=com.instagram.android)
 [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced.apk)
 
-#### [Threads](https://play.google.com/store/apps/details?id=com.instagram.barcelona)
+#### <img src="https://cdn.simpleicons.org/threads/000000" height="20"> [Threads](https://play.google.com/store/apps/details?id=com.instagram.barcelona)
 [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-revanced.apk)
 
-#### [Reddit](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
+#### <img src="https://cdn.simpleicons.org/reddit/FF4500" height="20"> [Reddit](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
 [All Architectures](../../releases/download/all/reddit-revanced.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced.apk)
 
-#### [Twitter (Piko Stable)](https://github.com/crimera/piko)
+#### <img src="https://cdn.simpleicons.org/x/000000" height="20"> [Twitter (Piko Stable)](https://github.com/crimera/piko)
 [All Architectures](../../releases/download/all/twitter-stable-piko.apk)
 
 ---
 
 ### Tools & Utilities
 
-#### [Google Photos](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)
+#### <img src="https://cdn.simpleicons.org/googlephotos/4285F4" height="20"> [Google Photos](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)
 [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk)
 
-#### [Proton Mail](https://play.google.com/store/apps/details?id=ch.protonmail.android)
+#### <img src="https://cdn.simpleicons.org/protonmail/8B89CC" height="20"> [Proton Mail](https://play.google.com/store/apps/details?id=ch.protonmail.android)
 [All Architectures](../../releases/download/all/protonmail-revanced.apk)
 
-#### [Proton VPN](https://f-droid.org/en/packages/ch.protonvpn.android/)
+#### <img src="https://cdn.simpleicons.org/protonvpn/8B89CC" height="20"> [Proton VPN](https://f-droid.org/en/packages/ch.protonvpn.android/)
 [All Architectures](../../releases/download/all/protonvpn-revanced.apk)
 
-#### [RAR](https://play.google.com/store/apps/details?id=com.rarlab.rar)
+#### <img src="https://cdn.simpleicons.org/files/MainColor" height="20"> [RAR](https://play.google.com/store/apps/details?id=com.rarlab.rar)
 [All Architectures](../../releases/download/all/rar-revanced.apk)
 
 ---
 
 ### Misc
 
-#### [Duolingo](https://play.google.com/store/apps/details?id=com.duolingo)
+#### <img src="https://cdn.simpleicons.org/duolingo/58CC02" height="20"> [Duolingo](https://play.google.com/store/apps/details?id=com.duolingo)
 [All Architectures](../../releases/download/all/duolingo-revanced.apk)
 
-#### [Strava](https://play.google.com/store/apps/details?id=com.strava)
+#### <img src="https://cdn.simpleicons.org/strava/FC4C02" height="20"> [Strava](https://play.google.com/store/apps/details?id=com.strava)
 [Arm64-v8a](../../releases/download/all/strava-arm64-v8a-revanced.apk)
 
-#### [Pixiv](https://play.google.com/store/apps/details?id=jp.pxv.android)
+#### <img src="https://cdn.simpleicons.org/pixiv/0096FA" height="20"> [Pixiv](https://play.google.com/store/apps/details?id=jp.pxv.android)
 [All Architectures](../../releases/download/all/pixiv-revanced.apk)
 
-#### [SoundCloud](https://play.google.com/store/apps/details?id=com.soundcloud.android)
+#### <img src="https://cdn.simpleicons.org/soundcloud/FF5500" height="20"> [SoundCloud](https://play.google.com/store/apps/details?id=com.soundcloud.android)
 [All Architectures](../../releases/download/all/soundcloud-revanced.apk)
 
-#### [Prime Video](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
+#### <img src="https://cdn.simpleicons.org/primevideo/00A8E1" height="20"> [Prime Video](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
 [Arm64-v8a](../../releases/download/all/prime-video-arm64-v8a-revanced.apk)
 
-#### [Disney+](https://play.google.com/store/apps/details?id=com.disney.disneyplus)
+#### <img src="https://cdn.simpleicons.org/disneyplus/113CCF" height="20"> [Disney+](https://play.google.com/store/apps/details?id=com.disney.disneyplus)
 [Arm64-v8a](../../releases/download/all/disney-revanced.apk)
 
-#### [Lightroom](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)
+#### <img src="https://cdn.simpleicons.org/lightroom/31A8FF" height="20"> [Lightroom](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)
 [Arm64-v8a](../../releases/download/all/lightroom-revanced.apk)
 
-#### [Google News](play.google.com/store/apps/details?id=com.google.android.apps.magazines)
+#### <img src="https://cdn.simpleicons.org/googlenews/4285F4" height="20"> [Google News](play.google.com/store/apps/details?id=com.google.android.apps.magazines)
 [Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-revanced.apk)
 
-#### [Photomath](https://play.google.com/store/apps/details?id=com.microblink.photomath)
+#### <img src="https://cdn.simpleicons.org/photomath/MainColor" height="20"> [Photomath](https://play.google.com/store/apps/details?id=com.microblink.photomath)
 [All Architectures](../../releases/download/all/photomath-revanced.apk)
 
-#### [Spotjfy](https://www.google.com/search?q=Spotjfy)
+#### <img src="https://cdn.simpleicons.org/spotify/1DB954" height="20"> [Spotjfy](https://www.google.com/search?q=Spotjfy)
 [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)
 
 ---

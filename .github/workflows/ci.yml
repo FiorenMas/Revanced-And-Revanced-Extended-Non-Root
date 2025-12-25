@@ -25,10 +25,7 @@ jobs:
         id: check-rv
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh ReVanced/revanced-patches latest youtube-revanced.apk
-      - name: Check new patch ReVanced Beta
-        id: check-rv-beta
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh ReVanced/revanced-patches prerelease youtube-beta-revanced.apk
+
       - name: Check new patch ReVanced LisoUseInAIKyrios
         id: check-rv-liso
         if: steps.check-gh.outputs.internet_error == '0'
@@ -37,18 +34,12 @@ jobs:
         id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh anddea/revanced-patches latest youtube-stable-anddea.apk
-      - name: Check new patch Revanced Extended forked by Anddea Beta Version
-        id: check-rve-anddea-beta
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh anddea/revanced-patches prerelease youtube-beta-anddea.apk
+
       - name: Check new patch Revanced Extended
         id: check-rve
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh inotia00/revanced-patches latest youtube-revanced-extended.apk
-      - name: Check new patch Revanced Extended Beta
-        id: check-rve-beta
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh inotia00/revanced-patches prerelease youtube-beta-revanced-extended.apk
+
       - name: Check new patch Revanced Extended Arsclib
         id: check-rve-arsclib
         if: steps.check-gh.outputs.internet_error == '0'
@@ -57,26 +48,8 @@ jobs:
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh crimera/piko latest twitter-stable-piko.apk
-      - name: Check new patch Twitter Piko Beta
-        id: check-twitter-piko-beta
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh crimera/piko prerelease twitter-beta-piko.apk
-      - name: Check new patch Revanced For Android 6 & 7
-        id: check-rve67
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh kitadai31/revanced-patches-android6-7 latest youtube-revanced-extended-android-6-7.apk
-      - name: Check new patch Revanced For Android 5
-        id: check-rve5
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh d4n3436/revanced-patches-android5 latest youtube-revanced-extended-android-5.apk
-      - name: Check new patch BiliRoamingM
-        id: check-BiliRoamingM
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh sakarie9/BiliRoamingM latest bilibili-BiliRoamingM.apk
-      - name: Check new patch Revanced Experiments
-        id: check-Revanced-Experiments
-        if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh Aunali321/ReVancedExperiments latest telegram-revanced-experiments.apk 
+
+ 
       - name: Re-run workflow if github connection not stable
         if: always() && steps.check-rv.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: actions/github-script@v7
@@ -102,18 +75,6 @@ jobs:
           max_retries: 3
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
-      check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
-      check_rv_liso: ${{ steps.check-rv-liso.outputs.new_patch }}
-      check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
-      check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
-      check_rve: ${{ steps.check-rve.outputs.new_patch }}
-      check_rve_beta: ${{ steps.check-rve-beta.outputs.new_patch }}
-      check_rve_arsclib: ${{ steps.check-rve-arsclib.outputs.new_patch }}
-      check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
-      check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
-      check_rve67: ${{ steps.check-rve67.outputs.new_patch }}
-      check_rve5: ${{ steps.check-rve5.outputs.new_patch }}
-      check_BiliRoamingM: ${{ steps.check-BiliRoamingM.outputs.new_patch }}
       check_Revanced_Experiments: ${{ steps.check-Revanced-Experiments.outputs.new_patch }}
 
   Patch-Revanced:
@@ -123,13 +84,7 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced"
-  Patch-Revanced-Beta:
-    name: Patch Revanced Beta
-    needs: check
-    if: ${{ needs.check.outputs.check_rv_beta == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Revanced Beta"
+
   Patch-Revanced-Liso:
     name: Patch Revanced LisoUseInAIKyrios
     needs: check
@@ -144,69 +99,8 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "RVE-anddea-stable"
-  Patch-RVE-anddea-beta:
-    name: Patch RVX Anddea Beta
-    needs: check
-    if: ${{ needs.check.outputs.check_rve_anddea_beta == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "RVE-anddea-beta"
-  Patch-Revanced-Extended:
-    name: Patch Revanced Extended
-    needs: check
-    if: ${{ needs.check.outputs.check_rve == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Revanced Extended"
-  Patch-Revanced-Extended-Beta:
-    name: Patch Revanced Extended Beta
-    needs: check
-    if: ${{ needs.check.outputs.check_rve_beta == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Revanced Extended Beta"
-  Patch-Revanced-Extended-Arsclib:
-    name: Patch Revanced Extended Arsclib
-    needs: check
-    if: ${{ needs.check.outputs.check_rve_arsclib == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Revanced Extended Arsclib"
-  Patch-Twitter-Piko-Stable:
-    name: Patch Twitter Piko Stable
-    needs: check
-    if: ${{ needs.check.outputs.check_twitter_piko_stable == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Twitter Piko Stable"
-  Patch-Twitter-Piko-Beta:
-    name: Patch Twitter Piko Beta
-    needs: check
-    if: ${{ needs.check.outputs.check_twitter_piko_beta == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Twitter Piko Beta"
-  Patch-Revanced-Extended-For-Android-6-7:
-    name: Patch RVX Android 6 & 7
-    needs: check
-    if: ${{ needs.check.outputs.check_rve67 == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Revanced Extended Android 6,7"
-  Patch-Revanced-Extended-For-Android-5:
-    name: Patch RVX Android 5
-    needs: check
-    if: ${{ needs.check.outputs.check_rve5 == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "Revanced Extended Android 5"
-  Patch-BiliRoamingM:
-    name: Patch BiliRoamingM
-    needs: check
-    if: ${{ needs.check.outputs.check_BiliRoamingM == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    with:
-      org: "BiliRoamingM"
+
+
   Patch-Revanced-Experiments:
     name: Patch Revanced Experiments
     needs: check

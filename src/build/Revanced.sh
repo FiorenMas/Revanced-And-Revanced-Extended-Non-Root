@@ -67,12 +67,7 @@ revanced_dl(){
 }
 4() {
 	revanced_dl
-	# Patch Tiktok:
-	get_patches_key "tiktok"
-	url="https://tiktok.en.uptodown.com/android/download/1026195874-x" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
-	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
-	req "$url" "tiktok.apk"
-	patch "tiktok" "revanced"
+
 	# Patch Instagram:
 	# Arm64-v8a
 	get_patches_key "instagram"
@@ -85,27 +80,11 @@ revanced_dl(){
 	get_patches_key "pixiv"
 	get_apkpure "jp.pxv.android" "pixiv" "pixiv/jp.pxv.android"
 	patch "pixiv" "revanced"
-	# Patch Twitch:
-	get_patches_key "twitch"
-	get_apk "tv.twitch.android.app" "twitch" "twitch" "twitch-interactive-inc/twitch/twitch-live-streaming" "Bundle_extract"
-	split_editor "twitch" "twitch"
-	patch "twitch" "revanced"
-	# Patch Twitch Arm64-v8a:
-	get_patches_key "twitch"
-	split_editor "twitch" "twitch-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "twitch-arm64-v8a" "revanced"
+
 }
 6() {
 	revanced_dl
-	# Patch Tumblr:
-	get_patches_key "tumblr"
-	get_apk "com.tumblr" "tumblr" "tumblr" "tumblr-inc/tumblr/tumblr-social-media-art" "Bundle_extract"
-	split_editor "tumblr" "tumblr"
-	patch "tumblr" "revanced"
-	# Patch Tumblr Arm64-v8a:
-	get_patches_key "tumblr"
-	split_editor "tumblr" "tumblr-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "tumblr-arm64-v8a" "revanced"
+
 	# Patch SoundCloud:
 	get_patches_key "soundcloud"
 	get_apk "com.soundcloud.android" "soundcloud" "soundcloud-soundcloud" "soundcloud/soundcloud-soundcloud/soundcloud-play-music-songs" "Bundle_extract"
@@ -211,18 +190,7 @@ revanced_dl(){
 	patch "prime-video-arm64-v8a" "revanced"
 }
 14() {
-	revanced_dl
-	# Patch Crunchyroll
-	get_patches_key "Crunchyroll-revanced"
-	url="https://crunchyroll.en.uptodown.com/android/download/1123284824-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
-	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
-	req "$url" "crunchyroll"
-	split_editor "crunchyroll" "crunchyroll"
-	patch "crunchyroll" "revanced"
-	# Patch Viber
-	get_patches_key "Viber-revanced"
-	get_apk "com.viber.voip" "viber" "viber" "viber-media-s-a-r-l/viber/rakuten-viber-messenger"
-	patch "viber" "revanced"
+    echo "Apps in this batch (Crunchyroll, Viber) have been removed."
 }
 15() {
 	revanced_dl

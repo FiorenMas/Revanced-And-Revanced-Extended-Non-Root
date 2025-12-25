@@ -15,6 +15,7 @@ on:
         type: choice
         options:
           - 'Revanced'
+          - 'All'
           - 'Revanced Beta'
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
@@ -38,7 +39,7 @@ on:
 jobs:
   patch_rv:
     name: Patch Revanced Stable
-    if: ${{ github.event.inputs.org == 'Revanced' || inputs.org == 'Revanced' }}
+    if: ${{ github.event.inputs.org == 'Revanced' || inputs.org == 'Revanced' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -62,7 +63,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rv_beta:
     name: Patch Revanced Beta
-    if: ${{ github.event.inputs.org == 'Revanced Beta' || inputs.org == 'Revanced Beta' }}
+    if: ${{ github.event.inputs.org == 'Revanced Beta' || inputs.org == 'Revanced Beta' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -86,7 +87,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rv_liso:
     name: Patch Revanced LisoUseInAIKyrios
-    if: ${{ github.event.inputs.org == 'Revanced LisoUseInAIKyrios' || inputs.org == 'Revanced LisoUseInAIKyrios' }}
+    if: ${{ github.event.inputs.org == 'Revanced LisoUseInAIKyrios' || inputs.org == 'Revanced LisoUseInAIKyrios' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -109,7 +110,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable
-    if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' }}
+    if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     container:
       image: ubuntu:20.04
@@ -152,7 +153,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rve_anddea_beta:
     name: Patch RVX Anddea Beta version
-    if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || inputs.org == 'RVE-anddea-beta' }}
+    if: ${{ github.event.inputs.org == 'RVE-anddea-beta' || inputs.org == 'RVE-anddea-beta' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     container:
       image: ubuntu:20.04
@@ -195,7 +196,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rve:
     name: Patch Revanced Extended Stable
-    if: ${{ github.event.inputs.org == 'Revanced Extended' || inputs.org == 'Revanced Extended' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended' || inputs.org == 'Revanced Extended' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     container:
       image: ubuntu:20.04
@@ -238,7 +239,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rve_beta:
     name: Patch Revanced Extended Beta
-    if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || inputs.org == 'Revanced Extended Beta' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended Beta' || inputs.org == 'Revanced Extended Beta' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     container:
       image: ubuntu:20.04
@@ -281,7 +282,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rve_arsclib:
     name: Patch Revanced Extended Arsclib
-    if: ${{ github.event.inputs.org == 'Revanced Extended Arsclib' || inputs.org == 'Revanced Extended Arsclib' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended Arsclib' || inputs.org == 'Revanced Extended Arsclib' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -301,7 +302,7 @@ jobs:
         uses: ./.github/actions/release
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
-    if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || inputs.org == 'Twitter Piko Stable' }}
+    if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || inputs.org == 'Twitter Piko Stable' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -321,7 +322,7 @@ jobs:
         uses: ./.github/actions/release
   patch_twitter_piko_beta:
     name: Patch Twitter Piko Beta
-    if: ${{ github.event.inputs.org == 'Twitter Piko Beta' || inputs.org == 'Twitter Piko Beta' }}
+    if: ${{ github.event.inputs.org == 'Twitter Piko Beta' || inputs.org == 'Twitter Piko Beta' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -341,7 +342,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rve67:
     name: Patch RVX Android 6,7
-    if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || inputs.org == 'Revanced Extended Android 6,7' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended Android 6,7' || inputs.org == 'Revanced Extended Android 6,7' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -361,7 +362,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rve5:
     name: Patch RVX Android 5
-    if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || inputs.org == 'Revanced Extended Android 5' }}
+    if: ${{ github.event.inputs.org == 'Revanced Extended Android 5' || inputs.org == 'Revanced Extended Android 5' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -381,7 +382,7 @@ jobs:
         uses: ./.github/actions/release
   patch_BiliRoamingM:
     name: Patch BiliRoamingM
-    if: ${{ github.event.inputs.org == 'BiliRoamingM' || inputs.org == 'BiliRoamingM' }}
+    if: ${{ github.event.inputs.org == 'BiliRoamingM' || inputs.org == 'BiliRoamingM' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -401,7 +402,7 @@ jobs:
         uses: ./.github/actions/release
   patch_scrazzz_Patches:
     name: Scrazzz Patches Revanced
-    if: ${{ github.event.inputs.org == 'Scrazzz Patches' || inputs.org == 'Scrazzz Patches' }}
+    if: ${{ github.event.inputs.org == 'Scrazzz Patches' || inputs.org == 'Scrazzz Patches' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -421,7 +422,7 @@ jobs:
         uses: ./.github/actions/release
   patch_Dropped_Patches:
     name: Dropped Patches Revanced - indrastorms
-    if: ${{ github.event.inputs.org == 'Dropped Patches - indrastorms' || inputs.org == 'Dropped Patches - indrastorms' }}
+    if: ${{ github.event.inputs.org == 'Dropped Patches - indrastorms' || inputs.org == 'Dropped Patches - indrastorms' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -441,7 +442,7 @@ jobs:
         uses: ./.github/actions/release
   patch_rv_experiments:
     name: Patch Revanced Experiments
-    if: ${{ github.event.inputs.org == 'Revanced Experiments' || inputs.org == 'Revanced Experiments' }}
+    if: ${{ github.event.inputs.org == 'Revanced Experiments' || inputs.org == 'Revanced Experiments' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

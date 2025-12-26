@@ -20,12 +20,20 @@ on:
           - 'Revanced Extended Arsclib'
           - 'Revanced LisoUseInAIKyrios'
           - 'RVE-anddea-stable'
+
           - 'Twitter Piko Stable'
+      release_tag:
+        description: 'Release Tag (Optional)'
+        required: false
+        type: string
 
   workflow_call:
     inputs:
       org:
         required: true
+        type: string
+      release_tag:
+        required: false
         type: string
 jobs:
   set_tag:
@@ -33,8 +41,36 @@ jobs:
     outputs:
       release_tag: ${{ steps.tag.outputs.release_tag }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
       - id: tag
-        run: echo "release_tag=v$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          INPUT_TAG="${{ inputs.release_tag || github.event.inputs.release_tag }}"
+          ORG="${{ inputs.org || github.event.inputs.org }}"
+          echo "Input Tag: $INPUT_TAG"
+          echo "Org: $ORG"
+
+          if [[ -n "$INPUT_TAG" ]]; then
+            echo "Using provided input tag: $INPUT_TAG"
+            echo "release_tag=$INPUT_TAG" >> $GITHUB_OUTPUT
+          elif [[ "$ORG" == "All" ]]; then
+            NEW_TAG="v$(date +'%Y.%m.%d-%H%M')"
+            echo "Org is All, generating new tag: $NEW_TAG"
+            echo "release_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+          else
+            # Try to get latest tag
+            LATEST_TAG=$(gh release list --limit 1 --json tagName --jq '.[0].tagName' || echo "")
+            if [[ -n "$LATEST_TAG" ]]; then
+              echo "Found latest tag: $LATEST_TAG"
+              echo "release_tag=$LATEST_TAG" >> $GITHUB_OUTPUT
+            else
+              NEW_TAG="v$(date +'%Y.%m.%d-%H%M')"
+              echo "No existing releases, generating new tag: $NEW_TAG"
+              echo "release_tag=$NEW_TAG" >> $GITHUB_OUTPUT
+            fi
+          fi
 
   patch_rv:
     name: Patch Revanced Stable
@@ -78,6 +114,8 @@ jobs:
           path: ./release
       - name: Releasing APK files
         uses: ./.github/actions/release
+        with:
+          tag_name: ${{ needs.set_tag.outputs.release_tag }}
 
   patch_rv_liso:
     name: Patch Revanced LisoUseInAIKyrios
@@ -120,6 +158,8 @@ jobs:
           path: ./release
       - name: Releasing APK files
         uses: ./.github/actions/release
+        with:
+          tag_name: ${{ needs.set_tag.outputs.release_tag }}
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'All' }}

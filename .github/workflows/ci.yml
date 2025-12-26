@@ -73,9 +73,18 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           retry_count: ${{ github.event.inputs.retry_count }}
           max_retries: 3
+       - name: Set Release Tag
+         id: tag
+         run: echo "release_tag=v$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
     outputs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
+      check_rv_liso: ${{ steps.check-rv-liso.outputs.new_patch }}
+      check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
+      check_rve: ${{ steps.check-rve.outputs.new_patch }}
+      check_rve_arsclib: ${{ steps.check-rve-arsclib.outputs.new_patch }}
+      check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_Revanced_Experiments: ${{ steps.check-Revanced-Experiments.outputs.new_patch }}
+      release_tag: ${{ steps.tag.outputs.release_tag }}
 
   Patch-Revanced:
     name: Patch Revanced Stable
@@ -84,6 +93,7 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced"
+      release_tag: ${{ needs.check.outputs.release_tag }}
 
   Patch-Revanced-Liso:
     name: Patch Revanced LisoUseInAIKyrios
@@ -92,6 +102,7 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced LisoUseInAIKyrios"
+      release_tag: ${{ needs.check.outputs.release_tag }}
   Patch-RVE-anddea-stable:
     name: Patch RVX Anddea Stable
     needs: check
@@ -99,6 +110,34 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "RVE-anddea-stable"
+      release_tag: ${{ needs.check.outputs.release_tag }}
+
+  Patch-RVE:
+    name: Patch Revanced Extended Stable
+    needs: check
+    if: ${{ needs.check.outputs.check_rve == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Extended"
+      release_tag: ${{ needs.check.outputs.release_tag }}
+
+  Patch-RVE-Arsclib:
+    name: Patch Revanced Extended Arsclib
+    needs: check
+    if: ${{ needs.check.outputs.check_rve_arsclib == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Revanced Extended Arsclib"
+      release_tag: ${{ needs.check.outputs.release_tag }}
+
+  Patch-Twitter-Piko-Stable:
+    name: Patch Twitter Piko Stable
+    needs: check
+    if: ${{ needs.check.outputs.check_twitter_piko_stable == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Twitter Piko Stable"
+      release_tag: ${{ needs.check.outputs.release_tag }}
 
 
   Patch-Revanced-Experiments:
@@ -108,3 +147,4 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Revanced Experiments"
+      release_tag: ${{ needs.check.outputs.release_tag }}

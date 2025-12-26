@@ -25,6 +25,10 @@ red_log() {
     echo -e "\e[31m$1\e[0m"
 }
 
+log_build_info() {
+    echo "$1" >> "./release/build_info.md"
+}
+
 #################################################
 
 # Download Github assets requirement:
@@ -231,6 +235,25 @@ get_apk() {
 		fi
 	fi
 	export version="$version"
+    
+    # Log tools versions if not already logged
+    if [ ! -f "tools_version_logged" ]; then
+        touch "tools_version_logged"
+        
+        CLI_JAR=$(ls revanced-cli-*.jar | head -n 1)
+        if [[ $CLI_JAR =~ revanced-cli-(.+).jar ]]; then
+             CLI_VER="${BASH_REMATCH[1]}"
+             log_build_info "**ReVanced CLI Version:** v$CLI_VER"
+        fi
+        
+        PATCHES_JAR=$(ls *patch*.jar | head -n 1)
+        # Try to extract version from filename if possible, otherwise generic
+        log_build_info "**ReVanced Patches:** $(basename $PATCHES_JAR)"
+        
+        log_build_info ""
+        log_build_info "---"
+        log_build_info ""
+    fi
     if [[ -n "$version" ]]; then
         version=$(echo "$version" | tr -d ' ' | sed 's/\./-/g')
         green_log "[+] Downloading $3 version: $version $5 $6 $7"
@@ -255,6 +278,13 @@ get_apk() {
         elif [[ $5 == "Bundle_extract" ]]; then
             unzip "./download/$base_apk" -d "./download/$(basename "$base_apk" .apkm)" > /dev/null 2>&1
         fi
+        
+        # Log version info
+        log_build_info "### $3"
+        log_build_info "Model: $6"
+        log_build_info "Version: $version"
+        log_build_info ""
+        
         return 0
     fi
 	local attempt=0
@@ -298,6 +328,12 @@ get_apk() {
 	elif [[ $5 == "Bundle_extract" ]]; then
 		unzip "./download/$base_apk" -d "./download/$(basename "$base_apk" .apkm)" > /dev/null 2>&1
 	fi
+
+    # Log version info
+    log_build_info "### $3"
+    log_build_info "Model: $6"
+    log_build_info "Version: $version"
+    log_build_info ""
 }
 get_apkpure() {
 	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
@@ -311,6 +347,25 @@ get_apkpure() {
 		fi
 	fi
 	export version="$version"
+    
+    # Log tools versions if not already logged
+    if [ ! -f "tools_version_logged" ]; then
+        touch "tools_version_logged"
+        
+        CLI_JAR=$(ls revanced-cli-*.jar | head -n 1)
+        if [[ $CLI_JAR =~ revanced-cli-(.+).jar ]]; then
+             CLI_VER="${BASH_REMATCH[1]}"
+             log_build_info "**ReVanced CLI Version:** v$CLI_VER"
+        fi
+        
+        PATCHES_JAR=$(ls *patch*.jar | head -n 1)
+        # Try to extract version from filename if possible, otherwise generic
+        log_build_info "**ReVanced Patches:** $(basename $PATCHES_JAR)"
+        
+        log_build_info ""
+        log_build_info "---"
+        log_build_info ""
+    fi
 	if [[ $4 == "Bundle" ]] || [[ $4 == "Bundle_extract" ]]; then
 		local base_apk="$2.xapk"
 	else
@@ -337,6 +392,11 @@ get_apkpure() {
 	elif [[ $4 == "Bundle_extract" ]]; then
 		unzip "./download/$base_apk" -d "./download/$(basename "$base_apk" .xapk)" > /dev/null 2>&1
 	fi
+    
+    # Log version info
+    log_build_info "### $1"
+    log_build_info "Version: $version"
+    log_build_info ""
 }
 
 #################################################

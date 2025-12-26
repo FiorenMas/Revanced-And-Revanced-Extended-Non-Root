@@ -3,6 +3,9 @@ inputs:
   tag_name:
     description: "Tag name for the release"
     required: true
+  release_notes:
+    description: "Path to release notes file"
+    required: false
 runs:
   using: "composite"
   steps:
@@ -22,6 +25,11 @@ runs:
         [Twitter Piko](https://github.com/crimera/piko/releases)
         [Instafel](https://github.com/mamiiblt/instafel/releases)
         "> ${{ github.workspace }}-CHANGELOG.txt
+        
+        if [[ -n "${{ inputs.release_notes }}" ]] && [[ -f "${{ inputs.release_notes }}" ]]; then
+            echo "" >> ${{ github.workspace }}-CHANGELOG.txt
+            cat "${{ inputs.release_notes }}" >> ${{ github.workspace }}-CHANGELOG.txt
+        fi
     - name: Release
       uses: ncipollo/release-action@v1.14.0
       with:

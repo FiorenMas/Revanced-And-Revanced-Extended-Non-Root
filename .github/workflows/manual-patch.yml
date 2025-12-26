@@ -99,6 +99,18 @@ jobs:
           path: ./release/*.apk
           retention-days: 1
 
+      - name: Rename build info
+        if: always()
+        run: mv ./release/build_info.md ./release/build_info_${{ matrix.run }}.md || true
+
+      - name: Upload build info
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-info-rv-${{ matrix.run }}
+          path: ./release/build_info_${{ matrix.run }}.md
+          retention-days: 1
+
   release_rv:
     name: Release Revanced Stable
     needs: [patch_rv, set_tag]
@@ -112,10 +124,23 @@ jobs:
           pattern: revanced-stable-*
           merge-multiple: true
           path: ./release
+  
+      - name: Download build info
+        uses: actions/download-artifact@v4
+        with:
+          pattern: build-info-rv-*
+          merge-multiple: true
+          path: ./release-info
+
+      - name: Create Release Notes
+        run: |
+          cat ./release-info/*.md > release_notes.md || true
+
       - name: Releasing APK files
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
+          release_notes: release_notes.md
 
   patch_rv_liso:
     name: Patch Revanced LisoUseInAIKyrios
@@ -142,6 +167,30 @@ jobs:
           name: revanced-liso-${{ matrix.run }}
           path: ./release/*.apk
           retention-days: 1
+  
+      - name: Rename build info
+        if: always()
+        run: mv ./release/build_info.md ./release/build_info_${{ matrix.run }}.md || true
+
+      - name: Upload build info
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-info-liso-${{ matrix.run }}
+          path: ./release/build_info_${{ matrix.run }}.md
+          retention-days: 1
+  
+      - name: Rename build info
+        if: always()
+        run: mv ./release/build_info.md ./release/build_info_${{ matrix.run }}.md || true
+
+      - name: Upload build info
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-info-liso-${{ matrix.run }}
+          path: ./release/build_info_${{ matrix.run }}.md
+          retention-days: 1
 
   release_rv_liso:
     name: Release Revanced LisoUseInAIKyrios
@@ -156,10 +205,23 @@ jobs:
           pattern: revanced-liso-*
           merge-multiple: true
           path: ./release
+  
+      - name: Download build info
+        uses: actions/download-artifact@v4
+        with:
+          pattern: build-info-liso-*
+          merge-multiple: true
+          path: ./release-info
+
+      - name: Create Release Notes
+        run: |
+          cat ./release-info/*.md > release_notes.md || true
+
       - name: Releasing APK files
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
+          release_notes: release_notes.md
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
@@ -189,6 +251,7 @@ jobs:
           name: Cache_anddea_stable
           path: |
             ./release/*.apk
+            ./release/build_info.md
   release_rve_anddea_stable:
     name: Release RVX Anddea Stable
     needs: [patch_rve_anddea_stable, set_tag]
@@ -205,6 +268,7 @@ jobs:
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
+          release_notes: ./release/build_info.md
 
   patch_rve:
     name: Patch Revanced Extended Stable
@@ -235,6 +299,7 @@ jobs:
           name: Cache_rve
           path: |
             ./release/*.apk
+            ./release/build_info.md
   release_rve:
     name: Release Revanced Extended Stable
     needs: [patch_rve, set_tag]
@@ -251,6 +316,7 @@ jobs:
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
+          release_notes: ./release/build_info.md
 
   patch_rve_arsclib:
     name: Patch Revanced Extended Arsclib
@@ -275,6 +341,7 @@ jobs:
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
+          release_notes: ./release/build_info.md
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
     needs: set_tag
@@ -298,5 +365,6 @@ jobs:
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
+          release_notes: ./release/build_info.md
 
 

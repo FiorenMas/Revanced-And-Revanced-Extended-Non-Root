@@ -10,14 +10,17 @@ runs:
         echo "RELEASE_TAG=$TAG_NAME" >> $GITHUB_ENV
         
         echo "
-        **This repository is not like any other repository. It does not create new releases; it only releases new files.**
-        **Forget about scrolling whole release page find files. Just read [Readme.md](../main/README.md#microg-revanced) file and select apps you want download.**
+        **Automated Release Build**
+        **Built using the latest available patches and CLI tools as of the build time.**
+        **Check [Readme.md](../main/README.md) for details and installation instructions.**
         **Change log** :point_down:
         [Revanced](https://github.com/revanced/revanced-patches/releases)
         [Revanced Extended](https://github.com/inotia00/revanced-patches/releases)
-        [Revanced Extended anddea](https://github.com/anddea/revanced-patches/releases)
-        [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases)
-        [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5/releases)
+        [Revanced Extended Anddea](https://github.com/anddea/revanced-patches/releases)
+        [Revanced Extended Arsclib](https://github.com/inotia00/revanced-patches-arsclib/releases)
+        [Revanced LisoUseInAIKyrios](https://github.com/LisoUseInAIKyrios/revanced-patches/releases)
+        [Twitter Piko](https://github.com/crimera/piko/releases)
+        [Instafel](https://github.com/mamiiblt/instafel/releases)
         "> ${{ github.workspace }}-CHANGELOG.txt
     - name: Release
       uses: ncipollo/release-action@v1.14.0
@@ -28,3 +31,4 @@ runs:
         tag: ${{ env.RELEASE_TAG }}
         bodyFile: ${{ github.workspace }}-CHANGELOG.txt
         makeLatest: true
+        allowUpdates: true

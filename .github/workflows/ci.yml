@@ -94,6 +94,7 @@ jobs:
     with:
       org: "Revanced"
       release_tag: ${{ needs.check.outputs.release_tag }}
+      skip_release: true
 
   Patch-Revanced-Liso:
     name: Patch Revanced LisoUseInAIKyrios
@@ -103,6 +104,7 @@ jobs:
     with:
       org: "Revanced LisoUseInAIKyrios"
       release_tag: ${{ needs.check.outputs.release_tag }}
+      skip_release: true
   Patch-RVE-anddea-stable:
     name: Patch RVX Anddea Stable
     needs: check
@@ -111,6 +113,7 @@ jobs:
     with:
       org: "RVE-anddea-stable"
       release_tag: ${{ needs.check.outputs.release_tag }}
+      skip_release: true
 
   Patch-RVE:
     name: Patch Revanced Extended Stable
@@ -120,6 +123,7 @@ jobs:
     with:
       org: "Revanced Extended"
       release_tag: ${{ needs.check.outputs.release_tag }}
+      skip_release: true
 
   Patch-RVE-Arsclib:
     name: Patch Revanced Extended Arsclib
@@ -129,6 +133,7 @@ jobs:
     with:
       org: "Revanced Extended Arsclib"
       release_tag: ${{ needs.check.outputs.release_tag }}
+      skip_release: true
 
   Patch-Twitter-Piko-Stable:
     name: Patch Twitter Piko Stable
@@ -138,6 +143,97 @@ jobs:
     with:
       org: "Twitter Piko Stable"
       release_tag: ${{ needs.check.outputs.release_tag }}
+      skip_release: true
+
+  Release_All:
+    name: Release All Patched Apps
+    needs: [check, Patch-Revanced, Patch-Revanced-Liso, Patch-RVE-anddea-stable, Patch-RVE, Patch-RVE-Arsclib, Patch-Twitter-Piko-Stable]
+    if: |
+      always() && 
+      (needs.check.outputs.check_rv == 1 || 
+       needs.check.outputs.check_rv_liso == 1 || 
+       needs.check.outputs.check_rve_anddea_stable == 1 || 
+       needs.check.outputs.check_rve == 1 || 
+       needs.check.outputs.check_rve_arsclib == 1 || 
+       needs.check.outputs.check_twitter_piko_stable == 1)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        
+      - name: Download Release Note Fragments
+        uses: actions/download-artifact@v4
+        with:
+          pattern: notes-*
+          path: release_notes_fragments
+          merge-multiple: false
+
+      - name: Combine Release Notes
+        run: |
+          echo "# Automated Release Build" > release_notes.md
+          echo "Built using the latest available patches and CLI tools." >> release_notes.md
+          echo -e "\n" >> release_notes.md
+          
+          for file in release_notes_fragments/*/release_notes.md; do
+            if [ -f "$file" ]; then
+              cat "$file" >> release_notes.md
+              echo -e "\n\n" >> release_notes.md
+            fi
+          done
+          
+          cat release_notes.md
+
+      - name: Download Artifacts (Explicit)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "revanced-stable-*"
+          path: ./release
+          merge-multiple: true
+
+      - name: Download Artifacts (Liso)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "revanced-liso-*"
+          path: ./release
+          merge-multiple: true
+
+      - name: Download Artifacts (Anddea)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_anddea_stable
+          path: ./release
+
+      - name: Download Artifacts (RVE)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_rve
+          path: ./release
+
+      - name: Download Artifacts (Arsclib)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_rve_arsclib
+          path: ./release
+
+      - name: Download Artifacts (Piko)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_twitter_piko
+          path: ./release
+
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+        with:
+          tag_name: ${{ needs.check.outputs.release_tag }}
+          release_notes: release_notes.md
+          prerelease: false
+
 
 
 

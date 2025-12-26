@@ -20,12 +20,16 @@ on:
           - 'Revanced Extended Arsclib'
           - 'Revanced LisoUseInAIKyrios'
           - 'RVE-anddea-stable'
-
           - 'Twitter Piko Stable'
       release_tag:
         description: 'Release Tag (Optional)'
         required: false
         type: string
+      skip_release:
+        description: 'Skip Release (for CI)'
+        required: false
+        type: boolean
+        default: false
 
   workflow_call:
     inputs:
@@ -35,6 +39,10 @@ on:
       release_tag:
         required: false
         type: string
+      skip_release:
+        required: false
+        type: boolean
+        default: false
 jobs:
   set_tag:
     runs-on: ubuntu-latest
@@ -151,11 +159,20 @@ jobs:
 
       - name: Create Release Notes
         run: |
-          cat ./release-info/apps/*.md > release_notes.md || true
-          echo -e "\n\n" >> release_notes.md
+          echo "## Revanced (Official revanced patches)" > release_notes.md
           cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
+          echo -e "\n### Apps:" >> release_notes.md
+          cat ./release-info/apps/*.md >> release_notes.md || true
+          
+      - name: Upload Release Notes Fragment
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-Revanced
+          path: release_notes.md
+          retention-days: 1
 
       - name: Releasing APK files
+        if: inputs.skip_release == false
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -242,11 +259,20 @@ jobs:
 
       - name: Create Release Notes
         run: |
-          cat ./release-info/apps/*.md > release_notes.md || true
-          echo -e "\n\n" >> release_notes.md
+          echo "## Revanced LisoUseInAIKyrios" > release_notes.md
           cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
+          echo -e "\n### Apps:" >> release_notes.md
+          cat ./release-info/apps/*.md >> release_notes.md || true
+
+      - name: Upload Release Notes Fragment
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-Revanced-Liso
+          path: release_notes.md
+          retention-days: 1
 
       - name: Releasing APK files
+        if: inputs.skip_release == false
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -297,8 +323,20 @@ jobs:
           path: ./release
       - name: Create Release Notes
         run: |
-          cat ./release/app_versions.md ./release/tools_versions.md > release_notes.md || true
+          echo "## Revanced Extended Anddea" > release_notes.md
+          cat ./release/tools_versions.md >> release_notes.md || true
+          echo -e "\n### Apps:" >> release_notes.md
+          cat ./release/app_versions.md >> release_notes.md || true
+
+      - name: Upload Release Notes Fragment
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-RVE-Anddea
+          path: release_notes.md
+          retention-days: 1
+
       - name: Releasing APK files
+        if: inputs.skip_release == false
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -350,8 +388,20 @@ jobs:
           path: ./release
       - name: Create Release Notes
         run: |
-          cat ./release/app_versions.md ./release/tools_versions.md > release_notes.md || true
+          echo "## Revanced Extended" > release_notes.md
+          cat ./release/tools_versions.md >> release_notes.md || true
+          echo -e "\n### Apps:" >> release_notes.md
+          cat ./release/app_versions.md >> release_notes.md || true
+
+      - name: Upload Release Notes Fragment
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-Revanced-Extended
+          path: release_notes.md
+          retention-days: 1
+
       - name: Releasing APK files
+        if: inputs.skip_release == false
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -375,12 +425,30 @@ jobs:
         id: patch-rve-arsclib
         if: steps.check-gh-rve-arsclib.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Arsclib.sh
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_rve_arsclib
+          path: ./release/*.apk
+          retention-days: 1
+
       - name: Release Note
         run: |
-             cat ./release/app_versions.md ./release/tools_versions.md > release_notes.md || true
+             echo "## Revanced Extended Arsclib" > release_notes.md
+             cat ./release/tools_versions.md >> release_notes.md || true
+             echo -e "\n### Apps:" >> release_notes.md
+             cat ./release/app_versions.md >> release_notes.md || true
+      
+      - name: Upload Release Notes Fragment
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-RVE-Arsclib
+          path: release_notes.md
+          retention-days: 1
+
       - name: Releasing APK files
         id: release-rve-arsclib
-        if: steps.check-gh-rve-arsclib.outputs.internet_error == '0'
+        if: steps.check-gh-rve-arsclib.outputs.internet_error == '0' && inputs.skip_release == false
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -403,12 +471,30 @@ jobs:
         id: patch-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
         run: bash src/build/Piko.sh
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cache_twitter_piko
+          path: ./release/*.apk
+          retention-days: 1
+
       - name: Release Note
         run: |
-             cat ./release/app_versions.md ./release/tools_versions.md > release_notes.md || true
+             echo "## Twitter Piko Stable" > release_notes.md
+             cat ./release/tools_versions.md >> release_notes.md || true
+             echo -e "\n### Apps:" >> release_notes.md
+             cat ./release/app_versions.md >> release_notes.md || true
+
+      - name: Upload Release Notes Fragment
+        uses: actions/upload-artifact@v4
+        with:
+          name: notes-Twitter-Piko
+          path: release_notes.md
+          retention-days: 1
+
       - name: Releasing APK files
         id: release-piko-stable
-        if: steps.check-gh-piko-stable.outputs.internet_error == '0'
+        if: steps.check-gh-piko-stable.outputs.internet_error == '0' && inputs.skip_release == false
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}

@@ -1,8 +1,8 @@
 <h4 align="center">
-<b>All patched apps retain their original icon and branding. No "ReVanced" or "RVX" renaming or custom icons.</b>
-</h4>
+<b>All patched apps retain their original icon and branding. No "ReVanced" or "RVX" renaming or custom icons. 
 
-All the code is open-source, and the APK files used for patching are downloaded from trusted sites.
+All the code is open-source, and the APK files used for patching are downloaded from trusted sites.</b>
+</h4>
 
 > [!IMPORTANT] 
 > **Credits to [FiorenMas](https://github.com/FiorenMas) for the original work and workflows.**

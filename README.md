@@ -58,6 +58,12 @@ Download
 [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk)
 
 #### <img src="https://cdn.simpleicons.org/instagram" height="22" align="absmiddle"> [Instagram](https://play.google.com/store/apps/details?id=com.instagram.android)
+**[Instafel:](https://github.com/mamiiblt/instafel)**
+
+[Arm64-v8a](../../releases/download/all/instagram-instafel.apk) | [Cloned-Arm64-v8a](../../releases/download/all/instagram-clone-instafel.apk)
+
+**[Revanced:](https://github.com/revanced/revanced-patches)**
+
 [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced.apk)
 
 #### <img src="https://cdn.simpleicons.org/threads" height="22" align="absmiddle"> [Threads](https://play.google.com/store/apps/details?id=com.instagram.barcelona)
@@ -65,13 +71,16 @@ Download
 
 #### <img src="https://cdn.simpleicons.org/reddit" height="22" align="absmiddle"> [Reddit](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
 
-**Revanced Extended:**
-[All Architectures](../../releases/download/all/reddit-revanced-extended.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended.apk)
+**[Revanced Extended (Arsclib):](https://github.com/inotia00/revanced-patches-arsclib)**
 
-**Revanced Extended (Arsclib):**
 [All Architectures](../../releases/download/all/reddit-revanced-extended-arsclib.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended-arsclib.apk)
 
-**Revanced:**
+**[Revanced Extended:](https://github.com/inotia00/revanced-patches/)**
+
+[All Architectures](../../releases/download/all/reddit-revanced-extended.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended.apk)
+
+**[Revanced:](https://github.com/revanced/revanced-patches)**
+
 [All Architectures](../../releases/download/all/reddit-revanced.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced.apk)
 
 #### <img src="https://cdn.simpleicons.org/x" height="22" align="absmiddle"> [Twitter (Piko Stable)](https://github.com/crimera/piko)
@@ -114,10 +123,12 @@ Download
 
 #### <img src="https://cdn.simpleicons.org/spotify" height="22" align="absmiddle"> [Spotjfy](https://www.google.com/search?q=Spotjfy)
 
-**Anddea:**
+**[Anddea:](https://github.com/anddea/revanced-patches)**
+
 [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-anddea.apk)
 
-**Revanced:**
+**[Revanced:](https://github.com/revanced/revanced-patches)**
+
 [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)
 
 ---

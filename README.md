@@ -16,7 +16,7 @@ All the code is open-source, and the APK files used for patching are downloaded 
 > [!NOTE]
 > If you want to use the YouTube, YouTube Music or Google Photos app, you need to download and install MicroG
 
-[![MicroG ReVanced](https://img.shields.io/github/v/release/WSTxda/MicroG-RE?label=MicroG&style=for-the-badge)](https://github.com/WSTxda/MicroG-RE/releases)
+[![MicroG ReVanced](https://img.shields.io/github/v/release/WSTxda/MicroG-RE?label=MicroG&style=for-the-badge)](https://github.com/WSTxda/MicroG-RE/releases/latest/download/microg-release.apk)
 
 <h1 align="center">
 Download

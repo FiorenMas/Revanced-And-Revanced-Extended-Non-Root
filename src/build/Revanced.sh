@@ -20,14 +20,8 @@ revanced_dl(){
 	get_patches_key "youtube-revanced" 
 	split_editor "youtube" "youtube-armeabi-v7a" "exclude" "split_config.arm64_v8a split_config.x86 split_config.x86_64"
 	patch "youtube-armeabi-v7a" "revanced"
-	# Patch Youtube x86
-	get_patches_key "youtube-revanced" 
-	split_editor "youtube" "youtube-x86" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86_64"
-	patch "youtube-x86" "revanced"
-	# Patch Youtube x86_64
-	get_patches_key "youtube-revanced" 
-	split_editor "youtube" "youtube-x86_64" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86"
-	patch "youtube-x86_64" "revanced"
+	# Patch Youtube x86 - REMOVED
+	# Patch Youtube x86_64 - REMOVED
 }
 2() {
 	revanced_dl
@@ -54,16 +48,8 @@ revanced_dl(){
  	version="7.32.0.765953717"
 	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
 	patch "gg-photos-armeabi-v7a" "revanced"
-	# x86
-	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
-	get_apk "com.google.android.apps.photos" "gg-photos-x86" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
-	patch "gg-photos-x86" "revanced"
-	# x86_64
-	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
-	get_apk "com.google.android.apps.photos" "gg-photos-x86_64" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
-	patch "gg-photos-x86_64" "revanced"
+	# x86 - REMOVED
+	# x86_64 - REMOVED
 }
 4() {
 	revanced_dl
@@ -108,18 +94,6 @@ revanced_dl(){
 	req "$url" "lightroom.apk"
 	patch "lightroom" "revanced"
 }
-8() {
-	revanced_dl
-	get_apk "com.google.android.youtube" "youtube-lite" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
-	# Patch YouTube Lite Arm64-v8a:
-	get_patches_key "youtube-revanced"
-	split_editor "youtube-lite" "youtube-lite-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xxxhdpi"
-	patch "youtube-lite-arm64-v8a" "revanced"
-	# Patch YouTube Lite Armeabi-v7a:
-	get_patches_key "youtube-revanced"
-	split_editor "youtube-lite" "youtube-lite-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xxxhdpi"
-	patch "youtube-lite-armeabi-v7a" "revanced"
-}
 9() {
 	revanced_dl
 	# Patch YouTube Music:
@@ -131,14 +105,8 @@ revanced_dl(){
 	get_patches_key "youtube-music-revanced"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-armeabi-v7a" "revanced"
-	# x86_64
-	get_patches_key "youtube-music-revanced"
-	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
-	patch "youtube-music-x86_64" "revanced"
-	# x86
-	get_patches_key "youtube-music-revanced"
-	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
-	patch "youtube-music-x86" "revanced"
+	# x86_64 - REMOVED
+	# x86 - REMOVED
 }
 10() {
 	revanced_dl
@@ -238,9 +206,7 @@ case "$1" in
     7)
         7
         ;;
-    8)
-        8
-        ;;
+
     9)
         9
         ;;

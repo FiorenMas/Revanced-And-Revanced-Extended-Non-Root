@@ -11,11 +11,11 @@ on:
       org:
         description: 'Which "Revanced" do you want to patch?'
         required: true
-        default: 'Revanced'
+        default: 'All'
         type: choice
         options:
-          - 'Revanced'
           - 'All'
+          - 'Revanced'
           - 'Revanced Extended'
           - 'Revanced Extended Arsclib'
           - 'Revanced LisoUseInAIKyrios'

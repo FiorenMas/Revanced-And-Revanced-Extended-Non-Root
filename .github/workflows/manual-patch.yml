@@ -501,4 +501,86 @@ jobs:
           release_notes: release_notes.md
           prerelease: ${{ github.ref_name == 'dev' }}
 
+  release_all_manual:
+    name: Release All (Manual)
+    if: ${{ (inputs.org == 'All' || github.event.inputs.org == 'All') && inputs.skip_release == false }}
+    needs: [set_tag, release_rv, release_rv_liso, release_rve_anddea_stable, release_rve, patch_rve_arsclib, patch_twitter_piko_stable]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        
+      - name: Download Release Note Fragments
+        uses: actions/download-artifact@v4
+        with:
+          pattern: notes-*
+          path: release_notes_fragments
+          merge-multiple: false
+
+      - name: Combine Release Notes
+        run: |
+          echo "# Manual Release Build" > release_notes.md
+          echo "Built using the latest available patches and CLI tools." >> release_notes.md
+          echo -e "\n" >> release_notes.md
+          
+          for file in release_notes_fragments/*/release_notes.md; do
+            if [ -f "$file" ]; then
+              cat "$file" >> release_notes.md
+              echo -e "\n\n" >> release_notes.md
+            fi
+          done
+          
+          cat release_notes.md
+
+      - name: Download Artifacts (Explicit)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "revanced-stable-*"
+          path: ./release
+          merge-multiple: true
+
+      - name: Download Artifacts (Liso)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "revanced-liso-*"
+          path: ./release
+          merge-multiple: true
+
+      - name: Download Artifacts (Anddea)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_anddea_stable
+          path: ./release
+
+      - name: Download Artifacts (RVE)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_rve
+          path: ./release
+
+      - name: Download Artifacts (Arsclib)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_rve_arsclib
+          path: ./release
+
+      - name: Download Artifacts (Piko)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: Cache_twitter_piko
+          path: ./release
+
+      - name: Releasing APK files
+        uses: ./.github/actions/release
+        with:
+          tag_name: ${{ needs.set_tag.outputs.release_tag }}
+          release_notes: release_notes.md
+          prerelease: ${{ github.ref_name == 'dev' }}
+
 

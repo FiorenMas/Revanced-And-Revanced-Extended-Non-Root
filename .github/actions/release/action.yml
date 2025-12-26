@@ -5,6 +5,10 @@ runs:
     - name: Generate release info
       shell: bash
       run: |
+        # Generate dynamic tag based on date and time (e.g. v2024.01.01-1200)
+        TAG_NAME="v$(date +'%Y.%m.%d-%H%M')"
+        echo "RELEASE_TAG=$TAG_NAME" >> $GITHUB_ENV
+        
         echo "
         **This repository is not like any other repository. It does not create new releases; it only releases new files.**
         **Forget about scrolling whole release page find files. Just read [Readme.md](../main/README.md#microg-revanced) file and select apps you want download.**
@@ -20,7 +24,7 @@ runs:
       with:
         artifacts: |
           ./release/*.apk
-        name: Revanced & Revanced Extended
-        tag: all
+        name: "Revanced Build ${{ env.RELEASE_TAG }}"
+        tag: ${{ env.RELEASE_TAG }}
         bodyFile: ${{ github.workspace }}-CHANGELOG.txt
-        allowUpdates: true
+        makeLatest: true

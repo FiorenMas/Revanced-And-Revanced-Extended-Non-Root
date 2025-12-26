@@ -28,6 +28,14 @@ on:
         required: true
         type: string
 jobs:
+  set_tag:
+    runs-on: ubuntu-latest
+    outputs:
+      release_tag: ${{ steps.tag.outputs.release_tag }}
+    steps:
+      - id: tag
+        run: echo "release_tag=v$(date +'%Y.%m.%d-%H%M')" >> $GITHUB_OUTPUT
+
   patch_rv:
     name: Patch Revanced Stable
     if: ${{ github.event.inputs.org == 'Revanced' || inputs.org == 'Revanced' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
@@ -57,7 +65,7 @@ jobs:
 
   release_rv:
     name: Release Revanced Stable
-    needs: patch_rv
+    needs: [patch_rv, set_tag]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -99,7 +107,7 @@ jobs:
 
   release_rv_liso:
     name: Release Revanced LisoUseInAIKyrios
-    needs: patch_rv_liso
+    needs: [patch_rv_liso, set_tag]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -143,7 +151,7 @@ jobs:
             ./release/*.apk
   release_rve_anddea_stable:
     name: Release RVX Anddea Stable
-    needs: patch_rve_anddea_stable
+    needs: [patch_rve_anddea_stable, set_tag]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -155,6 +163,8 @@ jobs:
           path: ./release
       - name: Releasing APK files
         uses: ./.github/actions/release
+        with:
+          tag_name: ${{ needs.set_tag.outputs.release_tag }}
 
   patch_rve:
     name: Patch Revanced Extended Stable
@@ -187,7 +197,7 @@ jobs:
             ./release/*.apk
   release_rve:
     name: Release Revanced Extended Stable
-    needs: patch_rve
+    needs: [patch_rve, set_tag]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -199,9 +209,12 @@ jobs:
           path: ./release
       - name: Releasing APK files
         uses: ./.github/actions/release
+        with:
+          tag_name: ${{ needs.set_tag.outputs.release_tag }}
 
   patch_rve_arsclib:
     name: Patch Revanced Extended Arsclib
+    needs: set_tag
     if: ${{ github.event.inputs.org == 'Revanced Extended Arsclib' || inputs.org == 'Revanced Extended Arsclib' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
@@ -220,8 +233,11 @@ jobs:
         id: release-rve-arsclib
         if: steps.check-gh-rve-arsclib.outputs.internet_error == '0'
         uses: ./.github/actions/release
+        with:
+          tag_name: ${{ needs.set_tag.outputs.release_tag }}
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
+    needs: set_tag
     if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || inputs.org == 'Twitter Piko Stable' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
     runs-on: ubuntu-latest
     steps:
@@ -240,5 +256,7 @@ jobs:
         id: release-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
         uses: ./.github/actions/release
+        with:
+          tag_name: ${{ needs.set_tag.outputs.release_tag }}
 
 

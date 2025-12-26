@@ -1,14 +1,14 @@
 name: Releasing APK files
+inputs:
+  tag_name:
+    description: "Tag name for the release"
+    required: true
 runs:
   using: "composite"
   steps:
     - name: Generate release info
       shell: bash
       run: |
-        # Generate dynamic tag based on date and time (e.g. v2024.01.01-1200)
-        TAG_NAME="v$(date +'%Y.%m.%d-%H%M')"
-        echo "RELEASE_TAG=$TAG_NAME" >> $GITHUB_ENV
-        
         echo "
         **Automated Release Build**
         **Built using the latest available patches and CLI tools as of the build time.**
@@ -27,8 +27,8 @@ runs:
       with:
         artifacts: |
           ./release/*.apk
-        name: "Revanced Build ${{ env.RELEASE_TAG }}"
-        tag: ${{ env.RELEASE_TAG }}
+        name: "Revanced Build ${{ inputs.tag_name }}"
+        tag: ${{ inputs.tag_name }}
         bodyFile: ${{ github.workspace }}-CHANGELOG.txt
         makeLatest: true
         allowUpdates: true

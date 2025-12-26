@@ -127,7 +127,7 @@ Download
 [All Architectures](../../releases/download/all/lightroom-revanced.apk)
 
 
-#### <img src="https://cdn.simpleicons.org/spotify" height="22" align="absmiddle"> [Spotjfy](https://www.google.com/search?q=Spotjfy)
+#### <img src="https://cdn.simpleicons.org/spotify" height="22" align="absmiddle"> [Spotify](https://play.google.com/store/apps/details?id=com.spotify.music)
 
 #### [Anddea:](https://github.com/anddea/revanced-patches)
 

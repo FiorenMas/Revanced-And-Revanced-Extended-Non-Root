@@ -5,6 +5,7 @@ All the code is open-source, and the APK files used for patching are downloaded 
 </h4>
 
 <p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Adish08&repo=RevancedOG&label=Views&color=0e75b6&style=flat" alt="Views" />
   <a href="https://github.com/Adish08/RevancedOG/actions/workflows/manual-patch.yml"><img src="https://github.com/Adish08/RevancedOG/actions/workflows/manual-patch.yml/badge.svg" alt="Manual Patch"></a>
   <a href="https://github.com/Adish08/RevancedOG/actions/workflows/ci.yml"><img src="https://github.com/Adish08/RevancedOG/actions/workflows/ci.yml/badge.svg" alt="Automatic Patch Release"></a>
 </p>

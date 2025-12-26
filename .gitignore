@@ -1,0 +1,18 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Build artifacts & Downloads
+download/
+release/
+*.apk
+*.zip
+*.jar
+!src/patches/**/*.jar
+!revanced-cli*.jar
+
+# Logs
+*.log
+
+# Temp
+tmp/

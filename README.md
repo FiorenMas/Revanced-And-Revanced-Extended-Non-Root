@@ -4,7 +4,10 @@
 All the code is open-source, and the APK files used for patching are downloaded from trusted sites.</b>
 </h4>
 
-[![Manual Patch](https://github.com/Adish08/RevancedOG/actions/workflows/manual-patch.yml/badge.svg)](https://github.com/Adish08/RevancedOG/actions/workflows/manual-patch.yml) [![Automatic Patch Release](https://github.com/Adish08/RevancedOG/actions/workflows/ci.yml/badge.svg)](https://github.com/Adish08/RevancedOG/actions/workflows/ci.yml)
+<p align="center">
+  <a href="https://github.com/Adish08/RevancedOG/actions/workflows/manual-patch.yml"><img src="https://github.com/Adish08/RevancedOG/actions/workflows/manual-patch.yml/badge.svg" alt="Manual Patch"></a>
+  <a href="https://github.com/Adish08/RevancedOG/actions/workflows/ci.yml"><img src="https://github.com/Adish08/RevancedOG/actions/workflows/ci.yml/badge.svg" alt="Automatic Patch Release"></a>
+</p>
 
 
 > [!IMPORTANT] 

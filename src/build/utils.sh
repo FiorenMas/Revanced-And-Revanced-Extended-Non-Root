@@ -3,11 +3,16 @@
 mkdir ./release ./download
 
 #Setup pup for download apk files
-wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/pup_v0.4.0_linux_amd64.zip
-unzip "./pup.zip" -d "./" > /dev/null 2>&1
+if [ ! -f "./pup" ]; then
+    wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/pup_v0.4.0_linux_amd64.zip
+    unzip "./pup.zip" -d "./" > /dev/null 2>&1
+fi
 pup="./pup"
+
 #Setup APKEditor for install combine split apks
-wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.2/APKEditor-1.4.2.jar
+if [ ! -f "./APKEditor.jar" ]; then
+    wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.2/APKEditor-1.4.2.jar
+fi
 APKEditor="./APKEditor.jar"
 
 #################################################

@@ -162,7 +162,7 @@ jobs:
           echo "## Revanced (Official revanced patches)" > release_notes.md
           cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
-          cat ./release-info/apps/*.md >> release_notes.md || true
+          cat ./release-info/apps/*.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
           
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -172,7 +172,7 @@ jobs:
           retention-days: 1
 
       - name: Releasing APK files
-        if: inputs.skip_release == false
+        if: ${{ (inputs.org == 'Revanced' || github.event.inputs.org == 'Revanced') && inputs.skip_release == false }}
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -262,7 +262,7 @@ jobs:
           echo "## Revanced LisoUseInAIKyrios" > release_notes.md
           cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
-          cat ./release-info/apps/*.md >> release_notes.md || true
+          cat ./release-info/apps/*.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
 
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -272,7 +272,7 @@ jobs:
           retention-days: 1
 
       - name: Releasing APK files
-        if: inputs.skip_release == false
+        if: ${{ (inputs.org == 'Revanced LisoUseInAIKyrios' || github.event.inputs.org == 'Revanced LisoUseInAIKyrios') && inputs.skip_release == false }}
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -326,7 +326,7 @@ jobs:
           echo "## Revanced Extended Anddea" > release_notes.md
           cat ./release/tools_versions.md >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
-          cat ./release/app_versions.md >> release_notes.md || true
+          cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
 
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -336,7 +336,7 @@ jobs:
           retention-days: 1
 
       - name: Releasing APK files
-        if: inputs.skip_release == false
+        if: ${{ (inputs.org == 'RVE-anddea-stable' || github.event.inputs.org == 'RVE-anddea-stable') && inputs.skip_release == false }}
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -391,7 +391,7 @@ jobs:
           echo "## Revanced Extended" > release_notes.md
           cat ./release/tools_versions.md >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
-          cat ./release/app_versions.md >> release_notes.md || true
+          cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
 
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -401,7 +401,7 @@ jobs:
           retention-days: 1
 
       - name: Releasing APK files
-        if: inputs.skip_release == false
+        if: ${{ (inputs.org == 'Revanced Extended' || github.event.inputs.org == 'Revanced Extended') && inputs.skip_release == false }}
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -437,7 +437,7 @@ jobs:
              echo "## Revanced Extended Arsclib" > release_notes.md
              cat ./release/tools_versions.md >> release_notes.md || true
              echo -e "\n### Apps:" >> release_notes.md
-             cat ./release/app_versions.md >> release_notes.md || true
+             cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
       
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -448,7 +448,7 @@ jobs:
 
       - name: Releasing APK files
         id: release-rve-arsclib
-        if: steps.check-gh-rve-arsclib.outputs.internet_error == '0' && inputs.skip_release == false
+        if: ${{ steps.check-gh-rve-arsclib.outputs.internet_error == '0' && (inputs.org == 'Revanced Extended Arsclib' || github.event.inputs.org == 'Revanced Extended Arsclib') && inputs.skip_release == false }}
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
@@ -483,7 +483,7 @@ jobs:
              echo "## Twitter Piko Stable" > release_notes.md
              cat ./release/tools_versions.md >> release_notes.md || true
              echo -e "\n### Apps:" >> release_notes.md
-             cat ./release/app_versions.md >> release_notes.md || true
+             cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
 
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -494,7 +494,7 @@ jobs:
 
       - name: Releasing APK files
         id: release-piko-stable
-        if: steps.check-gh-piko-stable.outputs.internet_error == '0' && inputs.skip_release == false
+        if: ${{ steps.check-gh-piko-stable.outputs.internet_error == '0' && (inputs.org == 'Twitter Piko Stable' || github.event.inputs.org == 'Twitter Piko Stable') && inputs.skip_release == false }}
         uses: ./.github/actions/release
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}

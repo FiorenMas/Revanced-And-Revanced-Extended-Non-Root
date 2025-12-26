@@ -19,7 +19,7 @@ Download
 </h1>
 
 
-### <img src="https://cdn.simpleicons.org/youtube" height="24" style="vertical-align: middle;"> [YouTube](https://play.google.com/store/apps/details?id=com.google.android.youtube)
+<h3><img src="https://cdn.simpleicons.org/youtube" height="24" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.google.android.youtube">YouTube</a></h3>
 
 #### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 [All Architectures](../../releases/download/all/youtube-revanced-extended.apk) | [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended.apk)
@@ -41,7 +41,7 @@ Download
 
 ---
 
-### <img src="https://cdn.simpleicons.org/youtubemusic" height="24" style="vertical-align: middle;"> [YouTube Music](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
+<h3><img src="https://cdn.simpleicons.org/youtubemusic" height="24" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music">YouTube Music</a></h3>
 
 #### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)
@@ -53,72 +53,72 @@ Download
 
 ### Social Media & Messengers
 
-#### <img src="https://cdn.simpleicons.org/facebook" height="20" style="vertical-align: middle;"> [Facebook](https://play.google.com/store/apps/details?id=com.facebook.katana)
+<h4><img src="https://cdn.simpleicons.org/facebook" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.facebook.katana">Facebook</a></h4>
 [Arm64-v8a](../../releases/download/all/facebook-arm64-v8a-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/messenger" height="20" style="vertical-align: middle;"> [Messenger](https://play.google.com/store/apps/details?id=com.facebook.orca)
+<h4><img src="https://cdn.simpleicons.org/messenger" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.facebook.orca">Messenger</a></h4>
 [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/instagram" height="20" style="vertical-align: middle;"> [Instagram](https://play.google.com/store/apps/details?id=com.instagram.android)
+<h4><img src="https://cdn.simpleicons.org/instagram" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.instagram.android">Instagram</a></h4>
 [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/threads" height="20" style="vertical-align: middle;"> [Threads](https://play.google.com/store/apps/details?id=com.instagram.barcelona)
+<h4><img src="https://cdn.simpleicons.org/threads" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.instagram.barcelona">Threads</a></h4>
 [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/reddit" height="20" style="vertical-align: middle;"> [Reddit](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
+<h4><img src="https://cdn.simpleicons.org/reddit" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.reddit.frontpage">Reddit</a></h4>
 [All Architectures](../../releases/download/all/reddit-revanced.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/x" height="20" style="vertical-align: middle;"> [Twitter (Piko Stable)](https://github.com/crimera/piko)
+<h4><img src="https://cdn.simpleicons.org/x" height="20" style="vertical-align: middle;"> <a href="https://github.com/crimera/piko">Twitter (Piko Stable)</a></h4>
 [All Architectures](../../releases/download/all/twitter-stable-piko.apk)
 
 ---
 
 ### Tools & Utilities
 
-#### <img src="https://cdn.simpleicons.org/googlephotos" height="20" style="vertical-align: middle;"> [Google Photos](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)
+<h4><img src="https://cdn.simpleicons.org/googlephotos" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.photos">Google Photos</a></h4>
 [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/protonmail" height="20" style="vertical-align: middle;"> [Proton Mail](https://play.google.com/store/apps/details?id=ch.protonmail.android)
+<h4><img src="https://cdn.simpleicons.org/protonmail" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=ch.protonmail.android">Proton Mail</a></h4>
 [All Architectures](../../releases/download/all/protonmail-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/protonvpn" height="20" style="vertical-align: middle;"> [Proton VPN](https://f-droid.org/en/packages/ch.protonvpn.android/)
+<h4><img src="https://cdn.simpleicons.org/protonvpn" height="20" style="vertical-align: middle;"> <a href="https://f-droid.org/en/packages/ch.protonvpn.android/">Proton VPN</a></h4>
 [All Architectures](../../releases/download/all/protonvpn-revanced.apk)
 
-#### <img src="https://img.icons8.com/color/48/winrar.png" height="20" style="vertical-align: middle;"> [RAR](https://play.google.com/store/apps/details?id=com.rarlab.rar)
+<h4><img src="https://img.icons8.com/color/48/winrar.png" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.rarlab.rar">RAR</a></h4>
 [All Architectures](../../releases/download/all/rar-revanced.apk)
 
 ---
 
 ### Misc
 
-#### <img src="https://cdn.simpleicons.org/duolingo" height="20" style="vertical-align: middle;"> [Duolingo](https://play.google.com/store/apps/details?id=com.duolingo)
+<h4><img src="https://cdn.simpleicons.org/duolingo" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.duolingo">Duolingo</a></h4>
 [All Architectures](../../releases/download/all/duolingo-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/strava" height="20" style="vertical-align: middle;"> [Strava](https://play.google.com/store/apps/details?id=com.strava)
+<h4><img src="https://cdn.simpleicons.org/strava" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.strava">Strava</a></h4>
 [Arm64-v8a](../../releases/download/all/strava-arm64-v8a-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/pixiv" height="20" style="vertical-align: middle;"> [Pixiv](https://play.google.com/store/apps/details?id=jp.pxv.android)
+<h4><img src="https://cdn.simpleicons.org/pixiv" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=jp.pxv.android">Pixiv</a></h4>
 [All Architectures](../../releases/download/all/pixiv-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/soundcloud" height="20" style="vertical-align: middle;"> [SoundCloud](https://play.google.com/store/apps/details?id=com.soundcloud.android)
+<h4><img src="https://cdn.simpleicons.org/soundcloud" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.soundcloud.android">SoundCloud</a></h4>
 [All Architectures](../../releases/download/all/soundcloud-revanced.apk)
 
-#### <img src="https://img.icons8.com/color/48/amazon-prime-video.png" height="20" style="vertical-align: middle;"> [Prime Video](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
+<h4><img src="https://img.icons8.com/color/48/amazon-prime-video.png" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient">Prime Video</a></h4>
 [Arm64-v8a](../../releases/download/all/prime-video-arm64-v8a-revanced.apk)
 
-#### <img src="https://unpkg.com/simple-icons@v13/icons/disneyplus.svg" height="20" style="vertical-align: middle;"> [Disney+](https://play.google.com/store/apps/details?id=com.disney.disneyplus)
+<h4><img src="https://unpkg.com/simple-icons@v13/icons/disneyplus.svg" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.disney.disneyplus">Disney+</a></h4>
 [Arm64-v8a](../../releases/download/all/disney-revanced.apk)
 
-#### <img src="https://img.icons8.com/color/48/adobe-lightroom.png" height="20" style="vertical-align: middle;"> [Lightroom](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)
+<h4><img src="https://img.icons8.com/color/48/adobe-lightroom.png" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.adobe.lrmobile">Lightroom</a></h4>
 [Arm64-v8a](../../releases/download/all/lightroom-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/googlenews" height="20" style="vertical-align: middle;"> [Google News](play.google.com/store/apps/details?id=com.google.android.apps.magazines)
+<h4><img src="https://cdn.simpleicons.org/googlenews" height="20" style="vertical-align: middle;"> <a href="play.google.com/store/apps/details?id=com.google.android.apps.magazines">Google News</a></h4>
 [Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-revanced.apk)
 
-#### <img src="https://unpkg.com/simple-icons@v13/icons/photomath.svg" height="20" style="vertical-align: middle;"> [Photomath](https://play.google.com/store/apps/details?id=com.microblink.photomath)
+<h4><img src="https://unpkg.com/simple-icons@v13/icons/photomath.svg" height="20" style="vertical-align: middle;"> <a href="https://play.google.com/store/apps/details?id=com.microblink.photomath">Photomath</a></h4>
 [All Architectures](../../releases/download/all/photomath-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/spotify" height="20" style="vertical-align: middle;"> [Spotjfy](https://www.google.com/search?q=Spotjfy)
+<h4><img src="https://cdn.simpleicons.org/spotify" height="20" style="vertical-align: middle;"> <a href="https://www.google.com/search?q=Spotjfy">Spotjfy</a></h4>
 [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)
 
 ---

@@ -139,30 +139,67 @@ get_patches_key() {
 COOKIE_FILE="./cookie.jar"
 
 _req() {
-    if [ "$2" = "-" ]; then
-        wget -nv -O "$2" --header="User-Agent: Mozilla/5.0 (Android 14; Mobile; rv:134.0) Gecko/134.0 Firefox/134.0" --header="Content-Type: application/octet-stream" --header="Accept-Language: en-US,en;q=0.9" --header="Connection: keep-alive" --header="Upgrade-Insecure-Requests: 1" --header="Cache-Control: max-age=0" --header="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" --load-cookies "$COOKIE_FILE" --save-cookies "$COOKIE_FILE" --keep-session-cookies --timeout=30 "$1" || rm -f "$2"
+    local url="$1"
+    local output="$2"
+    local referer="$3"
+    
+    local wget_args=(
+        "-nv"
+        "--header=User-Agent: Mozilla/5.0 (Android 14; Mobile; rv:134.0) Gecko/134.0 Firefox/134.0"
+        "--header=Content-Type: application/octet-stream"
+        "--header=Accept-Language: en-US,en;q=0.9"
+        "--header=Connection: keep-alive"
+        "--header=Upgrade-Insecure-Requests: 1"
+        "--header=Cache-Control: max-age=0"
+        "--header=Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8"
+        "--load-cookies" "$COOKIE_FILE"
+        "--save-cookies" "$COOKIE_FILE"
+        "--keep-session-cookies"
+        "--timeout=30"
+    )
+
+    if [[ -n "$referer" ]]; then
+        wget_args+=("--header=Referer: $referer")
+    fi
+
+    if [ "$output" = "-" ]; then
+        wget "${wget_args[@]}" -O - "$url" || rm -f "$output"
     else
-        wget -nv -O "./download/$2" --header="User-Agent: Mozilla/5.0 (Android 14; Mobile; rv:134.0) Gecko/134.0 Firefox/134.0" --header="Content-Type: application/octet-stream" --header="Accept-Language: en-US,en;q=0.9" --header="Connection: keep-alive" --header="Upgrade-Insecure-Requests: 1" --header="Cache-Control: max-age=0" --header="Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" --load-cookies "$COOKIE_FILE" --save-cookies "$COOKIE_FILE" --keep-session-cookies --timeout=30 "$1" || rm -f "./download/$2"
+        wget "${wget_args[@]}" -O "./download/$output" "$url" || rm -f "./download/$output"
     fi
 }
 req() {
-    _req "$1" "$2"
+    _req "$1" "$2" "$3"
 }
 dl_apk() {
-	local url=$1 regexp=$2 output=$3
-	if [[ -z "$4" ]] || [[ $4 == "Bundle" ]] || [[ $4 == "Bundle_extract" ]]; then
-		url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/.*<a[^>]*href=\"\([^\"]*\)\".*${regexp}.*/\1/p")"
+	local url=$1 regexp=$2 output=$3 type=$4
+    local referer="https://www.apkmirror.com/"
+    local next_part
+
+	if [[ -z "$type" ]] || [[ $type == "Bundle" ]] || [[ $type == "Bundle_extract" ]]; then
+        next_part=$(req "$url" - "$referer" | tr '\n' ' ' | sed -n "s/.*<a[^>]*href=\"\([^\"]*\)\".*${regexp}.*/\1/p")
 	else
-		url="https://www.apkmirror.com$(req "$url" - | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")"
+        next_part=$(req "$url" - "$referer" | tr '\n' ' ' | sed -n "s/href=\"/@/g; s;.*${regexp}.*;\1;p")
 	fi
-	url="https://www.apkmirror.com$(req "$url" - | grep -oP 'class="[^"]*downloadButton[^"]*".*?href="\K[^"]+')"
-   	url="https://www.apkmirror.com$(req "$url" - | grep -oP 'id="download-link".*?href="\K[^"]+')"
+    
+    # Store old url as referer for next step
+    referer="$url"
+    url="https://www.apkmirror.com$next_part"
+
+    next_part=$(req "$url" - "$referer" | grep -oP 'class="[^"]*downloadButton[^"]*".*?href="\K[^"]+')
+    referer="$url"
+    url="https://www.apkmirror.com$next_part"
+
+    next_part=$(req "$url" - "$referer" | grep -oP 'id="download-link".*?href="\K[^"]+')
+    referer="$url"
+   	url="https://www.apkmirror.com$next_part"
+
 	#url="https://www.apkmirror.com$(req "$url" - | $pup -p --charset utf-8 'a.downloadButton attr{href}')"
    	#url="https://www.apkmirror.com$(req "$url" - | $pup -p --charset utf-8 'a#download-link attr{href}')"
 	if [[ "$url" == "https://www.apkmirror.com" ]]; then
 		exit 0
 	fi
-	req "$url" "$output"
+	req "$url" "$output" "$referer"
 }
 get_apk() {
 	if [[ -z $5 ]]; then

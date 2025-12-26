@@ -61,12 +61,7 @@ revanced_dl(){
 	patch "instagram-arm64-v8a" "revanced"
 }
 5() {
-	revanced_dl
-	# Patch Pixiv:
-	get_patches_key "pixiv"
-	get_apkpure "jp.pxv.android" "pixiv" "pixiv/jp.pxv.android"
-	patch "pixiv" "revanced"
-
+    echo "Pixiv removed"
 }
 6() {
 	revanced_dl
@@ -115,19 +110,11 @@ revanced_dl(){
 	lock_version="1"
 	get_apk "com.duolingo" "duolingo" "duolingo-duolingo" "duolingo/duolingo-duolingo/duolingo-language-lessons" "Bundle"
 	patch "duolingo" "revanced"
-	# Patch Google News Arm64-v8a
-	get_patches_key "GoogleNews"
-	get_apk "com.google.android.apps.magazines" "googlenews" "google-news" "google-inc/google-news/google-news" "Bundle_extract"
-	split_editor "googlenews" "googlenews-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "googlenews-arm64-v8a" "revanced"
+
 }
 11() {
 	revanced_dl
-	# Patch Photomath
-	get_patches_key "Photomath"
-	get_apk "com.microblink.photomath" "photomath" "photomath" "google-inc/photomath/photomath" "Bundle" "Bundle_extract"
-	split_editor "photomath" "photomath"
-	patch "photomath" "revanced"
+
 	# Patch Strava:
 	get_patches_key "strava"
 	get_apkpure "com.strava" "strava-arm64-v8a" "strava-run-hike-2025-health/com.strava" "Bundle"
@@ -151,11 +138,7 @@ revanced_dl(){
 	get_patches_key "Threads-revanced"
 	get_apkpure "com.instagram.barcelona" "threads-arm64-v8a" "threads/com.instagram.barcelona" "Bundle"
 	patch "threads-arm64-v8a" "revanced"
-	# Patch Prime Video
-	get_patches_key "Prime-Video-revanced"
-	version="3.0.412"
-	get_apk " com.amazon.avod.thirdpartyclient" "prime-video-arm64-v8a" "amazon-prime-video" "amazon-mobile-llc/amazon-prime-video/amazon-prime-video" "arm64-v8a"
-	patch "prime-video-arm64-v8a" "revanced"
+
 }
 14() {
     echo "Apps in this batch (Crunchyroll, Viber) have been removed."
@@ -171,11 +154,7 @@ revanced_dl(){
 	split_editor "reddit" "reddit-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86_64 split_config.mdpi split_config.ldpi split_config.hdpi split_config.xhdpi split_config.xxhdpi split_config.tvdpi"
 	get_patches_key "reddit"
 	patch "reddit-arm64-v8a" "revanced"
-	# Patch Disney+
-	get_patches_key "Disney"
-	version="4.20.2+rc1-2025.12.09"
-	get_apk "com.disney.disneyplus" "disney" "disney" "disney/disney/disney" "Bundle"
-	patch "disney" "revanced"
+
 }
 16() {
 	revanced_dl
@@ -197,9 +176,7 @@ case "$1" in
     4)
         4
         ;;
-    5)
-        5
-        ;;
+
     6)
         6
         ;;

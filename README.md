@@ -103,26 +103,14 @@ Download
 #### <img src="https://cdn.simpleicons.org/strava" height="22" align="absmiddle"> [Strava](https://play.google.com/store/apps/details?id=com.strava)
 [Arm64-v8a](../../releases/download/all/strava-arm64-v8a-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/pixiv" height="22" align="absmiddle"> [Pixiv](https://play.google.com/store/apps/details?id=jp.pxv.android)
-[All Architectures](../../releases/download/all/pixiv-revanced.apk)
 
 #### <img src="https://cdn.simpleicons.org/soundcloud" height="22" align="absmiddle"> [SoundCloud](https://play.google.com/store/apps/details?id=com.soundcloud.android)
 [All Architectures](../../releases/download/all/soundcloud-revanced.apk) | [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-revanced.apk)
 
-#### <img src="https://img.icons8.com/color/48/amazon-prime-video.png" height="22" align="absmiddle"> [Prime Video](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
-[Arm64-v8a](../../releases/download/all/prime-video-arm64-v8a-revanced.apk)
-
-#### <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Disney_plus_icon.png" height="22" align="absmiddle"> [Disney+](https://play.google.com/store/apps/details?id=com.disney.disneyplus)
-[All Architectures](../../releases/download/all/disney-revanced.apk)
 
 #### <img src="https://img.icons8.com/color/48/adobe-lightroom.png" height="22" align="absmiddle"> [Lightroom](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)
 [All Architectures](../../releases/download/all/lightroom-revanced.apk)
 
-#### <img src="https://cdn.simpleicons.org/googlenews" height="22" align="absmiddle"> [Google News](https://play.google.com/store/apps/details?id=com.google.android.apps.magazines)
-[Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-revanced.apk)
-
-#### <img src="https://play-lh.googleusercontent.com/Ma_HEbK1LzEoayR0tE0ZXqLopug69-dPspfCV36zzHOSuC0_i6mu5ulKz1eY7en-UM4=w240-h480-rw" height="22" align="absmiddle"> [Photomath](https://play.google.com/store/apps/details?id=com.microblink.photomath)
-[All Architectures](../../releases/download/all/photomath-revanced.apk)
 
 #### <img src="https://cdn.simpleicons.org/spotify" height="22" align="absmiddle"> [Spotjfy](https://www.google.com/search?q=Spotjfy)
 
@@ -133,18 +121,7 @@ Download
 [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)
 
 ---
-### Revanced Experiments
 
-#### <img src="https://cdn.simpleicons.org/telegram" height="22" align="absmiddle"> [Telegram](https://play.google.com/store/apps/details?id=org.telegram.messenger)
-[All Architectures](../../releases/download/all/telegram-revanced-experiments.apk)
-
-#### <img src="https://cdn.simpleicons.org/telegram" height="22" align="absmiddle"> [Telegram (Web Version)](https://play.google.com/store/apps/details?id=org.telegram.messenger.web)
-[All Architectures](../../releases/download/all/telegram-web-version-revanced-experiments.apk)
-
-#### <img src="https://cdn.simpleicons.org/instagram" height="22" align="absmiddle"> [Instagram (Experiments)](https://play.google.com/store/apps/details?id=com.instagram.android)
-[Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced-experiments.apk)
-
----
 
 ### ⚠️ Library, resources using in this repository:
 

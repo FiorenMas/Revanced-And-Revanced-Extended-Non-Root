@@ -25,8 +25,7 @@ red_log() {
     echo -e "\e[31m$1\e[0m"
 }
 
-    echo -e "\e[31m$1\e[0m"
-}
+
 
 log_app_ver() {
     echo "$1" >> "./release/app_versions.md"

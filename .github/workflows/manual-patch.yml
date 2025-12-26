@@ -160,9 +160,22 @@ jobs:
       - name: Create Release Notes
         run: |
           echo "## [Revanced](https://github.com/revanced/revanced-patches/releases)" > release_notes.md
-          cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
-          cat ./release-info/apps/*.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
+          
+          # Prioritize youtube and youtube-music
+          cat ./release-info/apps/youtube.md >> release_notes.md 2>/dev/null || true
+          cat ./release-info/apps/youtube-music.md >> release_notes.md 2>/dev/null || true
+          
+          # Add remaining apps, excluding the ones we just added (alphabetical)
+          for f in ./release-info/apps/*.md; do
+            filename=$(basename "$f")
+            if [[ "$filename" != "youtube.md" && "$filename" != "youtube-music.md" ]]; then
+               cat "$f" >> release_notes.md
+            fi
+          done | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
+          
+          # Add tools at the bottom
+          cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
           
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -260,9 +273,9 @@ jobs:
       - name: Create Release Notes
         run: |
           echo "## [Revanced LisoUseInAIKyrios](https://github.com/LisoUseInAIKyrios/revanced-patches/releases)" > release_notes.md
-          cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
           cat ./release-info/apps/*.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
+          cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
 
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -324,9 +337,9 @@ jobs:
       - name: Create Release Notes
         run: |
           echo "## [Revanced Extended Anddea](https://github.com/anddea/revanced-patches/releases)" > release_notes.md
-          cat ./release/tools_versions.md >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
           cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
+          cat ./release/tools_versions.md >> release_notes.md || true
 
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -389,9 +402,9 @@ jobs:
       - name: Create Release Notes
         run: |
           echo "## [Revanced Extended](https://github.com/inotia00/revanced-patches/releases)" > release_notes.md
-          cat ./release/tools_versions.md >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
           cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
+          cat ./release/tools_versions.md >> release_notes.md || true
 
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -435,9 +448,9 @@ jobs:
       - name: Release Note
         run: |
              echo "## [Revanced Extended Arsclib](https://github.com/inotia00/revanced-patches-arsclib/releases)" > release_notes.md
-             cat ./release/tools_versions.md >> release_notes.md || true
              echo -e "\n### Apps:" >> release_notes.md
              cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
+             cat ./release/tools_versions.md >> release_notes.md || true
       
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4
@@ -481,9 +494,9 @@ jobs:
       - name: Release Note
         run: |
              echo "## [Twitter Piko Stable](https://github.com/crimera/piko/releases)" > release_notes.md
-             cat ./release/tools_versions.md >> release_notes.md || true
              echo -e "\n### Apps:" >> release_notes.md
              cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
+             cat ./release/tools_versions.md >> release_notes.md || true
 
       - name: Upload Release Notes Fragment
         uses: actions/upload-artifact@v4

@@ -311,8 +311,8 @@ get_apk() {
         
         # Log version info
         log_app_ver "### $3"
-        log_app_ver "Model: $6"
-        log_app_ver "Version: $version"
+        # log_app_ver "Model: $6"
+        log_app_ver "Version: \`$version\`"
         log_app_ver ""
         
         return 0
@@ -361,8 +361,8 @@ get_apk() {
 
     # Log version info
     log_app_ver "### $3"
-    log_app_ver "Model: $6"
-    log_app_ver "Version: $version"
+    # log_app_ver "Model: $6"
+    log_app_ver "Version: \`$version\`"
     log_app_ver ""
 }
 get_apkpure() {
@@ -408,7 +408,7 @@ get_apkpure() {
     
     # Log version info
     log_app_ver "### $1"
-    log_app_ver "Version: $version"
+    log_app_ver "Version: \`$version\`"
     log_app_ver ""
 }
 

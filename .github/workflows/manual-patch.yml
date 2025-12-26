@@ -159,7 +159,7 @@ jobs:
 
       - name: Create Release Notes
         run: |
-          echo "## Revanced (Official revanced patches)" > release_notes.md
+          echo "## [Revanced](https://github.com/revanced/revanced-patches/releases)" > release_notes.md
           cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
           cat ./release-info/apps/*.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
@@ -259,7 +259,7 @@ jobs:
 
       - name: Create Release Notes
         run: |
-          echo "## Revanced LisoUseInAIKyrios" > release_notes.md
+          echo "## [Revanced LisoUseInAIKyrios](https://github.com/LisoUseInAIKyrios/revanced-patches/releases)" > release_notes.md
           cat ./release-info/tools/*.md | sort -u >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
           cat ./release-info/apps/*.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
@@ -323,7 +323,7 @@ jobs:
           path: ./release
       - name: Create Release Notes
         run: |
-          echo "## Revanced Extended Anddea" > release_notes.md
+          echo "## [Revanced Extended Anddea](https://github.com/anddea/revanced-patches/releases)" > release_notes.md
           cat ./release/tools_versions.md >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
           cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
@@ -388,7 +388,7 @@ jobs:
           path: ./release
       - name: Create Release Notes
         run: |
-          echo "## Revanced Extended" > release_notes.md
+          echo "## [Revanced Extended](https://github.com/inotia00/revanced-patches/releases)" > release_notes.md
           cat ./release/tools_versions.md >> release_notes.md || true
           echo -e "\n### Apps:" >> release_notes.md
           cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
@@ -434,7 +434,7 @@ jobs:
 
       - name: Release Note
         run: |
-             echo "## Revanced Extended Arsclib" > release_notes.md
+             echo "## [Revanced Extended Arsclib](https://github.com/inotia00/revanced-patches-arsclib/releases)" > release_notes.md
              cat ./release/tools_versions.md >> release_notes.md || true
              echo -e "\n### Apps:" >> release_notes.md
              cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
@@ -480,7 +480,7 @@ jobs:
 
       - name: Release Note
         run: |
-             echo "## Twitter Piko Stable" > release_notes.md
+             echo "## [Twitter Piko Stable](https://github.com/crimera/piko/releases)" > release_notes.md
              cat ./release/tools_versions.md >> release_notes.md || true
              echo -e "\n### Apps:" >> release_notes.md
              cat ./release/app_versions.md | perl -00 -ne 'print unless $seen{$_}++' >> release_notes.md || true
@@ -519,8 +519,8 @@ jobs:
 
       - name: Combine Release Notes
         run: |
-          echo "# Manual Release Build" > release_notes.md
-          echo "Built using the latest available patches and CLI tools." >> release_notes.md
+          echo "Built using the latest available patches and CLI tools." > release_notes.md
+          echo -e "\nCheck [Readme.md](../main/README.md) for details and installation instructions." >> release_notes.md
           echo -e "\n" >> release_notes.md
           
           for file in release_notes_fragments/*/release_notes.md; do

@@ -170,8 +170,8 @@ jobs:
 
       - name: Combine Release Notes
         run: |
-          echo "# Automated Release Build" > release_notes.md
-          echo "Built using the latest available patches and CLI tools." >> release_notes.md
+          echo "Built using the latest available patches and CLI tools." > release_notes.md
+          echo -e "\nCheck [Readme.md](../main/README.md) for details and installation instructions." >> release_notes.md
           echo -e "\n" >> release_notes.md
           
           for file in release_notes_fragments/*/release_notes.md; do

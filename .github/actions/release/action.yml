@@ -16,23 +16,12 @@ runs:
     - name: Generate release info
       shell: bash
       run: |
-        echo "
-        **Automated Release Build**
-        **Built using the latest available patches and CLI tools as of the build time.**
-        **Check [Readme.md](../main/README.md) for details and installation instructions.**
-        **Change log** :point_down:
-        [Revanced](https://github.com/revanced/revanced-patches/releases)
-        [Revanced Extended](https://github.com/inotia00/revanced-patches/releases)
-        [Revanced Extended Anddea](https://github.com/anddea/revanced-patches/releases)
-        [Revanced Extended Arsclib](https://github.com/inotia00/revanced-patches-arsclib/releases)
-        [Revanced LisoUseInAIKyrios](https://github.com/LisoUseInAIKyrios/revanced-patches/releases)
-        [Twitter Piko](https://github.com/crimera/piko/releases)
-        [Instafel](https://github.com/mamiiblt/instafel/releases)
-        "> ${{ github.workspace }}-CHANGELOG.txt
-        
+        # Use the provided release notes file directly if it exists
         if [[ -n "${{ inputs.release_notes }}" ]] && [[ -f "${{ inputs.release_notes }}" ]]; then
-            echo "" >> ${{ github.workspace }}-CHANGELOG.txt
-            cat "${{ inputs.release_notes }}" >> ${{ github.workspace }}-CHANGELOG.txt
+            cp "${{ inputs.release_notes }}" ${{ github.workspace }}-CHANGELOG.txt
+        else
+            # Fallback if no release notes are provided
+            echo "Relase notes not found." > ${{ github.workspace }}-CHANGELOG.txt
         fi
     - name: Release
       uses: ncipollo/release-action@v1.14.0

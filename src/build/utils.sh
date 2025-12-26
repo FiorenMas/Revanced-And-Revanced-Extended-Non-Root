@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir ./release ./download
+mkdir -p ./release ./download
 
 #Setup pup for download apk files
 if [ ! -f "./pup" ]; then
@@ -116,7 +116,7 @@ dl_gh() {
 			| while read -r url names; do
    				if [[ $url != *.asc ]]; then
 					green_log "[+] Downloading $names from $2"
-					wget -q -O "$names" $url
+					wget -q -O "$names" $url || { red_log "[-] Failed to download $names"; exit 1; }
      				fi
 			done
 		done
@@ -133,8 +133,8 @@ get_patches_key() {
 	includeLinesFound=false
  	sed -i 's/\r$//' src/patches/$1/include-patches
 	sed -i 's/\r$//' src/patches/$1/exclude-patches
-	if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
-		num=${BASH_REMATCH[1]}
+	if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-(v?)([0-9]+) ]]; then
+		num=${BASH_REMATCH[2]}
 		if [ $num -ge 5 ]; then
 			while IFS= read -r line1; do
 				excludePatches+=" -d \"$line1\""
@@ -450,7 +450,7 @@ patch() {
 		if [ "$3" = inotia ]; then
 			unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
 		fi
-		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu$force $a./download/$1.apk
+		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/$ks.keystore $pu$force $a./download/$1.apk || { red_log "[-] Patching failed for $1"; exit 1; }
   		unset version
 		unset lock_version
 		unset excludePatches

@@ -25,8 +25,39 @@ red_log() {
     echo -e "\e[31m$1\e[0m"
 }
 
-log_build_info() {
-    echo "$1" >> "./release/build_info.md"
+    echo -e "\e[31m$1\e[0m"
+}
+
+log_app_ver() {
+    echo "$1" >> "./release/app_versions.md"
+}
+
+log_tools_ver() {
+    if [ ! -f "tools_version_logged" ]; then
+        touch "tools_version_logged"
+        echo "## Tools Used" > "./release/tools_versions.md"
+        
+        CLI_JAR=$(ls revanced-cli-*.jar 2>/dev/null | head -n 1)
+        if [[ -n "$CLI_JAR" ]]; then
+            # Extract version from filename if possible
+            if [[ $CLI_JAR =~ revanced-cli-(.+).jar ]]; then
+                 CLI_VER="${BASH_REMATCH[1]}"
+                 echo "**ReVanced CLI Version:** v$CLI_VER" >> "./release/tools_versions.md"
+            else
+                 echo "**ReVanced CLI Version:** $(basename "$CLI_JAR")" >> "./release/tools_versions.md"
+            fi
+        fi
+        
+        # Use find to strictly locate patch files, ignoring cli
+        PATCHES_JAR=$(find . -maxdepth 1 -name "*patch*.jar" ! -name "revanced-cli*" | head -n 1)
+        if [[ -n "$PATCHES_JAR" ]]; then
+            echo "**ReVanced Patches:** $(basename "$PATCHES_JAR")" >> "./release/tools_versions.md"
+        else
+            echo "**ReVanced Patches:** Not found/Generic" >> "./release/tools_versions.md"
+        fi
+        
+        echo "" >> "./release/tools_versions.md"
+    fi
 }
 
 #################################################
@@ -280,10 +311,10 @@ get_apk() {
         fi
         
         # Log version info
-        log_build_info "### $3"
-        log_build_info "Model: $6"
-        log_build_info "Version: $version"
-        log_build_info ""
+        log_app_ver "### $3"
+        log_app_ver "Model: $6"
+        log_app_ver "Version: $version"
+        log_app_ver ""
         
         return 0
     fi
@@ -330,10 +361,10 @@ get_apk() {
 	fi
 
     # Log version info
-    log_build_info "### $3"
-    log_build_info "Model: $6"
-    log_build_info "Version: $version"
-    log_build_info ""
+    log_app_ver "### $3"
+    log_app_ver "Model: $6"
+    log_app_ver "Version: $version"
+    log_app_ver ""
 }
 get_apkpure() {
 	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
@@ -348,24 +379,7 @@ get_apkpure() {
 	fi
 	export version="$version"
     
-    # Log tools versions if not already logged
-    if [ ! -f "tools_version_logged" ]; then
-        touch "tools_version_logged"
-        
-        CLI_JAR=$(ls revanced-cli-*.jar | head -n 1)
-        if [[ $CLI_JAR =~ revanced-cli-(.+).jar ]]; then
-             CLI_VER="${BASH_REMATCH[1]}"
-             log_build_info "**ReVanced CLI Version:** v$CLI_VER"
-        fi
-        
-        PATCHES_JAR=$(ls *patch*.jar | head -n 1)
-        # Try to extract version from filename if possible, otherwise generic
-        log_build_info "**ReVanced Patches:** $(basename $PATCHES_JAR)"
-        
-        log_build_info ""
-        log_build_info "---"
-        log_build_info ""
-    fi
+
 	if [[ $4 == "Bundle" ]] || [[ $4 == "Bundle_extract" ]]; then
 		local base_apk="$2.xapk"
 	else
@@ -394,9 +408,9 @@ get_apkpure() {
 	fi
     
     # Log version info
-    log_build_info "### $1"
-    log_build_info "Version: $version"
-    log_build_info ""
+    log_app_ver "### $1"
+    log_app_ver "Version: $version"
+    log_app_ver ""
 }
 
 #################################################
@@ -404,6 +418,10 @@ get_apkpure() {
 # Patching apps with Revanced CLI:
 patch() {
 	green_log "[+] Patching $1:"
+    
+    # Log tools version once
+    log_tools_ver
+
 	if [ -f "./download/$1.apk" ]; then
 		local p b m ks a pu opt force
 		if [ "$3" = inotia ]; then

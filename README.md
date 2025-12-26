@@ -4,6 +4,9 @@
 All the code is open-source, and the APK files used for patching are downloaded from trusted sites.</b>
 </h4>
 
+[![Manual Patch](https://github.com/Adish08/RevancedOG/actions/workflows/manual-patch.yml/badge.svg)](https://github.com/Adish08/RevancedOG/actions/workflows/manual-patch.yml) [![Automatic Patch Release](https://github.com/Adish08/RevancedOG/actions/workflows/ci.yml/badge.svg)](https://github.com/Adish08/RevancedOG/actions/workflows/ci.yml)
+
+
 > [!IMPORTANT] 
 > **Credits to [FiorenMas](https://github.com/FiorenMas) for the original work and workflows.**
 

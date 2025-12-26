@@ -6,6 +6,10 @@ inputs:
   release_notes:
     description: "Path to release notes file"
     required: false
+  prerelease:
+    description: "Mark as prerelease"
+    required: false
+    default: "false"
 runs:
   using: "composite"
   steps:
@@ -38,5 +42,6 @@ runs:
         name: "Revanced Build ${{ inputs.tag_name }}"
         tag: ${{ inputs.tag_name }}
         bodyFile: ${{ github.workspace }}-CHANGELOG.txt
-        makeLatest: true
+        makeLatest: ${{ inputs.prerelease == 'false' }}
+        prerelease: ${{ inputs.prerelease }}
         allowUpdates: true

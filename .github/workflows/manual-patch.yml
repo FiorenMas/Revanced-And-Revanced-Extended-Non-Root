@@ -141,6 +141,7 @@ jobs:
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
           release_notes: release_notes.md
+          prerelease: ${{ github.ref_name == 'dev' }}
 
   patch_rv_liso:
     name: Patch Revanced LisoUseInAIKyrios
@@ -180,17 +181,7 @@ jobs:
           path: ./release/build_info_${{ matrix.run }}.md
           retention-days: 1
   
-      - name: Rename build info
-        if: always()
-        run: mv ./release/build_info.md ./release/build_info_${{ matrix.run }}.md || true
 
-      - name: Upload build info
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: build-info-liso-${{ matrix.run }}
-          path: ./release/build_info_${{ matrix.run }}.md
-          retention-days: 1
 
   release_rv_liso:
     name: Release Revanced LisoUseInAIKyrios
@@ -222,6 +213,7 @@ jobs:
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
           release_notes: release_notes.md
+          prerelease: ${{ github.ref_name == 'dev' }}
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable
     if: ${{ github.event.inputs.org == 'RVE-anddea-stable' || inputs.org == 'RVE-anddea-stable' || github.event.inputs.org == 'All' || inputs.org == 'All' }}
@@ -269,6 +261,7 @@ jobs:
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
           release_notes: ./release/build_info.md
+          prerelease: ${{ github.ref_name == 'dev' }}
 
   patch_rve:
     name: Patch Revanced Extended Stable
@@ -317,6 +310,7 @@ jobs:
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
           release_notes: ./release/build_info.md
+          prerelease: ${{ github.ref_name == 'dev' }}
 
   patch_rve_arsclib:
     name: Patch Revanced Extended Arsclib
@@ -342,6 +336,7 @@ jobs:
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
           release_notes: ./release/build_info.md
+          prerelease: ${{ github.ref_name == 'dev' }}
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
     needs: set_tag
@@ -366,5 +361,6 @@ jobs:
         with:
           tag_name: ${{ needs.set_tag.outputs.release_tag }}
           release_notes: ./release/build_info.md
+          prerelease: ${{ github.ref_name == 'dev' }}
 
 

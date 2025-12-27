@@ -35,7 +35,9 @@ revanced_dl(){
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"
- 	get_apkpure "com.facebook.orca" "messenger-arm64-v8a-beta" "facebook-messenger/com.facebook.orca"
+	url="https://facebook-messenger.en.uptodown.com/android/download"
+	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+	req "$url" ""messenger-arm64-v8a-beta"
 	patch "messenger-arm64-v8a-beta" "revanced"
 	# Patch Facebook:
 	# Arm64-v8a
@@ -51,17 +53,17 @@ revanced_dl(){
 	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a-beta" "photos" "google-inc/photos/google-photos" "arm64-v8a" "nodpi"
 	patch "gg-photos-arm64-v8a-beta" "revanced"
 	# Armeabi-v7a
-	get_patches_key "gg-photos"
-	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a-beta" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
-	patch "gg-photos-armeabi-v7a-beta" "revanced"
+	#get_patches_key "gg-photos"
+	#get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a-beta" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
+	#patch "gg-photos-armeabi-v7a-beta" "revanced"
 	# x86
-	get_patches_key "gg-photos"
-	get_apk "com.google.android.apps.photos" "gg-photos-x86-beta" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
-	patch "gg-photos-x86-beta" "revanced"
+	#get_patches_key "gg-photos"
+	#get_apk "com.google.android.apps.photos" "gg-photos-x86-beta" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
+	#patch "gg-photos-x86-beta" "revanced"
 	# x86_64
-	get_patches_key "gg-photos"
-	get_apk "com.google.android.apps.photos" "gg-photos-x86_64-beta" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
-	patch "gg-photos-x86_64-beta" "revanced"
+	#get_patches_key "gg-photos"
+	#get_apk "com.google.android.apps.photos" "gg-photos-x86_64-beta" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
+	#patch "gg-photos-x86_64-beta" "revanced"
 }
 4() {
 	revanced_dl

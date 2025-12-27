@@ -34,7 +34,9 @@ revanced_dl(){
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"
-	get_apkpure "com.facebook.orca" "messenger-arm64-v8a" "facebook-messenger/com.facebook.orca"
+	url="https://facebook-messenger.en.uptodown.com/android/download"
+	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+	req "$url" "messenger-arm64-v8a.apk"
 	patch "messenger-arm64-v8a" "revanced"
 	# Patch Facebook:
 	# Arm64-v8a
@@ -50,20 +52,20 @@ revanced_dl(){
 	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "photos" "google-inc/photos/google-photos" "arm64-v8a" "nodpi"
 	patch "gg-photos-arm64-v8a" "revanced"
 	# Armeabi-v7a
-	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
-	get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
-	patch "gg-photos-armeabi-v7a" "revanced"
+	#get_patches_key "gg-photos"
+ 	#version="7.32.0.765953717"
+	#get_apk "com.google.android.apps.photos" "gg-photos-armeabi-v7a" "photos" "google-inc/photos/google-photos" "armeabi-v7a" "nodpi"
+	#patch "gg-photos-armeabi-v7a" "revanced"
 	# x86
-	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
-	get_apk "com.google.android.apps.photos" "gg-photos-x86" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
-	patch "gg-photos-x86" "revanced"
+	#get_patches_key "gg-photos"
+ 	#version="7.32.0.765953717"
+	#get_apk "com.google.android.apps.photos" "gg-photos-x86" "photos" "google-inc/photos/google-photos" "x86" "nodpi"
+	#patch "gg-photos-x86" "revanced"
 	# x86_64
-	get_patches_key "gg-photos"
- 	version="7.32.0.765953717"
-	get_apk "com.google.android.apps.photos" "gg-photos-x86_64" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
-	patch "gg-photos-x86_64" "revanced"
+	#get_patches_key "gg-photos"
+ 	#version="7.32.0.765953717"
+	#get_apk "com.google.android.apps.photos" "gg-photos-x86_64" "photos" "google-inc/photos/google-photos" "x86_64" "nodpi"
+	#patch "gg-photos-x86_64" "revanced"
 }
 4() {
 	revanced_dl

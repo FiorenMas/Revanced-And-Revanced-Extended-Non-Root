@@ -37,7 +37,7 @@ revanced_dl(){
 	get_patches_key "messenger"
 	url="https://facebook-messenger.en.uptodown.com/android/download"
 	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
-	req "$url" ""messenger-arm64-v8a-beta"
+	req "$url" "messenger-arm64-v8a-beta"
 	patch "messenger-arm64-v8a-beta" "revanced"
 	# Patch Facebook:
 	# Arm64-v8a

@@ -7,7 +7,7 @@ wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/
 unzip "./pup.zip" -d "./" > /dev/null 2>&1
 pup="./pup"
 #Setup APKEditor for install combine split apks
-wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.2/APKEditor-1.4.2.jar
+wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.7/APKEditor-1.4.7.jar
 APKEditor="./APKEditor.jar"
 
 #################################################
@@ -315,8 +315,23 @@ get_apkpure() {
 		exit 1
 	fi
 	if [[ $4 == "Bundle" ]]; then
-		green_log "[+] Merge splits apk to standalone apk"
-		java -jar $APKEditor m -i ./download/$2.xapk -o ./download/$2.apk > /dev/null 2>&1
+		# Check if the downloaded file is an XAPK (contains .apk files) or already a standalone APK
+		# XAPK files contain multiple .apk files, while APK files contain AndroidManifest.xml
+		if unzip -l "./download/$base_apk" 2>/dev/null | grep -q '\.apk$'; then
+			# It's an XAPK file with .apk files inside, needs merging
+			green_log "[+] Merge splits apk to standalone apk"
+			if ! java -jar $APKEditor m -i ./download/$2.xapk -o ./download/$2.apk > /dev/null 2>&1; then
+				red_log "[-] Failed to merge $2.xapk to standalone apk"
+				exit 1
+			fi
+		elif unzip -l "./download/$base_apk" 2>/dev/null | grep -q 'AndroidManifest.xml'; then
+			# It's already a standalone APK file, just rename it
+			green_log "[+] File is already a standalone APK, renaming"
+			mv "./download/$base_apk" "./download/$2.apk"
+		else
+			red_log "[-] Unknown file format for $base_apk"
+			exit 1
+		fi
 	elif [[ $4 == "Bundle_extract" ]]; then
 		unzip "./download/$base_apk" -d "./download/$(basename "$base_apk" .xapk)" > /dev/null 2>&1
 	fi

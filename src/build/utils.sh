@@ -94,35 +94,24 @@ get_patches_key() {
 	includeLinesFound=false
  	sed -i 's/\r$//' src/patches/$1/include-patches
 	sed -i 's/\r$//' src/patches/$1/exclude-patches
-	if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
-		num=${BASH_REMATCH[1]}
-		if [ $num -ge 5 ]; then
-			while IFS= read -r line1; do
-				excludePatches+=" -d \"$line1\""
-				excludeLinesFound=true
-			done < src/patches/$1/exclude-patches
-			while IFS= read -r line2; do
-				if [[ "$line2" == *"|"* ]]; then
-					patch_name="${line2%%|*}"
-					options="${line2#*|}"
-					includePatches+=" -e \"${patch_name}\" ${options}"
-				else
-					includePatches+=" -e \"$line2\""
-				fi
-				includeLinesFound=true
-			done < src/patches/$1/include-patches
+
+	# Use CLI v5+ syntax: -d for disable, -e for enable
+	while IFS= read -r line1; do
+		excludePatches+=" -d \"$line1\""
+		excludeLinesFound=true
+	done < src/patches/$1/exclude-patches
+
+	while IFS= read -r line2; do
+		if [[ "$line2" == *"|"* ]]; then
+			patch_name="${line2%%|*}"
+			options="${line2#*|}"
+			includePatches+=" -e \"${patch_name}\" ${options}"
 		else
-			while IFS= read -r line1; do
-				excludePatches+=" -e \"$line1\""
-				excludeLinesFound=true
-			done < src/patches/$1/exclude-patches
-			
-			while IFS= read -r line2; do
-				includePatches+=" -i \"$line2\""
-				includeLinesFound=true
-			done < src/patches/$1/include-patches
+			includePatches+=" -e \"$line2\""
 		fi
-	fi
+		includeLinesFound=true
+	done < src/patches/$1/include-patches
+
 	if [ "$excludeLinesFound" = false ]; then
 		excludePatches=""
 	fi
@@ -178,26 +167,8 @@ get_apk() {
 	fi
 
 	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
-	  for spec in "revanced-cli-|5|*.rvp" "morphe-cli-|1|*.mpp"; do
-		IFS="|" read -r jar_prefix min_major patch_glob <<<"$spec"
-
-		if [[ $(ls "${jar_prefix}"*.jar 2>/dev/null) =~ ${jar_prefix}([0-9]+) ]]; then
-		  num=${BASH_REMATCH[1]}
-
-		  if [ "$num" -ge "$min_major" ]; then
-			version=$(java -jar *cli*.jar list-patches --with-packages --with-versions $patch_glob | awk -v pkg="$1" '
-			  BEGIN { found = 0 }
-			  /^Index:/ { found = 0 }
-			  /Package name: / { if ($3 == pkg) { found = 1 } }
-			  /Compatible versions:/ { if (found) { getline; latest_version = $1; while (getline && $1 ~ /^[0-9]+\./) { latest_version = $1 } print latest_version; exit } }
-			')
-		  else
-			version=$(jq -r '[.. | objects | select(.name == "'"$1"'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json 2>/dev/null | uniq)
-		  fi
-		fi
-
-		[ -n "$version" ] && break
-	  done
+		# Use CLI v5+ list-patches command
+		version=$(java -jar *cli*.jar list-patches --with-packages --with-versions *.rvp | awk -v pkg="$1" 'BEGIN { found = 0 } /^Index:/ { found = 0 } /Package name: / { if ($3 == pkg) { found = 1 } } /Compatible versions:/ { if (found) { getline; latest_version = $1; while (getline && $1 ~ /^[0-9]+\./) { latest_version = $1 } print latest_version; exit } }')
 	fi
 
 	export version="$version"
@@ -271,26 +242,8 @@ get_apk() {
 }
 get_apkpure() {
 	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
-	  for spec in "revanced-cli-|5|*.rvp" "morphe-cli-|1|*.mpp"; do
-		IFS="|" read -r jar_prefix min_major patch_glob <<<"$spec"
-
-		if [[ $(ls "${jar_prefix}"*.jar 2>/dev/null) =~ ${jar_prefix}([0-9]+) ]]; then
-		  num=${BASH_REMATCH[1]}
-
-		  if [ "$num" -ge "$min_major" ]; then
-			version=$(java -jar *cli*.jar list-patches --with-packages --with-versions $patch_glob | awk -v pkg="$1" '
-			  BEGIN { found = 0 }
-			  /^Index:/ { found = 0 }
-			  /Package name: / { if ($3 == pkg) { found = 1 } }
-			  /Compatible versions:/ { if (found) { getline; latest_version = $1; while (getline && $1 ~ /^[0-9]+\./) { latest_version = $1 } print latest_version; exit } }
-			')
-		  else
-			version=$(jq -r '[.. | objects | select(.name == "'"$1"'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json 2>/dev/null | uniq)
-		  fi
-		fi
-
-		[ -n "$version" ] && break
-	  done
+		# Use CLI v5+ list-patches command
+		version=$(java -jar *cli*.jar list-patches --with-packages --with-versions *.rvp | awk -v pkg="$1" 'BEGIN { found = 0 } /^Index:/ { found = 0 } /Package name: / { if ($3 == pkg) { found = 1 } } /Compatible versions:/ { if (found) { getline; latest_version = $1; while (getline && $1 ~ /^[0-9]+\./) { latest_version = $1 } print latest_version; exit } }')
 	fi
 
 	export version="$version"
@@ -351,22 +304,9 @@ patch() {
 			p="patch " b="-p *.mpp" m="" a="" ks="" pu="--purge=true" opt="" force=" --force"
 			echo "Patching with Morphe"
 		else
-			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
-				num=${BASH_REMATCH[1]}
-				if [ $num -ge 5 ]; then
-					p="patch " b="-p *.rvp" m="" a="" ks=" --keystore=./src/ks.keystore" pu="--purge=true" opt="" force=" --force"
-					echo "Patching with Revanced-cli version 5+"
-				elif [ $num -eq 4 ]; then
-					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks=" --keystore=./src/ks.keystore" pu="--purge=true" opt="--options=./src/options/$2.json "
-					echo "Patching with Revanced-cli version 4"
-				elif [ $num -eq 3 ]; then
-					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks=" --keystore=./src/_ks.keystore" pu="--purge=true" opt="--options=./src/options/$2.json "
-					echo "Patching with Revanced-cli version 3"
-				elif [ $num -eq 2 ]; then
-					p="" b="--bundle *patch*.jar" m="--merge *integration*.apk " a="--apk " ks=" --keystore=./src/_ks.keystore" pu="--clean" opt="--options=./src/options/$2.json " force=" --experimental"
-					echo "Patching with Revanced-cli version 2"
-				fi
-			fi
+			# Use CLI v5+ syntax (current standard)
+			p="patch " b="-p *.rvp" m="" a="" ks="ks" pu="--purge=true" opt="" force=" --force"
+			echo "Patching with Revanced-cli version 5+"
 		fi
 		if [ "$3" = inotia ]; then
 			unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER

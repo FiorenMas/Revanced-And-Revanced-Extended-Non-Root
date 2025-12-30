@@ -48,7 +48,7 @@ Download
 
 #### [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](?tab=readme-ov-file#facebook)
 
-#### [![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](?tab=readme-ov-file#messenge)
+#### [![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](?tab=readme-ov-file#messenger)
 
 #### [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](?tab=readme-ov-file#twitter)
 

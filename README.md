@@ -116,6 +116,10 @@ Download
 
 ### [YouTube](https://play.google.com/store/apps/details?id=com.google.android.youtube)
 
+### [Morphe:](https://github.com/MorpheApp/morphe-patches)
+
+[All Architectures](../../releases/download/all/youtube-morphe.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest) | [Beta version](https://github.com/ReVanced/revanced-patches/releases)            |
@@ -135,29 +139,6 @@ Download
 | ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-revanced.apk)     |
 | [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-revanced.apk) |
-
-</details>
-
-### [LisoUseInAIKyrios Patch (Revanced fork):](https://github.com/LisoUseInAIKyrios/revanced-patches)
-
-[All Architectures](../../releases/download/all/youtube-revanced-LisoUseInAIKyrios.apk)
-
-[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-LisoUseInAIKyrios.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-LisoUseInAIKyrios.apk)
-
-[x86](../../releases/download/all/youtube-x86-revanced-LisoUseInAIKyrios.apk)
-
-[x86_64](../../releases/download/all/youtube-x86_64-revanced-LisoUseInAIKyrios.apk)
-
-<details>
-  <summary>Lite version</summary>
-
-**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs**
-
-[Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced-LisoUseInAIKyrios.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced-LisoUseInAIKyrios.apk)
 
 </details>
 
@@ -244,16 +225,6 @@ Download
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
 | [x86](../../releases/download/all/youtube-music-x86-revanced.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-revanced.apk)                 |
 | [x86_64](../../releases/download/all/youtube-music-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced.apk)           |
-
-### [LisoUseInAIKyrios Patch (Revanced fork):](https://github.com/LisoUseInAIKyrios/revanced-patches)
-
-[Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-LisoUseInAIKyrios.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced-LisoUseInAIKyrios.apk)
-
-[x86](../../releases/download/all/youtube-music-x86-revanced-LisoUseInAIKyrios.apk)
-
-[x86_64](../../releases/download/all/youtube-music-x86_64-revanced-LisoUseInAIKyrios.apk)
 
 ### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
 
@@ -659,11 +630,11 @@ Cloned version has a different package name than the original app, so you can in
 </details>
 
 <details>
-  <summary>LisoUseInAIKyrios</summary>
+  <summary>Morphe</summary>
 
-[Patches](https://github.com/LisoUseInAIKyrios/revanced-patches) - [GPL-3.0](https://github.com/LisoUseInAIKyrios/revanced-patches/blob/main/LICENSE)
+[Patches](https://github.com/MorpheApp/morphe-patches) - [GPL-3.0](https://github.com/MorpheApp/morphe-patches/blob/main/LICENSE)
 
-[CLI](https://github.com/LisoUseInAIKyrios/revanced-cli) - [GPL-3.0](https://github.com/LisoUseInAIKyrios/revanced-cli/blob/main/LICENSE)
+[CLI](https://github.com/MorpheApp/morphe-cli) - [GPL-3.0](https://github.com/MorpheApp/morphe-cli/blob/main/LICENSE)
 
 </details>
 

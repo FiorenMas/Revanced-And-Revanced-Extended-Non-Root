@@ -11,15 +11,15 @@ on:
       org:
         description: 'Which "Revanced" do you want to patch?'
         required: true
-        default: 'Revanced'
+        default: 'Morphe'
         type: choice
         options:
+          - 'Morphe'
           - 'Revanced'
           - 'Revanced Beta'
           - 'Revanced Extended'
           - 'Revanced Extended Beta'
           - 'Revanced Extended Arsclib'
-          - 'Revanced LisoUseInAIKyrios'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
@@ -84,11 +84,12 @@ jobs:
         id: release-rvb
         if: steps.check-gh-rvb.outputs.internet_error == '0'
         uses: ./.github/actions/release
-  patch_rv_liso:
-    name: Patch Revanced LisoUseInAIKyrios
-    if: ${{ github.event.inputs.org == 'Revanced LisoUseInAIKyrios' || inputs.org == 'Revanced LisoUseInAIKyrios' }}
+  patch_morphe:
+    name: Patch Morphe
+    if: ${{ github.event.inputs.org == 'Morphe' || inputs.org == 'Morphe' }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         run: [1, 2, 3]
     steps:
@@ -97,15 +98,15 @@ jobs:
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
-        id: check-gh-rv-liso
+        id: check-gh-morphe
         run: bash src/etc/connection.sh
       - name: Patch apk
-        id: patch-rv-liso
-        if: steps.check-gh-rv-liso.outputs.internet_error == '0'
-        run: bash src/build/LisoUseInAIKyrios.sh ${{ matrix.run }}
+        id: patch-morphe
+        if: steps.check-gh-morphe.outputs.internet_error == '0'
+        run: bash src/build/morphe.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-rv-liso
-        if: steps.check-gh-rv-liso.outputs.internet_error == '0'
+        if: steps.check-gh-morphe.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable

@@ -2,6 +2,14 @@ name: Releasing APK files
 runs:
   using: "composite"
   steps:
+    - name: Generate app version information
+      shell: bash
+      run: |
+        # Generate release notes with app versions
+        if [ -f "./src/etc/generate_release_notes.sh" ]; then
+          chmod +x ./src/etc/generate_release_notes.sh
+          bash ./src/etc/generate_release_notes.sh
+        fi
     - name: Generate release info
       shell: bash
       run: |
@@ -14,7 +22,13 @@ runs:
         [Revanced Extended anddea](https://github.com/anddea/revanced-patches/releases)
         [Revanced Extended for Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/releases)
         [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5/releases)
-        "> ${{ github.workspace }}-CHANGELOG.txt
+        " > ${{ github.workspace }}-CHANGELOG.txt
+
+        # Append app version information if it exists
+        if [ -f "./release/release_notes.md" ]; then
+          echo "" >> ${{ github.workspace }}-CHANGELOG.txt
+          cat ./release/release_notes.md >> ${{ github.workspace }}-CHANGELOG.txt
+        fi
     - name: Release
       uses: ncipollo/release-action@v1.14.0
       with:

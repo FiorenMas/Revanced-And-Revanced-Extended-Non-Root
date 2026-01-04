@@ -2,6 +2,64 @@
 
 mkdir ./release ./download
 
+# Initialize version metadata file
+VERSION_METADATA_FILE="./release/app_versions.txt"
+: > "$VERSION_METADATA_FILE"
+
+# Function to save app version and filename
+save_app_version() {
+    local app_name="$1"
+    local app_version="$2"
+    local filename="$3"
+    local package_name="$4"
+    
+    # Convert version with dashes back to dots for display
+    local display_version=$(echo "$app_version" | sed 's/-/./g')
+    
+    # Save to metadata file
+    echo "${app_name}|${display_version}|${filename}|${package_name}" >> "$VERSION_METADATA_FILE"
+    green_log "[+] Saved version info: ${app_name} v${display_version} -> ${filename}"
+}
+
+# Function to extract version from APK using aapt (if available) or fallback to filename
+extract_apk_version() {
+    local apk_file="$1"
+    local app_name="$2"
+    local package_name="$3"
+    
+    # Try to extract version using aapt if available
+    if command -v aapt &> /dev/null && [ -f "$apk_file" ]; then
+        local version_info=$(aapt dump badging "$apk_file" 2>/dev/null | grep "versionName" | sed -n "s/.*versionName='\([^']*\)'.*/\1/p")
+        if [ -n "$version_info" ]; then
+            echo "$version_info"
+            return 0
+        fi
+    fi
+    
+    # Fallback: return "unknown" 
+    echo "unknown"
+}
+
+# Wrapper for req function that tracks version for direct downloads
+req_with_version() {
+    local url="$1"
+    local filename="$2"
+    local app_name="$3"
+    local package_name="$4"
+    local version="${5:-unknown}"
+    
+    req "$url" "$filename"
+    
+    # If download was successful, save version info
+    if [ -f "./download/$filename" ]; then
+        # Try to extract version from APK if version is unknown
+        if [ "$version" == "unknown" ]; then
+            version=$(extract_apk_version "./download/$filename" "$app_name" "$package_name")
+        fi
+        save_app_version "$app_name" "$version" "$filename" "$package_name"
+    fi
+}
+
 #Setup pup for download apk files
 wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/pup_v0.4.0_linux_amd64.zip
 unzip "./pup.zip" -d "./" > /dev/null 2>&1
@@ -215,6 +273,7 @@ get_apk() {
                               "$5")
         if [[ -f "./download/$base_apk" ]]; then
             green_log "[+] Successfully downloaded $2"
+            save_app_version "$3" "$version" "$2.apk" "$1"
         else
             red_log "[-] Failed to download $2"
             exit 1
@@ -250,6 +309,7 @@ get_apk() {
 							  "$5")
 		if [[ -f "./download/$base_apk" ]]; then
 			green_log "[+] Successfully downloaded $2"
+			save_app_version "$3" "$version" "$2.apk" "$1"
 			break
 		else
 			((attempt++))
@@ -306,10 +366,13 @@ get_apkpure() {
 		version="$(req "$url" - | awk -F'Download APK | \\(' '/<h2>/{print $2}')"
 	fi
 	green_log "[+] Downloading $2 version: $version $4"
-	url="$(req "$url" - | grep -oP '<a[^>]+id="download_link"[^>]+href="\Khttps://[^"]+')"
+	url="$(req "$url" - | grep -oP '<a[^>]+id="download_link"[^>]+href="\Khttps://[^']+')"
 	req "$url" "$base_apk"
 	if [[ -f "./download/$base_apk" ]]; then
 		green_log "[+] Successfully downloaded $2"
+		# Convert version display (may have special chars)
+		local clean_version=$(echo "$version" | sed 's/ /_/g; s/-/_/g')
+		save_app_version "$3" "$clean_version" "$2.apk" "$1"
 	else
 		red_log "[-] Failed to download $2"
 		exit 1

@@ -14,7 +14,7 @@ morphe_dl(){
 	patch "youtube" "morphe" "morphe"
 	# Remove unused architectures
 	for i in {0..3}; do
-		apk_editor "youtube-morphe" "${archs[i]}" ${libs[i]}
+	  apk_editor "youtube" "${archs[i]}" ${libs[i]}
 	done
 	# Patch Youtube Arm64-v8a
 	get_patches_key "youtube-morphe"

@@ -411,15 +411,14 @@ gen_rip_libs() {
 }
 split_arch() {
 	green_log "[+] Splitting $1 to ${archs[i]}:"
-	if [ -f "./download/$1.apk" ]; then
+	if [ -f "./release/$1.apk" ]; then
 		unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
 		eval java -jar revanced-cli*.jar patch \
 		-p *.rvp \
-		$3 \
+		$2 \
 		--keystore=./src/_ks.keystore --force \
-		--legacy-options=./src/options/$2.json $excludePatches$includePatches \
-		--out=./release/$1-${archs[i]}-$2.apk\
-		./download/$1.apk
+		--out=./release/$1-${archs[i]}.apk\
+		./release/$1.apk
 	else
 		red_log "[-] Not found $1.apk"
 		exit 1

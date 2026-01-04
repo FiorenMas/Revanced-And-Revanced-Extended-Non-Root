@@ -120,6 +120,14 @@ Download
 
 [All Architectures](../../releases/download/all/youtube-morphe.apk)
 
+[Arm64-v8a](../../releases/download/all/youtube-morphe-arm64-v8a.apk)
+
+[Armeabi-v7a](../../releases/download/all/youtube-morphe-armeabi-v7a.apk)
+
+[x86](../../releases/download/all/youtube-morphe-x86.apk)     
+
+[x86_64](../../releases/download/all/youtube-morphe-x86_64.apk)   
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest) | [Beta version](https://github.com/ReVanced/revanced-patches/releases)            |
@@ -216,6 +224,16 @@ Download
 ---
 
 ### [YouTube Music](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
+
+### [Morphe:](https://github.com/MorpheApp/morphe-patches)
+
+[Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-morphe.apk)
+
+[Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-morphe.apk)
+
+[x86](../../releases/download/all/youtube-music-x86-morphe.apk)     
+
+[x86_64](../../releases/download/all/youtube-music-x86_64-morphe.apk)   
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 

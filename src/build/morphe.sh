@@ -12,6 +12,13 @@ morphe_dl(){
 	get_patches_key "youtube-morphe"
 	get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube"
 	patch "youtube" "morphe" "morphe"
+	rm *cli*
+	dl_gh "revanced-cli" "inotia00" "latest"
+	dl_gh "piko" "crimera" "prerelease" #Using this patches file because not have youtube patch, so it will conflict with youtube patch from Morphe. It's just dump file because cli need one patch input to run.
+	# Split architecture Youtube using inotia cli:
+	for i in {0..3}; do
+		split_arch "youtube-morphe" "$(gen_rip_libs ${libs[i]})"
+	done
 	#get_patches_key "youtube-morphe"
 	#get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	#split_editor "youtube" "youtube"
@@ -49,21 +56,21 @@ morphe_dl(){
 	morphe_dl
 	# Patch YouTube Music:
 	# Arm64-v8a
-	#get_patches_key "youtube-music-morphe"
-	#get_apk "com.google.android.apps.youtube.music" "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
-	#patch "youtube-music-arm64-v8a" "morphe" "morphe"
+	get_patches_key "youtube-music-morphe"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
+	patch "youtube-music-arm64-v8a" "morphe" "morphe"
 	# Armeabi-v7a
-	#get_patches_key "youtube-music-morphe"
-	#get_apk "com.google.android.apps.youtube.music" "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
-	#patch "youtube-music-armeabi-v7a" "morphe" "morphe"
+	get_patches_key "youtube-music-morphe"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
+	patch "youtube-music-armeabi-v7a" "morphe" "morphe"
 	# x86_64
-	#get_patches_key "youtube-music-morphe"
-	#get_apk "com.google.android.apps.youtube.music" "youtube-music-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
-	#patch "youtube-music-x86_64" "morphe" "morphe"
+	get_patches_key "youtube-music-morphe"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
+	patch "youtube-music-x86_64" "morphe" "morphe"
 	# x86
-	#get_patches_key "youtube-music-morphe"
-	#get_apk "com.google.android.apps.youtube.music" "youtube-music-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
-	#patch "youtube-music-x86" "morphe" "morphe"
+	get_patches_key "youtube-music-morphe"
+	get_apk "com.google.android.apps.youtube.music" "youtube-music-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
+	patch "youtube-music-x86" "morphe" "morphe"
 }
 case "$1" in
     1)

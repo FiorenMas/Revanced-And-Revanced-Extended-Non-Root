@@ -15,6 +15,7 @@ on:
         type: choice
         options:
           - 'Morphe'
+          - 'Morphe Beta'
           - 'Revanced'
           - 'Revanced Beta'
           - 'Revanced Extended'
@@ -105,8 +106,32 @@ jobs:
         if: steps.check-gh-morphe.outputs.internet_error == '0'
         run: bash src/build/morphe.sh ${{ matrix.run }}
       - name: Releasing APK files
-        id: release-rv-liso
+        id: release-morphe
         if: steps.check-gh-morphe.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_morphe_beta:
+    name: Patch Morphe Beta
+    if: ${{ github.event.inputs.org == 'Morphe Beta' || inputs.org == 'Morphe Beta' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-morphe-beta
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-morphe-beta
+        if: steps.check-gh-morphe-beta.outputs.internet_error == '0'
+        run: bash src/build/morphe-beta.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-morphe-beta
+        if: steps.check-gh-morphe-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve_anddea_stable:
     name: Patch RVX Anddea Stable

@@ -33,6 +33,10 @@ jobs:
         id: check-morphe
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh MorpheApp/morphe-patches latest youtube-morphe.apk
+      - name: Check new patch Morphe Beta
+        id: check-morphe-beta
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh MorpheApp/morphe-patches prerelease youtube-beta-morphe.apk
       - name: Check new patch Revanced Extended forked by Anddea Stable Version
         id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -104,6 +108,7 @@ jobs:
       check_rv: ${{ steps.check-rv.outputs.new_patch }}
       check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
       check_morphe: ${{ steps.check-morphe.outputs.new_patch }}
+      check_morphe_beta: ${{ steps.check-morphe-beta.outputs.new_patch }}
       check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
@@ -137,6 +142,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Morphe"
+  Patch-Morphe-Beta:
+    name: Patch Morphe Beta
+    needs: check
+    if: ${{ needs.check.outputs.check_morphe_beta == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "Morphe Beta"
   Patch-RVE-anddea-stable:
     name: Patch RVX Anddea Stable
     needs: check

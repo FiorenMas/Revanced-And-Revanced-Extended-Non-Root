@@ -12,13 +12,23 @@ morphe_dl(){
 	get_patches_key "youtube-morphe"
 	get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube"
 	patch "youtube" "morphe" "morphe"
-	rm *cli*
-	dl_gh "revanced-cli" "inotia00" "latest"
-	dl_gh "piko" "crimera" "prerelease" #Using this patches file because not have youtube patch, so it will conflict with youtube patch from Morphe. It's just dump file because cli need one patch input to run.
-	# Split architecture Youtube using inotia cli:
+	# Remove unused architectures
 	for i in {0..3}; do
-		split_arch "youtube-morphe" "$(gen_rip_libs ${libs[i]})"
+		apk_editor "youtube-morphe" "${archs[i]}" ${libs[i]}
 	done
+	# Patch Youtube Arm64-v8a
+	get_patches_key "youtube-morphe"
+	patch "youtube-arm64-v8a" "morphe" "morphe"
+	# Patch Youtube Armeabi-v7a
+	get_patches_key "youtube-morphe"
+	patch "youtube-armeabi-v7a" "morphe" "morphe"
+	# Patch Youtube x86
+	get_patches_key "youtube-morphe" 
+	patch "youtube-x86" "morphe" "morphe"
+	# Patch Youtube x86_64
+	get_patches_key "youtube-morphe" 
+	patch "youtube-x86_64" "morphe" "morphe"
+	
 	#get_patches_key "youtube-morphe"
 	#get_apk "com.google.android.youtube" "youtube" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	#split_editor "youtube" "youtube"

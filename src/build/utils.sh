@@ -401,9 +401,19 @@ split_editor() {
 
 #################################################
 
-# Split architectures using Revanced CLI, created by inotia00
 archs=("arm64-v8a" "armeabi-v7a" "x86_64" "x86")
 libs=("armeabi-v7a x86_64 x86" "arm64-v8a x86_64 x86" "armeabi-v7a arm64-v8a x86" "armeabi-v7a arm64-v8a x86_64")
+
+# Remove unused architectures directly
+apk_editor() {
+	local apk="$1" keep="$2"; shift 2
+	local dir="./download/$apk"
+	rm -rf "$dir" && unzip -q "./download/$apk.apk" -d "$dir" || return 1
+	for r in "$@"; do rm -rf "$dir/lib/$r"; done
+	(cd "$dir" && zip -qr "../$apk-$keep.apk" .)
+}
+
+# Split architectures using Revanced CLI, created by inotia00
 gen_rip_libs() {
 	for lib in $@; do
 		echo -n "--rip-lib "$lib" "
@@ -412,10 +422,9 @@ gen_rip_libs() {
 split_arch() {
 	green_log "[+] Splitting $1 to ${archs[i]}:"
 	if [ -f "./release/$1.apk" ]; then
-		unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
 		eval java -jar revanced-cli*.jar patch \
 		-p *.rvp \
-		$2 \
+		$3 \
 		--keystore=./src/_ks.keystore --force \
 		--out=./release/$1-${archs[i]}.apk\
 		./release/$1.apk

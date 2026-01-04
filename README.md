@@ -120,13 +120,13 @@ Download
 
 [All Architectures](../../releases/download/all/youtube-morphe.apk)
 
-[Arm64-v8a](../../releases/download/all/youtube-morphe-arm64-v8a.apk)
+[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-morphe.apk)
 
-[Armeabi-v7a](../../releases/download/all/youtube-morphe-armeabi-v7a.apk)
+[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-morphe.apk)
 
-[x86](../../releases/download/all/youtube-morphe-x86.apk)     
+[x86](../../releases/download/all/youtube-x86-morphe.apk)     
 
-[x86_64](../../releases/download/all/youtube-morphe-x86_64.apk)   
+[x86_64](../../releases/download/all/youtube-x86_64-morphe.apk)   
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 

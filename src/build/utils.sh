@@ -116,7 +116,7 @@ get_patches_key() {
 				excludePatches+=" -e \"$line1\""
 				excludeLinesFound=true
 			done < src/patches/$1/exclude-patches
-			
+
 			while IFS= read -r line2; do
 				includePatches+=" -i \"$line2\""
 				includeLinesFound=true
@@ -174,7 +174,7 @@ get_apk() {
 			x86) url_regexp='x86'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
 			x86_64) url_regexp='x86_64'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
 			*) url_regexp='$5'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
-		esac 
+		esac
 	fi
 
 	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
@@ -348,7 +348,7 @@ patch() {
 			p="patch " b="-p *.rvp" m="" a="" ks=" --keystore=./src/_ks.keystore" pu="--purge=true" opt="--legacy-options=./src/options/$2.json" force=" --force"
 			echo "Patching with Revanced-cli inotia"
 		elif [ "$3" = morphe ]; then
-			p="patch " b="-p *.mpp" m="" a="" ks="" pu="--purge=true" opt="" force=" --force"
+			p="patch " b="-p *.mpp" m="" a="" ks=" --keystore=./src/morphe.keystore --keystore-password=Morphe --keystore-entry-password=Morphe" pu="--purge=true" opt="" force=" --force"
 			echo "Patching with Morphe"
 		else
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
@@ -376,7 +376,7 @@ patch() {
 		unset lock_version
 		unset excludePatches
 		unset includePatches
-	else 
+	else
 		red_log "[-] Not found $1.apk"
 		exit 1
 	fi

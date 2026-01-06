@@ -106,6 +106,8 @@ Download
 
 #### [FX File Explorer](?tab=readme-ov-file#fx-file-explorer-1)
 
+#### [MyFitnessPal](?tab=readme-ov-file#MyFitnessPal-1)
+
 </details>
 
 ## [MicroG ReVanced:](https://github.com/ReVanced/GmsCore)
@@ -552,6 +554,16 @@ Download
 | Stable version                                                            | Beta version                                                                  |
 | ------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/crunchyroll-revanced.apk) | [All Architectures](../../releases/download/all/crunchyroll-beta-revanced.apk)|
+
+---
+
+### [MyFitnessPal:](https://play.google.com/store/apps/details?id=com.myfitnesspal.android)
+
+### [Revanced:](https://github.com/revanced/revanced-patches)
+
+| Stable version                                                             | Beta version                                                                   |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
+| [All Architectures](../../releases/download/all/MyFitnessPal-revanced.apk) | [All Architectures](../../releases/download/all/MyFitnessPal-beta-revanced.apk)|
 
 ---
 

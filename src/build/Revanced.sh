@@ -217,7 +217,7 @@ revanced_dl(){
 	revanced_dl
 	# Patch Crunchyroll
 	get_patches_key "Crunchyroll-revanced"
-	url="https://crunchyroll.en.uptodown.com/android/download/1123284824-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
+	url="https://crunchyroll.en.uptodown.com/android/download/1133091557-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
 	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
 	req "$url" "crunchyroll"
 	split_editor "crunchyroll" "crunchyroll"
@@ -250,6 +250,12 @@ revanced_dl(){
 	get_patches_key "ProtonVPN"
 	get_apk "ch.protonvpn.android" "protonvpn" "protonvpn-free-vpn-secure-unlimited-fdroid-version" "proton-technologies-ag/protonvpn-free-vpn-secure-unlimited-fdroid-version/protonvpn-fast-secure-vpn-f-droid-version"
 	patch "protonvpn" "revanced"
+	# Patch MyFitnessPal
+	get_patches_key "MyFitnessPal"
+ 	url="https://calorie-counter-myfitnesspal.en.uptodown.com/android/download/1010004885" #Use uptodown because apkmirror always ask pass Cloudflare on this app
+	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
+	req "$url" "MyFitnessPal.apk"
+	patch "MyFitnessPal" "revanced"
 }
 case "$1" in
     1)

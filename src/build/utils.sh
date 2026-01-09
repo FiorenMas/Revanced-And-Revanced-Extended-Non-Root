@@ -201,6 +201,10 @@ get_apk() {
 	fi
 
 	export version="$version"
+
+	version=$(printf '%s\n' "$version" "$prefer_version" | sort -V | tail -n1)
+	unset prefer_version
+
     if [[ -n "$version" ]]; then
         version=$(echo "$version" | tr -d ' ' | sed 's/\./-/g')
         green_log "[+] Downloading $3 version: $version $5 $6 $7"
@@ -294,6 +298,10 @@ get_apkpure() {
 	fi
 
 	export version="$version"
+
+	version=$(printf '%s\n' "$version" "$prefer_version" | sort -V | tail -n1)
+	unset prefer_version
+
 	if [[ $4 == "Bundle" ]] || [[ $4 == "Bundle_extract" ]]; then
 		local base_apk="$2.xapk"
 	else

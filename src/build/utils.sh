@@ -24,9 +24,9 @@ red_log() {
 
 # Download Github assets requirement:
 dl_gh() {
-	if [ $3 == "prerelease" ]; then
+	if [ "$3" == "prerelease" ]; then
 		local repo=$1
-		for repo in $1 ; do
+		for repo in $1; do
 			local owner=$2 tag=$3 found=0 assets=0
 			releases=$(wget -qO- "https://api.github.com/repos/$owner/$repo/releases")
 			while read -r line; do
@@ -42,20 +42,19 @@ dl_gh() {
 					prerelease=$(echo $line | cut -d ' ' -f 2 | tr -d ',')
 					if [ "$tag" == "prerelease" ] && [ "$prerelease" == "true" ] ; then
 						found=1
-      					elif [ "$tag" == "prerelease" ] && [ "$prerelease" == "false" ]; then
-	   					found=1
+					elif [ "$tag" == "prerelease" ] && [ "$prerelease" == "false" ]; then
+						found=1
 					fi
 				fi
 				if [[ $line == *"\"assets\":"* ]]; then
-					if [ $found -eq 1 ]; then
-						assets=1
-					fi
+					[ $found -eq 1 ] && assets=1
 				fi
 				if [[ $line == *"\"browser_download_url\":"* ]]; then
 					if [ $assets -eq 1 ]; then
 						url=$(echo $line | cut -d '"' -f 4)
-							if [[ $url != *.asc ]]; then
+						if [[ $url != *.asc ]]; then
 							name=$(basename "$url")
+							[[ $tag == prerelease && $name != *dev* ]] && continue
 							wget -q -O "$name" "$url"
 							green_log "[+] Downloading $name from $owner"
 						fi
@@ -70,15 +69,16 @@ dl_gh() {
 			done <<< "$releases"
 		done
 	else
-		for repo in $1 ; do
+		for repo in $1; do
 			tags=$( [ "$3" == "latest" ] && echo "latest" || echo "tags/$3" )
 			wget -qO- "https://api.github.com/repos/$2/$repo/releases/$tags" \
 			| jq -r '.assets[] | "\(.browser_download_url) \(.name)"' \
 			| while read -r url names; do
-   				if [[ $url != *.asc ]]; then
+				if [[ $url != *.asc ]]; then
+					[[ $3 == latest && $names == *dev* ]] && continue
 					green_log "[+] Downloading $names from $2"
-					wget -q -O "$names" $url
-     				fi
+					wget -q -O "$names" "$url"
+				fi
 			done
 		done
 	fi

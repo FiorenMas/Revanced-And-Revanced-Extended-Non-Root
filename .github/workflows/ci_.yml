@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  Patch-Instafel:
-    name: Patch Instafel
+  Patch-ReVancedXposed:
+    name: Patch ReVancedXposed
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,14 +15,14 @@ jobs:
       - name: Preparing to patch
         uses: ./.github/actions/preparing
       - name: Check github connection
-        id: check-gh-ins
+        id: check-gh-RVxposed
         run: bash src/etc/connection.sh
       - name: Patch apk
-        id: patch-ins
-        if: steps.check-gh-ins.outputs.internet_error == '0'
-        run: bash src/build/Instafel.sh
+        id: patch-RVxposed
+        if: steps.check-gh-RVxposed.outputs.internet_error == '0'
+        run: bash src/build/ReVancedXposed.sh
       - name: Releasing APK files
-        id: release-ins
-        if: steps.check-gh-ins.outputs.internet_error == '0'
+        id: release-RVxposed
+        if: steps.check-gh-RVxposed.outputs.internet_error == '0'
         uses: ./.github/actions/release
 

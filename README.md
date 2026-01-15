@@ -607,17 +607,11 @@ Download
 Apps below not based on Revanced, but project still open-source.
 </h4>
 
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](https://play.google.com/store/apps/details?id=com.instagram.android)
+### [Spotjfy:](https://www.google.com/search?q=Spotjfy)
 
-### [Instafel:](https://github.com/mamiiblt/instafel)
+### [ReVancedXposed](https://github.com/chsbuffer/ReVancedXposed)
 
-👉 [Offical author download link](https://github.com/mamiiblt/instafel/releases/latest)
-
-[Arm64-v8a](../../releases/download/all/instagram-instafel.apk )
-
-[Cloned-Arm64-v8a](../../releases/download/all/instagram-clone-instafel.apk )
-
-Cloned version has a different package name than the original app, so you can install both the original and the modified app at the same time.
+[All Architectures](../../releases/download/all/spotjfy-ReVancedXposed.apk )
 
 ### ⚠️ Library, resources using in this repository:
 
@@ -725,9 +719,18 @@ Cloned version has a different package name than the original app, so you can in
 </details>
 
 <details>
-  <summary>mamiiblt</summary>
+  <summary>chsbuffer</summary>
 
-[Patches](https://github.com/mamiiblt/instafel) - [MIT](https://github.com/mamiiblt/instafel/blob/main/LICENSE)
+[Patches](https://github.com/chsbuffer/ReVancedXposed) - [GPL-3.0](https://github.com/chsbuffer/ReVancedXposed/blob/main/LICENSE)
+
+</details>
+
+</details>
+
+<details>
+  <summary>JingMatrix</summary>
+
+[LSPatch](https://github.com/JingMatrix/LSPatch) - [GPL-3.0](https://github.com/JingMatrix/LSPatch/blob/main/LICENSE)
 
 </details>
 

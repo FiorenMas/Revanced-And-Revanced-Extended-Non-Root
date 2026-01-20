@@ -3,7 +3,7 @@
 source ./src/build/utils.sh
 # Download requirements
 morphe_dl(){
-	dl_gh "morphe-patches" "MorpheApp" "latest"
+	dl_gh "morphe-patches" "MorpheApp" "prerelease"
 	dl_gh "morphe-cli" "MorpheApp" "latest"
 }
 1() {

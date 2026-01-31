@@ -377,6 +377,13 @@ Download
 
 ### [Reddit:](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
 
+### [Morphe:](https://github.com/MorpheApp/morphe-patches)
+
+| Stable version                                                       | Beta version                                                              |
+| -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
+| [All Architectures](../../releases/download/all/reddit-morphe.apk)   | [All Architectures](../../releases/download/all/reddit-beta-morphe.apk)   |
+| [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-morphe.apk) | [Arm64-v8a](../../releases/download/all/reddit-beta-arm64-v8a-morphe.apk) |
+
 ### [Revanced:](https://github.com/ReVanced/revanced-patches)
 
 | Stable version                                                         | Beta version                                                                |

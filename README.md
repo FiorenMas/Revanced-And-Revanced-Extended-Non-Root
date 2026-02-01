@@ -164,18 +164,6 @@ Download
 | [x86](../../releases/download/all/youtube-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-revanced-extended.apk)                 |
 | [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced-extended.apk)           |
 
-<details>
-  <summary>Lite version</summary>
-
-**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs**
-
-| [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)               | [Beta version](https://github.com/inotia00/revanced-patches/releases)                          |
-| -------------------------------------------------------------------------------------------  | ---------------------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced-extended.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-revanced-extended.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced-extended.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-revanced-extended.apk) |
-
-</details>
-
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)     | [Beta version](https://github.com/anddea/revanced-patches/releases)            |

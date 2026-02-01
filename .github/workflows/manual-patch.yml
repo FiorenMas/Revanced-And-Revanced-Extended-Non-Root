@@ -234,7 +234,7 @@ jobs:
       - name: Install library
         run: |
           apt-get update
-          apt-get install -y curl jq wget unzip
+          apt-get install -y curl jq wget unzip zip
       - name: Check github connection
         id: check-gh-rve
         run: bash src/etc/connection.sh
@@ -277,7 +277,7 @@ jobs:
       - name: Install library
         run: |
           apt-get update
-          apt-get install -y curl jq wget unzip
+          apt-get install -y curl jq wget unzip zip
       - name: Check github connection
         id: check-gh-rve-beta
         run: bash src/etc/connection.sh

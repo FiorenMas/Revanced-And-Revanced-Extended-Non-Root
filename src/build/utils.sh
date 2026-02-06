@@ -196,11 +196,12 @@ get_apk() {
 
 		  if [ "$num" -ge "$min_major" ]; then
 			version=$(java -jar *cli*.jar list-patches --with-packages --with-versions $patch_glob | awk -v pkg="$1" '
-			  BEGIN { found = 0 }
-			  /^Index:/ { found = 0 }
-			  /Package name: / { if ($3 == pkg) { found = 1 } }
-			  /Compatible versions:/ { if (found) { getline; latest_version = $1; while (getline && $1 ~ /^[0-9]+\./) { latest_version = $1 } print latest_version; exit } }
-			')
+			  BEGIN { found = 0; printing = 0 }
+			  /^Index:/ { if (printing) exit; found = 0 }
+			  /Package name: / { if ($3 == pkg) found = 1 }
+			  /Compatible versions:/ { if (found) printing = 1; next }
+			  printing && $1 ~ /^[0-9]+\./ { print $1 }
+			' | sort -V | tail -n1)
 		  else
 			version=$(jq -r '[.. | objects | select(.name == "'"$1"'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json 2>/dev/null | uniq)
 		  fi
@@ -293,11 +294,12 @@ get_apkpure() {
 
 		  if [ "$num" -ge "$min_major" ]; then
 			version=$(java -jar *cli*.jar list-patches --with-packages --with-versions $patch_glob | awk -v pkg="$1" '
-			  BEGIN { found = 0 }
-			  /^Index:/ { found = 0 }
-			  /Package name: / { if ($3 == pkg) { found = 1 } }
-			  /Compatible versions:/ { if (found) { getline; latest_version = $1; while (getline && $1 ~ /^[0-9]+\./) { latest_version = $1 } print latest_version; exit } }
-			')
+			  BEGIN { found = 0; printing = 0 }
+			  /^Index:/ { if (printing) exit; found = 0 }
+			  /Package name: / { if ($3 == pkg) found = 1 }
+			  /Compatible versions:/ { if (found) printing = 1; next }
+			  printing && $1 ~ /^[0-9]+\./ { print $1 }
+			' | sort -V | tail -n1)
 		  else
 			version=$(jq -r '[.. | objects | select(.name == "'"$1"'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json 2>/dev/null | uniq)
 		  fi

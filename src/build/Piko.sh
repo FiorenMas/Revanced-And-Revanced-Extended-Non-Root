@@ -2,8 +2,8 @@
 # Twitter Piko
 source src/build/utils.sh
 
-dl_gh "revanced-cli" "revanced" "v4.6.0"
-dl_gh "piko revanced-integrations" "crimera" "latest"
+dl_gh "revanced-cli" "revanced" "latest"
+dl_gh "piko" "crimera" "latest"
 
 # Patch Twitter Piko:
 get_patches_key "twitter-piko"

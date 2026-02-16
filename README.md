@@ -110,9 +110,10 @@ Download
 
 </details>
 
-## [MicroG RE:](https://github.com/MorpheApp/MicroG-RE)
+## [MicroG RE: (Recommend)](https://github.com/MorpheApp/MicroG-RE)
 
 [![Release](https://img.shields.io/github/v/release/MorpheApp/MicroG-RE?label=All%20Architectures&style=for-the-badge)](https://github.com/MorpheApp/MicroG-RE/releases) 
+
 
 ## [MicroG ReVanced:](https://github.com/ReVanced/GmsCore)
 
@@ -131,6 +132,16 @@ Download
 | [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-morphe.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-morphe.apk) |
 | [x86](../../releases/download/all/youtube-x86-morphe.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-morphe.apk)                 |
 | [x86_64](../../releases/download/all/youtube-x86_64-morphe.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-morphe.apk)           |
+
+### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
+
+| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)     | [Beta version](https://github.com/anddea/revanced-patches/releases)            |
+| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| [All Architectures](../../releases/download/all/youtube-stable-anddea.apk)       | [All Architectures](../../releases/download/all/youtube-beta-anddea.apk)       |
+| [Arm64-v8a](../../releases/download/all/youtube-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-anddea.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-anddea.apk) |
+| [x86](../../releases/download/all/youtube-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-anddea.apk)                 |
+| [x86_64](../../releases/download/all/youtube-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-anddea.apk)   
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
@@ -164,27 +175,6 @@ Download
 | [x86](../../releases/download/all/youtube-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-revanced-extended.apk)                 |
 | [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced-extended.apk)           |
 
-### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
-
-| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)     | [Beta version](https://github.com/anddea/revanced-patches/releases)            |
-| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [All Architectures](../../releases/download/all/youtube-stable-anddea.apk)       | [All Architectures](../../releases/download/all/youtube-beta-anddea.apk)       |
-| [Arm64-v8a](../../releases/download/all/youtube-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-anddea.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-anddea.apk) |
-| [x86](../../releases/download/all/youtube-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-anddea.apk)                 |
-| [x86_64](../../releases/download/all/youtube-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-anddea.apk)           |
-
-<details>
-  <summary>Lite version</summary>
-
-**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs**
-  
-| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)      | [Beta version](https://github.com/anddea/revanced-patches/releases)                 |
-| --------------------------------------------------------------------------------  | ----------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-anddea.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-anddea.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-anddea.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-anddea.apk) |
-
-</details>
 
 ### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
 
@@ -224,7 +214,16 @@ Download
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-morphe.apk)    | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-morphe.apk)    |
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-morphe.apk)| [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-morphe.apk)|
 | [x86](../../releases/download/all/youtube-music-x86-morphe.apk)                | [x86](../../releases/download/all/youtube-music-beta-x86-morphe.apk)                |
-| [x86_64](../../releases/download/all/youtube-music-x86_64-morphe.apk)          | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-morphe.apk)          | 
+| [x86_64](../../releases/download/all/youtube-music-x86_64-morphe.apk)          | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-morphe.apk)          |
+
+### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
+
+| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)           | [Beta version](https://github.com/anddea/revanced-patches/releases)                  |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| [Arm64-v8a](../../releases/download/all/youtube-music-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-anddea.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk) |
+| [x86](../../releases/download/all/youtube-music-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-anddea.apk)                 |
+| [x86_64](../../releases/download/all/youtube-music-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-anddea.apk)           |
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
@@ -243,15 +242,6 @@ Download
 | [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced-extended.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced-extended.apk) |
 | [x86](../../releases/download/all/youtube-music-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-revanced-extended.apk)                 |
 | [x86_64](../../releases/download/all/youtube-music-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced-extended.apk)           |
-
-### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
-
-| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)           | [Beta version](https://github.com/anddea/revanced-patches/releases)                  |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [Arm64-v8a](../../releases/download/all/youtube-music-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-anddea.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk) |
-| [x86](../../releases/download/all/youtube-music-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-anddea.apk)                 |
-| [x86_64](../../releases/download/all/youtube-music-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-anddea.apk)           |
 
 ---
 
@@ -324,21 +314,6 @@ Download
 | Stable version                                                            | Beta version                                                                   |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
 | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-beta-revanced.apk) |
-
----
-
-### [Spotjfy:](https://www.google.com/search?q=Spotjfy)
-
-### [Revanced](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                            | Beta version                                                                   |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
-| [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/spotjfy-beta-arm64-v8a-revanced.apk)   |
-
-### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
-| Stable version                                                            | Beta version                                                                   |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
-| [Arm64-v8a](../../releases/download/all/spotjfy-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/spotjfy-beta-arm64-v8a-anddea.apk)     |
 
 ---
 
@@ -594,18 +569,6 @@ Download
 ### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
 
 [All Architectures](../../releases/download/all/fx-file-explorer-indrastorms.apk)
-
----
-
-<h4 align="center">
-Apps below not based on Revanced, but project still open-source.
-</h4>
-
-### [Spotjfy:](https://www.google.com/search?q=Spotjfy)
-
-### [ReVancedXposed](https://github.com/chsbuffer/ReVancedXposed)
-
-[All Architectures](../../releases/download/all/spotjfy-ReVancedXposed.apk )
 
 ### ⚠️ Library, resources using in this repository:
 

@@ -2,7 +2,7 @@
 # Twitter Piko
 source src/build/utils.sh
 
-dl_gh "revanced-cli" "revanced" "latest"
+dl_gh "morphe-cli" "MorpheApp" "latest"
 dl_gh "piko" "crimera" "prerelease"
 
 # Patch Twitter Piko:

@@ -41,7 +41,7 @@ revanced_dl(){
 	# Patch Facebook:
 	# Arm64-v8a
 	get_patches_key "facebook"
-	url="https://d.apkpure.com/b/APK/com.facebook.katana?versionCode=457020009"
+	url="https://d.apkpure.com/b/APK/com.facebook.katana?versionCode=457020014"
 	req "$url" "facebook-arm64-v8a.apk"
 	patch "facebook-arm64-v8a" "revanced"
 }

@@ -157,7 +157,7 @@ jobs:
         if: steps.check-gh-rve-anddea-stable.outputs.internet_error == '0'
         run: bash src/build/Anddea-Revanced-Extended.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Cache_anddea_stable
           path: |
@@ -170,7 +170,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: Cache_anddea_stable
           path: ./release
@@ -225,7 +225,7 @@ jobs:
         if: steps.check-gh-rve.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Cache_rve
           path: |
@@ -238,7 +238,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: Cache_rve
           path: ./release
@@ -268,7 +268,7 @@ jobs:
         if: steps.check-gh-rve-beta.outputs.internet_error == '0'
         run: bash src/build/Revanced-Extended-Beta.sh
       - name: Cache
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: Cache_rve_beta
           path: |
@@ -281,7 +281,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Cache
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: Cache_rve_beta
           path: ./release

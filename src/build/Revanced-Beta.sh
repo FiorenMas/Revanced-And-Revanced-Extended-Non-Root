@@ -35,14 +35,12 @@ revanced_dl(){
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger"
-	url="https://facebook-messenger.en.uptodown.com/android/download"
-	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
-	req "$url" "messenger-arm64-v8a-beta.apk"
+	get_apkpure "com.facebook.orca" "messenger-arm64-v8a-beta" "facebook-messenger/com.facebook.orca"
 	patch "messenger-arm64-v8a-beta" "revanced"
 	# Patch Facebook:
 	# Arm64-v8a
 	get_patches_key "facebook"
-	url="https://d.apkpure.com/b/APK/com.facebook.katana?versionCode=457020009"
+	url="https://d.apkpure.com/b/APK/com.facebook.katana?versionCode=457020014"
 	req "$url" "facebook-arm64-v8a-beta.apk"
 	patch "facebook-arm64-v8a-beta" "revanced"
 }

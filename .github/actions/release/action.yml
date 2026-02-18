@@ -17,7 +17,7 @@ runs:
         [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5/releases)
         "> ${{ github.workspace }}-CHANGELOG.txt
     - name: Release
-      uses: ncipollo/release-action@v1.14.0
+      uses: ncipollo/release-action@v1.20.0
       with:
         artifacts: |
           ./release/*.apk

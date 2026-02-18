@@ -46,7 +46,8 @@ revanced_dl(){
 	patch "facebook-arm64-v8a" "revanced"
 }
 3() {
-	revanced_dl
+	dl_gh "revanced-cli" "revanced" "v5.0.1"
+	dl_gh "revanced-patches" "revanced" "v5.48.0" #https://github.com/ReVanced/revanced-patches/issues/6593
 	# Patch Google photos:
 	# Arm64-v8a
 	get_patches_key "gg-photos"

@@ -10,7 +10,7 @@ morphe_dl(){
 	morphe_dl
 	# Patch YouTube:
 	get_patches_key "youtube-morphe"
-	prefer_version="21.08.261"
+	prefer_version="21.10.493"
 	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube"
 	patch "youtube-beta" "morphe" "morphe"
 	# Remove unused architectures
@@ -64,6 +64,7 @@ morphe_dl(){
 	#patch "youtube-lite-armeabi-v7a" "morphe" "morphe"
 	# Patch Reddit:
 	get_patches_key "reddit-morphe"
+	prefer_version="2026.10.0"
 	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
 	split_editor "reddit-beta" "reddit"
 	patch "reddit-beta" "morphe" "morphe"
@@ -77,18 +78,22 @@ morphe_dl(){
 	# Patch YouTube Music:
 	# Arm64-v8a
 	get_patches_key "youtube-music-morphe"
+	prefer_version="9.09.52"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 	patch "youtube-music-beta-arm64-v8a" "morphe" "morphe"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-morphe"
+	prefer_version="9.09.52"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-beta-armeabi-v7a" "morphe" "morphe"
 	# x86_64
 	get_patches_key "youtube-music-morphe"
+	prefer_version="9.09.52"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
 	patch "youtube-music-beta-x86_64" "morphe" "morphe"
 	# x86
 	get_patches_key "youtube-music-morphe"
+	prefer_version="9.09.52"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
 	patch "youtube-music-beta-x86" "morphe" "morphe"
 }

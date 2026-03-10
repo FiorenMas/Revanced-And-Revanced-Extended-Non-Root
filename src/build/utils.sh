@@ -172,21 +172,9 @@ dl_apk() {
 	fi
 	req "$url" "$output"
 }
-get_apk() {
-	if [[ -z $5 ]]; then
-		url_regexp='APK<\/span>'
-	elif [[ $5 == "Bundle" ]] || [[ $5 == "Bundle_extract" ]]; then
-		url_regexp='BUNDLE<\/span>'
-	else
-		case $5 in
-			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
-			armeabi-v7a) url_regexp='armeabi-v7a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
-			x86) url_regexp='x86'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
-			x86_64) url_regexp='x86_64'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
-			*) url_regexp='$5'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
-		esac
-	fi
 
+# Detect compatible version from CLI patches:
+detect_version() {
 	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
 	  for spec in "revanced-cli-|5|*.rvp" "morphe-cli-|1|*.mpp"; do
 		IFS="|" read -r jar_prefix min_major patch_glob <<<"$spec"
@@ -195,7 +183,9 @@ get_apk() {
 		  num=${BASH_REMATCH[1]}
 
 		  if [ "$num" -ge "$min_major" ]; then
-			if [ "$num" -ge 6 ]; then
+			if [[ "$jar_prefix" == "morphe-cli-" ]]; then
+			  list_patches_flags="list-patches --with-packages --with-versions --with-options --patches"
+			elif [ "$num" -ge 6 ]; then
 			  list_patches_flags="list-patches --packages --versions --options -bp"
 			else
 			  list_patches_flags="list-patches --with-packages --with-versions"
@@ -215,6 +205,24 @@ get_apk() {
 		[ -n "$version" ] && break
 	  done
 	fi
+}
+
+get_apk() {
+	if [[ -z $5 ]]; then
+		url_regexp='APK<\/span>'
+	elif [[ $5 == "Bundle" ]] || [[ $5 == "Bundle_extract" ]]; then
+		url_regexp='BUNDLE<\/span>'
+	else
+		case $5 in
+			arm64-v8a) url_regexp='arm64-v8a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			armeabi-v7a) url_regexp='armeabi-v7a'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			x86) url_regexp='x86'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			x86_64) url_regexp='x86_64'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+			*) url_regexp='$5'"[^@]*$7"''"[^@]*$6"'</div>[^@]*@\([^"]*\)' ;;
+		esac
+	fi
+
+	detect_version "$1"
 
 	export version="$version"
 
@@ -290,34 +298,7 @@ get_apk() {
 	fi
 }
 get_apkpure() {
-	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
-	  for spec in "revanced-cli-|5|*.rvp" "morphe-cli-|1|*.mpp"; do
-		IFS="|" read -r jar_prefix min_major patch_glob <<<"$spec"
-
-		if [[ $(ls "${jar_prefix}"*.jar 2>/dev/null) =~ ${jar_prefix}([0-9]+) ]]; then
-		  num=${BASH_REMATCH[1]}
-
-		  if [ "$num" -ge "$min_major" ]; then
-			if [ "$num" -ge 6 ]; then
-			  list_patches_flags="list-patches --packages --versions --options -bp"
-			else
-			  list_patches_flags="list-patches --with-packages --with-versions"
-			fi
-			version=$(java -jar *cli*.jar $list_patches_flags $patch_glob | awk -v pkg="$1" '
-			  BEGIN { found = 0; printing = 0 }
-			  /^Index:/ { if (printing) exit; found = 0 }
-			  /Package name: / { if ($3 == pkg) found = 1 }
-			  /Compatible versions:/ { if (found) printing = 1; next }
-			  printing && $1 ~ /^[0-9]+\./ { print $1 }
-			' | sort -V | tail -n1)
-		  else
-			version=$(jq -r '[.. | objects | select(.name == "'"$1"'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json 2>/dev/null | uniq)
-		  fi
-		fi
-
-		[ -n "$version" ] && break
-	  done
-	fi
+	detect_version "$1"
 
 	export version="$version"
 

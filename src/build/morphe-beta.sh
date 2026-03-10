@@ -58,13 +58,13 @@ morphe_dl(){
 	# Patch YouTube Lite Arm64-v8a:
 	get_patches_key "youtube-morphe"
 	prefer_version="21.10.493"
-	get_apk "com.google.android.youtube" "youtube-lite" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
-	split_editor "youtube-lite" "youtube-lite-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xxxhdpi"
-	patch "youtube-lite-arm64-v8a" "morphe" "morphe"
+	get_apk "com.google.android.youtube" "youtube-beta-lite" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
+	split_editor "youtube-beta-lite" "youtube-beta-lite-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xxxhdpi"
+	patch "youtube-beta-lite-arm64-v8a" "morphe" "morphe"
 	# Patch YouTube Lite Armeabi-v7a:
 	get_patches_key "youtube-morphe"
-	split_editor "youtube-lite" "youtube-lite-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xxxhdpi"
-	patch "youtube-lite-armeabi-v7a" "morphe" "morphe"
+	split_editor "youtube-beta-lite" "youtube-beta-lite-armeabi-v7a" "include" "split_config.armeabi_v7a split_config.en split_config.xxxhdpi"
+	patch "youtube-beta-lite-armeabi-v7a" "morphe" "morphe"
 	# Patch Reddit:
 	get_patches_key "reddit-morphe"
 	prefer_version="2026.10.0"

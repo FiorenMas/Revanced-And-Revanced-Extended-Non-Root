@@ -128,10 +128,6 @@ Download
 | [Stable version](https://github.com/MorpheApp/morphe-patches/releases/latest)| [Beta version](https://github.com/MorpheApp/morphe-patches/releases)           |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | [All Architectures](../../releases/download/all/youtube-morphe.apk)          | [All Architectures](../../releases/download/all/youtube-beta-morphe.apk)       |
-| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-morphe.apk)        | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-morphe.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-morphe.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-morphe.apk) |
-| [x86](../../releases/download/all/youtube-x86-morphe.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-morphe.apk)                 |
-| [x86_64](../../releases/download/all/youtube-x86_64-morphe.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-morphe.apk)           |
 
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 

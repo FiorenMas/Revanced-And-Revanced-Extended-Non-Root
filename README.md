@@ -140,8 +140,8 @@ Download
 
 | [Stable version](https://github.com/MorpheApp/morphe-patches/releases/latest)  | [Beta version](https://github.com/MorpheApp/morphe-patches/release)                 |
 | -----------------------------------------------------------------------------  | ----------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-morphe.apk)     | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-morphe.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-morphe.apk) | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-morphe.apk) |
+| [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-morphe.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-lite-arm64-v8a-morphe.apk)     |
+| [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-morphe.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-lite-armeabi-v7a-morphe.apk) |
 
 </details>
 

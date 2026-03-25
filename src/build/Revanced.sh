@@ -190,11 +190,6 @@ revanced_dl(){
 }
 12() {
 	revanced_dl
-	# Patch Spotjfy Arm64-v8a
-	j="i"
-	get_patches_key "Spotjfy-revanced"
-	get_apkpure "com.spot"$j"fy.music" "spotjfy-arm64-v8a" "spot"$j"fy-music-and-podcasts-for-android/com.spot"$j"fy.music"
-	patch "spotjfy-arm64-v8a" "revanced"
 	# Patch Proton mail
 	get_patches_key "protonmail-revanced"
 	get_apk "ch.protonmail.android" "protonmail" "protonmail-encrypted-email" "proton-technologies-ag/protonmail-encrypted-email/proton-mail-encrypted-email"
@@ -206,21 +201,9 @@ revanced_dl(){
 	get_patches_key "Threads-revanced"
 	get_apkpure "com.instagram.barcelona" "threads-arm64-v8a" "threads/com.instagram.barcelona" "Bundle"
 	patch "threads-arm64-v8a" "revanced"
-	# Patch Prime Video
-	get_patches_key "Prime-Video-revanced"
-	version="3.0.412"
-	get_apk " com.amazon.avod.thirdpartyclient" "prime-video-arm64-v8a" "amazon-prime-video" "amazon-mobile-llc/amazon-prime-video/amazon-prime-video" "arm64-v8a"
-	patch "prime-video-arm64-v8a" "revanced"
 }
 14() {
 	revanced_dl
-	# Patch Crunchyroll
-	get_patches_key "Crunchyroll-revanced"
-	url="https://crunchyroll.en.uptodown.com/android/download/1133091557-x" #Use uptodown because apkmirror always ask pass Cloudflare on this app
-	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
-	req "$url" "crunchyroll"
-	split_editor "crunchyroll" "crunchyroll"
-	patch "crunchyroll" "revanced"
 	# Patch Viber
 	get_patches_key "Viber-revanced"
 	get_apk "com.viber.voip" "viber" "viber" "viber-media-s-a-r-l/viber/rakuten-viber-messenger"
@@ -237,11 +220,6 @@ revanced_dl(){
 	split_editor "reddit" "reddit-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86_64 split_config.mdpi split_config.ldpi split_config.hdpi split_config.xhdpi split_config.xxhdpi split_config.tvdpi"
 	get_patches_key "reddit"
 	patch "reddit-arm64-v8a" "revanced"
-	# Patch Disney+
-	get_patches_key "Disney"
-	version="4.20.2+rc1-2025.12.09"
-	get_apk "com.disney.disneyplus" "disney" "disney" "disney/disney/disney" "Bundle"
-	patch "disney" "revanced"
 }
 16() {
 	revanced_dl

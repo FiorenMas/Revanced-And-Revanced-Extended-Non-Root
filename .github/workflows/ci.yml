@@ -82,7 +82,7 @@ jobs:
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh Aunali321/ReVancedExperiments latest telegram-revanced-experiments.apk 
       - name: Re-run workflow if github connection not stable
-  #      if: always() && steps.check-rv.outcome == 'skipped' && env.retry_count < env.max_retries
+        if: always() && steps.check-morphe.outcome == 'skipped' && env.retry_count < env.max_retries
         uses: actions/github-script@v7
         with:
           script: |

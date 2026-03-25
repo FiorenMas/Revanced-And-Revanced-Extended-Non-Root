@@ -70,12 +70,6 @@ Download
 
 #### [![Duolingo](https://img.shields.io/badge/Duolingo-%234DC730.svg?style=for-the-badge&logo=Duolingo&logoColor=white)](?tab=readme-ov-file#duolingo)
 
-#### [![Prime Video](https://img.shields.io/badge/Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white)](?tab=readme-ov-file#prime-video)
-
-#### [![Disney](https://img.shields.io/badge/Disney-%23006E99.svg?style=for-the-badge&logo=disney&logoColor=white)](?tab=readme-ov-file#disney)
-
-#### [![Crunchyroll](https://img.shields.io/badge/Crunchyroll-F47521?style=for-the-badge&logo=crunchyroll&logoColor=white)](?tab=readme-ov-file#crunchyroll)
-
 #### [![Viber](https://img.shields.io/badge/Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white)](?tab=readme-ov-file#viber)
 
 #### [![Protonmail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)](?tab=readme-ov-file#proton-mail)
@@ -83,8 +77,6 @@ Download
 #### [Google Photos](?tab=readme-ov-file#google-photos-1)
 
 #### [Proton VPN](?tab=readme-ov-file#proton-vpn-1)
-
-#### [Spotjfy](?tab=readme-ov-file#spotjfy-1)
 
 #### [Google News](?tab=readme-ov-file#google-news-1)
 
@@ -502,26 +494,6 @@ Download
 
 ---
 
-### [Prime Video:](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                                | Beta version                                                                       |
-| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | 
-| [Arm64-v8a](../../releases/download/all/prime-video-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/prime-video-beta-arm64-v8a-revanced.apk)   |
-
----
-
-### [Disney+:](https://play.google.com/store/apps/details?id=com.disney.disneyplus)
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                               | Beta version                                                      |
-| ------------------------------------------------------------ | ----------------------------------------------------------------- | 
-| [Arm64-v8a](../../releases/download/all/disney-revanced.apk) | [Arm64-v8a](../../releases/download/all/disney-beta-revanced.apk) |
-
----
-
 ### [Viber:](https://play.google.com/store/apps/details?id=com.viber.voip)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
@@ -529,16 +501,6 @@ Download
 | Stable version                                                        | Beta version                                                               |
 | --------------------------------------------------------------------- | -------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/viber-revanced.apk)   | [All Architectures](../../releases/download/all/viber-beta-revanced.apk)   |
-
----
-
-### [Crunchyroll:](https://play.google.com/store/apps/details?id=com.crunchyroll.crunchyroid)
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                            | Beta version                                                                  |
-| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | 
-| [All Architectures](../../releases/download/all/crunchyroll-revanced.apk) | [All Architectures](../../releases/download/all/crunchyroll-beta-revanced.apk)|
 
 ---
 

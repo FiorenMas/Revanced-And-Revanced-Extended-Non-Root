@@ -1,24 +1,12 @@
 [
-	{
-	  "patchName" : "Custom branding name for YouTube",
-	  "options" : [ {
-		"key" : "AppName",
-		"value" : "RVX Anddea"
-	  } ]
-	}, {
-	  "patchName" : "Custom branding name for YouTube Music",
-	  "options" : [ {
-		"key" : "AppNameNotification",
-		"value" : "RVX Music Anddea"
-	  }, {
-		"key" : "AppNameLauncher",
-		"value" : "RVX Music Anddea"
-	  } ]
-	}, {
-	  "patchName" : "Spoof streaming data",
-	  "options" : [ {
-	    "key" : "useMobileWebClient",
-	    "value" : true
-	  } ]
-	}
+  {
+    "patches": {
+      "Custom branding name for YouTube": {
+        "enabled": true,
+        "options": {
+          "appName": "RVX Anddea"
+        }
+      }
+    }
+  }
 ]

@@ -16,20 +16,8 @@ anddea_dl(){
 	patch "youtube-beta" "anddea" "morphe"
 	# Remove unused architectures
 	for i in {0..3}; do
-		apk_editor "youtube-beta" "${archs[i]}" ${libs[i]}
+		split_arch "youtube-beta" "anddea"
 	done
-	# Patch Youtube Arm64-v8a
-	get_patches_key "youtube-rve-anddea"
-	patch "youtube-beta-arm64-v8a" "anddea" "morphe"
-	# Patch Youtube Armeabi-v7a
-	get_patches_key "youtube-rve-anddea"
-	patch "youtube-beta-armeabi-v7a" "anddea" "morphe"
-	# Patch Youtube x86
-	get_patches_key "youtube-rve-anddea"
-	patch "youtube-beta-x86" "anddea" "morphe"
-	# Patch Youtube x86_64
-	get_patches_key "youtube-rve-anddea"
-	patch "youtube-beta-x86_64" "anddea" "morphe"
 }
 2() {
 	anddea_dl

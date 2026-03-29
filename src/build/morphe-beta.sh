@@ -8,50 +8,16 @@ morphe_dl(){
 }
 1() {
 	morphe_dl
-	# Patch YouTube:
-	#get_patches_key "youtube-morphe"
-	#prefer_version="21.10.493"
-	#get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube"
-	#patch "youtube-beta" "morphe" "morphe"
-	# Remove unused architectures
-	#for i in {0..3}; do
-	#  apk_editor "youtube-beta" "${archs[i]}" ${libs[i]}
-	#done
-	# Patch Youtube Arm64-v8a
-	#get_patches_key "youtube-morphe"
-	#patch "youtube-beta-arm64-v8a" "morphe" "morphe"
-	# Patch Youtube Armeabi-v7a
-	#get_patches_key "youtube-morphe"
-	#patch "youtube-beta-armeabi-v7a" "morphe" "morphe"
-	# Patch Youtube x86
-	#get_patches_key "youtube-morphe" 
-	#patch "youtube-beta-x86" "morphe" "morphe"
-	# Patch Youtube x86_64
-	#get_patches_key "youtube-morphe" 
-	#patch "youtube-beta-x86_64" "morphe" "morphe"
 
 	# Patch YouTube:
 	get_patches_key "youtube-morphe"
 	prefer_version="21.11.480"
-	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
-	split_editor "youtube-beta" "youtube-beta"
+	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube"
 	patch "youtube-beta" "morphe" "morphe"
-	# Patch Youtube Arm64-v8a
-	get_patches_key "youtube-morphe" 
-	split_editor "youtube-beta" "youtube-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "youtube-beta-arm64-v8a" "morphe" "morphe"
-	# Patch Youtube Armeabi-v7a
-	get_patches_key "youtube-morphe" 
-	split_editor "youtube-beta" "youtube-beta-armeabi-v7a" "exclude" "split_config.arm64_v8a split_config.x86 split_config.x86_64"
-	patch "youtube-beta-armeabi-v7a" "morphe" "morphe"
-	# Patch Youtube x86
-	get_patches_key "youtube-morphe" 
-	split_editor "youtube-beta" "youtube-beta-x86" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86_64"
-	patch "youtube-beta-x86" "morphe" "morphe"
-	# Patch Youtube x86_64
-	get_patches_key "youtube-morphe" 
-	split_editor "youtube-beta" "youtube-beta-x86_64" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86"
-	patch "youtube-beta-x86_64" "morphe" "morphe"
+	# Remove unused architectures
+	for i in {0..3}; do
+		split_arch "youtube-beta" "morphe"
+	done
 }
 2() {
 	morphe_dl

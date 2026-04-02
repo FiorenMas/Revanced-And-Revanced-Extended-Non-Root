@@ -47,22 +47,22 @@ morphe_dl(){
 	# Patch YouTube Music:
 	# Arm64-v8a
 	get_patches_key "youtube-music-morphe"
-	prefer_version="9.12.51"
+	prefer_version="9.13.50"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 	patch "youtube-music-beta-arm64-v8a" "morphe" "morphe"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-morphe"
-	prefer_version="9.12.51"
+	prefer_version="9.13.50"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-beta-armeabi-v7a" "morphe" "morphe"
 	# x86_64
 	get_patches_key "youtube-music-morphe"
-	prefer_version="9.12.51"
+	prefer_version="9.13.50"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86_64" "youtube-music" "google-inc/youtube-music/youtube-music" "x86_64"
 	patch "youtube-music-beta-x86_64" "morphe" "morphe"
 	# x86
 	get_patches_key "youtube-music-morphe"
-	prefer_version="9.12.51"
+	prefer_version="9.13.50"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86" "youtube-music" "google-inc/youtube-music/youtube-music" "x86"
 	patch "youtube-music-beta-x86" "morphe" "morphe"
 }

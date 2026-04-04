@@ -33,7 +33,7 @@ morphe_dl(){
 	patch "youtube-beta-lite-armeabi-v7a" "morphe" "morphe"
 	# Patch Reddit:
 	get_patches_key "reddit-morphe"
-	prefer_version="2026.13.0"
+	prefer_version="2026.14.0"
 	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
 	split_editor "reddit-beta" "reddit"
 	patch "reddit-beta" "morphe" "morphe"

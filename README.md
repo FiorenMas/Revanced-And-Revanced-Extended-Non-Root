@@ -100,6 +100,8 @@ Download
 
 #### [MyFitnessPal](?tab=readme-ov-file#MyFitnessPal-1)
 
+#### [Google Recorder](?tab=readme-ov-file#Google-Recorder-1)
+
 </details>
 
 ## [MicroG RE: (Recommend)](https://github.com/MorpheApp/MicroG-RE)
@@ -253,6 +255,10 @@ Download
 
 **You have to remove the Messenger app before you install the Facebook ReVanced**
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                                        | Beta version                                                                                |
@@ -290,6 +296,10 @@ Download
 
 ### [Threads:](https://play.google.com/store/apps/details?id=com.instagram.barcelona)
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                            | Beta version                                                                   |
@@ -299,6 +309,10 @@ Download
 ---
 
 ### [Google Photos:](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-derevanced.apk) 
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
@@ -313,6 +327,10 @@ Download
 
 ### [Messenger:](https://play.google.com/store/apps/details?id=com.facebook.orca)
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                            | Beta version                                                                   |
@@ -323,6 +341,10 @@ Download
 
 ### [TikTok:](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/tiktok-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                         | Beta version                                                                |
@@ -332,6 +354,12 @@ Download
 ---
 
 ### [Twitch:](https://play.google.com/store/apps/details?id=tv.twitch.android.app)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/twitch-derevanced.apk) 
+
+[Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-derevanced.apk)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
@@ -384,6 +412,12 @@ Download
 
 ### [Tumblr:](https://play.google.com/store/apps/details?id=com.tumblr)
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/tumblr-derevanced.apk)
+
+[Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                         | Beta version                                                                |
@@ -394,6 +428,12 @@ Download
 ---
 
 ### [SoundCloud:](https://play.google.com/store/apps/details?id=com.soundcloud.android)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/soundcloud-derevanced.apk)
+
+[Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-derevanced.apk)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
@@ -416,6 +456,10 @@ Download
 
 ### [Google News:](play.google.com/store/apps/details?id=com.google.android.apps.magazines)
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                             | Beta version                                                                    |
@@ -425,6 +469,10 @@ Download
 ---
 
 ### [Photomath:](https://play.google.com/store/apps/details?id=com.microblink.photomath)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/photomath-derevanced.apk)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
@@ -446,6 +494,10 @@ Download
 
 ### [Proton mail:](https://play.google.com/store/apps/details?id=ch.protonmail.android)
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/protonmail-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                              | Beta version                                                                    |
@@ -455,6 +507,10 @@ Download
 ---
 
 ### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/rar-derevanced.apk)
 
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
@@ -476,6 +532,10 @@ Download
 
 ### [Pixiv:](https://play.google.com/store/apps/details?id=jp.pxv.android)
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/pixiv-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                      | Beta version                                                             |
@@ -496,6 +556,10 @@ Download
 
 ### [Viber:](https://play.google.com/store/apps/details?id=com.viber.voip)
 
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/viber-derevanced.apk)
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                        | Beta version                                                               |
@@ -511,6 +575,14 @@ Download
 | Stable version                                                             | Beta version                                                                   |
 | -------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
 | [All Architectures](../../releases/download/all/MyFitnessPal-revanced.apk) | [All Architectures](../../releases/download/all/MyFitnessPal-beta-revanced.apk)|
+
+---
+
+### [Google Recorder:](https://play.google.com/store/apps/details?id=com.google.android.apps.recorder)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[Arm64-v8a](../../releases/download/all/google-recorder-derevanced.apk )
 
 ---
 
@@ -650,18 +722,9 @@ Download
 </details>
 
 <details>
-  <summary>chsbuffer</summary>
+  <summary>RookieEnough</summary>
 
-[Patches](https://github.com/chsbuffer/ReVancedXposed) - [GPL-3.0](https://github.com/chsbuffer/ReVancedXposed/blob/main/LICENSE)
-
-</details>
-
-</details>
-
-<details>
-  <summary>JingMatrix</summary>
-
-[LSPatch](https://github.com/JingMatrix/LSPatch) - [GPL-3.0](https://github.com/JingMatrix/LSPatch/blob/main/LICENSE)
+[Patches](https://github.com/RookieEnough/De-ReVanced) - [GPL-3.0](https://github.com/RookieEnough/De-ReVanced/blob/main/LICENSE)
 
 </details>
 

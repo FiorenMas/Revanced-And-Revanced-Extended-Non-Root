@@ -399,7 +399,7 @@ patch() {
 			p="patch " b="-p *.rvp" m="" a="" ks=" --keystore=./src/_ks.keystore" pu="--purge=true" opt="--legacy-options=./src/options/$2.json" force=" --force"
 			echo "Patching with Revanced-cli inotia"
 		elif [ "$3" = morphe ]; then
-			p="patch " b="-p *.mpp" m="" a="" ks=" --keystore=./src/morphe.keystore --keystore-password=Morphe --keystore-entry-password=Morphe" pu="--purge=true" opt="--options-file ./src/options/$2.json" force=" --force"
+			p="patch " b="-p *.mpp" m="" a="" ks=" --keystore=./src/morphe.keystore --keystore-password=Morphe --keystore-entry-password=Morphe" pu="--purge=true" opt="--options-file ./src/options/$2.json" force=" --force --continue-on-error"
 			echo "Patching with Morphe"
 		else
 			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then

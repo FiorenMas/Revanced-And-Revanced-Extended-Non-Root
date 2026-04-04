@@ -18,6 +18,7 @@ on:
           - 'Morphe Beta'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
+          - 'DeRevanced'
           - 'Revanced'
           - 'Revanced Beta'
           - 'Revanced Extended'
@@ -132,6 +133,30 @@ jobs:
       - name: Releasing APK files
         id: release-morphe-beta
         if: steps.check-gh-morphe-beta.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_derv:
+    name: Patch DeRevanced Stable
+    if: ${{ github.event.inputs.org == 'DeRevanced' || inputs.org == 'DeRevanced' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-derv
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-derv
+        if: steps.check-gh-derv.outputs.internet_error == '0'
+        run: bash src/build/DeRevanced.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-derv
+        if: steps.check-gh-derv.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve_anddea_stable:
     name: Patch RVX Anddea stable version

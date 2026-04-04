@@ -37,6 +37,10 @@ jobs:
         id: check-morphe-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh MorpheApp/morphe-patches prerelease youtube-beta-morphe.apk
+      - name: Check new patch DeReVanced
+        id: check-derv
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh RookieEnough/De-ReVanced latest gg-photos-arm64-v8a-derevanced.apk
       - name: Check new patch Revanced Extended forked by Anddea Stable Version
         id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -109,6 +113,7 @@ jobs:
    #   check_rv_beta: ${{ steps.check-rv-beta.outputs.new_patch }}
       check_morphe: ${{ steps.check-morphe.outputs.new_patch }}
       check_morphe_beta: ${{ steps.check-morphe-beta.outputs.new_patch }}
+      check_derv: ${{ steps.check-derv.outputs.new_patch }}
       check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_rve: ${{ steps.check-rve.outputs.new_patch }}
@@ -149,6 +154,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Morphe Beta"
+  Patch-DeRevanced:
+    name: Patch DeRevanced Stable
+    needs: check
+    if: ${{ needs.check.outputs.check_derv == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "DeRevanced"
   Patch-RVE-anddea-stable:
     name: Patch RVX Anddea Stable
     needs: check

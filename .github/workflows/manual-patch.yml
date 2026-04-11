@@ -316,6 +316,10 @@ jobs:
   patch_twitter_piko_stable:
     name: Patch Twitter Piko Stable
     if: ${{ github.event.inputs.org == 'Twitter Piko Stable' || inputs.org == 'Twitter Piko Stable' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -328,7 +332,7 @@ jobs:
       - name: Patch apk
         id: patch-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
-        run: bash src/build/Piko.sh
+        run: bash src/build/Piko.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
@@ -336,6 +340,10 @@ jobs:
   patch_twitter_piko_beta:
     name: Patch Twitter Piko Beta
     if: ${{ github.event.inputs.org == 'Twitter Piko Beta' || inputs.org == 'Twitter Piko Beta' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -348,7 +356,7 @@ jobs:
       - name: Patch apk
         id: patch-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
-        run: bash src/build/Piko-Beta.sh
+        run: bash src/build/Piko-Beta.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'

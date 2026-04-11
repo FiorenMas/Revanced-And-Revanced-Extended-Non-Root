@@ -282,6 +282,13 @@ Download
 
 ### [Instagram:](https://play.google.com/store/apps/details?id=com.instagram.android)
 
+### [Piko:](https://github.com/crimera/piko)
+
+| [Stable version](https://github.com/crimera/piko/releases/latest)     | [Beta version](https://github.com/crimera/piko/releases/)                  |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------| 
+| [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-piko.apk) | [Arm64-v8a](../../releases/download/all/instagram-beta-arm64-v8a-piko.apk) |
+
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                            | Beta version                                                                   |

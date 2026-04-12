@@ -74,6 +74,8 @@ Download
 
 #### [![Protonmail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)](?tab=readme-ov-file#proton-mail)
 
+#### [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](?tab=readme-ov-file#Telegram-1)
+
 #### [Google Photos](?tab=readme-ov-file#google-photos-1)
 
 #### [Proton VPN](?tab=readme-ov-file#proton-vpn-1)
@@ -572,6 +574,20 @@ Download
 | Stable version                                                        | Beta version                                                               |
 | --------------------------------------------------------------------- | -------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/viber-revanced.apk)   | [All Architectures](../../releases/download/all/viber-beta-revanced.apk)   |
+
+---
+
+### [Telegram:](https://play.google.com/store/apps/details?id=org.telegram.messenger)
+
+### [Revanced Experiments:](https://github.com/Aunali321/ReVancedExperiments)
+
+CH play version:
+
+[Arm64-v8a](../../releases/download/all/telegram-revanced-experiments.apk)
+
+Web version:
+
+[All Architectures](../../releases/download/all/telegram-web-version-revanced-experiments.apk) 
 
 ---
 

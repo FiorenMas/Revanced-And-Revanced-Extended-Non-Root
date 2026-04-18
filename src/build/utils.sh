@@ -489,7 +489,7 @@ split_arch() {
 		eval java -jar *cli*.jar patch \
 		-p *.mpp $excludePatches$includePatches--options-file ./src/options/$2.json \
 		--striplibs ${archs[i]} --purge=true \
-		--keystore=./src/morphe.keystore --keystore-password=Morphe --keystore-entry-password=Morphe --force \
+		--keystore=./src/morphe.keystore --force \
 		--out=./release/$1-${archs[i]}-$2.apk\
 		./download/$1.apk
 	else

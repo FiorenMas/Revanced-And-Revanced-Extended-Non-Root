@@ -10,20 +10,38 @@ morphe_dl(){
 	morphe_dl
 
 	# Patch YouTube:
-	get_patches_key "youtube-morphe"
-	prefer_version="21.15.282"
+	#get_patches_key "youtube-morphe"
+	prefer_version="21.16.240"
 	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube"
 	patch "youtube-beta" "morphe" "morphe"
+	# Patch Youtube Arm64-v8a
+	get_patches_key "youtube-morphe"
+	prefer_version="21.16.240"
+	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
+	split_editor "youtube-beta" "youtube-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	patch "youtube-beta-arm64-v8a" "morphe" "morphe"
+	# Patch Youtube Armeabi-v7a
+	get_patches_key "youtube-morphe"
+	split_editor "youtube-beta" "youtube-beta-armeabi-v7a" "exclude" "split_config.arm64_v8a split_config.x86 split_config.x86_64"
+	patch "youtube-beta-armeabi-v7a" "morphe" "morphe"
+	# Patch Youtube x86
+	get_patches_key "youtube-morphe"
+	split_editor "youtube-beta" "youtube-beta-x86" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86_64"
+	patch "youtube-beta-x86" "morphe" "morphe"
+	# Patch Youtube x86_64
+	get_patches_key "youtube-morphe"
+	split_editor "youtube-beta" "youtube-beta-x86_64" "exclude" "split_config.arm64_v8a split_config.armeabi_v7a split_config.x86"
+	patch "youtube-beta-x86_64" "morphe" "morphe"
 	# Remove unused architectures
-	for i in {0..3}; do
-		split_arch "youtube-beta" "morphe"
-	done
+	#for i in {0..3}; do
+	#	split_arch "youtube-beta" "morphe"
+	#done
 }
 2() {
 	morphe_dl
 	# Patch YouTube Lite Arm64-v8a:
 	get_patches_key "youtube-morphe"
-	prefer_version="21.15.282"
+	prefer_version="21.16.240"
 	get_apk "com.google.android.youtube" "youtube-beta-lite" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	split_editor "youtube-beta-lite" "youtube-beta-lite-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xxxhdpi"
 	patch "youtube-beta-lite-arm64-v8a" "morphe" "morphe"
@@ -33,7 +51,7 @@ morphe_dl(){
 	patch "youtube-beta-lite-armeabi-v7a" "morphe" "morphe"
 	# Patch Reddit:
 	get_patches_key "reddit-morphe"
-	prefer_version="2026.15.1"
+	prefer_version="2026.10.0"
 	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
 	split_editor "reddit-beta" "reddit"
 	patch "reddit-beta" "morphe" "morphe"
@@ -52,7 +70,6 @@ morphe_dl(){
 	patch "youtube-music-beta-arm64-v8a" "morphe" "morphe"
 	# Armeabi-v7a
 	get_patches_key "youtube-music-morphe"
-	prefer_version="9.15.50"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "youtube-music" "google-inc/youtube-music/youtube-music" "armeabi-v7a"
 	patch "youtube-music-beta-armeabi-v7a" "morphe" "morphe"
 	# x86_64

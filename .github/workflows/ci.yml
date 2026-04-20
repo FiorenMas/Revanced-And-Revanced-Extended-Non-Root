@@ -53,6 +53,10 @@ jobs:
         id: check-paresh
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh Paresh-Maheshwari/paresh-patches latest telegram-web-version-paresh.apk
+      - name: Check new patch hoo-dles
+        id: check-hoo-dles
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh hoo-dles/morphe-patches latest protonvpn-hoo-dles.apk
       - name: Check new patch BiliRoamingM
         id: check-BiliRoamingM
         if: steps.check-gh.outputs.internet_error == '0'
@@ -93,6 +97,7 @@ jobs:
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_paresh: ${{ steps.check-paresh.outputs.new_patch }}
+      check_hoo_dles: ${{ steps.check-hoo-dles.outputs.new_patch }}
       check_BiliRoamingM: ${{ steps.check-BiliRoamingM.outputs.new_patch }}
       check_Revanced_Experiments: ${{ steps.check-Revanced-Experiments.outputs.new_patch }}
 
@@ -159,6 +164,13 @@ jobs:
     uses: ./.github/workflows/manual-patch.yml
     with:
       org: "Paresh"
+  Patch-hoo-dles:
+    name: Patch hoo-dles
+    needs: check
+    if: ${{ needs.check.outputs.check_hoo_dles == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    with:
+      org: "hoo-dles"
   Patch-BiliRoamingM:
     name: Patch BiliRoamingM
     needs: check

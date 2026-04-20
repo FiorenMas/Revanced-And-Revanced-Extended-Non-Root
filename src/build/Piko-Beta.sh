@@ -7,7 +7,7 @@ piko_dl(){
 }
 
 1() {
-	piko_dl
+    piko_dl
     # Patch Twitter Piko:
     get_patches_key "twitter-piko"
     get_apk "com.twitter.android" "twitter-beta" "twitter" "x-corp/twitter/x" "Bundle_extract"
@@ -19,11 +19,11 @@ piko_dl(){
     patch "twitter-arm64-v8a-beta" "piko" "morphe"
 }
 2() {
-	piko_dl
-	# Patch Instagram
-	get_patches_key "instagram-piko"
- 	get_apkpure "com.instagram.android" "instagram-beta-arm64-v8a" "instagram-android/com.instagram.android" "Bundle"
-	patch "instagram-beta-arm64-v8a" "piko" "morphe"
+    piko_dl
+    # Patch Instagram
+    get_patches_key "instagram-piko"
+    get_apkpure "com.instagram.android" "instagram-beta-arm64-v8a" "instagram-android/com.instagram.android" "Bundle"
+    patch "instagram-beta-arm64-v8a" "piko" "morphe"
 }
 case "$1" in
     1)

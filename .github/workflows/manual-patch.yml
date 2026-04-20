@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       org:
-        description: 'Which "Revanced" do you want to patch?'
+        description: 'Which "Morphe" patches do you want to patch?'
         required: true
         default: 'Morphe'
         type: choice
@@ -22,6 +22,7 @@ on:
           - 'Twitter Piko Beta'
           - 'DeRevanced'
           - 'Paresh'
+          - 'hoo-dles'
           - 'BiliRoamingM'
           - 'Scrazzz Patches'
           - 'Dropped Patches - indrastorms'
@@ -230,6 +231,30 @@ jobs:
       - name: Releasing APK files
         id: release-paresh
         if: steps.check-gh-paresh.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_hoo_dles:
+    name: Patch hoo-dles
+    if: ${{ github.event.inputs.org == 'hoo-dles' || inputs.org == 'hoo-dles' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2, 3, 4]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-hoo-dles
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-hoo-dles
+        if: steps.check-gh-hoo-dles.outputs.internet_error == '0'
+        run: bash src/build/hoo-dles.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-hoo-dles
+        if: steps.check-gh-hoo-dles.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_BiliRoamingM:
     name: Patch BiliRoamingM

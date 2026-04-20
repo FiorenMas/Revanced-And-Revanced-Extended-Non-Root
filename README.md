@@ -74,9 +74,17 @@ Download
 
 #### [![Protonmail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)](?tab=readme-ov-file#proton-mail)
 
+#### [![Prime Video](https://img.shields.io/badge/Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white)](?tab=readme-ov-file#prime-video)
+
 #### [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](?tab=readme-ov-file#Telegram-1)
 
 #### [Google Photos](?tab=readme-ov-file#google-photos-1)
+
+#### [Adguard](?tab=readme-ov-file#adguard-1)
+
+#### [Smart Launcher](?tab=readme-ov-file#smart-launcher-1)
+
+#### [WPS Office](?tab=readme-ov-file#wps-office-1)
 
 #### [Proton VPN](?tab=readme-ov-file#proton-vpn-1)
 
@@ -498,6 +506,10 @@ Download
 
 ### [SoundCloud:](https://play.google.com/store/apps/details?id=com.soundcloud.android)
 
+### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+[All Architectures](../../releases/download/all/soundcloud-hoo-dles.apk )
+
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
 [All Architectures](../../releases/download/all/soundcloud-derevanced.apk)
@@ -519,6 +531,10 @@ Download
 ---
 
 ### [Duolingo:](https://play.google.com/store/apps/details?id=com.duolingo)
+
+### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+[Arm64-v8a](../../releases/download/all/duolingo-hoo-dles.apk )
 
 <details>
   <summary>Outdated patches</summary>
@@ -572,6 +588,10 @@ Download
 ---
 
 ### [Proton VPN:](https://f-droid.org/en/packages/ch.protonvpn.android/)
+
+### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+[All Architectures](../../releases/download/all/protonvpn-hoo-dles.apk )
 
 <details>
   <summary>Outdated patches</summary>
@@ -668,6 +688,14 @@ Download
 
 ---
 
+### [Prime Video:](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
+
+### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+[Arm64-v8a](../../releases/download/all/prime-video-arm64-v8a-hoo-dles.apk)
+
+---
+
 ### [Viber:](https://play.google.com/store/apps/details?id=com.viber.voip)
 
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
@@ -735,11 +763,44 @@ Web version:
 
 ---
 
+### [Adguard:](https://adguard.com/)
+
+### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+[All Architectures](../../releases/download/all/adguard-hoo-dles.apk )
+
+---
+
+### [Smart Launcher:](https://play.google.com/store/apps/details?id=ginlemon.flowerfree)
+
+### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+[All Architectures](../../releases/download/all/smart-launcher-hoo-dles.apk )
+
+---
+
+### [WPS Office:](https://play.google.com/store/apps/details?id=cn.wps.moffice_eng)
+
+### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+[All Architectures](../../releases/download/all/wps-office-hoo-dles.apk )
+
+---
+
 ### [Solid Explorer File Manager:](https://play.google.com/store/apps/details?id=pl.solidexplorer2)
+
+### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+[Arm64-v8a](../../releases/download/all/solid-explorer-hoo-dles.apk )
+
+<details>
+  <summary>Outdated patches</summary>
 
 ### [scrazzz](https://github.com/scrazzz/my-revanced-patches)
 
 [Arm64-v8a](../../releases/download/all/solid-explorer-arm64-v8a-scrazzz.apk )
+
+</details>
 
 ---
 

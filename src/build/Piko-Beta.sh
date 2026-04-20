@@ -7,6 +7,7 @@ piko_dl(){
 }
 
 1() {
+	piko_dl
     # Patch Twitter Piko:
     get_patches_key "twitter-piko"
     get_apk "com.twitter.android" "twitter-beta" "twitter" "x-corp/twitter/x" "Bundle_extract"

@@ -11,12 +11,12 @@ morphe_dl(){
 
 	# Patch YouTube:
 	#get_patches_key "youtube-morphe"
-	prefer_version="21.16.240"
-	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube"
+	prefer_version="$youtube_experimental_support"
+	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle"
 	patch "youtube-beta" "morphe" "morphe"
 	# Patch Youtube Arm64-v8a
 	get_patches_key "youtube-morphe"
-	prefer_version="21.16.240"
+	prefer_version="$youtube_experimental_support"
 	get_apk "com.google.android.youtube" "youtube-beta" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	split_editor "youtube-beta" "youtube-beta-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
 	patch "youtube-beta-arm64-v8a" "morphe" "morphe"
@@ -41,7 +41,7 @@ morphe_dl(){
 	morphe_dl
 	# Patch YouTube Lite Arm64-v8a:
 	get_patches_key "youtube-morphe"
-	prefer_version="21.16.240"
+	prefer_version="$youtube_experimental_support"
 	get_apk "com.google.android.youtube" "youtube-beta-lite" "youtube" "google-inc/youtube/youtube" "Bundle_extract"
 	split_editor "youtube-beta-lite" "youtube-beta-lite-arm64-v8a" "include" "split_config.arm64_v8a split_config.en split_config.xxxhdpi"
 	patch "youtube-beta-lite-arm64-v8a" "morphe" "morphe"
@@ -51,7 +51,7 @@ morphe_dl(){
 	patch "youtube-beta-lite-armeabi-v7a" "morphe" "morphe"
 	# Patch Reddit:
 	get_patches_key "reddit-morphe"
-	prefer_version="2026.16.0"
+	prefer_version="$reddit_experimental_support"
 	get_apk "com.reddit.frontpage" "reddit-beta" "reddit" "redditinc/reddit/reddit" "Bundle_extract"
 	split_editor "reddit-beta" "reddit"
 	patch "reddit-beta" "morphe" "morphe"
@@ -65,7 +65,7 @@ morphe_dl(){
 	# Patch YouTube Music:
 	# Arm64-v8a
 	get_patches_key "youtube-music-morphe"
-	prefer_version="9.15.50"
+	prefer_version="$youtube_music_experimental_support"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "youtube-music" "google-inc/youtube-music/youtube-music" "arm64-v8a"
 	patch "youtube-music-beta-arm64-v8a" "morphe" "morphe"
 	# Armeabi-v7a

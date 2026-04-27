@@ -80,9 +80,17 @@ jobs:
       - name: Check github connection
         id: check-gh-morphe-beta
         run: bash src/etc/connection.sh
+      - name: Check experimental support versions
+        id: experimental-check
+        if: steps.check-gh-morphe-beta.outputs.internet_error == '0'
+        uses: ./.github/actions/experimental-check
       - name: Patch apk
         id: patch-morphe-beta
         if: steps.check-gh-morphe-beta.outputs.internet_error == '0'
+        env:
+          youtube_experimental_support: ${{ steps.experimental-check.outputs.youtube_experimental_support }}
+          youtube_music_experimental_support: ${{ steps.experimental-check.outputs.youtube_music_experimental_support }}
+          reddit_experimental_support: ${{ steps.experimental-check.outputs.reddit_experimental_support }}
         run: bash src/build/morphe-beta.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-morphe-beta

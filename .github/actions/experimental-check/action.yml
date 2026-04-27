@@ -1,0 +1,78 @@
+name: Check experimental support versions
+description: Fetch experimental support versions from MorpheApp/morphe-patches releases
+outputs:
+  youtube_experimental_support:
+    description: YouTube experimental support version
+    value: ${{ steps.check.outputs.youtube_experimental_support }}
+  youtube_music_experimental_support:
+    description: YouTube Music experimental support version
+    value: ${{ steps.check.outputs.youtube_music_experimental_support }}
+  reddit_experimental_support:
+    description: Reddit experimental support version
+    value: ${{ steps.check.outputs.reddit_experimental_support }}
+runs:
+  using: "composite"
+  steps:
+    - name: Fetch experimental support versions
+      id: check
+      shell: bash
+      run: |
+        youtube=""
+        youtube_music=""
+        reddit=""
+        page=1
+
+        while true; do
+          releases=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/MorpheApp/morphe-patches/releases?per_page=100&page=$page")
+
+          count=$(echo "$releases" | jq 'length')
+          if [ "$count" -eq 0 ] || [ "$count" = "null" ]; then
+            echo "No more releases found on page $page."
+            break
+          fi
+
+          for i in $(seq 0 $((count - 1))); do
+            tag=$(echo "$releases" | jq -r ".[$i].tag_name")
+            body=$(echo "$releases" | jq -r ".[$i].body")
+
+            if [ -z "$youtube" ]; then
+              match=$(echo "$body" | grep -oP 'YouTube(?! Music).*experimental( support)?.*?\K[0-9]+\.[0-9][0-9.]*' | head -1 || true)
+              if [ -n "$match" ]; then
+                youtube="$match"
+                echo "  Found YouTube experimental support: $youtube"
+              fi
+            fi
+
+            if [ -z "$youtube_music" ]; then
+              match=$(echo "$body" | grep -oP 'YouTube Music.*experimental( support)?.*?\K[0-9]+\.[0-9][0-9.]*' | head -1 || true)
+              if [ -n "$match" ]; then
+                youtube_music="$match"
+                echo "  Found YouTube Music experimental support: $youtube_music"
+              fi
+            fi
+
+            if [ -z "$reddit" ]; then
+              match=$(echo "$body" | grep -oP 'Reddit.*experimental( support)?.*?\K[0-9]+\.[0-9][0-9.]*' | head -1 || true)
+              if [ -n "$match" ]; then
+                reddit="$match"
+                echo "  Found Reddit experimental support: $reddit"
+              fi
+            fi
+
+            if [ -n "$youtube" ] && [ -n "$youtube_music" ] && [ -n "$reddit" ]; then
+              break 2
+            fi
+          done
+
+          page=$((page + 1))
+        done
+
+        echo "youtube_experimental_support=$youtube" >> "$GITHUB_OUTPUT"
+        echo "youtube_music_experimental_support=$youtube_music" >> "$GITHUB_OUTPUT"
+        echo "reddit_experimental_support=$reddit" >> "$GITHUB_OUTPUT"
+
+        echo ""
+        echo "  YouTube: $youtube"
+        echo "  YouTube Music: $youtube_music"
+        echo "  Reddit: $reddit"

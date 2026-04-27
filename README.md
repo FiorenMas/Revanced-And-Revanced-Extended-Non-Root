@@ -423,6 +423,7 @@ Download
 | Stable version                                                       | Beta version                                                              |
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
 | [All Architectures](../../releases/download/all/reddit-morphe.apk)   | [All Architectures](../../releases/download/all/reddit-beta-morphe.apk)   |
+| [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-morphe.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-beta-morphe.apk) |
 
 <details>
   <summary>Outdated patches</summary>

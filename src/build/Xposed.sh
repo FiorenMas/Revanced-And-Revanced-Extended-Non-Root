@@ -14,9 +14,9 @@ LSPatch_dl(){
 }
 2() {
 	LSPatch_dl
-	dl_gh "NexAlloy" "gnadgnaoh" "latest"
+	dl_gh "NexAlloy" "gnadgnaoh" "v1.0"
 	# Patch Facebook:
-	version="560.0.0.57.63"
+	version="561.0.0.42.67"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" "nodpi" "Android 11+"
 	lspatch "facebook-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh"
 	# Patch Messenger:

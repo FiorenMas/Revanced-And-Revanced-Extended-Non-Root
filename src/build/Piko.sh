@@ -11,13 +11,8 @@ piko_dl(){
 	# Patch Twitter Piko:
 	piko_dl
 	get_patches_key "twitter-piko"
-	get_apk "com.twitter.android" "twitter-stable" "bundle_extract" "universal" "120-640dpi" "Android 9.0+" 
-	split_editor "twitter-stable" "twitter-stable"
+    telegram_dl "https://t.me/xriprepo" "10" "*.apk" "twitter-stable.apk" #https://github.com/crimera/piko/issues/1146#issuecomment-4469171783
 	patch "twitter-stable" "piko" "morphe"
-	# Patch Twitter Piko Arm64-v8a:
-	get_patches_key "twitter-piko"
-	split_editor "twitter-stable" "twitter-arm64-v8a-stable" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64 split_config.mdpi split_config.hdpi split_config.xhdpi split_config.xxhdpi split_config.tvdpi"
-	patch "twitter-arm64-v8a-stable" "piko" "morphe"
 }
 2() {
 	piko_dl

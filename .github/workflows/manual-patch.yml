@@ -179,6 +179,8 @@ jobs:
       - name: Patch apk
         id: patch-piko-stable
         if: steps.check-gh-piko-stable.outputs.internet_error == '0'
+        env:
+          TDL_BACKUP: ${{ secrets.TDL_BACKUP }}
         run: bash src/build/Piko.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-piko-stable
@@ -203,6 +205,8 @@ jobs:
       - name: Patch apk
         id: patch-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
+        env:
+          TDL_BACKUP: ${{ secrets.TDL_BACKUP }}
         run: bash src/build/Piko-Beta.sh ${{ matrix.run }}
       - name: Releasing APK files
         id: release-piko-beta

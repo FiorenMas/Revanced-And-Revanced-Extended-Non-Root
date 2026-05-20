@@ -326,7 +326,14 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Twitter:](https://play.google.com/store/apps/details?id=com.twitter.android)
 
-Temporary remove download link
+
+### [Piko:](https://github.com/crimera/piko)
+
+👉 [Offical author download link](https://github.com/crimera/twitter-apk/releases)
+
+| [Stable version](https://github.com/crimera/piko/releases/latest)          | [Beta version](https://github.com/crimera/piko/releases/)                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------| 
+| [All Architectures](../../releases/download/all/twitter-stable-piko.apk)   | [All Architectures](../../releases/download/all/twitter-beta-piko.apk)   |
 
 ---
 
@@ -983,5 +990,7 @@ Web version:
 [APKEditor](https://github.com/REAndroid/APKEditor) - [Apache-2.0](https://github.com/REAndroid/APKEditor/blob/master/LICENSE)
 
 [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) - [MIT](https://github.com/FlareSolverr/FlareSolverr/blob/master/LICENSE)
+
+[tdl](https://github.com/iyear/tdl) - [AGPL-3.0](hhttps://github.com/iyear/tdl/blob/master/LICENSE)
 
 ---

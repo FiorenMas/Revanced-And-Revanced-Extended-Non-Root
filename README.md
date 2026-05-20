@@ -326,14 +326,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Twitter:](https://play.google.com/store/apps/details?id=com.twitter.android)
 
-### [Piko:](https://github.com/crimera/piko)
-
-👉 [Offical author download link](https://github.com/crimera/twitter-apk/releases)
-
-| [Stable version](https://github.com/crimera/piko/releases/latest)          | [Beta version](https://github.com/crimera/piko/releases/)                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------| 
-| [All Architectures](../../releases/download/all/twitter-stable-piko.apk)   | [All Architectures](../../releases/download/all/twitter-beta-piko.apk)   |
-| [Arm64-v8a](../../releases/download/all/twitter-arm64-v8a-stable-piko.apk) | [Arm64-v8a](../../releases/download/all/twitter-arm64-v8a-beta-piko.apk) |
+Temporary remove download link
 
 ---
 

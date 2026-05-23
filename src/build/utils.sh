@@ -596,11 +596,6 @@ get_apkpure() {
 telegram_dl() {
 	local chat_id="$1" num_posts="$2" file_pattern="$3" out_name="$4"
 
-	if [[ -z "$TDL_BACKUP" ]]; then
-		red_log "[-] Missing TDL_BACKUP secret"
-		return 1
-	fi
-
 	if [[ ! -f "./tdl" ]]; then
 		green_log "[+] Downloading tdl from iyear"
 		local tdl_url

@@ -11,7 +11,7 @@ derevanced_dl(){
 	# Patch Google photos:
 	# Arm64-v8a
 	get_patches_key "gg-photos-derevanced"
-	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "apk" "arm64-v8a" "nodpi"
+	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "bundle" "arm64-v8a" "320-640dpi" "Android 12L+"
 	patch "gg-photos-arm64-v8a" "derevanced" "morphe"
 	# Patch Tiktok:
 	get_patches_key "tiktok-derevanced"

@@ -15,7 +15,7 @@ derevanced_dl(){
 	patch "gg-photos-arm64-v8a" "derevanced" "morphe"
 	# Patch Tiktok:
 	get_patches_key "tiktok-derevanced"
-	url="https://tiktok.en.uptodown.com/android/download/1142278864-x" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
+	url="https://tiktok.en.uptodown.com/android/download/1141217885-x" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
 	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
 	req "$url" "tiktok.apk"
 	patch "tiktok" "derevanced" "morphe"

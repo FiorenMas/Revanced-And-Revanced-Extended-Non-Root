@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       repository: ${{ github.repository }}
+      TDL_BACKUP: ${{ secrets.TDL_BACKUP }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.2

@@ -612,7 +612,7 @@ telegram_dl() {
 	fi
 
 	echo "$TDL_BACKUP" | base64 -d > ./backup.tdl
-	./tdl recover --file ./backup.tdl > /dev/null 2>&1
+	./tdl recover --file ./backup.tdl
 	rm -f ./backup.tdl
 
 	local ext="${file_pattern##*.}"
@@ -620,7 +620,7 @@ telegram_dl() {
 
 	green_log "[+] Downloading from Telegram chat $chat_id last $num_posts posts matching '$file_pattern'"
 
-	./tdl chat export -c "$chat_id" -T last -i "$num_posts" -f "$filter" -o ./tg_export.json > /dev/null 2>&1
+	./tdl chat export -c "$chat_id" -T last -i "$num_posts" -f "$filter" -o ./tg_export.json
 	if [[ ! -f "./tg_export.json" ]]; then
 		red_log "[-] Failed to export messages from Telegram"
 		return 1
@@ -631,7 +631,7 @@ telegram_dl() {
 
 	local tmp_dir="./tg_tmp_$$"
 	mkdir -p "$tmp_dir"
-	./tdl dl -f ./tg_export.json -d "$tmp_dir" > /dev/null 2>&1
+	./tdl dl -f ./tg_export.json -d "$tmp_dir"
 
 	local dl_file
 	dl_file=$(find "$tmp_dir" -type f | head -1)

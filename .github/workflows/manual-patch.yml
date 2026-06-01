@@ -31,6 +31,9 @@ on:
       org:
         required: true
         type: string
+    secrets:
+      TDL_BACKUP:
+        required: true
 jobs:
   patch_morphe:
     name: Patch Morphe

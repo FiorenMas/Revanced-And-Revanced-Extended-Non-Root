@@ -372,11 +372,20 @@ And if you can't install messenger back again because they check sign app should
 
 [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-derevanced.apk)
 
+### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
+
+[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh-lspatched.apk)
+
+<details>
+  <summary>Outdated patches</summary>
+
 ### [Revanced:](https://github.com/revanced/revanced-patches)
 
 | Stable version                                                            | Beta version                                                                   |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
 | [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/threads-beta-arm64-v8a-revanced.apk)   |
+
+</details>
 
 ---
 

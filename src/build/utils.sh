@@ -694,7 +694,7 @@ patch() {
 	fi
 }
 
-lspatch() {
+npatch() {
 	green_log "[+] Patching $1:"
 	if [ -f "./download/$1.apk" ]; then
 		local module
@@ -708,8 +708,8 @@ lspatch() {
 			red_log "[-] Module not found: $2"
 			return 1
 		fi
-		java -jar lspatch.jar ./download/$1.apk -k ./src/fiorenmas.ks fiorenmas fiorenmas fiorenmas -m "$module" -o ./release/
-		mv ./release/$1-*-lspatched.apk ./release/$1-$3-lspatched.apk
+		java -jar npatch.jar ./download/$1.apk -k ./src/fiorenmas.ks fiorenmas fiorenmas fiorenmas -m "$module" -o ./release/
+		mv ./release/$1-*-npatched.apk ./release/$1-$3-npatched.apk
 		unset version
 		unset lock_version
 	else

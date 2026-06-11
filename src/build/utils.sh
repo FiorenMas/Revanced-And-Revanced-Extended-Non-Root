@@ -695,21 +695,63 @@ patch() {
 }
 
 npatch() {
+	NPATCH_APK="$1"
+	NPATCH_LABEL="$3"
+
 	green_log "[+] Patching $1:"
 	if [ -f "./download/$1.apk" ]; then
+		local apk_name="$1"
+		local module_arg="$2"
+		local output_label="$3"
 		local module
-		if [[ "$2" == *.apk ]]; then
-			local -a matches=($2)
+
+		if [[ "$module_arg" == *.apk ]]; then
+			local -a matches=($module_arg)
 			module="${matches[0]}"
 		else
-			module="$2.apk"
+			module="$module_arg.apk"
 		fi
 		if [[ ! -f "$module" ]]; then
-			red_log "[-] Module not found: $2"
+			red_log "[-] Module not found: $module_arg"
 			return 1
 		fi
-		java -jar npatch.jar ./download/$1.apk -k ./src/fiorenmas.ks fiorenmas fiorenmas fiorenmas -m "$module" -o ./release/
-		mv ./release/$1-*-npatched.apk ./release/$1-$3-npatched.apk
+
+		# ── Parse optional flags  ────────────────────────────────
+		local extra_flags=""
+		local inject_dex=false
+		local sigbypass_level=1
+
+		shift 3
+		while [[ $# -gt 0 ]]; do
+			case "$1" in
+				--injectdex)
+					inject_dex=true
+					shift
+					;;
+				--sigbypasslv)
+					sigbypass_level="$2"
+					shift 2
+					;;
+				*)
+					extra_flags+=" $1"
+					shift
+					;;
+			esac
+		done
+
+		[[ "$inject_dex" == true ]] && extra_flags+=" --injectdex"
+		extra_flags+=" -l $sigbypass_level"
+		# ─────────────────────────────────────────────────────────────────────
+
+		green_log "[+] NPatch flags: sigbypasslv=$sigbypass_level injectdex=$inject_dex"
+
+		# shellcheck disable=SC2086
+		java -jar npatch.jar "./download/${apk_name}.apk" \
+			-k ./src/fiorenmas.ks fiorenmas fiorenmas fiorenmas \
+			-m "$module" \
+			-o ./release/ \
+			$extra_flags
+		mv ./release/${apk_name}-*-npatched.apk ./release/${apk_name}-${output_label}-npatched.apk
 		unset version
 		unset lock_version
 	else

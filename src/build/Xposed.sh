@@ -2,32 +2,34 @@
 # Xposed build
 source ./src/build/utils.sh
 
-LSPatch_dl(){
-	dl_gh "LSPatch" "JingMatrix" "latest"
+NPatch_dl(){
+	dl_gh "NPatch" "7723mod" "latest"
 }
+
 1() {
 	# Patch Revenge:
+	NPatch_dl
 	dl_gh "revenge-xposed" "revenge-mod" "latest"
-	LSPatch_dl
 	get_apk "com.discord" "discord" "bundle"
-	lspatch "discord" "app-release" "revenge"
+	npatch "discord" "app-release" "revenge"
 }
 2() {
-	LSPatch_dl
-	dl_gh "NexAlloy" "gnadgnaoh" "v2.0"
+	NPatch_dl
+	dl_gh "NexAlloy" "gnadgnaoh" "v3.0"
 	# Patch Facebook:
 	version="564.0.0.48.74"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" " nodpi" "Android 11+"
-	lspatch "facebook-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh"
-	# Patch Messenger:
-	get_apk "com.facebook.orca" "messenger-arm64-v8a" "apk" "arm64-v8a" "nodpi" "Android 9.0+"
-	lspatch "messenger-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh"
+	npatch "facebook-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
+}
+3() {
+	NPatch_dl
+	dl_gh "NexAlloy" "gnadgnaoh" "v3.0"
 	# Patch Instagram:
 	get_apk "com.instagram.android" "instagram-arm64-v8a" "bundle" "arm64-v8a" "120-640dpi"  "Android 9.0+"
-	lspatch "instagram-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh"
+	npatch "instagram-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 	# Patch Thread:
-	get_apk "com.instagram.barcelona" "threads-arm64-v8a" "bundle" "arm64-v8a" "320-480dpi" "Android 9.0+" 
-	lspatch "threads-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh"
+	get_apk "com.instagram.barcelona" "threads-arm64-v8a" "bundle" "arm64-v8a" "320-480dpi" "Android 9.0+"
+	npatch "threads-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 }
 case "$1" in
     1)
@@ -35,5 +37,8 @@ case "$1" in
         ;;
     2)
         2
+        ;;
+    3)
+        3
         ;;
 esac

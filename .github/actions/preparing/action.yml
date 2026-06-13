@@ -1,4 +1,9 @@
 name: Preparing to patch
+inputs:
+  install_bouncy_castle:
+    description: 'Install Bouncy Castle provider for BKS keystore'
+    required: false
+    default: 'false'
 runs:
   using: "composite"
   steps:
@@ -7,17 +12,6 @@ runs:
       with:
         distribution: 'zulu'
         java-version: '21'
-    - name: Install Bouncy Castle provider for BKS keystore
-      shell: bash
-      run: |
-        sudo apt-get install -y -q libbcprov-java
-        BCPROV=$(find /usr/share/java -name "bcprov-*.jar" | grep -v debian | head -1)
-        sudo cp "$BCPROV" "$JAVA_HOME/lib/bcprov.jar"
-        LAST_PROV=$(grep "^security.provider\." "$JAVA_HOME/conf/security/java.security" \
-          | grep -oP '(?<=security\.provider\.)\d+' | sort -n | tail -1)
-        echo "security.provider.$((LAST_PROV+1))=org.bouncycastle.jce.provider.BouncyCastleProvider" \
-          | sudo tee -a "$JAVA_HOME/conf/security/java.security"
-        echo "[+] Bouncy Castle registered as provider #$((LAST_PROV+1))"
     - name: Start FlareSolverr
       shell: bash
       run: |
@@ -30,6 +24,18 @@ runs:
           fi
           sleep 2
         done
+    - name: Install Bouncy Castle provider for BKS keystore
+      if: inputs.install_bouncy_castle == 'true'
+      shell: bash
+      run: |
+        sudo apt-get install -y -q libbcprov-java
+        BCPROV=$(find /usr/share/java -name "bcprov-*.jar" | grep -v debian | head -1)
+        sudo cp "$BCPROV" "$JAVA_HOME/lib/bcprov.jar"
+        LAST_PROV=$(grep "^security.provider\." "$JAVA_HOME/conf/security/java.security" \
+          | grep -oP '(?<=security\.provider\.)\d+' | sort -n | tail -1)
+        echo "security.provider.$((LAST_PROV+1))=org.bouncycastle.jce.provider.BouncyCastleProvider" \
+          | sudo tee -a "$JAVA_HOME/conf/security/java.security"
+        echo "[+] Bouncy Castle registered as provider #$((LAST_PROV+1))"
 #    - name: Setup Cloudflare Warp
 #      shell: bash
 #      run: bash src/etc/cf_warp.sh

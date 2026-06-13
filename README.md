@@ -282,7 +282,7 @@ This app might crash 2-3 times on the first startup. Don't worry - just try open
 
 And if you can't install messenger back again because they check sign app should need messenger [from here](README.md#gnadgnaoh-1) too
 
-[Arm64-v8a & Android 9+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh-lspatched.apk)
+[Arm64-v8a & Android 9+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh-npatched.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -306,10 +306,6 @@ And if you can't install messenger back again because they check sign app should
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
 [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-derevanced.apk)
-
-### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
-
-[Arm64-v8a & Android 9+](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh-lspatched.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -347,7 +343,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh-lspatched.apk)
+[Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh-npatched.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -374,7 +370,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh-lspatched.apk)
+[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh-npatched.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -751,7 +747,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Revenge:](https://github.com/revenge-mod/revenge-xposed)
 
-[All Architectures](../../releases/download/all/discord-revenge-lspatched.apk )
+[All Architectures](../../releases/download/all/discord-revenge-npatched.apk )
 
 ---
 

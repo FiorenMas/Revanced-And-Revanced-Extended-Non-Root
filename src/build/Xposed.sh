@@ -23,7 +23,6 @@ build_2() {
 	#                 loader dex directly ensures the hook fires in all of them.
 	# --sigbypasslv 3 : Level 3 (Extreme) replaces AppComponentFactory so the OS
 	#                 reports the original signature even to isolated processes.
-	version="564.0.0.48.74"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" " nodpi" "Android 11+"
 	npatch "facebook-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" \
 		--injectdex --sigbypasslv 3

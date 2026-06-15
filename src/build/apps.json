@@ -46,7 +46,7 @@
 		},
 		"com.google.android.apps.magazines": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=google-news",
-			"example_url": "https://www.apkmirror.com/apk/google-inc/google-news/google-news-5-108-0-644447823-release/"
+			"example_url": "https://www.apkmirror.com/apk/google-inc/google-news/google-news-daily-headlines-5-158-0-908428942-release/"
 		},
 		"com.google.android.apps.photos": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=photos",
@@ -107,6 +107,10 @@
 		"com.viber.voip": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=viber",
 			"example_url": "https://www.apkmirror.com/apk/viber-media-s-a-r-l/viber/rakuten-viber-messenger-27-8-1-0-release/"
+		},
+		"com.zhiliaoapp.musically": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=tik-tok-including-musical-ly",
+			"example_url": "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly/tiktok-45-5-4-release/"
 		},
 		"ginlemon.flowerfree": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=smart-launcher",

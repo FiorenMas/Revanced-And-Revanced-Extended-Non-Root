@@ -23,6 +23,8 @@ on:
           - 'DeRevanced'
           - 'Paresh'
           - 'hoo-dles'
+          - 'icysymmetra'
+          - 'docbt'
           - 'BiliRoamingM'
           - 'Scrazzz Patches'
           - 'Dropped Patches - indrastorms'
@@ -262,6 +264,46 @@ jobs:
       - name: Releasing APK files
         id: release-hoo-dles
         if: steps.check-gh-hoo-dles.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_icysymmetra:
+    name: Patch icysymmetra
+    if: ${{ github.event.inputs.org == 'icysymmetra' || inputs.org == 'icysymmetra' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-icysymmetra
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-icysymmetra
+        if: steps.check-gh-icysymmetra.outputs.internet_error == '0'
+        run: bash src/build/icysymmetra.sh
+      - name: Releasing APK files
+        id: release-icysymmetra
+        if: steps.check-gh-icysymmetra.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_docbt:
+    name: Patch docbt
+    if: ${{ github.event.inputs.org == 'docbt' || inputs.org == 'docbt' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-docbt
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-docbt
+        if: steps.check-gh-docbt.outputs.internet_error == '0'
+        run: bash src/build/docbt.sh
+      - name: Releasing APK files
+        id: release-docbt
+        if: steps.check-gh-docbt.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_BiliRoamingM:
     name: Patch BiliRoamingM

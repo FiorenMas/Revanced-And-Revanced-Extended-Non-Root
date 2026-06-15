@@ -15,9 +15,7 @@ derevanced_dl(){
 	patch "gg-photos-arm64-v8a" "derevanced" "morphe"
 	# Patch Tiktok:
 	get_patches_key "tiktok-derevanced"
-	url="https://tiktok.en.uptodown.com/android/download/1141217885-x" #Use uptodown because apkmirror ban tiktok in US lead github action can't download apk file
-	url="https://dw.uptodown.com/dwn/$(req "$url" - | $pup -p --charset utf-8 'button#detail-download-button attr{data-url}')"
-	req "$url" "tiktok.apk"
+	get_apk "com.zhiliaoapp.musically" "tiktok" "apk" "arm64-v8a + armeabi-v7a" "nodpi"
 	patch "tiktok" "derevanced" "morphe"
 }
 2() {
@@ -78,10 +76,10 @@ derevanced_dl(){
 	get_apk "com.rarlab.rar" "rar" "bundle" "universal" "120-640dpi" "Android 5.0+" 
 	patch "rar" "derevanced" "morphe"
 	# Patch Google News Arm64-v8a
-	get_patches_key "GoogleNews-derevanced"
-	get_apk "com.google.android.apps.magazines" "googlenews" "bundle_extract"
-	split_editor "googlenews" "googlenews-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "googlenews-arm64-v8a" "derevanced" "morphe"
+	#get_patches_key "GoogleNews-derevanced"
+	#get_apk "com.google.android.apps.magazines" "googlenews" "bundle_extract"
+	#split_editor "googlenews" "googlenews-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
+	#patch "googlenews-arm64-v8a" "derevanced" "morphe"
 }
 6() {
 	derevanced_dl

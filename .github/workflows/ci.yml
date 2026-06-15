@@ -57,6 +57,14 @@ jobs:
         id: check-hoo-dles
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh hoo-dles/morphe-patches latest protonvpn-hoo-dles.apk
+      - name: Check new patch icysymmetra
+        id: check-icysymmetra
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh icysymmetra/morphe-patches latest tiktok-icysymmetra.apk
+      - name: Check new patch docbt
+        id: check-docbt
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh docbt/morphe-patches latest googlenews-docbt.apk
       - name: Check new patch BiliRoamingM
         id: check-BiliRoamingM
         if: steps.check-gh.outputs.internet_error == '0'
@@ -98,6 +106,8 @@ jobs:
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_paresh: ${{ steps.check-paresh.outputs.new_patch }}
       check_hoo_dles: ${{ steps.check-hoo-dles.outputs.new_patch }}
+      check_icysymmetra: ${{ steps.check-icysymmetra.outputs.new_patch }}
+      check_docbt: ${{ steps.check-docbt.outputs.new_patch }}
       check_BiliRoamingM: ${{ steps.check-BiliRoamingM.outputs.new_patch }}
       check_Revanced_Experiments: ${{ steps.check-Revanced-Experiments.outputs.new_patch }}
 
@@ -181,6 +191,22 @@ jobs:
     secrets: inherit
     with:
       org: "hoo-dles"
+  Patch-icysymmetra:
+    name: Patch icysymmetra
+    needs: check
+    if: ${{ needs.check.outputs.check_icysymmetra == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "icysymmetra"
+  Patch-docbt:
+    name: Patch docbt
+    needs: check
+    if: ${{ needs.check.outputs.check_docbt == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "docbt"
   Patch-BiliRoamingM:
     name: Patch BiliRoamingM
     needs: check

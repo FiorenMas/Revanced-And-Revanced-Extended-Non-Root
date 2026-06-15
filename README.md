@@ -364,13 +364,13 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Threads:](https://play.google.com/store/apps/details?id=com.instagram.barcelona)
 
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-derevanced.apk)
-
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
 [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh-npatched.apk)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-derevanced.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -403,6 +403,10 @@ And if you can't install messenger back again because they check sign app should
 ---
 
 ### [TikTok:](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
+
+### [icysymmetra:](https://github.com/icysymmetra/tiktok-patches-for-morphe)
+
+[All Architectures](../../releases/download/all/tiktok-icysymmetra.apk)
 
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
@@ -582,6 +586,10 @@ And if you can't install messenger back again because they check sign app should
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
 [Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-derevanced.apk)
+
+### [docbt:](https://github.com/docbt/patched-up)
+
+[All Architectures](../../releases/download/all/googlenews-docbt.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -865,19 +873,6 @@ Web version:
 ### ⚠️ Library, resources using in this repository:
 
 <details>
-  <summary>Revanced</summary>
-
-[Patches](https://github.com/revanced/revanced-patches) - [GPL-3.0](https://github.com/revanced/revanced-patches/blob/main/LICENSE)
-
-[Integrations](https://github.com/revanced/revanced-integrations) - [GPL-3.0](https://github.com/revanced/revanced-integrations/blob/main/LICENSE)
-
-[CLI](https://github.com/revanced/revanced-cli) - [GPL-3.0](https://github.com/revanced/revanced-cli/blob/main/LICENSE)
-
-[GmsCore](https://github.com/ReVanced/GmsCore) - [GPL-3.0](https://github.com/revanced/revanced-cli/blob/main/LICENSE)
-
-</details>
-
-<details>
   <summary>inotia00</summary>
 
 [Patches](https://github.com/inotia00/revanced-patches) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)
@@ -988,6 +983,27 @@ Web version:
 
 </details>
 
+<details>
+  <summary>icysymmetra</summary>
+
+[Patches](https://github.com/icysymmetra/tiktok-patches-for-morphe) - [GPL-3.0](https://github.com/icysymmetra/tiktok-patches-for-morphe/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>docbt</summary>
+
+[Patches](https://github.com/docbt/patched-up) - [GPL-3.0](https://github.com/docbt/patched-up/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>Revanced</summary>
+
+[CLI](https://github.com/revanced/revanced-cli) - [GPL-3.0](https://github.com/revanced/revanced-cli/blob/main/LICENSE)
+
+</details>
+
 [Markdown Badges](https://github.com/Ileriayo/markdown-badges) - [MIT](https://github.com/Ileriayo/markdown-badges/blob/master/LICENSE)
 
 [pup](https://github.com/ericchiang/pup) - [MIT](https://github.com/ericchiang/pup/blob/master/LICENSE)
@@ -996,6 +1012,6 @@ Web version:
 
 [FlareSolverr](https://github.com/FlareSolverr/FlareSolverr) - [MIT](https://github.com/FlareSolverr/FlareSolverr/blob/master/LICENSE)
 
-[tdl](https://github.com/iyear/tdl) - [AGPL-3.0](hhttps://github.com/iyear/tdl/blob/master/LICENSE)
+[tdl](https://github.com/iyear/tdl) - [AGPL-3.0](https://github.com/iyear/tdl/blob/master/LICENSE)
 
 ---

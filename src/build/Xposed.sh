@@ -5,7 +5,9 @@ source ./src/build/utils.sh
 NPatch_dl(){
 	dl_gh "NPatch" "7723mod" "latest"
 }
-
+patch_dl(){
+	dl_gh "NexAlloy" "gnadgnaoh" "v4.0"
+}
 1() {
 	# Patch Revenge:
 	NPatch_dl
@@ -15,15 +17,18 @@ NPatch_dl(){
 }
 2() {
 	NPatch_dl
-	dl_gh "NexAlloy" "gnadgnaoh" "v3.0"
+	patch_dl
 	# Patch Facebook:
 	version="566.0.0.48.73"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" " nodpi" "Android 11+"
 	npatch "facebook-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
+	# Patch Messenger:
+	get_apk "com.facebook.orca" "messenger-arm64-v8a" "apk" "arm64-v8a" "nodpi" "Android 9.0+"
+	npatch "messenger-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 }
 3() {
 	NPatch_dl
-	dl_gh "NexAlloy" "gnadgnaoh" "v3.0"
+	patch_dl
 	# Patch Instagram:
 	get_apk "com.instagram.android" "instagram-arm64-v8a" "bundle" "arm64-v8a" "120-640dpi"  "Android 9.0+"
 	npatch "instagram-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"

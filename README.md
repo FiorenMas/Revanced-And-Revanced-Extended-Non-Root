@@ -307,6 +307,10 @@ And if you can't install messenger back again because they check sign app should
 
 [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-derevanced.apk)
 
+### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
+
+[Arm64-v8a & Android 9+](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh-npatched.apk)
+
 <details>
   <summary>Outdated patches</summary>
 

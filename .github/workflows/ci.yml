@@ -60,7 +60,7 @@ jobs:
       - name: Check new patch icysymmetra
         id: check-icysymmetra
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh icysymmetra/morphe-patches latest tiktok-icysymmetra.apk
+        run: bash src/etc/ci.sh icysymmetra/tiktok-patches-for-morphe latest tiktok-icysymmetra.apk
       - name: Check new patch docbt
         id: check-docbt
         if: steps.check-gh.outputs.internet_error == '0'
@@ -101,7 +101,6 @@ jobs:
       check_morphe_beta: ${{ steps.check-morphe-beta.outputs.new_patch }}
       check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
-      check_rve_arsclib: ${{ steps.check-rve-arsclib.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_paresh: ${{ steps.check-paresh.outputs.new_patch }}

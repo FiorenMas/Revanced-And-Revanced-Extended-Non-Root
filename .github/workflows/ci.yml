@@ -64,7 +64,7 @@ jobs:
       - name: Check new patch docbt
         id: check-docbt
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh docbt/morphe-patches latest googlenews-docbt.apk
+        run: bash src/etc/ci.sh docbt/patched-up latest googlenews-docbt.apk
       - name: Check new patch BiliRoamingM
         id: check-BiliRoamingM
         if: steps.check-gh.outputs.internet_error == '0'

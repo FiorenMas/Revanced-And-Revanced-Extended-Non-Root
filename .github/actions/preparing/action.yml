@@ -4,6 +4,18 @@ inputs:
     description: 'Install Bouncy Castle provider for BKS keystore'
     required: false
     default: 'false'
+  install_usque:
+    description: 'Install usque for Cloudflare WARP proxy'
+    required: false
+    default: 'false'
+  install_python_deps:
+    description: 'Install Python dependencies for Google Play downloader'
+    required: false
+    default: 'false'
+  python_requirements:
+    description: 'Path to Python requirements.txt file'
+    required: false
+    default: ''
 runs:
   using: "composite"
   steps:
@@ -12,6 +24,19 @@ runs:
       with:
         distribution: 'zulu'
         java-version: '21'
+    - name: Setup usque
+      if: inputs.install_usque == 'true'
+      shell: bash
+      run: |
+        wget -q -O usque.zip https://github.com/Diniboy1123/usque/releases/download/v4.2.0/usque_4.2.0_linux_amd64.zip
+        unzip -o usque.zip -d usque
+        chmod +x usque/usque
+        sudo mv usque/usque /usr/local/bin/usque
+        rm -rf usque usque.zip
+        usque register --accept-tos
+        usque socks -b 127.0.0.1 -p 9099 &
+        sleep 5
+        curl -x socks5://127.0.0.1:9099 -s -o /dev/null -w "%{http_code}" https://www.google.com && echo "[+] usque SOCKS5 proxy is ready" || echo "[-] usque proxy failed"
     - name: Start FlareSolverr
       shell: bash
       run: |
@@ -24,6 +49,15 @@ runs:
           fi
           sleep 2
         done
+    - name: Set up Python
+      if: inputs.install_python_deps == 'true'
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.x'
+    - name: Install Python dependencies
+      if: inputs.install_python_deps == 'true'
+      shell: bash
+      run: pip install -r ${{ inputs.python_requirements }}
     - name: Install Bouncy Castle provider for BKS keystore
       if: inputs.install_bouncy_castle == 'true'
       shell: bash
@@ -36,6 +70,3 @@ runs:
         echo "security.provider.$((LAST_PROV+1))=org.bouncycastle.jce.provider.BouncyCastleProvider" \
           | sudo tee -a "$JAVA_HOME/conf/security/java.security"
         echo "[+] Bouncy Castle registered as provider #$((LAST_PROV+1))"
-#    - name: Setup Cloudflare Warp
-#      shell: bash
-#      run: bash src/etc/cf_warp.sh

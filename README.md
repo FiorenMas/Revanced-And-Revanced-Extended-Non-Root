@@ -326,6 +326,11 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Twitter:](https://play.google.com/store/apps/details?id=com.twitter.android)
 
+### [Piko](https://github.com/crimera/piko) + [X Shim](https://gitlab.com/inotia00/x-shim) (Recommend)
+
+| [Stable version](https://github.com/crimera/piko/releases/latest)        | [Beta version](https://github.com/crimera/piko/releases/)                      |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | 
+| [All Architectures](../../releases/download/all/twitter-piko-x-shim.apk) | [All Architectures](../../releases/download/all/twitter-beta-piko-x-shim.apk ) |
 
 ### [Piko:](https://github.com/crimera/piko)
 
@@ -880,6 +885,8 @@ Web version:
   <summary>inotia00</summary>
 
 [Patches](https://github.com/inotia00/revanced-patches) - [GPL-3.0](https://github.com/inotia00/revanced-patches/blob/revanced-extended/LICENSE)
+
+[X Shim](https://gitlab.com/inotia00/x-shim) - [GPL-3.0](https://gitlab.com/inotia00/x-shim/-/blob/main/LICENSE)
 
 [Patches arsclib](https://github.com/inotia00/revanced-patches-arsclib) - [GPL-3.0](https://github.com/inotia00/revanced-patches-arsclib/blob/arsclib-old/LICENSE)
 

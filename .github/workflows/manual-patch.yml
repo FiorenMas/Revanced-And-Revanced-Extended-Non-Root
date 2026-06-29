@@ -18,6 +18,8 @@ on:
           - 'Morphe Beta'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
+          - 'Twitter Piko X Shim'
+          - 'Twitter Piko X Shim Beta'
           - 'Twitter Piko Stable'
           - 'Twitter Piko Beta'
           - 'DeRevanced'
@@ -220,6 +222,46 @@ jobs:
       - name: Releasing APK files
         id: release-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_twitter_x_shim:
+    name: Patch Twitter Piko X Shim
+    if: ${{ github.event.inputs.org == 'Twitter Piko X Shim' || inputs.org == 'Twitter Piko X Shim' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-piko-x-shim
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-piko-x-shim
+        if: steps.check-gh-piko-x-shim.outputs.internet_error == '0'
+        run: bash src/build/Piko-X-Shim.sh
+      - name: Releasing APK files
+        id: release-piko-x-shim
+        if: steps.check-gh-piko-x-shim.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_twitter_x_shim_beta:
+    name: Patch Twitter Piko X Shim Beta
+    if: ${{ github.event.inputs.org == 'Twitter Piko X Shim Beta' || inputs.org == 'Twitter Piko X Shim Beta' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-piko-x-shim-beta
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-piko-x-shim-beta
+        if: steps.check-gh-piko-x-shim-beta.outputs.internet_error == '0'
+        run: bash src/build/Piko-X-Shim-Beta.sh
+      - name: Releasing APK files
+        id: release-piko-x-shim-beta
+        if: steps.check-gh-piko-x-shim-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_paresh:
     name: Patch Paresh

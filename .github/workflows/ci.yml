@@ -45,6 +45,14 @@ jobs:
         id: check-twitter-piko-beta
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh crimera/piko prerelease twitter-beta-piko.apk
+      - name: Check new patch Twitter Piko X Shim
+        id: check-twitter-piko-x-shim
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh crimera/piko latest twitter-piko-x-shim.apk
+      - name: Check new patch Twitter Piko X Shim Beta
+        id: check-twitter-piko-x-shim-beta
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh crimera/piko prerelease twitter-beta-piko-x-shim.apk
       - name: Check new patch DeReVanced
         id: check-derv
         if: steps.check-gh.outputs.internet_error == '0'
@@ -103,6 +111,8 @@ jobs:
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
       check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
+      check_twitter_piko_x_shim: ${{ steps.check-twitter-piko-x-shim.outputs.new_patch }}
+      check_twitter_piko_x_shim_beta: ${{ steps.check-twitter-piko-x-shim-beta.outputs.new_patch }}
       check_paresh: ${{ steps.check-paresh.outputs.new_patch }}
       check_hoo_dles: ${{ steps.check-hoo-dles.outputs.new_patch }}
       check_icysymmetra: ${{ steps.check-icysymmetra.outputs.new_patch }}
@@ -166,6 +176,22 @@ jobs:
     secrets: inherit
     with:
       org: "Twitter Piko Beta"
+  Patch-Twitter-Piko-X-Shim:
+    name: Patch Twitter Piko X Shim
+    needs: check
+    if: ${{ needs.check.outputs.check_twitter_piko_x_shim == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "Twitter Piko X Shim"
+  Patch-Twitter-Piko-X-Shim-Beta:
+    name: Patch Twitter Piko X Shim Beta
+    needs: check
+    if: ${{ needs.check.outputs.check_twitter_piko_x_shim_beta == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "Twitter Piko X Shim Beta"
   Patch-DeRevanced:
     name: Patch DeRevanced Stable
     needs: check

@@ -7,7 +7,7 @@ wget -q -O ./pup.zip https://github.com/ericchiang/pup/releases/download/v0.4.0/
 unzip "./pup.zip" -d "./" > /dev/null 2>&1
 pup="./pup"
 #Setup APKEditor for install combine split apks
-wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.8/APKEditor-1.4.8.jar
+wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar
 APKEditor="./APKEditor.jar"
 #Find lastest user_agent
 user_agent=$(wget -qO- https://www.whatismybrowser.com/guides/the-latest-user-agent/firefox | tr '\n' ' ' | sed 's#</tr>#\n#g' | grep 'Firefox (Standard)' | sed -n 's/.*<span class="code">\([^<]*Android[^<]*\)<\/span>.*/\1/p') \
@@ -705,7 +705,7 @@ telegram_dl() {
 
 #################################################
 
-# Patching apps with Revanced CLI:
+# Patching apps with CLI:
 patch() {
 	green_log "[+] Patching $1:"
 	if [ -f "./download/$1.apk" ]; then
@@ -741,6 +741,26 @@ patch() {
 			unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
 		fi
 		eval java -jar *cli*.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches$ks $pu$force $a./download/$1.apk
+  		unset version
+		unset lock_version
+		unset excludePatches
+		unset includePatches
+	else
+		red_log "[-] Not found $1.apk"
+		exit 1
+	fi
+}
+
+patch_multi() {
+	green_log "[+] Patching $1:"
+	if [ -f "./download/$1.apk" ]; then
+		echo "Patching with Morphe"
+		local mpp_args=""
+		for mpp_file in *.mpp; do
+			[ -f "$mpp_file" ] || continue
+			mpp_args="$mpp_args -p \"$mpp_file\"$excludePatches$includePatches"
+		done
+		eval java -jar *cli*.jar patch $mpp_args --options-file ./src/options/$2.json --out=./release/$1-$2.apk --keystore=./src/morphe.keystore --purge=true --force --continue-on-error ./download/$1.apk
   		unset version
 		unset lock_version
 		unset excludePatches

@@ -90,17 +90,27 @@ Download
 
 #### [Proton VPN](README.md#proton-vpn-1)
 
+#### [Psiphon](README.md#psiphon-1)
+
+#### [Hola VPN](README.md#hola-vpn-1)
+
 #### [Google News](README.md#google-news-1)
 
 #### [Photomath](README.md#photomath-1)
 
 #### [Truecaller](README.md#truecaller-1)
 
-#### [EyeconCaller](README.md#tyeconcaller-1)
+#### [EyeconCaller](README.md#eyeconcaller-1)
+
+#### [CamScanner](README.md#camscanner-1)
 
 #### [RAR](README.md#rar-1)
 
+#### [TeraBox](README.md#terabox-1)
+
 #### [Strava](README.md#strava-1)
+
+#### [Waze](README.md#waze-1)
 
 #### [Pixiv](README.md#pixiv-1)
 
@@ -282,7 +292,7 @@ This app might crash 2-3 times on the first startup. Don't worry - just try open
 
 And if you can't install messenger back again because they check sign app should need messenger [from here](README.md#gnadgnaoh-1) too
 
-[Arm64-v8a & Android 9+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh-npatched.apk)
+[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh-npatched.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -303,13 +313,13 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Messenger:](https://play.google.com/store/apps/details?id=com.facebook.orca)
 
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-derevanced.apk)
-
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
 [Arm64-v8a & Android 9+](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh-npatched.apk)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-derevanced.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -411,7 +421,7 @@ And if you can't install messenger back again because they check sign app should
 
 ---
 
-### [TikTok:](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
+### [TikTok:](https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically)
 
 ### [icysymmetra:](https://github.com/icysymmetra/tiktok-patches-for-morphe)
 
@@ -431,6 +441,14 @@ And if you can't install messenger back again because they check sign app should
 | [All Architectures](../../releases/download/all/tiktok-revanced.apk)   | [All Architectures](../../releases/download/all/tiktok-beta-revanced.apk)   |
 
 </details>
+
+---
+
+### [TikTok Asia:](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
+
+### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
+
+[All Architectures](../../releases/download/all/tiktok-asia-derevanced.apk)
 
 ---
 
@@ -520,6 +538,14 @@ And if you can't install messenger back again because they check sign app should
 ### [Paresh Patches:](https://play.google.com/store/apps/details?id=com.eyecon.global)
 
 [Arm64-v8a](../../releases/download/all/eyecon-caller-arm64-v8a-paresh.apk)
+
+---
+
+### [CamScanner:]()
+
+### [Paresh Patches:](https://play.google.com/store/apps/details?id=com.intsig.camscanner)
+
+[Arm64-v8a](../../releases/download/all/camscanner-hoo-dles.apk)
 
 ---
 
@@ -638,6 +664,10 @@ And if you can't install messenger back again because they check sign app should
 
 [All Architectures](../../releases/download/all/protonvpn-hoo-dles.apk )
 
+### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
+
+[All Architectures](../../releases/download/all/protonvpn-rushiranpise.apk )
+
 <details>
   <summary>Outdated patches</summary>
 
@@ -648,6 +678,30 @@ And if you can't install messenger back again because they check sign app should
 | [All Architectures](../../releases/download/all/protonvpn-revanced.apk) | [All Architectures](../../releases/download/all/protonvpn-beta-revanced.apk) |
 
 </details>
+
+---
+
+### [Psiphon:](https://play.google.com/store/apps/details?id=com.psiphon3.subscription)
+
+### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
+
+[All Architectures](../../releases/download/all/psiphon-rushiranpise.apk )
+
+---
+
+### [Hola VPN:](https://play.google.com/store/apps/details?id=org.hola.play)
+
+### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
+
+[All Architectures](../../releases/download/all/hola-vpn-rushiranpise.apk )
+
+---
+
+### [Windscribe:](https://play.google.com/store/apps/details?id=com.windscribe.vpn)
+
+### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
+
+[All Architectures](../../releases/download/all/windscribe-rushiranpise.apk )
 
 ---
 
@@ -686,6 +740,14 @@ And if you can't install messenger back again because they check sign app should
 | [All Architectures](../../releases/download/all/rar-revanced.apk) | [All Architectures](../../releases/download/all/rar-beta-revanced.apk) |
 
 </details>
+
+---
+
+### [TeraBox:](https://play.google.com/store/apps/details?id=com.dubox.drive)
+
+### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
+
+[All Architectures](../../releases/download/all/terabox-rushiranpise.apk)
 
 ---
 
@@ -822,6 +884,10 @@ Web version:
 
 [All Architectures](../../releases/download/all/adguard-hoo-dles.apk )
 
+### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
+
+[All Architectures](../../releases/download/all/adguard-rushiranpise.apk )
+
 ---
 
 ### [Smart Launcher:](https://play.google.com/store/apps/details?id=ginlemon.flowerfree)
@@ -840,9 +906,19 @@ Web version:
 
 ---
 
+### [Waze:](https://play.google.com/store/apps/details?id=com.waze)
+
+### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
+
+[All Architectures](../../releases/download/all/waze-rushiranpise.apk )
+
+---
+
 ### [Solid Explorer File Manager:](https://play.google.com/store/apps/details?id=pl.solidexplorer2)
 
 ### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
+
+Require MicroG installed
 
 [Arm64-v8a](../../releases/download/all/solid-explorer-hoo-dles.apk )
 
@@ -1005,6 +1081,13 @@ Web version:
   <summary>docbt</summary>
 
 [Patches](https://github.com/docbt/patched-up) - [GPL-3.0](https://github.com/docbt/patched-up/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>docbt</summary>
+
+[Patches](https://github.com/rushiranpise/morphe-patches) - [GPL-3.0](https://github.com/rushiranpise/morphe-patches/blob/main/LICENSE)
 
 </details>
 

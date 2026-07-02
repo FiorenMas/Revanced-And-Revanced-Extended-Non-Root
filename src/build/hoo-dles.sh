@@ -54,6 +54,13 @@ hoo-dles_dl(){
 	get_apk "cn.wps.moffice_eng" "wps-office" "apk"
 	patch "wps-office" "hoo-dles" "morphe"
 }
+5() {
+	hoo-dles_dl
+	# Patch CamScanner
+	get_patches_key "camscanner-hoo-dles"
+	get_apk "com.intsig.camscanner" "camscanner" "bundle"
+	patch "camscanner" "hoo-dles" "morphe"
+}
 case "$1" in
     1)
         1
@@ -66,5 +73,8 @@ case "$1" in
         ;;
     4)
         4
+        ;;
+    5)
+        5
         ;;
 esac

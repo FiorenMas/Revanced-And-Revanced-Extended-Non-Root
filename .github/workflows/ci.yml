@@ -65,6 +65,10 @@ jobs:
         id: check-hoo-dles
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh hoo-dles/morphe-patches latest protonvpn-hoo-dles.apk
+      - name: Check new patch rushiranpise
+        id: check-rushiranpise
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh rushiranpise/morphe-patches latest adguard-rushiranpise.apk
       - name: Check new patch icysymmetra
         id: check-icysymmetra
         if: steps.check-gh.outputs.internet_error == '0'
@@ -115,6 +119,7 @@ jobs:
       check_twitter_piko_x_shim_beta: ${{ steps.check-twitter-piko-x-shim-beta.outputs.new_patch }}
       check_paresh: ${{ steps.check-paresh.outputs.new_patch }}
       check_hoo_dles: ${{ steps.check-hoo-dles.outputs.new_patch }}
+      check_rushiranpise: ${{ steps.check-rushiranpise.outputs.new_patch }}
       check_icysymmetra: ${{ steps.check-icysymmetra.outputs.new_patch }}
       check_docbt: ${{ steps.check-docbt.outputs.new_patch }}
       check_BiliRoamingM: ${{ steps.check-BiliRoamingM.outputs.new_patch }}
@@ -216,6 +221,14 @@ jobs:
     secrets: inherit
     with:
       org: "hoo-dles"
+  Patch-rushiranpise:
+    name: Patch rushiranpise
+    needs: check
+    if: ${{ needs.check.outputs.check_rushiranpise == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "rushiranpise"
   Patch-icysymmetra:
     name: Patch icysymmetra
     needs: check

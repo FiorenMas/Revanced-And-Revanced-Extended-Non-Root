@@ -27,6 +27,7 @@ on:
           - 'hoo-dles'
           - 'icysymmetra'
           - 'docbt'
+          - 'rushiranpise'
           - 'BiliRoamingM'
           - 'Scrazzz Patches'
           - 'Dropped Patches - indrastorms'
@@ -293,7 +294,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        run: [1, 2, 3, 4]
+        run: [1, 2, 3, 4, 5]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -390,6 +391,34 @@ jobs:
       - name: Releasing APK files
         id: release-scrazzz-patches
         if: steps.check-gh-scrazzz-patches.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_rushiranpise:
+    name: Patch Rushiranpise
+    if: ${{ github.event.inputs.org == 'rushiranpise' || inputs.org == 'rushiranpise' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2, 3, 4]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+        with:
+          install_python_deps: 'true'
+          install_usque: 'true'
+          python_requirements: 'src/build/helper/ggplay_dl/requirements.txt'
+      - name: Check github connection
+        id: check-gh-rushiranpise
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rushiranpise
+        if: steps.check-gh-rushiranpise.outputs.internet_error == '0'
+        run: bash src/build/rushiranpise.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-rushiranpise
+        if: steps.check-gh-rushiranpise.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_Dropped_Patches:
     name: Dropped Patches Revanced - indrastorms

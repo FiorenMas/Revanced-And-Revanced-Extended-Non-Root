@@ -13,10 +13,6 @@ derevanced_dl(){
 	get_patches_key "gg-photos-derevanced"
 	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "bundle" "arm64-v8a" "320-640dpi" "Android 12L+"
 	patch "gg-photos-arm64-v8a" "derevanced" "morphe"
-	# Patch Tiktok:
-	get_patches_key "tiktok-derevanced"
-	get_apk "com.zhiliaoapp.musically" "tiktok" "apk" "arm64-v8a + armeabi-v7a" "nodpi"
-	patch "tiktok" "derevanced" "morphe"
 }
 2() {
 	derevanced_dl
@@ -120,7 +116,14 @@ derevanced_dl(){
 }
 10() {
 	derevanced_dl
-
+	# Patch Tiktok:
+	get_patches_key "tiktok-derevanced"
+	get_apk "com.zhiliaoapp.musically" "tiktok" "apk" "arm64-v8a + armeabi-v7a" "nodpi"
+	patch "tiktok" "derevanced" "morphe"
+	# Patch Tiktok Asia:
+	get_patches_key "tiktok-derevanced"
+	get_apk "com.ss.android.ugc.trill" "tiktok-asia" "apk" "arm64-v8a + armeabi-v7a" "nodpi"
+	patch "tiktok-asia" "derevanced" "morphe"
 }
 case "$1" in
     1)

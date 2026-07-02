@@ -28,6 +28,10 @@
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=discord-chat-for-gamers",
 			"example_url": "https://www.apkmirror.com/apk/discord/discord-chat-for-gamers/discord-talk-play-hang-out-327-12-stable-release/"
 		},
+		"com.dubox.drive": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=terabox-cloud-storage-cloud-backup-data-backup",
+			"example_url": "https://www.apkmirror.com/apk/flextech-inc/terabox-cloud-storage-cloud-backup-data-backup/terabox-1tb-cloud-ai-space-4-19-6-release/"
+		},
 		"com.duolingo": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=duolingo-duolingo",
 			"example_url": "https://www.apkmirror.com/apk/duolingo/duolingo-duolingo/duolingo-language-lessons-6-77-5-release/"
@@ -72,9 +76,17 @@
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=threads-an-instagram-app",
 			"example_url": "https://www.apkmirror.com/apk/instagram/threads-an-instagram-app/threads-428-0-0-46-66-release/"
 		},
+		"com.intsig.camscanner": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=camscanner-phone-pdf-creator",
+			"example_url": "https://www.apkmirror.com/apk/intsig-pte/camscanner-phone-pdf-creator/camscanner-scanner-pdf-maker-7-20-0-2606230000-release/"
+		},
 		"com.microblink.photomath": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=photomath",
 			"example_url": "https://www.apkmirror.com/apk/google-inc/photomath/photomath-8-47-1-release/"
+		},
+		"com.psiphon3.subscription": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=psiphon-pro-the-internet-freedom-vpn",
+			"example_url": "https://www.apkmirror.com/apk/psiphon-inc/psiphon-pro-the-internet-freedom-vpn/psiphon-vpn-freedom-online-479-release/"
 		},
 		"com.rarlab.rar": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=rar",
@@ -107,6 +119,18 @@
 		"com.viber.voip": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=viber",
 			"example_url": "https://www.apkmirror.com/apk/viber-media-s-a-r-l/viber/rakuten-viber-messenger-27-8-1-0-release/"
+		},
+		"com.ss.android.ugc.trill": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=tik-tok",
+			"example_url": "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok/tiktok-43-8-3-2-release/"
+		},
+		"com.waze": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=waze-gps-maps-traffic-alerts-live-navigation",
+			"example_url": "https://www.apkmirror.com/apk/waze/waze-gps-maps-traffic-alerts-live-navigation/waze-navigation-live-traffic-5-21-0-0-release/"
+		},
+		"com.windscribe.vpn": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=windscribe-vpn",
+			"example_url": "https://www.apkmirror.com/apk/windscribe/windscribe-vpn/windscribe-fast-secure-vpn-4-1-2274-release/"
 		},
 		"com.zhiliaoapp.musically": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=tik-tok-including-musical-ly",

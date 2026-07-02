@@ -92,8 +92,6 @@ Download
 
 #### [Psiphon](README.md#psiphon-1)
 
-#### [Hola VPN](README.md#hola-vpn-1)
-
 #### [Google News](README.md#google-news-1)
 
 #### [Photomath](README.md#photomath-1)
@@ -686,14 +684,6 @@ And if you can't install messenger back again because they check sign app should
 ### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
 
 [All Architectures](../../releases/download/all/psiphon-rushiranpise.apk )
-
----
-
-### [Hola VPN:](https://play.google.com/store/apps/details?id=org.hola.play)
-
-### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
-
-[All Architectures](../../releases/download/all/hola-vpn-rushiranpise.apk )
 
 ---
 

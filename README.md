@@ -290,7 +290,9 @@ This app might crash 2-3 times on the first startup. Don't worry - just try open
 
 And if you can't install messenger back again because they check sign app should need messenger [from here](README.md#gnadgnaoh-1) too
 
-[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh-npatched.apk)
+| [Stable version](https://github.com/gnadgnaoh/NexAlloy/releases/latest)                          | [Beta version](https://github.com/gnadgnaoh/NexAlloy/releases)                                        |
+| ------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------- |
+| [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh-npatched.apk) | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-beta-arm64-v8a-gnadgnaoh-npatched.apk) |
 
 <details>
   <summary>Outdated patches</summary>
@@ -313,7 +315,9 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a & Android 9+](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh-npatched.apk)
+| [Stable version](https://github.com/gnadgnaoh/NexAlloy/releases/latest)             | [Beta version](https://github.com/gnadgnaoh/NexAlloy/releases)                           |
+| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh-npatched.apk) | [Arm64-v8a](../../releases/download/all/messenger-beta-arm64-v8a-gnadgnaoh-npatched.apk) |
 
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
@@ -360,7 +364,10 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh-npatched.apk)
+| [Stable version](https://github.com/gnadgnaoh/NexAlloy/releases/latest)             | [Beta version](https://github.com/gnadgnaoh/NexAlloy/releases)                           |
+| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh-npatched.apk) | [Arm64-v8a](../../releases/download/all/instagram-beta-arm64-v8a-gnadgnaoh-npatched.apk) |
+
 
 <details>
   <summary>Outdated patches</summary>
@@ -383,7 +390,9 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh-npatched.apk)
+| [Stable version](https://github.com/gnadgnaoh/NexAlloy/releases/latest)           | [Beta version](https://github.com/gnadgnaoh/NexAlloy/releases)                         |
+| --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh-npatched.apk) | [Arm64-v8a](../../releases/download/all/threads-beta-arm64-v8a-gnadgnaoh-npatched.apk) |
 
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 

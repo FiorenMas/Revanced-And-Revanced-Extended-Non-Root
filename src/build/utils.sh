@@ -293,6 +293,53 @@ _fs_get() {
 	return 1
 }
 
+_cfb_get() {
+	local url=$1
+	local max_retries=5
+	local attempt
+
+	local cfb_host
+	cfb_host=$(echo "$url" | sed -E 's#https?://([^/]+)/?.*#\1#')
+
+	local cfb_path
+	cfb_path=$(echo "$url" | sed -E 's#https?://[^/]+(/.*)#\1#')
+	[[ -z "$cfb_path" || "$cfb_path" == "$url" ]] && cfb_path="/"
+
+	for attempt in $(seq 1 $max_retries); do
+		local response_file
+		rm -f /tmp/cfb_response_headers.txt
+		response_file=$(mktemp)
+		local http_code
+		http_code=$(curl -s -o "$response_file" -w '%{http_code}' \
+			-D /tmp/cfb_response_headers.txt \
+			-H "x-hostname: $cfb_host" \
+			--max-time 120 \
+			"http://localhost:8000$cfb_path")
+		if [[ "$http_code" == "200" ]]; then
+			html=$(cat "$response_file")
+			if [[ -n "$html" ]]; then
+				export FS_COOKIES
+				FS_COOKIES=$(grep -i '^x-cf-bypasser-cookies:' /tmp/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				local cfb_ua
+				cfb_ua=$(grep -i '^x-cf-bypasser-user-agent:' /tmp/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				[[ -n "$cfb_ua" ]] && user_agent="$cfb_ua"
+				rm -f "$response_file" /tmp/cfb_response_headers.txt
+				return 0
+			fi
+		fi
+	done
+	red_log "[-] CloudflareBypassForScraping failed after $max_retries attempts: $url"
+	return 1
+}
+
+_cf_get() {
+	if [[ "$CF_BYPASS_SOLVER" == "cloudflarebypassforscraping" ]]; then
+		_cfb_get "$@"
+	else
+		_fs_get "$@"
+	fi
+}
+
 get_apk() {
 	local pkg_name=$1 apk_name=$2
 	local pkg_type=${3:-apk} arch=${4:-} dpi=${5:-} minver=${6:-}
@@ -336,7 +383,7 @@ get_apk() {
 			version_href="${version_href/$slug_ver/$target_ver}"
 		fi
 	else
-		_fs_get "$list_url" || return 1
+		_cf_get "$list_url" || return 1
 
 		version_href=$(echo "$html" | $pup 'h5.appRowTitle a.fontBlack json{}' | \
 			jq -r '.[] | select(.text | test("(?i)beta|alpha") | not) | .href' | head -1)
@@ -361,7 +408,7 @@ get_apk() {
 
 	echo "$base_url$version_href"
 
-	_fs_get "$base_url$version_href" || return 1
+	_cf_get "$base_url$version_href" || return 1
 
 	if [[ "$html" == *"Page Not Found"* ]] || [[ "$html" == *"404 Whoops"* ]]; then
 		yellow_log "[!] Version page not found, searching uploads pages..."
@@ -372,7 +419,7 @@ get_apk() {
 			if [[ $page_num -gt 1 ]]; then
 				page_url="${list_url%%\?*}/page/$page_num/?${list_url#*\?}"
 			fi
-			_fs_get "$page_url" || return 1
+			_cf_get "$page_url" || return 1
 			if [[ -n "$target_ver_dot" ]]; then
 				version_href=$(echo "$html" | $pup 'h5.appRowTitle a.fontBlack json{}' | \
 					jq -r --arg v "$target_ver_dot" '.[] | select(.text | contains($v)) | .href' | head -1)
@@ -387,7 +434,7 @@ get_apk() {
 			return 1
 		fi
 		echo "$base_url$version_href"
-		_fs_get "$base_url$version_href" || return 1
+	_cf_get "$base_url$version_href" || return 1
 	fi
 
 	local type_badge="APK"
@@ -445,7 +492,7 @@ get_apk() {
 		base_apk="$apk_name.apk"
 	fi
 
-	_fs_get "$base_url$variant_href" || return 1
+	_cf_get "$base_url$variant_href" || return 1
 
 	local dl_btn_href
 	local all_dl_btns
@@ -464,7 +511,7 @@ get_apk() {
 	fi
 	dl_btn_href=$(echo "$dl_btn_href" | sed 's/&amp;/\&/g')
 
-	_fs_get "$base_url$dl_btn_href" || return 1
+	_cf_get "$base_url$dl_btn_href" || return 1
 
 	local final_href
 	final_href=$(echo "$html" | $pup 'a#download-link attr{href}' | head -1)
@@ -538,7 +585,7 @@ get_apkpure() {
 	green_log "[+] Downloading $apk_name from APKPure (type=$pkg_type)"
 	echo "$dl_page_url"
 
-	_fs_get "$dl_page_url" || return 1
+	_cf_get "$dl_page_url" || return 1
 
 	if [[ -z "$version" ]]; then
 		version=$(echo "$html" | $pup 'h2 text{}' | grep -oP '\d+(\.\d+)+' | head -1)

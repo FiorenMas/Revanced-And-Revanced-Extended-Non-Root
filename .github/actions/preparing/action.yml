@@ -16,10 +16,6 @@ inputs:
     description: 'Path to Python requirements.txt file'
     required: false
     default: ''
-  cf_bypass_solver:
-    description: 'Cloudflare bypass solver: flaresolverr or cloudflarebypassforscraping'
-    required: false
-    default: 'cloudflarebypassforscraping'
 runs:
   using: "composite"
   steps:
@@ -42,7 +38,6 @@ runs:
         sleep 5
         curl -x socks5://127.0.0.1:9099 -s -o /dev/null -w "%{http_code}" https://www.google.com && echo "[+] usque SOCKS5 proxy is ready" || echo "[-] usque proxy failed"
     - name: Start FlareSolverr
-      if: inputs.cf_bypass_solver == 'flaresolverr'
       shell: bash
       run: |
         docker run -d --name flaresolverr -p 8191:8191 ghcr.io/flaresolverr/flaresolverr:latest
@@ -54,9 +49,7 @@ runs:
           fi
           sleep 2
         done
-        echo "CF_BYPASS_SOLVER=flaresolverr" >> "$GITHUB_ENV"
     - name: Start CloudflareBypassForScraping
-      if: inputs.cf_bypass_solver == 'cloudflarebypassforscraping'
       shell: bash
       run: |
         docker run -d --name cloudflarebypass -p 8000:8000 ghcr.io/sarperavci/cloudflarebypassforscraping:latest
@@ -68,7 +61,6 @@ runs:
           fi
           sleep 2
         done
-        echo "CF_BYPASS_SOLVER=cloudflarebypassforscraping" >> "$GITHUB_ENV"
     - name: Set up Python
       if: inputs.install_python_deps == 'true'
       uses: actions/setup-python@v6

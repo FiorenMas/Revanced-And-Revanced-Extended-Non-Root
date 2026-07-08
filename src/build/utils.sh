@@ -270,13 +270,13 @@ detect_version() {
 
 _fs_get() {
 	local url=$1
-	local max_retries=5
+	local max_retries=3
 	local attempt
 	for attempt in $(seq 1 $max_retries); do
 		local response
 		response=$(curl -s -X POST 'http://localhost:8191/v1' \
 			-H 'Content-Type: application/json' \
-			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":60000}")
+			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":15000}")
 		local status
 		status=$(echo "$response" | jq -r '.status // empty')
 		if [[ "$status" == "ok" ]]; then
@@ -287,7 +287,7 @@ _fs_get() {
 			return 0
 		fi
 		yellow_log "[!] FlareSolverr attempt $attempt/$max_retries failed: $url"
-		sleep 10
+		sleep 5
 	done
 	red_log "[-] FlareSolverr failed after $max_retries attempts: $url"
 	return 1
@@ -295,15 +295,8 @@ _fs_get() {
 
 _cfb_get() {
 	local url=$1
-	local max_retries=5
+	local max_retries=3
 	local attempt
-
-	local cfb_host
-	cfb_host=$(echo "$url" | sed -E 's#https?://([^/]+)/?.*#\1#')
-
-	local cfb_path
-	cfb_path=$(echo "$url" | sed -E 's#https?://[^/]+(/.*)#\1#')
-	[[ -z "$cfb_path" || "$cfb_path" == "$url" ]] && cfb_path="/"
 
 	for attempt in $(seq 1 $max_retries); do
 		local response_file
@@ -312,9 +305,9 @@ _cfb_get() {
 		local http_code
 		http_code=$(curl -s -o "$response_file" -w '%{http_code}' \
 			-D /tmp/cfb_response_headers.txt \
-			-H "x-hostname: $cfb_host" \
+			-G --data-urlencode "url=$url" \
 			--max-time 120 \
-			"http://localhost:8000$cfb_path")
+			"http://localhost:8000/html")
 		if [[ "$http_code" == "200" ]]; then
 			html=$(cat "$response_file")
 			if [[ -n "$html" ]]; then
@@ -326,18 +319,22 @@ _cfb_get() {
 				rm -f "$response_file" /tmp/cfb_response_headers.txt
 				return 0
 			fi
+		else
+			yellow_log "[!] CFB attempt $attempt/$max_retries: HTTP $http_code: $url"
 		fi
 	done
-	red_log "[-] CloudflareBypassForScraping failed after $max_retries attempts: $url"
 	return 1
 }
 
+_FFS_FAILED=0
+
 _cf_get() {
-	if [[ "$CF_BYPASS_SOLVER" == "cloudflarebypassforscraping" ]]; then
-		_cfb_get "$@"
-	else
-		_fs_get "$@"
+	if [[ "$_FFS_FAILED" -eq 0 ]]; then
+		_fs_get "$@" && return 0
+		yellow_log "[!] FlareSolverr failed, falling back to CFB"
+		_FFS_FAILED=1
 	fi
+	_cfb_get "$@"
 }
 
 get_apk() {

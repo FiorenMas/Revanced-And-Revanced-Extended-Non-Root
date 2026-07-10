@@ -37,7 +37,7 @@ rushiranpise_dl(){
 	patch "hola-vpn" "rushiranpise" "morphe"
 	# Patch Windscribe
 	get_patches_key "windscribe-rushiranpise"
-	get_apk "com.windscribe.vpn" "windscribe" "bundle" "universal" "160-480dpi" "Android 12L+"
+	get_apk "com.windscribe.vpn" "windscribe" "apk"
 	patch "windscribe" "rushiranpise" "morphe"
 }
 4() {

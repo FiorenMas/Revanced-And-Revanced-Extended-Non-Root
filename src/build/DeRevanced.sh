@@ -3,7 +3,7 @@
 source ./src/build/utils.sh
 # Download requirements
 derevanced_dl(){
-	dl_gh "morphe-cli" "MorpheApp" "latest"
+	dl_gh "morphe-desktop" "MorpheApp" "latest"
 	dl_gh "De-ReVanced" "RookieEnough" "latest"
 }
 1() {
@@ -12,7 +12,7 @@ derevanced_dl(){
 	# Arm64-v8a
 	get_patches_key "gg-photos-derevanced"
 	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "bundle" "arm64-v8a" "320-640dpi" "Android 12L+"
-	patch "gg-photos-arm64-v8a" "derevanced" "morphe"
+	patch "gg-photos-arm64-v8a" "derevanced"
 }
 2() {
 	derevanced_dl
@@ -21,28 +21,28 @@ derevanced_dl(){
 	get_patches_key "messenger-derevanced"
 	version="552.0.0.44.65"
 	get_apk "com.facebook.orca" "messenger-arm64-v8a" "apk" "arm64-v8a" "nodpi" "Android 9.0+"
-	patch "messenger-arm64-v8a" "derevanced" "morphe"
+	patch "messenger-arm64-v8a" "derevanced"
 	# Patch Facebook:
 	# Arm64-v8a
 	get_patches_key "facebook-derevanced"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" "nodpi" "Android 11+"
-	patch "facebook-arm64-v8a" "derevanced" "morphe"
+	patch "facebook-arm64-v8a" "derevanced"
 }
 3() {
 	derevanced_dl
 	# Patch Pixiv:
 	get_patches_key "pixiv-derevanced"
 	get_apk "jp.pxv.android" "pixiv" "apk"
-	patch "pixiv" "derevanced" "morphe"
+	patch "pixiv" "derevanced"
 	# Patch Twitch:
 	get_patches_key "twitch-derevanced"
 	get_apk "tv.twitch.android.app" "twitch" "bundle_extract"
 	split_editor "twitch" "twitch"
-	patch "twitch" "derevanced" "morphe"
+	patch "twitch" "derevanced"
 	# Patch Twitch Arm64-v8a:
 	get_patches_key "twitch-derevanced"
 	split_editor "twitch" "twitch-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "twitch-arm64-v8a" "derevanced" "morphe"
+	patch "twitch-arm64-v8a" "derevanced"
 }
 4() {
 	derevanced_dl
@@ -50,32 +50,32 @@ derevanced_dl(){
 	get_patches_key "tumblr-derevanced"
 	get_apk "com.tumblr" "tumblr" "bundle_extract"
 	split_editor "tumblr" "tumblr"
-	patch "tumblr" "derevanced" "morphe"
+	patch "tumblr" "derevanced"
 	# Patch Tumblr Arm64-v8a:
 	get_patches_key "tumblr-derevanced"
 	split_editor "tumblr" "tumblr-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "tumblr-arm64-v8a" "derevanced" "morphe"
+	patch "tumblr-arm64-v8a" "derevanced"
 	# Patch SoundCloud:
 	get_patches_key "soundcloud-derevanced"
 	get_apk "com.soundcloud.android" "soundcloud" "bundle_extract"
 	split_editor "soundcloud" "soundcloud"
-	patch "soundcloud" "derevanced" "morphe"
+	patch "soundcloud" "derevanced"
 	# Patch SoundCloud Arm64-v8a:
 	get_patches_key "soundcloud-derevanced"
 	split_editor "soundcloud" "soundcloud-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	patch "soundcloud-arm64-v8a" "derevanced" "morphe"
+	patch "soundcloud-arm64-v8a" "derevanced"
 }
 5() {
 	derevanced_dl
 	# Patch RAR:
 	get_patches_key "rar-derevanced"
 	get_apk "com.rarlab.rar" "rar" "bundle" "universal" "120-640dpi" "Android 5.0+" 
-	patch "rar" "derevanced" "morphe"
+	patch "rar" "derevanced"
 	# Patch Google News Arm64-v8a
 	#get_patches_key "GoogleNews-derevanced"
 	#get_apk "com.google.android.apps.magazines" "googlenews" "bundle_extract"
 	#split_editor "googlenews" "googlenews-arm64-v8a" "exclude" "split_config.armeabi_v7a split_config.x86 split_config.x86_64"
-	#patch "googlenews-arm64-v8a" "derevanced" "morphe"
+	#patch "googlenews-arm64-v8a" "derevanced"
 }
 6() {
 	derevanced_dl
@@ -83,47 +83,47 @@ derevanced_dl(){
 	get_patches_key "Photomath-derevanced"
 	get_apk "com.microblink.photomath" "photomath" "bundle_extract"
 	split_editor "photomath" "photomath"
-	patch "photomath" "derevanced" "morphe"
+	patch "photomath" "derevanced"
 	# Patch Strava:
 	#get_patches_key "strava-derevanced"
 	#get_apk_chplay "com.strava" "strava-arm64-v8a"
-	#patch "strava-arm64-v8a" "derevanced" "morphe"
+	#patch "strava-arm64-v8a" "derevanced"
 }
 7() {
 	derevanced_dl
 	# Patch Proton mail
 	get_patches_key "protonmail-derevanced"
 	get_apk "ch.protonmail.android" "protonmail" "apk"
-	patch "protonmail" "derevanced" "morphe"
+	patch "protonmail" "derevanced"
 	# Patch Threads
 	get_patches_key "Threads-derevanced"
 	get_apk "com.instagram.barcelona" "threads-arm64-v8a" "bundle" "arm64-v8a" "120-640dpi" "Android 9.0+" 
-	patch "threads-arm64-v8a" "derevanced" "morphe"
+	patch "threads-arm64-v8a" "derevanced"
 }
 8() {
 	derevanced_dl
 	# Patch Viber
 	get_patches_key "Viber-derevanced"
 	get_apk "com.viber.voip" "viber" "apk"
-	patch "viber" "derevanced" "morphe"
+	patch "viber" "derevanced"
 }
 9() {
 	derevanced_dl
 	# Google Recorder
 	get_patches_key "google-recorder-derevanced"
 	get_apk "com.google.android.apps.recordero" "google-recorder" "bundle"
-	patch "google-recorder" "derevanced" "morphe"
+	patch "google-recorder" "derevanced"
 }
 10() {
 	derevanced_dl
 	# Patch Tiktok:
 	get_patches_key "tiktok-derevanced"
 	get_apk "com.zhiliaoapp.musically" "tiktok" "apk" "arm64-v8a + armeabi-v7a" "nodpi"
-	patch "tiktok" "derevanced" "morphe"
+	patch "tiktok" "derevanced"
 	# Patch Tiktok Asia:
 	get_patches_key "tiktok-derevanced"
 	get_apk "com.ss.android.ugc.trill" "tiktok-asia" "apk" "arm64-v8a + armeabi-v7a" "nodpi"
-	patch "tiktok-asia" "derevanced" "morphe"
+	patch "tiktok-asia" "derevanced"
 }
 case "$1" in
     1)

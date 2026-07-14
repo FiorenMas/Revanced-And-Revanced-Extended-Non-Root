@@ -141,73 +141,23 @@ get_patches_key() {
 	includeLinesFound=false
 
 	local patchDir="src/patches/$1"
-	local cliMode=""
-	local patch_name options line1 line2 num
+	local patch_name line1 line2
 
 	sed -i 's/\r$//' "$patchDir/include-patches"
 	sed -i 's/\r$//' "$patchDir/exclude-patches"
 
-	if compgen -G "morphe-cli-*.jar" > /dev/null; then
-		cliMode="morphe"
-	elif compgen -G "revanced-cli-*.jar" > /dev/null; then
-		if [[ $(ls revanced-cli-*.jar | head -n1) =~ revanced-cli-([0-9]+) ]]; then
-			num=${BASH_REMATCH[1]}
-			if [ "$num" -ge 5 ]; then
-				cliMode="revanced_new"
-			else
-				cliMode="revanced_old"
-			fi
-		else
-			cliMode="revanced_old"
-		fi
-	fi
+	while IFS= read -r line1 || [[ -n "$line1" ]]; do
+		[[ -z "$line1" ]] && continue
+		excludePatches+=" -d \"$line1\""
+		excludeLinesFound=true
+	done < "$patchDir/exclude-patches"
 
-	if [[ "$cliMode" == "morphe" ]]; then
-		while IFS= read -r line1 || [[ -n "$line1" ]]; do
-			[[ -z "$line1" ]] && continue
-			excludePatches+=" -d \"$line1\""
-			excludeLinesFound=true
-		done < "$patchDir/exclude-patches"
-
-		while IFS= read -r line2 || [[ -n "$line2" ]]; do
-			[[ -z "$line2" ]] && continue
-			patch_name="${line2%%|*}"
-			includePatches+=" -e \"$patch_name\""
-			includeLinesFound=true
-		done < "$patchDir/include-patches"
-
-	elif [[ "$cliMode" == "revanced_new" ]]; then
-		while IFS= read -r line1 || [[ -n "$line1" ]]; do
-			[[ -z "$line1" ]] && continue
-			excludePatches+=" -d \"$line1\""
-			excludeLinesFound=true
-		done < "$patchDir/exclude-patches"
-
-		while IFS= read -r line2 || [[ -n "$line2" ]]; do
-			[[ -z "$line2" ]] && continue
-			if [[ "$line2" == *"|"* ]]; then
-				patch_name="${line2%%|*}"
-				options="${line2#*|}"
-				includePatches+=" -e \"${patch_name}\" ${options}"
-			else
-				includePatches+=" -e \"$line2\""
-			fi
-			includeLinesFound=true
-		done < "$patchDir/include-patches"
-
-	elif [[ "$cliMode" == "revanced_old" ]]; then
-		while IFS= read -r line1 || [[ -n "$line1" ]]; do
-			[[ -z "$line1" ]] && continue
-			excludePatches+=" -e \"$line1\""
-			excludeLinesFound=true
-		done < "$patchDir/exclude-patches"
-
-		while IFS= read -r line2 || [[ -n "$line2" ]]; do
-			[[ -z "$line2" ]] && continue
-			includePatches+=" -i \"$line2\""
-			includeLinesFound=true
-		done < "$patchDir/include-patches"
-	fi
+	while IFS= read -r line2 || [[ -n "$line2" ]]; do
+		[[ -z "$line2" ]] && continue
+		patch_name="${line2%%|*}"
+		includePatches+=" -e \"$patch_name\""
+		includeLinesFound=true
+	done < "$patchDir/include-patches"
 
 	if [ "$excludeLinesFound" = false ]; then
 		excludePatches=""
@@ -237,34 +187,18 @@ req() {
 
 detect_version() {
 	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
-	  for spec in "revanced-cli-|5|*.rvp" "morphe-cli-|1|*.mpp"; do
-		IFS="|" read -r jar_prefix min_major patch_glob <<<"$spec"
+	  local jar_prefix="morphe-desktop-" patch_glob="*.mpp"
 
-		if [[ $(ls "${jar_prefix}"*.jar 2>/dev/null) =~ ${jar_prefix}([0-9]+) ]]; then
-		  num=${BASH_REMATCH[1]}
-
-		  if [ "$num" -ge "$min_major" ]; then
-			if [[ "$jar_prefix" == "morphe-cli-" ]]; then
-			  list_patches_flags="list-patches --with-packages --with-versions --with-options --patches"
-			elif [ "$num" -ge 6 ]; then
-			  list_patches_flags="list-patches --packages --versions --options -bp"
-			else
-			  list_patches_flags="list-patches --with-packages --with-versions"
-			fi
-			version=$(java -jar *cli*.jar $list_patches_flags $patch_glob | awk -v pkg="$1" '
-			  BEGIN { found = 0; printing = 0 }
-			  /^Index:/ { if (printing) exit; found = 0 }
-			  /Package name: / { if ($3 == pkg) found = 1 }
-			  /Compatible versions:/ { if (found) printing = 1; next }
-			  printing && $1 ~ /^[0-9]+\./ { print $1 }
-			' | sort -V | tail -n1)
-		  else
-			version=$(jq -r '[.. | objects | select(.name == "'"$1"'" and .versions != null) | .versions[]] | reverse | .[0] // ""' *.json 2>/dev/null | uniq)
-		  fi
-		fi
-
-		[ -n "$version" ] && break
-	  done
+	  if [[ $(ls "${jar_prefix}"*.jar 2>/dev/null) =~ ${jar_prefix}([0-9]+) ]]; then
+	    list_patches_flags="list-patches --with-packages --with-versions --with-options --patches"
+	    version=$(java -jar "${jar_prefix}"*.jar $list_patches_flags $patch_glob | awk -v pkg="$1" '
+		  BEGIN { found = 0; printing = 0 }
+		  /^Index:/ { if (printing) exit; found = 0 }
+		  /Package name: / { if ($3 == pkg) found = 1 }
+		  /Compatible versions:/ { if (found) printing = 1; next }
+		  printing && $1 ~ /^[0-9]+\./ { print $1 }
+		' | sort -V | tail -n1)
+	  fi
 	fi
 }
 
@@ -753,39 +687,10 @@ telegram_dl() {
 patch() {
 	green_log "[+] Patching $1:"
 	if [ -f "./download/$1.apk" ]; then
-		local p b m ks a pu opt force
-		if [ "$3" = inotia ]; then
-			p="patch " b="-p *.rvp" m="" a="" ks=" --keystore=./src/_ks.keystore" pu="--purge=true" opt="--legacy-options=./src/options/$2.json" force=" --force"
-			echo "Patching with Revanced-cli inotia"
-		elif [ "$3" = morphe ]; then
-			p="patch " b="-p *.mpp" m="" a="" ks=" --keystore=./src/morphe.keystore" pu="" opt="--options-file ./src/options/$2.json" force=" --force --continue-on-error"
-			echo "Patching with Morphe"
-		else
-			if [[ $(ls revanced-cli-*.jar) =~ revanced-cli-([0-9]+) ]]; then
-				num=${BASH_REMATCH[1]}
-				if [ $num -eq 6 ]; then
-					p="patch " b="-bp *.rvp" m="" a="" ks=" --keystore=./src/ks.keystore" pu="--purge=true" opt="" force=" --force"
-					echo "Patching with Revanced-cli version 6+"
-				elif [ $num -eq 5 ]; then
-					p="patch " b="-p *.rvp" m="" a="" ks=" --keystore=./src/ks.keystore" pu="--purge=true" opt="" force=" --force"
-					echo "Patching with Revanced-cli version 5"
-				elif [ $num -eq 4 ]; then
-					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks=" --keystore=./src/ks.keystore" pu="--purge=true" opt="--options=./src/options/$2.json "
-					echo "Patching with Revanced-cli version 4"
-				elif [ $num -eq 3 ]; then
-					p="patch " b="--patch-bundle *patch*.jar" m="--merge *integration*.apk " a="" ks=" --keystore=./src/_ks.keystore" pu="--purge=true" opt="--options=./src/options/$2.json "
-					echo "Patching with Revanced-cli version 3"
-				elif [ $num -eq 2 ]; then
-					p="" b="--bundle *patch*.jar" m="--merge *integration*.apk " a="--apk " ks=" --keystore=./src/_ks.keystore" pu="--clean" opt="--options=./src/options/$2.json " force=" --experimental"
-					echo "Patching with Revanced-cli version 2"
-				fi
-			fi
-		fi
-		if [[ "$3" = inotia || "$3" = morphe ]]; then
-			unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
-		fi
-		eval java -jar *.jar $p$b $m$opt --out=./release/$1-$2.apk$excludePatches$includePatches$ks $pu$force $a./download/$1.apk
-  		unset version
+		echo "Patching with Morphe"
+		unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
+		eval java -jar morphe-desktop-*.jar patch -p *.mpp --options-file ./src/options/$2.json --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/morphe.keystore --force --continue-on-error ./download/$1.apk
+		unset version
 		unset lock_version
 		unset excludePatches
 		unset includePatches
@@ -804,7 +709,7 @@ patch_multi() {
 			[ -f "$mpp_file" ] || continue
 			mpp_args="$mpp_args -p \"$mpp_file\"$excludePatches$includePatches"
 		done
-		eval java -jar *cli*.jar patch $mpp_args --options-file ./src/options/$2.json --out=./release/$1-$2.apk --keystore=./src/morphe.keystore --purge=true --force --continue-on-error ./download/$1.apk
+		eval java -jar morphe-desktop-*.jar patch $mpp_args --options-file ./src/options/$2.json --out=./release/$1-$2.apk --keystore=./src/morphe.keystore --force --continue-on-error ./download/$1.apk
   		unset version
 		unset lock_version
 		unset excludePatches
@@ -888,11 +793,11 @@ apk_editor() {
 split_arch() {
 	green_log "[+] Splitting $1 to ${archs[i]}:"
 	if [ -f "./download/$1.apk" ]; then
-		eval java -jar *cli*.jar patch \
-		-p *.mpp $excludePatches$includePatches--options-file ./src/options/$2.json \
-		--striplibs ${archs[i]} --purge=true \
+		eval java -jar morphe-desktop-*.jar patch \
+		-p *.mpp $excludePatches$includePatches --options-file ./src/options/$2.json \
+		--striplibs ${archs[i]} \
 		--keystore=./src/morphe.keystore --force \
-		--out=./release/$1-${archs[i]}-$2.apk\
+		--out=./release/$1-${archs[i]}-$2.apk \
 		./download/$1.apk
 	else
 		red_log "[-] Not found $1.apk"

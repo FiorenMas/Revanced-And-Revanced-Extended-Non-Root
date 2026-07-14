@@ -3,7 +3,7 @@
 source src/build/utils.sh
 
 piko_shim_dl(){
-	dl_gh "morphe-cli" "MorpheApp" "latest"
+	dl_gh "morphe-desktop" "MorpheApp" "latest"
 	dl_gh "piko" "crimera" "prerelease"
 	dl_gl "x-shim" "inotia00" "latest"
 }

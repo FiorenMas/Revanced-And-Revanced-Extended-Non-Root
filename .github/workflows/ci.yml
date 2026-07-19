@@ -4,11 +4,7 @@ on:
   schedule:
     - cron: "0 9 * * *"
   workflow_dispatch:
-    inputs:
-      retry_count:
-        description: 'Do not change value below'
-        required: false
-        default: '1'
+
 jobs:
   check:
     name: Check new patch
@@ -65,6 +61,14 @@ jobs:
         id: check-hoo-dles
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh hoo-dles/morphe-patches latest protonvpn-hoo-dles.apk
+      - name: Check new patch bufferk
+        id: check-bufferk
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh bufferk/morphe-patches latest brave-browser-arm64-v8a-bufferk.apk
+      - name: Check new patch arandomhooman
+        id: check-arandomhooman
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh arandomhooman/hoomans-morphe-patches latest twitch-arandomhooman.apk
       - name: Check new patch rushiranpise
         id: check-rushiranpise
         if: steps.check-gh.outputs.internet_error == '0'
@@ -84,30 +88,7 @@ jobs:
       - name: Check new patch Revanced Experiments
         id: check-Revanced-Experiments
         if: steps.check-gh.outputs.internet_error == '0'
-        run: bash src/etc/ci.sh Aunali321/ReVancedExperiments latest telegram-revanced-experiments.apk 
-      - name: Re-run workflow if github connection not stable
-        if: always() && steps.check-morphe.outcome == 'skipped' && env.retry_count < env.max_retries
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const maxRetries = ${{ env.max_retries }};
-            let retryCount = ${{ env.retry_count }};
-            if (retryCount < maxRetries) {
-              retryCount += 1;
-              await github.rest.actions.createWorkflowDispatch({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                workflow_id: "ci.yml",
-                ref: context.ref,
-                inputs: {
-                  'retry_count': String(retryCount)
-                }
-              });
-            }
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          retry_count: ${{ github.event.inputs.retry_count }}
-          max_retries: 3
+        run: bash src/etc/ci.sh Aunali321/ReVancedExperiments latest telegram-revanced-experiments.apk
     outputs:
       check_morphe: ${{ steps.check-morphe.outputs.new_patch }}
       check_morphe_beta: ${{ steps.check-morphe-beta.outputs.new_patch }}
@@ -119,6 +100,8 @@ jobs:
       check_twitter_piko_x_shim_beta: ${{ steps.check-twitter-piko-x-shim-beta.outputs.new_patch }}
       check_paresh: ${{ steps.check-paresh.outputs.new_patch }}
       check_hoo_dles: ${{ steps.check-hoo-dles.outputs.new_patch }}
+      check_bufferk: ${{ steps.check-bufferk.outputs.new_patch }}
+      check_arandomhooman: ${{ steps.check-arandomhooman.outputs.new_patch }}
       check_rushiranpise: ${{ steps.check-rushiranpise.outputs.new_patch }}
       check_icysymmetra: ${{ steps.check-icysymmetra.outputs.new_patch }}
       check_docbt: ${{ steps.check-docbt.outputs.new_patch }}
@@ -221,6 +204,22 @@ jobs:
     secrets: inherit
     with:
       org: "hoo-dles"
+  Patch-bufferk:
+    name: Patch bufferk
+    needs: check
+    if: ${{ needs.check.outputs.check_bufferk == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "bufferk"
+  Patch-arandomhooman:
+    name: Patch arandomhooman
+    needs: check
+    if: ${{ needs.check.outputs.check_arandomhooman == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "arandomhooman"
   Patch-rushiranpise:
     name: Patch rushiranpise
     needs: check

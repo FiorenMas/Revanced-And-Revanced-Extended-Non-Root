@@ -274,6 +274,8 @@ _cf_get() {
 get_apk() {
 	local pkg_name=$1 apk_name=$2
 	local pkg_type=${3:-apk} arch=${4:-} dpi=${5:-} minver=${6:-}
+	local allow_near_version=${near_version:-0}
+	unset near_version
 	local base_url="https://www.apkmirror.com"
 	local html=""
 
@@ -344,6 +346,7 @@ get_apk() {
 	if [[ "$html" == *"Page Not Found"* ]] || [[ "$html" == *"404 Whoops"* ]]; then
 		yellow_log "[!] Version page not found, searching uploads pages..."
 		local target_ver_dot="$version"
+		local near_version_href="" near_version_value=""
 		version_href=""
 		for page_num in $(seq 1 10); do
 			local page_url="$list_url"
@@ -354,12 +357,32 @@ get_apk() {
 			if [[ -n "$target_ver_dot" ]]; then
 				version_href=$(echo "$html" | $pup 'h5.appRowTitle a.fontBlack json{}' | \
 					jq -r --arg v "$target_ver_dot" '.[] | select(.text | contains($v)) | .href' | head -1)
+				if [[ -z "$version_href" && "$allow_near_version" == "1" ]]; then
+					local release_text release_href release_version
+					while IFS=$'\t' read -r release_text release_href; do
+						release_version=$(echo "$release_text" | grep -oP '\d+(\.\d+)+' | tail -1)
+						[[ -z "$release_version" ]] && continue
+						if [[ "$(printf '%s\n' "$release_version" "$target_ver_dot" | sort -V | tail -n1)" == "$target_ver_dot" && "$release_version" != "$target_ver_dot" ]]; then
+							if [[ -z "$near_version_value" || "$(printf '%s\n' "$near_version_value" "$release_version" | sort -V | tail -n1)" == "$release_version" ]]; then
+								near_version_value="$release_version"
+								near_version_href="$release_href"
+							fi
+						fi
+					done < <(echo "$html" | $pup 'h5.appRowTitle a.fontBlack json{}' | \
+						jq -r '.[] | select(.text | test("(?i)beta|alpha") | not) | [.text, .href] | @tsv')
+				fi
 			else
 				version_href=$(echo "$html" | $pup 'h5.appRowTitle a.fontBlack json{}' | \
 					jq -r '.[] | select(.text | test("(?i)beta|alpha") | not) | .href' | head -1)
 			fi
 			[[ -n "$version_href" ]] && break
 		done
+		if [[ -z "$version_href" && -n "$near_version_href" ]]; then
+			version_href="$near_version_href"
+			version="$near_version_value"
+			export version
+			yellow_log "[!] Exact version $target_ver_dot unavailable; using nearest lower version $version"
+		fi
 		if [[ -z "$version_href" ]]; then
 			red_log "[-] Could not find version on APKMirror"
 			return 1
@@ -384,6 +407,7 @@ get_apk() {
 	fi
 
 	local matched_type=""
+	local variant_page_loaded=false
 	for try_type in "${type_attempts[@]}"; do
 		local filtered_rows
 		filtered_rows=$(echo "$rows" | grep -iP "apkm-badge[^>]*>\s*$try_type\s*<")
@@ -411,11 +435,22 @@ get_apk() {
 	done
 
 	if [[ -z "$variant_href" ]]; then
-		red_log "[-] Could not find variant (type=$type_badge arch=${arch:-any} dpi=$dpi)"
-		return 1
+		local direct_apk_href
+		direct_apk_href=$(echo "$html" | $pup 'a.downloadButton attr{href}' | grep 'forcebaseapk' | head -1)
+		if [[ -n "$direct_apk_href" && -z "$arch" && -z "$dpi" && -z "$minver" ]]; then
+			matched_type="APK"
+			variant_page_loaded=true
+			[[ "$type_badge" != "APK" ]] && yellow_log "[!] Type fallback: $type_badge -> APK"
+			yellow_log "[!] APKMirror redirected directly to the APK download page"
+		else
+			red_log "[-] Could not find variant (type=$type_badge arch=${arch:-any} dpi=$dpi)"
+			return 1
+		fi
 	fi
-	variant_href=$(echo "$variant_href" | sed 's/&amp;/\&/g')
-	echo "$base_url$variant_href"
+	if [[ "$variant_page_loaded" == false ]]; then
+		variant_href=$(echo "$variant_href" | sed 's/&amp;/\&/g')
+		echo "$base_url$variant_href"
+	fi
 
 	if [[ "$matched_type" == "BUNDLE" ]]; then
 		base_apk="$apk_name.apkm"
@@ -423,7 +458,9 @@ get_apk() {
 		base_apk="$apk_name.apk"
 	fi
 
-	_cf_get "$base_url$variant_href" || return 1
+	if [[ "$variant_page_loaded" == false ]]; then
+		_cf_get "$base_url$variant_href" || return 1
+	fi
 
 	local dl_btn_href
 	local all_dl_btns

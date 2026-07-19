@@ -20,6 +20,10 @@
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=amazon-prime-video",
 			"example_url": "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-prime-video/amazon-prime-video-3-0-447-release/"
 		},
+		"com.brave.browser": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=brave-browser",
+			"example_url": "https://www.apkmirror.com/apk/brave-software/brave-browser/brave-private-web-browser-vpn-1-92-140-release/"
+		},
 		"com.bilibili.app.in": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=bilibili",
 			"example_url": "https://www.apkmirror.com/apk/bilibili/bilibili/bilibili-3-20-2-release/"
@@ -83,6 +87,14 @@
 		"com.microblink.photomath": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=photomath",
 			"example_url": "https://www.apkmirror.com/apk/google-inc/photomath/photomath-8-47-1-release/"
+		},
+		"com.medium.reader": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=medium",
+			"example_url": "https://www.apkmirror.com/apk/a-medium-corporation/medium/medium-4-5-1223215-release/"
+		},
+		"com.paget96.batteryguru": {
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=battery-guru-health-saver",
+			"example_url": "https://www.apkmirror.com/apk/paget96/battery-guru-health-saver/battery-guru-battery-health-2-4-8-1-release/"
 		},
 		"com.psiphon3.subscription": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=psiphon-pro-the-internet-freedom-vpn",

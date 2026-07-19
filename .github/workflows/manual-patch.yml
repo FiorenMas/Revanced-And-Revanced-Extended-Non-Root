@@ -25,6 +25,8 @@ on:
           - 'DeRevanced'
           - 'Paresh'
           - 'hoo-dles'
+          - 'bufferk'
+          - 'arandomhooman'
           - 'icysymmetra'
           - 'docbt'
           - 'rushiranpise'
@@ -311,6 +313,54 @@ jobs:
       - name: Releasing APK files
         id: release-hoo-dles
         if: steps.check-gh-hoo-dles.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_bufferk:
+    name: Patch bufferk
+    if: ${{ github.event.inputs.org == 'bufferk' || inputs.org == 'bufferk' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-bufferk
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-bufferk
+        if: steps.check-gh-bufferk.outputs.internet_error == '0'
+        run: bash src/build/bufferk.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-bufferk
+        if: steps.check-gh-bufferk.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_arandomhooman:
+    name: Patch arandomhooman
+    if: ${{ github.event.inputs.org == 'arandomhooman' || inputs.org == 'arandomhooman' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-arandomhooman
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-arandomhooman
+        if: steps.check-gh-arandomhooman.outputs.internet_error == '0'
+        run: bash src/build/arandomhooman.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-arandomhooman
+        if: steps.check-gh-arandomhooman.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_icysymmetra:
     name: Patch icysymmetra

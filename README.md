@@ -102,6 +102,10 @@ Download
 
 #### [CamScanner](README.md#camscanner-1)
 
+#### [Battery Guru](README.md#battery-guru-1)
+
+#### [Brave Browser](README.md#brave-browser-1)
+
 #### [RAR](README.md#rar-1)
 
 #### [TeraBox](README.md#terabox-1)
@@ -452,6 +456,10 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Twitch:](https://play.google.com/store/apps/details?id=tv.twitch.android.app)
 
+### [arandomhooman:](https://github.com/arandomhooman/hoomans-morphe-patches)
+
+[All Architectures](../../releases/download/all/twitch-arandomhooman.apk)
+
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
 [All Architectures](../../releases/download/all/twitch-derevanced.apk) 
@@ -529,6 +537,12 @@ And if you can't install messenger back again because they check sign app should
 
 [Arm64-v8a](../../releases/download/all/truecaller-arm64-v8a-paresh.apk)
 
+### [Truecaller (Bufferk):](https://play.google.com/store/apps/details?id=com.truecaller)
+
+### [Bufferk:](https://github.com/morphe-patches/bufferk)
+
+[Arm64-v8a](../../releases/download/all/truecaller-arm64-v8a-bufferk.apk)
+
 ---
 
 ### [EyeconCaller:]()
@@ -547,7 +561,27 @@ And if you can't install messenger back again because they check sign app should
 
 ---
 
+### [Battery Guru:](https://play.google.com/store/apps/details?id=com.paget96.batteryguru)
+
+### [arandomhooman:](https://github.com/arandomhooman/hoomans-morphe-patches)
+
+[All Architectures](../../releases/download/all/battery-guru-arandomhooman.apk)
+
+---
+
+### [Brave Browser:](https://play.google.com/store/apps/details?id=com.brave.browser)
+
+### [bufferk:](https://github.com/bufferk/morphe-patches)
+
+[Arm64-v8a](../../releases/download/all/brave-browser-arm64-v8a-bufferk.apk)
+
+---
+
 ### [Tumblr:](https://play.google.com/store/apps/details?id=com.tumblr)
+
+### [arandomhooman:](https://github.com/arandomhooman/hoomans-morphe-patches)
+
+[All Architectures](../../releases/download/all/tumblr-arandomhooman.apk)
 
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
@@ -1078,6 +1112,20 @@ Require MicroG installed
   <summary>docbt</summary>
 
 [Patches](https://github.com/rushiranpise/morphe-patches) - [GPL-3.0](https://github.com/rushiranpise/morphe-patches/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>arandomhooman</summary>
+
+[Patches](https://github.com/arandomhooman/hoomans-morphe-patches) - [GPL-3.0](https://github.com/arandomhooman/hoomans-morphe-patches/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>bufferk</summary>
+
+[Patches](https://github.com/bufferk/morphe-patches) - [GPL-3.0](https://github.com/bufferk/morphe-patches/blob/main/LICENSE)
 
 </details>
 

@@ -23,7 +23,7 @@ hoo-dles_dl(){
 	hoo-dles_dl
 	# Patch Duolingo
 	get_patches_key "duolingo-hoo-dles"
-	version="6.82.3"
+	near_version="1"
 	get_apk "com.duolingo" "duolingo" "bundle" "universal" "120-640dpi"
 	patch "duolingo" "hoo-dles"
 	# Patch Proton VPN

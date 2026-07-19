@@ -22,8 +22,6 @@ Simply, all you need to do is choose the app you want to use from the options be
 > [!NOTE]
 > If you want to use the YouTube, YouTube Music or Google Photos app, you need to download and install [MicroG RE](https://github.com/MorpheApp/MicroG-RE)
 > 
-> If you are an advanced user and you want to use custom patches for patching apps, you should read the [Wiki](../main/docs/Frequently%20Asked%20Questions.md#q-how-do-i-use-this-repository-for-patching-my-own-app).
-> 
 > This repository is not like any other repository. It does not create new releases; it only releases new files.
 > 
 > All the code is open-source, clearly, and the APK files used for patching are downloaded from a trusted site, so it is totally safe for you to use.
@@ -533,11 +531,9 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Truecaller:](https://play.google.com/store/apps/details?id=com.truecaller)
 
-### [Paresh Patches:](https://github.com/Paresh-Maheshwari/paresh-patches)
+### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 [Arm64-v8a](../../releases/download/all/truecaller-arm64-v8a-paresh.apk)
-
-### [Truecaller (Bufferk):](https://play.google.com/store/apps/details?id=com.truecaller)
 
 ### [Bufferk:](https://github.com/morphe-patches/bufferk)
 
@@ -545,9 +541,9 @@ And if you can't install messenger back again because they check sign app should
 
 ---
 
-### [EyeconCaller:]()
+### [EyeconCaller:](https://play.google.com/store/apps/details?id=com.eyecon.global)
 
-### [Paresh Patches:](https://play.google.com/store/apps/details?id=com.eyecon.global)
+### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 [Arm64-v8a](../../releases/download/all/eyecon-caller-arm64-v8a-paresh.apk)
 
@@ -555,7 +551,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [CamScanner:]()
 
-### [Paresh Patches:](https://play.google.com/store/apps/details?id=com.intsig.camscanner)
+### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 [Arm64-v8a](../../releases/download/all/camscanner-hoo-dles.apk)
 
@@ -856,7 +852,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Telegram:](https://play.google.com/store/apps/details?id=org.telegram.messenger)
 
-### [Paresh Patches:](https://play.google.com/store/apps/details?id=com.eyecon.global)
+### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 Web version:
 
@@ -1083,7 +1079,7 @@ Require MicroG installed
 <details>
   <summary>Paresh Maheshwari</summary>
 
-[Patches](https://github.com/Paresh-Maheshwari/paresh-patches) - [GPL-3.0](https://github.com/Paresh-Maheshwari/paresh-patches/blob/main/LICENSE)
+[Patches](https://gitlab.com/Paresh-Maheshwari/paresh-patches) - [GPL-3.0](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/blob/main/LICENSE?ref_type=heads)
 
 </details>
 

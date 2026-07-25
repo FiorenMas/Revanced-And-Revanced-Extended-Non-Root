@@ -11,7 +11,7 @@ piko_dl(){
 	# Patch Twitter Piko:
 	piko_dl
 	get_patches_key "twitter-piko"
-    telegram_dl "https://t.me/xriprepo" "10" "*.apk" "twitter-stable.apk" #https://github.com/crimera/piko/issues/1146#issuecomment-4469171783
+    get_apk "com.twitter.android" "twitter-stable" "bundle"
 	patch "twitter-stable" "piko"
 }
 2() {

@@ -3,7 +3,7 @@
 source ./src/build/utils.sh
 
 NPatch_dl(){
-	dl_gh "NPatch" "7723mod" "latest"
+	dl_gh "NPatch" "7723mod" "v1.0.5"
 }
 patch_dl(){
 	dl_gh "NexAlloy" "gnadgnaoh" "latest"

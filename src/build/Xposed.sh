@@ -6,7 +6,7 @@ NPatch_dl(){
 	dl_gh "NPatch" "7723mod" "v1.0.5"
 }
 patch_dl(){
-	dl_gh "NexAlloy" "gnadgnaoh" "latest"
+	dl_gh "NexAlloy" "gnadgnaoh" "v1.1"
 }
 1() {
 	# Patch Revenge:

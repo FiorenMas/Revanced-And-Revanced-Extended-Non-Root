@@ -43,9 +43,9 @@ rushiranpise_dl(){
 4() {
 	rushiranpise_dl
 	# Patch TeraBox
-	get_patches_key "TeraBox-rushiranpise"
-	get_apk "com.dubox.drive" "terabox" "bundle"
-	patch "terabox" "rushiranpise"
+	#get_patches_key "TeraBox-rushiranpise"
+	#get_apk "com.dubox.drive" "terabox" "bundle"
+	#patch "terabox" "rushiranpise"
 }
 case "$1" in
     1)

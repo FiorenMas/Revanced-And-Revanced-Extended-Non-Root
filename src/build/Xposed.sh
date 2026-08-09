@@ -6,7 +6,7 @@ NPatch_dl(){
 	dl_gh "NPatch" "7723mod" "v1.0.5"
 }
 patch_dl(){
-	dl_gh "NexAlloy" "gnadgnaoh" "v1.1"
+	dl_gh "NexAlloy" "gnadgnaoh" "v1.2"
 }
 1() {
 	# Patch Revenge:
@@ -19,7 +19,7 @@ patch_dl(){
 	NPatch_dl
 	patch_dl
 	# Patch Facebook:
-	version="572.0.0.38.71"
+	version="573.0.0.37.74"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" " nodpi" "Android 11+"
 	npatch "facebook-arm64-v8a" "NexAlloy*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 	# Patch Messenger:

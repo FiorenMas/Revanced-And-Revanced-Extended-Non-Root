@@ -10,7 +10,7 @@ rushiranpise_dl(){
 	rushiranpise_dl
 	# Patch Waze:
 	get_patches_key "waze-rushiranpise"
-	get_apk "com.waze" "waze" "bundle" "arm64-v8a + armeabi-v7a"
+	get_apk "com.waze" "waze" "bundle" "arm64-v8a" "480-640dpi" "Android 10+"
 	patch "waze" "rushiranpise"
 	# Patch Adguard
 	get_patches_key "adguard-rushiranpise"

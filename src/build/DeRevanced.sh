@@ -11,7 +11,7 @@ derevanced_dl(){
 	# Patch Google photos:
 	# Arm64-v8a
 	get_patches_key "gg-photos-derevanced"
-	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "bundle" "arm64-v8a" "320-640dpi" "Android 12L+"
+	get_apk "com.google.android.apps.photos" "gg-photos-arm64-v8a" "apk"
 	patch "gg-photos-arm64-v8a" "derevanced"
 }
 2() {
@@ -69,7 +69,7 @@ derevanced_dl(){
 	derevanced_dl
 	# Patch RAR:
 	get_patches_key "rar-derevanced"
-	get_apk "com.rarlab.rar" "rar" "bundle" "universal" "120-640dpi" "Android 5.0+" 
+	get_apk "com.rarlab.rar" "rar" "bundle"
 	patch "rar" "derevanced"
 	# Patch Google News Arm64-v8a
 	#get_patches_key "GoogleNews-derevanced"

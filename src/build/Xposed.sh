@@ -6,7 +6,7 @@ NPatch_dl(){
 	dl_gh "NPatch" "7723mod" "v1.0.5"
 }
 patch_dl(){
-	dl_gh "NexAlloy" "gnadgnaoh" "2.0"
+	dl_gh "NexAlloy" "gnadgnaoh" "v2.0"
 }
 1() {
 	# Patch Revenge:
@@ -38,7 +38,7 @@ patch_dl(){
 }
 4() {
 	NPatch_dl
-	dl_gh "NexAlloy" "gnadgnaoh" "2.2"
+	dl_gh "NexAlloy" "gnadgnaoh" "v2.2"
 	# Patch Zalo:
 	get_apk "com.zing.zalo" "zalo" "bundle" "arm64-v8a + armeabi-v7a"
 	npatch "zalo" "NexAlloy-zalo-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"

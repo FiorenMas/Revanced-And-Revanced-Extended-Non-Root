@@ -98,6 +98,8 @@ Download
 
 #### [EyeconCaller](README.md#eyeconcaller-1)
 
+#### [Zalo](README.md#zalo-1)
+
 #### [CamScanner](README.md#camscanner-1)
 
 #### [Battery Guru](README.md#battery-guru-1)
@@ -540,6 +542,14 @@ And if you can't install messenger back again because they check sign app should
 ### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 [Arm64-v8a](../../releases/download/all/eyecon-caller-arm64-v8a-paresh.apk)
+
+---
+
+### [Zalo:](https://play.google.com/store/apps/details?id=com.zing.zalo)
+
+### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
+
+[Arm64-v8a](../../releases/download/all/zalo-gnadgnaoh-npatched.apk)
 
 ---
 

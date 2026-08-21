@@ -6,7 +6,7 @@ NPatch_dl(){
 	dl_gh "NPatch" "7723mod" "v1.0.5"
 }
 patch_dl(){
-	dl_gh "NexAlloy" "gnadgnaoh" "latest"
+	dl_gh "NexAlloy" "gnadgnaoh" "2.0"
 }
 1() {
 	# Patch Revenge:
@@ -19,7 +19,7 @@ patch_dl(){
 	NPatch_dl
 	patch_dl
 	# Patch Facebook:
-	version="573.0.0.37.74"
+	version="575.0.0.45.73"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" " nodpi" "Android 11+"
 	npatch "facebook-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 	# Patch Messenger:
@@ -36,6 +36,13 @@ patch_dl(){
 	get_apk "com.instagram.barcelona" "threads-arm64-v8a" "bundle" "arm64-v8a" "320-480dpi" "Android 9.0+"
 	npatch "threads-arm64-v8a" "NexAlloy-nonroot-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 }
+4() {
+	NPatch_dl
+	dl_gh "NexAlloy" "gnadgnaoh" "2.2"
+	# Patch Zalo:
+	get_apk "com.zing.zalo" "zalo" "bundle" "arm64-v8a + armeabi-v7a"
+	npatch "zalo" "NexAlloy-zalo-release*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
+}
 case "$1" in
     1)
         1
@@ -45,5 +52,8 @@ case "$1" in
         ;;
     3)
         3
+        ;;
+    4)
+        4
         ;;
 esac

@@ -19,7 +19,6 @@ derevanced_dl(){
 	# Patch Messenger:
 	# Arm64-v8a
 	get_patches_key "messenger-derevanced"
-	version="552.0.0.44.65"
 	get_apk "com.facebook.orca" "messenger-arm64-v8a" "apk" "arm64-v8a" "nodpi" "Android 9.0+"
 	patch "messenger-arm64-v8a" "derevanced"
 	# Patch Facebook:

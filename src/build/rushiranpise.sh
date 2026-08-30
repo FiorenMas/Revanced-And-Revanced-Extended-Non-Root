@@ -32,9 +32,9 @@ rushiranpise_dl(){
 3() {
 	rushiranpise_dl
 	# Patch Hola VPN
-	get_patches_key "Hola-VPN-rushiranpise"
-	get_apk_chplay "org.hola.play" "hola-vpn"
-	patch "hola-vpn" "rushiranpise"
+	#get_patches_key "Hola-VPN-rushiranpise"
+	#get_apk_chplay "org.hola.play" "hola-vpn"
+	#patch "hola-vpn" "rushiranpise"
 	# Patch Windscribe
 	get_patches_key "windscribe-rushiranpise"
 	get_apk "com.windscribe.vpn" "windscribe" "apk"

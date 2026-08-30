@@ -19,8 +19,8 @@ patch_dl(){
 	NPatch_dl
 	patch_dl
 	# Patch Facebook:
-	version="575.0.0.45.73"
-	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" "160-640dpi" "Android 11+"
+	version="576.0.0.42.73"
+	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" "120-640dpi" "Android 11+"
 	npatch "facebook-arm64-v8a" "NexAlloy-nonroot*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 	# Patch Messenger:
 	get_apk "com.facebook.orca" "messenger-arm64-v8a" "apk" "arm64-v8a" "nodpi" "Android 9.0+"

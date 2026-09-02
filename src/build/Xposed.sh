@@ -6,7 +6,7 @@ NPatch_dl(){
 	dl_gh "LSPatch" "JingMatrix" "latest"
 }
 patch_dl(){
-	dl_gh "NexAlloy" "gnadgnaoh" "latest"
+	dl_gh "NexAlloy" "gnadgnaoh" "v1.0"
 }
 1() {
 	# Patch Revenge:

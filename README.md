@@ -116,8 +116,6 @@ Download
 
 #### [Pixiv](README.md#pixiv-1)
 
-#### [Bilbili](README.md#bilbili-1)
-
 #### [Solid Explorer File Manager](README.md#solid-explorer-file-manager-1)
 
 #### [Nova Launcher](README.md#nova-launcher-1)
@@ -150,17 +148,6 @@ Download
 | [x86](../../releases/download/all/youtube-x86-morphe.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-morphe.apk)                 |
 | [x86_64](../../releases/download/all/youtube-x86_64-morphe.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-morphe.apk)           |
 
-<details>
-  <summary>Lite version</summary>
-
-**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs**
-
-| [Stable version](https://github.com/MorpheApp/morphe-patches/releases/latest)  | [Beta version](https://github.com/MorpheApp/morphe-patches/release)                 |
-| -----------------------------------------------------------------------------  | ----------------------------------------------------------------------------------- |
-| - [](../../releases/download/all/youtube-lite-arm64-v8a-morphe.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-lite-arm64-v8a-morphe.apk)     |
-| - [](../../releases/download/all/youtube-lite-armeabi-v7a-morphe.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-lite-armeabi-v7a-morphe.apk) |
-
-</details>
 
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
@@ -294,7 +281,7 @@ This app might crash 2-3 times on the first startup. Don't worry - just try open
 
 And if you can't install messenger back again because they check sign app should need messenger [from here](README.md#gnadgnaoh-1) too
 
-[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh-npatched.apk)
+[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -317,7 +304,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a & Android 9+](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh-npatched.apk)
+[Arm64-v8a & Android 9+](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh.apk)
 
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
@@ -358,7 +345,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh-npatched.apk)
+[Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -381,7 +368,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh-npatched.apk)
+[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh.apk)
 
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
@@ -549,7 +536,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
-[Arm64-v8a](../../releases/download/all/zalo-gnadgnaoh-npatched.apk)
+[Arm64-v8a](../../releases/download/all/zalo-gnadgnaoh.apk)
 
 ---
 
@@ -809,16 +796,6 @@ And if you can't install messenger back again because they check sign app should
 
 ---
 
-### [Bilbili: (Chinese only)](https://play.google.com/store/apps/details?id=com.bilibili.app.in)
-
-### [BiliRoamingM:](https://github.com/sakarie9/BiliRoamingM/)
-
-[All Architectures](../../releases/download/all/bilibili-BiliRoamingM.apk )
-
-[Arm64-v8a](../../releases/download/all/bilibili-arm64-v8a-BiliRoamingM.apk )
-
----
-
 ### [Prime Video:](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
 
 ### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
@@ -850,7 +827,7 @@ And if you can't install messenger back again because they check sign app should
 
 ### [Revenge:](https://github.com/revenge-mod/revenge-xposed)
 
-[All Architectures](../../releases/download/all/discord-revenge-npatched.apk )
+[All Architectures](../../releases/download/all/discord-revenge.apk )
 
 ---
 

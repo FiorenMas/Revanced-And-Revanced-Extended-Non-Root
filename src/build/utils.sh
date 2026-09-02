@@ -757,6 +757,31 @@ patch_multi() {
 	fi
 }
 
+
+lspatch() {
+	green_log "[+] Patching $1:"
+	if [ -f "./download/$1.apk" ]; then
+		local module
+		if [[ "$2" == *.apk ]]; then
+			local -a matches=($2)
+			module="${matches[0]}"
+		else
+			module="$2.apk"
+		fi
+		if [[ ! -f "$module" ]]; then
+			red_log "[-] Module not found: $2"
+			return 1
+		fi
+		java -jar lspatch-*-release.jar  ./download/$1.apk -k ./src/lspatch-signing.p12 "morphe" "fiorenmas" "morphe" -m "$module" -o ./release/
+		mv ./release/$1-*-lspatched.apk ./release/$1-$3.apk
+		unset version
+		unset lock_version
+	else
+		red_log "[-] Not found $1.apk"
+		exit 1
+	fi
+}
+
 npatch() {
 	green_log "[+] Patching $1:"
 	if [ -f "./download/$1.apk" ]; then
@@ -772,7 +797,7 @@ npatch() {
 			return 1
 		fi
 		java -jar jar*.jar ./download/$1.apk -k ./src/fiorenmas.ks "fiorenmas" "morphe" "fiorenmas" $4 -m "$module" -o ./release/
-		mv ./release/$1-*-npatched.apk ./release/$1-$3-npatched.apk
+		mv ./release/$1-*-npatched.apk ./release/$1-$3.apk
 		unset version
 		unset lock_version
 	else

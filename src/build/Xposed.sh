@@ -41,7 +41,7 @@ patch_dl(){
 	patch_dl
 	# Patch Zalo:
 	get_apk "com.zing.zalo" "zalo" "bundle" "arm64-v8a + armeabi-v7a"
-	lspatch "zalo" "NexAlloy-nonroot*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
+	lspatch "zalo" "NexAlloy-nonroot*.apk" "gnadgnaoh" "--injectdex"
 }
 case "$1" in
     1)

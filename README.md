@@ -333,6 +333,10 @@ And if you can't install messenger back again because they check sign app should
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------| 
 | [All Architectures](../../releases/download/all/twitter-stable-piko.apk)   | [All Architectures](../../releases/download/all/twitter-beta-piko.apk)   |
 
+### [Piko NewX:](https://github.com/crimera/piko-newx)
+
+[All Architectures](../../releases/download/all/twitter-piko-newx.apk)
+
 ---
 
 ### [Instagram:](https://play.google.com/store/apps/details?id=com.instagram.android)

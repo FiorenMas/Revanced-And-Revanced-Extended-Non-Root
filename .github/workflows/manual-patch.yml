@@ -20,6 +20,7 @@ on:
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
           - 'Twitter Piko Beta'
+          - 'Piko NewX'
           - 'DeRevanced'
           - 'Paresh'
           - 'hoo-dles'
@@ -223,6 +224,26 @@ jobs:
       - name: Releasing APK files
         id: release-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_twitter_piko_newx:
+    name: Patch Twitter Piko NewX
+    if: ${{ github.event.inputs.org == 'Piko NewX' || inputs.org == 'Piko NewX' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-piko-newx
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-piko-newx
+        if: steps.check-gh-piko-newx.outputs.internet_error == '0'
+        run: bash src/build/Piko-Newx.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-piko-newx
+        if: steps.check-gh-piko-newx.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_paresh:
     name: Patch Paresh

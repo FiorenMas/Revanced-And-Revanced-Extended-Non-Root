@@ -306,7 +306,7 @@ get_apk() {
 
 	local version_href=""
 
-	if [[ -n "$example_url" && -n "$version" ]]; then
+	if [[ -n "$example_url" && -n "$version" && "$version" != *-* ]]; then
 		version_href="${example_url#$base_url}"
 		local slug_ver
 		slug_ver=$(echo "$version_href" | grep -oP '\d+(-\d+)+' | tail -1)
@@ -328,7 +328,7 @@ get_apk() {
 			return 1
 		fi
 
-		if [[ -n "$version" ]]; then
+		if [[ -n "$version" && "$version" != *-* ]]; then
 			local slug_ver
 			slug_ver=$(echo "$version_href" | grep -oP '\d+(-\d+)+' | tail -1)
 			local target_ver

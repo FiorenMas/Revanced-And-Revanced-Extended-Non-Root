@@ -2,7 +2,7 @@
 # Xposed build
 source ./src/build/utils.sh
 
-NPatch_dl(){
+LSPatch_dl(){
 	dl_gh "LSPatch" "JingMatrix" "latest"
 }
 patch_dl(){
@@ -10,13 +10,13 @@ patch_dl(){
 }
 1() {
 	# Patch Revenge:
-	NPatch_dl
+	LSPatch_dl
 	dl_gh "revenge-xposed" "revenge-mod" "latest"
 	get_apk "com.discord" "discord" "bundle"
 	lspatch "discord" "app-release" "revenge"
 }
 2() {
-	NPatch_dl
+	LSPatch_dl
 	patch_dl
 	# Patch Facebook:
 	version="577.0.0.50.72"
@@ -27,7 +27,7 @@ patch_dl(){
 	lspatch "messenger-arm64-v8a" "NexAlloy-nonroot*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 }
 3() {
-	NPatch_dl
+	LSPatch_dl
 	patch_dl
 	# Patch Instagram:
 	get_apk "com.instagram.android" "instagram-arm64-v8a" "bundle" "arm64-v8a" "120-640dpi"  "Android 9.0+"
@@ -44,14 +44,14 @@ patch_dl(){
 	npatch "zalo" "NexAlloy*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 }
 5() {
-	NPatch_dl
+	LSPatch_dl
 	patch_dl
 	# Patch Tiktok:
 	get_apk "com.zhiliaoapp.musically" "tiktok" "apk"
-	lspatch "tiktok" "NexAlloy*.apk" "gnadgnaoh"
+	lspatch "tiktok" "NexAlloy*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 	# Patch Tiktok Asian:
 	get_apk "com.ss.android.ugc.trill" "tiktok-asian" "apk"
-	lspatch "tiktok-asian" "NexAlloy*.apk" "gnadgnaoh"
+	lspatch "tiktok-asian" "NexAlloy*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 }
 case "$1" in
     1)

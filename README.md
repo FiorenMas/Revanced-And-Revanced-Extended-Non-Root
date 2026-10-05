@@ -234,9 +234,6 @@ Download
 | [Stable version](https://github.com/MorpheApp/morphe-patches/releases/latest)  | [Beta version](https://github.com/MorpheApp/morphe-patches/releases)                |
 | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-morphe.apk)    | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-morphe.apk)    |
-| [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-morphe.apk)| [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-morphe.apk)|
-| [x86](../../releases/download/all/youtube-music-x86-morphe.apk)                | [x86](../../releases/download/all/youtube-music-beta-x86-morphe.apk)                |
-| [x86_64](../../releases/download/all/youtube-music-x86_64-morphe.apk)          | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-morphe.apk)          |
 
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 

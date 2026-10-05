@@ -69,20 +69,6 @@ morphe_dl(){
 	prefer_version="$youtube_music_experimental_support"
 	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-arm64-v8a" "apk" "arm64-v8a"
 	patch "youtube-music-beta-arm64-v8a" "morphe"
-	# Armeabi-v7a
-	get_patches_key "youtube-music-morphe"
-	#prefer_version="9.18.50"
-	prefer_version="$youtube_music_experimental_support"
-	get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-armeabi-v7a" "apk" "armeabi-v7a"
-	patch "youtube-music-beta-armeabi-v7a" "morphe"
-	# x86_64
-	#get_patches_key "youtube-music-morphe"
-	#get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86_64" "apk" "x86_64"
-	#patch "youtube-music-beta-x86_64" "morphe"
-	# x86
-	#get_patches_key "youtube-music-morphe"
-	#get_apk "com.google.android.apps.youtube.music" "youtube-music-beta-x86" "apk" "x86"
-	#patch "youtube-music-beta-x86" "morphe"
 }
 case "$1" in
     1)

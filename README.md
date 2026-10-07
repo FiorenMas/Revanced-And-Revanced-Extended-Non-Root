@@ -281,6 +281,12 @@ And if you can't install messenger back again because they check sign app should
 
 [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh.apk)
 
+
+### [Hushfacebook:](https://github.com/SysAdminDoc/Hushfacebook)
+
+[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-hushfacebook.apk)
+
+
 <details>
   <summary>Outdated patches</summary>
 

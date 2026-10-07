@@ -37,10 +37,10 @@ jobs:
         id: check-twitter-piko-stable
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh crimera/piko latest twitter-stable-piko.apk
-#      - name: Check new patch Twitter Piko Beta
-#        id: check-twitter-piko-beta
-#        if: steps.check-gh.outputs.internet_error == '0'
-#        run: bash src/etc/ci.sh crimera/piko prerelease twitter-beta-piko.apk
+      - name: Check new patch Twitter Piko Beta
+        id: check-twitter-piko-beta
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh crimera/piko prerelease twitter-beta-piko.apk
       - name: Check new patch Piko NewX
         id: check-twitter-piko-newx
         if: steps.check-gh.outputs.internet_error == '0'
@@ -49,6 +49,10 @@ jobs:
         id: check-derv
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh RookieEnough/De-ReVanced latest gg-photos-arm64-v8a-derevanced.apk
+      - name: Check new patch HushFacebook
+        id: check-hushfacebook
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh SysAdminDoc/Hushfacebook latest facebook-arm64-v8a-hushfacebook.apk
       - name: Check new patch hoo-dles
         id: check-hoo-dles
         if: steps.check-gh.outputs.internet_error == '0'
@@ -87,9 +91,10 @@ jobs:
       check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
-#      check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
+      check_twitter_piko_beta: ${{ steps.check-twitter-piko-beta.outputs.new_patch }}
       check_twitter_piko_newx: ${{ steps.check-twitter-piko-newx.outputs.new_patch }}
       check_derv: ${{ steps.check-derv.outputs.new_patch }}
+      check_hushfacebook: ${{ steps.check-hushfacebook.outputs.new_patch }}
       check_hoo_dles: ${{ steps.check-hoo-dles.outputs.new_patch }}
       check_bufferk: ${{ steps.check-bufferk.outputs.new_patch }}
       check_arandomhooman: ${{ steps.check-arandomhooman.outputs.new_patch }}
@@ -163,6 +168,14 @@ jobs:
     secrets: inherit
     with:
       org: "DeRevanced"
+  Patch-hush-facebook:
+    name: Patch HushFacebook
+    needs: check
+    if: ${{ needs.check.outputs.check_hushfacebook == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "HushFacebook"
   Patch-hoo-dles:
     name: Patch hoo-dles
     needs: check

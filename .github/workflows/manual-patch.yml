@@ -22,6 +22,7 @@ on:
           - 'Twitter Piko Beta'
           - 'Piko NewX'
           - 'DeRevanced'
+          - 'HushFacebook'
           - 'hoo-dles'
           - 'bufferk'
           - 'arandomhooman'
@@ -239,10 +240,30 @@ jobs:
       - name: Patch apk
         id: patch-piko-newx
         if: steps.check-gh-piko-newx.outputs.internet_error == '0'
-        run: bash src/build/Piko-Newx.sh ${{ matrix.run }}
+        run: bash src/build/Piko-Newx.sh
       - name: Releasing APK files
         id: release-piko-newx
         if: steps.check-gh-piko-newx.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_hush_facebook:
+    name: Patch HushFacebook
+    if: ${{ github.event.inputs.org == 'HushFacebook' || inputs.org == 'HushFacebook' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-hushfacebook
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-hushfacebook
+        if: steps.check-gh-hushfacebook.outputs.internet_error == '0'
+        run: bash src/build/HushFacebook.sh
+      - name: Releasing APK files
+        id: release-hushfacebook
+        if: steps.check-gh-hushfacebook.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_hoo_dles:
     name: Patch hoo-dles

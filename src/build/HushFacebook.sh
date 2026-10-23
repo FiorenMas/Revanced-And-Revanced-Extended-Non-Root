@@ -8,5 +8,5 @@ dl_gh "Hushfacebook" "SysAdminDoc" "latest"
 #################################################
 # Patch Facebook:
 get_patches_key "HushFacebook"
-get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" "320-640dpi" "Android 11+"
+get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" "480dpi" "Android 11+"
 patch "facebook-arm64-v8a" "hushfacebook"

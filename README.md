@@ -15,7 +15,14 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 > [!NOTE]
 > ## Backup Telegram channel: 
 > ### [https://t.me/fiorenmas](https://t.me/fiorenmas)
-> ### Vietnamese "dev" [@AnhsNguyetj](https://t.me/AnhsNguyetj) [haidayne](https://github.com/haidayne) and their telegram channel "Cộng đồng Android Việt Nam" stolen code my friend "gnadgnaoh" without credit. And then charge user when using their mod app. Remember don't use their mod if you want support author.
+
+> [!IMPORTANT] 
+> ### Vietnamese "dev" list below:
+> [@AnhsNguyetj](https://t.me/AnhsNguyetj) [haidayne](https://github.com/haidayne) and their telegram channel "Cộng đồng Android Việt Nam"
+> 
+> [@realknoname](https://t.me/realknoname) [soctrungkien](https://github.com/soctrungkien)
+> 
+> They stolen code my friend "gnadgnaoh" without credit (and then charge user when using their mod app). Remember don't use their mod if you want support author.
 
 ## ⚙️ How does this repository work?<img src="../main/docs/image/Readme.png" align="right" />
 Simply, all you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose All Architectures. That's all there is to it.

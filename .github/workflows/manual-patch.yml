@@ -28,6 +28,7 @@ on:
           - 'arandomhooman'
           - 'icysymmetra'
           - 'docbt'
+          - 'browzomje'
           - 'rushiranpise'
           - 'BiliRoamingM'
           - 'Scrazzz Patches'
@@ -356,6 +357,26 @@ jobs:
       - name: Releasing APK files
         id: release-icysymmetra
         if: steps.check-gh-icysymmetra.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_browzomje:
+    name: Patch browzomje
+    if: ${{ github.event.inputs.org == 'browzomje' || inputs.org == 'browzomje' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-browzomje
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-browzomje
+        if: steps.check-gh-browzomje.outputs.internet_error == '0'
+        run: bash src/build/browzomje.sh
+      - name: Releasing APK files
+        id: release-browzomje
+        if: steps.check-gh-browzomje.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_docbt:
     name: Patch docbt

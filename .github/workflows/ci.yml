@@ -77,6 +77,10 @@ jobs:
         id: check-docbt
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh docbt/patched-up latest googlenews-docbt.apk
+      - name: Check new patch browzomje
+        id: check-browzomje
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh browzomje/browzomje-patches latest pinterest-browzomje.apk
       - name: Check new patch BiliRoamingM
         id: check-BiliRoamingM
         if: steps.check-gh.outputs.internet_error == '0'
@@ -100,6 +104,7 @@ jobs:
       check_arandomhooman: ${{ steps.check-arandomhooman.outputs.new_patch }}
       check_rushiranpise: ${{ steps.check-rushiranpise.outputs.new_patch }}
       check_icysymmetra: ${{ steps.check-icysymmetra.outputs.new_patch }}
+      check_browzomje: ${{ steps.check-browzomje.outputs.new_patch }}
       check_docbt: ${{ steps.check-docbt.outputs.new_patch }}
       check_BiliRoamingM: ${{ steps.check-BiliRoamingM.outputs.new_patch }}
       check_Revanced_Experiments: ${{ steps.check-Revanced-Experiments.outputs.new_patch }}
@@ -216,6 +221,14 @@ jobs:
     secrets: inherit
     with:
       org: "icysymmetra"
+  Patch-browzomje:
+    name: Patch browzomje
+    needs: check
+    if: ${{ needs.check.outputs.check_browzomje == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "browzomje"
   Patch-docbt:
     name: Patch docbt
     needs: check

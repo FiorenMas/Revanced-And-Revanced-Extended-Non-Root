@@ -68,6 +68,8 @@ Download
 
 #### [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](README.md#reddit)
 
+#### [![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?style=for-the-badge&logo=Pinterest&logoColor=white)](README.md#pinterest)
+
 #### [![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](README.md#lightroom)
 
 #### [![Tumblr](https://img.shields.io/badge/Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white)](README.md#tumblr)
@@ -511,6 +513,14 @@ And if you can't install messenger back again because they check sign app should
 [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended-arsclib.apk)
 
 </details>
+
+---
+
+### [Pinterest:](https://play.google.com/store/apps/details?id=com.pinterest)
+
+### [browzomje:](https://github.com/browzomje/browzomje-patches)
+
+[All Architectures](../../releases/download/all/pinterest-browzomje.apk)
 
 ---
 

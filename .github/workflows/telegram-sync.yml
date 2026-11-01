@@ -31,11 +31,13 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python - << 'EOF'
           import os
           import re
+          import sys
           import glob
           import json
           import time
@@ -47,7 +49,27 @@ jobs:
 
           BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
           CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+          TOPIC_ID = os.environ.get("TELEGRAM_TOPIC_ID")
           GH_TOKEN = os.environ.get("GH_TOKEN")
+
+          # -------------------------------------------------------------
+          # 0. Validate Required Telegram Secrets
+          # -------------------------------------------------------------
+          missing_secrets = []
+          if not BOT_TOKEN or not BOT_TOKEN.strip():
+              missing_secrets.append("TELEGRAM_BOT_TOKEN")
+          if not CHAT_ID or not CHAT_ID.strip():
+              missing_secrets.append("TELEGRAM_CHAT_ID")
+
+          if missing_secrets:
+              print("\n" + "=" * 60)
+              print("❌ ERROR: Missing required secret(s):")
+              for secret in missing_secrets:
+                  print(f"   - {secret}")
+              print("\nPlease add them in:")
+              print("   Repository Settings -> Secrets and variables -> Actions")
+              print("=" * 60 + "\n")
+              sys.exit(1)
 
           REPO = "FiorenMas/Revanced-And-Revanced-Extended-Non-Root"
           TAG = "all"
@@ -443,7 +465,7 @@ jobs:
           tag_res = requests.get(f"https://api.github.com/repos/{REPO}/releases/tags/{TAG}", headers=headers)
           if tag_res.status_code != 200:
               print(f"Error fetching release tag {TAG}: {tag_res.text}")
-              exit(1)
+              sys.exit(1)
 
           release_id = tag_res.json()["id"]
           assets = []
@@ -462,7 +484,7 @@ jobs:
           print(f"Total assets found in tag '{TAG}': {total_assets}")
 
           # -------------------------------------------------------------
-          # 8. Telegram Notification Helper
+          # 8. Telegram Notification Helper (Supports Topics & Normal Chats)
           # -------------------------------------------------------------
           def send_telegram_message(text):
               url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
@@ -472,6 +494,10 @@ jobs:
                   "parse_mode": "HTML",
                   "disable_web_page_preview": True
               }
+
+              if TOPIC_ID and TOPIC_ID.strip():
+                  payload["message_thread_id"] = int(TOPIC_ID.strip())
+
               for _ in range(3):
                   res = requests.post(url, json=payload)
                   if res.status_code == 429:
@@ -506,6 +532,7 @@ jobs:
               prev_updated = entry.get("updated_at") if isinstance(entry, dict) else None
               cached_pkg = entry.get("package") if isinstance(entry, dict) else None
 
+              # Skip cached / already released files
               if prev_hash and prev_updated == updated_at:
                   print(f"\n{progress_prefix}")
                   print(f"App: {name}")
@@ -538,14 +565,12 @@ jobs:
               # Extract binary metadata via aapt directly from APK
               apk_meta = extract_apk_metadata(name)
 
-              # Determine package name
               pkg_name = (
                   apk_meta.get("package") or 
                   build_map.get(name.lower(), {}).get("package") or 
                   None
               )
 
-              # Determine version
               version_val = (
                   apk_meta.get("version") or 
                   build_map.get(name.lower(), {}).get("version") or 
@@ -554,7 +579,6 @@ jobs:
 
               info = readme_map.get(name) or parse_from_filename(name)
 
-              # Fallback package name from standard dictionary
               base_app_clean = info["app"].replace(" Beta", "").strip()
               if not pkg_name:
                   pkg_name = PACKAGE_MAP.get(base_app_clean, "N/A")
@@ -562,7 +586,6 @@ jobs:
               if not version_val:
                   version_val = info.get("version", "").replace("v", "").strip() or "N/A"
 
-              # Ensure Beta flag is added
               is_beta = bool(
                   re.search(r'[-_.]beta([-_.]|$)', name.lower()) or 
                   "beta" in name.lower() or 
@@ -627,7 +650,6 @@ jobs:
                   print("Already released to Telegram (SHA-256 matched, skipping)")
                   cached_count += 1
 
-              # Store in cache with package and version
               known_data[name] = {
                   "sha256": file_hash,
                   "updated_at": updated_at,

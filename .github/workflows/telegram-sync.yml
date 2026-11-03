@@ -25,7 +25,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install Dependencies
-        run: pip install requests
+        run: |
+          sudo apt-get update && sudo apt-get install -y aapt
+          pip install requests pyaxmlparser
 
       - name: Sync Releases to Telegram
         env:
@@ -38,7 +40,6 @@ jobs:
           import os
           import re
           import sys
-          import glob
           import json
           import time
           import html
@@ -46,6 +47,7 @@ jobs:
           import subprocess
           from datetime import datetime
           import requests
+          from pyaxmlparser import APK
 
           BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
           CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
@@ -309,35 +311,33 @@ jobs:
               return {"app": app, "mod": mod, "variant": variant, "version": version}
 
           # -------------------------------------------------------------
-          # 2. Extract Metadata Directly from APK via aapt
+          # 2. Extract Metadata Directly from APK (pyaxmlparser + aapt)
           # -------------------------------------------------------------
           def extract_apk_metadata(apk_path):
               meta = {}
-              android_sdk = os.environ.get("ANDROID_SDK_ROOT") or os.environ.get("ANDROID_HOME") or "/usr/local/lib/android/sdk"
-              aapt_candidates = glob.glob(f"{android_sdk}/build-tools/*/aapt")
-              if not aapt_candidates:
+              # Method A: Pure Python AXML parser (most reliable)
+              try:
+                  apk_obj = APK(apk_path)
+                  if apk_obj.package:
+                      meta["package"] = apk_obj.package
+                  if apk_obj.version_name:
+                      meta["version"] = str(apk_obj.version_name).strip()
+              except Exception:
+                  pass
+
+              # Method B: aapt binary fallback
+              if not meta.get("package") or not meta.get("version"):
                   try:
-                      which_aapt = subprocess.check_output(["which", "aapt"], text=True).strip()
-                      if which_aapt:
-                          aapt_candidates = [which_aapt]
+                      out = subprocess.check_output(["aapt", "dump", "badging", apk_path], stderr=subprocess.DEVNULL, text=True)
+                      pkg_m = re.search(r"package:\s+name='([^']+)'", out)
+                      ver_m = re.search(r"versionName='([^']+)'", out)
+                      if pkg_m and not meta.get("package"):
+                          meta["package"] = pkg_m.group(1)
+                      if ver_m and not meta.get("version"):
+                          meta["version"] = ver_m.group(1)
                   except Exception:
                       pass
 
-              if aapt_candidates:
-                  aapt_bin = sorted(aapt_candidates)[-1]
-                  try:
-                      out = subprocess.check_output([aapt_bin, "dump", "badging", apk_path], stderr=subprocess.DEVNULL, text=True)
-                      pkg_m = re.search(r"package:\s+name='([^']+)'", out)
-                      ver_m = re.search(r"versionName='([^']+)'", out)
-                      lbl_m = re.search(r"application-label(?:-en)?:'([^']+)'", out)
-                      if pkg_m:
-                          meta["package"] = pkg_m.group(1)
-                      if ver_m:
-                          meta["version"] = ver_m.group(1)
-                      if lbl_m:
-                          meta["label"] = lbl_m.group(1)
-                  except Exception:
-                      pass
               return meta
 
           # -------------------------------------------------------------
@@ -371,42 +371,7 @@ jobs:
               return " ".join(deduped)
 
           # -------------------------------------------------------------
-          # 4. Fetch & Parse src/build Repository Tree
-          # -------------------------------------------------------------
-          print("Scanning src/build directory for configurations...")
-          build_map = {}
-          try:
-              tree_url = f"https://api.github.com/repos/{REPO}/git/trees/main?recursive=1"
-              tree_res = requests.get(tree_url, headers=headers)
-              if tree_res.status_code == 200:
-                  tree_items = tree_res.json().get("tree", [])
-                  build_files = [item for item in tree_items if item.get("path", "").startswith("src/build/") and item.get("type") == "blob"]
-                  print(f"Found {len(build_files)} build files in src/build.")
-                  for bf in build_files:
-                      raw_url = f"https://raw.githubusercontent.com/{REPO}/main/{bf['path']}"
-                      r_code = requests.get(raw_url, headers={"Authorization": f"Bearer {GH_TOKEN}"} if GH_TOKEN else {})
-                      if r_code.status_code == 200:
-                          txt = r_code.text
-                          pkg_m = re.search(r'(?:pkg|package|package_name|pkg_name|id)\s*=\s*["\']?([a-zA-Z0-9_\.]+)["\']?', txt, re.I)
-                          name_m = re.search(r'(?:app_name|name|app|title)\s*=\s*["\']?([^"\']+)["\']?', txt, re.I)
-                          ver_m = re.search(r'(?:version|ver|app_ver|target_version)\s*=\s*["\']?([^"\']+)["\']?', txt, re.I)
-
-                          extracted = {
-                              "package": pkg_m.group(1) if pkg_m else None,
-                              "app": name_m.group(1) if name_m else None,
-                              "version": ver_m.group(1) if ver_m else None
-                          }
-
-                          base_name = os.path.splitext(os.path.basename(bf["path"]))[0].lower()
-                          build_map[base_name] = extracted
-
-                          for apk_match in re.findall(r'([a-zA-Z0-9_\-\.]+\.apk)', txt):
-                              build_map[apk_match.lower()] = extracted
-          except Exception as e:
-              print(f"Notice: src/build parser completed with: {e}")
-
-          # -------------------------------------------------------------
-          # 5. Fetch & Parse README.md
+          # 4. Fetch & Parse README.md
           # -------------------------------------------------------------
           print("Fetching and parsing README.md...")
           readme_url = f"https://api.github.com/repos/{REPO}/contents/README.md"
@@ -449,7 +414,7 @@ jobs:
               print(f"Extracted metadata for {len(readme_map)} files from README.")
 
           # -------------------------------------------------------------
-          # 6. Load Existing Hashes & Timestamps
+          # 5. Load Existing Hashes & Timestamps
           # -------------------------------------------------------------
           known_data = {}
           if os.path.exists(HASH_FILE):
@@ -460,7 +425,7 @@ jobs:
                   known_data = {}
 
           # -------------------------------------------------------------
-          # 7. Fetch All Assets with Pagination
+          # 6. Fetch All Assets with Pagination
           # -------------------------------------------------------------
           tag_res = requests.get(f"https://api.github.com/repos/{REPO}/releases/tags/{TAG}", headers=headers)
           if tag_res.status_code != 200:
@@ -484,7 +449,7 @@ jobs:
           print(f"Total assets found in tag '{TAG}': {total_assets}")
 
           # -------------------------------------------------------------
-          # 8. Telegram Notification Helper (Supports Topics & Normal Chats)
+          # 7. Telegram Notification Helper
           # -------------------------------------------------------------
           def send_telegram_message(text):
               url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
@@ -509,7 +474,7 @@ jobs:
               return res
 
           # -------------------------------------------------------------
-          # 9. Process Assets & Send Updates
+          # 8. Process Assets & Send Updates
           # -------------------------------------------------------------
           has_changes = False
           posts_sent = 0
@@ -562,29 +527,14 @@ jobs:
 
               file_hash = sha256.hexdigest()
 
-              # Extract binary metadata via aapt directly from APK
+              # Extract metadata directly from the APK binary
               apk_meta = extract_apk_metadata(name)
-
-              pkg_name = (
-                  apk_meta.get("package") or 
-                  build_map.get(name.lower(), {}).get("package") or 
-                  None
-              )
-
-              version_val = (
-                  apk_meta.get("version") or 
-                  build_map.get(name.lower(), {}).get("version") or 
-                  None
-              )
 
               info = readme_map.get(name) or parse_from_filename(name)
 
               base_app_clean = info["app"].replace(" Beta", "").strip()
-              if not pkg_name:
-                  pkg_name = PACKAGE_MAP.get(base_app_clean, "N/A")
-
-              if not version_val:
-                  version_val = info.get("version", "").replace("v", "").strip() or "N/A"
+              pkg_name = apk_meta.get("package") or PACKAGE_MAP.get(base_app_clean, "N/A")
+              version_val = apk_meta.get("version") or info.get("version", "").replace("v", "").strip() or "N/A"
 
               is_beta = bool(
                   re.search(r'[-_.]beta([-_.]|$)', name.lower()) or 
@@ -666,7 +616,7 @@ jobs:
           print(f"==========================================")
 
           # -------------------------------------------------------------
-          # 10. Save Updated Database
+          # 9. Save Updated Database
           # -------------------------------------------------------------
           if has_changes:
               with open(HASH_FILE, "w") as f:

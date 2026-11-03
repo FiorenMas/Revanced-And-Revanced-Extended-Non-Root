@@ -1,0 +1,656 @@
+name: 4. Sync Releases to Telegram
+
+on:
+  schedule:
+    # Runs every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allows manual trigger from Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync-mods:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y aapt
+          pip install requests pyaxmlparser
+
+      - name: Sync Releases to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - << 'EOF'
+          import os
+          import re
+          import sys
+          import json
+          import time
+          import html
+          import hashlib
+          import subprocess
+          from datetime import datetime
+          import requests
+          from pyaxmlparser import APK
+
+          BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+          CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
+          TOPIC_ID = os.environ.get("TELEGRAM_TOPIC_ID")
+          GH_TOKEN = os.environ.get("GH_TOKEN")
+
+          # -------------------------------------------------------------
+          # 0. Validate Required Telegram Secrets
+          # -------------------------------------------------------------
+          missing_secrets = []
+          if not BOT_TOKEN or not BOT_TOKEN.strip():
+              missing_secrets.append("TELEGRAM_BOT_TOKEN")
+          if not CHAT_ID or not CHAT_ID.strip():
+              missing_secrets.append("TELEGRAM_CHAT_ID")
+
+          if missing_secrets:
+              print("\n" + "=" * 60)
+              print("❌ ERROR: Missing required secret(s):")
+              for secret in missing_secrets:
+                  print(f"   - {secret}")
+              print("\nPlease add them in:")
+              print("   Repository Settings -> Secrets and variables -> Actions")
+              print("=" * 60 + "\n")
+              sys.exit(1)
+
+          REPO = "FiorenMas/Revanced-And-Revanced-Extended-Non-Root"
+          TAG = "all"
+          HASH_FILE = "sha256.json"
+
+          headers = {
+              "Accept": "application/vnd.github.v3+json"
+          }
+          if GH_TOKEN:
+              headers["Authorization"] = f"Bearer {GH_TOKEN}"
+
+          # -------------------------------------------------------------
+          # 1. Verified App, Mod & Package Dictionaries
+          # -------------------------------------------------------------
+          KNOWN_APPS = [
+              ("youtube-music", "YouTube Music"),
+              ("youtube_music", "YouTube Music"),
+              ("yt-music", "YouTube Music"),
+              ("ytmusic", "YouTube Music"),
+              ("ytm", "YouTube Music"),
+              ("youtube", "YouTube"),
+              ("yt-", "YouTube"),
+              ("google-photos", "Google Photos"),
+              ("gg-photos", "Google Photos"),
+              ("ggphotos", "Google Photos"),
+              ("photos", "Google Photos"),
+              ("google-news", "Google News"),
+              ("gg-news", "Google News"),
+              ("ggnews", "Google News"),
+              ("google-recorder", "Google Recorder"),
+              ("gg-recorder", "Google Recorder"),
+              ("ggrecorder", "Google Recorder"),
+              ("battery-guru", "Battery Guru"),
+              ("batteryguru", "Battery Guru"),
+              ("brave-browser", "Brave Browser"),
+              ("brave", "Brave Browser"),
+              ("solid-explorer-file-manager", "Solid Explorer File Manager"),
+              ("solid-explorer", "Solid Explorer File Manager"),
+              ("solidexplorer", "Solid Explorer File Manager"),
+              ("smart-launcher", "Smart Launcher"),
+              ("smartlauncher", "Smart Launcher"),
+              ("nova-launcher", "Nova Launcher"),
+              ("novalauncher", "Nova Launcher"),
+              ("fx-file-explorer", "FX File Explorer"),
+              ("fx-explorer", "FX File Explorer"),
+              ("fxfileexplorer", "FX File Explorer"),
+              ("prime-video", "Prime Video"),
+              ("primevideo", "Prime Video"),
+              ("prime", "Prime Video"),
+              ("proton-vpn", "Proton VPN"),
+              ("protonvpn", "Proton VPN"),
+              ("proton-mail", "Proton Mail"),
+              ("protonmail", "Proton Mail"),
+              ("wps-office", "WPS Office"),
+              ("wpsoffice", "WPS Office"),
+              ("wps", "WPS Office"),
+              ("tiktok-asia", "TikTok Asia"),
+              ("tiktok_asia", "TikTok Asia"),
+              ("tt-asia", "TikTok Asia"),
+              ("tiktok", "TikTok"),
+              ("tt-", "TikTok"),
+              ("facebook", "Facebook"),
+              ("fb-", "Facebook"),
+              ("messenger", "Messenger"),
+              ("msgr", "Messenger"),
+              ("twitter", "Twitter"),
+              ("instagram", "Instagram"),
+              ("insta-", "Instagram"),
+              ("threads", "Threads"),
+              ("twitch", "Twitch"),
+              ("reddit", "Reddit"),
+              ("pinterest", "Pinterest"),
+              ("lightroom", "Lightroom"),
+              ("tumblr", "Tumblr"),
+              ("soundcloud", "SoundCloud"),
+              ("sound-cloud", "SoundCloud"),
+              ("duolingo", "Duolingo"),
+              ("viber", "Viber"),
+              ("discord", "Discord"),
+              ("telegram", "Telegram"),
+              ("adguard", "Adguard"),
+              ("psiphon", "Psiphon"),
+              ("windscribe", "Windscribe"),
+              ("photomath", "Photomath"),
+              ("truecaller", "Truecaller"),
+              ("eyeconcaller", "EyeconCaller"),
+              ("eyecon-caller", "EyeconCaller"),
+              ("eyecon", "EyeconCaller"),
+              ("zalo", "Zalo"),
+              ("camscanner", "CamScanner"),
+              ("cam-scanner", "CamScanner"),
+              ("rar", "RAR"),
+              ("terabox", "TeraBox"),
+              ("strava", "Strava"),
+              ("waze", "Waze"),
+              ("pixiv", "Pixiv"),
+              ("tasker", "Tasker"),
+              ("myfitnesspal", "MyFitnessPal"),
+              ("my-fitness-pal", "MyFitnessPal"),
+              ("microg-re", "MicroG RE"),
+              ("microg", "MicroG RE"),
+              ("bilibili", "Bilibili")
+          ]
+
+          KNOWN_MODS = [
+              ("revanced-extended", "ReVanced Extended"),
+              ("revanced_extended", "ReVanced Extended"),
+              ("revanced-experiments", "Revanced Experiments"),
+              ("anddea", "ReVanced Extended (anddea)"),
+              ("morphe", "Morphe"),
+              ("biliroamingm", "BiliRoamingM"),
+              ("biliroaming", "BiliRoaming"),
+              ("derevanced", "DeRevanced"),
+              ("gnadgnaoh", "gnadgnaoh"),
+              ("piko-newx", "Piko NewX"),
+              ("piko", "Piko"),
+              ("icysymmetra", "icysymmetra"),
+              ("arandomhooman", "arandomhooman"),
+              ("browzomje", "browzomje"),
+              ("hoo-dles", "hoo-dles"),
+              ("rushiranpise", "rushiranpise"),
+              ("bufferk", "Bufferk"),
+              ("paresh", "Paresh Patches"),
+              ("docbt", "docbt"),
+              ("indrastorms", "indrastorms"),
+              ("scrazzz", "scrazzz"),
+              ("revenge", "Revenge"),
+              ("inotia00", "inotia00"),
+              ("crimera", "crimera"),
+              ("kitadai31", "kitadai31"),
+              ("revanced", "ReVanced")
+          ]
+
+          PACKAGE_MAP = {
+              "YouTube": "com.google.android.youtube",
+              "YouTube Music": "com.google.android.apps.youtube.music",
+              "Google Photos": "com.google.android.apps.photos",
+              "Google News": "com.google.android.apps.magazines",
+              "Google Recorder": "com.google.android.apps.recorder",
+              "Facebook": "com.facebook.katana",
+              "Messenger": "com.facebook.orca",
+              "Instagram": "com.instagram.android",
+              "Threads": "com.instagram.barcelona",
+              "Twitter": "com.twitter.android",
+              "TikTok": "com.zhiliaoapp.musically",
+              "TikTok Asia": "com.ss.android.ugc.trill",
+              "Twitch": "tv.twitch.android.app",
+              "Reddit": "com.reddit.frontpage",
+              "Pinterest": "com.pinterest",
+              "Lightroom": "com.adobe.lrmobile",
+              "Tumblr": "com.tumblr",
+              "SoundCloud": "com.soundcloud.android",
+              "Duolingo": "com.duolingo",
+              "Viber": "com.viber.voip",
+              "Discord": "com.discord",
+              "Telegram": "org.telegram.messenger",
+              "Adguard": "com.adguard.android",
+              "Smart Launcher": "ginlemon.flowerfree",
+              "Nova Launcher": "com.teslacoilsw.launcher",
+              "Tasker": "net.dinglisch.android.taskerm",
+              "WPS Office": "cn.wps.moffice_eng",
+              "Proton VPN": "ch.protonvpn.android",
+              "Proton Mail": "ch.protonmail.android",
+              "Psiphon": "com.psiphon3.subscription",
+              "Windscribe": "com.windscribe.vpn",
+              "Photomath": "com.microblink.photomath",
+              "Truecaller": "com.truecaller",
+              "EyeconCaller": "com.eyecon.global",
+              "Zalo": "com.zing.zalo",
+              "CamScanner": "com.intsig.camscanner",
+              "Battery Guru": "com.paget96.batteryguru",
+              "Brave Browser": "com.brave.browser",
+              "RAR": "com.rarlab.rar",
+              "TeraBox": "com.dubox.drive",
+              "Strava": "com.strava",
+              "Waze": "com.waze",
+              "Pixiv": "jp.pxv.android",
+              "Solid Explorer File Manager": "pl.solidexplorer2",
+              "FX File Explorer": "nextapp.fx",
+              "MyFitnessPal": "com.myfitnesspal.android",
+              "MicroG RE": "app.revanced.android.gms",
+              "Bilibili": "tv.danmaku.bili",
+              "Prime Video": "com.amazon.avod.thirdpartyclient"
+          }
+
+          def parse_from_filename(filename):
+              clean = filename.lower()
+              if clean.endswith(".apk"):
+                  clean = clean[:-4]
+
+              if "arm64-v8a" in clean:
+                  arch = "Arm64-v8a"
+              elif "armeabi-v7a" in clean:
+                  arch = "Armeabi-v7a"
+              elif "x86_64" in clean:
+                  arch = "x86_64"
+              elif "x86" in clean:
+                  arch = "x86"
+              else:
+                  arch = "All Architectures"
+
+              app = None
+              for key, name in KNOWN_APPS:
+                  if key in clean:
+                      app = name
+                      break
+
+              if not app and clean.startswith("gg-"):
+                  parts = clean.split("-")
+                  if len(parts) > 1:
+                      app = f"Google {parts[1].capitalize()}"
+
+              if not app:
+                  parts = clean.split("-")
+                  app = parts[0].capitalize() if parts else "ReVanced App"
+
+              is_beta = bool(re.search(r'[-_.]beta([-_.]|$)', clean) or "beta" in clean)
+              if is_beta and not app.lower().endswith("beta"):
+                  app = f"{app} Beta"
+
+              mod = None
+              for key, mname in KNOWN_MODS:
+                  if key in clean:
+                      mod = mname
+                      break
+
+              v_match = re.search(r'v?(\d+\.\d+(?:\.\d+)?)', filename)
+              version = f"v{v_match.group(1)}" if v_match else ""
+
+              if not mod:
+                  parts = clean.split("-")
+                  mod = parts[-1].capitalize() if len(parts) > 1 else "General"
+
+              variant_parts = [p for p in [version, arch] if p]
+              variant = " | ".join(variant_parts)
+
+              return {"app": app, "mod": mod, "variant": variant, "version": version}
+
+          # -------------------------------------------------------------
+          # 2. Extract Metadata Directly from APK (pyaxmlparser + aapt)
+          # -------------------------------------------------------------
+          def extract_apk_metadata(apk_path):
+              meta = {}
+              # Method A: Pure Python AXML parser (most reliable)
+              try:
+                  apk_obj = APK(apk_path)
+                  if apk_obj.package:
+                      meta["package"] = apk_obj.package
+                  if apk_obj.version_name:
+                      meta["version"] = str(apk_obj.version_name).strip()
+              except Exception:
+                  pass
+
+              # Method B: aapt binary fallback
+              if not meta.get("package") or not meta.get("version"):
+                  try:
+                      out = subprocess.check_output(["aapt", "dump", "badging", apk_path], stderr=subprocess.DEVNULL, text=True)
+                      pkg_m = re.search(r"package:\s+name='([^']+)'", out)
+                      ver_m = re.search(r"versionName='([^']+)'", out)
+                      if pkg_m and not meta.get("package"):
+                          meta["package"] = pkg_m.group(1)
+                      if ver_m and not meta.get("version"):
+                          meta["version"] = ver_m.group(1)
+                  except Exception:
+                      pass
+
+              return meta
+
+          # -------------------------------------------------------------
+          # 3. Hashtags Generator (App and Mod Only)
+          # -------------------------------------------------------------
+          def generate_hashtags(info):
+              tags = []
+              clean_app = re.sub(r'[^a-zA-Z0-9]', '', info['app'])
+              if clean_app:
+                  tags.append(f"#{clean_app}")
+
+              base_mod = info['mod'].split('(')[0].strip()
+              clean_mod = re.sub(r'[^a-zA-Z0-9]', '', base_mod)
+              if clean_mod and clean_mod.lower() != clean_app.lower() and clean_mod.lower() != "general":
+                  tags.append(f"#{clean_mod}")
+
+              if "(" in info['mod']:
+                  sub_authors = re.findall(r'\((.*?)\)', info['mod'])
+                  for auth in sub_authors:
+                      clean_auth = re.sub(r'[^a-zA-Z0-9]', '', auth)
+                      if clean_auth:
+                          tags.append(f"#{clean_auth}")
+
+              seen = set()
+              deduped = []
+              for t in tags:
+                  if t.lower() not in seen:
+                      seen.add(t.lower())
+                      deduped.append(t)
+
+              return " ".join(deduped)
+
+          # -------------------------------------------------------------
+          # 4. Fetch & Parse README.md
+          # -------------------------------------------------------------
+          print("Fetching and parsing README.md...")
+          readme_url = f"https://api.github.com/repos/{REPO}/contents/README.md"
+          readme_headers = {"Accept": "application/vnd.github.v3.raw"}
+          if GH_TOKEN:
+              readme_headers["Authorization"] = f"Bearer {GH_TOKEN}"
+
+          readme_res = requests.get(readme_url, headers=readme_headers)
+          readme_map = {}
+          if readme_res.status_code == 200:
+              current_app = ""
+              current_mod = ""
+
+              for line in readme_res.text.splitlines():
+                  stripped = line.strip()
+                  plain = re.sub(r'<[^>]+>', '', stripped).strip()
+
+                  if plain.endswith(":") and len(plain) < 45:
+                      cand = plain.rstrip(":").strip()
+                      for _, app_name in KNOWN_APPS:
+                          if cand.lower() == app_name.lower():
+                              current_app = app_name
+                              current_mod = ""
+                              break
+                      for _, mod_name in KNOWN_MODS:
+                          if cand.lower() == mod_name.lower() or mod_name.lower() in cand.lower():
+                              current_mod = mod_name
+                              break
+
+                  links = re.findall(r'/releases/download/all/([a-zA-Z0-9_\-\.]+)', stripped)
+                  for fname in links:
+                      if fname.endswith(".apk"):
+                          meta = parse_from_filename(fname)
+                          readme_map[fname] = {
+                              "app": current_app if current_app else meta["app"],
+                              "mod": current_mod if current_mod else meta["mod"],
+                              "variant": meta["variant"],
+                              "version": meta.get("version", "")
+                          }
+              print(f"Extracted metadata for {len(readme_map)} files from README.")
+
+          # -------------------------------------------------------------
+          # 5. Load Existing Hashes & Timestamps
+          # -------------------------------------------------------------
+          known_data = {}
+          if os.path.exists(HASH_FILE):
+              try:
+                  with open(HASH_FILE, "r") as f:
+                      known_data = json.load(f)
+              except Exception:
+                  known_data = {}
+
+          # -------------------------------------------------------------
+          # 6. Fetch All Assets with Pagination
+          # -------------------------------------------------------------
+          tag_res = requests.get(f"https://api.github.com/repos/{REPO}/releases/tags/{TAG}", headers=headers)
+          if tag_res.status_code != 200:
+              print(f"Error fetching release tag {TAG}: {tag_res.text}")
+              sys.exit(1)
+
+          release_id = tag_res.json()["id"]
+          assets = []
+          page = 1
+          while True:
+              p_url = f"https://api.github.com/repos/{REPO}/releases/{release_id}/assets?per_page=100&page={page}"
+              p_res = requests.get(p_url, headers=headers).json()
+              if not p_res or not isinstance(p_res, list):
+                  break
+              assets.extend(p_res)
+              if len(p_res) < 100:
+                  break
+              page += 1
+
+          total_assets = len(assets)
+          print(f"Total assets found in tag '{TAG}': {total_assets}")
+
+          # -------------------------------------------------------------
+          # 7. Telegram Notification Helper
+          # -------------------------------------------------------------
+          def send_telegram_message(text):
+              url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+              payload = {
+                  "chat_id": CHAT_ID,
+                  "text": text,
+                  "parse_mode": "HTML",
+                  "disable_web_page_preview": True
+              }
+
+              if TOPIC_ID and TOPIC_ID.strip():
+                  payload["message_thread_id"] = int(TOPIC_ID.strip())
+
+              for _ in range(3):
+                  res = requests.post(url, json=payload)
+                  if res.status_code == 429:
+                      wait_sec = res.json().get("parameters", {}).get("retry_after", 5)
+                      print(f"Rate limited by Telegram. Waiting {wait_sec}s...")
+                      time.sleep(wait_sec)
+                      continue
+                  return res
+              return res
+
+          # -------------------------------------------------------------
+          # 8. Process Assets & Send Updates
+          # -------------------------------------------------------------
+          has_changes = False
+          posts_sent = 0
+          cached_count = 0
+
+          for idx, asset in enumerate(assets, 1):
+              name = asset["name"]
+              download_url = asset["browser_download_url"]
+              updated_at = asset.get("updated_at", "")
+              size_mb = asset.get("size", 0) / (1024 * 1024)
+
+              bar_length = 20
+              filled = int(bar_length * idx // total_assets)
+              bar = "█" * filled + "░" * (bar_length - filled)
+              percentage = (idx / total_assets) * 100
+              progress_prefix = f"[{idx:>{len(str(total_assets))}}/{total_assets}] ({percentage:5.1f}%) |{bar}|"
+
+              entry = known_data.get(name)
+              prev_hash = entry.get("sha256") if isinstance(entry, dict) else entry
+              prev_updated = entry.get("updated_at") if isinstance(entry, dict) else None
+              cached_pkg = entry.get("package") if isinstance(entry, dict) else None
+
+              # Skip cached / already released files
+              if prev_hash and prev_updated == updated_at:
+                  print(f"\n{progress_prefix}")
+                  print(f"App: {name}")
+                  if cached_pkg:
+                      print(f"Package: {cached_pkg}")
+                  print(f"SHA-256: {prev_hash}")
+                  print("Already released to Telegram (skipping)")
+                  cached_count += 1
+                  continue
+
+              print(f"\n{progress_prefix} Downloading & checking: {name} ...")
+
+              sha256 = hashlib.sha256()
+              try:
+                  with requests.get(download_url, stream=True) as r:
+                      r.raise_for_status()
+                      with open(name, "wb") as f:
+                          for chunk in r.iter_content(chunk_size=16384):
+                              if chunk:
+                                  f.write(chunk)
+                                  sha256.update(chunk)
+              except Exception as e:
+                  print(f"Download failed for {name}: {e}")
+                  if os.path.exists(name):
+                      os.remove(name)
+                  continue
+
+              file_hash = sha256.hexdigest()
+
+              # Extract metadata directly from the APK binary
+              apk_meta = extract_apk_metadata(name)
+
+              info = readme_map.get(name) or parse_from_filename(name)
+
+              base_app_clean = info["app"].replace(" Beta", "").strip()
+              pkg_name = apk_meta.get("package") or PACKAGE_MAP.get(base_app_clean, "N/A")
+              version_val = apk_meta.get("version") or info.get("version", "").replace("v", "").strip() or "N/A"
+
+              is_beta = bool(
+                  re.search(r'[-_.]beta([-_.]|$)', name.lower()) or 
+                  "beta" in name.lower() or 
+                  "beta" in info.get("variant", "").lower()
+              )
+              if is_beta and not info["app"].lower().endswith("beta"):
+                  info["app"] = f"{info['app']} Beta"
+
+              # Send to Telegram if SHA-256 is new/updated
+              if prev_hash != file_hash:
+                  print(f"\n{progress_prefix}")
+                  print(f"App: {name}")
+                  if pkg_name and pkg_name != "N/A":
+                      print(f"Package: {pkg_name}")
+                  if version_val and version_val != "N/A":
+                      print(f"Version: {version_val}")
+                  print(f"SHA-256: {file_hash}")
+                  print("Releasing to Telegram (New update detected)")
+
+                  hashtags = generate_hashtags(info)
+
+                  formatted_date = updated_at
+                  if updated_at:
+                      try:
+                          dt = datetime.fromisoformat(updated_at.replace("Z", "+00:00"))
+                          formatted_date = dt.strftime("%d %b %Y, %H:%M UTC")
+                      except Exception:
+                          formatted_date = updated_at
+
+                  pkg_line = f"📦 <b>Package:</b> <code>{html.escape(pkg_name)}</code>\n" if pkg_name and pkg_name != "N/A" else ""
+                  ver_line = f"🔢 <b>Version:</b> <code>{html.escape(version_val)}</code>\n" if version_val and version_val != "N/A" else ""
+
+                  message = (
+                      f"🚀 <b>New App Update!</b>\n\n"
+                      f"📱 <b>App:</b> {html.escape(info['app'])}\n"
+                      f"{pkg_line}"
+                      f"{ver_line}"
+                      f"🛠 <b>Mod:</b> {html.escape(info['mod'])}\n"
+                      f"🏷 <b>Variant:</b> {html.escape(info['variant'])}\n"
+                      f"📁 <b>File:</b> <code>{html.escape(name)}</code>\n"
+                      f"📊 <b>Size:</b> {size_mb:.2f} MB\n"
+                      f"📅 <b>Date:</b> {html.escape(formatted_date)}\n\n"
+                      f"🔑 <b>SHA-256:</b>\n<code>{file_hash}</code>\n\n"
+                      f"🔗 <a href=\"{download_url}\"><b>Direct Download Link</b></a>\n\n"
+                      f"{hashtags}"
+                  )
+
+                  tg_res = send_telegram_message(message)
+                  if tg_res and tg_res.status_code == 200:
+                      print("Successfully released to Telegram.")
+                      posts_sent += 1
+                  else:
+                      print(f"Telegram error: {tg_res.text if tg_res else 'Unknown'}")
+
+                  time.sleep(1.2)
+              else:
+                  print(f"\n{progress_prefix}")
+                  print(f"App: {name}")
+                  if pkg_name and pkg_name != "N/A":
+                      print(f"Package: {pkg_name}")
+                  print(f"SHA-256: {file_hash}")
+                  print("Already released to Telegram (SHA-256 matched, skipping)")
+                  cached_count += 1
+
+              known_data[name] = {
+                  "sha256": file_hash,
+                  "updated_at": updated_at,
+                  "package": pkg_name,
+                  "version": version_val
+              }
+              has_changes = True
+
+              if os.path.exists(name):
+                  os.remove(name)
+
+          print(f"\n==========================================")
+          print(f"Completed! Total: {total_assets} | Cached: {cached_count} | New updates sent: {posts_sent}")
+          print(f"==========================================")
+
+          # -------------------------------------------------------------
+          # 9. Save Updated Database
+          # -------------------------------------------------------------
+          if has_changes:
+              with open(HASH_FILE, "w") as f:
+                  json.dump(known_data, f, indent=4)
+              print("\nSaved updated hashes to sha256.json")
+          EOF
+
+      - name: Commit & Push sha256.json with Auto-Rebase
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -f "sha256.json" ]; then
+            git add sha256.json
+            if ! git diff --staged --quiet; then
+              git commit -m "chore: update sha256.json [skip ci]"
+
+              pushed=0
+              for attempt in {1..3}; do
+                echo "Attempt $attempt: Pulling latest commits and rebasing..."
+                if git pull --rebase -X theirs origin ${{ github.ref_name }} && git push origin ${{ github.ref_name }}; then
+                  echo "Successfully pushed sha256.json!"
+                  pushed=1
+                  break
+                fi
+                echo "Push was rejected, retrying in 3 seconds..."
+                sleep 3
+              done
+
+              if [ $pushed -eq 0 ]; then
+                echo "Error: Failed to push sha256.json after 3 attempts."
+                exit 1
+              fi
+            else
+              echo "No changes in sha256.json to commit."
+            fi
+          fi

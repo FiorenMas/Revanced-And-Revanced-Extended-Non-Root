@@ -88,6 +88,7 @@ jobs:
           # -------------------------------------------------------------
           KNOWN_APPS = [
               ("youtube-music", "YouTube Music"),
+              ("youtubemusic", "YouTube Music"),
               ("youtube_music", "YouTube Music"),
               ("yt-music", "YouTube Music"),
               ("ytmusic", "YouTube Music"),
@@ -95,18 +96,25 @@ jobs:
               ("youtube", "YouTube"),
               ("yt-", "YouTube"),
               ("google-photos", "Google Photos"),
+              ("googlephotos", "Google Photos"),
               ("gg-photos", "Google Photos"),
               ("ggphotos", "Google Photos"),
               ("photos", "Google Photos"),
               ("google-news", "Google News"),
+              ("googlenews", "Google News"),
               ("gg-news", "Google News"),
               ("ggnews", "Google News"),
               ("google-recorder", "Google Recorder"),
+              ("googlerecorder", "Google Recorder"),
               ("gg-recorder", "Google Recorder"),
               ("ggrecorder", "Google Recorder"),
+              ("hola-vpn", "Hola VPN"),
+              ("holavpn", "Hola VPN"),
+              ("hola", "Hola VPN"),
               ("battery-guru", "Battery Guru"),
               ("batteryguru", "Battery Guru"),
               ("brave-browser", "Brave Browser"),
+              ("bravebrowser", "Brave Browser"),
               ("brave", "Brave Browser"),
               ("solid-explorer-file-manager", "Solid Explorer File Manager"),
               ("solid-explorer", "Solid Explorer File Manager"),
@@ -116,8 +124,9 @@ jobs:
               ("nova-launcher", "Nova Launcher"),
               ("novalauncher", "Nova Launcher"),
               ("fx-file-explorer", "FX File Explorer"),
-              ("fx-explorer", "FX File Explorer"),
               ("fxfileexplorer", "FX File Explorer"),
+              ("fx-explorer", "FX File Explorer"),
+              ("fxexplorer", "FX File Explorer"),
               ("prime-video", "Prime Video"),
               ("primevideo", "Prime Video"),
               ("prime", "Prime Video"),
@@ -130,6 +139,9 @@ jobs:
               ("wps", "WPS Office"),
               ("tiktok-asia", "TikTok Asia"),
               ("tiktok_asia", "TikTok Asia"),
+              ("tiktok-asian", "TikTok Asia"),
+              ("tiktokasian", "TikTok Asia"),
+              ("tiktokasia", "TikTok Asia"),
               ("tt-asia", "TikTok Asia"),
               ("tiktok", "TikTok"),
               ("tt-", "TikTok"),
@@ -211,6 +223,7 @@ jobs:
               "Google Photos": "com.google.android.apps.photos",
               "Google News": "com.google.android.apps.magazines",
               "Google Recorder": "com.google.android.apps.recorder",
+              "Hola VPN": "org.hola.play",
               "Facebook": "com.facebook.katana",
               "Messenger": "com.facebook.orca",
               "Instagram": "com.instagram.android",
@@ -279,10 +292,17 @@ jobs:
                       app = name
                       break
 
+              # Fallback for gg- apps (Google <Name>)
               if not app and clean.startswith("gg-"):
                   parts = clean.split("-")
                   if len(parts) > 1:
                       app = f"Google {parts[1].capitalize()}"
+
+              # Fallback for google unhyphenated apps (e.g. googledrive)
+              if not app and clean.startswith("google"):
+                  sub = clean[6:].lstrip("-_")
+                  if sub:
+                      app = f"Google {sub.split('-')[0].capitalize()}"
 
               if not app:
                   parts = clean.split("-")
@@ -315,7 +335,6 @@ jobs:
           # -------------------------------------------------------------
           def extract_apk_metadata(apk_path):
               meta = {}
-              # Method A: Pure Python AXML parser (most reliable)
               try:
                   apk_obj = APK(apk_path)
                   if apk_obj.package:
@@ -325,7 +344,6 @@ jobs:
               except Exception:
                   pass
 
-              # Method B: aapt binary fallback
               if not meta.get("package") or not meta.get("version"):
                   try:
                       out = subprocess.check_output(["aapt", "dump", "badging", apk_path], stderr=subprocess.DEVNULL, text=True)
@@ -529,7 +547,6 @@ jobs:
 
               # Extract metadata directly from the APK binary
               apk_meta = extract_apk_metadata(name)
-
               info = readme_map.get(name) or parse_from_filename(name)
 
               base_app_clean = info["app"].replace(" Beta", "").strip()

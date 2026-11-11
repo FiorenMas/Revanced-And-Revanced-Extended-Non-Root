@@ -22,7 +22,7 @@ patch_dl(){
 	LSPatch_dl
 	patch_dl
 	# Patch Facebook:
-	version="585.0.0.47.54"
+	version="586.0.0.52.53"
 	get_apk "com.facebook.katana" "facebook-arm64-v8a" "bundle" "arm64-v8a" "120-640dpi" "Android 11+"
 	lspatch "facebook-arm64-v8a" "NexAlloy*.apk" "gnadgnaoh" "--injectdex --sigbypasslv 3"
 	# Patch Messenger:

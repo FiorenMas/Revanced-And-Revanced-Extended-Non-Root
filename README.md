@@ -20,7 +20,7 @@ They are open-source scripts for patching various apps like YouTube, YouTube Mus
 > ### Vietnamese "dev" list below:
 > [@AnhsNguyetj](https://t.me/AnhsNguyetj) [haidayne](https://github.com/haidayne) and their telegram channel "Cộng đồng Android Việt Nam"
 > 
-> [@realknoname](https://t.me/realknoname) [soctrungkien](https://github.com/soctrungkien)
+> [@realknoname](https://t.me/realknoname) [soctrungkien](https://github.com/soctrungkien) and [traces here](https://github.com/gnadgnaoh/ZaloXposed)
 > 
 > They stolen code my friend "gnadgnaoh" without credit (and then charge user when using their mod app). Remember don't use their mod if you want support author.
 

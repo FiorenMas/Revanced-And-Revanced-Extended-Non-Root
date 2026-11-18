@@ -481,14 +481,33 @@ jobs:
               if TOPIC_ID and TOPIC_ID.strip():
                   payload["message_thread_id"] = int(TOPIC_ID.strip())
 
-              for _ in range(3):
-                  res = requests.post(url, json=payload)
+              max_attempts = 5
+              for attempt in range(1, max_attempts + 1):
+                  try:
+                      res = requests.post(url, json=payload, timeout=30)
+                  except requests.exceptions.RequestException as exc:
+                      if attempt == max_attempts:
+                          print(f"Telegram request failed after {max_attempts} attempts: {exc}")
+                          return None
+                      wait_sec = 2 ** (attempt - 1)
+                      print(f"Telegram request failed (attempt {attempt}/{max_attempts}): {exc}. Retrying in {wait_sec}s...")
+                      time.sleep(wait_sec)
+                      continue
+
                   if res.status_code == 429:
                       wait_sec = res.json().get("parameters", {}).get("retry_after", 5)
                       print(f"Rate limited by Telegram. Waiting {wait_sec}s...")
                       time.sleep(wait_sec)
                       continue
+
+                  if 500 <= res.status_code < 600 and attempt < max_attempts:
+                      wait_sec = 2 ** (attempt - 1)
+                      print(f"Telegram server error {res.status_code} (attempt {attempt}/{max_attempts}). Retrying in {wait_sec}s...")
+                      time.sleep(wait_sec)
+                      continue
+
                   return res
+
               return res
 
           # -------------------------------------------------------------

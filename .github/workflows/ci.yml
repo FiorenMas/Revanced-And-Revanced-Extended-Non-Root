@@ -181,14 +181,14 @@ jobs:
     secrets: inherit
     with:
       org: "HushFacebook"
-  Patch-hoo-dles:
-    name: Patch hoo-dles
-    needs: check
-    if: ${{ needs.check.outputs.check_hoo_dles == 1 }}
-    uses: ./.github/workflows/manual-patch.yml
-    secrets: inherit
-    with:
-      org: "hoo-dles"
+#  Patch-hoo-dles:
+#    name: Patch hoo-dles
+#    needs: check
+#    if: ${{ needs.check.outputs.check_hoo_dles == 1 }}
+#    uses: ./.github/workflows/manual-patch.yml
+#    secrets: inherit
+#    with:
+#      org: "hoo-dles"
   Patch-bufferk:
     name: Patch bufferk
     needs: check

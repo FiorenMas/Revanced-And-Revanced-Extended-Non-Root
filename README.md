@@ -142,7 +142,7 @@ Download
 
 ## [MicroG RE:](https://github.com/MorpheApp/MicroG-RE)
 
-[![Release](https://img.shields.io/github/v/release/MorpheApp/MicroG-RE?label=All%20Architectures&style=for-the-badge)](https://github.com/MorpheApp/MicroG-RE/releases) 
+[![Release](https://img.shields.io/github/v/release/MorpheApp/MicroG-RE?label=Universal&style=for-the-badge)](https://github.com/MorpheApp/MicroG-RE/releases) 
 
 ---
 

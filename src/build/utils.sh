@@ -185,20 +185,69 @@ req() {
     _req "$1" "$2"
 }
 
-detect_version() {
+detect_version_morphe() {
 	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
-	  local jar_prefix="morphe-desktop-" patch_glob="*.mpp"
+	  local morphe_jar="morphe-desktop-" mpp_glob="*.mpp"
 
-	  if [[ $(ls "${jar_prefix}"*.jar 2>/dev/null) =~ ${jar_prefix}([0-9]+) ]]; then
-	    list_patches_flags="list-patches --with-packages --with-versions --with-options --patches"
-	    version=$(java -jar "${jar_prefix}"*.jar $list_patches_flags $patch_glob | awk -v pkg="$1" '
+	  if [[ $(ls "${morphe_jar}"*.jar 2>/dev/null) =~ ${morphe_jar}([0-9]+) ]]; then
+	    local list_patches_flags="list-patches --with-packages --with-versions --with-options --patches"
+	    version=$(java -jar "${morphe_jar}"*.jar $list_patches_flags $mpp_glob | awk -v pkg="$1" '
 		  BEGIN { found = 0; printing = 0 }
 		  /^Index:/ { if (printing) exit; found = 0 }
 		  /Package name: / { if ($3 == pkg) found = 1 }
 		  /Compatible versions:/ { if (found) printing = 1; next }
 		  printing && $1 ~ /^[0-9]+\./ { print $1 }
 		' | sort -V | tail -n1)
+	  else
+	    yellow_log "[!] ${morphe_jar}*.jar not found, cannot detect version from *.mpp"
 	  fi
+	fi
+}
+
+detect_version_reseam() {
+	if [ -z "$version" ] && [ "$lock_version" != "1" ]; then
+	  local reseam_cli="./reseam-linux-x64" patches_bundle
+	  patches_bundle=$(ls ./*.reseam 2> /dev/null | head -n1)
+	  [ -z "$patches_bundle" ] && { red_log "[-] No .reseam patch bundle found"; return 1; }
+	  [ -f "$reseam_cli" ] || { red_log "[-] Reseam CLI not found: $reseam_cli"; return 1; }
+	  chmod +x "$reseam_cli" 2> /dev/null
+
+	  version=$("$reseam_cli" bundle list "$patches_bundle" --json 2> /dev/null | jq -r --arg pkg "$1" '
+		[.patches[] | (.compatibility.packages // [])[] | select(.package == $pkg) | .versions[] | split(" ")[0]]
+		| unique | .[]
+	  ' 2> /dev/null | sort -V | tail -n1)
+
+	  if [ -z "$version" ]; then
+	    version=$("$reseam_cli" bundle list "$patches_bundle" 2> /dev/null | awk -v pkg="$1" -F'[()]' '
+		  /packages: / && index($0, " " pkg " (") {
+		    n = split($2, list, ", *")
+		    for (i = 1; i <= n; i++) { split(list[i], part, " "); if (part[1] ~ /^[0-9]/) print part[1] }
+		  }
+		' | sort -V | tail -n1)
+	  fi
+	fi
+}
+
+patch_format() {
+	if [ -n "$(ls ./*.mpp 2> /dev/null | head -n1)" ]; then
+		echo "morphe"
+	elif [ -n "$(ls ./*.reseam 2> /dev/null | head -n1)" ]; then
+		echo "reseam"
+	fi
+}
+
+detect_version() {
+	local patch_type
+	patch_type=$(patch_format)
+	if [ -z "$patch_type" ]; then
+		yellow_log "[!] No .mpp or .reseam patch file found, skipping version detection [$1]"
+	elif [ -n "$version" ] || [ "$lock_version" == "1" ]; then
+		green_log "[+] Using pinned version: $version [$1]"
+	else
+		case "$patch_type" in
+			morphe) detect_version_morphe "$1" ;;
+			reseam) detect_version_reseam "$1" ;;
+		esac
 	fi
 }
 
@@ -732,43 +781,212 @@ telegram_dl() {
 
 #################################################
 
-# Patching apps with CLI:
+reseam_known_patch() {
+	jq -e --arg n "$2" 'any(.patches[]; .name == $n or .id == $n)' > /dev/null 2>&1 <<< "$1"
+}
+
+reseam_known_option() {
+	jq -e --arg n "$2" --arg k "$3" \
+		'any(.patches[]; (.name == $n or .id == $n) and any(.options[]?; .key == $k))' \
+		> /dev/null 2>&1 <<< "$1"
+}
+
+reseam_catalog() {
+	local bundles=() bundle
+	for bundle in "$@"; do
+		bundles+=("$bundle")
+	done
+	jq -s '{patches: [.[].patches[]]}' < <(
+		for bundle in "${bundles[@]}"; do
+			./reseam-linux-x64 bundle list "$bundle" --json 2> /dev/null
+		done
+	) 2> /dev/null
+}
+
+reseam_selection_args() {
+	local options_file="./src/options/$1.json"
+	local catalog="$2"
+	local kind patch rest args="" enables="" name
+	local exclusive=""
+
+	if ! command -v jq > /dev/null 2>&1; then
+		yellow_log "[!] jq not found, Reseam patch selection left at its defaults" >&2
+		return 0
+	fi
+	if [ -z "$catalog" ]; then
+		red_log "[-] Cannot read the patch list of the Reseam bundle" >&2
+		return 1
+	fi
+
+	while IFS= read -r name; do
+		[ -z "$name" ] && continue
+		if reseam_known_patch "$catalog" "$name"; then
+			enables+=" --enable \"$name\""
+			exclusive=1
+		else
+			yellow_log "[!] Reseam bundle has no patch \"$name\", skipped" >&2
+		fi
+	done < <(printf '%s' "$includePatches" | grep -o '"[^"]*"' | tr -d '"')
+
+	while IFS= read -r name; do
+		[ -z "$name" ] && continue
+		if reseam_known_patch "$catalog" "$name"; then
+			args+=" --disable \"$name\""
+		else
+			yellow_log "[!] Reseam bundle has no patch \"$name\", skipped" >&2
+		fi
+	done < <(printf '%s' "$excludePatches" | grep -o '"[^"]*"' | tr -d '"')
+
+	if [ -f "$options_file" ]; then
+		while IFS=$'\t' read -r kind patch rest; do
+			[ -z "$kind" ] && continue
+			if ! reseam_known_patch "$catalog" "$patch"; then
+				yellow_log "[!] Reseam bundle has no patch \"$patch\", skipped" >&2
+				continue
+			fi
+			case "$kind" in
+				enable)
+					enables+=" --enable \"$patch\""
+					;;
+				disable)
+					args+=" --disable \"$patch\""
+					;;
+				option)
+					if reseam_known_option "$catalog" "$patch" "${rest%%=*}"; then
+						args+=" --option \"$patch.$rest\""
+					else
+						yellow_log "[!] Reseam bundle has no option \"${rest%%=*}\" for \"$patch\", skipped" >&2
+					fi
+					;;
+			esac
+		done < <(jq -r '
+			(if type == "array" then .[] else . end) | (.patches // {}) | to_entries[] | .key as $p
+			| ((.value.options // {}) | to_entries[] | "option\t\($p)\t\(.key)=\(.value | tostring)"),
+			  (select(.value.enabled == true) | "enable\t\($p)\t"),
+			  (select(.value.enabled == false) | "disable\t\($p)\t")
+		' "$options_file" 2> /dev/null)
+	fi
+
+	[ -n "$exclusive" ] && args=" --preset none$enables$args" || args="$enables$args"
+	printf '%s' "$args"
+}
+
+reseam_patch() {
+	local app="$1" options_key="$2" mode="$3" abi="$4"
+	local bundles=() bundle bundle_args="" args trust_args="" trust abi_args="" out rc
+
+	[ -f "./reseam-linux-x64" ] || { red_log "[-] Reseam CLI not found: ./reseam-linux-x64"; exit 1; }
+	[ -f "./src/keystore/reseam.p12" ] || { red_log "[-] Reseam keystore not found: ./src/keystore/reseam.p12"; exit 1; }
+	chmod +x ./reseam-linux-x64 2> /dev/null
+
+	if [ "$mode" = "multi" ]; then
+		for bundle in ./*.reseam; do
+			[ -f "$bundle" ] || continue
+			bundles+=("$bundle")
+		done
+	else
+		bundle=$(ls ./*.reseam 2> /dev/null | head -n1)
+		[ -n "$bundle" ] && bundles+=("$bundle")
+	fi
+	[ ${#bundles[@]} -eq 0 ] && { red_log "[-] No .reseam patch bundle found"; exit 1; }
+
+	for bundle in "${bundles[@]}"; do
+		bundle_args+=" --bundle \"$bundle\""
+		trust=$(./reseam-linux-x64 bundle list "$bundle" 2> /dev/null | sed -n 's/^signer: \([0-9a-fA-F]\{64\}\).*/\1/p' | head -n1)
+		[ -z "$trust" ] && { red_log "[-] Cannot read the signer key of $bundle"; exit 1; }
+		trust_args+=" --trust \"$trust\""
+	done
+
+	out="./release/$app-$options_key.apk"
+	if [ -n "$abi" ]; then
+		abi_args=" --abi \"$abi\""
+		out="./release/$app-$abi-$options_key.apk"
+	fi
+
+	args=$(reseam_selection_args "$options_key" "$(reseam_catalog "${bundles[@]}")") || exit 1
+	eval "./reseam-linux-x64 patch$bundle_args$trust_args$abi_args$args --output \"$out\" --keystore \"./src/keystore/reseam.p12\" --keystore-password \"reseam\" --leave-out-failed \"./download/$app.apk\""
+	rc=$?
+	return $rc
+}
+
+morphe_patch() {
+	local app="$1" options_key="$2" mode="$3" abi="$4"
+	local mpp_args="" mpp_file out="./release/$app-$options_key.apk"
+	local split_args="" continue_flag=" --continue-on-error"
+
+	if [ -n "$abi" ]; then
+		split_args=" --striplibs $abi"
+		out="./release/$app-$abi-$options_key.apk"
+		continue_flag=""
+	fi
+
+	if [ "$mode" = "multi" ]; then
+		for mpp_file in *.mpp; do
+			[ -f "$mpp_file" ] || continue
+			mpp_args+=" -p \"$mpp_file\""
+		done
+	else
+		mpp_file=$(ls ./*.mpp 2> /dev/null | head -n1)
+		mpp_args=" -p \"$mpp_file\""
+	fi
+
+	eval java -jar morphe-desktop-*.jar patch$mpp_args$excludePatches$includePatches --options-file ./src/options/$options_key.json$split_args --keystore=./src/keystore/morphe.keystore --force$continue_flag --out="$out" ./download/$app.apk
+	return $?
+}
+
 patch() {
 	green_log "[+] Patching $1:"
-	if [ -f "./download/$1.apk" ]; then
-		echo "Patching with Morphe"
-		unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
-		eval java -jar morphe-desktop-*.jar patch -p *.mpp --options-file ./src/options/$2.json --out=./release/$1-$2.apk$excludePatches$includePatches --keystore=./src/keystore/morphe.keystore --force --continue-on-error ./download/$1.apk
-		unset version
-		unset lock_version
-		unset excludePatches
-		unset includePatches
-	else
+	if [ ! -f "./download/$1.apk" ]; then
 		red_log "[-] Not found $1.apk"
 		exit 1
 	fi
+
+	local patch_type
+	patch_type=$(patch_format)
+	if [ -z "$patch_type" ]; then
+		red_log "[-] No patch bundle found (*.mpp or *.reseam)"
+		exit 1
+	fi
+
+	echo "Patching with $patch_type"
+	unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
+	if [ "$patch_type" = "morphe" ]; then
+		morphe_patch "$1" "$2" single || { red_log "[-] Morphe patch failed: $1"; exit 1; }
+	else
+		reseam_patch "$1" "$2" single || { red_log "[-] Reseam patch failed: $1"; exit 1; }
+	fi
+	unset version
+	unset lock_version
+	unset excludePatches
+	unset includePatches
 }
 
 patch_multi() {
 	green_log "[+] Patching $1:"
-	if [ -f "./download/$1.apk" ]; then
-		echo "Patching with Morphe"
-		local mpp_args=""
-		for mpp_file in *.mpp; do
-			[ -f "$mpp_file" ] || continue
-			mpp_args="$mpp_args -p \"$mpp_file\"$excludePatches$includePatches"
-		done
-		eval java -jar morphe-desktop-*.jar patch $mpp_args --options-file ./src/options/$2.json --out=./release/$1-$2.apk --keystore=./src/keystore/morphe.keystore --force --continue-on-error ./download/$1.apk
-  		unset version
-		unset lock_version
-		unset excludePatches
-		unset includePatches
-	else
+	if [ ! -f "./download/$1.apk" ]; then
 		red_log "[-] Not found $1.apk"
 		exit 1
 	fi
-}
 
+	local patch_type
+	patch_type=$(patch_format)
+	if [ -z "$patch_type" ]; then
+		red_log "[-] No patch bundle found (*.mpp or *.reseam)"
+		exit 1
+	fi
+
+	echo "Patching with $patch_type"
+	unset CI GITHUB_ACTION GITHUB_ACTIONS GITHUB_ACTOR GITHUB_ENV GITHUB_EVENT_NAME GITHUB_EVENT_PATH GITHUB_HEAD_REF GITHUB_JOB GITHUB_REF GITHUB_REPOSITORY GITHUB_RUN_ID GITHUB_RUN_NUMBER GITHUB_SHA GITHUB_WORKFLOW GITHUB_WORKSPACE RUN_ID RUN_NUMBER
+	if [ "$patch_type" = "morphe" ]; then
+		morphe_patch "$1" "$2" multi || { red_log "[-] Morphe patch failed: $1"; exit 1; }
+	else
+		reseam_patch "$1" "$2" multi || { red_log "[-] Reseam patch failed: $1"; exit 1; }
+	fi
+	unset version
+	unset lock_version
+	unset excludePatches
+	unset includePatches
+}
 
 lspatch() {
 	green_log "[+] Patching $1:"
@@ -863,19 +1081,19 @@ apk_editor() {
 	(cd "$dir" && zip -qr "../$apk-$keep.apk" .)
 }
 
-# Split architectures using Morphe cli
+# Split architectures using Morphe cli or Reseam cli
 split_arch() {
-	green_log "[+] Splitting $1 to ${archs[i]}:"
-	if [ -f "./download/$1.apk" ]; then
-		eval java -jar morphe-desktop-*.jar patch \
-		-p *.mpp $excludePatches$includePatches --options-file ./src/options/$2.json \
-		--striplibs ${archs[i]} \
-		--keystore=./src/keystore/morphe.keystore --force \
-		--out=./release/$1-${archs[i]}-$2.apk \
-		./download/$1.apk
-	else
+	local patch_type
+	patch_type=$(patch_format)
+	if [ ! -f "./download/$1.apk" ]; then
 		red_log "[-] Not found $1.apk"
 		exit 1
+	fi
+	green_log "[+] Splitting $1 to ${archs[i]}:"
+	if [ "$patch_type" = "morphe" ]; then
+		morphe_patch "$1" "$2" single "${archs[i]}" || { red_log "[-] Morphe split failed: $1"; exit 1; }
+	else
+		reseam_patch "$1" "$2" single "${archs[i]}" || { red_log "[-] Reseam split failed: $1"; exit 1; }
 	fi
 }
 

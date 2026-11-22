@@ -158,6 +158,15 @@ Download
 | [x86](../../releases/download/all/youtube-x86-morphe.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-morphe.apk)                 |
 | [x86_64](../../releases/download/all/youtube-x86_64-morphe.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-morphe.apk)           |
 
+### [Reseam:](https://github.com/Reseam/patches)
+
+| [Stable version](https://github.com/Reseam/patches/releases/latest) |
+| ------------------------------------------------------------------ |
+| [Universal](../../releases/download/all/youtube-reseam.apk)        |
+| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-reseam.apk) |
+| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-reseam.apk) |
+| [x86](../../releases/download/all/youtube-x86-reseam.apk)          |
+| [x86_64](../../releases/download/all/youtube-x86_64-reseam.apk)    |
 
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
@@ -244,6 +253,12 @@ Download
 | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
 | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-morphe.apk)    | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-morphe.apk)    |
 
+### [Reseam:](https://github.com/Reseam/patches)
+
+| [Stable version](https://github.com/Reseam/patches/releases/latest)              |
+| -------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-reseam.apk)      |
+
 ### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
 
 | [Stable version](https://github.com/anddea/revanced-patches/releases/latest)           | [Beta version](https://github.com/anddea/revanced-patches/releases)                  |
@@ -289,6 +304,10 @@ This app might crash 2-3 times on the first startup. Don't worry - just try open
 And if you can't install Messenger back again because they check the sign, the app should need Messenger [from here](README.md#gnadgnaoh-1) too.
 
 [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh.apk)
+
+### [Hushfacebook:](https://github.com/SysAdminDoc/Hushfacebook)
+
+[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-hushfacebook.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -344,6 +363,10 @@ And if you can't install Messenger back again because they check the sign, the a
 
 [Universal](../../releases/download/all/twitter-piko-newx.apk)
 
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Universal](../../releases/download/all/twitter-reseam.apk)
+
 ---
 
 ### [Instagram:](https://play.google.com/store/apps/details?id=com.instagram.android)
@@ -357,6 +380,10 @@ And if you can't install Messenger back again because they check the sign, the a
 ### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
 
 [Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh.apk)
+
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-reseam.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -384,6 +411,10 @@ And if you can't install Messenger back again because they check the sign, the a
 ### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
 
 [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-derevanced.apk)
+
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Arm64-v8a & Android 9+](../../releases/download/all/threads-arm64-v8a-reseam.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -429,6 +460,10 @@ And if you can't install Messenger back again because they check the sign, the a
 
 [Universal](../../releases/download/all/tiktok-derevanced.apk)
 
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Universal](../../releases/download/all/tiktok-reseam.apk)
+
 <details>
   <summary>Outdated patches</summary>
 
@@ -466,6 +501,12 @@ And if you can't install Messenger back again because they check the sign, the a
 
 [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-derevanced.apk)
 
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Universal](../../releases/download/all/twitch-reseam.apk)
+
+[Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-reseam.apk)
+
 <details>
   <summary>Outdated patches</summary>
 
@@ -488,6 +529,12 @@ And if you can't install Messenger back again because they check the sign, the a
 | -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
 | [Universal](../../releases/download/all/reddit-morphe.apk)   | [Universal](../../releases/download/all/reddit-beta-morphe.apk)   |
 | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-morphe.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-beta-morphe.apk) |
+
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Universal](../../releases/download/all/reddit-reseam.apk)
+
+[Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-reseam.apk)
 
 <details>
   <summary>Outdated patches</summary>
@@ -521,6 +568,10 @@ And if you can't install Messenger back again because they check the sign, the a
 ### [browzomje:](https://github.com/browzomje/browzomje-patches)
 
 [Universal](../../releases/download/all/pinterest-browzomje.apk)
+
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Universal](../../releases/download/all/pinterest-reseam.apk)
 
 ---
 
@@ -871,6 +922,10 @@ And if you can't install Messenger back again because they check the sign, the a
 
 [Universal](../../releases/download/all/discord-revenge.apk )
 
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Universal](../../releases/download/all/discord-reseam.apk)
+
 ---
 
 ### [Telegram:](https://play.google.com/store/apps/details?id=org.telegram.messenger)
@@ -1035,6 +1090,15 @@ Requires MicroG to be installed
 [Patches](https://github.com/MorpheApp/morphe-patches) - [GPL-3.0](https://github.com/MorpheApp/morphe-patches/blob/main/LICENSE)
 
 [CLI](https://github.com/MorpheApp/morphe-cli) - [GPL-3.0](https://github.com/MorpheApp/morphe-cli/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>Reseam</summary>
+
+[Patches](https://github.com/Reseam/patches) - [AGPL-3.0](https://github.com/Reseam/patches/blob/main/LICENSE)
+
+[CLI](https://github.com/Reseam/reseam) - [AGPL-3.0](https://github.com/Reseam/reseam/blob/main/LICENSE)
 
 </details>
 

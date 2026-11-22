@@ -16,6 +16,7 @@ on:
         options:
           - 'Morphe'
           - 'Morphe Beta'
+          - 'Reseam'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
@@ -97,6 +98,30 @@ jobs:
       - name: Releasing APK files
         id: release-morphe-beta
         if: steps.check-gh-morphe-beta.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_reseam:
+    name: Patch Reseam
+    if: ${{ github.event.inputs.org == 'Reseam' || inputs.org == 'Reseam' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2, 3, 4, 5]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-reseam
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-reseam
+        if: steps.check-gh-reseam.outputs.internet_error == '0'
+        run: bash src/build/reseam.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-reseam
+        if: steps.check-gh-reseam.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_derv:
     name: Patch DeRevanced Stable

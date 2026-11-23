@@ -137,6 +137,8 @@ dl_gl() {
 get_patches_key() {
 	excludePatches=""
 	includePatches=""
+	keepPrefix=""
+	exclusivePatches=""
 	excludeLinesFound=false
 	includeLinesFound=false
 
@@ -145,6 +147,10 @@ get_patches_key() {
 
 	sed -i 's/\r$//' "$patchDir/include-patches"
 	sed -i 's/\r$//' "$patchDir/exclude-patches"
+	if [ -f "$patchDir/keep-prefix" ]; then
+		sed -i 's/\r$//' "$patchDir/keep-prefix"
+		keepPrefix=$(grep -m1 -v '^[[:space:]]*$' "$patchDir/keep-prefix" | sed 's/[[:space:]]*$//')
+	fi
 
 	while IFS= read -r line1 || [[ -n "$line1" ]]; do
 		[[ -z "$line1" ]] && continue
@@ -166,8 +172,21 @@ get_patches_key() {
 		includePatches=""
 	fi
 
+	if [ -f "$patchDir/exclusive" ]; then
+		sed -i 's/\r$//' "$patchDir/exclusive"
+		case "$(grep -m1 -v '^[[:space:]]*$' "$patchDir/exclusive" | tr -d '[:space:]')" in
+			1|true|yes|on) exclusivePatches=" --exclusive" ;;
+		esac
+	fi
+	if [ -n "$exclusivePatches" ] && [ "$includeLinesFound" = false ]; then
+		yellow_log "[!] exclusive is on but include-patches is empty, ignoring: $1"
+		exclusivePatches=""
+	fi
+
 	export excludePatches
 	export includePatches
+	export keepPrefix
+	export exclusivePatches
 }
 
 #################################################
@@ -920,7 +939,11 @@ reseam_selection_args() {
 		' "$options_file" 2> /dev/null)
 	fi
 
-	[ -n "$exclusive" ] && args=" --preset none$enables$args" || args="$enables$args"
+	if [ -n "$exclusive" ] || [ -n "$exclusivePatches" ]; then
+		args=" --preset none$enables$args"
+	else
+		args="$enables$args"
+	fi
 	printf '%s' "$args"
 }
 
@@ -962,10 +985,67 @@ reseam_patch() {
 	return $rc
 }
 
+morphe_auto_exclude() {
+	local prefix="$1"
+	shift
+	local bundles=("$@")
+	local key="$prefix|${bundles[*]}"
+	local name pkgs p bundle catalog records family_pkgs=" "
+
+	if [ "$_MORPHE_AUTO_KEY" != "$key" ]; then
+		local list_args=()
+		for bundle in "${bundles[@]}"; do
+			list_args+=("--patches=$bundle")
+		done
+		catalog=$(java -jar morphe-desktop-*.jar list-patches --with-packages "${list_args[@]}" 2> /dev/null)
+		if [ -z "$catalog" ]; then
+			red_log "[-] Cannot read the Morphe patch list" >&2
+			return 1
+		fi
+		records=$(printf '%s\n' "$catalog" | awk '
+			function flush() { if (name != "") print name "\t" pkgs; name = ""; pkgs = "" }
+			/^Index: / { flush(); next }
+			/^Name: / { name = substr($0, 7); next }
+			/^[[:space:]]*Package name: / {
+				p = $0
+				sub(/^[[:space:]]*Package name: /, "", p)
+				sub(/[[:space:]]+$/, "", p)
+				pkgs = (pkgs == "" ? p : pkgs "," p)
+				next
+			}
+			END { flush() }
+		')
+		local -a pkgs_list
+		while IFS=$'\t' read -r name pkgs; do
+			[ -z "$name" ] && continue
+			case "$name" in "$prefix"*) ;; *) continue ;; esac
+			IFS=',' read -r -a pkgs_list <<< "$pkgs"
+			for p in "${pkgs_list[@]}"; do
+				case "$family_pkgs" in
+					*" $p "*) ;;
+					*) family_pkgs+="$p " ;;
+				esac
+			done
+		done <<< "$records"
+		_MORPHE_AUTO_ARGS=""
+		while IFS=$'\t' read -r name pkgs; do
+			[ -z "$name" ] && continue
+			case "$name" in "$prefix"*) continue ;; esac
+			[[ "$pkgs" == *,* ]] && continue
+			case "$family_pkgs" in
+				*" $pkgs "*) _MORPHE_AUTO_ARGS+=" -d \"$name\"" ;;
+			esac
+		done <<< "$records"
+		_MORPHE_AUTO_KEY="$key"
+	fi
+	printf '%s' "$_MORPHE_AUTO_ARGS"
+}
+
 morphe_patch() {
 	local app="$1" options_key="$2" mode="$3" abi="$4"
 	local mpp_args="" mpp_file out="./release/$app-$options_key.apk"
-	local split_args="" continue_flag=" --continue-on-error"
+	local split_args="" continue_flag=" --continue-on-error" auto_args=""
+	local bundles=()
 
 	if [ -n "$abi" ]; then
 		split_args=" --striplibs $abi"
@@ -977,13 +1057,19 @@ morphe_patch() {
 		for mpp_file in *.mpp; do
 			[ -f "$mpp_file" ] || continue
 			mpp_args+=" -p \"$mpp_file\""
+			bundles+=("$mpp_file")
 		done
 	else
 		mpp_file=$(ls ./*.mpp 2> /dev/null | head -n1)
 		mpp_args=" -p \"$mpp_file\""
+		bundles+=("$mpp_file")
 	fi
 
-	eval java -jar morphe-desktop-*.jar patch$mpp_args$excludePatches$includePatches --options-file ./src/options/$options_key.json$split_args --keystore=./src/keystore/morphe.keystore --force$continue_flag --out="$out" ./download/$app.apk
+	if [ -n "$keepPrefix" ]; then
+		auto_args=$(morphe_auto_exclude "$keepPrefix" "${bundles[@]}") || return 1
+	fi
+
+	eval java -jar morphe-desktop-*.jar patch$mpp_args$excludePatches$includePatches$exclusivePatches$auto_args --options-file ./src/options/$options_key.json$split_args --keystore=./src/keystore/morphe.keystore --force$continue_flag --out="$out" ./download/$app.apk
 	return $?
 }
 
@@ -1012,6 +1098,8 @@ patch() {
 	unset lock_version
 	unset excludePatches
 	unset includePatches
+	unset keepPrefix
+	unset exclusivePatches
 }
 
 patch_multi() {
@@ -1039,6 +1127,8 @@ patch_multi() {
 	unset lock_version
 	unset excludePatches
 	unset includePatches
+	unset keepPrefix
+	unset exclusivePatches
 }
 
 lspatch() {

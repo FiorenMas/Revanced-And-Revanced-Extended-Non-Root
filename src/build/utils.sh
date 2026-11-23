@@ -9,8 +9,8 @@ pup="./pup"
 #Setup APKEditor for install combine split apks
 wget -q -O ./APKEditor.jar https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar
 APKEditor="./APKEditor.jar"
-#Find lastest user_agent
-user_agent=$(wget -qO- https://www.whatismybrowser.com/guides/the-latest-user-agent/firefox | tr '\n' ' ' | sed 's#</tr>#\n#g' | grep 'Firefox (Standard)' | sed -n 's/.*<span class="code">\([^<]*Android[^<]*\)<\/span>.*/\1/p') \
+#Seed user_agent; replaced at runtime by the UA of whichever CF bypass service answered
+user_agent=$(wget -qO- --timeout=15 --tries=1 https://www.whatismybrowser.com/guides/the-latest-user-agent/firefox | tr '\n' ' ' | sed 's#</tr>#\n#g' | grep 'Firefox (Standard)' | sed -n 's/.*<span class="code">\([^<]*Android[^<]*\)<\/span>.*/\1/p') \
 || user_agent=
 [ -z "$user_agent" ] && {
   user_agent='Mozilla/5.0 (Android 16; Mobile; rv:146.0) Gecko/146.0 Firefox/146.0'
@@ -266,7 +266,9 @@ _fs_get() {
 			html=$(echo "$response" | jq -r '.solution.response // empty')
 			export FS_COOKIES
 			FS_COOKIES=$(echo "$response" | jq -r '[.solution.cookies[] | .name + "=" + .value] | join("; ")')
-			user_agent=$(echo "$response" | jq -r '.solution.userAgent // empty')
+			local fs_ua
+			fs_ua=$(echo "$response" | jq -r '.solution.userAgent // empty')
+			[[ -n "$fs_ua" ]] && user_agent="$fs_ua"
 			return 0
 		fi
 		yellow_log "[!] FlareSolverr attempt $attempt/$max_retries failed: $url"
@@ -318,6 +320,13 @@ _cf_get() {
 		_FFS_FAILED=1
 	fi
 	_cfb_get "$@"
+}
+
+_is_archive() {
+	local f=$1 magic
+	[[ -s "$f" ]] || return 1
+	magic=$(head -c 4 "$f" 2>/dev/null | od -An -tx1 | tr -d ' \n')
+	[[ "$magic" == "504b0304" || "$magic" == "504b0506" ]]
 }
 
 get_apk() {
@@ -554,16 +563,39 @@ get_apk() {
 	final_href=$(echo "$final_href" | sed 's/&amp;/\&/g')
 
 	echo "$base_url$final_href"
-	local cookie_args=()
-	[[ -n "$FS_COOKIES" ]] && cookie_args=(--header "Cookie: $FS_COOKIES")
-	wget -nv -O "./download/$base_apk" \
-		--header="User-Agent: $user_agent" \
-		--referer="$base_url$dl_btn_href" \
-		"${cookie_args[@]}" \
-		--timeout=120 \
-		"$base_url$final_href"
 
-	if [[ -f "./download/$base_apk" ]]; then
+	local dl_ok=0 attempt
+	for attempt in 1 2 3; do
+		local cookie_args=()
+		[[ -n "$FS_COOKIES" ]] && cookie_args=(--header "Cookie: $FS_COOKIES")
+		rm -f "./download/$base_apk"
+		wget -nv -O "./download/$base_apk" \
+			--header="User-Agent: $user_agent" \
+			--header="Accept: */*" \
+			--referer="$base_url$dl_btn_href" \
+			"${cookie_args[@]}" \
+			--timeout=120 \
+			"$base_url$final_href"
+
+		if _is_archive "./download/$base_apk"; then
+			dl_ok=1
+			break
+		fi
+
+		yellow_log "[!] Download attempt $attempt/3 returned invalid content (Cloudflare), refreshing session"
+		rm -f "./download/$base_apk"
+		_cf_get "$base_url$dl_btn_href" || return 1
+		final_href=$(echo "$html" | $pup 'a#download-link attr{href}' | head -1)
+		[[ -z "$final_href" ]] && \
+			final_href=$(echo "$html" | grep -oP 'id="download-link"[^>]*href="\K[^"]+' | head -1)
+		if [[ -z "$final_href" ]]; then
+			red_log "[-] Could not find final download link"
+			return 1
+		fi
+		final_href=$(echo "$final_href" | sed 's/&amp;/\&/g')
+	done
+
+	if [[ "$dl_ok" -eq 1 ]]; then
 		green_log "[+] Successfully downloaded $apk_name"
 	else
 		red_log "[-] Failed to download $apk_name"
@@ -632,16 +664,37 @@ get_apkpure() {
 	fi
 	echo "$download_url"
 
-	local cookie_args=()
-	[[ -n "$FS_COOKIES" ]] && cookie_args=(--header "Cookie: $FS_COOKIES")
-	wget -nv -O "./download/$base_apk" \
-		--header="User-Agent: $user_agent" \
-		--referer="$dl_page_url" \
-		"${cookie_args[@]}" \
-		--timeout=120 \
-		"$download_url"
+	local dl_ok=0 attempt
+	for attempt in 1 2 3; do
+		local cookie_args=()
+		[[ -n "$FS_COOKIES" ]] && cookie_args=(--header "Cookie: $FS_COOKIES")
+		rm -f "./download/$base_apk"
+		wget -nv -O "./download/$base_apk" \
+			--header="User-Agent: $user_agent" \
+			--header="Accept: */*" \
+			--referer="$dl_page_url" \
+			"${cookie_args[@]}" \
+			--timeout=120 \
+			"$download_url"
 
-	if [[ -f "./download/$base_apk" ]]; then
+		if _is_archive "./download/$base_apk"; then
+			dl_ok=1
+			break
+		fi
+
+		yellow_log "[!] Download attempt $attempt/3 returned invalid content (Cloudflare), refreshing session"
+		rm -f "./download/$base_apk"
+		_cf_get "$dl_page_url" || return 1
+		download_url=$(echo "$html" | $pup 'a#download_link attr{href}' | head -1)
+		[[ -z "$download_url" ]] && \
+			download_url=$(echo "$html" | grep -oP '<a[^>]+id="download_link"[^>]+href="\Khttps://[^"]+' | head -1)
+		if [[ -z "$download_url" ]]; then
+			red_log "[-] Could not find download link on APKPure"
+			return 1
+		fi
+	done
+
+	if [[ "$dl_ok" -eq 1 ]]; then
 		green_log "[+] Successfully downloaded $apk_name"
 	else
 		red_log "[-] Failed to download $apk_name"

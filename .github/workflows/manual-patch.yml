@@ -21,7 +21,6 @@ on:
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
           - 'Twitter Piko Beta'
-          - 'Piko NewX'
           - 'DeRevanced'
           - 'HushFacebook'
           - 'hoo-dles'
@@ -31,7 +30,6 @@ on:
           - 'docbt'
           - 'browzomje'
           - 'rushiranpise'
-          - 'BiliRoamingM'
           - 'Scrazzz Patches'
           - 'Dropped Patches - indrastorms'
   workflow_call:
@@ -251,26 +249,6 @@ jobs:
         id: release-piko-beta
         if: steps.check-gh-piko-beta.outputs.internet_error == '0'
         uses: ./.github/actions/release
-  patch_twitter_piko_newx:
-    name: Patch Twitter Piko NewX
-    if: ${{ github.event.inputs.org == 'Piko NewX' || inputs.org == 'Piko NewX' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v6.0.2
-      - name: Preparing to patch
-        uses: ./.github/actions/preparing
-      - name: Check github connection
-        id: check-gh-piko-newx
-        run: bash src/etc/connection.sh
-      - name: Patch apk
-        id: patch-piko-newx
-        if: steps.check-gh-piko-newx.outputs.internet_error == '0'
-        run: bash src/build/Piko-Newx.sh
-      - name: Releasing APK files
-        id: release-piko-newx
-        if: steps.check-gh-piko-newx.outputs.internet_error == '0'
-        uses: ./.github/actions/release
   patch_hush_facebook:
     name: Patch HushFacebook
     if: ${{ github.event.inputs.org == 'HushFacebook' || inputs.org == 'HushFacebook' }}
@@ -422,26 +400,6 @@ jobs:
       - name: Releasing APK files
         id: release-docbt
         if: steps.check-gh-docbt.outputs.internet_error == '0'
-        uses: ./.github/actions/release
-  patch_BiliRoamingM:
-    name: Patch BiliRoamingM
-    if: ${{ github.event.inputs.org == 'BiliRoamingM' || inputs.org == 'BiliRoamingM' }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4.1.1
-      - name: Preparing to patch
-        uses: ./.github/actions/preparing
-      - name: Check github connection
-        id: check-gh-BiliRoamingM
-        run: bash src/etc/connection.sh
-      - name: Patch apk
-        id: patch-BiliRoamingM
-        if: steps.check-gh-BiliRoamingM.outputs.internet_error == '0'
-        run: bash src/build/BiliRoamingM.sh
-      - name: Releasing APK files
-        id: release-BiliRoamingM
-        if: steps.check-gh-BiliRoamingM.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_scrazzz_Patches:
     name: Scrazzz Patches Revanced

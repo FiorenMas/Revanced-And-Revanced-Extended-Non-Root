@@ -171,8 +171,8 @@
 			"example_url": "https://www.apkmirror.com/apk/nextapp-inc/fx-file-explorer/fx-file-explorer-9-1-0-0-release/"
 		},
 		"org.telegram.messenger": {
-			"list_url": "https://www.apkmirror.com/uploads/?appcategory=telegram-web-version",
-			"example_url": "https://www.apkmirror.com/apk/telegram-fz-llc/telegram-web-version/telegram-web-version-12-7-2-release/"
+			"list_url": "https://www.apkmirror.com/uploads/?appcategory=telegram",
+			"example_url": "https://www.apkmirror.com/apk/telegram-fz-llc/telegram/telegram-12-10-6-release/"
 		},
 		"pl.solidexplorer2": {
 			"list_url": "https://www.apkmirror.com/uploads/?appcategory=solid-explorer-file-manager",

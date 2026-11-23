@@ -78,6 +78,13 @@ Reseam_dl(){
 	get_apk "com.instagram.barcelona" "threads-arm64-v8a" "bundle" "arm64-v8a" "160-640dpi" "Android 9.0+"
 	patch "threads-arm64-v8a" "reseam"
 }
+6() {
+	Reseam_dl
+	# Patch Telegram:
+	get_patches_key "telegram-reseam"
+	get_apk "org.telegram.messenger" "telegram" "apk"
+	patch "telegram" "reseam"
+}
 case "$1" in
     1)
         1
@@ -93,5 +100,8 @@ case "$1" in
         ;;
     5)
         5
+        ;;
+    6)
+        6
         ;;
 esac

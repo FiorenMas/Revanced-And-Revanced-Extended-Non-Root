@@ -930,6 +930,10 @@ And if you can't install Messenger back again because they check the sign, the a
 
 ### [Telegram:](https://play.google.com/store/apps/details?id=org.telegram.messenger)
 
+### [Reseam:](https://github.com/Reseam/patches)
+
+[Universal](../../releases/download/all/telegram-reseam.apk)
+
 <details>
   <summary>Outdated patches</summary>
 

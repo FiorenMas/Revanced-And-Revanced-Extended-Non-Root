@@ -213,7 +213,7 @@ detect_version_morphe() {
 	    version=$(java -jar "${morphe_jar}"*.jar $list_patches_flags $mpp_glob | awk -v pkg="$1" '
 		  BEGIN { found = 0; printing = 0 }
 		  /^Index:/ { if (printing) exit; found = 0 }
-		  /Package name: / { if ($3 == pkg) found = 1 }
+		  /Package name: / { if (printing && $3 != pkg) exit; if ($3 == pkg) found = 1 }
 		  /Compatible versions:/ { if (found) printing = 1; next }
 		  printing && $1 ~ /^[0-9]+\./ { print $1 }
 		' | sort -V | tail -n1)

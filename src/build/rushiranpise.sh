@@ -42,6 +42,12 @@ rushiranpise_dl(){
 }
 4() {
 	rushiranpise_dl
+	# Patch Amazon Shopping
+	# Version is pinned: the patches also list Amazon India (32.19.0.300), which auto-detection would pick
+	get_patches_key "amazon-shopping-rushiranpise"
+	version="32.19.0.100"
+	get_apk "com.amazon.mShop.android.shopping" "amazon-shopping" "bundle"
+	patch "amazon-shopping" "rushiranpise"
 	# Patch TeraBox
 	#get_patches_key "TeraBox-rushiranpise"
 	#get_apk "com.dubox.drive" "terabox" "bundle"

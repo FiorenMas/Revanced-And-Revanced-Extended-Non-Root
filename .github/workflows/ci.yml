@@ -81,6 +81,10 @@ jobs:
         id: check-browzomje
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh browzomje/browzomje-patches latest pinterest-browzomje.apk
+      - name: Check new patch Venus
+        id: check-venus
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh VenusIsJaded/Venus-Patches latest discord-venus.apk
       - name: Check new patch Revanced Experiments
         id: check-Revanced-Experiments
         if: steps.check-gh.outputs.internet_error == '0'
@@ -101,6 +105,7 @@ jobs:
       check_rushiranpise: ${{ steps.check-rushiranpise.outputs.new_patch }}
       check_icysymmetra: ${{ steps.check-icysymmetra.outputs.new_patch }}
       check_browzomje: ${{ steps.check-browzomje.outputs.new_patch }}
+      check_venus: ${{ steps.check-venus.outputs.new_patch }}
       check_docbt: ${{ steps.check-docbt.outputs.new_patch }}
       check_Revanced_Experiments: ${{ steps.check-Revanced-Experiments.outputs.new_patch }}
 
@@ -224,6 +229,14 @@ jobs:
     secrets: inherit
     with:
       org: "browzomje"
+  Patch-Venus:
+    name: Patch Venus
+    needs: check
+    if: ${{ needs.check.outputs.check_venus == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "Venus"
   Patch-docbt:
     name: Patch docbt
     needs: check

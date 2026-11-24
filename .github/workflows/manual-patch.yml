@@ -29,6 +29,7 @@ on:
           - 'icysymmetra'
           - 'docbt'
           - 'browzomje'
+          - 'Venus'
           - 'rushiranpise'
           - 'Scrazzz Patches'
           - 'Dropped Patches - indrastorms'
@@ -380,6 +381,26 @@ jobs:
       - name: Releasing APK files
         id: release-browzomje
         if: steps.check-gh-browzomje.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_venus:
+    name: Patch Venus
+    if: ${{ github.event.inputs.org == 'Venus' || inputs.org == 'Venus' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-venus
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-venus
+        if: steps.check-gh-venus.outputs.internet_error == '0'
+        run: bash src/build/venus.sh
+      - name: Releasing APK files
+        id: release-venus
+        if: steps.check-gh-venus.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_docbt:
     name: Patch docbt

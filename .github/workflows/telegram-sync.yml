@@ -1,0 +1,75 @@
+name: 4. Sync Releases to Telegram
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run: print messages instead of sending, don't write releases.json"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# Never let two runs announce the same release twice
+concurrency:
+  group: telegram-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq aapt
+          pip install -q requests pyaxmlparser
+
+      - name: Sync Releases to Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_TOPIC_ID: ${{ secrets.TELEGRAM_TOPIC_ID }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          PYTHONUNBUFFERED: '1'
+          # NOTIFY_REMOVED: 'true'   # uncomment to also post when an asset disappears upstream
+        run: python -u scripts/telegram_sync.py   # -u: show progress live instead of at the end
+
+      # always(): keep progress even if some Telegram posts failed and the step above went red
+      - name: Commit releases.json and catalog
+        if: always() && inputs.dry_run != true
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          [ -f releases.json ] && git add releases.json
+          git add scripts/catalog.json   # picks up apps the script learned
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: update releases.json / catalog [skip ci]"
+
+          for attempt in 1 2 3; do
+            echo "Attempt $attempt: rebasing and pushing..."
+            if git pull --rebase -X theirs origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+              exit 0
+            fi
+            sleep 3
+          done
+          echo "Error: failed to push releases.json after 3 attempts."
+          exit 1

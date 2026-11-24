@@ -1,0 +1,574 @@
+{
+  "apps": [
+    {
+      "name": "YouTube Music",
+      "package": "com.google.android.apps.youtube.music",
+      "match": [
+        "youtube-music",
+        "youtubemusic",
+        "youtube_music",
+        "yt-music",
+        "ytmusic",
+        "ytm"
+      ]
+    },
+    {
+      "name": "YouTube",
+      "package": "com.google.android.youtube",
+      "match": [
+        "youtube",
+        "yt-"
+      ]
+    },
+    {
+      "name": "Google Photos",
+      "package": "com.google.android.apps.photos",
+      "match": [
+        "google-photos",
+        "googlephotos",
+        "gg-photos",
+        "ggphotos",
+        "photos"
+      ]
+    },
+    {
+      "name": "Google News",
+      "package": "com.google.android.apps.magazines",
+      "match": [
+        "google-news",
+        "googlenews",
+        "gg-news",
+        "ggnews"
+      ]
+    },
+    {
+      "name": "Google Recorder",
+      "package": "com.google.android.apps.recorder",
+      "match": [
+        "google-recorder",
+        "googlerecorder",
+        "gg-recorder",
+        "ggrecorder"
+      ]
+    },
+    {
+      "name": "Hola VPN",
+      "package": "org.hola.play",
+      "match": [
+        "hola-vpn",
+        "holavpn",
+        "hola"
+      ]
+    },
+    {
+      "name": "Battery Guru",
+      "package": "com.paget96.batteryguru",
+      "match": [
+        "battery-guru",
+        "batteryguru"
+      ]
+    },
+    {
+      "name": "Brave Browser",
+      "package": "com.brave.browser",
+      "match": [
+        "brave-browser",
+        "bravebrowser",
+        "brave"
+      ]
+    },
+    {
+      "name": "Solid Explorer File Manager",
+      "package": "pl.solidexplorer2",
+      "match": [
+        "solid-explorer-file-manager",
+        "solid-explorer",
+        "solidexplorer"
+      ]
+    },
+    {
+      "name": "Smart Launcher",
+      "package": "ginlemon.flowerfree",
+      "match": [
+        "smart-launcher",
+        "smartlauncher"
+      ]
+    },
+    {
+      "name": "Nova Launcher",
+      "package": "com.teslacoilsw.launcher",
+      "match": [
+        "nova-launcher",
+        "novalauncher"
+      ]
+    },
+    {
+      "name": "FX File Explorer",
+      "package": "nextapp.fx",
+      "match": [
+        "fx-file-explorer",
+        "fxfileexplorer",
+        "fx-explorer",
+        "fxexplorer"
+      ]
+    },
+    {
+      "name": "Prime Video",
+      "package": "com.amazon.avod.thirdpartyclient",
+      "match": [
+        "prime-video",
+        "primevideo",
+        "prime"
+      ]
+    },
+    {
+      "name": "Proton VPN",
+      "package": "ch.protonvpn.android",
+      "match": [
+        "proton-vpn",
+        "protonvpn"
+      ]
+    },
+    {
+      "name": "Proton Mail",
+      "package": "ch.protonmail.android",
+      "match": [
+        "proton-mail",
+        "protonmail"
+      ]
+    },
+    {
+      "name": "WPS Office",
+      "package": "cn.wps.moffice_eng",
+      "match": [
+        "wps-office",
+        "wpsoffice",
+        "wps"
+      ]
+    },
+    {
+      "name": "TikTok Asia",
+      "package": "com.ss.android.ugc.trill",
+      "match": [
+        "tiktok-asia",
+        "tiktok_asia",
+        "tiktok-asian",
+        "tiktokasian",
+        "tiktokasia",
+        "tt-asia"
+      ]
+    },
+    {
+      "name": "TikTok",
+      "package": "com.zhiliaoapp.musically",
+      "match": [
+        "tiktok",
+        "tt-"
+      ]
+    },
+    {
+      "name": "Facebook",
+      "package": "com.facebook.katana",
+      "match": [
+        "facebook",
+        "fb-"
+      ]
+    },
+    {
+      "name": "Messenger",
+      "package": "com.facebook.orca",
+      "match": [
+        "messenger",
+        "msgr"
+      ]
+    },
+    {
+      "name": "Twitter",
+      "package": "com.twitter.android",
+      "match": [
+        "twitter"
+      ]
+    },
+    {
+      "name": "Instagram",
+      "package": "com.instagram.android",
+      "match": [
+        "instagram",
+        "insta-"
+      ]
+    },
+    {
+      "name": "Threads",
+      "package": "com.instagram.barcelona",
+      "match": [
+        "threads"
+      ]
+    },
+    {
+      "name": "Twitch",
+      "package": "tv.twitch.android.app",
+      "match": [
+        "twitch"
+      ]
+    },
+    {
+      "name": "Reddit",
+      "package": "com.reddit.frontpage",
+      "match": [
+        "reddit"
+      ]
+    },
+    {
+      "name": "Pinterest",
+      "package": "com.pinterest",
+      "match": [
+        "pinterest"
+      ]
+    },
+    {
+      "name": "Lightroom",
+      "package": "com.adobe.lrmobile",
+      "match": [
+        "lightroom"
+      ]
+    },
+    {
+      "name": "Tumblr",
+      "package": "com.tumblr",
+      "match": [
+        "tumblr"
+      ]
+    },
+    {
+      "name": "SoundCloud",
+      "package": "com.soundcloud.android",
+      "match": [
+        "soundcloud",
+        "sound-cloud"
+      ]
+    },
+    {
+      "name": "Duolingo",
+      "package": "com.duolingo",
+      "match": [
+        "duolingo"
+      ]
+    },
+    {
+      "name": "Viber",
+      "package": "com.viber.voip",
+      "match": [
+        "viber"
+      ]
+    },
+    {
+      "name": "Discord",
+      "package": "com.discord",
+      "match": [
+        "discord"
+      ]
+    },
+    {
+      "name": "Telegram",
+      "package": "org.telegram.messenger",
+      "match": [
+        "telegram"
+      ]
+    },
+    {
+      "name": "Adguard",
+      "package": "com.adguard.android",
+      "match": [
+        "adguard"
+      ]
+    },
+    {
+      "name": "Psiphon",
+      "package": "com.psiphon3.subscription",
+      "match": [
+        "psiphon"
+      ]
+    },
+    {
+      "name": "Windscribe",
+      "package": "com.windscribe.vpn",
+      "match": [
+        "windscribe"
+      ]
+    },
+    {
+      "name": "Photomath",
+      "package": "com.microblink.photomath",
+      "match": [
+        "photomath"
+      ]
+    },
+    {
+      "name": "Truecaller",
+      "package": "com.truecaller",
+      "match": [
+        "truecaller"
+      ]
+    },
+    {
+      "name": "EyeconCaller",
+      "package": "com.eyecon.global",
+      "match": [
+        "eyeconcaller",
+        "eyecon-caller",
+        "eyecon"
+      ]
+    },
+    {
+      "name": "Zalo",
+      "package": "com.zing.zalo",
+      "match": [
+        "zalo"
+      ]
+    },
+    {
+      "name": "CamScanner",
+      "package": "com.intsig.camscanner",
+      "match": [
+        "camscanner",
+        "cam-scanner"
+      ]
+    },
+    {
+      "name": "RAR",
+      "package": "com.rarlab.rar",
+      "match": [
+        "rar"
+      ]
+    },
+    {
+      "name": "TeraBox",
+      "package": "com.dubox.drive",
+      "match": [
+        "terabox"
+      ]
+    },
+    {
+      "name": "Strava",
+      "package": "com.strava",
+      "match": [
+        "strava"
+      ]
+    },
+    {
+      "name": "Waze",
+      "package": "com.waze",
+      "match": [
+        "waze"
+      ]
+    },
+    {
+      "name": "Pixiv",
+      "package": "jp.pxv.android",
+      "match": [
+        "pixiv"
+      ]
+    },
+    {
+      "name": "Tasker",
+      "package": "net.dinglisch.android.taskerm",
+      "match": [
+        "tasker"
+      ]
+    },
+    {
+      "name": "MyFitnessPal",
+      "package": "com.myfitnesspal.android",
+      "match": [
+        "myfitnesspal",
+        "my-fitness-pal"
+      ]
+    },
+    {
+      "name": "MicroG RE",
+      "package": "app.revanced.android.gms",
+      "match": [
+        "microg-re",
+        "microg"
+      ]
+    },
+    {
+      "name": "Bilibili",
+      "package": "tv.danmaku.bili",
+      "match": [
+        "bilibili"
+      ]
+    }
+  ],
+  "mods": [
+    {
+      "name": "ReVanced Extended",
+      "match": [
+        "revanced-extended",
+        "revanced_extended"
+      ]
+    },
+    {
+      "name": "Revanced Experiments",
+      "match": [
+        "revanced-experiments"
+      ]
+    },
+    {
+      "name": "ReVanced Extended (anddea)",
+      "match": [
+        "anddea"
+      ]
+    },
+    {
+      "name": "Morphe",
+      "match": [
+        "morphe"
+      ]
+    },
+    {
+      "name": "BiliRoamingM",
+      "match": [
+        "biliroamingm"
+      ]
+    },
+    {
+      "name": "BiliRoaming",
+      "match": [
+        "biliroaming"
+      ]
+    },
+    {
+      "name": "DeRevanced",
+      "match": [
+        "derevanced"
+      ]
+    },
+    {
+      "name": "gnadgnaoh",
+      "match": [
+        "gnadgnaoh"
+      ]
+    },
+    {
+      "name": "Piko NewX",
+      "match": [
+        "piko-newx"
+      ]
+    },
+    {
+      "name": "Piko",
+      "match": [
+        "piko"
+      ]
+    },
+    {
+      "name": "icysymmetra",
+      "match": [
+        "icysymmetra"
+      ]
+    },
+    {
+      "name": "arandomhooman",
+      "match": [
+        "arandomhooman"
+      ]
+    },
+    {
+      "name": "browzomje",
+      "match": [
+        "browzomje"
+      ]
+    },
+    {
+      "name": "hoo-dles",
+      "match": [
+        "hoo-dles"
+      ]
+    },
+    {
+      "name": "rushiranpise",
+      "match": [
+        "rushiranpise"
+      ]
+    },
+    {
+      "name": "Bufferk",
+      "match": [
+        "bufferk"
+      ]
+    },
+    {
+      "name": "Paresh Patches",
+      "match": [
+        "paresh"
+      ]
+    },
+    {
+      "name": "docbt",
+      "match": [
+        "docbt"
+      ]
+    },
+    {
+      "name": "indrastorms",
+      "match": [
+        "indrastorms"
+      ]
+    },
+    {
+      "name": "scrazzz",
+      "match": [
+        "scrazzz"
+      ]
+    },
+    {
+      "name": "Revenge",
+      "match": [
+        "revenge"
+      ]
+    },
+    {
+      "name": "inotia00",
+      "match": [
+        "inotia00"
+      ]
+    },
+    {
+      "name": "crimera",
+      "match": [
+        "crimera"
+      ]
+    },
+    {
+      "name": "kitadai31",
+      "match": [
+        "kitadai31"
+      ]
+    },
+    {
+      "name": "ReVanced",
+      "match": [
+        "revanced"
+      ]
+    },
+    {
+      "name": "Reseam",
+      "match": [
+        "reseam"
+      ]
+    },
+    {
+      "name": "Hushfacebook",
+      "match": [
+        "hushfacebook"
+      ]
+    },
+    {
+      "name": "Instafel",
+      "match": [
+        "instafel"
+      ]
+    }
+  ]
+}

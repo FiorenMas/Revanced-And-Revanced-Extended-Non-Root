@@ -42,6 +42,10 @@ rushiranpise_dl(){
 }
 4() {
 	rushiranpise_dl
+	# Patch Amazon Shopping
+	get_patches_key "amazon-shopping-rushiranpise"
+	get_apk "com.amazon.mShop.android.shopping" "amazon-shopping" "bundle"
+	patch "amazon-shopping" "rushiranpise"
 	# Patch TeraBox
 	#get_patches_key "TeraBox-rushiranpise"
 	#get_apk "com.dubox.drive" "terabox" "bundle"

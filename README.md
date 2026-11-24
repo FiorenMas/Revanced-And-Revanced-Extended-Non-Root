@@ -138,6 +138,8 @@ Download
 
 #### [Google Recorder](README.md#Google-Recorder-1)
 
+#### [Amazon Shopping](README.md#amazon-shopping-1)
+
 </details>
 
 ## [MicroG RE:](https://github.com/MorpheApp/MicroG-RE)
@@ -1061,6 +1063,14 @@ Requires MicroG to be installed
 ### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
 
 [Universal](../../releases/download/all/fx-file-explorer-indrastorms.apk)
+
+---
+
+### [Amazon Shopping:](https://play.google.com/store/apps/details?id=com.amazon.mShop.android.shopping)
+
+### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
+
+[Universal](../../releases/download/all/amazon-shopping-rushiranpise.apk)
 
 ### ⚠️ Libraries and resources used in this repository:
 

@@ -926,6 +926,10 @@ And if you can't install Messenger back again because they check the sign, the a
 
 [Universal](../../releases/download/all/discord-reseam.apk)
 
+### [Venus:](https://github.com/VenusIsJaded/Venus-Patches)
+
+[Universal](../../releases/download/all/discord-venus.apk)
+
 ---
 
 ### [Telegram:](https://play.google.com/store/apps/details?id=org.telegram.messenger)
@@ -1214,6 +1218,13 @@ Requires MicroG to be installed
   <summary>bufferk</summary>
 
 [Patches](https://github.com/bufferk/morphe-patches) - [GPL-3.0](https://github.com/bufferk/morphe-patches/blob/main/LICENSE)
+
+</details>
+
+<details>
+  <summary>VenusIsJaded</summary>
+
+[Patches](https://github.com/VenusIsJaded/Venus-Patches) - [GPL-3.0](https://github.com/VenusIsJaded/Venus-Patches/blob/main/LICENSE)
 
 </details>
 

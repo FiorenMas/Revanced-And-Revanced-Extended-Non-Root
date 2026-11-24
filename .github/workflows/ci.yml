@@ -29,6 +29,14 @@ jobs:
         id: check-reseam
         if: steps.check-gh.outputs.internet_error == '0'
         run: bash src/etc/ci.sh Reseam/patches latest youtube-reseam.apk
+      - name: Check new patch RVX lavinhoque33 YouTube
+        id: check-lavinhoque33-youtube
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh lavinhoque33/revanced-patches latest youtube-lavinhoque33.apk
+      - name: Check new patch RVX lavinhoque33 YouTube Music
+        id: check-lavinhoque33-youtube-music
+        if: steps.check-gh.outputs.internet_error == '0'
+        run: bash src/etc/ci.sh lavinhoque33/revanced-patches latest youtube-music-arm64-v8a-lavinhoque33.apk
       - name: Check new patch Revanced Extended forked by Anddea Stable Version
         id: check-rve-anddea-stable
         if: steps.check-gh.outputs.internet_error == '0'
@@ -93,6 +101,8 @@ jobs:
       check_morphe: ${{ steps.check-morphe.outputs.new_patch }}
       check_morphe_beta: ${{ steps.check-morphe-beta.outputs.new_patch }}
       check_reseam: ${{ steps.check-reseam.outputs.new_patch }}
+      check_lavinhoque33_youtube: ${{ steps.check-lavinhoque33-youtube.outputs.new_patch }}
+      check_lavinhoque33_youtube_music: ${{ steps.check-lavinhoque33-youtube-music.outputs.new_patch }}
       check_rve_anddea_stable: ${{ steps.check-rve-anddea-stable.outputs.new_patch }}
       check_rve_anddea_beta: ${{ steps.check-rve-anddea-beta.outputs.new_patch }}
       check_twitter_piko_stable: ${{ steps.check-twitter-piko-stable.outputs.new_patch }}
@@ -133,6 +143,14 @@ jobs:
     secrets: inherit
     with:
       org: "Reseam"
+  Patch-RVX-lavinhoque33:
+    name: Patch RVX lavinhoque33
+    needs: check
+    if: ${{ needs.check.outputs.check_lavinhoque33_youtube == 1 || needs.check.outputs.check_lavinhoque33_youtube_music == 1 }}
+    uses: ./.github/workflows/manual-patch.yml
+    secrets: inherit
+    with:
+      org: "RVX-lavinhoque33"
   Patch-RVE-anddea-stable:
     name: Patch RVX Anddea Stable
     needs: check

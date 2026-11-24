@@ -180,6 +180,16 @@ Download
 | [x86](../../releases/download/all/youtube-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-anddea.apk)                 |
 | [x86_64](../../releases/download/all/youtube-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-anddea.apk)   
 
+### [Revanced Extended forked by lavinhoque33:](https://github.com/lavinhoque33/revanced-patches)
+
+| [Stable version](https://github.com/lavinhoque33/revanced-patches/releases/latest) |
+| -------------------------------------------------------------------------------- |
+| [Universal](../../releases/download/all/youtube-lavinhoque33.apk) |
+| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-lavinhoque33.apk) |
+| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-lavinhoque33.apk) |
+| [x86](../../releases/download/all/youtube-x86-lavinhoque33.apk) |
+| [x86_64](../../releases/download/all/youtube-x86_64-lavinhoque33.apk) |
+
 <details>
   <summary>Outdated patches</summary>
 
@@ -269,6 +279,12 @@ Download
 | [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk) |
 | [x86](../../releases/download/all/youtube-music-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-anddea.apk)                 |
 | [x86_64](../../releases/download/all/youtube-music-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-anddea.apk)           |
+
+### [Revanced Extended forked by lavinhoque33:](https://github.com/lavinhoque33/revanced-patches)
+
+| [Stable version](https://github.com/lavinhoque33/revanced-patches/releases/latest) |
+| -------------------------------------------------------------------------------- |
+| [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-lavinhoque33.apk) |
 
 <details>
   <summary>Outdated patches</summary>
@@ -1099,6 +1115,13 @@ Requires MicroG to be installed
 [Integrations](https://github.com/anddea/revanced-integrations) - [GPL-3.0](https://github.com/anddea/revanced-integrations/blob/main/LICENSE)
 
 </details>
+
+</details>
+
+<details>
+  <summary>lavinhoque33</summary>
+
+[Patches](https://github.com/lavinhoque33/revanced-patches) - [GPL-3.0](https://github.com/lavinhoque33/revanced-patches/blob/rvx-latest/LICENSE)
 
 </details>
 

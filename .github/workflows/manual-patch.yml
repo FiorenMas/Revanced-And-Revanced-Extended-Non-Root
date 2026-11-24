@@ -17,6 +17,7 @@ on:
           - 'Morphe'
           - 'Morphe Beta'
           - 'Reseam'
+          - 'RVX-lavinhoque33'
           - 'RVE-anddea-stable'
           - 'RVE-anddea-beta'
           - 'Twitter Piko Stable'
@@ -149,6 +150,30 @@ jobs:
       - name: Releasing APK files
         id: release-derv
         if: steps.check-gh-derv.outputs.internet_error == '0'
+        uses: ./.github/actions/release
+  patch_rvx_lavinhoque33:
+    name: Patch RVX lavinhoque33
+    if: ${{ github.event.inputs.org == 'RVX-lavinhoque33' || inputs.org == 'RVX-lavinhoque33' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        run: [1, 2]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: Preparing to patch
+        uses: ./.github/actions/preparing
+      - name: Check github connection
+        id: check-gh-rvx-lavinhoque33
+        run: bash src/etc/connection.sh
+      - name: Patch apk
+        id: patch-rvx-lavinhoque33
+        if: steps.check-gh-rvx-lavinhoque33.outputs.internet_error == '0'
+        run: bash src/build/lavinhoque33.sh ${{ matrix.run }}
+      - name: Releasing APK files
+        id: release-rvx-lavinhoque33
+        if: steps.check-gh-rvx-lavinhoque33.outputs.internet_error == '0'
         uses: ./.github/actions/release
   patch_rve_anddea_stable:
     name: Patch RVX Anddea stable version

@@ -2,11 +2,17 @@
 
 # Check github connection stable or not:
 check_connection() {
-	wget -q $(curl -s "https://api.github.com/repos/MorpheApp/morphe-patches/releases/tags/v1.21.1" | jq -r '.assets[] | select(.name == "patches-1.21.1.mpp") | .browser_download_url') || rm -f "patches-1.21.1.mpp"
-	if [ -f patches-1.21.1.mpp ]; then
+	tag=$(curl -sIL -o /dev/null -w '%{url_effective}' "https://github.com/MorpheApp/morphe-patches/releases/latest" | grep -o '[^/]*$')
+
+	mpp_path=$(curl -s "https://github.com/MorpheApp/morphe-patches/releases/expanded_assets/$tag" | grep -oE 'href="[^"]*\.mpp"' | head -n 1 | cut -d'"' -f2)
+	mpp_url="https://github.com$mpp_path"
+	mpp_name=$(basename "$mpp_path")
+
+	wget -q "$mpp_url" || rm -f "$mpp_name"
+	if [ -n "$mpp_name" ] && [ -f "$mpp_name" ]; then
 		echo "internet_error=0" >> $GITHUB_OUTPUT
 		echo -e "\e[32mGithub connection OK\e[0m"
-		rm -f "patches-1.21.1.mpp"
+		rm -f "$mpp_name"
 	else
 		echo "internet_error=1" >> $GITHUB_OUTPUT
 		echo -e "\e[31mGithub connection not stable!\e[0m"

@@ -1,0 +1,50 @@
+name: 4. Cleanup old APKs
+on:
+  workflow_dispatch:
+    inputs:
+      delete_assets:
+        description: Delete matching APKs (unchecked only lists them)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cleanup-old-apks
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean up APKs from before 2025
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DELETE_ASSETS: ${{ inputs.delete_assets }}
+        run: |
+          set -euo pipefail
+          release_id=$(gh api "repos/$GITHUB_REPOSITORY/releases/tags/all" --jq '.id')
+
+          # Collect every page before deleting assets so pagination cannot skip entries.
+          assets=$(gh api --paginate "repos/$GITHUB_REPOSITORY/releases/$release_id/assets?per_page=100" --jq '
+            .[]
+            | select(.name | ascii_downcase | endswith(".apk"))
+            | select(.created_at != null and .updated_at != null)
+            | select(.created_at < "2025-01-01T00:00:00Z" and .updated_at < "2025-01-01T00:00:00Z")
+            | [.id, .name, .updated_at] | @tsv')
+
+          if [[ -z "$assets" ]]; then
+            echo 'No APK assets from before 2025 found.'
+            exit 0
+          fi
+
+          while IFS=$'\t' read -r id name updated_at; do
+            if [[ "$DELETE_ASSETS" == 'true' ]]; then
+              printf 'Deleting %s (last updated %s)\n' "$name" "$updated_at"
+              gh api --method DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$id"
+            else
+              printf 'Would delete %s (last updated %s)\n' "$name" "$updated_at"
+            fi
+          done <<< "$assets"

@@ -6,6 +6,9 @@ from pathlib import Path
 from urllib.parse import quote
 
 
+# Keep these apps at the top of both the index and download catalog.
+POPULAR_APPS = ('YouTube', 'YouTube Music', 'Facebook', 'Instagram', 'Threads')
+
 ROOT = Path(__file__).resolve().parents[2]
 INDEX = '  <summary><h2>List of available apps</h2></summary>'
 MICROG = '## [MicroG RE:]'
@@ -65,11 +68,29 @@ def generate_readme(readme, repository):
             body,
         )
         # Retain the original store link and provider notes.
+        # Strip incidental trailing spaces on download rows and table rows.
+        body = '\n'.join(
+            line.rstrip() if line.startswith('|') or GENERATED_BADGE.search(line) else line
+            for line in body.split('\n')
+        )
         apps.append((name, heading.group(0) + body))
 
-    apps.sort(key=lambda app: app[0].casefold())
-    # GitHub derives heading anchors from the visible heading text.
-    index = ' · '.join(f'[{name}](#{name.lower().replace(" ", "-")})' for name, _ in apps)
+    priority = {name.casefold(): position for position, name in enumerate(POPULAR_APPS)}
+    apps.sort(key=lambda app: (priority.get(app[0].casefold(), len(priority)), app[0].casefold()))
+
+    # Inline links avoid creating duplicate heading anchors in the index.
+    def index_links(group):
+        return ' · '.join(f'[{name}](#{name.lower().replace(" ", "-")})' for name, _ in group)
+
+    popular = [app for app in apps if app[0].casefold() in priority]
+    others = [app for app in apps if app[0].casefold() not in priority]
+    index = '\n\n'.join((
+        '**Popular apps:** ' + index_links(popular),
+        '**Other apps (A–Z):** ' + index_links(others),
+        'Use the Add to Obtainium badge next to a download to import that APK variant '
+        'into [Obtainium](https://github.com/ImranR98/Obtainium). '
+        'Direct APK downloads remain available.',
+    ))
     intro = readme[:index_start].replace('<details>\n' + INDEX, '<details open>\n' + INDEX)
     intro += '\n\n' + index + '\n\n' + readme[index_end:catalog_start]
     catalog = '\n\n---\n\n'.join([microg.strip(), *(section for _, section in apps)])
@@ -77,7 +98,7 @@ def generate_readme(readme, repository):
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description='Refresh the README app catalog and Obtainium badges.')
     parser.add_argument('--repository', default='FiorenMas/Revanced-And-Revanced-Extended-Non-Root')
     parser.add_argument('--input', type=Path, default=ROOT / 'README.md')
     parser.add_argument('--output', type=Path)

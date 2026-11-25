@@ -5,10 +5,6 @@ source ./src/build/utils.sh
 lavinhoque33_dl(){
 	dl_gh "revanced-patches" "lavinhoque33" "latest"
 	dl_gh "morphe-desktop" "MorpheApp" "latest"
-	if ! compgen -G "patches-*.mpp" > /dev/null || ! compgen -G "morphe-desktop-*.jar" > /dev/null; then
-		red_log "[-] Missing lavinhoque33 patch bundle or Morphe CLI"
-		exit 1
-	fi
 }
 1() {
 	lavinhoque33_dl

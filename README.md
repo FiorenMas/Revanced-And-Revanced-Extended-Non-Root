@@ -25,7 +25,7 @@ There are many open-source scripts for patching various apps like YouTube, YouTu
 > Don't use their mods as they didn't support the original code author and are unethical people.
 
 ## ⚙️ How does this repository work? <img src="../main/docs/image/Readme.png" align="right" />
-All you need to do is choose the app you want to use from the options below: 'Revanced' or 'Revanced Extended'. Then, select your phone's CPU architecture. If you don't know what your phone's CPU architecture is, choose Universal. That's all there is to it.
+Choose the app and patch source you want from the catalog below, then select your phone's CPU architecture. If you don't know your phone's CPU architecture, choose Universal when available. Download the APK manually or add the same build to Obtainium for update tracking.
 
 > [!NOTE]
 > If you want to use YouTube, YouTube Music, or Google Photos, you need to download and install [MicroG RE](https://github.com/MorpheApp/MicroG-RE)
@@ -45,1048 +45,221 @@ Download
 > 
 ---
 
-<details>
-  <summary><h2>List of available apps</h2></summary>
-
-#### [![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](README.md#youtube)
-
-#### [![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)](README.md#youtube-music)
-
-#### [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](README.md#facebook)
-
-#### [![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](README.md#messenger)
-
-#### [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](README.md#twitter)
-
-#### [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](README.md#instagram)
-
-#### [![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=Threads&logoColor=white)](README.md#threads)
-
-#### [![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](README.md#tiktok)
-
-#### [![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](README.md#twitch)
-
-#### [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](README.md#reddit)
-
-#### [![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?style=for-the-badge&logo=Pinterest&logoColor=white)](README.md#pinterest)
-
-#### [![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](README.md#lightroom)
-
-#### [![Tumblr](https://img.shields.io/badge/Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white)](README.md#tumblr)
-
-#### [![SoundCloud](https://img.shields.io/badge/soundcloud-FF5500?style=for-the-badge&logo=soundcloud&logoColor=white)](README.md#soundcloud)
-
-#### [![Duolingo](https://img.shields.io/badge/Duolingo-%234DC730.svg?style=for-the-badge&logo=Duolingo&logoColor=white)](README.md#duolingo)
-
-#### [![Viber](https://img.shields.io/badge/Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white)](README.md#viber)
-
-#### [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](README.md#discord)
-
-#### [![Protonmail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)](README.md#proton-mail)
-
-#### [![Prime Video](https://img.shields.io/badge/Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white)](README.md#prime-video)
-
-#### [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](README.md#Telegram-1)
-
-#### [Google Photos](README.md#google-photos-1)
-
-#### [Adguard](README.md#adguard-1)
-
-#### [Smart Launcher](README.md#smart-launcher-1)
-
-#### [WPS Office](README.md#wps-office-1)
-
-#### [Proton VPN](README.md#proton-vpn-1)
-
-#### [Psiphon](README.md#psiphon-1)
-
-#### [Google News](README.md#google-news-1)
-
-#### [Photomath](README.md#photomath-1)
-
-#### [Truecaller](README.md#truecaller-1)
-
-#### [EyeconCaller](README.md#eyeconcaller-1)
-
-#### [Zalo](README.md#zalo-1)
-
-#### [CamScanner](README.md#camscanner-1)
-
-#### [Battery Guru](README.md#battery-guru-1)
-
-#### [Brave Browser](README.md#brave-browser-1)
-
-#### [RAR](README.md#rar-1)
-
-#### [TeraBox](README.md#terabox-1)
-
-#### [Strava](README.md#strava-1)
-
-#### [Waze](README.md#waze-1)
-
-#### [Pixiv](README.md#pixiv-1)
-
-#### [Solid Explorer File Manager](README.md#solid-explorer-file-manager-1)
-
-#### [Nova Launcher](README.md#nova-launcher-1)
-
-#### [Tasker](README.md#tasker-1)
-
-#### [FX File Explorer](README.md#fx-file-explorer-1)
-
-#### [MyFitnessPal](README.md#MyFitnessPal-1)
-
-#### [Google Recorder](README.md#Google-Recorder-1)
-
-#### [Amazon Shopping](README.md#amazon-shopping-1)
-
-</details>
+<a name="microg-revanced"></a>
 
 ## [MicroG RE:](https://github.com/MorpheApp/MicroG-RE)
 
-[![Release](https://img.shields.io/github/v/release/MorpheApp/MicroG-RE?label=Universal&style=for-the-badge)](https://github.com/MorpheApp/MicroG-RE/releases) 
+[![Release](https://img.shields.io/github/v/release/MorpheApp/MicroG-RE?label=Universal&style=for-the-badge)](https://github.com/MorpheApp/MicroG-RE/releases) · [Add to Obtainium](https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22app.revanced.android.gms%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FMorpheApp%2FMicroG-RE%22%2C%22author%22%3A%22MorpheApp%22%2C%22name%22%3A%22MicroG%20RE%20%28Universal%29%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Emicrog-%28%3F%21.%2A-%28%3F%3Aicon%7Cnoicon%29%28%3F%3A-%7C%5C%5C%5C%5C.apk%24%29%29.%2B%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%7D%22%7D)
 
 ---
 
-### [YouTube](https://play.google.com/store/apps/details?id=com.google.android.youtube)
+## App downloads
 
-### [Morphe:](https://github.com/MorpheApp/morphe-patches)
+All apps and patch variants are listed below. Choose the architecture under **Download APK** for a manual install, or the same architecture under **Add to Obtainium** to import that exact build into [Obtainium](https://github.com/ImranR98/Obtainium). Install Obtainium first, then confirm the import on Android. **Outdated** identifies the builds previously listed under outdated patches; updates are not guaranteed.
 
-| [Stable version](https://github.com/MorpheApp/morphe-patches/releases/latest)| [Beta version](https://github.com/MorpheApp/morphe-patches/releases)           |
-| ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [Universal](../../releases/download/all/youtube-morphe.apk)          | [Universal](../../releases/download/all/youtube-beta-morphe.apk)       |
-| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-morphe.apk)        | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-morphe.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-morphe.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-morphe.apk) |
-| [x86](../../releases/download/all/youtube-x86-morphe.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-morphe.apk)                 |
-| [x86_64](../../releases/download/all/youtube-x86_64-morphe.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-morphe.apk)           |
+Obtainium tracks the selected filename and uses its asset upload date as the version because this repository replaces files within a single release. Its displayed version may therefore be a timestamp rather than the Android app version. Choose only one variant for apps sharing the same package name; importing another variant does not make it a separately installable app.
 
-### [Reseam:](https://github.com/Reseam/patches)
+**Jump to an app**
 
-| [Stable version](https://github.com/Reseam/patches/releases/latest) |
-| ------------------------------------------------------------------ |
-| [Universal](../../releases/download/all/youtube-reseam.apk)        |
-| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-reseam.apk) |
-| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-reseam.apk) |
-| [x86](../../releases/download/all/youtube-x86-reseam.apk)          |
-| [x86_64](../../releases/download/all/youtube-x86_64-reseam.apk)    |
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](#youtube)
+[![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)](#youtube-music)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](#facebook)
+[![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](#messenger)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](#twitter)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](#instagram)
+[![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=Threads&logoColor=white)](#threads)
+[![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](#tiktok)
+[![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](#twitch)
+[![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](#reddit)
+[![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?style=for-the-badge&logo=Pinterest&logoColor=white)](#pinterest)
+[![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](#lightroom)
+[![Tumblr](https://img.shields.io/badge/Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white)](#tumblr)
+[![SoundCloud](https://img.shields.io/badge/soundcloud-FF5500?style=for-the-badge&logo=soundcloud&logoColor=white)](#soundcloud)
+[![Duolingo](https://img.shields.io/badge/Duolingo-%234DC730.svg?style=for-the-badge&logo=Duolingo&logoColor=white)](#duolingo)
+[![Viber](https://img.shields.io/badge/Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white)](#viber)
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](#discord)
+[![Protonmail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)](#proton-mail)
+[![Prime Video](https://img.shields.io/badge/Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white)](#prime-video)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](#telegram)
 
-### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
+[Google Photos](#google-photos) ·
+[Adguard](#adguard) ·
+[Smart Launcher](#smart-launcher) ·
+[WPS Office](#wps-office) ·
+[Proton VPN](#proton-vpn) ·
+[Psiphon](#psiphon) ·
+[Google News](#google-news) ·
+[Photomath](#photomath) ·
+[Truecaller](#truecaller) ·
+[EyeconCaller](#eyeconcaller) ·
+[Zalo](#zalo) ·
+[CamScanner](#camscanner) ·
+[Battery Guru](#battery-guru) ·
+[Brave Browser](#brave-browser) ·
+[RAR](#rar) ·
+[TeraBox](#terabox) ·
+[Strava](#strava) ·
+[Waze](#waze) ·
+[Pixiv](#pixiv) ·
+[Solid Explorer File Manager](#solid-explorer-file-manager) ·
+[Nova Launcher](#nova-launcher) ·
+[Tasker](#tasker) ·
+[FX File Explorer](#fx-file-explorer) ·
+[MyFitnessPal](#myfitnesspal) ·
+[Google Recorder](#google-recorder) ·
+[Amazon Shopping](#amazon-shopping) ·
+[TikTok Asia](#tiktok-asia) ·
+[Windscribe](#windscribe)
 
-| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)     | [Beta version](https://github.com/anddea/revanced-patches/releases)            |
-| -------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [Universal](../../releases/download/all/youtube-stable-anddea.apk)       | [Universal](../../releases/download/all/youtube-beta-anddea.apk)       |
-| [Arm64-v8a](../../releases/download/all/youtube-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-anddea.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-anddea.apk) |
-| [x86](../../releases/download/all/youtube-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-anddea.apk)                 |
-| [x86_64](../../releases/download/all/youtube-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-anddea.apk)   
-
-### [Revanced Extended forked by lavinhoque33:](https://github.com/lavinhoque33/revanced-patches)
-
-| [Stable version](https://github.com/lavinhoque33/revanced-patches/releases/latest) |
-| -------------------------------------------------------------------------------- |
-| [Universal](../../releases/download/all/youtube-lavinhoque33.apk) |
-| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-lavinhoque33.apk) |
-| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-lavinhoque33.apk) |
-| [x86](../../releases/download/all/youtube-x86-lavinhoque33.apk) |
-| [x86_64](../../releases/download/all/youtube-x86_64-lavinhoque33.apk) |
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest) | [Beta version](https://github.com/ReVanced/revanced-patches/releases)            |
-| -----------------------------------------------------------------------------  | -------------------------------------------------------------------------------- |
-| [Universal](../../releases/download/all/youtube-revanced.apk)          | [Universal](../../releases/download/all/youtube-beta-revanced.apk)       |
-| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced.apk)        | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-revanced.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-revanced.apk) |
-| [x86](../../releases/download/all/youtube-x86-revanced.apk)                    | [x86](../../releases/download/all/youtube-beta-x86-revanced.apk)                 |
-| [x86_64](../../releases/download/all/youtube-x86_64-revanced.apk)              | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced.apk)           |
-
-<details>
-  <summary>Lite version</summary>
-
-**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs**
-
-| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest)      | [Beta version](https://github.com/ReVanced/revanced-patches/releases)                 |
-| ----------------------------------------------------------------------------------  | ------------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced.apk)        | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-revanced.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced.apk)    | [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-revanced.apk) |
-
-</details>
-
-### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
-
-| [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)       | [Beta version](https://github.com/inotia00/revanced-patches/releases)                     |
-| ------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------- |
-| [Universal](../../releases/download/all/youtube-revanced-extended.apk)       | [Universal](../../releases/download/all/youtube-beta-revanced-extended.apk)       |
-| [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended.apk)     | [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-revanced-extended.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended.apk) | [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-revanced-extended.apk) |
-| [x86](../../releases/download/all/youtube-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-beta-x86-revanced-extended.apk)                 |
-| [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced-extended.apk)           |
-
-
-### [Revanced Extended For Android 6 & 7:](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended)
-
-**Please read [Instruction](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended?tab=readme-ov-file#however-a-workaround-exists) before use**
-
-[Universal](../../releases/download/all/youtube-revanced-extended-android-6-7.apk)
-
-[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended-android-6-7.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended-android-6-7.apk)
-
-[x86](../../releases/download/all/youtube-x86-revanced-extended-android-6-7.apk)
-
-[x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-6-7.apk)
-
-
-### [Revanced Extended For Android 5:](https://github.com/d4n3436/revanced-patches-android5)
-
-[Universal](../../releases/download/all/youtube-revanced-extended-android-5.apk)
-
-[Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended-android-5.apk)
-
-[Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended-android-5.apk)
-
-[x86](../../releases/download/all/youtube-x86-revanced-extended-android-5.apk)
-
-[x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-5.apk)
-
-</details>
+| App | Patches / version | Download APK | Add to Obtainium |
+| --- | --- | --- | --- |
+| <a name="youtube"></a>**[YouTube](https://play.google.com/store/apps/details?id=com.google.android.youtube)** | [Morphe](https://github.com/MorpheApp/morphe-patches)<br>[Stable version](https://github.com/MorpheApp/morphe-patches/releases/latest) | [Universal](../../releases/download/all/youtube-morphe.apk), [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-morphe.apk), [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-morphe.apk), [x86](../../releases/download/all/youtube-x86-morphe.apk), [x86_64](../../releases/download/all/youtube-x86_64-morphe.apk) | [Universal][obtainium-youtube-morphe], [Arm64-v8a][obtainium-youtube-arm64-v8a-morphe], [Armeabi-v7a][obtainium-youtube-armeabi-v7a-morphe], [x86][obtainium-youtube-x86-morphe], [x86_64][obtainium-youtube-x86_64-morphe] |
+|  | [Morphe](https://github.com/MorpheApp/morphe-patches)<br>[Beta version](https://github.com/MorpheApp/morphe-patches/releases) | [Universal](../../releases/download/all/youtube-beta-morphe.apk), [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-morphe.apk), [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-morphe.apk), [x86](../../releases/download/all/youtube-beta-x86-morphe.apk), [x86_64](../../releases/download/all/youtube-beta-x86_64-morphe.apk) | [Universal][obtainium-youtube-beta-morphe], [Arm64-v8a][obtainium-youtube-beta-arm64-v8a-morphe], [Armeabi-v7a][obtainium-youtube-beta-armeabi-v7a-morphe], [x86][obtainium-youtube-beta-x86-morphe], [x86_64][obtainium-youtube-beta-x86_64-morphe] |
+|  | [Reseam](https://github.com/Reseam/patches)<br>[Stable version](https://github.com/Reseam/patches/releases/latest) | [Universal](../../releases/download/all/youtube-reseam.apk), [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-reseam.apk), [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-reseam.apk), [x86](../../releases/download/all/youtube-x86-reseam.apk), [x86_64](../../releases/download/all/youtube-x86_64-reseam.apk) | [Universal][obtainium-youtube-reseam], [Arm64-v8a][obtainium-youtube-arm64-v8a-reseam], [Armeabi-v7a][obtainium-youtube-armeabi-v7a-reseam], [x86][obtainium-youtube-x86-reseam], [x86_64][obtainium-youtube-x86_64-reseam] |
+|  | [Revanced Extended forked by anddea](https://github.com/anddea/revanced-patches)<br>[Stable version](https://github.com/anddea/revanced-patches/releases/latest) | [Universal](../../releases/download/all/youtube-stable-anddea.apk), [Arm64-v8a](../../releases/download/all/youtube-stable-arm64-v8a-anddea.apk), [Armeabi-v7a](../../releases/download/all/youtube-stable-armeabi-v7a-anddea.apk), [x86](../../releases/download/all/youtube-stable-x86-anddea.apk), [x86_64](../../releases/download/all/youtube-stable-x86_64-anddea.apk) | [Universal][obtainium-youtube-stable-anddea], [Arm64-v8a][obtainium-youtube-stable-arm64-v8a-anddea], [Armeabi-v7a][obtainium-youtube-stable-armeabi-v7a-anddea], [x86][obtainium-youtube-stable-x86-anddea], [x86_64][obtainium-youtube-stable-x86_64-anddea] |
+|  | [Revanced Extended forked by anddea](https://github.com/anddea/revanced-patches)<br>[Beta version](https://github.com/anddea/revanced-patches/releases) | [Universal](../../releases/download/all/youtube-beta-anddea.apk), [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-anddea.apk), [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-anddea.apk), [x86](../../releases/download/all/youtube-beta-x86-anddea.apk), [x86_64](../../releases/download/all/youtube-beta-x86_64-anddea.apk) | [Universal][obtainium-youtube-beta-anddea], [Arm64-v8a][obtainium-youtube-beta-arm64-v8a-anddea], [Armeabi-v7a][obtainium-youtube-beta-armeabi-v7a-anddea], [x86][obtainium-youtube-beta-x86-anddea], [x86_64][obtainium-youtube-beta-x86_64-anddea] |
+|  | [Revanced Extended forked by lavinhoque33](https://github.com/lavinhoque33/revanced-patches)<br>[Stable version](https://github.com/lavinhoque33/revanced-patches/releases/latest) | [Universal](../../releases/download/all/youtube-lavinhoque33.apk), [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-lavinhoque33.apk), [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-lavinhoque33.apk), [x86](../../releases/download/all/youtube-x86-lavinhoque33.apk), [x86_64](../../releases/download/all/youtube-x86_64-lavinhoque33.apk) | [Universal][obtainium-youtube-lavinhoque33], [Arm64-v8a][obtainium-youtube-arm64-v8a-lavinhoque33], [Armeabi-v7a][obtainium-youtube-armeabi-v7a-lavinhoque33], [x86][obtainium-youtube-x86-lavinhoque33], [x86_64][obtainium-youtube-x86_64-lavinhoque33] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>[Stable version](https://github.com/ReVanced/revanced-patches/releases/latest) · **Outdated** | [Universal](../../releases/download/all/youtube-revanced.apk), [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced.apk), [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced.apk), [x86](../../releases/download/all/youtube-x86-revanced.apk), [x86_64](../../releases/download/all/youtube-x86_64-revanced.apk) | [Universal][obtainium-youtube-revanced], [Arm64-v8a][obtainium-youtube-arm64-v8a-revanced], [Armeabi-v7a][obtainium-youtube-armeabi-v7a-revanced], [x86][obtainium-youtube-x86-revanced], [x86_64][obtainium-youtube-x86_64-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>[Beta version](https://github.com/ReVanced/revanced-patches/releases) · **Outdated** | [Universal](../../releases/download/all/youtube-beta-revanced.apk), [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-revanced.apk), [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-revanced.apk), [x86](../../releases/download/all/youtube-beta-x86-revanced.apk), [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced.apk) | [Universal][obtainium-youtube-beta-revanced], [Arm64-v8a][obtainium-youtube-beta-arm64-v8a-revanced], [Armeabi-v7a][obtainium-youtube-beta-armeabi-v7a-revanced], [x86][obtainium-youtube-beta-x86-revanced], [x86_64][obtainium-youtube-beta-x86_64-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches) (Lite version)<br>[Stable version](https://github.com/ReVanced/revanced-patches/releases/latest) · **Outdated**<br>**A lite version is a version with unnecessary things removed. For example, it might only have an English interface and remove unused screen DPI from split APKs** | [Arm64-v8a](../../releases/download/all/youtube-lite-arm64-v8a-revanced.apk), [Armeabi-v7a](../../releases/download/all/youtube-lite-armeabi-v7a-revanced.apk) | [Arm64-v8a][obtainium-youtube-lite-arm64-v8a-revanced], [Armeabi-v7a][obtainium-youtube-lite-armeabi-v7a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches) (Lite version)<br>[Beta version](https://github.com/ReVanced/revanced-patches/releases) · **Outdated** | [Arm64-v8a](../../releases/download/all/youtube-lite-beta-arm64-v8a-revanced.apk), [Armeabi-v7a](../../releases/download/all/youtube-lite-beta-armeabi-v7a-revanced.apk) | [Arm64-v8a][obtainium-youtube-lite-beta-arm64-v8a-revanced], [Armeabi-v7a][obtainium-youtube-lite-beta-armeabi-v7a-revanced] |
+|  | [Revanced Extended](https://github.com/inotia00/revanced-patches/)<br>[Stable version](https://github.com/inotia00/revanced-patches/releases/latest) · **Outdated** | [Universal](../../releases/download/all/youtube-revanced-extended.apk), [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended.apk), [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended.apk), [x86](../../releases/download/all/youtube-x86-revanced-extended.apk), [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended.apk) | [Universal][obtainium-youtube-revanced-extended], [Arm64-v8a][obtainium-youtube-arm64-v8a-revanced-extended], [Armeabi-v7a][obtainium-youtube-armeabi-v7a-revanced-extended], [x86][obtainium-youtube-x86-revanced-extended], [x86_64][obtainium-youtube-x86_64-revanced-extended] |
+|  | [Revanced Extended](https://github.com/inotia00/revanced-patches/)<br>[Beta version](https://github.com/inotia00/revanced-patches/releases) · **Outdated** | [Universal](../../releases/download/all/youtube-beta-revanced-extended.apk), [Arm64-v8a](../../releases/download/all/youtube-beta-arm64-v8a-revanced-extended.apk), [Armeabi-v7a](../../releases/download/all/youtube-beta-armeabi-v7a-revanced-extended.apk), [x86](../../releases/download/all/youtube-beta-x86-revanced-extended.apk), [x86_64](../../releases/download/all/youtube-beta-x86_64-revanced-extended.apk) | [Universal][obtainium-youtube-beta-revanced-extended], [Arm64-v8a][obtainium-youtube-beta-arm64-v8a-revanced-extended], [Armeabi-v7a][obtainium-youtube-beta-armeabi-v7a-revanced-extended], [x86][obtainium-youtube-beta-x86-revanced-extended], [x86_64][obtainium-youtube-beta-x86_64-revanced-extended] |
+|  | [Revanced Extended For Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended) · **Outdated**<br>**Please read [Instruction](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended?tab=readme-ov-file#however-a-workaround-exists) before use** | [Universal](../../releases/download/all/youtube-revanced-extended-android-6-7.apk), [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended-android-6-7.apk), [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended-android-6-7.apk), [x86](../../releases/download/all/youtube-x86-revanced-extended-android-6-7.apk), [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-6-7.apk) | [Universal][obtainium-youtube-revanced-extended-android-6-7], [Arm64-v8a][obtainium-youtube-arm64-v8a-revanced-extended-android-6-7], [Armeabi-v7a][obtainium-youtube-armeabi-v7a-revanced-extended-android-6-7], [x86][obtainium-youtube-x86-revanced-extended-android-6-7], [x86_64][obtainium-youtube-x86_64-revanced-extended-android-6-7] |
+|  | [Revanced Extended For Android 5](https://github.com/d4n3436/revanced-patches-android5) · **Outdated** | [Universal](../../releases/download/all/youtube-revanced-extended-android-5.apk), [Arm64-v8a](../../releases/download/all/youtube-arm64-v8a-revanced-extended-android-5.apk), [Armeabi-v7a](../../releases/download/all/youtube-armeabi-v7a-revanced-extended-android-5.apk), [x86](../../releases/download/all/youtube-x86-revanced-extended-android-5.apk), [x86_64](../../releases/download/all/youtube-x86_64-revanced-extended-android-5.apk) | [Universal][obtainium-youtube-revanced-extended-android-5], [Arm64-v8a][obtainium-youtube-arm64-v8a-revanced-extended-android-5], [Armeabi-v7a][obtainium-youtube-armeabi-v7a-revanced-extended-android-5], [x86][obtainium-youtube-x86-revanced-extended-android-5], [x86_64][obtainium-youtube-x86_64-revanced-extended-android-5] |
+| <a name="youtube-music"></a>**[YouTube Music](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)** | [Morphe](https://github.com/MorpheApp/morphe-patches)<br>[Stable version](https://github.com/MorpheApp/morphe-patches/releases/latest) | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-morphe.apk) | [Arm64-v8a][obtainium-youtube-music-arm64-v8a-morphe] |
+|  | [Morphe](https://github.com/MorpheApp/morphe-patches)<br>[Beta version](https://github.com/MorpheApp/morphe-patches/releases) | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-morphe.apk) | [Arm64-v8a][obtainium-youtube-music-beta-arm64-v8a-morphe] |
+|  | [Reseam](https://github.com/Reseam/patches)<br>[Stable version](https://github.com/Reseam/patches/releases/latest) | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-reseam.apk) | [Arm64-v8a][obtainium-youtube-music-arm64-v8a-reseam] |
+|  | [Revanced Extended forked by anddea](https://github.com/anddea/revanced-patches)<br>[Stable version](https://github.com/anddea/revanced-patches/releases/latest) | [Arm64-v8a](../../releases/download/all/youtube-music-stable-arm64-v8a-anddea.apk), [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk), [x86](../../releases/download/all/youtube-music-stable-x86-anddea.apk), [x86_64](../../releases/download/all/youtube-music-stable-x86_64-anddea.apk) | [Arm64-v8a][obtainium-youtube-music-stable-arm64-v8a-anddea], [Armeabi-v7a][obtainium-youtube-music-stable-armeabi-v7a-anddea], [x86][obtainium-youtube-music-stable-x86-anddea], [x86_64][obtainium-youtube-music-stable-x86_64-anddea] |
+|  | [Revanced Extended forked by anddea](https://github.com/anddea/revanced-patches)<br>[Beta version](https://github.com/anddea/revanced-patches/releases) | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-anddea.apk), [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk), [x86](../../releases/download/all/youtube-music-beta-x86-anddea.apk), [x86_64](../../releases/download/all/youtube-music-beta-x86_64-anddea.apk) | [Arm64-v8a][obtainium-youtube-music-beta-arm64-v8a-anddea], [Armeabi-v7a][obtainium-youtube-music-beta-armeabi-v7a-anddea], [x86][obtainium-youtube-music-beta-x86-anddea], [x86_64][obtainium-youtube-music-beta-x86_64-anddea] |
+|  | [Revanced Extended forked by lavinhoque33](https://github.com/lavinhoque33/revanced-patches)<br>[Stable version](https://github.com/lavinhoque33/revanced-patches/releases/latest) | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-lavinhoque33.apk) | [Arm64-v8a][obtainium-youtube-music-arm64-v8a-lavinhoque33] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>[Stable version](https://github.com/ReVanced/revanced-patches/releases/latest) · **Outdated** | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk), [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk), [x86](../../releases/download/all/youtube-music-x86-revanced.apk), [x86_64](../../releases/download/all/youtube-music-x86_64-revanced.apk) | [Arm64-v8a][obtainium-youtube-music-arm64-v8a-revanced], [Armeabi-v7a][obtainium-youtube-music-armeabi-v7a-revanced], [x86][obtainium-youtube-music-x86-revanced], [x86_64][obtainium-youtube-music-x86_64-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>[Beta version](https://github.com/ReVanced/revanced-patches/releases) · **Outdated** | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced.apk), [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk), [x86](../../releases/download/all/youtube-music-beta-x86-revanced.apk), [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced.apk) | [Arm64-v8a][obtainium-youtube-music-beta-arm64-v8a-revanced], [Armeabi-v7a][obtainium-youtube-music-beta-armeabi-v7a-revanced], [x86][obtainium-youtube-music-beta-x86-revanced], [x86_64][obtainium-youtube-music-beta-x86_64-revanced] |
+|  | [Revanced Extended](https://github.com/inotia00/revanced-patches/)<br>[Stable version](https://github.com/inotia00/revanced-patches/releases/latest) · **Outdated** | [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk), [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced-extended.apk), [x86](../../releases/download/all/youtube-music-x86-revanced-extended.apk), [x86_64](../../releases/download/all/youtube-music-x86_64-revanced-extended.apk) | [Arm64-v8a][obtainium-youtube-music-arm64-v8a-revanced-extended], [Armeabi-v7a][obtainium-youtube-music-armeabi-v7a-revanced-extended], [x86][obtainium-youtube-music-x86-revanced-extended], [x86_64][obtainium-youtube-music-x86_64-revanced-extended] |
+|  | [Revanced Extended](https://github.com/inotia00/revanced-patches/)<br>[Beta version](https://github.com/inotia00/revanced-patches/releases) · **Outdated** | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced-extended.apk), [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced-extended.apk), [x86](../../releases/download/all/youtube-music-beta-x86-revanced-extended.apk), [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced-extended.apk) | [Arm64-v8a][obtainium-youtube-music-beta-arm64-v8a-revanced-extended], [Armeabi-v7a][obtainium-youtube-music-beta-armeabi-v7a-revanced-extended], [x86][obtainium-youtube-music-beta-x86-revanced-extended], [x86_64][obtainium-youtube-music-beta-x86_64-revanced-extended] |
+| <a name="facebook"></a>**[Facebook](https://play.google.com/store/apps/details?id=com.facebook.katana)**<br>**You have to remove the Messenger app before you install the Facebook Mod** | [gnadgnaoh](https://github.com/gnadgnaoh/NexAlloy)<br>This app might crash 2-3 times on the first startup. Don't worry - just try opening it again and it will work.<br>And if you can't install Messenger back again because they check the sign, the app should need Messenger [from here](README.md#gnadgnaoh-1) too. | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh.apk) | [Arm64-v8a & Android 11+][obtainium-facebook-arm64-v8a-gnadgnaoh] |
+|  | [Hushfacebook](https://github.com/SysAdminDoc/Hushfacebook) | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-hushfacebook.apk) | [Arm64-v8a & Android 11+][obtainium-facebook-arm64-v8a-hushfacebook] |
+|  | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) · **Outdated** | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-derevanced.apk) | [Arm64-v8a & Android 11+][obtainium-facebook-arm64-v8a-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-revanced.apk) | [Arm64-v8a & Android 11+][obtainium-facebook-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-beta-revanced.apk) | [Arm64-v8a & Android 11+][obtainium-facebook-arm64-v8a-beta-revanced] |
+| <a name="messenger"></a><a name="gnadgnaoh-1"></a>**[Messenger](https://play.google.com/store/apps/details?id=com.facebook.orca)** | [gnadgnaoh](https://github.com/gnadgnaoh/NexAlloy) | [Arm64-v8a & Android 9+](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh.apk) | [Arm64-v8a & Android 9+][obtainium-messenger-arm64-v8a-gnadgnaoh] |
+|  | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-derevanced.apk) | [Arm64-v8a][obtainium-messenger-arm64-v8a-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk) | [Arm64-v8a][obtainium-messenger-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-beta-revanced.apk) | [Arm64-v8a][obtainium-messenger-arm64-v8a-beta-revanced] |
+| <a name="twitter"></a>**[Twitter](https://play.google.com/store/apps/details?id=com.twitter.android)** | [Piko](https://github.com/crimera/piko)<br>[Stable version](https://github.com/crimera/piko/releases/latest)<br>👉 [Official author download link](https://github.com/crimera/twitter-apk/releases) | [Universal](../../releases/download/all/twitter-stable-piko.apk) | [Universal][obtainium-twitter-stable-piko] |
+|  | [Piko](https://github.com/crimera/piko)<br>[Beta version](https://github.com/crimera/piko/releases/) | [Universal](../../releases/download/all/twitter-beta-piko.apk) | [Universal][obtainium-twitter-beta-piko] |
+|  | [Piko NewX](https://github.com/crimera/piko-newx) | [Universal](../../releases/download/all/twitter-piko-newx.apk) | [Universal][obtainium-twitter-piko-newx] |
+|  | [Reseam](https://github.com/Reseam/patches) | [Universal](../../releases/download/all/twitter-reseam.apk) | [Universal][obtainium-twitter-reseam] |
+| <a name="instagram"></a>**[Instagram](https://play.google.com/store/apps/details?id=com.instagram.android)** | [Piko](https://github.com/crimera/piko)<br>[Stable version](https://github.com/crimera/piko/releases/latest) | [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-piko.apk) | [Arm64-v8a][obtainium-instagram-arm64-v8a-piko] |
+|  | [Piko](https://github.com/crimera/piko)<br>[Beta version](https://github.com/crimera/piko/releases/) | [Arm64-v8a](../../releases/download/all/instagram-beta-arm64-v8a-piko.apk) | [Arm64-v8a][obtainium-instagram-beta-arm64-v8a-piko] |
+|  | [gnadgnaoh](https://github.com/gnadgnaoh/NexAlloy) | [Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh.apk) | [Arm64-v8a & Android 9+][obtainium-instagram-arm64-v8a-gnadgnaoh] |
+|  | [Reseam](https://github.com/Reseam/patches) | [Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-reseam.apk) | [Arm64-v8a & Android 9+][obtainium-instagram-arm64-v8a-reseam] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced.apk) | [Arm64-v8a][obtainium-instagram-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-beta-revanced.apk) | [Arm64-v8a][obtainium-instagram-arm64-v8a-beta-revanced] |
+|  | [Revanced Experiments](https://github.com/Aunali321/ReVancedExperiments) · **Outdated** | [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced-experiments.apk) | [Arm64-v8a][obtainium-instagram-arm64-v8a-revanced-experiments] |
+| <a name="threads"></a>**[Threads](https://play.google.com/store/apps/details?id=com.instagram.barcelona)** | [gnadgnaoh](https://github.com/gnadgnaoh/NexAlloy) | [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh.apk) | [Arm64-v8a][obtainium-threads-arm64-v8a-gnadgnaoh] |
+|  | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-derevanced.apk) | [Arm64-v8a][obtainium-threads-arm64-v8a-derevanced] |
+|  | [Reseam](https://github.com/Reseam/patches) | [Arm64-v8a & Android 9+](../../releases/download/all/threads-arm64-v8a-reseam.apk) | [Arm64-v8a & Android 9+][obtainium-threads-arm64-v8a-reseam] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-revanced.apk) | [Arm64-v8a][obtainium-threads-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Arm64-v8a](../../releases/download/all/threads-beta-arm64-v8a-revanced.apk) | [Arm64-v8a][obtainium-threads-beta-arm64-v8a-revanced] |
+| <a name="google-photos"></a><a name="google-photos-1"></a>**[Google Photos](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)** | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-derevanced.apk) | [Arm64-v8a][obtainium-gg-photos-arm64-v8a-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk), [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-revanced.apk), [x86](../../releases/download/all/gg-photos-x86-revanced.apk), [x86_64](../../releases/download/all/gg-photos-x86_64-revanced.apk) | [Arm64-v8a][obtainium-gg-photos-arm64-v8a-revanced], [armeabi-v7a][obtainium-gg-photos-armeabi-v7a-revanced], [x86][obtainium-gg-photos-x86-revanced], [x86_64][obtainium-gg-photos-x86_64-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-beta-revanced.apk), [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-beta-revanced.apk), [x86](../../releases/download/all/gg-photos-x86-beta-revanced.apk), [x86_64](../../releases/download/all/gg-photos-x86_64-beta-revanced.apk) | [Arm64-v8a][obtainium-gg-photos-arm64-v8a-beta-revanced], [armeabi-v7a][obtainium-gg-photos-armeabi-v7a-beta-revanced], [x86][obtainium-gg-photos-x86-beta-revanced], [x86_64][obtainium-gg-photos-x86_64-beta-revanced] |
+| <a name="tiktok"></a>**[TikTok](https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically)** | [gnadgnaoh](https://github.com/gnadgnaoh/SexAlloy/) | [Universal](../../releases/download/all/tiktok-gnadgnaoh.apk) | [Universal][obtainium-tiktok-gnadgnaoh] |
+|  | [icysymmetra](https://github.com/icysymmetra/tiktok-patches-for-morphe) | [Universal](../../releases/download/all/tiktok-icysymmetra.apk) | [Universal][obtainium-tiktok-icysymmetra] |
+|  | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/tiktok-derevanced.apk) | [Universal][obtainium-tiktok-derevanced] |
+|  | [Reseam](https://github.com/Reseam/patches) | [Universal](../../releases/download/all/tiktok-reseam.apk) | [Universal][obtainium-tiktok-reseam] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/tiktok-revanced.apk) | [Universal][obtainium-tiktok-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/tiktok-beta-revanced.apk) | [Universal][obtainium-tiktok-beta-revanced] |
+| <a name="tiktok-asia"></a>**[TikTok Asia](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)** | [gnadgnaoh](https://github.com/gnadgnaoh/SexAlloy/) | [Universal](../../releases/download/all/tiktok-asian-gnadgnaoh.apk) | [Universal][obtainium-tiktok-asian-gnadgnaoh] |
+|  | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/tiktok-asia-derevanced.apk) | [Universal][obtainium-tiktok-asia-derevanced] |
+| <a name="twitch"></a>**[Twitch](https://play.google.com/store/apps/details?id=tv.twitch.android.app)** | [arandomhooman](https://github.com/arandomhooman/hoomans-morphe-patches) | [Universal](../../releases/download/all/twitch-arandomhooman.apk) | [Universal][obtainium-twitch-arandomhooman] |
+|  | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/twitch-derevanced.apk), [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-derevanced.apk) | [Universal][obtainium-twitch-derevanced], [Arm64-v8a][obtainium-twitch-arm64-v8a-derevanced] |
+|  | [Reseam](https://github.com/Reseam/patches) | [Universal](../../releases/download/all/twitch-reseam.apk), [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-reseam.apk) | [Universal][obtainium-twitch-reseam], [Arm64-v8a][obtainium-twitch-arm64-v8a-reseam] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/twitch-revanced.apk), [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-revanced.apk) | [Universal][obtainium-twitch-revanced], [Arm64-v8a][obtainium-twitch-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/twitch-beta-revanced.apk), [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-beta-revanced.apk) | [Universal][obtainium-twitch-beta-revanced], [Arm64-v8a][obtainium-twitch-arm64-v8a-beta-revanced] |
+| <a name="reddit"></a>**[Reddit](https://play.google.com/store/apps/details?id=com.reddit.frontpage)** | [Morphe](https://github.com/MorpheApp/morphe-patches)<br>Stable version | [Universal](../../releases/download/all/reddit-morphe.apk), [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-morphe.apk) | [Universal][obtainium-reddit-morphe], [Arm64-v8a][obtainium-reddit-arm64-v8a-morphe] |
+|  | [Morphe](https://github.com/MorpheApp/morphe-patches)<br>Beta version | [Universal](../../releases/download/all/reddit-beta-morphe.apk), [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-beta-morphe.apk) | [Universal][obtainium-reddit-beta-morphe], [Arm64-v8a][obtainium-reddit-arm64-v8a-beta-morphe] |
+|  | [Reseam](https://github.com/Reseam/patches) | [Universal](../../releases/download/all/reddit-reseam.apk), [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-reseam.apk) | [Universal][obtainium-reddit-reseam], [Arm64-v8a][obtainium-reddit-arm64-v8a-reseam] |
+|  | [Revanced](https://github.com/ReVanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/reddit-revanced.apk), [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced.apk) | [Universal][obtainium-reddit-revanced], [Arm64-v8a][obtainium-reddit-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/ReVanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/reddit-beta-revanced.apk), [Arm64-v8a](../../releases/download/all/reddit-beta-arm64-v8a-revanced.apk) | [Universal][obtainium-reddit-beta-revanced], [Arm64-v8a][obtainium-reddit-beta-arm64-v8a-revanced] |
+|  | [Revanced Extended](https://github.com/inotia00/revanced-patches/)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/reddit-revanced-extended.apk), [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended.apk) | [Universal][obtainium-reddit-revanced-extended], [Arm64-v8a][obtainium-reddit-arm64-v8a-revanced-extended] |
+|  | [Revanced Extended](https://github.com/inotia00/revanced-patches/)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/reddit-beta-revanced-extended.apk), [Arm64-v8a](../../releases/download/all/reddit-beta-arm64-v8a-beta-revanced-extended.apk) | [Universal][obtainium-reddit-beta-revanced-extended], [Arm64-v8a][obtainium-reddit-beta-arm64-v8a-beta-revanced-extended] |
+|  | [Revanced Extended Arsclib](https://github.com/inotia00/revanced-patches-arsclib/) · **Outdated** | [Universal](../../releases/download/all/reddit-revanced-extended-arsclib.apk), [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended-arsclib.apk) | [Universal][obtainium-reddit-revanced-extended-arsclib], [Arm64-v8a][obtainium-reddit-arm64-v8a-revanced-extended-arsclib] |
+| <a name="pinterest"></a>**[Pinterest](https://play.google.com/store/apps/details?id=com.pinterest)** | [browzomje](https://github.com/browzomje/browzomje-patches) | [Universal](../../releases/download/all/pinterest-browzomje.apk) | [Universal][obtainium-pinterest-browzomje] |
+|  | [Reseam](https://github.com/Reseam/patches) | [Universal](../../releases/download/all/pinterest-reseam.apk) | [Universal][obtainium-pinterest-reseam] |
+| <a name="lightroom"></a>**[Lightroom](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)** | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Arm64-v8a](../../releases/download/all/lightroom-revanced.apk) | [Arm64-v8a][obtainium-lightroom-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Arm64-v8a](../../releases/download/all/lightroom-beta-revanced.apk) | [Arm64-v8a][obtainium-lightroom-beta-revanced] |
+| <a name="truecaller"></a><a name="truecaller-1"></a>**[Truecaller](https://play.google.com/store/apps/details?id=com.truecaller)** | [Bufferk](https://github.com/bufferk/morphe-patches) | [Arm64-v8a](../../releases/download/all/truecaller-arm64-v8a-bufferk.apk) | [Arm64-v8a][obtainium-truecaller-arm64-v8a-bufferk] |
+|  | [Paresh Patches](https://gitlab.com/Paresh-Maheshwari/paresh-patches) · **Outdated** | [Arm64-v8a](../../releases/download/all/truecaller-arm64-v8a-paresh.apk) | [Arm64-v8a][obtainium-truecaller-arm64-v8a-paresh] |
+| <a name="eyeconcaller"></a><a name="eyeconcaller-1"></a>**[EyeconCaller](https://play.google.com/store/apps/details?id=com.eyecon.global)** | [Paresh Patches](https://gitlab.com/Paresh-Maheshwari/paresh-patches) · **Outdated** | [Arm64-v8a](../../releases/download/all/eyecon-caller-arm64-v8a-paresh.apk) | [Arm64-v8a][obtainium-eyecon-caller-arm64-v8a-paresh] |
+| <a name="zalo"></a><a name="zalo-1"></a>**[Zalo](https://play.google.com/store/apps/details?id=com.zing.zalo)** | [gnadgnaoh](https://github.com/gnadgnaoh/NexAlloy) | [Arm64-v8a](../../releases/download/all/zalo-gnadgnaoh.apk) | [Arm64-v8a][obtainium-zalo-gnadgnaoh] |
+| <a name="camscanner"></a><a name="camscanner-1"></a>**CamScanner** | [Paresh Patches](https://gitlab.com/Paresh-Maheshwari/paresh-patches) · **Outdated** | [Arm64-v8a](../../releases/download/all/camscanner-hoo-dles.apk) | [Arm64-v8a][obtainium-camscanner-hoo-dles] |
+| <a name="battery-guru"></a><a name="battery-guru-1"></a>**[Battery Guru](https://play.google.com/store/apps/details?id=com.paget96.batteryguru)** | [arandomhooman](https://github.com/arandomhooman/hoomans-morphe-patches) | [Universal](../../releases/download/all/battery-guru-arandomhooman.apk) | [Universal][obtainium-battery-guru-arandomhooman] |
+| <a name="brave-browser"></a><a name="brave-browser-1"></a>**[Brave Browser](https://play.google.com/store/apps/details?id=com.brave.browser)** | [bufferk](https://github.com/bufferk/morphe-patches) | [Arm64-v8a](../../releases/download/all/brave-browser-arm64-v8a-bufferk.apk) | [Arm64-v8a][obtainium-brave-browser-arm64-v8a-bufferk] |
+| <a name="tumblr"></a>**[Tumblr](https://play.google.com/store/apps/details?id=com.tumblr)** | [arandomhooman](https://github.com/arandomhooman/hoomans-morphe-patches) | [Universal](../../releases/download/all/tumblr-arandomhooman.apk) | [Universal][obtainium-tumblr-arandomhooman] |
+|  | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/tumblr-derevanced.apk), [Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-derevanced.apk) | [Universal][obtainium-tumblr-derevanced], [Arm64-v8a][obtainium-tumblr-arm64-v8a-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/tumblr-revanced.apk), [Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-revanced.apk) | [Universal][obtainium-tumblr-revanced], [Arm64-v8a][obtainium-tumblr-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/tumblr-beta-revanced.apk), [Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-beta-revanced.apk) | [Universal][obtainium-tumblr-beta-revanced], [Arm64-v8a][obtainium-tumblr-arm64-v8a-beta-revanced] |
+| <a name="soundcloud"></a>**[SoundCloud](https://play.google.com/store/apps/details?id=com.soundcloud.android)** | [hoo-dles](https://github.com/hoo-dles/morphe-patches) | [Universal](../../releases/download/all/soundcloud-hoo-dles.apk) | [Universal][obtainium-soundcloud-hoo-dles] |
+|  | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/soundcloud-derevanced.apk), [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-derevanced.apk) | [Universal][obtainium-soundcloud-derevanced], [Arm64-v8a][obtainium-soundcloud-arm64-v8a-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/soundcloud-revanced.apk), [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-revanced.apk) | [Universal][obtainium-soundcloud-revanced], [Arm64-v8a][obtainium-soundcloud-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/soundcloud-beta-revanced.apk), [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-beta-revanced.apk) | [Universal][obtainium-soundcloud-beta-revanced], [Arm64-v8a][obtainium-soundcloud-arm64-v8a-beta-revanced] |
+| <a name="duolingo"></a>**[Duolingo](https://play.google.com/store/apps/details?id=com.duolingo)** | [hoo-dles](https://github.com/hoo-dles/morphe-patches) | [Arm64-v8a](../../releases/download/all/duolingo-hoo-dles.apk) | [Arm64-v8a][obtainium-duolingo-hoo-dles] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/duolingo-revanced.apk) | [Universal][obtainium-duolingo-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/duolingo-beta-revanced.apk) | [Universal][obtainium-duolingo-beta-revanced] |
+| <a name="google-news"></a><a name="google-news-1"></a>**[Google News](https://play.google.com/store/apps/details?id=com.google.android.apps.magazines)** | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-derevanced.apk) | [Arm64-v8a][obtainium-googlenews-arm64-v8a-derevanced] |
+|  | [docbt](https://github.com/docbt/patched-up) | [Universal](../../releases/download/all/googlenews-docbt.apk) | [Universal][obtainium-googlenews-docbt] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-revanced.apk) | [Arm64-v8a][obtainium-googlenews-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Arm64-v8a](../../releases/download/all/googlenews-beta-arm64-v8a-revanced.apk) | [Arm64-v8a][obtainium-googlenews-beta-arm64-v8a-revanced] |
+| <a name="photomath"></a><a name="photomath-1"></a>**[Photomath](https://play.google.com/store/apps/details?id=com.microblink.photomath)** | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/photomath-derevanced.apk) | [Universal][obtainium-photomath-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/photomath-revanced.apk) | [Universal][obtainium-photomath-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/photomath-beta-revanced.apk) | [Universal][obtainium-photomath-beta-revanced] |
+| <a name="proton-vpn"></a><a name="proton-vpn-1"></a>**[Proton VPN](https://f-droid.org/en/packages/ch.protonvpn.android/)** | [hoo-dles](https://github.com/hoo-dles/morphe-patches) | [Universal](../../releases/download/all/protonvpn-hoo-dles.apk) | [Universal][obtainium-protonvpn-hoo-dles] |
+|  | [rushiranpise](https://github.com/rushiranpise/morphe-patches) | [Universal](../../releases/download/all/protonvpn-rushiranpise.apk) | [Universal][obtainium-protonvpn-rushiranpise] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/protonvpn-revanced.apk) | [Universal][obtainium-protonvpn-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/protonvpn-beta-revanced.apk) | [Universal][obtainium-protonvpn-beta-revanced] |
+| <a name="psiphon"></a><a name="psiphon-1"></a>**[Psiphon](https://play.google.com/store/apps/details?id=com.psiphon3.subscription)** | [rushiranpise](https://github.com/rushiranpise/morphe-patches) | [Universal](../../releases/download/all/psiphon-rushiranpise.apk) | [Universal][obtainium-psiphon-rushiranpise] |
+| <a name="windscribe"></a>**[Windscribe](https://play.google.com/store/apps/details?id=com.windscribe.vpn)** | [rushiranpise](https://github.com/rushiranpise/morphe-patches) | [Universal](../../releases/download/all/windscribe-rushiranpise.apk) | [Universal][obtainium-windscribe-rushiranpise] |
+| <a name="proton-mail"></a>**[Proton mail](https://play.google.com/store/apps/details?id=ch.protonmail.android)** | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/protonmail-derevanced.apk) | [Universal][obtainium-protonmail-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/protonmail-revanced.apk) | [Universal][obtainium-protonmail-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/protonmail-beta-revanced.apk) | [Universal][obtainium-protonmail-beta-revanced] |
+| <a name="rar"></a><a name="rar-1"></a>**[RAR](https://play.google.com/store/apps/details?id=com.rarlab.rar)** | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/rar-derevanced.apk) | [Universal][obtainium-rar-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/rar-revanced.apk) | [Universal][obtainium-rar-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/rar-beta-revanced.apk) | [Universal][obtainium-rar-beta-revanced] |
+| <a name="terabox"></a><a name="terabox-1"></a>**[TeraBox](https://play.google.com/store/apps/details?id=com.dubox.drive)** | [rushiranpise](https://github.com/rushiranpise/morphe-patches) | [Universal](../../releases/download/all/terabox-rushiranpise.apk) | [Universal][obtainium-terabox-rushiranpise] |
+| <a name="strava"></a><a name="strava-1"></a>**[Strava](https://play.google.com/store/apps/details?id=com.strava)** | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Arm64-v8a](../../releases/download/all/strava-arm64-v8a-revanced.apk) | [Arm64-v8a][obtainium-strava-arm64-v8a-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Arm64-v8a](../../releases/download/all/strava-beta-arm64-v8a-revanced.apk) | [Arm64-v8a][obtainium-strava-beta-arm64-v8a-revanced] |
+| <a name="pixiv"></a><a name="pixiv-1"></a>**[Pixiv](https://play.google.com/store/apps/details?id=jp.pxv.android)** | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/pixiv-derevanced.apk) | [Universal][obtainium-pixiv-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/pixiv-revanced.apk) | [Universal][obtainium-pixiv-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/pixiv-beta-revanced.apk) | [Universal][obtainium-pixiv-beta-revanced] |
+| <a name="prime-video"></a>**[Prime Video](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)** | [hoo-dles](https://github.com/hoo-dles/morphe-patches) | [Arm64-v8a](../../releases/download/all/prime-video-arm64-v8a-hoo-dles.apk) | [Arm64-v8a][obtainium-prime-video-arm64-v8a-hoo-dles] |
+| <a name="viber"></a>**[Viber](https://play.google.com/store/apps/details?id=com.viber.voip)** | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Universal](../../releases/download/all/viber-derevanced.apk) | [Universal][obtainium-viber-derevanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/viber-revanced.apk) | [Universal][obtainium-viber-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/viber-beta-revanced.apk) | [Universal][obtainium-viber-beta-revanced] |
+| <a name="discord"></a>**[Discord](https://play.google.com/store/apps/details?id=com.discord)** | [Revenge](https://github.com/revenge-mod/revenge-xposed) | [Universal](../../releases/download/all/discord-revenge.apk) | [Universal][obtainium-discord-revenge] |
+|  | [Reseam](https://github.com/Reseam/patches) | [Universal](../../releases/download/all/discord-reseam.apk) | [Universal][obtainium-discord-reseam] |
+|  | [Venus](https://github.com/VenusIsJaded/Venus-Patches) | [Universal](../../releases/download/all/discord-venus.apk) | [Universal][obtainium-discord-venus] |
+| <a name="telegram"></a><a name="telegram-1"></a>**[Telegram](https://play.google.com/store/apps/details?id=org.telegram.messenger)** | [Reseam](https://github.com/Reseam/patches) | [Universal](../../releases/download/all/telegram-reseam.apk) | [Universal][obtainium-telegram-reseam] |
+|  | [Paresh Patches](https://gitlab.com/Paresh-Maheshwari/paresh-patches)<br>Web version · **Outdated** | [Arm64-v8a](../../releases/download/all/telegram-web-version-paresh.apk) | [Arm64-v8a][obtainium-telegram-web-version-paresh] |
+|  | [Revanced Experiments](https://github.com/Aunali321/ReVancedExperiments)<br>CH play version · **Outdated** | [Arm64-v8a](../../releases/download/all/telegram-revanced-experiments.apk) | [Arm64-v8a][obtainium-telegram-revanced-experiments] |
+|  | [Revanced Experiments](https://github.com/Aunali321/ReVancedExperiments)<br>Web version · **Outdated** | [Universal](../../releases/download/all/telegram-web-version-revanced-experiments.apk) | [Universal][obtainium-telegram-web-version-revanced-experiments] |
+| <a name="myfitnesspal"></a><a name="myfitnesspal-1"></a>**[MyFitnessPal](https://play.google.com/store/apps/details?id=com.myfitnesspal.android)** | [Revanced](https://github.com/revanced/revanced-patches)<br>Stable version · **Outdated** | [Universal](../../releases/download/all/MyFitnessPal-revanced.apk) | [Universal][obtainium-myfitnesspal-revanced] |
+|  | [Revanced](https://github.com/revanced/revanced-patches)<br>Beta version · **Outdated** | [Universal](../../releases/download/all/MyFitnessPal-beta-revanced.apk) | [Universal][obtainium-myfitnesspal-beta-revanced] |
+| <a name="google-recorder"></a><a name="google-recorder-1"></a>**[Google Recorder](https://play.google.com/store/apps/details?id=com.google.android.apps.recorder)** | [DeRevanced](https://github.com/RookieEnough/De-ReVanced) | [Arm64-v8a](../../releases/download/all/google-recorder-derevanced.apk) | [Arm64-v8a][obtainium-google-recorder-derevanced] |
+| <a name="adguard"></a><a name="adguard-1"></a>**[Adguard](https://adguard.com/)** | [hoo-dles](https://github.com/hoo-dles/morphe-patches) | [Universal](../../releases/download/all/adguard-hoo-dles.apk) | [Universal][obtainium-adguard-hoo-dles] |
+|  | [rushiranpise](https://github.com/rushiranpise/morphe-patches) | [Universal](../../releases/download/all/adguard-rushiranpise.apk) | [Universal][obtainium-adguard-rushiranpise] |
+| <a name="smart-launcher"></a><a name="smart-launcher-1"></a>**[Smart Launcher](https://play.google.com/store/apps/details?id=ginlemon.flowerfree)** | [hoo-dles](https://github.com/hoo-dles/morphe-patches) | [Universal](../../releases/download/all/smart-launcher-hoo-dles.apk) | [Universal][obtainium-smart-launcher-hoo-dles] |
+| <a name="wps-office"></a><a name="wps-office-1"></a>**[WPS Office](https://play.google.com/store/apps/details?id=cn.wps.moffice_eng)** | [hoo-dles](https://github.com/hoo-dles/morphe-patches) | [Universal](../../releases/download/all/wps-office-hoo-dles.apk) | [Universal][obtainium-wps-office-hoo-dles] |
+| <a name="waze"></a><a name="waze-1"></a>**[Waze](https://play.google.com/store/apps/details?id=com.waze)** | [rushiranpise](https://github.com/rushiranpise/morphe-patches) | [Universal](../../releases/download/all/waze-rushiranpise.apk) | [Universal][obtainium-waze-rushiranpise] |
+| <a name="solid-explorer-file-manager"></a><a name="solid-explorer-file-manager-1"></a>**[Solid Explorer File Manager](https://play.google.com/store/apps/details?id=pl.solidexplorer2)** | [hoo-dles](https://github.com/hoo-dles/morphe-patches)<br>Requires MicroG to be installed | [Arm64-v8a](../../releases/download/all/solid-explorer-hoo-dles.apk) | [Arm64-v8a][obtainium-solid-explorer-hoo-dles] |
+|  | [scrazzz](https://github.com/scrazzz/my-revanced-patches) · **Outdated** | [Arm64-v8a](../../releases/download/all/solid-explorer-arm64-v8a-scrazzz.apk) | [Arm64-v8a][obtainium-solid-explorer-arm64-v8a-scrazzz] |
+| <a name="nova-launcher"></a><a name="nova-launcher-1"></a>**[Nova Launcher](https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher)** | [Dropped Patches by indrastorms](https://github.com/indrastorms/Dropped-Patches) | [Universal](../../releases/download/all/nova-launcher-indrastorms.apk) | [Universal][obtainium-nova-launcher-indrastorms] |
+| <a name="tasker"></a><a name="tasker-1"></a>**[Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)** | [Dropped Patches by indrastorms](https://github.com/indrastorms/Dropped-Patches) | [Universal](../../releases/download/all/tasker-indrastorms.apk) | [Universal][obtainium-tasker-indrastorms] |
+| <a name="fx-file-explorer"></a><a name="fx-file-explorer-1"></a>**[FX File Explorer](https://play.google.com/store/apps/details?id=nextapp.fx)** | [Dropped Patches by indrastorms](https://github.com/indrastorms/Dropped-Patches) | [Universal](../../releases/download/all/fx-file-explorer-indrastorms.apk) | [Universal][obtainium-fx-file-explorer-indrastorms] |
+| <a name="amazon-shopping"></a><a name="amazon-shopping-1"></a>**[Amazon Shopping](https://play.google.com/store/apps/details?id=com.amazon.mShop.android.shopping)** | [rushiranpise](https://github.com/rushiranpise/morphe-patches) | [Universal](../../releases/download/all/amazon-shopping-rushiranpise.apk) | [Universal][obtainium-amazon-shopping-rushiranpise] |
 
 ---
-
-### [YouTube Music](https://play.google.com/store/apps/details?id=com.google.android.apps.youtube.music)
-
-### [Morphe:](https://github.com/MorpheApp/morphe-patches)
-
-| [Stable version](https://github.com/MorpheApp/morphe-patches/releases/latest)  | [Beta version](https://github.com/MorpheApp/morphe-patches/releases)                |
-| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-morphe.apk)    | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-morphe.apk)    |
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-| [Stable version](https://github.com/Reseam/patches/releases/latest)              |
-| -------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-reseam.apk)      |
-
-### [Revanced Extended forked by anddea:](https://github.com/anddea/revanced-patches)
-
-| [Stable version](https://github.com/anddea/revanced-patches/releases/latest)           | [Beta version](https://github.com/anddea/revanced-patches/releases)                  |
-| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| [Arm64-v8a](../../releases/download/all/youtube-music-stable-arm64-v8a-anddea.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-anddea.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-music-stable-armeabi-v7a-anddea.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-anddea.apk) |
-| [x86](../../releases/download/all/youtube-music-stable-x86-anddea.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-anddea.apk)                 |
-| [x86_64](../../releases/download/all/youtube-music-stable-x86_64-anddea.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-anddea.apk)           |
-
-### [Revanced Extended forked by lavinhoque33:](https://github.com/lavinhoque33/revanced-patches)
-
-| [Stable version](https://github.com/lavinhoque33/revanced-patches/releases/latest) |
-| -------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-lavinhoque33.apk) |
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| [Stable version](https://github.com/ReVanced/revanced-patches/releases/latest)    | [Beta version](https://github.com/ReVanced/revanced-patches/releases)                  |
-| --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced.apk) |
-| [x86](../../releases/download/all/youtube-music-x86-revanced.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-revanced.apk)                 |
-| [x86_64](../../releases/download/all/youtube-music-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced.apk)           |
-
-### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
-
-| [Stable version](https://github.com/inotia00/revanced-patches/releases/latest)             | [Beta version](https://github.com/inotia00/revanced-patches/releases)                           |
-| ------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/youtube-music-arm64-v8a-revanced-extended.apk)     | [Arm64-v8a](../../releases/download/all/youtube-music-beta-arm64-v8a-revanced-extended.apk)     |
-| [Armeabi-v7a](../../releases/download/all/youtube-music-armeabi-v7a-revanced-extended.apk) | [Armeabi-v7a](../../releases/download/all/youtube-music-beta-armeabi-v7a-revanced-extended.apk) |
-| [x86](../../releases/download/all/youtube-music-x86-revanced-extended.apk)                 | [x86](../../releases/download/all/youtube-music-beta-x86-revanced-extended.apk)                 |
-| [x86_64](../../releases/download/all/youtube-music-x86_64-revanced-extended.apk)           | [x86_64](../../releases/download/all/youtube-music-beta-x86_64-revanced-extended.apk)           |
-
-</details>
-
----
-
-### [Facebook:](https://play.google.com/store/apps/details?id=com.facebook.katana)
-
-**You have to remove the Messenger app before you install the Facebook Mod**
-
-### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
-
-This app might crash 2-3 times on the first startup. Don't worry - just try opening it again and it will work.
-
-And if you can't install Messenger back again because they check the sign, the app should need Messenger [from here](README.md#gnadgnaoh-1) too.
-
-[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-gnadgnaoh.apk)
-
-### [Hushfacebook:](https://github.com/SysAdminDoc/Hushfacebook)
-
-[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-hushfacebook.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-derevanced.apk)
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                                        | Beta version                                                                                |
-| ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- | 
-|[Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-revanced.apk) | [Arm64-v8a & Android 11+](../../releases/download/all/facebook-arm64-v8a-beta-revanced.apk) |
-
-</details>
-
----
-
-### [Messenger:](https://play.google.com/store/apps/details?id=com.facebook.orca)
-
-### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
-
-[Arm64-v8a & Android 9+](../../releases/download/all/messenger-arm64-v8a-gnadgnaoh.apk)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-derevanced.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                            | Beta version                                                                   |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
-| [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/messenger-arm64-v8a-beta-revanced.apk) |
-
-</details>
-
----
-
-### [Twitter:](https://play.google.com/store/apps/details?id=com.twitter.android)
-
-### [Piko:](https://github.com/crimera/piko)
-
-👉 [Official author download link](https://github.com/crimera/twitter-apk/releases)
-
-| [Stable version](https://github.com/crimera/piko/releases/latest)          | [Beta version](https://github.com/crimera/piko/releases/)                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------| 
-| [Universal](../../releases/download/all/twitter-stable-piko.apk)   | [Universal](../../releases/download/all/twitter-beta-piko.apk)   |
-
-### [Piko NewX:](https://github.com/crimera/piko-newx)
-
-[Universal](../../releases/download/all/twitter-piko-newx.apk)
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Universal](../../releases/download/all/twitter-reseam.apk)
-
----
-
-### [Instagram:](https://play.google.com/store/apps/details?id=com.instagram.android)
-
-### [Piko:](https://github.com/crimera/piko)
-
-| [Stable version](https://github.com/crimera/piko/releases/latest)     | [Beta version](https://github.com/crimera/piko/releases/)                  |
-| --------------------------------------------------------------------- | ---------------------------------------------------------------------------| 
-| [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-piko.apk) | [Arm64-v8a](../../releases/download/all/instagram-beta-arm64-v8a-piko.apk) |
-
-### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
-
-[Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-gnadgnaoh.apk)
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Arm64-v8a & Android 9+](../../releases/download/all/instagram-arm64-v8a-reseam.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                            | Beta version                                                                   |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
-| [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-beta-revanced.apk) |
-
-### [Revanced Experiments:](https://github.com/Aunali321/ReVancedExperiments)
-
-[Arm64-v8a](../../releases/download/all/instagram-arm64-v8a-revanced-experiments.apk)
-
-</details>
-
----
-
-### [Threads:](https://play.google.com/store/apps/details?id=com.instagram.barcelona)
-
-### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
-
-[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-gnadgnaoh.apk)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Arm64-v8a](../../releases/download/all/threads-arm64-v8a-derevanced.apk)
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Arm64-v8a & Android 9+](../../releases/download/all/threads-arm64-v8a-reseam.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                            | Beta version                                                                   |
-| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | 
-| [Arm64-v8a](../../releases/download/all/threads-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/threads-beta-arm64-v8a-revanced.apk)   |
-
-</details>
-
----
-
-### [Google Photos:](https://play.google.com/store/apps/details?id=com.google.android.apps.photos)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-derevanced.apk) 
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                                | Beta version                                                                       |
-| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | 
-| [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-revanced.apk)     | [Arm64-v8a](../../releases/download/all/gg-photos-arm64-v8a-beta-revanced.apk)     |
-| [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-revanced.apk) | [armeabi-v7a](../../releases/download/all/gg-photos-armeabi-v7a-beta-revanced.apk) |
-| [x86](../../releases/download/all/gg-photos-x86-revanced.apk)                 | [x86](../../releases/download/all/gg-photos-x86-beta-revanced.apk)                 |
-| [x86_64](../../releases/download/all/gg-photos-x86_64-revanced.apk)           | [x86_64](../../releases/download/all/gg-photos-x86_64-beta-revanced.apk)           |
-
----
-
-### [TikTok:](https://play.google.com/store/apps/details?id=com.zhiliaoapp.musically)
-
-### [gnadgnaoh:](https://github.com/gnadgnaoh/SexAlloy/)
-
-[Universal](../../releases/download/all/tiktok-gnadgnaoh.apk)
-
-### [icysymmetra:](https://github.com/icysymmetra/tiktok-patches-for-morphe)
-
-[Universal](../../releases/download/all/tiktok-icysymmetra.apk)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/tiktok-derevanced.apk)
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Universal](../../releases/download/all/tiktok-reseam.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                         | Beta version                                                                |
-| ---------------------------------------------------------------------- | -------------------------------------------------------------------------   |
-| [Universal](../../releases/download/all/tiktok-revanced.apk)   | [Universal](../../releases/download/all/tiktok-beta-revanced.apk)   |
-
-</details>
-
----
-
-### [TikTok Asia:](https://play.google.com/store/apps/details?id=com.ss.android.ugc.trill)
-
-### [gnadgnaoh:](https://github.com/gnadgnaoh/SexAlloy/)
-
-[Universal](../../releases/download/all/tiktok-asian-gnadgnaoh.apk)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/tiktok-asia-derevanced.apk)
-
----
-
-### [Twitch:](https://play.google.com/store/apps/details?id=tv.twitch.android.app)
-
-### [arandomhooman:](https://github.com/arandomhooman/hoomans-morphe-patches)
-
-[Universal](../../releases/download/all/twitch-arandomhooman.apk)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/twitch-derevanced.apk) 
-
-[Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-derevanced.apk)
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Universal](../../releases/download/all/twitch-reseam.apk)
-
-[Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-reseam.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                           | Beta version                                                                   |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | 
-| [Universal](../../releases/download/all/twitch-revanced.apk)     | [Universal](../../releases/download/all/twitch-beta-revanced.apk)      |
-| [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-revanced.apk)   | [Arm64-v8a](../../releases/download/all/twitch-arm64-v8a-beta-revanced.apk )   |
-
-</details>
-
----
-
-### [Reddit:](https://play.google.com/store/apps/details?id=com.reddit.frontpage)
-
-### [Morphe:](https://github.com/MorpheApp/morphe-patches)
-
-| Stable version                                                       | Beta version                                                              |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------- | 
-| [Universal](../../releases/download/all/reddit-morphe.apk)   | [Universal](../../releases/download/all/reddit-beta-morphe.apk)   |
-| [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-morphe.apk) | [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-beta-morphe.apk) |
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Universal](../../releases/download/all/reddit-reseam.apk)
-
-[Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-reseam.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/ReVanced/revanced-patches)
-
-| Stable version                                                         | Beta version                                                                |
-| ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
-| [Universal](../../releases/download/all/reddit-revanced.apk)   | [Universal](../../releases/download/all/reddit-beta-revanced.apk)   |
-| [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/reddit-beta-arm64-v8a-revanced.apk) |
-
-### [Revanced Extended:](https://github.com/inotia00/revanced-patches/)
-
-| Stable version                                                                  | Beta version                                                                              |
-| ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | 
-| [Universal](../../releases/download/all/reddit-revanced-extended.apk)   | [Universal](../../releases/download/all/reddit-beta-revanced-extended.apk)        |
-| [Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended.apk) | [Arm64-v8a](../../releases/download/all/reddit-beta-arm64-v8a-beta-revanced-extended.apk) |
-
-### [Revanced Extended Arsclib:](https://github.com/inotia00/revanced-patches-arsclib/)
-
-[Universal](../../releases/download/all/reddit-revanced-extended-arsclib.apk)
-
-[Arm64-v8a](../../releases/download/all/reddit-arm64-v8a-revanced-extended-arsclib.apk)
-
-</details>
-
----
-
-### [Pinterest:](https://play.google.com/store/apps/details?id=com.pinterest)
-
-### [browzomje:](https://github.com/browzomje/browzomje-patches)
-
-[Universal](../../releases/download/all/pinterest-browzomje.apk)
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Universal](../../releases/download/all/pinterest-reseam.apk)
-
----
-
-### [Lightroom:](https://play.google.com/store/apps/details?id=com.adobe.lrmobile)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                          | Beta version                                                                 |
-| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- | 
-| [Arm64-v8a](../../releases/download/all/lightroom-revanced.apk)         | [Arm64-v8a](../../releases/download/all/lightroom-beta-revanced.apk)         |
-
-</details>
-
----
-
-### [Truecaller:](https://play.google.com/store/apps/details?id=com.truecaller)
-
-### [Bufferk:](https://github.com/bufferk/morphe-patches)
-
-[Arm64-v8a](../../releases/download/all/truecaller-arm64-v8a-bufferk.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
-
-[Arm64-v8a](../../releases/download/all/truecaller-arm64-v8a-paresh.apk)
-
-</details>
-
----
-
-### [EyeconCaller:](https://play.google.com/store/apps/details?id=com.eyecon.global)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
-
-[Arm64-v8a](../../releases/download/all/eyecon-caller-arm64-v8a-paresh.apk)
-
-</details>
-
----
-
-### [Zalo:](https://play.google.com/store/apps/details?id=com.zing.zalo)
-
-### [gnadgnaoh:](https://github.com/gnadgnaoh/NexAlloy)
-
-[Arm64-v8a](../../releases/download/all/zalo-gnadgnaoh.apk)
-
----
-
-### [CamScanner:]()
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
-
-[Arm64-v8a](../../releases/download/all/camscanner-hoo-dles.apk)
-
-</details>
-
----
-
-### [Battery Guru:](https://play.google.com/store/apps/details?id=com.paget96.batteryguru)
-
-### [arandomhooman:](https://github.com/arandomhooman/hoomans-morphe-patches)
-
-[Universal](../../releases/download/all/battery-guru-arandomhooman.apk)
-
----
-
-### [Brave Browser:](https://play.google.com/store/apps/details?id=com.brave.browser)
-
-### [bufferk:](https://github.com/bufferk/morphe-patches)
-
-[Arm64-v8a](../../releases/download/all/brave-browser-arm64-v8a-bufferk.apk)
-
----
-
-### [Tumblr:](https://play.google.com/store/apps/details?id=com.tumblr)
-
-### [arandomhooman:](https://github.com/arandomhooman/hoomans-morphe-patches)
-
-[Universal](../../releases/download/all/tumblr-arandomhooman.apk)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/tumblr-derevanced.apk)
-
-[Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-derevanced.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                         | Beta version                                                                |
-| ---------------------------------------------------------------------- | --------------------------------------------------------------------------- | 
-| [Universal](../../releases/download/all/tumblr-revanced.apk)   | [Universal](../../releases/download/all/tumblr-beta-revanced.apk)   |
-| [Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/tumblr-arm64-v8a-beta-revanced.apk) |
-
-</details>
-
----
-
-### [SoundCloud:](https://play.google.com/store/apps/details?id=com.soundcloud.android)
-
-### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
-
-[Universal](../../releases/download/all/soundcloud-hoo-dles.apk )
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/soundcloud-derevanced.apk)
-
-[Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-derevanced.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                             | Beta version                                                                    |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | 
-| [Universal](../../releases/download/all/soundcloud-revanced.apk)   | [Universal](../../releases/download/all/soundcloud-beta-revanced.apk)   |
-| [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/soundcloud-arm64-v8a-beta-revanced.apk) |
-
-</details>
-
----
-
-### [Duolingo:](https://play.google.com/store/apps/details?id=com.duolingo)
-
-### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
-
-[Arm64-v8a](../../releases/download/all/duolingo-hoo-dles.apk )
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                           | Beta version                                                                  |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------------   |
-| [Universal](../../releases/download/all/duolingo-revanced.apk)   | [Universal](../../releases/download/all/duolingo-beta-revanced.apk)   |
-
-</details>
-
----
-
-### [Google News:](play.google.com/store/apps/details?id=com.google.android.apps.magazines)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-derevanced.apk)
-
-### [docbt:](https://github.com/docbt/patched-up)
-
-[Universal](../../releases/download/all/googlenews-docbt.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                             | Beta version                                                                    |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/googlenews-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/googlenews-beta-arm64-v8a-revanced.apk) |
-
-</details>
-
----
-
-### [Photomath:](https://play.google.com/store/apps/details?id=com.microblink.photomath)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/photomath-derevanced.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                             | Beta version                                                                    |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Universal](../../releases/download/all/photomath-revanced.apk)    | [Universal](../../releases/download/all/photomath-beta-revanced.apk)    |
-
-</details>
-
----
-
-### [Proton VPN:](https://f-droid.org/en/packages/ch.protonvpn.android/)
-
-### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
-
-[Universal](../../releases/download/all/protonvpn-hoo-dles.apk )
-
-### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
-
-[Universal](../../releases/download/all/protonvpn-rushiranpise.apk )
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                          | Beta version                                                                 |
-| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| [Universal](../../releases/download/all/protonvpn-revanced.apk) | [Universal](../../releases/download/all/protonvpn-beta-revanced.apk) |
-
-</details>
-
----
-
-### [Psiphon:](https://play.google.com/store/apps/details?id=com.psiphon3.subscription)
-
-### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
-
-[Universal](../../releases/download/all/psiphon-rushiranpise.apk )
-
----
-
-### [Windscribe:](https://play.google.com/store/apps/details?id=com.windscribe.vpn)
-
-### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
-
-[Universal](../../releases/download/all/windscribe-rushiranpise.apk )
-
----
-
-### [Proton mail:](https://play.google.com/store/apps/details?id=ch.protonmail.android)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/protonmail-derevanced.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                              | Beta version                                                                    |
-| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| [Universal](../../releases/download/all/protonmail-revanced.apk)    | [Universal](../../releases/download/all/protonmail-beta-revanced.apk)   |
-
-</details>
-
----
-
-### [RAR:](https://play.google.com/store/apps/details?id=com.rarlab.rar)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/rar-derevanced.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                    | Beta version                                                           |
-| ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| [Universal](../../releases/download/all/rar-revanced.apk) | [Universal](../../releases/download/all/rar-beta-revanced.apk) |
-
-</details>
-
----
-
-### [TeraBox:](https://play.google.com/store/apps/details?id=com.dubox.drive)
-
-### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
-
-[Universal](../../releases/download/all/terabox-rushiranpise.apk)
-
----
-
-### [Strava:](https://play.google.com/store/apps/details?id=com.strava)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                         | Beta version                                                                |
-| ---------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| [Arm64-v8a](../../releases/download/all/strava-arm64-v8a-revanced.apk) | [Arm64-v8a](../../releases/download/all/strava-beta-arm64-v8a-revanced.apk) |
-
-</details>
-
----
-
-### [Pixiv:](https://play.google.com/store/apps/details?id=jp.pxv.android)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/pixiv-derevanced.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                      | Beta version                                                             |
-| ------------------------------------------------------------------- | ------------------------------------------------------------------------ | 
-| [Universal](../../releases/download/all/pixiv-revanced.apk) | [Universal](../../releases/download/all/pixiv-beta-revanced.apk) |
-
-</details>
-
----
-
-### [Prime Video:](https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient)
-
-### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
-
-[Arm64-v8a](../../releases/download/all/prime-video-arm64-v8a-hoo-dles.apk)
-
----
-
-### [Viber:](https://play.google.com/store/apps/details?id=com.viber.voip)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Universal](../../releases/download/all/viber-derevanced.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                        | Beta version                                                               |
-| --------------------------------------------------------------------- | -------------------------------------------------------------------------- | 
-| [Universal](../../releases/download/all/viber-revanced.apk)   | [Universal](../../releases/download/all/viber-beta-revanced.apk)   |
-
-</details>
-
----
-
-### [Discord:](https://play.google.com/store/apps/details?id=com.discord)
-
-### [Revenge:](https://github.com/revenge-mod/revenge-xposed)
-
-[Universal](../../releases/download/all/discord-revenge.apk )
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Universal](../../releases/download/all/discord-reseam.apk)
-
-### [Venus:](https://github.com/VenusIsJaded/Venus-Patches)
-
-[Universal](../../releases/download/all/discord-venus.apk)
-
----
-
-### [Telegram:](https://play.google.com/store/apps/details?id=org.telegram.messenger)
-
-### [Reseam:](https://github.com/Reseam/patches)
-
-[Universal](../../releases/download/all/telegram-reseam.apk)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Paresh Patches:](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
-
-Web version:
-
-[Arm64-v8a](../../releases/download/all/telegram-web-version-paresh.apk)
-
-
-### [Revanced Experiments:](https://github.com/Aunali321/ReVancedExperiments)
-
-CH play version:
-
-[Arm64-v8a](../../releases/download/all/telegram-revanced-experiments.apk)
-
-Web version:
-
-[Universal](../../releases/download/all/telegram-web-version-revanced-experiments.apk) 
-
-</details>
-
----
-
-### [MyFitnessPal:](https://play.google.com/store/apps/details?id=com.myfitnesspal.android)
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [Revanced:](https://github.com/revanced/revanced-patches)
-
-| Stable version                                                             | Beta version                                                                    |
-| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------  | 
-| [Universal](../../releases/download/all/MyFitnessPal-revanced.apk) | [Universal](../../releases/download/all/MyFitnessPal-beta-revanced.apk) |
-
-</details>
-
----
-
-### [Google Recorder:](https://play.google.com/store/apps/details?id=com.google.android.apps.recorder)
-
-### [DeRevanced:](https://github.com/RookieEnough/De-ReVanced)
-
-[Arm64-v8a](../../releases/download/all/google-recorder-derevanced.apk )
-
----
-
-### [Adguard:](https://adguard.com/)
-
-### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
-
-[Universal](../../releases/download/all/adguard-hoo-dles.apk )
-
-### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
-
-[Universal](../../releases/download/all/adguard-rushiranpise.apk )
-
----
-
-### [Smart Launcher:](https://play.google.com/store/apps/details?id=ginlemon.flowerfree)
-
-### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
-
-[Universal](../../releases/download/all/smart-launcher-hoo-dles.apk )
-
----
-
-### [WPS Office:](https://play.google.com/store/apps/details?id=cn.wps.moffice_eng)
-
-### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
-
-[Universal](../../releases/download/all/wps-office-hoo-dles.apk )
-
----
-
-### [Waze:](https://play.google.com/store/apps/details?id=com.waze)
-
-### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
-
-[Universal](../../releases/download/all/waze-rushiranpise.apk )
-
----
-
-### [Solid Explorer File Manager:](https://play.google.com/store/apps/details?id=pl.solidexplorer2)
-
-### [hoo-dles:](https://github.com/hoo-dles/morphe-patches)
-
-Requires MicroG to be installed
-
-[Arm64-v8a](../../releases/download/all/solid-explorer-hoo-dles.apk )
-
-<details>
-  <summary>Outdated patches</summary>
-
-### [scrazzz](https://github.com/scrazzz/my-revanced-patches)
-
-[Arm64-v8a](../../releases/download/all/solid-explorer-arm64-v8a-scrazzz.apk )
-
-</details>
-
----
-
-### [Nova Launcher:](https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher)
-
-### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
-
-[Universal](../../releases/download/all/nova-launcher-indrastorms.apk)
-
----
-
-### [Tasker:](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
-
-### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
-
-[Universal](../../releases/download/all/tasker-indrastorms.apk)
-
----
-
-### [FX File Explorer:](https://play.google.com/store/apps/details?id=nextapp.fx)
-
-### [Dropped Patches by indrastorms:](https://github.com/indrastorms/Dropped-Patches)
-
-[Universal](../../releases/download/all/fx-file-explorer-indrastorms.apk)
-
----
-
-### [Amazon Shopping:](https://play.google.com/store/apps/details?id=com.amazon.mShop.android.shopping)
-
-### [rushiranpise:](https://github.com/rushiranpise/morphe-patches)
-
-[Universal](../../releases/download/all/amazon-shopping-rushiranpise.apk)
 
 ### ⚠️ Libraries and resources used in this repository:
 
@@ -1281,3 +454,243 @@ Requires MicroG to be installed
 [tdl](https://github.com/iyear/tdl) - [AGPL-3.0](https://github.com/iyear/tdl/blob/master/LICENSE)
 
 ---
+
+<!-- Obtainium import links: one reference per APK filename. -->
+
+[obtainium-youtube-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22108141187724410%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-arm64-v8a-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22118951624461289%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-arm64-v8a-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-armeabi-v7a-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22253028191976874%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-armeabi-v7a-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-x86-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%222703489096476%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-x86_64-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2219366582961397%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86_64-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-beta-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22113848659765602%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-beta-arm64-v8a-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2250438982557479%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-arm64-v8a-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-beta-armeabi-v7a-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22274988349688439%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-armeabi-v7a-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-beta-x86-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2294624379014394%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-x86-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-beta-x86_64-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2274914069525333%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-x86_64-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22106298774331747%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-arm64-v8a-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22256131514557219%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-arm64-v8a-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-armeabi-v7a-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22245451012901332%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-armeabi-v7a-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-x86-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22105423479965281%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-x86_64-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2250142127885910%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86_64-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-stable-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2273544769963538%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-stable-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-stable-arm64-v8a-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22153428979982123%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-stable-arm64-v8a-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-stable-armeabi-v7a-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2296689284162786%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-stable-armeabi-v7a-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-stable-x86-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2277082364012791%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-stable-x86-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-stable-x86_64-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22217517031548441%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-stable-x86_64-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-beta-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22258203391689210%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-beta-arm64-v8a-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2298207930831738%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-arm64-v8a-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-beta-armeabi-v7a-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22236663427111498%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-armeabi-v7a-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-beta-x86-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2216717570763742%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-x86-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-beta-x86_64-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22124487336137271%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-x86_64-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-lavinhoque33]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22188376691621747%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-lavinhoque33%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-arm64-v8a-lavinhoque33]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2237523451804779%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-arm64-v8a-lavinhoque33%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-armeabi-v7a-lavinhoque33]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22265038839301843%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-armeabi-v7a-lavinhoque33%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-x86-lavinhoque33]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2225986416763844%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86-lavinhoque33%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-x86_64-lavinhoque33]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%229646909974328%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86_64-lavinhoque33%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22136192651919858%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22161682126438790%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-armeabi-v7a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22225312376114773%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-armeabi-v7a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-x86-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22255958362270654%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-x86_64-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22219778057255704%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86_64-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2236684498202215%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-beta-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22166305738534304%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-beta-armeabi-v7a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2278765498675583%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-armeabi-v7a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-beta-x86-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22114237552959975%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-x86-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-beta-x86_64-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22148243389616108%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-x86_64-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-lite-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22156238879804147%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%28Lite%20version%29%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-lite-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%28Lite%20version%29%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-lite-armeabi-v7a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22230251222877761%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%28Lite%20version%29%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-lite-armeabi-v7a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%28Lite%20version%29%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-lite-beta-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2241279656626257%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%28Lite%20version%29%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-lite-beta-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%28Lite%20version%29%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-lite-beta-armeabi-v7a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22187541067955582%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20%28Lite%20version%29%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-lite-beta-armeabi-v7a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20%28Lite%20version%29%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22140217047369676%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-arm64-v8a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22226520292683205%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-arm64-v8a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-armeabi-v7a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22232993577432742%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-armeabi-v7a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-x86-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2287733021439382%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-x86_64-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22272766981212554%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86_64-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-beta-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2247499498083498%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-beta-arm64-v8a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2214808170066163%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-arm64-v8a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-beta-armeabi-v7a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22271202920147870%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-armeabi-v7a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-beta-x86-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22199912432669367%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-x86-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-beta-x86_64-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22231478040304432%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-beta-x86_64-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-revanced-extended-android-6-7]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22280993025464833%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-revanced-extended-android-6-7%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-arm64-v8a-revanced-extended-android-6-7]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2290738100363150%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-arm64-v8a-revanced-extended-android-6-7%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-armeabi-v7a-revanced-extended-android-6-7]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22192305722297311%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-armeabi-v7a-revanced-extended-android-6-7%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-x86-revanced-extended-android-6-7]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2283541310420966%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86-revanced-extended-android-6-7%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-x86_64-revanced-extended-android-6-7]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22133641146958741%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86_64-revanced-extended-android-6-7%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%206%20%26%207%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-revanced-extended-android-5]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2295649679685989%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-revanced-extended-android-5%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-youtube-arm64-v8a-revanced-extended-android-5]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22261251849751802%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-arm64-v8a-revanced-extended-android-5%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-armeabi-v7a-revanced-extended-android-5]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22272775753177595%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-armeabi-v7a-revanced-extended-android-5%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-x86-revanced-extended-android-5]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22203629288708130%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86-revanced-extended-android-5%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-x86_64-revanced-extended-android-5]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22186907908895067%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-x86_64-revanced-extended-android-5%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20%2F%20Revanced%20Extended%20For%20Android%205%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-music-arm64-v8a-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22238065108558392%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-arm64-v8a-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-arm64-v8a-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22236639188038386%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-arm64-v8a-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-arm64-v8a-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2268576240165880%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-arm64-v8a-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Reseam%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-stable-arm64-v8a-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22179174351492955%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-stable-arm64-v8a-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-stable-armeabi-v7a-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22253094672495038%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-stable-armeabi-v7a-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-music-stable-x86-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22281288397247501%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-stable-x86-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-music-stable-x86_64-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22277705028117065%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-stable-x86_64-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-arm64-v8a-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2212328679264617%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-arm64-v8a-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-armeabi-v7a-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2299516946467168%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-armeabi-v7a-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-x86-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%226432836702988%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-x86-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-x86_64-anddea]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22118297153520459%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-x86_64-anddea%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20anddea%20%2F%20Beta%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-music-arm64-v8a-lavinhoque33]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22136202382634766%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-arm64-v8a-lavinhoque33%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20forked%20by%20lavinhoque33%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22261763492384571%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-armeabi-v7a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22172794567060901%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-armeabi-v7a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-music-x86-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2219537447468389%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-x86-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-music-x86_64-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22228025986896562%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-x86_64-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22243266328738030%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-armeabi-v7a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2296866208218213%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-armeabi-v7a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-x86-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22167795543755924%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-x86-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-x86_64-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22141715431079067%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-x86_64-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-music-arm64-v8a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%224952539466537%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-arm64-v8a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-armeabi-v7a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2250981120835441%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-armeabi-v7a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-music-x86-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22253671727707544%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-x86-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-music-x86_64-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22242709303470415%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-x86_64-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-arm64-v8a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2220812859618186%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-arm64-v8a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-armeabi-v7a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2249680611007350%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-armeabi-v7a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Armeabi-v7a%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-x86-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2250622774614078%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-x86-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-youtube-music-beta-x86_64-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22112044663089710%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eyoutube-music-beta-x86_64-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22YouTube%20Music%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-facebook-arm64-v8a-gnadgnaoh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22103867527916563%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Facebook%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Efacebook-arm64-v8a-gnadgnaoh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Facebook%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%5C%22%7D%22%7D
+[obtainium-facebook-arm64-v8a-hushfacebook]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2210498142846366%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Facebook%20%2F%20Hushfacebook%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Efacebook-arm64-v8a-hushfacebook%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Facebook%20%2F%20Hushfacebook%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%5C%22%7D%22%7D
+[obtainium-facebook-arm64-v8a-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22253711855208080%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Facebook%20%2F%20DeRevanced%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Efacebook-arm64-v8a-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Facebook%20%2F%20DeRevanced%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%5C%22%7D%22%7D
+[obtainium-facebook-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22265547033544048%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Facebook%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Efacebook-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Facebook%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%5C%22%7D%22%7D
+[obtainium-facebook-arm64-v8a-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2228094087184808%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Facebook%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Efacebook-arm64-v8a-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Facebook%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%20%26%20Android%2011%2B%5C%22%7D%22%7D
+[obtainium-messenger-arm64-v8a-gnadgnaoh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22196348187366549%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Messenger%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%20%26%20Android%209%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Emessenger-arm64-v8a-gnadgnaoh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Messenger%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%20%26%20Android%209%2B%5C%22%7D%22%7D
+[obtainium-messenger-arm64-v8a-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22123373612480418%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Messenger%20%2F%20DeRevanced%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Emessenger-arm64-v8a-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Messenger%20%2F%20DeRevanced%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-messenger-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22146258986654322%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Messenger%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Emessenger-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Messenger%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-messenger-arm64-v8a-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22106556199925791%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Messenger%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Emessenger-arm64-v8a-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Messenger%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-twitter-stable-piko]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22221250098002603%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitter%20%2F%20Piko%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitter-stable-piko%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitter%20%2F%20Piko%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitter-beta-piko]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22232659517556428%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitter%20%2F%20Piko%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitter-beta-piko%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitter%20%2F%20Piko%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitter-piko-newx]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22270970532688748%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitter%20%2F%20Piko%20NewX%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitter-piko-newx%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitter%20%2F%20Piko%20NewX%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitter-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2266241757388785%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitter%20%2F%20Reseam%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitter-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitter%20%2F%20Reseam%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-instagram-arm64-v8a-piko]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22188611712138566%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Instagram%20%2F%20Piko%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Einstagram-arm64-v8a-piko%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Instagram%20%2F%20Piko%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-instagram-beta-arm64-v8a-piko]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2225451101621167%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Instagram%20%2F%20Piko%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Einstagram-beta-arm64-v8a-piko%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Instagram%20%2F%20Piko%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-instagram-arm64-v8a-gnadgnaoh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2274033063173349%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Instagram%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%20%26%20Android%209%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Einstagram-arm64-v8a-gnadgnaoh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Instagram%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%20%26%20Android%209%2B%5C%22%7D%22%7D
+[obtainium-instagram-arm64-v8a-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2224642884752389%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Instagram%20%2F%20Reseam%20%2F%20Arm64-v8a%20%26%20Android%209%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Einstagram-arm64-v8a-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Instagram%20%2F%20Reseam%20%2F%20Arm64-v8a%20%26%20Android%209%2B%5C%22%7D%22%7D
+[obtainium-instagram-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22157666106717928%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Instagram%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Einstagram-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Instagram%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-instagram-arm64-v8a-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2252631497743533%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Instagram%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Einstagram-arm64-v8a-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Instagram%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-instagram-arm64-v8a-revanced-experiments]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2210341561878684%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Instagram%20%2F%20Revanced%20Experiments%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Einstagram-arm64-v8a-revanced-experiments%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Instagram%20%2F%20Revanced%20Experiments%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-threads-arm64-v8a-gnadgnaoh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22121522395071473%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Threads%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ethreads-arm64-v8a-gnadgnaoh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Threads%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-threads-arm64-v8a-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22220677129738609%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Threads%20%2F%20DeRevanced%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ethreads-arm64-v8a-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Threads%20%2F%20DeRevanced%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-threads-arm64-v8a-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22146584414227333%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Threads%20%2F%20Reseam%20%2F%20Arm64-v8a%20%26%20Android%209%2B%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ethreads-arm64-v8a-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Threads%20%2F%20Reseam%20%2F%20Arm64-v8a%20%26%20Android%209%2B%5C%22%7D%22%7D
+[obtainium-threads-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22120696681182142%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Threads%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ethreads-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Threads%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-threads-beta-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22206689710651859%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Threads%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ethreads-beta-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Threads%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-gg-photos-arm64-v8a-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2259592024011135%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20DeRevanced%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-arm64-v8a-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20DeRevanced%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-gg-photos-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22114489101000175%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-gg-photos-armeabi-v7a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22226768564084910%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-armeabi-v7a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20armeabi-v7a%5C%22%7D%22%7D
+[obtainium-gg-photos-x86-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22152135178279731%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-x86-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-gg-photos-x86_64-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22247049922668953%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-x86_64-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-gg-photos-arm64-v8a-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2285569656195357%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-arm64-v8a-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-gg-photos-armeabi-v7a-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%229066171454843%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20armeabi-v7a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-armeabi-v7a-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20armeabi-v7a%5C%22%7D%22%7D
+[obtainium-gg-photos-x86-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22127896443995499%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-x86-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86%5C%22%7D%22%7D
+[obtainium-gg-photos-x86_64-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2215690398312256%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Photos%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86_64%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egg-photos-x86_64-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Photos%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20x86_64%5C%22%7D%22%7D
+[obtainium-tiktok-gnadgnaoh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22212285612517511%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TikTok%20%2F%20gnadgnaoh%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-gnadgnaoh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TikTok%20%2F%20gnadgnaoh%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tiktok-icysymmetra]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22139417820814078%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TikTok%20%2F%20icysymmetra%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-icysymmetra%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TikTok%20%2F%20icysymmetra%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tiktok-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%222807802714348%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TikTok%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TikTok%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tiktok-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22213238478421198%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TikTok%20%2F%20Reseam%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TikTok%20%2F%20Reseam%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tiktok-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22170814231710060%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TikTok%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TikTok%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tiktok-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22197313972572386%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TikTok%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TikTok%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tiktok-asian-gnadgnaoh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22111013727984629%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TikTok%20Asia%20%2F%20gnadgnaoh%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-asian-gnadgnaoh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TikTok%20Asia%20%2F%20gnadgnaoh%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tiktok-asia-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22205305933952948%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TikTok%20Asia%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etiktok-asia-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TikTok%20Asia%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitch-arandomhooman]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22176878059230086%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20arandomhooman%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-arandomhooman%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20arandomhooman%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitch-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2268311147057073%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitch-arm64-v8a-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22226490648609273%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20DeRevanced%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-arm64-v8a-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20DeRevanced%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-twitch-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22273729966674117%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20Reseam%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20Reseam%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitch-arm64-v8a-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2258517660099405%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20Reseam%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-arm64-v8a-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20Reseam%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-twitch-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22142129356166670%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitch-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22277653400602174%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-twitch-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22185320556944585%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-twitch-arm64-v8a-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22240618699807463%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Twitch%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etwitch-arm64-v8a-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Twitch%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-reddit-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22238095034340236%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-reddit-arm64-v8a-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2228442549766485%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-arm64-v8a-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Morphe%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-reddit-beta-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22146707556934280%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-beta-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-reddit-arm64-v8a-beta-morphe]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%227712726623039%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-arm64-v8a-beta-morphe%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Morphe%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-reddit-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22119546877525853%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Reseam%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Reseam%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-reddit-arm64-v8a-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22135550861571244%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Reseam%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-arm64-v8a-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Reseam%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-reddit-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22260734599410296%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-reddit-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2265854155021915%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-reddit-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22167769964902818%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-reddit-beta-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22104542143324584%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-beta-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-reddit-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22137659196498293%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-reddit-arm64-v8a-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22184942030152224%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-arm64-v8a-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20Extended%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-reddit-beta-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22243734857367381%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-beta-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-reddit-beta-arm64-v8a-beta-revanced-extended]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2296823306807165%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-beta-arm64-v8a-beta-revanced-extended%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20Extended%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-reddit-revanced-extended-arsclib]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22240089652715501%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20Extended%20Arsclib%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-revanced-extended-arsclib%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20Extended%20Arsclib%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-reddit-arm64-v8a-revanced-extended-arsclib]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22261988026807745%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Reddit%20%2F%20Revanced%20Extended%20Arsclib%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ereddit-arm64-v8a-revanced-extended-arsclib%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Reddit%20%2F%20Revanced%20Extended%20Arsclib%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-pinterest-browzomje]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22191823111187255%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Pinterest%20%2F%20browzomje%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Epinterest-browzomje%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Pinterest%20%2F%20browzomje%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-pinterest-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2211835729696957%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Pinterest%20%2F%20Reseam%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Epinterest-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Pinterest%20%2F%20Reseam%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-lightroom-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22251878041209040%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Lightroom%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Elightroom-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Lightroom%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-lightroom-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2220110938497349%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Lightroom%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Elightroom-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Lightroom%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-truecaller-arm64-v8a-bufferk]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22236207267300429%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Truecaller%20%2F%20Bufferk%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etruecaller-arm64-v8a-bufferk%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Truecaller%20%2F%20Bufferk%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-truecaller-arm64-v8a-paresh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22104181231875811%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Truecaller%20%2F%20Paresh%20Patches%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etruecaller-arm64-v8a-paresh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Truecaller%20%2F%20Paresh%20Patches%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-eyecon-caller-arm64-v8a-paresh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2217374328281430%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22EyeconCaller%20%2F%20Paresh%20Patches%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eeyecon-caller-arm64-v8a-paresh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22EyeconCaller%20%2F%20Paresh%20Patches%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-zalo-gnadgnaoh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22156375937299637%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Zalo%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ezalo-gnadgnaoh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Zalo%20%2F%20gnadgnaoh%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-camscanner-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2268749802488586%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22CamScanner%20%2F%20Paresh%20Patches%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ecamscanner-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22CamScanner%20%2F%20Paresh%20Patches%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-battery-guru-arandomhooman]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22210123232308757%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Battery%20Guru%20%2F%20arandomhooman%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ebattery-guru-arandomhooman%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Battery%20Guru%20%2F%20arandomhooman%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-brave-browser-arm64-v8a-bufferk]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22237150267507924%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Brave%20Browser%20%2F%20bufferk%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ebrave-browser-arm64-v8a-bufferk%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Brave%20Browser%20%2F%20bufferk%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-tumblr-arandomhooman]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22131777841030556%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Tumblr%20%2F%20arandomhooman%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etumblr-arandomhooman%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Tumblr%20%2F%20arandomhooman%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tumblr-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22275495792051071%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Tumblr%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etumblr-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Tumblr%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tumblr-arm64-v8a-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22189520726542604%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Tumblr%20%2F%20DeRevanced%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etumblr-arm64-v8a-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Tumblr%20%2F%20DeRevanced%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-tumblr-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22143500697677890%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Tumblr%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etumblr-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Tumblr%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tumblr-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22132146091583848%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Tumblr%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etumblr-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Tumblr%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-tumblr-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22278014230277384%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Tumblr%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etumblr-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Tumblr%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tumblr-arm64-v8a-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22170961998024195%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Tumblr%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etumblr-arm64-v8a-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Tumblr%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-soundcloud-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2230563652128642%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22SoundCloud%20%2F%20hoo-dles%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esoundcloud-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22SoundCloud%20%2F%20hoo-dles%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-soundcloud-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22166018197378135%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22SoundCloud%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esoundcloud-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22SoundCloud%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-soundcloud-arm64-v8a-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22163574088724731%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22SoundCloud%20%2F%20DeRevanced%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esoundcloud-arm64-v8a-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22SoundCloud%20%2F%20DeRevanced%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-soundcloud-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2289896908846209%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22SoundCloud%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esoundcloud-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22SoundCloud%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-soundcloud-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22241281547748270%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22SoundCloud%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esoundcloud-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22SoundCloud%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-soundcloud-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22115418610864775%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22SoundCloud%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esoundcloud-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22SoundCloud%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-soundcloud-arm64-v8a-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%223553476956114%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22SoundCloud%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esoundcloud-arm64-v8a-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22SoundCloud%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-duolingo-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22257116975211733%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Duolingo%20%2F%20hoo-dles%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eduolingo-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Duolingo%20%2F%20hoo-dles%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-duolingo-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22177773942270505%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Duolingo%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eduolingo-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Duolingo%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-duolingo-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22155861242159205%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Duolingo%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eduolingo-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Duolingo%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-googlenews-arm64-v8a-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22121325621986901%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20News%20%2F%20DeRevanced%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egooglenews-arm64-v8a-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20News%20%2F%20DeRevanced%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-googlenews-docbt]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2258171065181885%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20News%20%2F%20docbt%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egooglenews-docbt%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20News%20%2F%20docbt%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-googlenews-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2288850679797494%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20News%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egooglenews-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20News%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-googlenews-beta-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22131482878338770%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20News%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egooglenews-beta-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20News%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-photomath-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22172412441539680%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Photomath%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ephotomath-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Photomath%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-photomath-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22184822573443666%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Photomath%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ephotomath-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Photomath%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-photomath-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22147001261363001%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Photomath%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ephotomath-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Photomath%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-protonvpn-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2248123357534168%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Proton%20VPN%20%2F%20hoo-dles%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eprotonvpn-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Proton%20VPN%20%2F%20hoo-dles%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-protonvpn-rushiranpise]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22241138340757078%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Proton%20VPN%20%2F%20rushiranpise%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eprotonvpn-rushiranpise%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Proton%20VPN%20%2F%20rushiranpise%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-protonvpn-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22226246315817821%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Proton%20VPN%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eprotonvpn-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Proton%20VPN%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-protonvpn-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2262195244611829%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Proton%20VPN%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eprotonvpn-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Proton%20VPN%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-psiphon-rushiranpise]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2219906194237518%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Psiphon%20%2F%20rushiranpise%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Epsiphon-rushiranpise%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Psiphon%20%2F%20rushiranpise%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-windscribe-rushiranpise]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22207480670719082%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Windscribe%20%2F%20rushiranpise%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ewindscribe-rushiranpise%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Windscribe%20%2F%20rushiranpise%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-protonmail-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22156275697625095%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Proton%20mail%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eprotonmail-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Proton%20mail%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-protonmail-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22111014356475208%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Proton%20mail%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eprotonmail-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Proton%20mail%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-protonmail-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22102514675955024%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Proton%20mail%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eprotonmail-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Proton%20mail%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-rar-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22133870424496205%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22RAR%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Erar-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22RAR%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-rar-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22232606085739521%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22RAR%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Erar-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22RAR%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-rar-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22233162429231477%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22RAR%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Erar-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22RAR%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-terabox-rushiranpise]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22207941992886264%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22TeraBox%20%2F%20rushiranpise%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eterabox-rushiranpise%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22TeraBox%20%2F%20rushiranpise%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-strava-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22223584509768367%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Strava%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Estrava-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Strava%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-strava-beta-arm64-v8a-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22244285172159505%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Strava%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Estrava-beta-arm64-v8a-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Strava%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-pixiv-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2278331162304444%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Pixiv%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Epixiv-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Pixiv%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-pixiv-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2211943042306595%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Pixiv%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Epixiv-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Pixiv%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-pixiv-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22207105047515377%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Pixiv%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Epixiv-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Pixiv%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-prime-video-arm64-v8a-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22199319199249204%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Prime%20Video%20%2F%20hoo-dles%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eprime-video-arm64-v8a-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Prime%20Video%20%2F%20hoo-dles%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-viber-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2264653073893285%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Viber%20%2F%20DeRevanced%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eviber-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Viber%20%2F%20DeRevanced%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-viber-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2250700960560374%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Viber%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eviber-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Viber%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-viber-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2294517706870445%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Viber%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eviber-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Viber%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-discord-revenge]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2270570801975662%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Discord%20%2F%20Revenge%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ediscord-revenge%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Discord%20%2F%20Revenge%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-discord-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2293628161449029%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Discord%20%2F%20Reseam%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ediscord-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Discord%20%2F%20Reseam%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-discord-venus]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22133331382523838%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Discord%20%2F%20Venus%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ediscord-venus%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Discord%20%2F%20Venus%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-telegram-reseam]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2261115686840148%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Telegram%20%2F%20Reseam%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etelegram-reseam%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Telegram%20%2F%20Reseam%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-telegram-web-version-paresh]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22214781165116433%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Telegram%20%2F%20Paresh%20Patches%20%2F%20Web%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etelegram-web-version-paresh%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Telegram%20%2F%20Paresh%20Patches%20%2F%20Web%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-telegram-revanced-experiments]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2261708285106692%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Telegram%20%2F%20Revanced%20Experiments%20%2F%20CH%20play%20version%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etelegram-revanced-experiments%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Telegram%20%2F%20Revanced%20Experiments%20%2F%20CH%20play%20version%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-telegram-web-version-revanced-experiments]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22263739958028621%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Telegram%20%2F%20Revanced%20Experiments%20%2F%20Web%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etelegram-web-version-revanced-experiments%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Telegram%20%2F%20Revanced%20Experiments%20%2F%20Web%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-myfitnesspal-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22279262395177772%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22MyFitnessPal%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5EMyFitnessPal-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22MyFitnessPal%20%2F%20Revanced%20%2F%20Stable%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-myfitnesspal-beta-revanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22130981533708217%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22MyFitnessPal%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5EMyFitnessPal-beta-revanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22MyFitnessPal%20%2F%20Revanced%20%2F%20Beta%20version%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-google-recorder-derevanced]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22206610908362423%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Google%20Recorder%20%2F%20DeRevanced%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Egoogle-recorder-derevanced%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Google%20Recorder%20%2F%20DeRevanced%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-adguard-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22209353665439158%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Adguard%20%2F%20hoo-dles%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eadguard-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Adguard%20%2F%20hoo-dles%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-adguard-rushiranpise]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2278457540763146%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Adguard%20%2F%20rushiranpise%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eadguard-rushiranpise%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Adguard%20%2F%20rushiranpise%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-smart-launcher-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2236459212906419%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Smart%20Launcher%20%2F%20hoo-dles%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esmart-launcher-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Smart%20Launcher%20%2F%20hoo-dles%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-wps-office-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2239942499067374%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22WPS%20Office%20%2F%20hoo-dles%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ewps-office-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22WPS%20Office%20%2F%20hoo-dles%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-waze-rushiranpise]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22170410123245674%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Waze%20%2F%20rushiranpise%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Ewaze-rushiranpise%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Waze%20%2F%20rushiranpise%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-solid-explorer-hoo-dles]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2222919923743751%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Solid%20Explorer%20File%20Manager%20%2F%20hoo-dles%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esolid-explorer-hoo-dles%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Solid%20Explorer%20File%20Manager%20%2F%20hoo-dles%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-solid-explorer-arm64-v8a-scrazzz]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2262591366437675%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Solid%20Explorer%20File%20Manager%20%2F%20scrazzz%20%2F%20Arm64-v8a%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Esolid-explorer-arm64-v8a-scrazzz%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Solid%20Explorer%20File%20Manager%20%2F%20scrazzz%20%2F%20Arm64-v8a%5C%22%7D%22%7D
+[obtainium-nova-launcher-indrastorms]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22122384352230309%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Nova%20Launcher%20%2F%20Dropped%20Patches%20by%20indrastorms%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Enova-launcher-indrastorms%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Nova%20Launcher%20%2F%20Dropped%20Patches%20by%20indrastorms%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-tasker-indrastorms]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%22973100204133%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Tasker%20%2F%20Dropped%20Patches%20by%20indrastorms%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Etasker-indrastorms%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Tasker%20%2F%20Dropped%20Patches%20by%20indrastorms%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-fx-file-explorer-indrastorms]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%2289375797177261%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22FX%20File%20Explorer%20%2F%20Dropped%20Patches%20by%20indrastorms%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Efx-file-explorer-indrastorms%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22FX%20File%20Explorer%20%2F%20Dropped%20Patches%20by%20indrastorms%20%2F%20Universal%5C%22%7D%22%7D
+[obtainium-amazon-shopping-rushiranpise]: https://apps.obtainium.imranr.dev/redirect?r=obtainium://app/%7B%22id%22%3A%228239379312964%22%2C%22url%22%3A%22https%3A%2F%2Fgithub.com%2FFiorenMas%2FRevanced-And-Revanced-Extended-Non-Root%22%2C%22author%22%3A%22FiorenMas%22%2C%22name%22%3A%22Amazon%20Shopping%20%2F%20rushiranpise%20%2F%20Universal%22%2C%22additionalSettings%22%3A%22%7B%5C%22apkFilterRegEx%5C%22%3A%5C%22%5Eamazon-shopping-rushiranpise%5C%5C%5C%5C.apk%24%5C%22%2C%5C%22autoApkFilterByArch%5C%22%3Afalse%2C%5C%22useLatestAssetDateAsReleaseDate%5C%22%3Atrue%2C%5C%22releaseDateAsVersion%5C%22%3Atrue%2C%5C%22versionDetection%5C%22%3Afalse%2C%5C%22includePrereleases%5C%22%3Atrue%2C%5C%22appName%5C%22%3A%5C%22Amazon%20Shopping%20%2F%20rushiranpise%20%2F%20Universal%5C%22%7D%22%7D

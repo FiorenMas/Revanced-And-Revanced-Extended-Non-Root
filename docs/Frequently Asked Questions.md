@@ -23,6 +23,8 @@ Click "I understand my workflows, go ahead and enable them"
 Follow these steps to run the workflow for Manual Patch apps!
 ![](../docs/image/FAQ/patching-app-3.png)
 
+For YouTube and YouTube Music using lavinhoque33's ReVanced Extended patches, select `RVX-lavinhoque33` in the `1. Manual Patch` workflow.
+
 And then go to Readme click download your patched apps!
 
 ---
@@ -33,13 +35,18 @@ You should open the folder `Revanced-And-Revanced-Extended-Non-Root/src/patches/
 
 * For Revanced: https://github.com/revanced/revanced-patches
 * For Revanced Extended: https://github.com/inotia00/revanced-patches/tree/revanced-extended
+* For Revanced Extended forked by lavinhoque33: https://github.com/lavinhoque33/revanced-patches
 * For Revanced Extended Android 6 & 7: https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended
+
+For lavinhoque33 builds, use [youtube-lavinhoque33](../src/patches/youtube-lavinhoque33) and [youtube-music-lavinhoque33](../src/patches/youtube-music-lavinhoque33). Keep `GmsCore support` enabled for non-root installations.
 
 ---
 
 ### Q: I want to use a custom file options.json. How can I do it?
 
 You should open the folder [Revanced-And-Revanced-Extended-Non-Root/src/options/](../src/options). It contains files revanced-extended.json, anddea.json... edit those file the same as you would options.json
+
+For lavinhoque33 builds, use [lavinhoque33.json](../src/options/lavinhoque33.json).
 
 Revanced alias no longer use options.json anymore use directly `Revanced-And-Revanced-Extended-Non-Root/src/patches/` instead.
 
@@ -54,6 +61,8 @@ Example Youtube apps include patches:
 ### Q: I am facing errors using your apps, what do I do?
 
 I’m so sorry about this, but my repository only patches apps from “scripts” by other devs. I can’t fix errors when apps face errors, so if you get errors, please make an issue in [Revanced](https://github.com/revanced/revanced-patches), [Revanced Extended](https://github.com/inotia00/revanced-patches/tree/revanced-extended) or [Revanced Extended Android 6 & 7](https://github.com/kitadai31/revanced-patches-android6-7/tree/revanced-extended) repositories.
+
+For issues with lavinhoque33 patches, use the [lavinhoque33 patch issue tracker](https://github.com/lavinhoque33/revanced-patches/issues).
 
 ---
 

@@ -11,6 +11,31 @@ from urllib.parse import quote
 # Keep these apps at the top of both the index and download catalog.
 POPULAR_APPS = ('YouTube', 'YouTube Music', 'Facebook', 'Instagram', 'Threads')
 
+# App badges from the compact jump index in PR #189.
+# Apps without a badge keep a normal text link.
+APP_BADGES = {
+    'youtube': 'YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white',
+    'youtube-music': 'YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white',
+    'facebook': 'Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white',
+    'messenger': 'Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white',
+    'twitter': 'Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white',
+    'instagram': 'Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white',
+    'threads': 'Threads-000000?style=for-the-badge&logo=Threads&logoColor=white',
+    'tiktok': 'TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white',
+    'twitch': 'Twitch-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white',
+    'reddit': 'Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white',
+    'pinterest': 'Pinterest-%23E60023.svg?style=for-the-badge&logo=Pinterest&logoColor=white',
+    'lightroom': 'Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white',
+    'tumblr': 'Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white',
+    'soundcloud': 'soundcloud-FF5500?style=for-the-badge&logo=soundcloud&logoColor=white',
+    'duolingo': 'Duolingo-%234DC730.svg?style=for-the-badge&logo=Duolingo&logoColor=white',
+    'viber': 'Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white',
+    'discord': 'Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white',
+    'proton-mail': 'ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white',
+    'prime-video': 'Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white',
+    'telegram': 'Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white',
+}
+
 ROOT = Path(__file__).resolve().parents[2]
 INDEX = '  <summary><h2>List of available apps</h2></summary>'
 MICROG = '## [MicroG RE:]'
@@ -188,14 +213,20 @@ def generate_readme(readme, repository):
     priority = {name.casefold(): position for position, name in enumerate(POPULAR_APPS)}
     apps.sort(key=lambda app: (priority.get(app[0].casefold(), len(priority)), app[0].casefold()))
 
-    def index_links(group):
-        return ' · '.join(f'[{name}](#{name.lower().replace(" ", "-")})' for name, _ in group)
+    badges = []
+    others = []
+    for name, _ in apps:
+        anchor = name.lower().replace(" ", "-")
+        badge = APP_BADGES.get(anchor)
+        if badge:
+            badges.append(f'[![{name}](https://img.shields.io/badge/{badge})](#{anchor})')
+        else:
+            others.append(f'[{name}](#{anchor})')
 
-    popular = [app for app in apps if app[0].casefold() in priority]
-    others = [app for app in apps if app[0].casefold() not in priority]
     index = '\n\n'.join((
-        '**Popular apps:** ' + index_links(popular),
-        '**Other apps (A–Z):** ' + index_links(others),
+        '**Jump to an app**',
+        '\n'.join(badges),
+        '**Other apps (A–Z):** ' + ' · '.join(others),
         'Use one Add to Obtainium badge per build family to import it into '
         '[Obtainium](https://github.com/ImranR98/Obtainium). Obtainium attempts to select a '
         'compatible APK using the device CPU architecture; if it cannot narrow the choices, '

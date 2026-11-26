@@ -48,9 +48,30 @@ Download
 <details open>
   <summary><h2>List of available apps</h2></summary>
 
-**Popular apps:** [YouTube](#youtube) · [YouTube Music](#youtube-music) · [Facebook](#facebook) · [Instagram](#instagram) · [Threads](#threads)
+**Jump to an app**
 
-**Other apps (A–Z):** [Adguard](#adguard) · [Amazon Shopping](#amazon-shopping) · [Battery Guru](#battery-guru) · [Brave Browser](#brave-browser) · [CamScanner](#camscanner) · [Discord](#discord) · [Duolingo](#duolingo) · [EyeconCaller](#eyeconcaller) · [FX File Explorer](#fx-file-explorer) · [Google News](#google-news) · [Google Photos](#google-photos) · [Google Recorder](#google-recorder) · [Lightroom](#lightroom) · [Messenger](#messenger) · [MyFitnessPal](#myfitnesspal) · [Nova Launcher](#nova-launcher) · [Photomath](#photomath) · [Pinterest](#pinterest) · [Pixiv](#pixiv) · [Prime Video](#prime-video) · [Proton mail](#proton-mail) · [Proton VPN](#proton-vpn) · [Psiphon](#psiphon) · [RAR](#rar) · [Reddit](#reddit) · [Smart Launcher](#smart-launcher) · [Solid Explorer File Manager](#solid-explorer-file-manager) · [SoundCloud](#soundcloud) · [Strava](#strava) · [Tasker](#tasker) · [Telegram](#telegram) · [TeraBox](#terabox) · [TikTok](#tiktok) · [TikTok Asia](#tiktok-asia) · [Truecaller](#truecaller) · [Tumblr](#tumblr) · [Twitch](#twitch) · [Twitter](#twitter) · [Viber](#viber) · [Waze](#waze) · [Windscribe](#windscribe) · [WPS Office](#wps-office) · [Zalo](#zalo)
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](#youtube)
+[![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)](#youtube-music)
+[![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white)](#facebook)
+[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white)](#instagram)
+[![Threads](https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=Threads&logoColor=white)](#threads)
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](#discord)
+[![Duolingo](https://img.shields.io/badge/Duolingo-%234DC730.svg?style=for-the-badge&logo=Duolingo&logoColor=white)](#duolingo)
+[![Lightroom](https://img.shields.io/badge/Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white)](#lightroom)
+[![Messenger](https://img.shields.io/badge/Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white)](#messenger)
+[![Pinterest](https://img.shields.io/badge/Pinterest-%23E60023.svg?style=for-the-badge&logo=Pinterest&logoColor=white)](#pinterest)
+[![Prime Video](https://img.shields.io/badge/Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white)](#prime-video)
+[![Proton mail](https://img.shields.io/badge/ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white)](#proton-mail)
+[![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white)](#reddit)
+[![SoundCloud](https://img.shields.io/badge/soundcloud-FF5500?style=for-the-badge&logo=soundcloud&logoColor=white)](#soundcloud)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](#telegram)
+[![TikTok](https://img.shields.io/badge/TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white)](#tiktok)
+[![Tumblr](https://img.shields.io/badge/Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white)](#tumblr)
+[![Twitch](https://img.shields.io/badge/Twitch-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white)](#twitch)
+[![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white)](#twitter)
+[![Viber](https://img.shields.io/badge/Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white)](#viber)
+
+**Other apps (A–Z):** [Adguard](#adguard) · [Amazon Shopping](#amazon-shopping) · [Battery Guru](#battery-guru) · [Brave Browser](#brave-browser) · [CamScanner](#camscanner) · [EyeconCaller](#eyeconcaller) · [FX File Explorer](#fx-file-explorer) · [Google News](#google-news) · [Google Photos](#google-photos) · [Google Recorder](#google-recorder) · [MyFitnessPal](#myfitnesspal) · [Nova Launcher](#nova-launcher) · [Photomath](#photomath) · [Pixiv](#pixiv) · [Proton VPN](#proton-vpn) · [Psiphon](#psiphon) · [RAR](#rar) · [Smart Launcher](#smart-launcher) · [Solid Explorer File Manager](#solid-explorer-file-manager) · [Strava](#strava) · [Tasker](#tasker) · [TeraBox](#terabox) · [TikTok Asia](#tiktok-asia) · [Truecaller](#truecaller) · [Waze](#waze) · [Windscribe](#windscribe) · [WPS Office](#wps-office) · [Zalo](#zalo)
 
 Use one Add to Obtainium badge per build family to import it into [Obtainium](https://github.com/ImranR98/Obtainium). Obtainium attempts to select a compatible APK using the device CPU architecture; if it cannot narrow the choices, select a compatible APK manually. Stable, Beta and other editions remain separate.
 

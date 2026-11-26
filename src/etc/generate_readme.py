@@ -22,19 +22,34 @@ REDIRECT = 'https://apps.obtainium.imranr.dev/redirect?r='
 GENERATED_BADGE = re.compile(r' *\[!\[Add to Obtainium\]\(' + re.escape(BADGE) + r'\)\]\(' + re.escape(REDIRECT) + r'[^\s)]+\)')
 
 
-def obtainium_url(repository, filename):
+# Remove only known ABI tokens, not provider, release channel or edition names.
+ABI = re.compile(r'-(?:arm64-v8a|armeabi-v7a|x86_64|x86)(?=-|\.apk$)')
+
+
+def asset_family(filename):
+    # Upstream lists this double-beta filename alongside the universal beta.
+    if filename == 'reddit-beta-arm64-v8a-beta-revanced-extended.apk':
+        return 'reddit-beta-revanced-extended.apk'
+    return ABI.sub('', filename)
+
+
+def obtainium_url(repository, filenames):
     url = f'https://github.com/{repository}'
-    name = filename.removesuffix('.apk')
+    family = asset_family(filenames[0])
+    name = family.removesuffix('.apk')
+    # Match only documented assets within this family. Obtainium then filters
+    # those candidates using Android's supported ABIs.
+    alternatives = '|'.join(re.escape(filename) for filename in sorted(set(filenames)))
     settings = {
-        'apkFilterRegEx': '^' + re.escape(filename) + '$',
-        'autoApkFilterByArch': False,
+        'apkFilterRegEx': '^(?:' + alternatives + ')$',
+        'autoApkFilterByArch': True,
         'useLatestAssetDateAsReleaseDate': True,
         'releaseDateAsVersion': True,
         'versionDetection': False,
         'appName': name,
     }
     config = {
-        'id': hashlib.sha256(f'{url}/{filename}'.encode()).hexdigest()[:12],
+        'id': hashlib.sha256(f'{url}/{family}'.encode()).hexdigest()[:12],
         'url': url,
         'author': repository.split('/')[0],
         'name': name,
@@ -49,8 +64,8 @@ def obtainium_url(repository, filename):
 # Recognize the maintainer's generated HTML rows as well as original Markdown.
 HTML_ROW = re.compile(
     r'  <tr>\n    <td><a href="(\.\./\.\./releases/download/all/[\w.-]+\.apk)[ \t]*">([^<]+)</a></td>\n'
-    r'    <td><a href="' + re.escape(REDIRECT) + r'[^"\n]+"><img src="'
-    + re.escape(BADGE) + r'" alt="Add to Obtainium"></a></td>\n  </tr>\n'
+    r'    <td>(?:<a href="' + re.escape(REDIRECT) + r'[^"\n]+"><img src="'
+    + re.escape(BADGE) + r'" alt="Add to Obtainium"></a>)?</td>\n  </tr>\n'
 )
 TABLE = re.compile(r'(?:^\|[^\n]*\n?)+', re.MULTILINE)
 HTML_TABLE = re.compile(r'^<table>\n(.*?)^</table>', re.MULTILINE | re.DOTALL)
@@ -58,8 +73,20 @@ STANDALONE = re.compile(r'^' + APK_LINK.pattern + r'[ \t]*$', re.MULTILINE)
 APK_PATH = '../../releases/download/all/'
 
 
-def obtainium_badge(repository, filename):
-    return f'[![Add to Obtainium]({BADGE})]({obtainium_url(repository, filename)})'
+def obtainium_badge(repository, filenames):
+    return f'[![Add to Obtainium]({BADGE})]({obtainium_url(repository, filenames)})'
+
+
+def grouped_downloads(links):
+    # Keep original row order. Only the first row of each family has a badge.
+    groups = {}
+    for label, filename in links:
+        groups.setdefault(asset_family(filename), []).append(filename)
+    seen = set()
+    for label, filename in links:
+        family = asset_family(filename)
+        yield label, filename, groups[family] if family not in seen else []
+        seen.add(family)
 
 
 def render_download_tables(body, repository):
@@ -98,6 +125,7 @@ def render_download_tables(body, repository):
                     raise ValueError('Unexpected content in badge column')
                 continue
             output = [f'| {title} |  |', '| --- | --- |']
+            links = []
             for row in rows:
                 if len(row) > len(header):
                     raise ValueError('Unexpected download table column')
@@ -106,8 +134,10 @@ def render_download_tables(body, repository):
                 link = APK_LINK.fullmatch(row[column])
                 if not link:
                     raise ValueError('Unexpected download table cell: ' + row[column])
-                label, filename = link.groups()
-                output.append(f'| [{label}]({APK_PATH}{filename}) | {obtainium_badge(repository, filename)} |')
+                links.append(link.groups())
+            for label, filename, family in grouped_downloads(links):
+                badge = obtainium_badge(repository, family) if family else ''
+                output.append(f'| [{label}]({APK_PATH}{filename}) | {badge} |')
             tables.append('\n'.join(output))
         return '\n\n'.join(tables) + ('\n' if block.endswith('\n') else '')
 
@@ -117,13 +147,16 @@ def render_download_tables(body, repository):
     # Group adjacent download lines without swallowing headings, notes or details.
     def render_html(match):
         rows = ['<table>']
-        for link in STANDALONE.finditer(match.group(0)):
-            label, filename = link.groups()
-            url = obtainium_url(repository, filename)
+        links = [link.groups() for link in STANDALONE.finditer(match.group(0))]
+        for label, filename, family in grouped_downloads(links):
+            badge = ''
+            if family:
+                url = obtainium_url(repository, family)
+                badge = f'<a href="{escape(url, quote=True)}"><img src="{BADGE}" alt="Add to Obtainium"></a>'
             rows.extend((
                 '  <tr>',
                 f'    <td><a href="{APK_PATH}{filename}">{escape(label)}</a></td>',
-                f'    <td><a href="{escape(url, quote=True)}"><img src="{BADGE}" alt="Add to Obtainium"></a></td>',
+                f'    <td>{badge}</td>',
                 '  </tr>',
             ))
         return '\n'.join([*rows, '</table>'])
@@ -163,8 +196,10 @@ def generate_readme(readme, repository):
     index = '\n\n'.join((
         '**Popular apps:** ' + index_links(popular),
         '**Other apps (A–Z):** ' + index_links(others),
-        'Use the Add to Obtainium badge next to a download to import that APK variant '
-        'into [Obtainium](https://github.com/ImranR98/Obtainium).',
+        'Use one Add to Obtainium badge per build family to import it into '
+        '[Obtainium](https://github.com/ImranR98/Obtainium). Obtainium attempts to select a '
+        'compatible APK using the device CPU architecture; if it cannot narrow the choices, '
+        'select a compatible APK manually. Stable, Beta and other editions remain separate.',
         'Click the architecture or variant name (e.g. Universal or Arm64-v8a) to download the APK directly.',
     ))
     intro = readme[:index_start].replace('<details>\n' + INDEX, '<details open>\n' + INDEX)

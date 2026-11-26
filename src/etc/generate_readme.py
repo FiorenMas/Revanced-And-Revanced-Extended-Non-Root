@@ -1,4 +1,5 @@
 import argparse
+from base64 import b64encode
 from collections import Counter
 import hashlib
 from html import escape, unescape
@@ -12,56 +13,70 @@ from urllib.parse import quote
 POPULAR_APPS = ('YouTube', 'YouTube Music', 'Facebook', 'Instagram', 'Threads')
 
 # App badges from the compact jump index in PR #189 and its follow-ups.
-# Use text-only badges when a suitable Simple Icons logo is unavailable.
-# Unmapped future apps keep a normal text link.
+# Use named Simple Icons logos where available and self-contained pictograms
+# elsewhere. See https://shields.io/docs/logos for custom logo support.
+def icon_badge(label, path, color='475569'):
+    svg = (
+        '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">'
+        f'<path d="{path}" fill="none" stroke="white" stroke-width="2" '
+        'stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    )
+    logo = quote('data:image/svg+xml;base64,' + b64encode(svg.encode()).decode(), safe='')
+    label = quote(label.replace('-', '--').replace('_', '__'), safe='')
+    return f'{label}-{color}?style=for-the-badge&logo={logo}'
+
+
+APP_ICON = 'M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z'
+
+
 APP_BADGES = {
     'youtube': 'YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white',
-    'youtube-music': 'YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white',
+    'youtube-music': 'YouTube_Music-FF0000?style=for-the-badge&logo=youtubemusic&logoColor=white',
     'facebook': 'Facebook-%231877F2.svg?style=for-the-badge&logo=Facebook&logoColor=white',
     'messenger': 'Messenger-00B2FF?style=for-the-badge&logo=messenger&logoColor=white',
-    'twitter': 'Twitter-%231DA1F2.svg?style=for-the-badge&logo=Twitter&logoColor=white',
+    'twitter': 'Twitter-%231DA1F2.svg?style=for-the-badge&logo=x&logoColor=white',
     'instagram': 'Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white',
     'threads': 'Threads-000000?style=for-the-badge&logo=Threads&logoColor=white',
     'tiktok': 'TikTok-%23000000.svg?style=for-the-badge&logo=TikTok&logoColor=white',
     'twitch': 'Twitch-%239146FF.svg?style=for-the-badge&logo=Twitch&logoColor=white',
     'reddit': 'Reddit-%23FF4500.svg?style=for-the-badge&logo=Reddit&logoColor=white',
     'pinterest': 'Pinterest-%23E60023.svg?style=for-the-badge&logo=Pinterest&logoColor=white',
-    'lightroom': 'Adobe%20Lightroom-31A8FF.svg?style=for-the-badge&logo=Adobe%20Lightroom&logoColor=white',
+    'lightroom': icon_badge('Adobe Lightroom', 'M4 4h16v16H4zM8 8v8h5M15 16v-6M15 12q1-2 3-2', '31A8FF'),
     'tumblr': 'Tumblr-%2336465D.svg?style=for-the-badge&logo=Tumblr&logoColor=white',
     'soundcloud': 'soundcloud-FF5500?style=for-the-badge&logo=soundcloud&logoColor=white',
     'duolingo': 'Duolingo-%234DC730.svg?style=for-the-badge&logo=Duolingo&logoColor=white',
     'viber': 'Viber-8B66A9?style=for-the-badge&logo=viber&logoColor=white',
     'discord': 'Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white',
     'proton-mail': 'ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white',
-    'prime-video': 'Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white',
+    'prime-video': icon_badge('Amazon Prime', 'M3 4h18v16H3zM10 8l6 4-6 4z', '0F79AF'),
     'telegram': 'Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white',
     'adguard': 'Adguard-387D44?style=for-the-badge&logo=adguard&logoColor=white',
-    'amazon-shopping': 'Amazon_Shopping-475569?style=for-the-badge',
-    'battery-guru': 'Battery_Guru-475569?style=for-the-badge',
+    'amazon-shopping': icon_badge('Amazon Shopping', 'M3 4h2l3 11h11l2-8H6M9 20h.1M18 20h.1'),
+    'battery-guru': icon_badge('Battery Guru', 'M2 6h18v12H2zM22 10v4M12 8l-3 4h5l-3 4'),
     'brave-browser': 'Brave_Browser-FB542B?style=for-the-badge&logo=brave&logoColor=white',
-    'camscanner': 'CamScanner-475569?style=for-the-badge',
-    'eyeconcaller': 'EyeconCaller-475569?style=for-the-badge',
-    'fx-file-explorer': 'FX_File_Explorer-475569?style=for-the-badge',
+    'camscanner': icon_badge('CamScanner', 'M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M7 8h10M7 12h10M7 16h6'),
+    'eyeconcaller': icon_badge('EyeconCaller', 'M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z'),
+    'fx-file-explorer': icon_badge('FX File Explorer', 'M3 6h7l2 3h9v11H3zM7 14h10'),
     'google-news': 'Google_News-174EA6?style=for-the-badge&logo=googlenews&logoColor=white',
     'google-photos': 'Google_Photos-4285F4?style=for-the-badge&logo=googlephotos&logoColor=white',
-    'google-recorder': 'Google_Recorder-475569?style=for-the-badge',
-    'myfitnesspal': 'MyFitnessPal-475569?style=for-the-badge',
-    'nova-launcher': 'Nova_Launcher-475569?style=for-the-badge',
-    'photomath': 'Photomath-475569?style=for-the-badge',
+    'google-recorder': icon_badge('Google Recorder', 'M9 5a3 3 0 0 1 6 0v7a3 3 0 0 1-6 0zM5 11v1a7 7 0 0 0 14 0v-1M12 19v3M9 22h6'),
+    'myfitnesspal': icon_badge('MyFitnessPal', 'M3 9v6M6 6v12M6 12h12M18 6v12M21 9v6'),
+    'nova-launcher': icon_badge('Nova Launcher', 'M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z'),
+    'photomath': icon_badge('Photomath', 'M3 8V3h5M16 3h5v5M21 16v5h-5M8 21H3v-5M8 12h8M12 8v8'),
     'pixiv': 'Pixiv-0096FA?style=for-the-badge&logo=pixiv&logoColor=white',
     'proton-vpn': 'Proton_VPN-6D4AFF?style=for-the-badge&logo=protonvpn&logoColor=white',
-    'psiphon': 'Psiphon-475569?style=for-the-badge',
-    'rar': 'RAR-475569?style=for-the-badge',
-    'smart-launcher': 'Smart_Launcher-475569?style=for-the-badge',
-    'solid-explorer-file-manager': 'Solid_Explorer_File_Manager-475569?style=for-the-badge',
+    'psiphon': icon_badge('Psiphon', 'M12 3l8 3v6c0 5-4 8-8 10-4-2-8-5-8-10V6zM8 12l3 3 5-6'),
+    'rar': icon_badge('RAR', 'M4 3h16v18H4zM12 3v3h2v3h-2v3h2v3h-2v3'),
+    'smart-launcher': icon_badge('Smart Launcher', 'M12 3l9 5-9 5-9-5zM3 12l9 5 9-5M3 16l9 5 9-5'),
+    'solid-explorer-file-manager': icon_badge('Solid Explorer File Manager', 'M2 5h8l2 3h10l-3 12H2zM2 11h19'),
     'strava': 'Strava-FC5200?style=for-the-badge&logo=strava&logoColor=white',
-    'tasker': 'Tasker-475569?style=for-the-badge',
-    'terabox': 'TeraBox-475569?style=for-the-badge',
+    'tasker': icon_badge('Tasker', 'M7 3h10v18H7zM9 12l2 2 4-5'),
+    'terabox': icon_badge('TeraBox', 'M6 19h12a4 4 0 0 0 1-8 7 7 0 0 0-13-2 5 5 0 0 0 0 10zM12 15V9M9 12l3-3 3 3'),
     'tiktok-asia': 'TikTok_Asia-000000?style=for-the-badge&logo=tiktok&logoColor=white',
-    'truecaller': 'Truecaller-475569?style=for-the-badge',
+    'truecaller': icon_badge('Truecaller', 'M4 4h5l2 5-3 2q2 4 6 5l2-3 5 2v5C11 22 2 13 4 4z'),
     'waze': 'Waze-33CCFF?style=for-the-badge&logo=waze&logoColor=black',
-    'windscribe': 'Windscribe-475569?style=for-the-badge',
-    'wps-office': 'WPS_Office-475569?style=for-the-badge',
+    'windscribe': icon_badge('Windscribe', 'M3 7h12a2 2 0 1 0-2-2M3 12h17a2 2 0 1 1-2 2M3 17h11a2 2 0 1 1-2 2'),
+    'wps-office': icon_badge('WPS Office', 'M5 3h9l5 5v13H5zM14 3v5h5M8 12h8M8 16h8'),
     'zalo': 'Zalo-0068FF?style=for-the-badge&logo=zalo&logoColor=white',
 }
 
@@ -243,19 +258,16 @@ def generate_readme(readme, repository):
     apps.sort(key=lambda app: (priority.get(app[0].casefold(), len(priority)), app[0].casefold()))
 
     badges = []
-    others = []
     for name, _ in apps:
         anchor = name.lower().replace(" ", "-")
         badge = APP_BADGES.get(anchor)
-        if badge:
-            badges.append(f'[![{name}](https://img.shields.io/badge/{badge})](#{anchor})')
-        else:
-            others.append(f'[{name}](#{anchor})')
+        if badge is None:
+            badge = icon_badge(name, APP_ICON)
+        badges.append(f'[![{name}](https://img.shields.io/badge/{badge})](#{anchor})')
 
     index = '\n\n'.join((
         '**Jump to an app**',
         '\n'.join(badges),
-        *(['**Other apps (A–Z):** ' + ' · '.join(others)] if others else []),
         'Use one Add to Obtainium badge per build family to import it into '
         '[Obtainium](https://github.com/ImranR98/Obtainium). Obtainium attempts to select a '
         'compatible APK using the device CPU architecture; if it cannot narrow the choices, '

@@ -11,8 +11,9 @@ from urllib.parse import quote
 # Keep these apps at the top of both the index and download catalog.
 POPULAR_APPS = ('YouTube', 'YouTube Music', 'Facebook', 'Instagram', 'Threads')
 
-# App badges from the compact jump index in PR #189.
-# Apps without a badge keep a normal text link.
+# App badges from the compact jump index in PR #189 and its follow-ups.
+# Use text-only badges when a suitable Simple Icons logo is unavailable.
+# Unmapped future apps keep a normal text link.
 APP_BADGES = {
     'youtube': 'YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white',
     'youtube-music': 'YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white',
@@ -34,6 +35,34 @@ APP_BADGES = {
     'proton-mail': 'ProtonMail-8B89CC?style=for-the-badge&logo=protonmail&logoColor=white',
     'prime-video': 'Amazon%20Prime-0F79AF?style=for-the-badge&logo=amazonprime&logoColor=white',
     'telegram': 'Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white',
+    'adguard': 'Adguard-387D44?style=for-the-badge&logo=adguard&logoColor=white',
+    'amazon-shopping': 'Amazon_Shopping-475569?style=for-the-badge',
+    'battery-guru': 'Battery_Guru-475569?style=for-the-badge',
+    'brave-browser': 'Brave_Browser-FB542B?style=for-the-badge&logo=brave&logoColor=white',
+    'camscanner': 'CamScanner-475569?style=for-the-badge',
+    'eyeconcaller': 'EyeconCaller-475569?style=for-the-badge',
+    'fx-file-explorer': 'FX_File_Explorer-475569?style=for-the-badge',
+    'google-news': 'Google_News-174EA6?style=for-the-badge&logo=googlenews&logoColor=white',
+    'google-photos': 'Google_Photos-4285F4?style=for-the-badge&logo=googlephotos&logoColor=white',
+    'google-recorder': 'Google_Recorder-475569?style=for-the-badge',
+    'myfitnesspal': 'MyFitnessPal-475569?style=for-the-badge',
+    'nova-launcher': 'Nova_Launcher-475569?style=for-the-badge',
+    'photomath': 'Photomath-475569?style=for-the-badge',
+    'pixiv': 'Pixiv-0096FA?style=for-the-badge&logo=pixiv&logoColor=white',
+    'proton-vpn': 'Proton_VPN-6D4AFF?style=for-the-badge&logo=protonvpn&logoColor=white',
+    'psiphon': 'Psiphon-475569?style=for-the-badge',
+    'rar': 'RAR-475569?style=for-the-badge',
+    'smart-launcher': 'Smart_Launcher-475569?style=for-the-badge',
+    'solid-explorer-file-manager': 'Solid_Explorer_File_Manager-475569?style=for-the-badge',
+    'strava': 'Strava-FC5200?style=for-the-badge&logo=strava&logoColor=white',
+    'tasker': 'Tasker-475569?style=for-the-badge',
+    'terabox': 'TeraBox-475569?style=for-the-badge',
+    'tiktok-asia': 'TikTok_Asia-000000?style=for-the-badge&logo=tiktok&logoColor=white',
+    'truecaller': 'Truecaller-475569?style=for-the-badge',
+    'waze': 'Waze-33CCFF?style=for-the-badge&logo=waze&logoColor=black',
+    'windscribe': 'Windscribe-475569?style=for-the-badge',
+    'wps-office': 'WPS_Office-475569?style=for-the-badge',
+    'zalo': 'Zalo-0068FF?style=for-the-badge&logo=zalo&logoColor=white',
 }
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -226,7 +255,7 @@ def generate_readme(readme, repository):
     index = '\n\n'.join((
         '**Jump to an app**',
         '\n'.join(badges),
-        '**Other apps (A–Z):** ' + ' · '.join(others),
+        *(['**Other apps (A–Z):** ' + ' · '.join(others)] if others else []),
         'Use one Add to Obtainium badge per build family to import it into '
         '[Obtainium](https://github.com/ImranR98/Obtainium). Obtainium attempts to select a '
         'compatible APK using the device CPU architecture; if it cannot narrow the choices, '
